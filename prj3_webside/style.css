@@ -1,0 +1,85 @@
+:root{
+    color: yellow;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0px;
+    overflow: none;
+}
+
+html,
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: lightyellow;
+}
+
+.container{
+    width: 90%;
+    margin: 0 auto;
+    padding: 10px;
+    overflow: none;
+}
+
+.app-header{
+    box-shadow: 3px 3px 10px brown;
+}
+
+.app-header .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 10px;
+}
+
+  .app-header .logo{
+      width: 300px;
+      margin-bottom: 16px;
+  }
+
+ 
+
+.output {  
+    background :black; 
+    width: 100%;
+    height:110vw; 
+    margin-top: 7px; 
+    box-shadow: 3px 3px 10px brown; 
+} 
+
+a{
+    width: 44vw;
+    line-height:17vw;
+    display: inline-block;
+    margin: 3.0vw ;
+    
+    text-align: center;
+    font-size:3vw;
+    font-weight: bold;
+    color: #ffffff;
+    text-align: center;
+    text-decoration: none;  
+}
+
+.buttonclass{    
+    background:linear-gradient(to right, #0c1700,blue, #0c1700);
+    border-radius: 15px;
+    float: left;
+}
+
+.buttonclass:hover{
+    background:linear-gradient(to right,blue,black,blue);
+}
+
+.buttonclass2{
+
+    background:linear-gradient(to right, #0c1700, green, #0c1700);
+    border-radius: 15px;
+    float: right;
+}
+.buttonclass2:hover{
+    background:linear-gradient(to right,green,black, green);    
+}
+

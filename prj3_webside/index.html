@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en"> 
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, 
+        initial-scale=1.0"/>
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="stylesheet" href="style.css" >
+        <title>BEERTRESS ANSAT</title>
+    </head>
+    
+    <body>
+      <div class="content" >
+        <header class="app-header">
+          <div class="container"> <!-- til logo-->
+              <img src="img/beertLogo.png" alt="" class="logo">
+          </div>
+        </header>
+
+          <div class="output" id="output"> <!-- til skærm-->
+
+          </div>
+       
+          <div class="subheader"> <!-- til knapper-->
+            <a href="#" class="buttonclass" onclick="clicker()" >Vælg bord</a> 
+            <a href="#" class="buttonclass2" onclick="clicker()">Bestil</a> 
+            
+          </div>
+             
+             <select id="beer" style="margin-left: 15px;" name="cars">
+              <option value="1ol">1_Øl</option>
+              <option value="2ol">2_Øl</option>
+              <option value="3ol">3_Øl</option>
+              <option value="4ol">4_Øl</option>
+              <option value="5ol">5_Øl</option>
+              <option value="6ol">6_Øl</option>
+              <option value="7ol">7_Øl</option>
+            </select>
+            <input type="submit">
+    
+      </div>
+
+        <script language="javascript" type="text/javascript">
+          var wsUri = "ws://10.9.8.2:3000/";
+          var output;
+          var counter = 0;
+          
+
+            // Denne funktion bliver kaldt når vores hjemmeside loades op. ( det første der sker)
+            function init()
+            {
+              output = document.getElementById("output");
+              testWebSocket();
+            }
+          
+            // Opretter en forbindelse til vores websocket server (./main)
+            function testWebSocket()
+            {
+              websocket = new WebSocket(wsUri);
+              websocket.onopen = function(evt) { onOpen(evt) };
+              websocket.onclose = function(evt) { onClose(evt) };
+              websocket.onmessage = function(evt) { onMessage(evt) };
+              websocket.onerror = function(evt) { onError(evt) };
+            }
+          
+            // Denne metode bliver kaldt når vi skaber forbindelse til websocket serveren 
+            function onOpen(evt)
+            {
+              writeToScreen("Beertress aktiveret");
+              doSend("Venter på ordre");
+            }
+          
+            // denne metode bliver kaldt når vi lukker forbindelsen til websocket serveren  
+            function onClose(evt)
+            {
+              writeToScreen("Der er lukket, du!");
+            }
+          
+            // Denne besked bliver kaldt når vi modtager en besked fra serveren 
+            function onMessage(evt)
+            {
+              writeToScreen('<span style="color: blue;">RESPONSE: ' + evt.data+'</span>');
+              //websocket.close();
+            }
+          
+            // Hvis der sker en fejl i forbindelsen
+            function onError(evt)
+            {
+              writeToScreen('<span style="color: red;">ERROR:</span> ' + evt.data);
+            }
+          
+            function doSend(message)
+            {
+              writeToScreen("SENT: " + message);
+              websocket.send(message);
+            }
+          
+            function writeToScreen(message)
+            {
+              var pre = document.createElement("p");
+              pre.style.wordWrap = "break-word";
+              pre.innerHTML = message;
+              output.appendChild(pre);
+            }
+          
+            window.addEventListener("load", init, false);
+          
+            function clicker()
+            {
+              counter = counter+1;
+              doSend("Hello with count: " + counter);
+            }
+            </script>
+    </body>
+</html>
+
