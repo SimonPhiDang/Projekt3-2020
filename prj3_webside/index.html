@@ -18,32 +18,24 @@
         </header>
 
           <div class="output" id="output"> <!-- til skærm-->
+          </div>
+          <!--Bestillinger til bord 1-->
+          <a href="#" class="table1Beer1class" onclick="table1Beer1()">Bord 1 - 1 øl</a> 
+          <a href="#" class="table1Beer2class" onclick="table1Beer2()">Bord 1 - 2 øl</a> 
+          <a href="#" class="table1Beer3class" onclick="table1Beer3()">Bord 1 - 3 øl</a>
 
-          </div>
-       
-          <div class="subheader"> <!-- til knapper-->
-            <a href="#" class="buttonclass" onclick="clicker()" >Vælg bord</a> 
-            <a href="#" class="buttonclass2" onclick="clicker()">Bestil</a> 
-            
-          </div>
-             
-             <select id="beer" style="margin-left: 15px;" name="cars">
-              <option value="1ol">1_Øl</option>
-              <option value="2ol">2_Øl</option>
-              <option value="3ol">3_Øl</option>
-              <option value="4ol">4_Øl</option>
-              <option value="5ol">5_Øl</option>
-              <option value="6ol">6_Øl</option>
-              <option value="7ol">7_Øl</option>
-            </select>
-            <input type="submit">
-    
-      </div>
+          <!--Bestillinger til bord 2 -->
+          <a href="#" class="table2Beer1class" onclick="table2Beer1()">Bord 2 - 1 øl</a> 
+          <a href="#" class="table2Beer2class" onclick="table2Beer2()">Bord 2 - 2 øl</a> 
+          <a href="#" class="table2Beer3class" onclick="table2Beer3()">Bord 2 - 3 øl</a> 
+
 
         <script language="javascript" type="text/javascript">
           var wsUri = "ws://10.9.8.2:3000/";
           var output;
           var counter = 0;
+          var tableNr = 0;
+          var beerAmount = 0;
           
 
             // Denne funktion bliver kaldt når vores hjemmeside loades op. ( det første der sker)
@@ -80,7 +72,6 @@
             function onMessage(evt)
             {
               writeToScreen('<span style="color: blue;">RESPONSE: ' + evt.data+'</span>');
-              //websocket.close();
             }
           
             // Hvis der sker en fejl i forbindelsen
@@ -105,12 +96,43 @@
           
             window.addEventListener("load", init, false);
           
-            function clicker()
-            {
-              counter = counter+1;
-              doSend("Hello with count: " + counter);
+            function table1Beer1()
+            {              
+              tableNr = 1;
+              beerAmount = 1;
+              doSend("Bord: " + tableNr + " Antal øl: " + beerAmount);
             }
+            function table1Beer2()
+            {              
+              tableNr = 1;
+              beerAmount = 2;
+              doSend("Bord: " + tableNr + " Antal øl: " + beerAmount);
+            }
+            function table1Beer3()
+            {              
+              tableNr = 1;
+              beerAmount = 3;
+              doSend("Bord: " + tableNr + " Antal øl: " + beerAmount);
+            }
+            function table2Beer1()
+            {              
+              tableNr = 2;
+              beerAmount = 1;
+              doSend("Bord: " + tableNr + " Antal øl: " + beerAmount);
+            }
+            function table2Beer2()
+            {           
+              tableNr = 2;
+              beerAmount = 2;
+              doSend("Bord: " + tableNr + " Antal øl: " + beerAmount);
+            }
+            function table2Beer3()
+            {
+              tableNr = 2;
+              beerAmount = 3;
+              doSend("Bord: " + tableNr + " Antal øl: " + beerAmount);
+            }
+
             </script>
     </body>
 </html>
-
