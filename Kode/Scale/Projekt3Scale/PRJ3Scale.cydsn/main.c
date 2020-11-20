@@ -10,7 +10,7 @@
  * ========================================
 */
 #include "project.h"
-#include "ADC.H"
+#include "ADC2.h"
 
 int main(void)
 {
@@ -18,11 +18,22 @@ int main(void)
 
     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
     
-    
+    ADC_init();
     
     for(;;)
     {
-        /* Place your application code here. */
+        float kg = ADC_Measure();
+        
+        if(kg > 0.5)
+        {
+            LED_Write(1);
+        }
+        else
+        {
+            LED_Write(0);
+        }
+        
+        CyDelay(500);
     }
 }
 

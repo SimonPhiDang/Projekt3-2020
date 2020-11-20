@@ -11317,41 +11317,41 @@ ARM GAS  Generated_Source\PSoC5\CyBootAsmGnu.s 			page 1
  5357              	.set CYCLK_SRC_SEL_DSI_A, 7
   21              	
   22              	/* LED */
-  23              	.set LED__0__INTTYPE, CYREG_PICU0_INTTYPE1
+  23              	.set LED__0__INTTYPE, CYREG_PICU2_INTTYPE1
   24              	.set LED__0__MASK, 0x02
-  25              	.set LED__0__PC, CYREG_PRT0_PC1
-  26              	.set LED__0__PORT, 0
+  25              	.set LED__0__PC, CYREG_PRT2_PC1
+  26              	.set LED__0__PORT, 2
   27              	.set LED__0__SHIFT, 1
-  28              	.set LED__AG, CYREG_PRT0_AG
-  29              	.set LED__AMUX, CYREG_PRT0_AMUX
-  30              	.set LED__BIE, CYREG_PRT0_BIE
-  31              	.set LED__BIT_MASK, CYREG_PRT0_BIT_MASK
-  32              	.set LED__BYP, CYREG_PRT0_BYP
-  33              	.set LED__CTL, CYREG_PRT0_CTL
-  34              	.set LED__DM0, CYREG_PRT0_DM0
-  35              	.set LED__DM1, CYREG_PRT0_DM1
-  36              	.set LED__DM2, CYREG_PRT0_DM2
-  37              	.set LED__DR, CYREG_PRT0_DR
-  38              	.set LED__INP_DIS, CYREG_PRT0_INP_DIS
-  39              	.set LED__INTTYPE_BASE, CYDEV_PICU_INTTYPE_PICU0_BASE
-  40              	.set LED__LCD_COM_SEG, CYREG_PRT0_LCD_COM_SEG
-  41              	.set LED__LCD_EN, CYREG_PRT0_LCD_EN
+  28              	.set LED__AG, CYREG_PRT2_AG
+  29              	.set LED__AMUX, CYREG_PRT2_AMUX
+  30              	.set LED__BIE, CYREG_PRT2_BIE
+  31              	.set LED__BIT_MASK, CYREG_PRT2_BIT_MASK
+  32              	.set LED__BYP, CYREG_PRT2_BYP
+  33              	.set LED__CTL, CYREG_PRT2_CTL
+  34              	.set LED__DM0, CYREG_PRT2_DM0
+  35              	.set LED__DM1, CYREG_PRT2_DM1
+  36              	.set LED__DM2, CYREG_PRT2_DM2
+  37              	.set LED__DR, CYREG_PRT2_DR
+  38              	.set LED__INP_DIS, CYREG_PRT2_INP_DIS
+  39              	.set LED__INTTYPE_BASE, CYDEV_PICU_INTTYPE_PICU2_BASE
+  40              	.set LED__LCD_COM_SEG, CYREG_PRT2_LCD_COM_SEG
+  41              	.set LED__LCD_EN, CYREG_PRT2_LCD_EN
   42              	.set LED__MASK, 0x02
-  43              	.set LED__PORT, 0
+  43              	.set LED__PORT, 2
 ARM GAS  Generated_Source\PSoC5\CyBootAsmGnu.s 			page 190
 
 
-  44              	.set LED__PRT, CYREG_PRT0_PRT
-  45              	.set LED__PRTDSI__CAPS_SEL, CYREG_PRT0_CAPS_SEL
-  46              	.set LED__PRTDSI__DBL_SYNC_IN, CYREG_PRT0_DBL_SYNC_IN
-  47              	.set LED__PRTDSI__OE_SEL0, CYREG_PRT0_OE_SEL0
-  48              	.set LED__PRTDSI__OE_SEL1, CYREG_PRT0_OE_SEL1
-  49              	.set LED__PRTDSI__OUT_SEL0, CYREG_PRT0_OUT_SEL0
-  50              	.set LED__PRTDSI__OUT_SEL1, CYREG_PRT0_OUT_SEL1
-  51              	.set LED__PRTDSI__SYNC_OUT, CYREG_PRT0_SYNC_OUT
-  52              	.set LED__PS, CYREG_PRT0_PS
+  44              	.set LED__PRT, CYREG_PRT2_PRT
+  45              	.set LED__PRTDSI__CAPS_SEL, CYREG_PRT2_CAPS_SEL
+  46              	.set LED__PRTDSI__DBL_SYNC_IN, CYREG_PRT2_DBL_SYNC_IN
+  47              	.set LED__PRTDSI__OE_SEL0, CYREG_PRT2_OE_SEL0
+  48              	.set LED__PRTDSI__OE_SEL1, CYREG_PRT2_OE_SEL1
+  49              	.set LED__PRTDSI__OUT_SEL0, CYREG_PRT2_OUT_SEL0
+  50              	.set LED__PRTDSI__OUT_SEL1, CYREG_PRT2_OUT_SEL1
+  51              	.set LED__PRTDSI__SYNC_OUT, CYREG_PRT2_SYNC_OUT
+  52              	.set LED__PS, CYREG_PRT2_PS
   53              	.set LED__SHIFT, 1
-  54              	.set LED__SLW, CYREG_PRT0_SLW
+  54              	.set LED__SLW, CYREG_PRT2_SLW
   55              	
   56              	/* ADC_SAR_1 */
   57              	.set ADC_SAR_1_ADC_SAR__CLK, CYREG_SAR1_CLK

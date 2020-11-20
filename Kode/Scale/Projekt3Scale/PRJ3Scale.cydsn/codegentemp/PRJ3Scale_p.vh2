@@ -1,5 +1,5 @@
 -- Project:   PRJ3Scale
--- Generated: 11/20/2020 12:10:15
+-- Generated: 11/20/2020 12:22:42
 -- PSoC Creator  4.3
 
 ENTITY PRJ3Scale IS
@@ -57,9 +57,11 @@ ARCHITECTURE __DEFAULT__ OF PRJ3Scale IS
     ATTRIBUTE POWER OF tmpOE__LED_net_0 : SIGNAL IS true;
     SIGNAL zero : bit;
     ATTRIBUTE GROUND OF zero : SIGNAL IS true;
-    ATTRIBUTE lib_model OF \ADC_SAR_1:ExtVref(0)\ : LABEL IS "iocell1";
+    ATTRIBUTE lib_model OF LED(0) : LABEL IS "iocell1";
+    ATTRIBUTE Location OF LED(0) : LABEL IS "P2[1]";
+    ATTRIBUTE lib_model OF \ADC_SAR_1:ExtVref(0)\ : LABEL IS "iocell2";
     ATTRIBUTE Location OF \ADC_SAR_1:ExtVref(0)\ : LABEL IS "P0[2]";
-    ATTRIBUTE lib_model OF Pin_ADC_in(0) : LABEL IS "iocell2";
+    ATTRIBUTE lib_model OF Pin_ADC_in(0) : LABEL IS "iocell3";
     ATTRIBUTE Location OF Pin_ADC_in(0) : LABEL IS "P0[0]";
     ATTRIBUTE Location OF \ADC_SAR_1:ADC_SAR\ : LABEL IS "F(SAR,1)";
     COMPONENT clockblockcell
