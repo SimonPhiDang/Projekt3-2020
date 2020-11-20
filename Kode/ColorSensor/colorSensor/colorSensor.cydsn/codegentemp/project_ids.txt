@@ -1,0 +1,6 @@
+C:\Users\Lucas\Documents\PSoC Creator\colorSensor\colorSensor.cydsn\colorSensor.cyprj|25ae0d53-de4e-430f-ae10-2808aa1e5c18
+C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|51fe17fb-37e0-46a4-8684-cb46a56bdacd
+C:\Users\Lucas\Documents\PSoC Creator\4.3\Downloads ( 4.3).cylib\Downloads ( 4.3).cyprj|e464ecc2-84e7-4fe2-a724-fb158500f3d8
+C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|0d0c7354-4def-42ea-b2c6-7a05dd4a7ce6
+C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|b54748a3-ef0a-41bd-9d86-e8d36166001b
+C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|0585a5af-9e40-4112-8449-1c4b59ba6f51

@@ -1,0 +1,1919 @@
+ARM GAS  C:\Users\Lucas\AppData\Local\Temp\ccgepylf.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"cymetadata.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.global	cy_metadata
+  20              		.global	cy_meta_flashprotect
+  21              		.global	cy_meta_wonvl
+  22              		.global	cy_meta_custnvl
+  23              		.global	cy_meta_configecc
+  24              		.section	.cyconfigecc,"a",%progbits
+  25              		.align	2
+  26              		.type	cy_meta_configecc, %object
+  27              		.size	cy_meta_configecc, 1344
+  28              	cy_meta_configecc:
+  29 0000 03       		.byte	3
+  30 0001 64       		.byte	100
+  31 0002 00       		.byte	0
+  32 0003 40       		.byte	64
+  33 0004 03       		.byte	3
+  34 0005 65       		.byte	101
+  35 0006 00       		.byte	0
+  36 0007 40       		.byte	64
+  37 0008 01       		.byte	1
+  38 0009 01       		.byte	1
+  39 000a 01       		.byte	1
+  40 000b 40       		.byte	64
+  41 000c 56       		.byte	86
+  42 000d 02       		.byte	2
+  43 000e 01       		.byte	1
+  44 000f 40       		.byte	64
+  45 0010 35       		.byte	53
+  46 0011 03       		.byte	3
+  47 0012 01       		.byte	1
+  48 0013 40       		.byte	64
+  49 0014 3E       		.byte	62
+  50 0015 04       		.byte	4
+  51 0016 01       		.byte	1
+  52 0017 40       		.byte	64
+  53 0018 2E       		.byte	46
+  54 0019 05       		.byte	5
+  55 001a 01       		.byte	1
+  56 001b 40       		.byte	64
+  57 001c 04       		.byte	4
+ARM GAS  C:\Users\Lucas\AppData\Local\Temp\ccgepylf.s 			page 2
+
+
+  58 001d 0A       		.byte	10
+  59 001e 01       		.byte	1
+  60 001f 40       		.byte	64
+  61 0020 04       		.byte	4
+  62 0021 0B       		.byte	11
+  63 0022 01       		.byte	1
+  64 0023 40       		.byte	64
+  65 0024 01       		.byte	1
+  66 0025 17       		.byte	23
+  67 0026 01       		.byte	1
+  68 0027 40       		.byte	64
+  69 0028 0F       		.byte	15
+  70 0029 18       		.byte	24
+  71 002a 01       		.byte	1
+  72 002b 40       		.byte	64
+  73 002c 36       		.byte	54
+  74 002d 19       		.byte	25
+  75 002e 01       		.byte	1
+  76 002f 40       		.byte	64
+  77 0030 6C       		.byte	108
+  78 0031 1A       		.byte	26
+  79 0032 01       		.byte	1
+  80 0033 40       		.byte	64
+  81 0034 47       		.byte	71
+  82 0035 1B       		.byte	27
+  83 0036 01       		.byte	1
+  84 0037 40       		.byte	64
+  85 0038 06       		.byte	6
+  86 0039 40       		.byte	64
+  87 003a 01       		.byte	1
+  88 003b 40       		.byte	64
+  89 003c 04       		.byte	4
+  90 003d 41       		.byte	65
+  91 003e 01       		.byte	1
+  92 003f 40       		.byte	64
+  93 0040 06       		.byte	6
+  94 0041 42       		.byte	66
+  95 0042 01       		.byte	1
+  96 0043 40       		.byte	64
+  97 0044 01       		.byte	1
+  98 0045 43       		.byte	67
+  99 0046 01       		.byte	1
+ 100 0047 40       		.byte	64
+ 101 0048 03       		.byte	3
+ 102 0049 48       		.byte	72
+ 103 004a 01       		.byte	1
+ 104 004b 40       		.byte	64
+ 105 004c 07       		.byte	7
+ 106 004d 4D       		.byte	77
+ 107 004e 01       		.byte	1
+ 108 004f 40       		.byte	64
+ 109 0050 05       		.byte	5
+ 110 0051 50       		.byte	80
+ 111 0052 01       		.byte	1
+ 112 0053 40       		.byte	64
+ 113 0054 01       		.byte	1
+ 114 0055 51       		.byte	81
+ARM GAS  C:\Users\Lucas\AppData\Local\Temp\ccgepylf.s 			page 3
+
+
+ 115 0056 01       		.byte	1
+ 116 0057 40       		.byte	64
+ 117 0058 72       		.byte	114
+ 118 0059 01       		.byte	1
+ 119 005a 83       		.byte	-125
+ 120 005b 67       		.byte	103
+ 121 005c 85       		.byte	-123
+ 122 005d 0D       		.byte	13
+ 123 005e 88       		.byte	-120
+ 124 005f 72       		.byte	114
+ 125 0060 89       		.byte	-119
+ 126 0061 38       		.byte	56
+ 127 0062 8A       		.byte	-118
+ 128 0063 0F       		.byte	15
+ 129 0064 87       		.byte	-121
+ 130 0065 01       		.byte	1
+ 131 0066 01       		.byte	1
+ 132 0067 04       		.byte	4
+ 133 0068 07       		.byte	7
+ 134 0069 01       		.byte	1
+ 135 006a 0B       		.byte	11
+ 136 006b 01       		.byte	1
+ 137 006c 11       		.byte	17
+ 138 006d 07       		.byte	7
+ 139 006e 1B       		.byte	27
+ 140 006f 02       		.byte	2
+ 141 0070 2B       		.byte	43
+ 142 0071 01       		.byte	1
+ 143 0072 31       		.byte	49
+ 144 0073 04       		.byte	4
+ 145 0074 33       		.byte	51
+ 146 0075 03       		.byte	3
+ 147 0076 39       		.byte	57
+ 148 0077 02       		.byte	2
+ 149 0078 3F       		.byte	63
+ 150 0079 01       		.byte	1
+ 151 007a 40       		.byte	64
+ 152 007b 51       		.byte	81
+ 153 007c 41       		.byte	65
+ 154 007d 02       		.byte	2
+ 155 007e 49       		.byte	73
+ 156 007f FF       		.byte	-1
+ 157 0080 4A       		.byte	74
+ 158 0081 FF       		.byte	-1
+ 159 0082 4B       		.byte	75
+ 160 0083 FF       		.byte	-1
+ 161 0084 4D       		.byte	77
+ 162 0085 A0       		.byte	-96
+ 163 0086 4F       		.byte	79
+ 164 0087 01       		.byte	1
+ 165 0088 50       		.byte	80
+ 166 0089 18       		.byte	24
+ 167 008a 59       		.byte	89
+ 168 008b 04       		.byte	4
+ 169 008c 5A       		.byte	90
+ 170 008d 04       		.byte	4
+ 171 008e 5B       		.byte	91
+ARM GAS  C:\Users\Lucas\AppData\Local\Temp\ccgepylf.s 			page 4
+
+
+ 172 008f 04       		.byte	4
+ 173 0090 5C       		.byte	92
+ 174 0091 20       		.byte	32
+ 175 0092 5D       		.byte	93
+ 176 0093 01       		.byte	1
+ 177 0094 5F       		.byte	95
+ 178 0095 01       		.byte	1
+ 179 0096 60       		.byte	96
+ 180 0097 40       		.byte	64
+ 181 0098 62       		.byte	98
+ 182 0099 80       		.byte	-128
+ 183 009a 64       		.byte	100
+ 184 009b 40       		.byte	64
+ 185 009c 65       		.byte	101
+ 186 009d 40       		.byte	64
+ 187 009e 66       		.byte	102
+ 188 009f 80       		.byte	-128
+ 189 00a0 68       		.byte	104
+ 190 00a1 40       		.byte	64
+ 191 00a2 6A       		.byte	106
+ 192 00a3 50       		.byte	80
+ 193 00a4 6B       		.byte	107
+ 194 00a5 A8       		.byte	-88
+ 195 00a6 6C       		.byte	108
+ 196 00a7 40       		.byte	64
+ 197 00a8 6D       		.byte	109
+ 198 00a9 20       		.byte	32
+ 199 00aa 6E       		.byte	110
+ 200 00ab 50       		.byte	80
+ 201 00ac 6F       		.byte	111
+ 202 00ad A8       		.byte	-88
+ 203 00ae 86       		.byte	-122
+ 204 00af 04       		.byte	4
+ 205 00b0 8C       		.byte	-116
+ 206 00b1 02       		.byte	2
+ 207 00b2 8F       		.byte	-113
+ 208 00b3 06       		.byte	6
+ 209 00b4 91       		.byte	-111
+ 210 00b5 04       		.byte	4
+ 211 00b6 92       		.byte	-110
+ 212 00b7 04       		.byte	4
+ 213 00b8 9E       		.byte	-98
+ 214 00b9 03       		.byte	3
+ 215 00ba A8       		.byte	-88
+ 216 00bb 04       		.byte	4
+ 217 00bc AB       		.byte	-85
+ 218 00bd 01       		.byte	1
+ 219 00be B0       		.byte	-80
+ 220 00bf 01       		.byte	1
+ 221 00c0 B1       		.byte	-79
+ 222 00c1 02       		.byte	2
+ 223 00c2 B2       		.byte	-78
+ 224 00c3 02       		.byte	2
+ 225 00c4 B3       		.byte	-77
+ 226 00c5 01       		.byte	1
+ 227 00c6 B6       		.byte	-74
+ 228 00c7 04       		.byte	4
+ARM GAS  C:\Users\Lucas\AppData\Local\Temp\ccgepylf.s 			page 5
+
+
+ 229 00c8 B7       		.byte	-73
+ 230 00c9 04       		.byte	4
+ 231 00ca BE       		.byte	-66
+ 232 00cb 44       		.byte	68
+ 233 00cc BF       		.byte	-65
+ 234 00cd 40       		.byte	64
+ 235 00ce C0       		.byte	-64
+ 236 00cf 14       		.byte	20
+ 237 00d0 C1       		.byte	-63
+ 238 00d1 06       		.byte	6
+ 239 00d2 C5       		.byte	-59
+ 240 00d3 02       		.byte	2
+ 241 00d4 C6       		.byte	-58
+ 242 00d5 C5       		.byte	-59
+ 243 00d6 C7       		.byte	-57
+ 244 00d7 0E       		.byte	14
+ 245 00d8 C8       		.byte	-56
+ 246 00d9 1F       		.byte	31
+ 247 00da C9       		.byte	-55
+ 248 00db FF       		.byte	-1
+ 249 00dc CA       		.byte	-54
+ 250 00dd FF       		.byte	-1
+ 251 00de CB       		.byte	-53
+ 252 00df FF       		.byte	-1
+ 253 00e0 CD       		.byte	-51
+ 254 00e1 AF       		.byte	-81
+ 255 00e2 CE       		.byte	-50
+ 256 00e3 07       		.byte	7
+ 257 00e4 CF       		.byte	-49
+ 258 00e5 01       		.byte	1
+ 259 00e6 D0       		.byte	-48
+ 260 00e7 18       		.byte	24
+ 261 00e8 D2       		.byte	-46
+ 262 00e9 80       		.byte	-128
+ 263 00ea D4       		.byte	-44
+ 264 00eb 07       		.byte	7
+ 265 00ec D8       		.byte	-40
+ 266 00ed 04       		.byte	4
+ 267 00ee D9       		.byte	-39
+ 268 00ef 04       		.byte	4
+ 269 00f0 DA       		.byte	-38
+ 270 00f1 04       		.byte	4
+ 271 00f2 DB       		.byte	-37
+ 272 00f3 04       		.byte	4
+ 273 00f4 DC       		.byte	-36
+ 274 00f5 11       		.byte	17
+ 275 00f6 DD       		.byte	-35
+ 276 00f7 11       		.byte	17
+ 277 00f8 DF       		.byte	-33
+ 278 00f9 05       		.byte	5
+ 279 00fa E0       		.byte	-32
+ 280 00fb 40       		.byte	64
+ 281 00fc E2       		.byte	-30
+ 282 00fd 80       		.byte	-128
+ 283 00fe E4       		.byte	-28
+ 284 00ff 40       		.byte	64
+ 285 0100 E5       		.byte	-27
+ARM GAS  C:\Users\Lucas\AppData\Local\Temp\ccgepylf.s 			page 6
+
+
+ 286 0101 40       		.byte	64
+ 287 0102 E6       		.byte	-26
+ 288 0103 80       		.byte	-128
+ 289 0104 E8       		.byte	-24
+ 290 0105 40       		.byte	64
+ 291 0106 EA       		.byte	-22
+ 292 0107 50       		.byte	80
+ 293 0108 EB       		.byte	-21
+ 294 0109 A8       		.byte	-88
+ 295 010a EC       		.byte	-20
+ 296 010b 40       		.byte	64
+ 297 010c ED       		.byte	-19
+ 298 010d 20       		.byte	32
+ 299 010e EE       		.byte	-18
+ 300 010f 50       		.byte	80
+ 301 0110 EF       		.byte	-17
+ 302 0111 A8       		.byte	-88
+ 303 0112 02       		.byte	2
+ 304 0113 10       		.byte	16
+ 305 0114 03       		.byte	3
+ 306 0115 02       		.byte	2
+ 307 0116 0A       		.byte	10
+ 308 0117 40       		.byte	64
+ 309 0118 0B       		.byte	11
+ 310 0119 01       		.byte	1
+ 311 011a 12       		.byte	18
+ 312 011b 08       		.byte	8
+ 313 011c 18       		.byte	24
+ 314 011d 01       		.byte	1
+ 315 011e 19       		.byte	25
+ 316 011f 04       		.byte	4
+ 317 0120 1B       		.byte	27
+ 318 0121 43       		.byte	67
+ 319 0122 21       		.byte	33
+ 320 0123 02       		.byte	2
+ 321 0124 22       		.byte	34
+ 322 0125 48       		.byte	72
+ 323 0126 24       		.byte	36
+ 324 0127 40       		.byte	64
+ 325 0128 27       		.byte	39
+ 326 0129 60       		.byte	96
+ 327 012a 2A       		.byte	42
+ 328 012b 10       		.byte	16
+ 329 012c 2F       		.byte	47
+ 330 012d 08       		.byte	8
+ 331 012e 31       		.byte	49
+ 332 012f 02       		.byte	2
+ 333 0130 37       		.byte	55
+ 334 0131 21       		.byte	33
+ 335 0132 38       		.byte	56
+ 336 0133 80       		.byte	-128
+ 337 0134 3C       		.byte	60
+ 338 0135 04       		.byte	4
+ 339 0136 3E       		.byte	62
+ 340 0137 20       		.byte	32
+ 341 0138 3F       		.byte	63
+ 342 0139 01       		.byte	1
+ARM GAS  C:\Users\Lucas\AppData\Local\Temp\ccgepylf.s 			page 7
+
+
+ 343 013a 40       		.byte	64
+ 344 013b 41       		.byte	65
+ 345 013c 46       		.byte	70
+ 346 013d 04       		.byte	4
+ 347 013e 47       		.byte	71
+ 348 013f 40       		.byte	64
+ 349 0140 48       		.byte	72
+ 350 0141 08       		.byte	8
+ 351 0142 4A       		.byte	74
+ 352 0143 10       		.byte	16
+ 353 0144 4B       		.byte	75
+ 354 0145 01       		.byte	1
+ 355 0146 4F       		.byte	79
+ 356 0147 80       		.byte	-128
+ 357 0148 50       		.byte	80
+ 358 0149 40       		.byte	64
+ 359 014a 51       		.byte	81
+ 360 014b 08       		.byte	8
+ 361 014c 52       		.byte	82
+ 362 014d 20       		.byte	32
+ 363 014e 59       		.byte	89
+ 364 014f 24       		.byte	36
+ 365 0150 5A       		.byte	90
+ 366 0151 80       		.byte	-128
+ 367 0152 5D       		.byte	93
+ 368 0153 20       		.byte	32
+ 369 0154 5E       		.byte	94
+ 370 0155 20       		.byte	32
+ 371 0156 61       		.byte	97
+ 372 0157 08       		.byte	8
+ 373 0158 62       		.byte	98
+ 374 0159 20       		.byte	32
+ 375 015a 6C       		.byte	108
+ 376 015b 02       		.byte	2
+ 377 015c 6D       		.byte	109
+ 378 015d 40       		.byte	64
+ 379 015e 6F       		.byte	111
+ 380 015f 01       		.byte	1
+ 381 0160 72       		.byte	114
+ 382 0161 40       		.byte	64
+ 383 0162 79       		.byte	121
+ 384 0163 40       		.byte	64
+ 385 0164 A7       		.byte	-89
+ 386 0165 01       		.byte	1
+ 387 0166 C0       		.byte	-64
+ 388 0167 05       		.byte	5
+ 389 0168 C2       		.byte	-62
+ 390 0169 09       		.byte	9
+ 391 016a C4       		.byte	-60
+ 392 016b 02       		.byte	2
+ 393 016c CA       		.byte	-54
+ 394 016d 24       		.byte	36
+ 395 016e CC       		.byte	-52
+ 396 016f A1       		.byte	-95
+ 397 0170 CE       		.byte	-50
+ 398 0171 E8       		.byte	-24
+ 399 0172 D0       		.byte	-48
+ARM GAS  C:\Users\Lucas\AppData\Local\Temp\ccgepylf.s 			page 8
+
+
+ 400 0173 39       		.byte	57
+ 401 0174 D2       		.byte	-46
+ 402 0175 14       		.byte	20
+ 403 0176 D6       		.byte	-42
+ 404 0177 0E       		.byte	14
+ 405 0178 D8       		.byte	-40
+ 406 0179 06       		.byte	6
+ 407 017a DE       		.byte	-34
+ 408 017b 08       		.byte	8
+ 409 017c 40       		.byte	64
+ 410 017d 23       		.byte	35
+ 411 017e 41       		.byte	65
+ 412 017f 05       		.byte	5
+ 413 0180 49       		.byte	73
+ 414 0181 FF       		.byte	-1
+ 415 0182 4A       		.byte	74
+ 416 0183 FF       		.byte	-1
+ 417 0184 4B       		.byte	75
+ 418 0185 FF       		.byte	-1
+ 419 0186 4F       		.byte	79
+ 420 0187 01       		.byte	1
+ 421 0188 50       		.byte	80
+ 422 0189 18       		.byte	24
+ 423 018a 5A       		.byte	90
+ 424 018b 04       		.byte	4
+ 425 018c 5D       		.byte	93
+ 426 018d 02       		.byte	2
+ 427 018e 5F       		.byte	95
+ 428 018f 01       		.byte	1
+ 429 0190 60       		.byte	96
+ 430 0191 40       		.byte	64
+ 431 0192 62       		.byte	98
+ 432 0193 40       		.byte	64
+ 433 0194 64       		.byte	100
+ 434 0195 40       		.byte	64
+ 435 0196 65       		.byte	101
+ 436 0197 40       		.byte	64
+ 437 0198 66       		.byte	102
+ 438 0199 80       		.byte	-128
+ 439 019a 68       		.byte	104
+ 440 019b 80       		.byte	-128
+ 441 019c 6A       		.byte	106
+ 442 019d 80       		.byte	-128
+ 443 019e 6C       		.byte	108
+ 444 019f 80       		.byte	-128
+ 445 01a0 6E       		.byte	110
+ 446 01a1 80       		.byte	-128
+ 447 01a2 82       		.byte	-126
+ 448 01a3 0F       		.byte	15
+ 449 01a4 84       		.byte	-124
+ 450 01a5 02       		.byte	2
+ 451 01a6 8B       		.byte	-117
+ 452 01a7 01       		.byte	1
+ 453 01a8 98       		.byte	-104
+ 454 01a9 01       		.byte	1
+ 455 01aa A0       		.byte	-96
+ 456 01ab 07       		.byte	7
+ARM GAS  C:\Users\Lucas\AppData\Local\Temp\ccgepylf.s 			page 9
+
+
+ 457 01ac A4       		.byte	-92
+ 458 01ad 04       		.byte	4
+ 459 01ae A8       		.byte	-88
+ 460 01af 07       		.byte	7
+ 461 01b0 AB       		.byte	-85
+ 462 01b1 01       		.byte	1
+ 463 01b2 B1       		.byte	-79
+ 464 01b3 01       		.byte	1
+ 465 01b4 B2       		.byte	-78
+ 466 01b5 08       		.byte	8
+ 467 01b6 B4       		.byte	-76
+ 468 01b7 07       		.byte	7
+ 469 01b8 BF       		.byte	-65
+ 470 01b9 01       		.byte	1
+ 471 01ba C0       		.byte	-64
+ 472 01bb 23       		.byte	35
+ 473 01bc C1       		.byte	-63
+ 474 01bd 04       		.byte	4
+ 475 01be C5       		.byte	-59
+ 476 01bf EC       		.byte	-20
+ 477 01c0 C6       		.byte	-58
+ 478 01c1 20       		.byte	32
+ 479 01c2 C8       		.byte	-56
+ 480 01c3 0B       		.byte	11
+ 481 01c4 C9       		.byte	-55
+ 482 01c5 FF       		.byte	-1
+ 483 01c6 CA       		.byte	-54
+ 484 01c7 FF       		.byte	-1
+ 485 01c8 CB       		.byte	-53
+ 486 01c9 FF       		.byte	-1
+ 487 01ca CD       		.byte	-51
+ 488 01cb 83       		.byte	-125
+ 489 01cc CE       		.byte	-50
+ 490 01cd 03       		.byte	3
+ 491 01ce CF       		.byte	-49
+ 492 01cf 01       		.byte	1
+ 493 01d0 D0       		.byte	-48
+ 494 01d1 18       		.byte	24
+ 495 01d2 D2       		.byte	-46
+ 496 01d3 80       		.byte	-128
+ 497 01d4 D4       		.byte	-44
+ 498 01d5 01       		.byte	1
+ 499 01d6 D6       		.byte	-42
+ 500 01d7 04       		.byte	4
+ 501 01d8 D8       		.byte	-40
+ 502 01d9 04       		.byte	4
+ 503 01da D9       		.byte	-39
+ 504 01db 04       		.byte	4
+ 505 01dc DA       		.byte	-38
+ 506 01dd 04       		.byte	4
+ 507 01de DB       		.byte	-37
+ 508 01df 04       		.byte	4
+ 509 01e0 DC       		.byte	-36
+ 510 01e1 02       		.byte	2
+ 511 01e2 DD       		.byte	-35
+ 512 01e3 22       		.byte	34
+ 513 01e4 DF       		.byte	-33
+ARM GAS  C:\Users\Lucas\AppData\Local\Temp\ccgepylf.s 			page 10
+
+
+ 514 01e5 05       		.byte	5
+ 515 01e6 E0       		.byte	-32
+ 516 01e7 40       		.byte	64
+ 517 01e8 E2       		.byte	-30
+ 518 01e9 40       		.byte	64
+ 519 01ea E4       		.byte	-28
+ 520 01eb 40       		.byte	64
+ 521 01ec E5       		.byte	-27
+ 522 01ed 40       		.byte	64
+ 523 01ee E6       		.byte	-26
+ 524 01ef 80       		.byte	-128
+ 525 01f0 E8       		.byte	-24
+ 526 01f1 80       		.byte	-128
+ 527 01f2 EA       		.byte	-22
+ 528 01f3 80       		.byte	-128
+ 529 01f4 EC       		.byte	-20
+ 530 01f5 80       		.byte	-128
+ 531 01f6 EE       		.byte	-18
+ 532 01f7 80       		.byte	-128
+ 533 01f8 05       		.byte	5
+ 534 01f9 05       		.byte	5
+ 535 01fa 0E       		.byte	14
+ 536 01fb 04       		.byte	4
+ 537 01fc 16       		.byte	22
+ 538 01fd 20       		.byte	32
+ 539 01fe 17       		.byte	23
+ 540 01ff 21       		.byte	33
+ 541 0200 1C       		.byte	28
+ 542 0201 04       		.byte	4
+ 543 0202 1D       		.byte	29
+ 544 0203 04       		.byte	4
+ 545 0204 1E       		.byte	30
+ 546 0205 04       		.byte	4
+ 547 0206 1F       		.byte	31
+ 548 0207 08       		.byte	8
+ 549 0208 24       		.byte	36
+ 550 0209 40       		.byte	64
+ 551 020a 2F       		.byte	47
+ 552 020b 08       		.byte	8
+ 553 020c 3E       		.byte	62
+ 554 020d 20       		.byte	32
+ 555 020e 40       		.byte	64
+ 556 020f 04       		.byte	4
+ 557 0210 42       		.byte	66
+ 558 0211 20       		.byte	32
+ 559 0212 43       		.byte	67
+ 560 0213 10       		.byte	16
+ 561 0214 46       		.byte	70
+ 562 0215 20       		.byte	32
+ 563 0216 47       		.byte	71
+ 564 0217 11       		.byte	17
+ 565 0218 48       		.byte	72
+ 566 0219 02       		.byte	2
+ 567 021a 4A       		.byte	74
+ 568 021b 02       		.byte	2
+ 569 021c 4D       		.byte	77
+ 570 021d 04       		.byte	4
+ARM GAS  C:\Users\Lucas\AppData\Local\Temp\ccgepylf.s 			page 11
+
+
+ 571 021e 4F       		.byte	79
+ 572 021f 01       		.byte	1
+ 573 0220 56       		.byte	86
+ 574 0221 20       		.byte	32
+ 575 0222 5C       		.byte	92
+ 576 0223 40       		.byte	64
+ 577 0224 5D       		.byte	93
+ 578 0225 04       		.byte	4
+ 579 0226 5F       		.byte	95
+ 580 0227 01       		.byte	1
+ 581 0228 67       		.byte	103
+ 582 0229 40       		.byte	64
+ 583 022a 75       		.byte	117
+ 584 022b 01       		.byte	1
+ 585 022c 7E       		.byte	126
+ 586 022d 02       		.byte	2
+ 587 022e 87       		.byte	-121
+ 588 022f 40       		.byte	64
+ 589 0230 94       		.byte	-108
+ 590 0231 04       		.byte	4
+ 591 0232 9B       		.byte	-101
+ 592 0233 21       		.byte	33
+ 593 0234 9E       		.byte	-98
+ 594 0235 20       		.byte	32
+ 595 0236 A0       		.byte	-96
+ 596 0237 02       		.byte	2
+ 597 0238 A7       		.byte	-89
+ 598 0239 08       		.byte	8
+ 599 023a AE       		.byte	-82
+ 600 023b 10       		.byte	16
+ 601 023c B4       		.byte	-76
+ 602 023d 08       		.byte	8
+ 603 023e B6       		.byte	-74
+ 604 023f 04       		.byte	4
+ 605 0240 C0       		.byte	-64
+ 606 0241 30       		.byte	48
+ 607 0242 C2       		.byte	-62
+ 608 0243 40       		.byte	64
+ 609 0244 C4       		.byte	-60
+ 610 0245 70       		.byte	112
+ 611 0246 CA       		.byte	-54
+ 612 0247 20       		.byte	32
+ 613 0248 CE       		.byte	-50
+ 614 0249 20       		.byte	32
+ 615 024a D0       		.byte	-48
+ 616 024b E6       		.byte	-26
+ 617 024c D2       		.byte	-46
+ 618 024d 08       		.byte	8
+ 619 024e D6       		.byte	-42
+ 620 024f D0       		.byte	-48
+ 621 0250 D8       		.byte	-40
+ 622 0251 80       		.byte	-128
+ 623 0252 DE       		.byte	-34
+ 624 0253 10       		.byte	16
+ 625 0254 B8       		.byte	-72
+ 626 0255 80       		.byte	-128
+ 627 0256 BE       		.byte	-66
+ARM GAS  C:\Users\Lucas\AppData\Local\Temp\ccgepylf.s 			page 12
+
+
+ 628 0257 40       		.byte	64
+ 629 0258 D8       		.byte	-40
+ 630 0259 04       		.byte	4
+ 631 025a DF       		.byte	-33
+ 632 025b 01       		.byte	1
+ 633 025c 1C       		.byte	28
+ 634 025d 01       		.byte	1
+ 635 025e 94       		.byte	-108
+ 636 025f 01       		.byte	1
+ 637 0260 B4       		.byte	-76
+ 638 0261 01       		.byte	1
+ 639 0262 EE       		.byte	-18
+ 640 0263 10       		.byte	16
+ 641 0264 E2       		.byte	-30
+ 642 0265 04       		.byte	4
+ 643 0266 82       		.byte	-126
+ 644 0267 01       		.byte	1
+ 645 0268 86       		.byte	-122
+ 646 0269 01       		.byte	1
+ 647 026a 92       		.byte	-110
+ 648 026b 02       		.byte	2
+ 649 026c A6       		.byte	-90
+ 650 026d 02       		.byte	2
+ 651 026e AB       		.byte	-85
+ 652 026f 01       		.byte	1
+ 653 0270 B4       		.byte	-76
+ 654 0271 01       		.byte	1
+ 655 0272 B5       		.byte	-75
+ 656 0273 01       		.byte	1
+ 657 0274 B6       		.byte	-74
+ 658 0275 02       		.byte	2
+ 659 0276 BE       		.byte	-66
+ 660 0277 50       		.byte	80
+ 661 0278 D4       		.byte	-44
+ 662 0279 18       		.byte	24
+ 663 027a D6       		.byte	-42
+ 664 027b 04       		.byte	4
+ 665 027c D8       		.byte	-40
+ 666 027d 04       		.byte	4
+ 667 027e D9       		.byte	-39
+ 668 027f 04       		.byte	4
+ 669 0280 DB       		.byte	-37
+ 670 0281 04       		.byte	4
+ 671 0282 DF       		.byte	-33
+ 672 0283 01       		.byte	1
+ 673 0284 00       		.byte	0
+ 674 0285 0A       		.byte	10
+ 675 0286 04       		.byte	4
+ 676 0287 0C       		.byte	12
+ 677 0288 05       		.byte	5
+ 678 0289 21       		.byte	33
+ 679 028a 09       		.byte	9
+ 680 028b 01       		.byte	1
+ 681 028c 0C       		.byte	12
+ 682 028d 10       		.byte	16
+ 683 028e 0E       		.byte	14
+ 684 028f 29       		.byte	41
+ARM GAS  C:\Users\Lucas\AppData\Local\Temp\ccgepylf.s 			page 13
+
+
+ 685 0290 0F       		.byte	15
+ 686 0291 40       		.byte	64
+ 687 0292 10       		.byte	16
+ 688 0293 20       		.byte	32
+ 689 0294 16       		.byte	22
+ 690 0295 81       		.byte	-127
+ 691 0296 17       		.byte	23
+ 692 0297 28       		.byte	40
+ 693 0298 18       		.byte	24
+ 694 0299 01       		.byte	1
+ 695 029a 19       		.byte	25
+ 696 029b 10       		.byte	16
+ 697 029c 1C       		.byte	28
+ 698 029d 16       		.byte	22
+ 699 029e 1D       		.byte	29
+ 700 029f 01       		.byte	1
+ 701 02a0 22       		.byte	34
+ 702 02a1 20       		.byte	32
+ 703 02a2 25       		.byte	37
+ 704 02a3 01       		.byte	1
+ 705 02a4 26       		.byte	38
+ 706 02a5 14       		.byte	20
+ 707 02a6 27       		.byte	39
+ 708 02a7 06       		.byte	6
+ 709 02a8 29       		.byte	41
+ 710 02a9 20       		.byte	32
+ 711 02aa 2C       		.byte	44
+ 712 02ab 10       		.byte	16
+ 713 02ac 2D       		.byte	45
+ 714 02ad A0       		.byte	-96
+ 715 02ae 2E       		.byte	46
+ 716 02af 81       		.byte	-127
+ 717 02b0 35       		.byte	53
+ 718 02b1 41       		.byte	65
+ 719 02b2 36       		.byte	54
+ 720 02b3 20       		.byte	32
+ 721 02b4 37       		.byte	55
+ 722 02b5 08       		.byte	8
+ 723 02b6 3C       		.byte	60
+ 724 02b7 04       		.byte	4
+ 725 02b8 3E       		.byte	62
+ 726 02b9 22       		.byte	34
+ 727 02ba 3F       		.byte	63
+ 728 02bb 40       		.byte	64
+ 729 02bc 45       		.byte	69
+ 730 02bd 01       		.byte	1
+ 731 02be 47       		.byte	71
+ 732 02bf 14       		.byte	20
+ 733 02c0 4C       		.byte	76
+ 734 02c1 24       		.byte	36
+ 735 02c2 4E       		.byte	78
+ 736 02c3 02       		.byte	2
+ 737 02c4 4F       		.byte	79
+ 738 02c5 40       		.byte	64
+ 739 02c6 54       		.byte	84
+ 740 02c7 04       		.byte	4
+ 741 02c8 5B       		.byte	91
+ARM GAS  C:\Users\Lucas\AppData\Local\Temp\ccgepylf.s 			page 14
+
+
+ 742 02c9 02       		.byte	2
+ 743 02ca 5C       		.byte	92
+ 744 02cb 10       		.byte	16
+ 745 02cc 60       		.byte	96
+ 746 02cd 01       		.byte	1
+ 747 02ce 61       		.byte	97
+ 748 02cf 10       		.byte	16
+ 749 02d0 63       		.byte	99
+ 750 02d1 80       		.byte	-128
+ 751 02d2 6D       		.byte	109
+ 752 02d3 94       		.byte	-108
+ 753 02d4 6E       		.byte	110
+ 754 02d5 10       		.byte	16
+ 755 02d6 76       		.byte	118
+ 756 02d7 23       		.byte	35
+ 757 02d8 77       		.byte	119
+ 758 02d9 28       		.byte	40
+ 759 02da 83       		.byte	-125
+ 760 02db 40       		.byte	64
+ 761 02dc C0       		.byte	-64
+ 762 02dd 7C       		.byte	124
+ 763 02de C2       		.byte	-62
+ 764 02df F8       		.byte	-8
+ 765 02e0 C4       		.byte	-60
+ 766 02e1 F4       		.byte	-12
+ 767 02e2 CA       		.byte	-54
+ 768 02e3 F4       		.byte	-12
+ 769 02e4 CC       		.byte	-52
+ 770 02e5 F0       		.byte	-16
+ 771 02e6 CE       		.byte	-50
+ 772 02e7 F0       		.byte	-16
+ 773 02e8 D0       		.byte	-48
+ 774 02e9 E0       		.byte	-32
+ 775 02ea D2       		.byte	-46
+ 776 02eb 30       		.byte	48
+ 777 02ec D6       		.byte	-42
+ 778 02ed 21       		.byte	33
+ 779 02ee D8       		.byte	-40
+ 780 02ef 0D       		.byte	13
+ 781 02f0 02       		.byte	2
+ 782 02f1 20       		.byte	32
+ 783 02f2 03       		.byte	3
+ 784 02f3 08       		.byte	8
+ 785 02f4 04       		.byte	4
+ 786 02f5 1C       		.byte	28
+ 787 02f6 06       		.byte	6
+ 788 02f7 22       		.byte	34
+ 789 02f8 08       		.byte	8
+ 790 02f9 10       		.byte	16
+ 791 02fa 09       		.byte	9
+ 792 02fb 73       		.byte	115
+ 793 02fc 0B       		.byte	11
+ 794 02fd 0C       		.byte	12
+ 795 02fe 0C       		.byte	12
+ 796 02ff 09       		.byte	9
+ 797 0300 0D       		.byte	13
+ 798 0301 80       		.byte	-128
+ARM GAS  C:\Users\Lucas\AppData\Local\Temp\ccgepylf.s 			page 15
+
+
+ 799 0302 0E       		.byte	14
+ 800 0303 10       		.byte	16
+ 801 0304 0F       		.byte	15
+ 802 0305 15       		.byte	21
+ 803 0306 10       		.byte	16
+ 804 0307 14       		.byte	20
+ 805 0308 14       		.byte	20
+ 806 0309 2C       		.byte	44
+ 807 030a 15       		.byte	21
+ 808 030b 73       		.byte	115
+ 809 030c 16       		.byte	22
+ 810 030d 11       		.byte	17
+ 811 030e 17       		.byte	23
+ 812 030f 04       		.byte	4
+ 813 0310 18       		.byte	24
+ 814 0311 80       		.byte	-128
+ 815 0312 19       		.byte	25
+ 816 0313 03       		.byte	3
+ 817 0314 1A       		.byte	26
+ 818 0315 03       		.byte	3
+ 819 0316 1B       		.byte	27
+ 820 0317 04       		.byte	4
+ 821 0318 20       		.byte	32
+ 822 0319 40       		.byte	64
+ 823 031a 25       		.byte	37
+ 824 031b 2A       		.byte	42
+ 825 031c 26       		.byte	38
+ 826 031d 20       		.byte	32
+ 827 031e 27       		.byte	39
+ 828 031f 44       		.byte	68
+ 829 0320 28       		.byte	40
+ 830 0321 30       		.byte	48
+ 831 0322 2A       		.byte	42
+ 832 0323 0C       		.byte	12
+ 833 0324 30       		.byte	48
+ 834 0325 20       		.byte	32
+ 835 0326 31       		.byte	49
+ 836 0327 C0       		.byte	-64
+ 837 0328 32       		.byte	50
+ 838 0329 40       		.byte	64
+ 839 032a 33       		.byte	51
+ 840 032b 30       		.byte	48
+ 841 032c 34       		.byte	52
+ 842 032d 1F       		.byte	31
+ 843 032e 35       		.byte	53
+ 844 032f 0F       		.byte	15
+ 845 0330 36       		.byte	54
+ 846 0331 80       		.byte	-128
+ 847 0332 39       		.byte	57
+ 848 0333 0A       		.byte	10
+ 849 0334 3B       		.byte	59
+ 850 0335 20       		.byte	32
+ 851 0336 3E       		.byte	62
+ 852 0337 45       		.byte	69
+ 853 0338 3F       		.byte	63
+ 854 0339 04       		.byte	4
+ 855 033a 40       		.byte	64
+ARM GAS  C:\Users\Lucas\AppData\Local\Temp\ccgepylf.s 			page 16
+
+
+ 856 033b 21       		.byte	33
+ 857 033c 41       		.byte	65
+ 858 033d 03       		.byte	3
+ 859 033e 45       		.byte	69
+ 860 033f EC       		.byte	-20
+ 861 0340 46       		.byte	70
+ 862 0341 0B       		.byte	11
+ 863 0342 48       		.byte	72
+ 864 0343 07       		.byte	7
+ 865 0344 49       		.byte	73
+ 866 0345 FF       		.byte	-1
+ 867 0346 4A       		.byte	74
+ 868 0347 FF       		.byte	-1
+ 869 0348 4B       		.byte	75
+ 870 0349 FF       		.byte	-1
+ 871 034a 4E       		.byte	78
+ 872 034b F0       		.byte	-16
+ 873 034c 4F       		.byte	79
+ 874 034d 44       		.byte	68
+ 875 034e 50       		.byte	80
+ 876 034f 0C       		.byte	12
+ 877 0350 54       		.byte	84
+ 878 0351 01       		.byte	1
+ 879 0352 58       		.byte	88
+ 880 0353 04       		.byte	4
+ 881 0354 59       		.byte	89
+ 882 0355 04       		.byte	4
+ 883 0356 5A       		.byte	90
+ 884 0357 04       		.byte	4
+ 885 0358 5B       		.byte	91
+ 886 0359 04       		.byte	4
+ 887 035a 5F       		.byte	95
+ 888 035b 01       		.byte	1
+ 889 035c 66       		.byte	102
+ 890 035d C0       		.byte	-64
+ 891 035e 6A       		.byte	106
+ 892 035f 40       		.byte	64
+ 893 0360 6B       		.byte	107
+ 894 0361 02       		.byte	2
+ 895 0362 81       		.byte	-127
+ 896 0363 04       		.byte	4
+ 897 0364 82       		.byte	-126
+ 898 0365 03       		.byte	3
+ 899 0366 83       		.byte	-125
+ 900 0367 09       		.byte	9
+ 901 0368 84       		.byte	-124
+ 902 0369 1C       		.byte	28
+ 903 036a 85       		.byte	-123
+ 904 036b 1C       		.byte	28
+ 905 036c 86       		.byte	-122
+ 906 036d 03       		.byte	3
+ 907 036e 89       		.byte	-119
+ 908 036f 1C       		.byte	28
+ 909 0370 8A       		.byte	-118
+ 910 0371 08       		.byte	8
+ 911 0372 8C       		.byte	-116
+ 912 0373 80       		.byte	-128
+ARM GAS  C:\Users\Lucas\AppData\Local\Temp\ccgepylf.s 			page 17
+
+
+ 913 0374 8D       		.byte	-115
+ 914 0375 10       		.byte	16
+ 915 0376 8E       		.byte	-114
+ 916 0377 40       		.byte	64
+ 917 0378 94       		.byte	-108
+ 918 0379 01       		.byte	1
+ 919 037a 95       		.byte	-107
+ 920 037b 08       		.byte	8
+ 921 037c 96       		.byte	-106
+ 922 037d 0E       		.byte	14
+ 923 037e 97       		.byte	-105
+ 924 037f 05       		.byte	5
+ 925 0380 98       		.byte	-104
+ 926 0381 01       		.byte	1
+ 927 0382 9A       		.byte	-102
+ 928 0383 16       		.byte	22
+ 929 0384 9C       		.byte	-100
+ 930 0385 40       		.byte	64
+ 931 0386 9E       		.byte	-98
+ 932 0387 A0       		.byte	-96
+ 933 0388 A0       		.byte	-96
+ 934 0389 20       		.byte	32
+ 935 038a A2       		.byte	-94
+ 936 038b 40       		.byte	64
+ 937 038c A3       		.byte	-93
+ 938 038d 02       		.byte	2
+ 939 038e A4       		.byte	-92
+ 940 038f E0       		.byte	-32
+ 941 0390 A8       		.byte	-88
+ 942 0391 E0       		.byte	-32
+ 943 0392 AE       		.byte	-82
+ 944 0393 1C       		.byte	28
+ 945 0394 B1       		.byte	-79
+ 946 0395 10       		.byte	16
+ 947 0396 B2       		.byte	-78
+ 948 0397 1A       		.byte	26
+ 949 0398 B3       		.byte	-77
+ 950 0399 03       		.byte	3
+ 951 039a B4       		.byte	-76
+ 952 039b 0F       		.byte	15
+ 953 039c B5       		.byte	-75
+ 954 039d 0C       		.byte	12
+ 955 039e B6       		.byte	-74
+ 956 039f E0       		.byte	-32
+ 957 03a0 BA       		.byte	-70
+ 958 03a1 28       		.byte	40
+ 959 03a2 BF       		.byte	-65
+ 960 03a3 04       		.byte	4
+ 961 03a4 C0       		.byte	-64
+ 962 03a5 02       		.byte	2
+ 963 03a6 C7       		.byte	-57
+ 964 03a7 04       		.byte	4
+ 965 03a8 C9       		.byte	-55
+ 966 03a9 FF       		.byte	-1
+ 967 03aa CA       		.byte	-54
+ 968 03ab 07       		.byte	7
+ 969 03ac CB       		.byte	-53
+ARM GAS  C:\Users\Lucas\AppData\Local\Temp\ccgepylf.s 			page 18
+
+
+ 970 03ad FF       		.byte	-1
+ 971 03ae CC       		.byte	-52
+ 972 03af 40       		.byte	64
+ 973 03b0 CD       		.byte	-51
+ 974 03b1 20       		.byte	32
+ 975 03b2 CE       		.byte	-50
+ 976 03b3 F0       		.byte	-16
+ 977 03b4 CF       		.byte	-49
+ 978 03b5 05       		.byte	5
+ 979 03b6 D0       		.byte	-48
+ 980 03b7 08       		.byte	8
+ 981 03b8 D8       		.byte	-40
+ 982 03b9 04       		.byte	4
+ 983 03ba D9       		.byte	-39
+ 984 03bb 04       		.byte	4
+ 985 03bc DA       		.byte	-38
+ 986 03bd 04       		.byte	4
+ 987 03be DF       		.byte	-33
+ 988 03bf 01       		.byte	1
+ 989 03c0 E0       		.byte	-32
+ 990 03c1 40       		.byte	64
+ 991 03c2 E1       		.byte	-31
+ 992 03c3 A8       		.byte	-88
+ 993 03c4 E2       		.byte	-30
+ 994 03c5 40       		.byte	64
+ 995 03c6 E3       		.byte	-29
+ 996 03c7 20       		.byte	32
+ 997 03c8 00       		.byte	0
+ 998 03c9 40       		.byte	64
+ 999 03ca 02       		.byte	2
+ 1000 03cb 44       		.byte	68
+ 1001 03cc 03       		.byte	3
+ 1002 03cd 20       		.byte	32
+ 1003 03ce 04       		.byte	4
+ 1004 03cf 04       		.byte	4
+ 1005 03d0 05       		.byte	5
+ 1006 03d1 80       		.byte	-128
+ 1007 03d2 06       		.byte	6
+ 1008 03d3 44       		.byte	68
+ 1009 03d4 09       		.byte	9
+ 1010 03d5 08       		.byte	8
+ 1011 03d6 0A       		.byte	10
+ 1012 03d7 04       		.byte	4
+ 1013 03d8 0B       		.byte	11
+ 1014 03d9 80       		.byte	-128
+ 1015 03da 0D       		.byte	13
+ 1016 03db 18       		.byte	24
+ 1017 03dc 0E       		.byte	14
+ 1018 03dd 01       		.byte	1
+ 1019 03de 10       		.byte	16
+ 1020 03df 20       		.byte	32
+ 1021 03e0 12       		.byte	18
+ 1022 03e1 80       		.byte	-128
+ 1023 03e2 13       		.byte	19
+ 1024 03e3 10       		.byte	16
+ 1025 03e4 14       		.byte	20
+ 1026 03e5 80       		.byte	-128
+ARM GAS  C:\Users\Lucas\AppData\Local\Temp\ccgepylf.s 			page 19
+
+
+ 1027 03e6 15       		.byte	21
+ 1028 03e7 14       		.byte	20
+ 1029 03e8 17       		.byte	23
+ 1030 03e9 80       		.byte	-128
+ 1031 03ea 19       		.byte	25
+ 1032 03eb 04       		.byte	4
+ 1033 03ec 1A       		.byte	26
+ 1034 03ed 46       		.byte	70
+ 1035 03ee 1C       		.byte	28
+ 1036 03ef 04       		.byte	4
+ 1037 03f0 1D       		.byte	29
+ 1038 03f1 08       		.byte	8
+ 1039 03f2 1E       		.byte	30
+ 1040 03f3 01       		.byte	1
+ 1041 03f4 1F       		.byte	31
+ 1042 03f5 A0       		.byte	-96
+ 1043 03f6 20       		.byte	32
+ 1044 03f7 40       		.byte	64
+ 1045 03f8 21       		.byte	33
+ 1046 03f9 11       		.byte	17
+ 1047 03fa 23       		.byte	35
+ 1048 03fb A0       		.byte	-96
+ 1049 03fc 26       		.byte	38
+ 1050 03fd 02       		.byte	2
+ 1051 03fe 27       		.byte	39
+ 1052 03ff 18       		.byte	24
+ 1053 0400 2B       		.byte	43
+ 1054 0401 20       		.byte	32
+ 1055 0402 2F       		.byte	47
+ 1056 0403 80       		.byte	-128
+ 1057 0404 30       		.byte	48
+ 1058 0405 30       		.byte	48
+ 1059 0406 31       		.byte	49
+ 1060 0407 08       		.byte	8
+ 1061 0408 37       		.byte	55
+ 1062 0409 08       		.byte	8
+ 1063 040a 39       		.byte	57
+ 1064 040b A2       		.byte	-94
+ 1065 040c 3A       		.byte	58
+ 1066 040d 40       		.byte	64
+ 1067 040e 3B       		.byte	59
+ 1068 040f 10       		.byte	16
+ 1069 0410 3D       		.byte	61
+ 1070 0411 86       		.byte	-122
+ 1071 0412 3E       		.byte	62
+ 1072 0413 10       		.byte	16
+ 1073 0414 41       		.byte	65
+ 1074 0415 58       		.byte	88
+ 1075 0416 47       		.byte	71
+ 1076 0417 20       		.byte	32
+ 1077 0418 48       		.byte	72
+ 1078 0419 20       		.byte	32
+ 1079 041a 49       		.byte	73
+ 1080 041b 01       		.byte	1
+ 1081 041c 4A       		.byte	74
+ 1082 041d 80       		.byte	-128
+ 1083 041e 53       		.byte	83
+ARM GAS  C:\Users\Lucas\AppData\Local\Temp\ccgepylf.s 			page 20
+
+
+ 1084 041f 40       		.byte	64
+ 1085 0420 56       		.byte	86
+ 1086 0421 44       		.byte	68
+ 1087 0422 58       		.byte	88
+ 1088 0423 10       		.byte	16
+ 1089 0424 59       		.byte	89
+ 1090 0425 05       		.byte	5
+ 1091 0426 5A       		.byte	90
+ 1092 0427 40       		.byte	64
+ 1093 0428 86       		.byte	-122
+ 1094 0429 01       		.byte	1
+ 1095 042a 89       		.byte	-119
+ 1096 042b 80       		.byte	-128
+ 1097 042c 8B       		.byte	-117
+ 1098 042d 08       		.byte	8
+ 1099 042e 8C       		.byte	-116
+ 1100 042f 80       		.byte	-128
+ 1101 0430 8D       		.byte	-115
+ 1102 0431 21       		.byte	33
+ 1103 0432 91       		.byte	-111
+ 1104 0433 14       		.byte	20
+ 1105 0434 92       		.byte	-110
+ 1106 0435 10       		.byte	16
+ 1107 0436 96       		.byte	-106
+ 1108 0437 01       		.byte	1
+ 1109 0438 9D       		.byte	-99
+ 1110 0439 A0       		.byte	-96
+ 1111 043a 9F       		.byte	-97
+ 1112 043b 10       		.byte	16
+ 1113 043c A1       		.byte	-95
+ 1114 043d 40       		.byte	64
+ 1115 043e A6       		.byte	-90
+ 1116 043f 02       		.byte	2
+ 1117 0440 B1       		.byte	-79
+ 1118 0441 40       		.byte	64
+ 1119 0442 B2       		.byte	-78
+ 1120 0443 10       		.byte	16
+ 1121 0444 C0       		.byte	-64
+ 1122 0445 FF       		.byte	-1
+ 1123 0446 C2       		.byte	-62
+ 1124 0447 EE       		.byte	-18
+ 1125 0448 C4       		.byte	-60
+ 1126 0449 FE       		.byte	-2
+ 1127 044a CA       		.byte	-54
+ 1128 044b 82       		.byte	-126
+ 1129 044c CC       		.byte	-52
+ 1130 044d 46       		.byte	70
+ 1131 044e CE       		.byte	-50
+ 1132 044f FD       		.byte	-3
+ 1133 0450 D0       		.byte	-48
+ 1134 0451 2E       		.byte	46
+ 1135 0452 D6       		.byte	-42
+ 1136 0453 0F       		.byte	15
+ 1137 0454 E4       		.byte	-28
+ 1138 0455 02       		.byte	2
+ 1139 0456 30       		.byte	48
+ 1140 0457 02       		.byte	2
+ARM GAS  C:\Users\Lucas\AppData\Local\Temp\ccgepylf.s 			page 21
+
+
+ 1141 0458 31       		.byte	49
+ 1142 0459 40       		.byte	64
+ 1143 045a 36       		.byte	54
+ 1144 045b 40       		.byte	64
+ 1145 045c 85       		.byte	-123
+ 1146 045d 40       		.byte	64
+ 1147 045e CC       		.byte	-52
+ 1148 045f 70       		.byte	112
+ 1149 0460 E6       		.byte	-26
+ 1150 0461 10       		.byte	16
+ 1151 0462 0D       		.byte	13
+ 1152 0463 02       		.byte	2
+ 1153 0464 A4       		.byte	-92
+ 1154 0465 02       		.byte	2
+ 1155 0466 A6       		.byte	-90
+ 1156 0467 40       		.byte	64
+ 1157 0468 C2       		.byte	-62
+ 1158 0469 20       		.byte	32
+ 1159 046a 86       		.byte	-122
+ 1160 046b 40       		.byte	64
+ 1161 046c A4       		.byte	-92
+ 1162 046d 02       		.byte	2
+ 1163 046e A6       		.byte	-90
+ 1164 046f 40       		.byte	64
+ 1165 0470 AD       		.byte	-83
+ 1166 0471 02       		.byte	2
+ 1167 0472 E6       		.byte	-26
+ 1168 0473 40       		.byte	64
+ 1169 0474 E8       		.byte	-24
+ 1170 0475 40       		.byte	64
+ 1171 0476 A4       		.byte	-92
+ 1172 0477 02       		.byte	2
+ 1173 0478 80       		.byte	-128
+ 1174 0479 02       		.byte	2
+ 1175 047a A4       		.byte	-92
+ 1176 047b 02       		.byte	2
+ 1177 047c E2       		.byte	-30
+ 1178 047d 20       		.byte	32
+ 1179 047e 12       		.byte	18
+ 1180 047f 20       		.byte	32
+ 1181 0480 74       		.byte	116
+ 1182 0481 04       		.byte	4
+ 1183 0482 84       		.byte	-124
+ 1184 0483 04       		.byte	4
+ 1185 0484 8E       		.byte	-114
+ 1186 0485 20       		.byte	32
+ 1187 0486 C4       		.byte	-60
+ 1188 0487 08       		.byte	8
+ 1189 0488 DE       		.byte	-34
+ 1190 0489 04       		.byte	4
+ 1191 048a E2       		.byte	-30
+ 1192 048b 08       		.byte	8
+ 1193 048c 00       		.byte	0
+ 1194 048d 06       		.byte	6
+ 1195 048e 08       		.byte	8
+ 1196 048f 06       		.byte	6
+ 1197 0490 0A       		.byte	10
+ARM GAS  C:\Users\Lucas\AppData\Local\Temp\ccgepylf.s 			page 22
+
+
+ 1198 0491 04       		.byte	4
+ 1199 0492 10       		.byte	16
+ 1200 0493 01       		.byte	1
+ 1201 0494 1C       		.byte	28
+ 1202 0495 01       		.byte	1
+ 1203 0496 00       		.byte	0
+ 1204 0497 3F       		.byte	63
+ 1205 0498 80       		.byte	-128
+ 1206 0499 80       		.byte	-128
+ 1207 049a 00       		.byte	0
+ 1208 049b 00       		.byte	0
+ 1209 049c 40       		.byte	64
+ 1210 049d 00       		.byte	0
+ 1211 049e 00       		.byte	0
+ 1212 049f 00       		.byte	0
+ 1213 04a0 1F       		.byte	31
+ 1214 04a1 10       		.byte	16
+ 1215 04a2 60       		.byte	96
+ 1216 04a3 00       		.byte	0
+ 1217 04a4 73       		.byte	115
+ 1218 04a5 E7       		.byte	-25
+ 1219 04a6 0C       		.byte	12
+ 1220 04a7 18       		.byte	24
+ 1221 04a8 01       		.byte	1
+ 1222 04a9 18       		.byte	24
+ 1223 04aa 00       		.byte	0
+ 1224 04ab 00       		.byte	0
+ 1225 04ac 00       		.byte	0
+ 1226 04ad 00       		.byte	0
+ 1227 04ae 00       		.byte	0
+ 1228 04af E6       		.byte	-26
+ 1229 04b0 00       		.byte	0
+ 1230 04b1 19       		.byte	25
+ 1231 04b2 23       		.byte	35
+ 1232 04b3 E2       		.byte	-30
+ 1233 04b4 7F       		.byte	127
+ 1234 04b5 08       		.byte	8
+ 1235 04b6 00       		.byte	0
+ 1236 04b7 00       		.byte	0
+ 1237 04b8 1C       		.byte	28
+ 1238 04b9 00       		.byte	0
+ 1239 04ba 63       		.byte	99
+ 1240 04bb 01       		.byte	1
+ 1241 04bc 03       		.byte	3
+ 1242 04bd FF       		.byte	-1
+ 1243 04be 00       		.byte	0
+ 1244 04bf 00       		.byte	0
+ 1245 04c0 02       		.byte	2
+ 1246 04c1 C0       		.byte	-64
+ 1247 04c2 00       		.byte	0
+ 1248 04c3 00       		.byte	0
+ 1249 04c4 04       		.byte	4
+ 1250 04c5 39       		.byte	57
+ 1251 04c6 00       		.byte	0
+ 1252 04c7 C4       		.byte	-60
+ 1253 04c8 0C       		.byte	12
+ 1254 04c9 41       		.byte	65
+ARM GAS  C:\Users\Lucas\AppData\Local\Temp\ccgepylf.s 			page 23
+
+
+ 1255 04ca 00       		.byte	0
+ 1256 04cb 00       		.byte	0
+ 1257 04cc 08       		.byte	8
+ 1258 04cd 80       		.byte	-128
+ 1259 04ce 00       		.byte	0
+ 1260 04cf 00       		.byte	0
+ 1261 04d0 2C       		.byte	44
+ 1262 04d1 38       		.byte	56
+ 1263 04d2 10       		.byte	16
+ 1264 04d3 1F       		.byte	31
+ 1265 04d4 0F       		.byte	15
+ 1266 04d5 00       		.byte	0
+ 1267 04d6 40       		.byte	64
+ 1268 04d7 C0       		.byte	-64
+ 1269 04d8 80       		.byte	-128
+ 1270 04d9 00       		.byte	0
+ 1271 04da 22       		.byte	34
+ 1272 04db 28       		.byte	40
+ 1273 04dc 00       		.byte	0
+ 1274 04dd 00       		.byte	0
+ 1275 04de 04       		.byte	4
+ 1276 04df 00       		.byte	0
+ 1277 04e0 65       		.byte	101
+ 1278 04e1 03       		.byte	3
+ 1279 04e2 04       		.byte	4
+ 1280 04e3 00       		.byte	0
+ 1281 04e4 02       		.byte	2
+ 1282 04e5 0C       		.byte	12
+ 1283 04e6 00       		.byte	0
+ 1284 04e7 0E       		.byte	14
+ 1285 04e8 11       		.byte	17
+ 1286 04e9 FF       		.byte	-1
+ 1287 04ea FF       		.byte	-1
+ 1288 04eb FF       		.byte	-1
+ 1289 04ec 62       		.byte	98
+ 1290 04ed A0       		.byte	-96
+ 1291 04ee F0       		.byte	-16
+ 1292 04ef 41       		.byte	65
+ 1293 04f0 0C       		.byte	12
+ 1294 04f1 00       		.byte	0
+ 1295 04f2 00       		.byte	0
+ 1296 04f3 00       		.byte	0
+ 1297 04f4 00       		.byte	0
+ 1298 04f5 00       		.byte	0
+ 1299 04f6 02       		.byte	2
+ 1300 04f7 11       		.byte	17
+ 1301 04f8 04       		.byte	4
+ 1302 04f9 04       		.byte	4
+ 1303 04fa 04       		.byte	4
+ 1304 04fb 04       		.byte	4
+ 1305 04fc 00       		.byte	0
+ 1306 04fd 00       		.byte	0
+ 1307 04fe 00       		.byte	0
+ 1308 04ff 01       		.byte	1
+ 1309 0500 00       		.byte	0
+ 1310 0501 00       		.byte	0
+ 1311 0502 00       		.byte	0
+ARM GAS  C:\Users\Lucas\AppData\Local\Temp\ccgepylf.s 			page 24
+
+
+ 1312 0503 00       		.byte	0
+ 1313 0504 00       		.byte	0
+ 1314 0505 00       		.byte	0
+ 1315 0506 40       		.byte	64
+ 1316 0507 02       		.byte	2
+ 1317 0508 00       		.byte	0
+ 1318 0509 10       		.byte	16
+ 1319 050a 30       		.byte	48
+ 1320 050b 10       		.byte	16
+ 1321 050c 00       		.byte	0
+ 1322 050d 10       		.byte	16
+ 1323 050e 10       		.byte	16
+ 1324 050f 12       		.byte	18
+ 1325 0510 00       		.byte	0
+ 1326 0511 00       		.byte	0
+ 1327 0512 00       		.byte	0
+ 1328 0513 00       		.byte	0
+ 1329 0514 00       		.byte	0
+ 1330 0515 00       		.byte	0
+ 1331 0516 00       		.byte	0
+ 1332 0517 00       		.byte	0
+ 1333 0518 00       		.byte	0
+ 1334 0519 00       		.byte	0
+ 1335 051a 00       		.byte	0
+ 1336 051b 00       		.byte	0
+ 1337 051c 00       		.byte	0
+ 1338 051d 00       		.byte	0
+ 1339 051e 00       		.byte	0
+ 1340 051f 00       		.byte	0
+ 1341 0520 26       		.byte	38
+ 1342 0521 00       		.byte	0
+ 1343 0522 A0       		.byte	-96
+ 1344 0523 1E       		.byte	30
+ 1345 0524 1E       		.byte	30
+ 1346 0525 00       		.byte	0
+ 1347 0526 00       		.byte	0
+ 1348 0527 00       		.byte	0
+ 1349 0528 00       		.byte	0
+ 1350 0529 00       		.byte	0
+ 1351 052a 00       		.byte	0
+ 1352 052b 00       		.byte	0
+ 1353 052c 80       		.byte	-128
+ 1354 052d 00       		.byte	0
+ 1355 052e 40       		.byte	64
+ 1356 052f 80       		.byte	-128
+ 1357 0530 80       		.byte	-128
+ 1358 0531 00       		.byte	0
+ 1359 0532 80       		.byte	-128
+ 1360 0533 00       		.byte	0
+ 1361 0534 00       		.byte	0
+ 1362 0535 00       		.byte	0
+ 1363 0536 00       		.byte	0
+ 1364 0537 00       		.byte	0
+ 1365 0538 00       		.byte	0
+ 1366 0539 0B       		.byte	11
+ 1367 053a 0B       		.byte	11
+ 1368 053b 00       		.byte	0
+ARM GAS  C:\Users\Lucas\AppData\Local\Temp\ccgepylf.s 			page 25
+
+
+ 1369 053c 00       		.byte	0
+ 1370 053d 00       		.byte	0
+ 1371 053e 00       		.byte	0
+ 1372 053f 00       		.byte	0
+ 1373              		.section	.cywolatch,"a",%progbits
+ 1374              		.align	2
+ 1375              		.type	cy_meta_wonvl, %object
+ 1376              		.size	cy_meta_wonvl, 4
+ 1377              	cy_meta_wonvl:
+ 1378 0000 BC       		.byte	-68
+ 1379 0001 90       		.byte	-112
+ 1380 0002 AC       		.byte	-84
+ 1381 0003 AF       		.byte	-81
+ 1382              		.section	.cycustnvl,"a",%progbits
+ 1383              		.align	2
+ 1384              		.type	cy_meta_custnvl, %object
+ 1385              		.size	cy_meta_custnvl, 4
+ 1386              	cy_meta_custnvl:
+ 1387 0000 00       		.byte	0
+ 1388 0001 00       		.byte	0
+ 1389 0002 40       		.byte	64
+ 1390 0003 05       		.byte	5
+ 1391              		.section	.cymeta,"a",%progbits
+ 1392              		.align	2
+ 1393              		.type	cy_metadata, %object
+ 1394              		.size	cy_metadata, 12
+ 1395              	cy_metadata:
+ 1396 0000 00       		.byte	0
+ 1397 0001 01       		.byte	1
+ 1398 0002 2E       		.byte	46
+ 1399 0003 16       		.byte	22
+ 1400 0004 10       		.byte	16
+ 1401 0005 69       		.byte	105
+ 1402 0006 00       		.byte	0
+ 1403 0007 01       		.byte	1
+ 1404 0008 00       		.byte	0
+ 1405 0009 00       		.byte	0
+ 1406 000a 00       		.byte	0
+ 1407 000b 00       		.byte	0
+ 1408              		.section	.cyflashprotect,"a",%progbits
+ 1409              		.align	2
+ 1410              		.type	cy_meta_flashprotect, %object
+ 1411              		.size	cy_meta_flashprotect, 256
+ 1412              	cy_meta_flashprotect:
+ 1413 0000 00000000 		.space	256
+ 1413      00000000 
+ 1413      00000000 
+ 1413      00000000 
+ 1413      00000000 
+ 1414              		.text
+ 1415              	.Letext0:
+ 1416              		.file 1 "c:\\program files (x86)\\cypress\\psoc creator\\4.3\\psoc creator\\import\\gnu\\arm\\5.4.
+ 1417              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.3\\psoc creator\\import\\gnu\\arm\\5.4.
+ 1418              		.file 3 "Generated_Source\\PSoC5\\cymetadata.c"
+ 1419              		.section	.debug_info,"",%progbits
+ 1420              	.Ldebug_info0:
+ 1421 0000 32010000 		.4byte	0x132
+ARM GAS  C:\Users\Lucas\AppData\Local\Temp\ccgepylf.s 			page 26
+
+
+ 1422 0004 0400     		.2byte	0x4
+ 1423 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 1424 000a 04       		.byte	0x4
+ 1425 000b 01       		.uleb128 0x1
+ 1426 000c 31000000 		.4byte	.LASF17
+ 1427 0010 0C       		.byte	0xc
+ 1428 0011 C2010000 		.4byte	.LASF18
+ 1429 0015 06010000 		.4byte	.LASF19
+ 1430 0019 00000000 		.4byte	.Ldebug_line0
+ 1431 001d 02       		.uleb128 0x2
+ 1432 001e 01       		.byte	0x1
+ 1433 001f 06       		.byte	0x6
+ 1434 0020 B6010000 		.4byte	.LASF0
+ 1435 0024 03       		.uleb128 0x3
+ 1436 0025 00000000 		.4byte	.LASF9
+ 1437 0029 01       		.byte	0x1
+ 1438 002a 1D       		.byte	0x1d
+ 1439 002b 2F000000 		.4byte	0x2f
+ 1440 002f 02       		.uleb128 0x2
+ 1441 0030 01       		.byte	0x1
+ 1442 0031 08       		.byte	0x8
+ 1443 0032 23000000 		.4byte	.LASF1
+ 1444 0036 02       		.uleb128 0x2
+ 1445 0037 02       		.byte	0x2
+ 1446 0038 05       		.byte	0x5
+ 1447 0039 A3010000 		.4byte	.LASF2
+ 1448 003d 02       		.uleb128 0x2
+ 1449 003e 02       		.byte	0x2
+ 1450 003f 07       		.byte	0x7
+ 1451 0040 D1000000 		.4byte	.LASF3
+ 1452 0044 02       		.uleb128 0x2
+ 1453 0045 04       		.byte	0x4
+ 1454 0046 05       		.byte	0x5
+ 1455 0047 AD010000 		.4byte	.LASF4
+ 1456 004b 02       		.uleb128 0x2
+ 1457 004c 04       		.byte	0x4
+ 1458 004d 07       		.byte	0x7
+ 1459 004e BF000000 		.4byte	.LASF5
+ 1460 0052 02       		.uleb128 0x2
+ 1461 0053 08       		.byte	0x8
+ 1462 0054 05       		.byte	0x5
+ 1463 0055 95010000 		.4byte	.LASF6
+ 1464 0059 02       		.uleb128 0x2
+ 1465 005a 08       		.byte	0x8
+ 1466 005b 07       		.byte	0x7
+ 1467 005c 4A010000 		.4byte	.LASF7
+ 1468 0060 04       		.uleb128 0x4
+ 1469 0061 04       		.byte	0x4
+ 1470 0062 05       		.byte	0x5
+ 1471 0063 696E7400 		.ascii	"int\000"
+ 1472 0067 02       		.uleb128 0x2
+ 1473 0068 04       		.byte	0x4
+ 1474 0069 07       		.byte	0x7
+ 1475 006a 0A000000 		.4byte	.LASF8
+ 1476 006e 03       		.uleb128 0x3
+ 1477 006f 61010000 		.4byte	.LASF10
+ 1478 0073 02       		.byte	0x2
+ARM GAS  C:\Users\Lucas\AppData\Local\Temp\ccgepylf.s 			page 27
+
+
+ 1479 0074 18       		.byte	0x18
+ 1480 0075 24000000 		.4byte	0x24
+ 1481 0079 05       		.uleb128 0x5
+ 1482 007a 91000000 		.4byte	0x91
+ 1483 007e 8A000000 		.4byte	0x8a
+ 1484 0082 06       		.uleb128 0x6
+ 1485 0083 8A000000 		.4byte	0x8a
+ 1486 0087 3F05     		.2byte	0x53f
+ 1487 0089 00       		.byte	0
+ 1488 008a 02       		.uleb128 0x2
+ 1489 008b 04       		.byte	0x4
+ 1490 008c 07       		.byte	0x7
+ 1491 008d 8C010000 		.4byte	.LASF11
+ 1492 0091 07       		.uleb128 0x7
+ 1493 0092 6E000000 		.4byte	0x6e
+ 1494 0096 08       		.uleb128 0x8
+ 1495 0097 F4000000 		.4byte	.LASF12
+ 1496 009b 03       		.byte	0x3
+ 1497 009c 1F       		.byte	0x1f
+ 1498 009d A7000000 		.4byte	0xa7
+ 1499 00a1 05       		.uleb128 0x5
+ 1500 00a2 03       		.byte	0x3
+ 1501 00a3 00000000 		.4byte	cy_meta_configecc
+ 1502 00a7 07       		.uleb128 0x7
+ 1503 00a8 79000000 		.4byte	0x79
+ 1504 00ac 05       		.uleb128 0x5
+ 1505 00ad 91000000 		.4byte	0x91
+ 1506 00b1 BC000000 		.4byte	0xbc
+ 1507 00b5 09       		.uleb128 0x9
+ 1508 00b6 8A000000 		.4byte	0x8a
+ 1509 00ba 03       		.byte	0x3
+ 1510 00bb 00       		.byte	0
+ 1511 00bc 08       		.uleb128 0x8
+ 1512 00bd E4000000 		.4byte	.LASF13
+ 1513 00c1 03       		.byte	0x3
+ 1514 00c2 D4       		.byte	0xd4
+ 1515 00c3 CD000000 		.4byte	0xcd
+ 1516 00c7 05       		.uleb128 0x5
+ 1517 00c8 03       		.byte	0x3
+ 1518 00c9 00000000 		.4byte	cy_meta_custnvl
+ 1519 00cd 07       		.uleb128 0x7
+ 1520 00ce AC000000 		.4byte	0xac
+ 1521 00d2 08       		.uleb128 0x8
+ 1522 00d3 7E010000 		.4byte	.LASF14
+ 1523 00d7 03       		.byte	0x3
+ 1524 00d8 E2       		.byte	0xe2
+ 1525 00d9 E3000000 		.4byte	0xe3
+ 1526 00dd 05       		.uleb128 0x5
+ 1527 00de 03       		.byte	0x3
+ 1528 00df 00000000 		.4byte	cy_meta_wonvl
+ 1529 00e3 07       		.uleb128 0x7
+ 1530 00e4 AC000000 		.4byte	0xac
+ 1531 00e8 05       		.uleb128 0x5
+ 1532 00e9 91000000 		.4byte	0x91
+ 1533 00ed F8000000 		.4byte	0xf8
+ 1534 00f1 09       		.uleb128 0x9
+ 1535 00f2 8A000000 		.4byte	0x8a
+ARM GAS  C:\Users\Lucas\AppData\Local\Temp\ccgepylf.s 			page 28
+
+
+ 1536 00f6 FF       		.byte	0xff
+ 1537 00f7 00       		.byte	0
+ 1538 00f8 08       		.uleb128 0x8
+ 1539 00f9 69010000 		.4byte	.LASF15
+ 1540 00fd 03       		.byte	0x3
+ 1541 00fe F0       		.byte	0xf0
+ 1542 00ff 09010000 		.4byte	0x109
+ 1543 0103 05       		.uleb128 0x5
+ 1544 0104 03       		.byte	0x3
+ 1545 0105 00000000 		.4byte	cy_meta_flashprotect
+ 1546 0109 07       		.uleb128 0x7
+ 1547 010a E8000000 		.4byte	0xe8
+ 1548 010e 05       		.uleb128 0x5
+ 1549 010f 91000000 		.4byte	0x91
+ 1550 0113 1E010000 		.4byte	0x11e
+ 1551 0117 09       		.uleb128 0x9
+ 1552 0118 8A000000 		.4byte	0x8a
+ 1553 011c 0B       		.byte	0xb
+ 1554 011d 00       		.byte	0
+ 1555 011e 0A       		.uleb128 0xa
+ 1556 011f 17000000 		.4byte	.LASF16
+ 1557 0123 03       		.byte	0x3
+ 1558 0124 1D01     		.2byte	0x11d
+ 1559 0126 30010000 		.4byte	0x130
+ 1560 012a 05       		.uleb128 0x5
+ 1561 012b 03       		.byte	0x3
+ 1562 012c 00000000 		.4byte	cy_metadata
+ 1563 0130 07       		.uleb128 0x7
+ 1564 0131 0E010000 		.4byte	0x10e
+ 1565 0135 00       		.byte	0
+ 1566              		.section	.debug_abbrev,"",%progbits
+ 1567              	.Ldebug_abbrev0:
+ 1568 0000 01       		.uleb128 0x1
+ 1569 0001 11       		.uleb128 0x11
+ 1570 0002 01       		.byte	0x1
+ 1571 0003 25       		.uleb128 0x25
+ 1572 0004 0E       		.uleb128 0xe
+ 1573 0005 13       		.uleb128 0x13
+ 1574 0006 0B       		.uleb128 0xb
+ 1575 0007 03       		.uleb128 0x3
+ 1576 0008 0E       		.uleb128 0xe
+ 1577 0009 1B       		.uleb128 0x1b
+ 1578 000a 0E       		.uleb128 0xe
+ 1579 000b 10       		.uleb128 0x10
+ 1580 000c 17       		.uleb128 0x17
+ 1581 000d 00       		.byte	0
+ 1582 000e 00       		.byte	0
+ 1583 000f 02       		.uleb128 0x2
+ 1584 0010 24       		.uleb128 0x24
+ 1585 0011 00       		.byte	0
+ 1586 0012 0B       		.uleb128 0xb
+ 1587 0013 0B       		.uleb128 0xb
+ 1588 0014 3E       		.uleb128 0x3e
+ 1589 0015 0B       		.uleb128 0xb
+ 1590 0016 03       		.uleb128 0x3
+ 1591 0017 0E       		.uleb128 0xe
+ 1592 0018 00       		.byte	0
+ARM GAS  C:\Users\Lucas\AppData\Local\Temp\ccgepylf.s 			page 29
+
+
+ 1593 0019 00       		.byte	0
+ 1594 001a 03       		.uleb128 0x3
+ 1595 001b 16       		.uleb128 0x16
+ 1596 001c 00       		.byte	0
+ 1597 001d 03       		.uleb128 0x3
+ 1598 001e 0E       		.uleb128 0xe
+ 1599 001f 3A       		.uleb128 0x3a
+ 1600 0020 0B       		.uleb128 0xb
+ 1601 0021 3B       		.uleb128 0x3b
+ 1602 0022 0B       		.uleb128 0xb
+ 1603 0023 49       		.uleb128 0x49
+ 1604 0024 13       		.uleb128 0x13
+ 1605 0025 00       		.byte	0
+ 1606 0026 00       		.byte	0
+ 1607 0027 04       		.uleb128 0x4
+ 1608 0028 24       		.uleb128 0x24
+ 1609 0029 00       		.byte	0
+ 1610 002a 0B       		.uleb128 0xb
+ 1611 002b 0B       		.uleb128 0xb
+ 1612 002c 3E       		.uleb128 0x3e
+ 1613 002d 0B       		.uleb128 0xb
+ 1614 002e 03       		.uleb128 0x3
+ 1615 002f 08       		.uleb128 0x8
+ 1616 0030 00       		.byte	0
+ 1617 0031 00       		.byte	0
+ 1618 0032 05       		.uleb128 0x5
+ 1619 0033 01       		.uleb128 0x1
+ 1620 0034 01       		.byte	0x1
+ 1621 0035 49       		.uleb128 0x49
+ 1622 0036 13       		.uleb128 0x13
+ 1623 0037 01       		.uleb128 0x1
+ 1624 0038 13       		.uleb128 0x13
+ 1625 0039 00       		.byte	0
+ 1626 003a 00       		.byte	0
+ 1627 003b 06       		.uleb128 0x6
+ 1628 003c 21       		.uleb128 0x21
+ 1629 003d 00       		.byte	0
+ 1630 003e 49       		.uleb128 0x49
+ 1631 003f 13       		.uleb128 0x13
+ 1632 0040 2F       		.uleb128 0x2f
+ 1633 0041 05       		.uleb128 0x5
+ 1634 0042 00       		.byte	0
+ 1635 0043 00       		.byte	0
+ 1636 0044 07       		.uleb128 0x7
+ 1637 0045 26       		.uleb128 0x26
+ 1638 0046 00       		.byte	0
+ 1639 0047 49       		.uleb128 0x49
+ 1640 0048 13       		.uleb128 0x13
+ 1641 0049 00       		.byte	0
+ 1642 004a 00       		.byte	0
+ 1643 004b 08       		.uleb128 0x8
+ 1644 004c 34       		.uleb128 0x34
+ 1645 004d 00       		.byte	0
+ 1646 004e 03       		.uleb128 0x3
+ 1647 004f 0E       		.uleb128 0xe
+ 1648 0050 3A       		.uleb128 0x3a
+ 1649 0051 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Lucas\AppData\Local\Temp\ccgepylf.s 			page 30
+
+
+ 1650 0052 3B       		.uleb128 0x3b
+ 1651 0053 0B       		.uleb128 0xb
+ 1652 0054 49       		.uleb128 0x49
+ 1653 0055 13       		.uleb128 0x13
+ 1654 0056 3F       		.uleb128 0x3f
+ 1655 0057 19       		.uleb128 0x19
+ 1656 0058 02       		.uleb128 0x2
+ 1657 0059 18       		.uleb128 0x18
+ 1658 005a 00       		.byte	0
+ 1659 005b 00       		.byte	0
+ 1660 005c 09       		.uleb128 0x9
+ 1661 005d 21       		.uleb128 0x21
+ 1662 005e 00       		.byte	0
+ 1663 005f 49       		.uleb128 0x49
+ 1664 0060 13       		.uleb128 0x13
+ 1665 0061 2F       		.uleb128 0x2f
+ 1666 0062 0B       		.uleb128 0xb
+ 1667 0063 00       		.byte	0
+ 1668 0064 00       		.byte	0
+ 1669 0065 0A       		.uleb128 0xa
+ 1670 0066 34       		.uleb128 0x34
+ 1671 0067 00       		.byte	0
+ 1672 0068 03       		.uleb128 0x3
+ 1673 0069 0E       		.uleb128 0xe
+ 1674 006a 3A       		.uleb128 0x3a
+ 1675 006b 0B       		.uleb128 0xb
+ 1676 006c 3B       		.uleb128 0x3b
+ 1677 006d 05       		.uleb128 0x5
+ 1678 006e 49       		.uleb128 0x49
+ 1679 006f 13       		.uleb128 0x13
+ 1680 0070 3F       		.uleb128 0x3f
+ 1681 0071 19       		.uleb128 0x19
+ 1682 0072 02       		.uleb128 0x2
+ 1683 0073 18       		.uleb128 0x18
+ 1684 0074 00       		.byte	0
+ 1685 0075 00       		.byte	0
+ 1686 0076 00       		.byte	0
+ 1687              		.section	.debug_aranges,"",%progbits
+ 1688 0000 14000000 		.4byte	0x14
+ 1689 0004 0200     		.2byte	0x2
+ 1690 0006 00000000 		.4byte	.Ldebug_info0
+ 1691 000a 04       		.byte	0x4
+ 1692 000b 00       		.byte	0
+ 1693 000c 0000     		.2byte	0
+ 1694 000e 0000     		.2byte	0
+ 1695 0010 00000000 		.4byte	0
+ 1696 0014 00000000 		.4byte	0
+ 1697              		.section	.debug_line,"",%progbits
+ 1698              	.Ldebug_line0:
+ 1699 0000 3D010000 		.section	.debug_str,"MS",%progbits,1
+ 1699      02003701 
+ 1699      00000201 
+ 1699      FB0E0D00 
+ 1699      01010101 
+ 1700              	.LASF9:
+ 1701 0000 5F5F7569 		.ascii	"__uint8_t\000"
+ 1701      6E74385F 
+ARM GAS  C:\Users\Lucas\AppData\Local\Temp\ccgepylf.s 			page 31
+
+
+ 1701      7400
+ 1702              	.LASF8:
+ 1703 000a 756E7369 		.ascii	"unsigned int\000"
+ 1703      676E6564 
+ 1703      20696E74 
+ 1703      00
+ 1704              	.LASF16:
+ 1705 0017 63795F6D 		.ascii	"cy_metadata\000"
+ 1705      65746164 
+ 1705      61746100 
+ 1706              	.LASF1:
+ 1707 0023 756E7369 		.ascii	"unsigned char\000"
+ 1707      676E6564 
+ 1707      20636861 
+ 1707      7200
+ 1708              	.LASF17:
+ 1709 0031 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1709      43313120 
+ 1709      352E342E 
+ 1709      31203230 
+ 1709      31363036 
+ 1710 0064 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 1710      20726576 
+ 1710      6973696F 
+ 1710      6E203233 
+ 1710      37373135 
+ 1711 0097 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1711      66756E63 
+ 1711      74696F6E 
+ 1711      2D736563 
+ 1711      74696F6E 
+ 1712              	.LASF5:
+ 1713 00bf 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1713      20756E73 
+ 1713      69676E65 
+ 1713      6420696E 
+ 1713      7400
+ 1714              	.LASF3:
+ 1715 00d1 73686F72 		.ascii	"short unsigned int\000"
+ 1715      7420756E 
+ 1715      7369676E 
+ 1715      65642069 
+ 1715      6E7400
+ 1716              	.LASF13:
+ 1717 00e4 63795F6D 		.ascii	"cy_meta_custnvl\000"
+ 1717      6574615F 
+ 1717      63757374 
+ 1717      6E766C00 
+ 1718              	.LASF12:
+ 1719 00f4 63795F6D 		.ascii	"cy_meta_configecc\000"
+ 1719      6574615F 
+ 1719      636F6E66 
+ 1719      69676563 
+ 1719      6300
+ 1720              	.LASF19:
+ 1721 0106 433A5C55 		.ascii	"C:\\Users\\Lucas\\Documents\\PSoC Creator\\colorSen"
+ 1721      73657273 
+ARM GAS  C:\Users\Lucas\AppData\Local\Temp\ccgepylf.s 			page 32
+
+
+ 1721      5C4C7563 
+ 1721      61735C44 
+ 1721      6F63756D 
+ 1722 0134 736F725C 		.ascii	"sor\\colorSensor.cydsn\000"
+ 1722      636F6C6F 
+ 1722      7253656E 
+ 1722      736F722E 
+ 1722      63796473 
+ 1723              	.LASF7:
+ 1724 014a 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1724      206C6F6E 
+ 1724      6720756E 
+ 1724      7369676E 
+ 1724      65642069 
+ 1725              	.LASF10:
+ 1726 0161 75696E74 		.ascii	"uint8_t\000"
+ 1726      385F7400 
+ 1727              	.LASF15:
+ 1728 0169 63795F6D 		.ascii	"cy_meta_flashprotect\000"
+ 1728      6574615F 
+ 1728      666C6173 
+ 1728      6870726F 
+ 1728      74656374 
+ 1729              	.LASF14:
+ 1730 017e 63795F6D 		.ascii	"cy_meta_wonvl\000"
+ 1730      6574615F 
+ 1730      776F6E76 
+ 1730      6C00
+ 1731              	.LASF11:
+ 1732 018c 73697A65 		.ascii	"sizetype\000"
+ 1732      74797065 
+ 1732      00
+ 1733              	.LASF6:
+ 1734 0195 6C6F6E67 		.ascii	"long long int\000"
+ 1734      206C6F6E 
+ 1734      6720696E 
+ 1734      7400
+ 1735              	.LASF2:
+ 1736 01a3 73686F72 		.ascii	"short int\000"
+ 1736      7420696E 
+ 1736      7400
+ 1737              	.LASF4:
+ 1738 01ad 6C6F6E67 		.ascii	"long int\000"
+ 1738      20696E74 
+ 1738      00
+ 1739              	.LASF0:
+ 1740 01b6 7369676E 		.ascii	"signed char\000"
+ 1740      65642063 
+ 1740      68617200 
+ 1741              	.LASF18:
+ 1742 01c2 47656E65 		.ascii	"Generated_Source\\PSoC5\\cymetadata.c\000"
+ 1742      72617465 
+ 1742      645F536F 
+ 1742      75726365 
+ 1742      5C50536F 
+ 1743              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
