@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CyXmlSerializer>
+<!--This file is machine generated and read. It is not intended to be edited by hand.-->
+<!--Due to this, there is no schema for this file.-->
+<CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtWrkspcCustomData" version="4">
+<CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997 type_name="CyDesigner.Common.Base.CyCustomData" version="2">
+<userData>
+<dataGuid v="1b906a0f-a7b6-4e4d-a428-82f98b53cb35">
+<CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35 type_name="CyDesigner.Common.ProjMgmt.GUI.CyExplorerWindow+CyExplorerWindowState" version="3" SelectedTab="Source">
+<TreeKeys>
+<v>Source</v>
+<v>Components</v>
+<v>Output</v>
+</TreeKeys>
+<TreeStates>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Projekt3Scale\PRJ3Scale\Source Files\main.c">
+<ExpandedNodeIds>
+<v>Projekt3Scale</v>
+<v>Projekt3Scale\PRJ3Scale</v>
+<v>Projekt3Scale\PRJ3Scale\TopDesign</v>
+<v>Projekt3Scale\PRJ3Scale\PRJ3Scale.cydwr</v>
+<v>Projekt3Scale\PRJ3Scale\PRJ3Scale.cydwr\Pins</v>
+<v>Projekt3Scale\PRJ3Scale\PRJ3Scale.cydwr\Analog</v>
+<v>Projekt3Scale\PRJ3Scale\PRJ3Scale.cydwr\Clocks</v>
+<v>Projekt3Scale\PRJ3Scale\PRJ3Scale.cydwr\Interrupts</v>
+<v>Projekt3Scale\PRJ3Scale\PRJ3Scale.cydwr\DMA</v>
+<v>Projekt3Scale\PRJ3Scale\PRJ3Scale.cydwr\System</v>
+<v>Projekt3Scale\PRJ3Scale\PRJ3Scale.cydwr\Directives</v>
+<v>Projekt3Scale\PRJ3Scale\PRJ3Scale.cydwr\Flash Security</v>
+<v>Projekt3Scale\PRJ3Scale\PRJ3Scale.cydwr\EEPROM</v>
+<v>Projekt3Scale\PRJ3Scale\Header Files</v>
+<v>Projekt3Scale\PRJ3Scale\Header Files\ADC.h</v>
+<v>Projekt3Scale\PRJ3Scale\Header Files\cyapicallbacks.h</v>
+<v>Projekt3Scale\PRJ3Scale\Source Files</v>
+<v>Projekt3Scale\PRJ3Scale\Source Files\ADC.c</v>
+<v>Projekt3Scale\PRJ3Scale\Source Files\main.c</v>
+<v>Projekt3Scale\PRJ3Scale\Generated_Source</v>
+<v>Projekt3Scale\PRJ3Scale\Generated_Source\PSoC5</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>Projekt3Scale</v>
+<v>Projekt3Scale\PRJ3Scale</v>
+<v>Projekt3Scale\PRJ3Scale\TopDesign</v>
+<v>Projekt3Scale\PRJ3Scale\PRJ3Scale.cydwr</v>
+<v>Projekt3Scale\PRJ3Scale\PRJ3Scale.cydwr\Pins</v>
+<v>Projekt3Scale\PRJ3Scale\PRJ3Scale.cydwr\Analog</v>
+<v>Projekt3Scale\PRJ3Scale\PRJ3Scale.cydwr\Clocks</v>
+<v>Projekt3Scale\PRJ3Scale\PRJ3Scale.cydwr\Interrupts</v>
+<v>Projekt3Scale\PRJ3Scale\PRJ3Scale.cydwr\DMA</v>
+<v>Projekt3Scale\PRJ3Scale\PRJ3Scale.cydwr\System</v>
+<v>Projekt3Scale\PRJ3Scale\PRJ3Scale.cydwr\Directives</v>
+<v>Projekt3Scale\PRJ3Scale\PRJ3Scale.cydwr\Flash Security</v>
+<v>Projekt3Scale\PRJ3Scale\PRJ3Scale.cydwr\EEPROM</v>
+<v>Projekt3Scale\PRJ3Scale\Header Files</v>
+<v>Projekt3Scale\PRJ3Scale\Header Files\ADC.h</v>
+<v>Projekt3Scale\PRJ3Scale\Header Files\cyapicallbacks.h</v>
+<v>Projekt3Scale\PRJ3Scale\Source Files</v>
+<v>Projekt3Scale\PRJ3Scale\Source Files\ADC.c</v>
+<v>Projekt3Scale\PRJ3Scale\Source Files\main.c</v>
+<v>Projekt3Scale\PRJ3Scale\Generated_Source</v>
+<v>Projekt3Scale\PRJ3Scale\Generated_Source\PSoC5</v>
+<v>Projekt3Scale\PRJ3Scale\Generated_Source\PSoC5\ADC_SAR_1</v>
+<v>Projekt3Scale\PRJ3Scale\Generated_Source\PSoC5\ADC_SAR_1_ExtVref</v>
+<v>Projekt3Scale\PRJ3Scale\Generated_Source\PSoC5\ADC_SAR_1_IRQ</v>
+<v>Projekt3Scale\PRJ3Scale\Generated_Source\PSoC5\ADC_SAR_1_theACLK</v>
+<v>Projekt3Scale\PRJ3Scale\Generated_Source\PSoC5\cy_boot</v>
+<v>Projekt3Scale\PRJ3Scale\Generated_Source\PSoC5\Em_EEPROM_Dynamic</v>
+<v>Projekt3Scale\PRJ3Scale\Generated_Source\PSoC5\LED</v>
+<v>Projekt3Scale\PRJ3Scale\Generated_Source\PSoC5\Pin_ADC_in</v>
+<v>Projekt3Scale\PRJ3Scale\Generated_Source\PSoC5\cycodeshareexport.ld</v>
+<v>Projekt3Scale\PRJ3Scale\Generated_Source\PSoC5\cycodeshareimport.ld</v>
+<v>Projekt3Scale\PRJ3Scale\Generated_Source\PSoC5\cycodeshareimport.scat</v>
+<v>Projekt3Scale\PRJ3Scale\Generated_Source\PSoC5\cydevice.h</v>
+<v>Projekt3Scale\PRJ3Scale\Generated_Source\PSoC5\cydevice_trm.h</v>
+<v>Projekt3Scale\PRJ3Scale\Generated_Source\PSoC5\cydevicegnu.inc</v>
+<v>Projekt3Scale\PRJ3Scale\Generated_Source\PSoC5\cydevicegnu_trm.inc</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>Projekt3Scale</v>
+<v>Projekt3Scale\PRJ3Scale</v>
+<v>Projekt3Scale\PRJ3Scale\TopDesign</v>
+<v>Projekt3Scale\PRJ3Scale\TopDesign\TopDesign.cysch</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>Projekt3Scale</v>
+<v>Projekt3Scale\PRJ3Scale</v>
+<v>Projekt3Scale\PRJ3Scale\TopDesign</v>
+<v>Projekt3Scale\PRJ3Scale\TopDesign\TopDesign.cysch</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>Projekt3Scale</v>
+<v>Projekt3Scale\PRJ3Scale</v>
+<v>Projekt3Scale\PRJ3Scale\CortexM3</v>
+<v>Projekt3Scale\PRJ3Scale\CortexM3\ARM_GCC_541</v>
+<v>Projekt3Scale\PRJ3Scale\CortexM3\ARM_GCC_541\Debug</v>
+<v>Projekt3Scale\PRJ3Scale\CortexM3\ARM_GCC_541\Debug\Listing Files</v>
+<v>Projekt3Scale\PRJ3Scale\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SAR_1.lst</v>
+<v>Projekt3Scale\PRJ3Scale\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SAR_1_ExtVref.lst</v>
+<v>Projekt3Scale\PRJ3Scale\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SAR_1_INT.lst</v>
+<v>Projekt3Scale\PRJ3Scale\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SAR_1_IRQ.lst</v>
+<v>Projekt3Scale\PRJ3Scale\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SAR_1_PM.lst</v>
+<v>Projekt3Scale\PRJ3Scale\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SAR_1_theACLK.lst</v>
+<v>Projekt3Scale\PRJ3Scale\CortexM3\ARM_GCC_541\Debug\Listing Files\Cm3Start.lst</v>
+<v>Projekt3Scale\PRJ3Scale\CortexM3\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>Projekt3Scale\PRJ3Scale\CortexM3\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>Projekt3Scale\PRJ3Scale\CortexM3\ARM_GCC_541\Debug\Listing Files\CyDmac.lst</v>
+<v>Projekt3Scale\PRJ3Scale\CortexM3\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>Projekt3Scale\PRJ3Scale\CortexM3\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>Projekt3Scale\PRJ3Scale\CortexM3\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>Projekt3Scale\PRJ3Scale\CortexM3\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>Projekt3Scale\PRJ3Scale\CortexM3\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>Projekt3Scale\PRJ3Scale\CortexM3\ARM_GCC_541\Debug\Listing Files\CySpc.lst</v>
+<v>Projekt3Scale\PRJ3Scale\CortexM3\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>Projekt3Scale\PRJ3Scale\CortexM3\ARM_GCC_541\Debug\Listing Files\LED.lst</v>
+<v>Projekt3Scale\PRJ3Scale\CortexM3\ARM_GCC_541\Debug\Listing Files\main.lst</v>
+<v>Projekt3Scale\PRJ3Scale\CortexM3\ARM_GCC_541\Debug\Listing Files\Pin_ADC_in.lst</v>
+<v>Projekt3Scale\PRJ3Scale\CortexM3\ARM_GCC_541\Debug\PRJ3Scale.elf</v>
+<v>Projekt3Scale\PRJ3Scale\CortexM3\ARM_GCC_541\Debug\PRJ3Scale.hex</v>
+<v>Projekt3Scale\PRJ3Scale\CortexM3\ARM_GCC_541\Debug\PRJ3Scale.map</v>
+<v>Projekt3Scale\PRJ3Scale\PRJ3Scale.gpdsc</v>
+<v>Projekt3Scale\PRJ3Scale\PRJ3Scale.rpt</v>
+<v>Projekt3Scale\PRJ3Scale\PRJ3Scale_timing.html</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>Projekt3Scale</v>
+<v>Projekt3Scale\PRJ3Scale</v>
+<v>Projekt3Scale\PRJ3Scale\PRJ3Scale.rpt</v>
+<v>Projekt3Scale\PRJ3Scale\PRJ3Scale_timing.html</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStates>
+<TreeKeysV2>
+<v>Datasheet</v>
+</TreeKeysV2>
+<TreeStatesV2>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>Projekt3Scale</v>
+<v>Projekt3Scale\PRJ3Scale</v>
+<v>Projekt3Scale\PRJ3Scale\PSoC 5LP Architecture TRM</v>
+<v>Projekt3Scale\PRJ3Scale\CY8C58LP Family Datasheet</v>
+<v>Projekt3Scale\PRJ3Scale\System Reference Guides</v>
+<v>Projekt3Scale\PRJ3Scale\System Reference Guides\cy_boot_v6_0</v>
+<v>Projekt3Scale\PRJ3Scale\ADC_SAR_v3_0.pdf</v>
+<v>Projekt3Scale\PRJ3Scale\cy_pins_v2_20</v>
+<v>Projekt3Scale\PRJ3Scale\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>Projekt3Scale</v>
+<v>Projekt3Scale\PRJ3Scale</v>
+<v>Projekt3Scale\PRJ3Scale\PSoC 5LP Architecture TRM</v>
+<v>Projekt3Scale\PRJ3Scale\CY8C58LP Family Datasheet</v>
+<v>Projekt3Scale\PRJ3Scale\System Reference Guides</v>
+<v>Projekt3Scale\PRJ3Scale\System Reference Guides\cy_boot_v6_0</v>
+<v>Projekt3Scale\PRJ3Scale\ADC_SAR_v3_0.pdf</v>
+<v>Projekt3Scale\PRJ3Scale\cy_pins_v2_20</v>
+<v>Projekt3Scale\PRJ3Scale\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStatesV2>
+</CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35>
+</dataGuid>
+</userData>
+</CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
+<Unloaded />
+<OpenDocs />
+<config v="" />
+<AutoUpdate v="true" />
+</CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
+</CyXmlSerializer>
