@@ -15,6 +15,8 @@
 #include "motorStyring.h"
 #include "Scale.h"
 #include "colorSensor.h"
+#include "I2C.h"
+
 
 int main(void)
 {
@@ -24,6 +26,7 @@ int main(void)
     initMotor(); //Motor
     ADC_init();  //Vægtsensor
     color_init_start(); //Colorsensor
+    init_I2C();
     
     for(;;)
     {
