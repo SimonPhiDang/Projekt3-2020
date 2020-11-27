@@ -15,7 +15,8 @@
 #include "motorStyring.h"
 #include "Scale.h"
 #include "colorSensor.h"
-#include "I2C.h"
+#include "i2cKommunikation.h"
+
 
 
 int main(void)
@@ -23,11 +24,11 @@ int main(void)
     CyGlobalIntEnable; /* Enable global interrupts. */
     
     //inits
+    init_i2c();
     initMotor(); //Motor
     ADC_init();  //Vægtsensor
     color_init_start(); //Colorsensor
-    init_I2C();
-    
+
     for(;;)
     {
         

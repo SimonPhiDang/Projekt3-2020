@@ -9,18 +9,29 @@
  *
  * ========================================
 */
+/* ========================================
+ *
+ * Copyright YOUR COMPANY, THE YEAR
+ * All Rights Reserved
+ * UNPUBLISHED, LICENSED SOFTWARE.
+ *
+ * CONFIDENTIAL AND PROPRIETARY INFORMATION
+ * WHICH IS THE PROPERTY OF your company.
+ *
+ * ========================================
+*/
 
-#include "I2C.h"
+#include "i2cKommunikation.h"
 #include "project.h"
 
 uint8 byteCnt;   
 uint8 wrBuf[3];
 uint8 i;
 
-void init_I2C()
+void init_i2c()
 {
-    I2C_SlaveInitWriteBuf((uint8 *) wrBuf, 3);
-    I2C_Start();
+//    I2C_SlaveInitWriteBuf((uint8 *) wrBuf, 3);
+//    I2C_Start();
 }
 
 void I2C_Kommunikation()
@@ -41,5 +52,8 @@ void I2C_Kommunikation()
             I2C_SlaveClearWriteBuf(); 
          }
 }
+
+/* [] END OF FILE */
+
 
 /* [] END OF FILE */

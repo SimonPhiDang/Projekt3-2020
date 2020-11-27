@@ -9,10 +9,6 @@
  *
  * ========================================
 */
-
-
-
-void init_I2C();
+void init_i2c();
 void I2C_Kommunikation();
-
 /* [] END OF FILE */

@@ -11388,11 +11388,11 @@ ARM GAS  Generated_Source\PSoC5\CyBootAsmGnu.s 			page 1
   88              	.set S0__SLW, CYREG_PRT0_SLW
   89              	
   90              	/* S1 */
-  91              	.set S1__0__INTTYPE, CYREG_PICU0_INTTYPE3
-  92              	.set S1__0__MASK, 0x08
-  93              	.set S1__0__PC, CYREG_PRT0_PC3
+  91              	.set S1__0__INTTYPE, CYREG_PICU0_INTTYPE6
+  92              	.set S1__0__MASK, 0x40
+  93              	.set S1__0__PC, CYREG_PRT0_PC6
   94              	.set S1__0__PORT, 0
-  95              	.set S1__0__SHIFT, 3
+  95              	.set S1__0__SHIFT, 6
   96              	.set S1__AG, CYREG_PRT0_AG
   97              	.set S1__AMUX, CYREG_PRT0_AMUX
   98              	.set S1__BIE, CYREG_PRT0_BIE
@@ -11410,7 +11410,7 @@ ARM GAS  Generated_Source\PSoC5\CyBootAsmGnu.s 			page 1
  107              	.set S1__INTTYPE_BASE, CYDEV_PICU_INTTYPE_PICU0_BASE
  108              	.set S1__LCD_COM_SEG, CYREG_PRT0_LCD_COM_SEG
  109              	.set S1__LCD_EN, CYREG_PRT0_LCD_EN
- 110              	.set S1__MASK, 0x08
+ 110              	.set S1__MASK, 0x40
  111              	.set S1__PORT, 0
  112              	.set S1__PRT, CYREG_PRT0_PRT
  113              	.set S1__PRTDSI__CAPS_SEL, CYREG_PRT0_CAPS_SEL
@@ -11421,15 +11421,15 @@ ARM GAS  Generated_Source\PSoC5\CyBootAsmGnu.s 			page 1
  118              	.set S1__PRTDSI__OUT_SEL1, CYREG_PRT0_OUT_SEL1
  119              	.set S1__PRTDSI__SYNC_OUT, CYREG_PRT0_SYNC_OUT
  120              	.set S1__PS, CYREG_PRT0_PS
- 121              	.set S1__SHIFT, 3
+ 121              	.set S1__SHIFT, 6
  122              	.set S1__SLW, CYREG_PRT0_SLW
  123              	
  124              	/* S2 */
- 125              	.set S2__0__INTTYPE, CYREG_PICU0_INTTYPE4
- 126              	.set S2__0__MASK, 0x10
- 127              	.set S2__0__PC, CYREG_PRT0_PC4
+ 125              	.set S2__0__INTTYPE, CYREG_PICU0_INTTYPE3
+ 126              	.set S2__0__MASK, 0x08
+ 127              	.set S2__0__PC, CYREG_PRT0_PC3
  128              	.set S2__0__PORT, 0
- 129              	.set S2__0__SHIFT, 4
+ 129              	.set S2__0__SHIFT, 3
  130              	.set S2__AG, CYREG_PRT0_AG
  131              	.set S2__AMUX, CYREG_PRT0_AMUX
  132              	.set S2__BIE, CYREG_PRT0_BIE
@@ -11444,7 +11444,7 @@ ARM GAS  Generated_Source\PSoC5\CyBootAsmGnu.s 			page 1
  141              	.set S2__INTTYPE_BASE, CYDEV_PICU_INTTYPE_PICU0_BASE
  142              	.set S2__LCD_COM_SEG, CYREG_PRT0_LCD_COM_SEG
  143              	.set S2__LCD_EN, CYREG_PRT0_LCD_EN
- 144              	.set S2__MASK, 0x10
+ 144              	.set S2__MASK, 0x08
  145              	.set S2__PORT, 0
  146              	.set S2__PRT, CYREG_PRT0_PRT
  147              	.set S2__PRTDSI__CAPS_SEL, CYREG_PRT0_CAPS_SEL
@@ -11455,18 +11455,18 @@ ARM GAS  Generated_Source\PSoC5\CyBootAsmGnu.s 			page 1
  152              	.set S2__PRTDSI__OUT_SEL1, CYREG_PRT0_OUT_SEL1
  153              	.set S2__PRTDSI__SYNC_OUT, CYREG_PRT0_SYNC_OUT
  154              	.set S2__PS, CYREG_PRT0_PS
- 155              	.set S2__SHIFT, 4
+ 155              	.set S2__SHIFT, 3
  156              	.set S2__SLW, CYREG_PRT0_SLW
  157              	
 ARM GAS  Generated_Source\PSoC5\CyBootAsmGnu.s 			page 192
 
 
  158              	/* S3 */
- 159              	.set S3__0__INTTYPE, CYREG_PICU0_INTTYPE5
- 160              	.set S3__0__MASK, 0x20
- 161              	.set S3__0__PC, CYREG_PRT0_PC5
+ 159              	.set S3__0__INTTYPE, CYREG_PICU0_INTTYPE4
+ 160              	.set S3__0__MASK, 0x10
+ 161              	.set S3__0__PC, CYREG_PRT0_PC4
  162              	.set S3__0__PORT, 0
- 163              	.set S3__0__SHIFT, 5
+ 163              	.set S3__0__SHIFT, 4
  164              	.set S3__AG, CYREG_PRT0_AG
  165              	.set S3__AMUX, CYREG_PRT0_AMUX
  166              	.set S3__BIE, CYREG_PRT0_BIE
@@ -11481,7 +11481,7 @@ ARM GAS  Generated_Source\PSoC5\CyBootAsmGnu.s 			page 1
  175              	.set S3__INTTYPE_BASE, CYDEV_PICU_INTTYPE_PICU0_BASE
  176              	.set S3__LCD_COM_SEG, CYREG_PRT0_LCD_COM_SEG
  177              	.set S3__LCD_EN, CYREG_PRT0_LCD_EN
- 178              	.set S3__MASK, 0x20
+ 178              	.set S3__MASK, 0x10
  179              	.set S3__PORT, 0
  180              	.set S3__PRT, CYREG_PRT0_PRT
  181              	.set S3__PRTDSI__CAPS_SEL, CYREG_PRT0_CAPS_SEL
@@ -11492,7 +11492,7 @@ ARM GAS  Generated_Source\PSoC5\CyBootAsmGnu.s 			page 1
  186              	.set S3__PRTDSI__OUT_SEL1, CYREG_PRT0_OUT_SEL1
  187              	.set S3__PRTDSI__SYNC_OUT, CYREG_PRT0_SYNC_OUT
  188              	.set S3__PS, CYREG_PRT0_PS
- 189              	.set S3__SHIFT, 5
+ 189              	.set S3__SHIFT, 4
  190              	.set S3__SLW, CYREG_PRT0_SLW
  191              	
  192              	/* I2C */
@@ -12242,11 +12242,11 @@ ARM GAS  Generated_Source\PSoC5\CyBootAsmGnu.s 			page 1
 
 
  899              	/* SensorOut */
- 900              	.set SensorOut__0__INTTYPE, CYREG_PICU0_INTTYPE6
- 901              	.set SensorOut__0__MASK, 0x40
- 902              	.set SensorOut__0__PC, CYREG_PRT0_PC6
+ 900              	.set SensorOut__0__INTTYPE, CYREG_PICU0_INTTYPE5
+ 901              	.set SensorOut__0__MASK, 0x20
+ 902              	.set SensorOut__0__PC, CYREG_PRT0_PC5
  903              	.set SensorOut__0__PORT, 0
- 904              	.set SensorOut__0__SHIFT, 6
+ 904              	.set SensorOut__0__SHIFT, 5
  905              	.set SensorOut__AG, CYREG_PRT0_AG
  906              	.set SensorOut__AMUX, CYREG_PRT0_AMUX
  907              	.set SensorOut__BIE, CYREG_PRT0_BIE
@@ -12261,7 +12261,7 @@ ARM GAS  Generated_Source\PSoC5\CyBootAsmGnu.s 			page 1
  916              	.set SensorOut__INTTYPE_BASE, CYDEV_PICU_INTTYPE_PICU0_BASE
  917              	.set SensorOut__LCD_COM_SEG, CYREG_PRT0_LCD_COM_SEG
  918              	.set SensorOut__LCD_EN, CYREG_PRT0_LCD_EN
- 919              	.set SensorOut__MASK, 0x40
+ 919              	.set SensorOut__MASK, 0x20
  920              	.set SensorOut__PORT, 0
  921              	.set SensorOut__PRT, CYREG_PRT0_PRT
  922              	.set SensorOut__PRTDSI__CAPS_SEL, CYREG_PRT0_CAPS_SEL
@@ -12272,7 +12272,7 @@ ARM GAS  Generated_Source\PSoC5\CyBootAsmGnu.s 			page 1
  927              	.set SensorOut__PRTDSI__OUT_SEL1, CYREG_PRT0_OUT_SEL1
  928              	.set SensorOut__PRTDSI__SYNC_OUT, CYREG_PRT0_SYNC_OUT
  929              	.set SensorOut__PS, CYREG_PRT0_PS
- 930              	.set SensorOut__SHIFT, 6
+ 930              	.set SensorOut__SHIFT, 5
  931              	.set SensorOut__SLW, CYREG_PRT0_SLW
  932              	
  933              	/* Pin_ADC_in */

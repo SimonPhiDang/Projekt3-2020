@@ -88,11 +88,11 @@
 #define S0__SLW CYREG_PRT0_SLW
 
 /* S1 */
-#define S1__0__INTTYPE CYREG_PICU0_INTTYPE3
-#define S1__0__MASK 0x08u
-#define S1__0__PC CYREG_PRT0_PC3
+#define S1__0__INTTYPE CYREG_PICU0_INTTYPE6
+#define S1__0__MASK 0x40u
+#define S1__0__PC CYREG_PRT0_PC6
 #define S1__0__PORT 0u
-#define S1__0__SHIFT 3u
+#define S1__0__SHIFT 6u
 #define S1__AG CYREG_PRT0_AG
 #define S1__AMUX CYREG_PRT0_AMUX
 #define S1__BIE CYREG_PRT0_BIE
@@ -107,7 +107,7 @@
 #define S1__INTTYPE_BASE CYDEV_PICU_INTTYPE_PICU0_BASE
 #define S1__LCD_COM_SEG CYREG_PRT0_LCD_COM_SEG
 #define S1__LCD_EN CYREG_PRT0_LCD_EN
-#define S1__MASK 0x08u
+#define S1__MASK 0x40u
 #define S1__PORT 0u
 #define S1__PRT CYREG_PRT0_PRT
 #define S1__PRTDSI__CAPS_SEL CYREG_PRT0_CAPS_SEL
@@ -118,15 +118,15 @@
 #define S1__PRTDSI__OUT_SEL1 CYREG_PRT0_OUT_SEL1
 #define S1__PRTDSI__SYNC_OUT CYREG_PRT0_SYNC_OUT
 #define S1__PS CYREG_PRT0_PS
-#define S1__SHIFT 3u
+#define S1__SHIFT 6u
 #define S1__SLW CYREG_PRT0_SLW
 
 /* S2 */
-#define S2__0__INTTYPE CYREG_PICU0_INTTYPE4
-#define S2__0__MASK 0x10u
-#define S2__0__PC CYREG_PRT0_PC4
+#define S2__0__INTTYPE CYREG_PICU0_INTTYPE3
+#define S2__0__MASK 0x08u
+#define S2__0__PC CYREG_PRT0_PC3
 #define S2__0__PORT 0u
-#define S2__0__SHIFT 4u
+#define S2__0__SHIFT 3u
 #define S2__AG CYREG_PRT0_AG
 #define S2__AMUX CYREG_PRT0_AMUX
 #define S2__BIE CYREG_PRT0_BIE
@@ -141,7 +141,7 @@
 #define S2__INTTYPE_BASE CYDEV_PICU_INTTYPE_PICU0_BASE
 #define S2__LCD_COM_SEG CYREG_PRT0_LCD_COM_SEG
 #define S2__LCD_EN CYREG_PRT0_LCD_EN
-#define S2__MASK 0x10u
+#define S2__MASK 0x08u
 #define S2__PORT 0u
 #define S2__PRT CYREG_PRT0_PRT
 #define S2__PRTDSI__CAPS_SEL CYREG_PRT0_CAPS_SEL
@@ -152,15 +152,15 @@
 #define S2__PRTDSI__OUT_SEL1 CYREG_PRT0_OUT_SEL1
 #define S2__PRTDSI__SYNC_OUT CYREG_PRT0_SYNC_OUT
 #define S2__PS CYREG_PRT0_PS
-#define S2__SHIFT 4u
+#define S2__SHIFT 3u
 #define S2__SLW CYREG_PRT0_SLW
 
 /* S3 */
-#define S3__0__INTTYPE CYREG_PICU0_INTTYPE5
-#define S3__0__MASK 0x20u
-#define S3__0__PC CYREG_PRT0_PC5
+#define S3__0__INTTYPE CYREG_PICU0_INTTYPE4
+#define S3__0__MASK 0x10u
+#define S3__0__PC CYREG_PRT0_PC4
 #define S3__0__PORT 0u
-#define S3__0__SHIFT 5u
+#define S3__0__SHIFT 4u
 #define S3__AG CYREG_PRT0_AG
 #define S3__AMUX CYREG_PRT0_AMUX
 #define S3__BIE CYREG_PRT0_BIE
@@ -175,7 +175,7 @@
 #define S3__INTTYPE_BASE CYDEV_PICU_INTTYPE_PICU0_BASE
 #define S3__LCD_COM_SEG CYREG_PRT0_LCD_COM_SEG
 #define S3__LCD_EN CYREG_PRT0_LCD_EN
-#define S3__MASK 0x20u
+#define S3__MASK 0x10u
 #define S3__PORT 0u
 #define S3__PRT CYREG_PRT0_PRT
 #define S3__PRTDSI__CAPS_SEL CYREG_PRT0_CAPS_SEL
@@ -186,7 +186,7 @@
 #define S3__PRTDSI__OUT_SEL1 CYREG_PRT0_OUT_SEL1
 #define S3__PRTDSI__SYNC_OUT CYREG_PRT0_SYNC_OUT
 #define S3__PS CYREG_PRT0_PS
-#define S3__SHIFT 5u
+#define S3__SHIFT 4u
 #define S3__SLW CYREG_PRT0_SLW
 
 /* I2C */
@@ -897,11 +897,11 @@
 #define ADC_SAR_1_theACLK__PM_STBY_MSK 0x01u
 
 /* SensorOut */
-#define SensorOut__0__INTTYPE CYREG_PICU0_INTTYPE6
-#define SensorOut__0__MASK 0x40u
-#define SensorOut__0__PC CYREG_PRT0_PC6
+#define SensorOut__0__INTTYPE CYREG_PICU0_INTTYPE5
+#define SensorOut__0__MASK 0x20u
+#define SensorOut__0__PC CYREG_PRT0_PC5
 #define SensorOut__0__PORT 0u
-#define SensorOut__0__SHIFT 6u
+#define SensorOut__0__SHIFT 5u
 #define SensorOut__AG CYREG_PRT0_AG
 #define SensorOut__AMUX CYREG_PRT0_AMUX
 #define SensorOut__BIE CYREG_PRT0_BIE
@@ -916,7 +916,7 @@
 #define SensorOut__INTTYPE_BASE CYDEV_PICU_INTTYPE_PICU0_BASE
 #define SensorOut__LCD_COM_SEG CYREG_PRT0_LCD_COM_SEG
 #define SensorOut__LCD_EN CYREG_PRT0_LCD_EN
-#define SensorOut__MASK 0x40u
+#define SensorOut__MASK 0x20u
 #define SensorOut__PORT 0u
 #define SensorOut__PRT CYREG_PRT0_PRT
 #define SensorOut__PRTDSI__CAPS_SEL CYREG_PRT0_CAPS_SEL
@@ -927,7 +927,7 @@
 #define SensorOut__PRTDSI__OUT_SEL1 CYREG_PRT0_OUT_SEL1
 #define SensorOut__PRTDSI__SYNC_OUT CYREG_PRT0_SYNC_OUT
 #define SensorOut__PS CYREG_PRT0_PS
-#define SensorOut__SHIFT 6u
+#define SensorOut__SHIFT 5u
 #define SensorOut__SLW CYREG_PRT0_SLW
 
 /* Pin_ADC_in */
