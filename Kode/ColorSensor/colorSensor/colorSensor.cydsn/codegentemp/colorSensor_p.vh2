@@ -1,5 +1,5 @@
 -- Project:   colorSensor
--- Generated: 11/19/2020 17:03:14
+-- Generated: 11/27/2020 13:39:33
 -- PSoC Creator  4.3
 
 ENTITY colorSensor IS
@@ -180,9 +180,9 @@ ARCHITECTURE __DEFAULT__ OF colorSensor IS
     ATTRIBUTE lib_model OF Tx_1(0) : LABEL IS "iocell2";
     ATTRIBUTE Location OF Tx_1(0) : LABEL IS "P12[7]";
     ATTRIBUTE lib_model OF S0(0) : LABEL IS "iocell3";
-    ATTRIBUTE Location OF S0(0) : LABEL IS "P0[1]";
+    ATTRIBUTE Location OF S0(0) : LABEL IS "P0[0]";
     ATTRIBUTE lib_model OF S1(0) : LABEL IS "iocell4";
-    ATTRIBUTE Location OF S1(0) : LABEL IS "P0[2]";
+    ATTRIBUTE Location OF S1(0) : LABEL IS "P0[6]";
     ATTRIBUTE lib_model OF S2(0) : LABEL IS "iocell5";
     ATTRIBUTE Location OF S2(0) : LABEL IS "P0[3]";
     ATTRIBUTE lib_model OF S3(0) : LABEL IS "iocell6";

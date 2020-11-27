@@ -1,6 +1,6 @@
-C:\Users\Lucas\Documents\PSoC Creator\colorSensor\colorSensor.cydsn\colorSensor.cyprj|25ae0d53-de4e-430f-ae10-2808aa1e5c18
-C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|51fe17fb-37e0-46a4-8684-cb46a56bdacd
-C:\Users\Lucas\Documents\PSoC Creator\4.3\Downloads ( 4.3).cylib\Downloads ( 4.3).cyprj|e464ecc2-84e7-4fe2-a724-fb158500f3d8
-C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|0d0c7354-4def-42ea-b2c6-7a05dd4a7ce6
-C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|b54748a3-ef0a-41bd-9d86-e8d36166001b
-C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|0585a5af-9e40-4112-8449-1c4b59ba6f51
+C:\Users\shynt\OneDrive\Skrivebord\Projekt3-2020-master\Kode\ColorSensor\colorSensor\colorSensor.cydsn\colorSensor.cyprj|17dd5fdf-558d-4177-884b-c375e7abb542
+C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|ed34194c-5ba3-472c-a4bb-ec26d4595311
+C:\Users\shynt\OneDrive\Dokumenter\PSoC Creator\4.3\Downloads ( 4.3).cylib\Downloads ( 4.3).cyprj|4f29fecb-2c5f-451c-bd95-7255ba73a551
+C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|ec240143-7269-4310-9663-0c500aa1585d
+C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|1c6580bd-8b28-4dd5-ae8f-a0674a3fd514
+C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|a6879433-de47-438e-bd80-d53c57755c1f

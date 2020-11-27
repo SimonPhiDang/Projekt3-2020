@@ -13,7 +13,7 @@ void print(char *str) ;
 void init_start(void);
 void read_color(void);
 int get_freq(char color);
-void init_start(void);
+
 int getColor();
 
 

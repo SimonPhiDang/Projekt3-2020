@@ -13,6 +13,7 @@
 #include "project.h"
 #include <stdio.h>
 #include <stdint.h>
+#include "colorSensor.h"
 
 #define COUNTER_SIZE 10000
 uint32_t freq = 0;
@@ -118,30 +119,43 @@ void print(char *str)
 
 int getColor()
 {
-uint freqR, freqG, freqB = 0;
-uint countR, countG, countB = 0;
+uint freqR_0, freqG_0, freqB_0, freqR, freqG, freqB = 0;
+uint countR = 0;
+uint countG = 0;
+uint countB = 0;
+uint countU = 0;
+
     
     init_start();
     read_color();
     
+    freqR_0 = get_freq('r');
+    freqG_0 = get_freq('g');
+    freqB_0 = get_freq('b');
+    
         for(;;)
         {
-            freqR = get_freq('r')-10;
-            freqG = get_freq('g')+10;
+            
+            freqR = get_freq('r');
+            freqG = get_freq('g');
             freqB = get_freq('b');
+           
             
             //Nedenstående to sætninger bruges til at se frekvensen på farverne
-            //sprintf(str,"Red freq: %u Hz, Green freq: %u, Blue freq: %u\n\n\r",freqR,freqG,freqB);
+            //sprintf(str,"Red freq: %u Hz, Green freq: %u, Blue freq: %u, Clear freq: %u, R0: %u, G0: %u, B0: %u \n\n\r",freqR,freqG,freqB,freqC,freqR_0,freqG_0,freqB_0);
             //print(str);
             
             //Nedenstående er koden der skal bruges
             
-             if(freqR>freqG&&freqR>freqB)
+        
+            
+             if(freqR>freqR_0*1.1)
                 {
-                    if(freqR>=100)
+                    if(freqR>freqG&&freqR>freqB)
                     {
                         countR ++;
-                        if(countR==5)
+
+                        if(countR==2)
                         {
                             //Indsæt 'driveForward funktion'
                         sprintf(str,"Red color detected\n\r");
@@ -150,18 +164,21 @@ uint countR, countG, countB = 0;
                         }
                         
                     }
+                   
                     else
                     {
                         //Indsæt 'driveLeft funktion'
-                        sprintf(str,"Unknown color\n\r");
+                        sprintf(str,"Unknown color in red\n\r");
                         print(str);
-                    }      
+                    }    
                 }
 
-            else if (freqG>freqR&&freqG>freqB)
+            else if (freqG>freqG_0+1.1)
+            {    
+                if (freqG>freqB*0.9)
                 {
                         countG ++;
-                        if(countG==5)
+                        if(countG==2)
                         {
                             //Indsæt
                         sprintf(str,"Green color detected\n\r");
@@ -169,27 +186,40 @@ uint countR, countG, countB = 0;
                         countG = 0;
                         }
                 }
-                
-            else if(freqB>freqG&&freqB>freqR)
+                else
+                {
+                      sprintf(str,"Blue color detected\n\r");
+                      print(str);               
+                }
+            }    
+            else if (freqB>freqB_0*1.1)
+            {
+            
+            
+                if (freqB>freqG)
                 {
                         countB ++;
-                        if(countB==5)
+                        if(countB==2)
                         {
                         sprintf(str,"Blue color detected\n\r");
                         print(str);
                         countB = 0;
                         }
                 }
-                
-                else
+             }
+           
+            else
                 {
-                        //Indsæt 'driveLeft funktion'
+                    countU ++;
+                    if(countU==2)
+                     {   //Indsæt 'driveLeft funktion'
                     sprintf(str,"Unknown color\n\r");
                     print(str);
+                    countU = 0;}
                 }
-                       
+        }  
         
-        }   
+        
 
         return 0;
 }

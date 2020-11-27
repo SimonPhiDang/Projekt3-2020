@@ -73,6 +73,7 @@
 <v>colorSensor\colorSensor\Generated_Source\PSoC5\S2</v>
 <v>colorSensor\colorSensor\Generated_Source\PSoC5\S3</v>
 <v>colorSensor\colorSensor\Generated_Source\PSoC5\SensorOut</v>
+<v>colorSensor\colorSensor\Generated_Source\PSoC5\Timer</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
@@ -175,6 +176,7 @@
 <v>colorSensor\colorSensor\CortexM3\ARM_GCC_541\Debug\Listing Files\SensorOut.lst</v>
 <v>colorSensor\colorSensor\CortexM3\ARM_GCC_541\Debug\Listing Files\Timer.lst</v>
 <v>colorSensor\colorSensor\CortexM3\ARM_GCC_541\Debug\Listing Files\Timer_INT.lst</v>
+<v>colorSensor\colorSensor\CortexM3\ARM_GCC_541\Debug\Listing Files\Timer_PM.lst</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
@@ -226,7 +228,19 @@
 </userData>
 </CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
 <Unloaded />
-<OpenDocs />
+<OpenDocs>
+<name v=".\colorSensor.cydsn\TopDesign\TopDesign.cysch" />
+<name v=".\colorSensor.cydsn\colorSensor.cydwr" />
+<name v=".\colorSensor.cydsn\main.c" />
+<name v=".\colorSensor.cydsn\colorSensor.h" />
+</OpenDocs>
+<OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
+
+  Actipro Docking/MDI for WinForms
+  Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
+  http://www.actiprosoftware.com
+
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1309, 495" SelectedTabbedMdiWindow="ea9ab710-c42f-4a72-b625-94c29952855e"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="ea9ab710-c42f-4a72-b625-94c29952855e" /><DocumentWindow Key="C:\Users\shynt\OneDrive\Skrivebord\Projekt3-2020-master\Kode\ColorSensor\colorSensor\colorSensor.cydsn\TopDesign\TopDesign.cysch" Guid="0830f608-ad01-4288-938d-e6c9bdc6c905" /><DocumentWindow Key="C:\Users\shynt\OneDrive\Skrivebord\Projekt3-2020-master\Kode\ColorSensor\colorSensor\colorSensor.cydsn\colorSensor.cydwr" Guid="e8548055-16fd-45e9-bc46-ce41fed712a8" /><DocumentWindow Key="C:\Users\shynt\OneDrive\Skrivebord\Projekt3-2020-master\Kode\ColorSensor\colorSensor\colorSensor.cydsn\main.c" Guid="83657fc7-1c0a-4398-a708-507d7bd93441" /><DocumentWindow Key="C:\Users\shynt\OneDrive\Skrivebord\Projekt3-2020-master\Kode\ColorSensor\colorSensor\colorSensor.cydsn\colorSensor.h" Guid="e78ebb0c-a183-49c0-8dc5-250e26ccc5a3" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
