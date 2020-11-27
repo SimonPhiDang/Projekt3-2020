@@ -86,7 +86,7 @@ void async(uWS::Hub* h)
 uWS::Hub hub;
 void *orderControllerFunction(void *ptr);
 void *awatingSuccessFunction(void *ptr);
-void readGPIO();
+int readGPIO();
 
 int main()
 {
@@ -120,19 +120,18 @@ void *awatingSuccessFunction(void *ptr)
   
   while (1)
   {
-    //readGPIO();
-    sleep(20);
-    //readGPIO();
-    std::cout << "Beertress completed an order. Wating for new order" << std::endl;
-    isOrderCompletion = true;
-    pthread_cond_signal(&beertressWorking);
+    if (readGPIO() == 1)
+    {
+      std::cout << "Beertress completed an order. Wating for new order" << std::endl;
+      isOrderCompletion = true;
+      pthread_cond_signal(&beertressWorking);
+      sleep(5);
+    }  
   }
-  
-
   return 0;
 }
 
-void readGPIO()
+int readGPIO()
 {
   size_t fd;
   char read_buf[2];
@@ -141,5 +140,11 @@ void readGPIO()
     printf("ERROR: Error opening /dev/orderCompleteGPIO\n");
   }
   read(fd, read_buf, sizeof(read_buf));
-  printf("Reading from orderCompleteGPIO: %s \n", read_buf);
+  //printf("Reading from orderCompleteGPIO: %s \n", read_buf);
+
+  close(fd);
+
+  int value = read_buf[0] - '0';
+
+  return value;
 }

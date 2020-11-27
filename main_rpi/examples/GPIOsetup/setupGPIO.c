@@ -43,7 +43,7 @@ static int mygpio_init(void)
     printk(KERN_ALERT "MKDEV was successfull!\n");
 
     // Register Device
-    err_reg = register_chrdev_region(devno, 1, "LED3");
+    err_reg = register_chrdev_region(devno, 1, "orderCompleteGPIO");
     if (err_reg < 0)
     {
         printk(KERN_ALERT "Error with register!\n");

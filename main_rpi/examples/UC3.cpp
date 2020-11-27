@@ -57,7 +57,7 @@ void UC3::sendOrderToPSoC(){
         std::cout << "Error on status" << std::endl;
     }
     
-    writeBuf[0] = 0b00100011;
+    writeBuf[0] = 0b00000001;
     num_write = write(fd,writeBuf,1);
     if (num_write != 1)
     {

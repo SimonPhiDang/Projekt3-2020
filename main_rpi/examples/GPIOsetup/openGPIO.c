@@ -8,29 +8,22 @@ int main(int narg, char * argp[])
     size_t fd;
     int errsv = 0;
     char read_buf[2];
-    char write_buf[2];
 
-    printf("using file: %s\n", argp[1]);
+    printf("using file: /dev/orderCompleteGPIO\n");
     
-    if((fd = open(argp[1], O_RDWR)) < 0) {
+    if((fd = open("/dev/orderCompleteGPIO", O_RDWR)) < 0) {
         errsv = errno;
-        printf("ERROR: Error opening %s\n", argp[1]);
+        printf("ERROR: Error opening /dev/orderCompleteGPIO\n");
         return errsv;
     }
 
 
-    printf("%s has been opened\n", argp[1]);
+    printf("/dev/orderCompleteGPIO has been opened\n");
 
     read(fd, read_buf, sizeof(read_buf));
-    printf("Reading from LED3: %s \n", read_buf);
-    write(fd, argp[2] , 2);
-    printf("Writing to LED3: %s \n", argp[2]);
-    read(fd, read_buf, sizeof(read_buf));
-    printf("Reading from LED3: %s \n", read_buf);
-    
+    printf("Reading from GPIO25: %s \n", read_buf);
+
     close(fd);
-    
-    printf("%s has been closed\n", argp[1]);
     
     return errsv;
 
