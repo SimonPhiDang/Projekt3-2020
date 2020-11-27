@@ -13,6 +13,7 @@
 #include "project.h"
 #include <stdio.h>
 #include <stdint.h>
+#include "colorSensor.h"
 
 #define COUNTER_SIZE 10000
 uint32_t freq = 0;
@@ -41,10 +42,8 @@ CY_ISR(counter_isr)//Counter i interrupt routine
     Counter_cycle++;
 }
 
-void init_start(void)//Starter de indbyggede funktioner fra topdesign: UART, Timer, Counter
+void color_init_start(void)//Starter de indbyggede funktioner fra topdesign: UART, Timer, Counter
 {
-    CyGlobalIntEnable;
-    UART_1_Start();
     Timer_INT_StartEx(timer_isr);
     Counter_INT_StartEx(counter_isr);
 }
@@ -97,16 +96,11 @@ int get_freq(char color)//Modtager input på baggrund af indstillinger for farve
         read_color();
     }
     
-   
-    
     while(!dataReady)
     {
     ;
     }
     return freq;
-    
- 
-
 }
 
 char str[STRING_LENGTH+1] ; /* print buff */
@@ -117,7 +111,7 @@ int getColor()
 uint freqR, freqG, freqB = 0;
 uint countR, countG, countB = 0;
     
-    init_start();
+    color_init_start();
     read_color();
     
         for(;;)

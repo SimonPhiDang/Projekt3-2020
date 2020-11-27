@@ -1,5 +1,5 @@
 # Main
-# 2020-11-27 10:18:17Z
+# 2020-11-27 11:17:54Z
 
 # IO_0@[IOP=(1)][IoId=(0)] is reserved: SWDDebugEnabled
 dont_use_io iocell 1 0
@@ -31,8 +31,8 @@ set_location "\Counter:CounterUDB:status_2\" 3 0 0 2
 set_location "\Counter:CounterUDB:count_enable\" 3 0 0 0
 set_location "\Timer:TimerUDB:status_tc\" 2 1 0 3
 set_location "\PWM2:PWMUDB:status_2\" 3 2 0 2
-set_location "\I2C_1:I2C_IRQ\" interrupt -1 -1 15
-set_location "\I2C_1:I2C_FF\" i2ccell -1 -1 0
+set_location "\I2C:I2C_IRQ\" interrupt -1 -1 15
+set_location "\I2C:I2C_FF\" i2ccell -1 -1 0
 set_location "__ONE__" 1 4 1 2
 set_location "\PWM1:PWMUDB:genblk1:ctrlreg\" 2 2 6
 set_location "\PWM1:PWMUDB:genblk8:stsreg\" 2 2 4

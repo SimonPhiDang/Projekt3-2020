@@ -34,7 +34,7 @@ set_location "\PWM2:PWMUDB:runmode_enable\" macrocell 3 2 0 1
 set_location "\PWM1:PWMUDB:status_2\" macrocell 2 2 0 2
 set_location "\Counter:CounterUDB:count_enable\" macrocell 3 0 0 0
 set_location "\Control_Reg:Sync:ctrl_reg\" controlcell 2 0 6 
-set_location "\I2C_1:I2C_FF\" i2ccell -1 -1 0
+set_location "\I2C:I2C_FF\" i2ccell -1 -1 0
 set_location "ClockBlock" clockblockcell -1 -1 0
 set_io "PwmPIN1(0)" iocell 3 0
 # Note: port 12 is the logical name for port 7
@@ -52,7 +52,7 @@ set_location "\Counter:CounterUDB:sCTRLReg:ctrlreg\" controlcell 3 0 6
 set_location "\ADC_SAR_1:ADC_SAR\" sarcell -1 -1 1
 set_io "OE(0)" iocell 0 7
 set_location "Timer_INT" interrupt -1 -1 1
-set_location "\I2C_1:I2C_IRQ\" interrupt -1 -1 15
+set_location "\I2C:I2C_IRQ\" interrupt -1 -1 15
 set_io "in1(0)" iocell 3 2
 set_io "\ADC_SAR_1:ExtVref(0)\" iocell 0 2
 set_io "Pin_ADC_in(0)" iocell 0 1

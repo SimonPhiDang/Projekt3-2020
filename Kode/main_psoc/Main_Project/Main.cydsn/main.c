@@ -14,6 +14,7 @@
 // Includes af bibloteker
 #include "motorStyring.h"
 #include "Scale.h"
+#include "colorSensor.h"
 
 int main(void)
 {
@@ -22,7 +23,8 @@ int main(void)
     //inits
     initMotor(); //Motor
     ADC_init();  //Vægtsensor
-
+    color_init_start(); //Colorsensor
+    
     for(;;)
     {
         
