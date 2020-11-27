@@ -1,0 +1,1 @@
+cmd_/home/stud/Documents/Projects/WebSocket/uwebsockets/examples/GPIOsetup/setupGPIO.mod := { echo  /home/stud/Documents/Projects/WebSocket/uwebsockets/examples/GPIOsetup/setupGPIO.o; echo; } > /home/stud/Documents/Projects/WebSocket/uwebsockets/examples/GPIOsetup/setupGPIO.mod

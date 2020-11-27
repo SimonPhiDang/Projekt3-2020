@@ -4,6 +4,7 @@ SRC=main.cpp UC3.cpp
 EXE_NAME=main
 # Path to where UWS source is
 UWSPATH=..
+KERNELDIR = ~/sources/rpi-5.4.51
 
 
 OBJS=$(addprefix ${OBJ_DEST_DIR}/,$(notdir ${SRC:%.cpp=%.o}))

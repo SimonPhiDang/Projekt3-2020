@@ -1,5 +1,8 @@
 #include "UC3.h"
 #include <uWS/uWS.h>
+#include <linux/i2c-dev.h>
+#include <sys/ioctl.h>
+
 
 UC3::UC3(/* args */)
 {
@@ -19,7 +22,7 @@ int UC3::getBeerAmount(){
 }
 
 bool UC3::checkOrder(){
-    cout << "Checking Order" << endl;
+    cout << "Checking Order: Bord: " << table_ << ". Antal øl: " << beerAmount_ << endl;
     return 0;
 }
 
@@ -35,14 +38,33 @@ void UC3::sendOrderToLog(int table, int beerAmount){
 }
 
 void UC3::sendOrderToPSoC(){
-    if (beerAmount_ == 1)
+
+    cout << "Bord: " << table_ << " har ordret " << beerAmount_ << " øl. Sender til PSoC" << endl;
+    int fd;
+    int writeBuf[10];
+    int num_write;
+    int status;
+
+    fd = open("/dev/i2c-1", O_RDWR);
+    if (fd == -1)
     {
-        cout << "Table " << table_ << " has ordered " << beerAmount_ << " beer. Sending order to PSoC" << endl;
-    }
-    else
+        std::cout << "Error on fd" << std::endl;
+    };
+
+    status = ioctl(fd,0x0703, 0x08);
+    if (status > 0)
     {
-        cout << "Table " << table_ << " has ordered " << beerAmount_ << " beers. Sending order to PSoC" << endl;
+        std::cout << "Error on status" << std::endl;
     }
+    
+    writeBuf[0] = 0b00100011;
+    num_write = write(fd,writeBuf,1);
+    if (num_write != 1)
+    {
+        std::cout << "Error on num_write" << std::endl;
+    };
+    
+    
 }
 
 
