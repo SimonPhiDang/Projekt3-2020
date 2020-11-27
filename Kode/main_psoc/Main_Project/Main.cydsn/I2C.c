@@ -15,13 +15,11 @@
 
 uint8 byteCnt;   
 uint8 wrBuf[3];
-uint8 rdBuf[3];
 uint8 i;
 
 void init_I2C()
 {
     I2C_SlaveInitWriteBuf((uint8 *) wrBuf, 3);
-    I2C_SlaveInitReadBuf((uint8 *) rdBuf, 3);
     I2C_Start();
 }
 

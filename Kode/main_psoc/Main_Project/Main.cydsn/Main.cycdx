@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <blockRegMap version="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://cypress.com/xsd/cyblockregmap cyblockregmap.xsd" xmlns="http://cypress.com/xsd/cyblockregmap">
-  <block name="ClockPWM_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="PwmPIN2" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="in3" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="in4" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="ClockPWM_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="SensorOut" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="in2" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="PWM2" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false">
     <block name="vmIRQ" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
     <block name="ZeroTerminal_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
@@ -51,17 +54,15 @@
       </field>
     </register>
   </block>
-  <block name="Clock_100kHz" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-  <block name="SensorOut" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-  <block name="in2" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-  <block name="in4" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-  <block name="OE" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="S0" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="Done" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="cy_boot" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="Em_EEPROM_Dynamic" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-  <block name="S3" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-  <block name="S0" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="OE" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="S1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="S2" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="S3" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="Clock_100kHz" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="PwmPIN1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="ClockPWM" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="PWM1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false">

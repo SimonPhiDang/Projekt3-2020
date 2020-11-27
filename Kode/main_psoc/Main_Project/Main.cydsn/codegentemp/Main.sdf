@@ -1,6 +1,6 @@
 (DELAYFILE
  (SDFVERSION "IEEE 1497 4.0")
- (DATE "2020-11-27T11:17:56Z")
+ (DATE "2020-11-27T11:44:21Z")
  (DESIGN "Main")
  (VENDOR "Cypress Semiconductor")
  (PROGRAM "PSoC Creator")
@@ -192,6 +192,7 @@
     (INTERCONNECT S2\(0\)_PAD S2\(0\).pad_in (0.000:0.000:0.000))
     (INTERCONNECT S3\(0\)_PAD S3\(0\).pad_in (0.000:0.000:0.000))
     (INTERCONNECT OE\(0\)_PAD OE\(0\).pad_in (0.000:0.000:0.000))
+    (INTERCONNECT Done\(0\)_PAD Done\(0\).pad_in (0.000:0.000:0.000))
    )
   )
  )

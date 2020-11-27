@@ -63,3 +63,4 @@ set_io "S0(0)" iocell 0 0
 set_io "S1(0)" iocell 0 3
 set_io "S2(0)" iocell 0 4
 set_io "S3(0)" iocell 0 5
+set_io "Done(0)" iocell 1 6

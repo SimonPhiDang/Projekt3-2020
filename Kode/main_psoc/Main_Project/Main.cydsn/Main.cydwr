@@ -264,6 +264,7 @@
       <Data key="22863ebe-a37b-476f-b252-6e49a8c00b12" value="SDA_1" />
       <Data key="72220aa3-8412-4928-a91d-584e3e0de84f" value="in4" />
       <Data key="23880638-00de-4f3b-9f8e-93ddd025b6d6" value="S1" />
+      <Data key="a6050642-13ff-4c9c-b0e1-ace1fa36a04a" value="Done" />
       <Data key="c6ef485c-08a5-43a5-af3d-28f56558d1e0" value="SensorOut" />
       <Data key="cce288b9-3ded-4fbc-b75e-909e8766a5f8" value="OE" />
       <Data key="e851a3b9-efb8-48be-bbb8-b303b216c393" value="PwmPIN1" />
@@ -3416,6 +3417,11 @@
     <Group key="23880638-00de-4f3b-9f8e-93ddd025b6d6">
       <Group key="0">
         <Data key="Port Format" value="0,3" />
+      </Group>
+    </Group>
+    <Group key="a6050642-13ff-4c9c-b0e1-ace1fa36a04a">
+      <Group key="0">
+        <Data key="Port Format" value="1,6" />
       </Group>
     </Group>
     <Group key="c6ef485c-08a5-43a5-af3d-28f56558d1e0">

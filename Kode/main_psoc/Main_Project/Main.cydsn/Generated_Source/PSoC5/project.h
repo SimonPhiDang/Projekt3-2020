@@ -63,6 +63,8 @@
 #include "S3.h"
 #include "OE_aliases.h"
 #include "OE.h"
+#include "Done_aliases.h"
+#include "Done.h"
 #include "ADC_SAR_1_IRQ.h"
 #include "ADC_SAR_1_theACLK.h"
 #include "ADC_SAR_1_ExtVref_aliases.h"

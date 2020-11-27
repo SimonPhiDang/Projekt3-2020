@@ -1,5 +1,5 @@
 # Main
-# 2020-11-27 11:17:54Z
+# 2020-11-27 11:44:19Z
 
 # IO_0@[IOP=(1)][IoId=(0)] is reserved: SWDDebugEnabled
 dont_use_io iocell 1 0
@@ -24,6 +24,7 @@ set_io "S1(0)" iocell 0 3
 set_io "S2(0)" iocell 0 4
 set_io "S3(0)" iocell 0 5
 set_io "OE(0)" iocell 0 7
+set_io "Done(0)" iocell 1 6
 set_location "\PWM1:PWMUDB:status_2\" 2 2 0 2
 set_location "\Counter:CounterUDB:reload\" 2 0 0 3
 set_location "\Counter:CounterUDB:status_0\" 3 0 0 3
