@@ -265,7 +265,28 @@
 </userData>
 </CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
 <Unloaded />
-<OpenDocs />
+<OpenDocs>
+<name v=".\Main.cydsn\TopDesign\TopDesign.cysch" />
+<name v=".\Main.cydsn\TopDesign\TopDesign.cysym" />
+<name v=".\Main.cydsn\Main.cydwr" />
+<name v=".\Main.cydsn\main.c" />
+<name v=".\Main.cydsn\motorStyring.h" />
+<name v=".\Main.cydsn\motorStyring.c" />
+<name v=".\Main.cydsn\Scale.h" />
+<name v=".\Main.cydsn\Scale.c" />
+<name v=".\Main.cydsn\colorSensor.h" />
+<name v=".\Main.cydsn\colorSensor.c" />
+<name v=".\Main.cydsn\cyapicallbacks.h" />
+<name v=".\Main.cydsn\I2C.h" />
+<name v=".\Main.cydsn\I2C.c" />
+</OpenDocs>
+<OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
+
+  Actipro Docking/MDI for WinForms
+  Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
+  http://www.actiprosoftware.com
+
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1274, 495" SelectedTabbedMdiWindow="87c370a2-fc0c-4ced-9e42-7a439d6b9d5d"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="489cf4f1-83bc-4b7f-9821-7beedcc27fe8" /><DocumentWindow Key="C:\Users\Simon\Desktop\Projekt3-2020\Kode\main_psoc\Main_Project\Main.cydsn\TopDesign\TopDesign.cysch" Guid="45166c12-78ca-4328-a74a-8c4f366b4c26" /><DocumentWindow Key="C:\Users\Simon\Desktop\Projekt3-2020\Kode\main_psoc\Main_Project\Main.cydsn\TopDesign\TopDesign.cysym" Guid="795c679f-3a6c-4dc7-9363-8e956aa53257" /><DocumentWindow Key="C:\Users\Simon\Desktop\Projekt3-2020\Kode\main_psoc\Main_Project\Main.cydsn\Main.cydwr" Guid="0078f320-8159-4282-81ae-5aaa1287cec9" /><DocumentWindow Key="C:\Users\Simon\Desktop\Projekt3-2020\Kode\main_psoc\Main_Project\Main.cydsn\main.c" Guid="3f25c087-9f0b-4ab7-9a9c-f1206db2fd4c" /><DocumentWindow Key="C:\Users\Simon\Desktop\Projekt3-2020\Kode\main_psoc\Main_Project\Main.cydsn\motorStyring.h" Guid="41d7c47c-85f3-4617-ab42-803758f747aa" /><DocumentWindow Key="C:\Users\Simon\Desktop\Projekt3-2020\Kode\main_psoc\Main_Project\Main.cydsn\motorStyring.c" Guid="896efa52-c8c5-4ebd-add6-b1804db0f383" /><DocumentWindow Key="C:\Users\Simon\Desktop\Projekt3-2020\Kode\main_psoc\Main_Project\Main.cydsn\Scale.h" Guid="d86a89dd-8614-45da-8352-f7d0e112c7ac" /><DocumentWindow Key="C:\Users\Simon\Desktop\Projekt3-2020\Kode\main_psoc\Main_Project\Main.cydsn\Scale.c" Guid="ba8d9a76-a2d4-436e-ae2b-9fdbd210e1ad" /><DocumentWindow Key="C:\Users\Simon\Desktop\Projekt3-2020\Kode\main_psoc\Main_Project\Main.cydsn\colorSensor.h" Guid="7f97d361-d4aa-4d99-a1e7-759b90b6b700" /><DocumentWindow Key="C:\Users\Simon\Desktop\Projekt3-2020\Kode\main_psoc\Main_Project\Main.cydsn\colorSensor.c" Guid="87c370a2-fc0c-4ced-9e42-7a439d6b9d5d" /><DocumentWindow Key="C:\Users\Simon\Desktop\Projekt3-2020\Kode\main_psoc\Main_Project\Main.cydsn\cyapicallbacks.h" Guid="1d5a1aea-b6ce-4c65-b5df-444a6988c047" /><DocumentWindow Key="C:\Users\Simon\Desktop\Projekt3-2020\Kode\main_psoc\Main_Project\Main.cydsn\I2C.h" Guid="6d900f37-36e9-44fb-bd54-fdf02620b8bd" /><DocumentWindow Key="C:\Users\Simon\Desktop\Projekt3-2020\Kode\main_psoc\Main_Project\Main.cydsn\I2C.c" Guid="80b7b720-c3e5-46c9-8da1-f4d3b20a9273" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
