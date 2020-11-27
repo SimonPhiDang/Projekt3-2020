@@ -13,7 +13,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Main_Project\Main\TopDesign">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Main_Project\Main\Source Files\main.c">
 <ExpandedNodeIds>
 <v>Main_Project</v>
 <v>Main_Project\Main</v>
@@ -29,9 +29,17 @@
 <v>Main_Project\Main\Main.cydwr\Flash Security</v>
 <v>Main_Project\Main\Main.cydwr\EEPROM</v>
 <v>Main_Project\Main\Header Files</v>
+<v>Main_Project\Main\Header Files\colorSensor.h</v>
 <v>Main_Project\Main\Header Files\cyapicallbacks.h</v>
+<v>Main_Project\Main\Header Files\motorStyring.h</v>
+<v>Main_Project\Main\Header Files\Scale.h</v>
 <v>Main_Project\Main\Source Files</v>
+<v>Main_Project\Main\Source Files\colorSensor.c</v>
 <v>Main_Project\Main\Source Files\main.c</v>
+<v>Main_Project\Main\Source Files\motorStyring.c</v>
+<v>Main_Project\Main\Source Files\Scale.c</v>
+<v>Main_Project\Main\Generated_Source</v>
+<v>Main_Project\Main\Generated_Source\PSoC5</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
 <v>Main_Project</v>
@@ -48,9 +56,27 @@
 <v>Main_Project\Main\Main.cydwr\Flash Security</v>
 <v>Main_Project\Main\Main.cydwr\EEPROM</v>
 <v>Main_Project\Main\Header Files</v>
+<v>Main_Project\Main\Header Files\colorSensor.h</v>
 <v>Main_Project\Main\Header Files\cyapicallbacks.h</v>
+<v>Main_Project\Main\Header Files\motorStyring.h</v>
+<v>Main_Project\Main\Header Files\Scale.h</v>
 <v>Main_Project\Main\Source Files</v>
+<v>Main_Project\Main\Source Files\colorSensor.c</v>
 <v>Main_Project\Main\Source Files\main.c</v>
+<v>Main_Project\Main\Source Files\motorStyring.c</v>
+<v>Main_Project\Main\Source Files\Scale.c</v>
+<v>Main_Project\Main\Generated_Source</v>
+<v>Main_Project\Main\Generated_Source\PSoC5</v>
+<v>Main_Project\Main\Generated_Source\PSoC5\ADC_SAR_1</v>
+<v>Main_Project\Main\Generated_Source\PSoC5\ADC_SAR_1_ExtVref</v>
+<v>Main_Project\Main\Generated_Source\PSoC5\ADC_SAR_1_IRQ</v>
+<v>Main_Project\Main\Generated_Source\PSoC5\ADC_SAR_1_theACLK</v>
+<v>Main_Project\Main\Generated_Source\PSoC5\Clock_100kHz</v>
+<v>Main_Project\Main\Generated_Source\PSoC5\Clock_10kHz</v>
+<v>Main_Project\Main\Generated_Source\PSoC5\ClockPWM</v>
+<v>Main_Project\Main\Generated_Source\PSoC5\ClockPWM_1</v>
+<v>Main_Project\Main\Generated_Source\PSoC5\Control_Reg</v>
+<v>Main_Project\Main\Generated_Source\PSoC5\Counter</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
@@ -73,6 +99,68 @@
 <ExpandedNodeIds>
 <v>Main_Project</v>
 <v>Main_Project\Main</v>
+<v>Main_Project\Main\CortexM3</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SAR_1.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SAR_1_ExtVref.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SAR_1_INT.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SAR_1_IRQ.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SAR_1_PM.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SAR_1_theACLK.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\Clock_100kHz.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\Clock_10kHz.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\ClockPWM.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\ClockPWM_1.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\Cm3Start.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\Control_Reg.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\Control_Reg_PM.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\Counter.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\Counter_INT.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\Counter_PM.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\CyDmac.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\CySpc.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\I2C_1.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\I2C_1_BOOT.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\I2C_1_INT.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\I2C_1_MASTER.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\I2C_1_PM.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\I2C_1_SLAVE.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\in1.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\in2.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\in3.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\in4.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\main.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\OE.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\Pin_ADC_in.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\PWM1.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\PWM1_PM.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\PWM2.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\PWM2_PM.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\PwmPIN1.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\PwmPIN2.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\S0.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\S1.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\S2.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\S3.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\SCL_1.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\SDA_1.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\SensorOut.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\Timer.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\Timer_INT.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\Timer_PM.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Main.elf</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Main.hex</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Main.map</v>
 <v>Main_Project\Main\Main.gpdsc</v>
 <v>Main_Project\Main\Main.rpt</v>
 <v>Main_Project\Main\Main_timing.html</v>
@@ -80,9 +168,39 @@
 <VisibleNodeIds>
 <v>Main_Project</v>
 <v>Main_Project\Main</v>
-<v>Main_Project\Main\Main.gpdsc</v>
-<v>Main_Project\Main\Main.rpt</v>
-<v>Main_Project\Main\Main_timing.html</v>
+<v>Main_Project\Main\CortexM3</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SAR_1.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SAR_1_ExtVref.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SAR_1_INT.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SAR_1_IRQ.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SAR_1_PM.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SAR_1_theACLK.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\Clock_100kHz.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\Clock_10kHz.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\ClockPWM.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\ClockPWM_1.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\Cm3Start.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\Control_Reg.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\Control_Reg_PM.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\Counter.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\Counter_INT.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\Counter_PM.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\CyDmac.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\CySpc.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\I2C_1.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\I2C_1_BOOT.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\I2C_1_INT.lst</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
@@ -108,6 +226,8 @@
 <v>Main_Project\Main\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
 <v>Main_Project\Main\CyControlReg_v1_80.pdf</v>
 <v>Main_Project\Main\I2C_v3_50.pdf</v>
+<v>Main_Project\Main\PWM_v3_30</v>
+<v>Main_Project\Main\PWM_v3_30\PWM_v3_30.pdf</v>
 <v>Main_Project\Main\Timer_v2_80.pdf</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
@@ -127,6 +247,8 @@
 <v>Main_Project\Main\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
 <v>Main_Project\Main\CyControlReg_v1_80.pdf</v>
 <v>Main_Project\Main\I2C_v3_50.pdf</v>
+<v>Main_Project\Main\PWM_v3_30</v>
+<v>Main_Project\Main\PWM_v3_30\PWM_v3_30.pdf</v>
 <v>Main_Project\Main\Timer_v2_80.pdf</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>

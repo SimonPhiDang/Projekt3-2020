@@ -13,7 +13,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Projekt3Scale\PRJ3Scale\TopDesign">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Projekt3Scale\PRJ3Scale\Source Files\main.c">
 <ExpandedNodeIds>
 <v>Projekt3Scale</v>
 <v>Projekt3Scale\PRJ3Scale</v>
@@ -210,7 +210,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="441, 486" SelectedTabbedMdiWindow="29f1a527-3900-47f4-ae43-6ce83e267f32"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="489cf4f1-83bc-4b7f-9821-7beedcc27fe8" /><DocumentWindow Key="C:\Users\Simon\Desktop\Projekt3-2020\Kode\Scale\Projekt3Scale\PRJ3Scale.cydsn\TopDesign\TopDesign.cysch" Guid="29f1a527-3900-47f4-ae43-6ce83e267f32" /><DocumentWindow Key="C:\Users\Simon\Desktop\Projekt3-2020\Kode\Scale\Projekt3Scale\PRJ3Scale.cydsn\PRJ3Scale.cydwr" Guid="98d5762c-51a1-4ce2-81f1-9c1084528d5f" /><DocumentWindow Key="C:\Users\Simon\Desktop\Projekt3-2020\Kode\Scale\Projekt3Scale\PRJ3Scale.cydsn\main.c" Guid="2810fb8c-de38-423b-927d-6a312795032d" /><DocumentWindow Key="C:\Users\Simon\Desktop\Projekt3-2020\Kode\Scale\Projekt3Scale\PRJ3Scale.cydsn\ADC2.c" Guid="f86db14a-72ac-44b2-b925-6b4dc06718cc" /><DocumentWindow Key="C:\Users\Simon\Desktop\Projekt3-2020\Kode\Scale\Projekt3Scale\PRJ3Scale.cydsn\ADC2.h" Guid="b5c06aa5-323c-489d-afb0-f6e49bba2a6c" /><DocumentWindow Key="C:\Users\Simon\Desktop\Projekt3-2020\Kode\Scale\Projekt3Scale\PRJ3Scale.cydsn\cyapicallbacks.h" Guid="15cea078-c5f6-4aba-91cf-1fc0cdcb96b8" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="504, 486" SelectedTabbedMdiWindow="2810fb8c-de38-423b-927d-6a312795032d"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="489cf4f1-83bc-4b7f-9821-7beedcc27fe8" /><DocumentWindow Key="C:\Users\Simon\Desktop\Projekt3-2020\Kode\Scale\Projekt3Scale\PRJ3Scale.cydsn\TopDesign\TopDesign.cysch" Guid="29f1a527-3900-47f4-ae43-6ce83e267f32" /><DocumentWindow Key="C:\Users\Simon\Desktop\Projekt3-2020\Kode\Scale\Projekt3Scale\PRJ3Scale.cydsn\PRJ3Scale.cydwr" Guid="98d5762c-51a1-4ce2-81f1-9c1084528d5f" /><DocumentWindow Key="C:\Users\Simon\Desktop\Projekt3-2020\Kode\Scale\Projekt3Scale\PRJ3Scale.cydsn\main.c" Guid="2810fb8c-de38-423b-927d-6a312795032d" /><DocumentWindow Key="C:\Users\Simon\Desktop\Projekt3-2020\Kode\Scale\Projekt3Scale\PRJ3Scale.cydsn\ADC2.c" Guid="f86db14a-72ac-44b2-b925-6b4dc06718cc" /><DocumentWindow Key="C:\Users\Simon\Desktop\Projekt3-2020\Kode\Scale\Projekt3Scale\PRJ3Scale.cydsn\ADC2.h" Guid="b5c06aa5-323c-489d-afb0-f6e49bba2a6c" /><DocumentWindow Key="C:\Users\Simon\Desktop\Projekt3-2020\Kode\Scale\Projekt3Scale\PRJ3Scale.cydsn\cyapicallbacks.h" Guid="15cea078-c5f6-4aba-91cf-1fc0cdcb96b8" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>

@@ -1,0 +1,1698 @@
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccQiKAv3.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"cymetadata.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.global	cy_metadata
+  20              		.global	cy_meta_flashprotect
+  21              		.global	cy_meta_wonvl
+  22              		.global	cy_meta_custnvl
+  23              		.global	cy_meta_configecc
+  24              		.section	.cyconfigecc,"a",%progbits
+  25              		.align	2
+  26              		.type	cy_meta_configecc, %object
+  27              		.size	cy_meta_configecc, 1132
+  28              	cy_meta_configecc:
+  29 0000 03       		.byte	3
+  30 0001 52       		.byte	82
+  31 0002 00       		.byte	0
+  32 0003 40       		.byte	64
+  33 0004 02       		.byte	2
+  34 0005 64       		.byte	100
+  35 0006 00       		.byte	0
+  36 0007 40       		.byte	64
+  37 0008 03       		.byte	3
+  38 0009 65       		.byte	101
+  39 000a 00       		.byte	0
+  40 000b 40       		.byte	64
+  41 000c 01       		.byte	1
+  42 000d 01       		.byte	1
+  43 000e 01       		.byte	1
+  44 000f 40       		.byte	64
+  45 0010 02       		.byte	2
+  46 0011 03       		.byte	3
+  47 0012 01       		.byte	1
+  48 0013 40       		.byte	64
+  49 0014 01       		.byte	1
+  50 0015 05       		.byte	5
+  51 0016 01       		.byte	1
+  52 0017 40       		.byte	64
+  53 0018 51       		.byte	81
+  54 0019 06       		.byte	6
+  55 001a 01       		.byte	1
+  56 001b 40       		.byte	64
+  57 001c 2E       		.byte	46
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccQiKAv3.s 			page 2
+
+
+  58 001d 07       		.byte	7
+  59 001e 01       		.byte	1
+  60 001f 40       		.byte	64
+  61 0020 04       		.byte	4
+  62 0021 0C       		.byte	12
+  63 0022 01       		.byte	1
+  64 0023 40       		.byte	64
+  65 0024 02       		.byte	2
+  66 0025 0D       		.byte	13
+  67 0026 01       		.byte	1
+  68 0027 40       		.byte	64
+  69 0028 01       		.byte	1
+  70 0029 0F       		.byte	15
+  71 002a 01       		.byte	1
+  72 002b 40       		.byte	64
+  73 002c 59       		.byte	89
+  74 002d 14       		.byte	20
+  75 002e 01       		.byte	1
+  76 002f 40       		.byte	64
+  77 0030 41       		.byte	65
+  78 0031 15       		.byte	21
+  79 0032 01       		.byte	1
+  80 0033 40       		.byte	64
+  81 0034 40       		.byte	64
+  82 0035 16       		.byte	22
+  83 0036 01       		.byte	1
+  84 0037 40       		.byte	64
+  85 0038 25       		.byte	37
+  86 0039 17       		.byte	23
+  87 003a 01       		.byte	1
+  88 003b 40       		.byte	64
+  89 003c 01       		.byte	1
+  90 003d 19       		.byte	25
+  91 003e 01       		.byte	1
+  92 003f 40       		.byte	64
+  93 0040 03       		.byte	3
+  94 0041 1B       		.byte	27
+  95 0042 01       		.byte	1
+  96 0043 40       		.byte	64
+  97 0044 05       		.byte	5
+  98 0045 40       		.byte	64
+  99 0046 01       		.byte	1
+ 100 0047 40       		.byte	64
+ 101 0048 04       		.byte	4
+ 102 0049 41       		.byte	65
+ 103 004a 01       		.byte	1
+ 104 004b 40       		.byte	64
+ 105 004c 05       		.byte	5
+ 106 004d 42       		.byte	66
+ 107 004e 01       		.byte	1
+ 108 004f 40       		.byte	64
+ 109 0050 04       		.byte	4
+ 110 0051 43       		.byte	67
+ 111 0052 01       		.byte	1
+ 112 0053 40       		.byte	64
+ 113 0054 02       		.byte	2
+ 114 0055 44       		.byte	68
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccQiKAv3.s 			page 3
+
+
+ 115 0056 01       		.byte	1
+ 116 0057 40       		.byte	64
+ 117 0058 01       		.byte	1
+ 118 0059 45       		.byte	69
+ 119 005a 01       		.byte	1
+ 120 005b 40       		.byte	64
+ 121 005c 01       		.byte	1
+ 122 005d 46       		.byte	70
+ 123 005e 01       		.byte	1
+ 124 005f 40       		.byte	64
+ 125 0060 01       		.byte	1
+ 126 0061 47       		.byte	71
+ 127 0062 01       		.byte	1
+ 128 0063 40       		.byte	64
+ 129 0064 07       		.byte	7
+ 130 0065 48       		.byte	72
+ 131 0066 01       		.byte	1
+ 132 0067 40       		.byte	64
+ 133 0068 1A       		.byte	26
+ 134 0069 49       		.byte	73
+ 135 006a 01       		.byte	1
+ 136 006b 40       		.byte	64
+ 137 006c 0A       		.byte	10
+ 138 006d 4C       		.byte	76
+ 139 006e 01       		.byte	1
+ 140 006f 40       		.byte	64
+ 141 0070 05       		.byte	5
+ 142 0071 4D       		.byte	77
+ 143 0072 01       		.byte	1
+ 144 0073 40       		.byte	64
+ 145 0074 04       		.byte	4
+ 146 0075 50       		.byte	80
+ 147 0076 01       		.byte	1
+ 148 0077 40       		.byte	64
+ 149 0078 02       		.byte	2
+ 150 0079 51       		.byte	81
+ 151 007a 01       		.byte	1
+ 152 007b 40       		.byte	64
+ 153 007c 18       		.byte	24
+ 154 007d 01       		.byte	1
+ 155 007e 60       		.byte	96
+ 156 007f 02       		.byte	2
+ 157 0080 64       		.byte	100
+ 158 0081 03       		.byte	3
+ 159 0082 86       		.byte	-122
+ 160 0083 0D       		.byte	13
+ 161 0084 87       		.byte	-121
+ 162 0085 0D       		.byte	13
+ 163 0086 74       		.byte	116
+ 164 0087 01       		.byte	1
+ 165 0088 85       		.byte	-123
+ 166 0089 67       		.byte	103
+ 167 008a 87       		.byte	-121
+ 168 008b 0D       		.byte	13
+ 169 008c E2       		.byte	-30
+ 170 008d 20       		.byte	32
+ 171 008e 85       		.byte	-123
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccQiKAv3.s 			page 4
+
+
+ 172 008f 10       		.byte	16
+ 173 0090 E2       		.byte	-30
+ 174 0091 02       		.byte	2
+ 175 0092 91       		.byte	-111
+ 176 0093 20       		.byte	32
+ 177 0094 02       		.byte	2
+ 178 0095 01       		.byte	1
+ 179 0096 06       		.byte	6
+ 180 0097 02       		.byte	2
+ 181 0098 07       		.byte	7
+ 182 0099 01       		.byte	1
+ 183 009a 0A       		.byte	10
+ 184 009b 04       		.byte	4
+ 185 009c 16       		.byte	22
+ 186 009d 02       		.byte	2
+ 187 009e 2D       		.byte	45
+ 188 009f 01       		.byte	1
+ 189 00a0 30       		.byte	48
+ 190 00a1 04       		.byte	4
+ 191 00a2 32       		.byte	50
+ 192 00a3 01       		.byte	1
+ 193 00a4 34       		.byte	52
+ 194 00a5 02       		.byte	2
+ 195 00a6 37       		.byte	55
+ 196 00a7 01       		.byte	1
+ 197 00a8 3E       		.byte	62
+ 198 00a9 10       		.byte	16
+ 199 00aa 40       		.byte	64
+ 200 00ab 30       		.byte	48
+ 201 00ac 41       		.byte	65
+ 202 00ad 06       		.byte	6
+ 203 00ae 45       		.byte	69
+ 204 00af D0       		.byte	-48
+ 205 00b0 46       		.byte	70
+ 206 00b1 20       		.byte	32
+ 207 00b2 47       		.byte	71
+ 208 00b3 01       		.byte	1
+ 209 00b4 48       		.byte	72
+ 210 00b5 1A       		.byte	26
+ 211 00b6 49       		.byte	73
+ 212 00b7 FF       		.byte	-1
+ 213 00b8 4A       		.byte	74
+ 214 00b9 FF       		.byte	-1
+ 215 00ba 4B       		.byte	75
+ 216 00bb FF       		.byte	-1
+ 217 00bc 4D       		.byte	77
+ 218 00bd A0       		.byte	-96
+ 219 00be 4F       		.byte	79
+ 220 00bf 04       		.byte	4
+ 221 00c0 50       		.byte	80
+ 222 00c1 18       		.byte	24
+ 223 00c2 52       		.byte	82
+ 224 00c3 80       		.byte	-128
+ 225 00c4 54       		.byte	84
+ 226 00c5 05       		.byte	5
+ 227 00c6 58       		.byte	88
+ 228 00c7 04       		.byte	4
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccQiKAv3.s 			page 5
+
+
+ 229 00c8 59       		.byte	89
+ 230 00c9 04       		.byte	4
+ 231 00ca 5A       		.byte	90
+ 232 00cb 04       		.byte	4
+ 233 00cc 5B       		.byte	91
+ 234 00cd 04       		.byte	4
+ 235 00ce 5C       		.byte	92
+ 236 00cf 33       		.byte	51
+ 237 00d0 5D       		.byte	93
+ 238 00d1 33       		.byte	51
+ 239 00d2 5F       		.byte	95
+ 240 00d3 01       		.byte	1
+ 241 00d4 60       		.byte	96
+ 242 00d5 40       		.byte	64
+ 243 00d6 62       		.byte	98
+ 244 00d7 C0       		.byte	-64
+ 245 00d8 64       		.byte	100
+ 246 00d9 40       		.byte	64
+ 247 00da 65       		.byte	101
+ 248 00db 40       		.byte	64
+ 249 00dc 66       		.byte	102
+ 250 00dd C0       		.byte	-64
+ 251 00de 68       		.byte	104
+ 252 00df C0       		.byte	-64
+ 253 00e0 6A       		.byte	106
+ 254 00e1 C0       		.byte	-64
+ 255 00e2 6C       		.byte	108
+ 256 00e3 C0       		.byte	-64
+ 257 00e4 6E       		.byte	110
+ 258 00e5 C0       		.byte	-64
+ 259 00e6 82       		.byte	-126
+ 260 00e7 02       		.byte	2
+ 261 00e8 91       		.byte	-111
+ 262 00e9 01       		.byte	1
+ 263 00ea 92       		.byte	-110
+ 264 00eb 01       		.byte	1
+ 265 00ec 97       		.byte	-105
+ 266 00ed 01       		.byte	1
+ 267 00ee A6       		.byte	-90
+ 268 00ef 02       		.byte	2
+ 269 00f0 AA       		.byte	-86
+ 270 00f1 04       		.byte	4
+ 271 00f2 B0       		.byte	-80
+ 272 00f3 04       		.byte	4
+ 273 00f4 B4       		.byte	-76
+ 274 00f5 02       		.byte	2
+ 275 00f6 B6       		.byte	-74
+ 276 00f7 01       		.byte	1
+ 277 00f8 B7       		.byte	-73
+ 278 00f9 01       		.byte	1
+ 279 00fa BE       		.byte	-66
+ 280 00fb 10       		.byte	16
+ 281 00fc C0       		.byte	-64
+ 282 00fd 10       		.byte	16
+ 283 00fe C1       		.byte	-63
+ 284 00ff 02       		.byte	2
+ 285 0100 C5       		.byte	-59
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccQiKAv3.s 			page 6
+
+
+ 286 0101 D2       		.byte	-46
+ 287 0102 C7       		.byte	-57
+ 288 0103 01       		.byte	1
+ 289 0104 C8       		.byte	-56
+ 290 0105 13       		.byte	19
+ 291 0106 C9       		.byte	-55
+ 292 0107 FF       		.byte	-1
+ 293 0108 CA       		.byte	-54
+ 294 0109 FF       		.byte	-1
+ 295 010a CB       		.byte	-53
+ 296 010b FF       		.byte	-1
+ 297 010c CD       		.byte	-51
+ 298 010d A0       		.byte	-96
+ 299 010e CF       		.byte	-49
+ 300 010f 04       		.byte	4
+ 301 0110 D0       		.byte	-48
+ 302 0111 18       		.byte	24
+ 303 0112 D2       		.byte	-46
+ 304 0113 80       		.byte	-128
+ 305 0114 D4       		.byte	-44
+ 306 0115 05       		.byte	5
+ 307 0116 D8       		.byte	-40
+ 308 0117 04       		.byte	4
+ 309 0118 D9       		.byte	-39
+ 310 0119 04       		.byte	4
+ 311 011a DA       		.byte	-38
+ 312 011b 04       		.byte	4
+ 313 011c DB       		.byte	-37
+ 314 011d 04       		.byte	4
+ 315 011e DC       		.byte	-36
+ 316 011f 22       		.byte	34
+ 317 0120 DD       		.byte	-35
+ 318 0121 22       		.byte	34
+ 319 0122 DF       		.byte	-33
+ 320 0123 01       		.byte	1
+ 321 0124 E0       		.byte	-32
+ 322 0125 40       		.byte	64
+ 323 0126 E2       		.byte	-30
+ 324 0127 C0       		.byte	-64
+ 325 0128 E4       		.byte	-28
+ 326 0129 40       		.byte	64
+ 327 012a E5       		.byte	-27
+ 328 012b 40       		.byte	64
+ 329 012c E6       		.byte	-26
+ 330 012d C0       		.byte	-64
+ 331 012e E8       		.byte	-24
+ 332 012f C0       		.byte	-64
+ 333 0130 EA       		.byte	-22
+ 334 0131 C0       		.byte	-64
+ 335 0132 EC       		.byte	-20
+ 336 0133 C0       		.byte	-64
+ 337 0134 EE       		.byte	-18
+ 338 0135 C0       		.byte	-64
+ 339 0136 00       		.byte	0
+ 340 0137 01       		.byte	1
+ 341 0138 05       		.byte	5
+ 342 0139 04       		.byte	4
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccQiKAv3.s 			page 7
+
+
+ 343 013a 06       		.byte	6
+ 344 013b 88       		.byte	-120
+ 345 013c 0B       		.byte	11
+ 346 013d 40       		.byte	64
+ 347 013e 0F       		.byte	15
+ 348 013f 20       		.byte	32
+ 349 0140 10       		.byte	16
+ 350 0141 20       		.byte	32
+ 351 0142 12       		.byte	18
+ 352 0143 08       		.byte	8
+ 353 0144 18       		.byte	24
+ 354 0145 01       		.byte	1
+ 355 0146 1A       		.byte	26
+ 356 0147 08       		.byte	8
+ 357 0148 1B       		.byte	27
+ 358 0149 02       		.byte	2
+ 359 014a 1D       		.byte	29
+ 360 014b 0C       		.byte	12
+ 361 014c 1E       		.byte	30
+ 362 014d 58       		.byte	88
+ 363 014e 22       		.byte	34
+ 364 014f 40       		.byte	64
+ 365 0150 26       		.byte	38
+ 366 0151 40       		.byte	64
+ 367 0152 2C       		.byte	44
+ 368 0153 20       		.byte	32
+ 369 0154 2E       		.byte	46
+ 370 0155 44       		.byte	68
+ 371 0156 32       		.byte	50
+ 372 0157 08       		.byte	8
+ 373 0158 33       		.byte	51
+ 374 0159 02       		.byte	2
+ 375 015a 3E       		.byte	62
+ 376 015b 08       		.byte	8
+ 377 015c 40       		.byte	64
+ 378 015d 01       		.byte	1
+ 379 015e 42       		.byte	66
+ 380 015f 04       		.byte	4
+ 381 0160 45       		.byte	69
+ 382 0161 08       		.byte	8
+ 383 0162 48       		.byte	72
+ 384 0163 20       		.byte	32
+ 385 0164 49       		.byte	73
+ 386 0165 01       		.byte	1
+ 387 0166 4F       		.byte	79
+ 388 0167 21       		.byte	33
+ 389 0168 51       		.byte	81
+ 390 0169 04       		.byte	4
+ 391 016a 52       		.byte	82
+ 392 016b 08       		.byte	8
+ 393 016c 54       		.byte	84
+ 394 016d 04       		.byte	4
+ 395 016e 56       		.byte	86
+ 396 016f 08       		.byte	8
+ 397 0170 57       		.byte	87
+ 398 0171 10       		.byte	16
+ 399 0172 59       		.byte	89
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccQiKAv3.s 			page 8
+
+
+ 400 0173 01       		.byte	1
+ 401 0174 5A       		.byte	90
+ 402 0175 88       		.byte	-120
+ 403 0176 5E       		.byte	94
+ 404 0177 88       		.byte	-120
+ 405 0178 5F       		.byte	95
+ 406 0179 01       		.byte	1
+ 407 017a 73       		.byte	115
+ 408 017b 40       		.byte	64
+ 409 017c 76       		.byte	118
+ 410 017d 80       		.byte	-128
+ 411 017e 91       		.byte	-111
+ 412 017f 20       		.byte	32
+ 413 0180 C0       		.byte	-64
+ 414 0181 78       		.byte	120
+ 415 0182 C2       		.byte	-62
+ 416 0183 28       		.byte	40
+ 417 0184 C4       		.byte	-60
+ 418 0185 06       		.byte	6
+ 419 0186 CA       		.byte	-54
+ 420 0187 10       		.byte	16
+ 421 0188 CC       		.byte	-52
+ 422 0189 03       		.byte	3
+ 423 018a CE       		.byte	-50
+ 424 018b 40       		.byte	64
+ 425 018c D0       		.byte	-48
+ 426 018d 4C       		.byte	76
+ 427 018e D2       		.byte	-46
+ 428 018f 20       		.byte	32
+ 429 0190 D6       		.byte	-42
+ 430 0191 DB       		.byte	-37
+ 431 0192 39       		.byte	57
+ 432 0193 08       		.byte	8
+ 433 0194 3F       		.byte	63
+ 434 0195 04       		.byte	4
+ 435 0196 59       		.byte	89
+ 436 0197 04       		.byte	4
+ 437 0198 5F       		.byte	95
+ 438 0199 01       		.byte	1
+ 439 019a 25       		.byte	37
+ 440 019b 08       		.byte	8
+ 441 019c 85       		.byte	-123
+ 442 019d 08       		.byte	8
+ 443 019e E2       		.byte	-30
+ 444 019f 20       		.byte	32
+ 445 01a0 04       		.byte	4
+ 446 01a1 08       		.byte	8
+ 447 01a2 06       		.byte	6
+ 448 01a3 01       		.byte	1
+ 449 01a4 0C       		.byte	12
+ 450 01a5 1C       		.byte	28
+ 451 01a6 0E       		.byte	14
+ 452 01a7 02       		.byte	2
+ 453 01a8 12       		.byte	18
+ 454 01a9 1C       		.byte	28
+ 455 01aa 18       		.byte	24
+ 456 01ab 04       		.byte	4
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccQiKAv3.s 			page 9
+
+
+ 457 01ac 1A       		.byte	26
+ 458 01ad 01       		.byte	1
+ 459 01ae 1C       		.byte	28
+ 460 01af 10       		.byte	16
+ 461 01b0 1E       		.byte	30
+ 462 01b1 01       		.byte	1
+ 463 01b2 20       		.byte	32
+ 464 01b3 20       		.byte	32
+ 465 01b4 2C       		.byte	44
+ 466 01b5 3F       		.byte	63
+ 467 01b6 30       		.byte	48
+ 468 01b7 03       		.byte	3
+ 469 01b8 34       		.byte	52
+ 470 01b9 1C       		.byte	28
+ 471 01ba 36       		.byte	54
+ 472 01bb 20       		.byte	32
+ 473 01bc 38       		.byte	56
+ 474 01bd 80       		.byte	-128
+ 475 01be 3E       		.byte	62
+ 476 01bf 40       		.byte	64
+ 477 01c0 40       		.byte	64
+ 478 01c1 31       		.byte	49
+ 479 01c2 41       		.byte	65
+ 480 01c3 02       		.byte	2
+ 481 01c4 49       		.byte	73
+ 482 01c5 FF       		.byte	-1
+ 483 01c6 4A       		.byte	74
+ 484 01c7 FF       		.byte	-1
+ 485 01c8 4B       		.byte	75
+ 486 01c9 FF       		.byte	-1
+ 487 01ca 4D       		.byte	77
+ 488 01cb A0       		.byte	-96
+ 489 01cc 4F       		.byte	79
+ 490 01cd 01       		.byte	1
+ 491 01ce 50       		.byte	80
+ 492 01cf 18       		.byte	24
+ 493 01d0 58       		.byte	88
+ 494 01d1 04       		.byte	4
+ 495 01d2 5A       		.byte	90
+ 496 01d3 04       		.byte	4
+ 497 01d4 5B       		.byte	91
+ 498 01d5 04       		.byte	4
+ 499 01d6 5C       		.byte	92
+ 500 01d7 01       		.byte	1
+ 501 01d8 5F       		.byte	95
+ 502 01d9 01       		.byte	1
+ 503 01da 60       		.byte	96
+ 504 01db 40       		.byte	64
+ 505 01dc 62       		.byte	98
+ 506 01dd 80       		.byte	-128
+ 507 01de 64       		.byte	100
+ 508 01df 40       		.byte	64
+ 509 01e0 65       		.byte	101
+ 510 01e1 40       		.byte	64
+ 511 01e2 66       		.byte	102
+ 512 01e3 80       		.byte	-128
+ 513 01e4 68       		.byte	104
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccQiKAv3.s 			page 10
+
+
+ 514 01e5 40       		.byte	64
+ 515 01e6 6A       		.byte	106
+ 516 01e7 50       		.byte	80
+ 517 01e8 6B       		.byte	107
+ 518 01e9 A8       		.byte	-88
+ 519 01ea 6C       		.byte	108
+ 520 01eb 40       		.byte	64
+ 521 01ec 6D       		.byte	109
+ 522 01ed 20       		.byte	32
+ 523 01ee 6E       		.byte	110
+ 524 01ef 50       		.byte	80
+ 525 01f0 6F       		.byte	111
+ 526 01f1 A8       		.byte	-88
+ 527 01f2 82       		.byte	-126
+ 528 01f3 01       		.byte	1
+ 529 01f4 86       		.byte	-122
+ 530 01f5 01       		.byte	1
+ 531 01f6 8C       		.byte	-116
+ 532 01f7 04       		.byte	4
+ 533 01f8 8F       		.byte	-113
+ 534 01f9 02       		.byte	2
+ 535 01fa 94       		.byte	-108
+ 536 01fb 08       		.byte	8
+ 537 01fc 97       		.byte	-105
+ 538 01fd 01       		.byte	1
+ 539 01fe 9E       		.byte	-98
+ 540 01ff 06       		.byte	6
+ 541 0200 A2       		.byte	-94
+ 542 0201 08       		.byte	8
+ 543 0202 A8       		.byte	-88
+ 544 0203 01       		.byte	1
+ 545 0204 B0       		.byte	-80
+ 546 0205 08       		.byte	8
+ 547 0206 B2       		.byte	-78
+ 548 0207 01       		.byte	1
+ 549 0208 B3       		.byte	-77
+ 550 0209 01       		.byte	1
+ 551 020a B4       		.byte	-76
+ 552 020b 04       		.byte	4
+ 553 020c B5       		.byte	-75
+ 554 020d 02       		.byte	2
+ 555 020e B6       		.byte	-74
+ 556 020f 02       		.byte	2
+ 557 0210 BE       		.byte	-66
+ 558 0211 15       		.byte	21
+ 559 0212 C0       		.byte	-64
+ 560 0213 35       		.byte	53
+ 561 0214 C1       		.byte	-63
+ 562 0215 02       		.byte	2
+ 563 0216 C5       		.byte	-59
+ 564 0217 0C       		.byte	12
+ 565 0218 C6       		.byte	-58
+ 566 0219 25       		.byte	37
+ 567 021a C7       		.byte	-57
+ 568 021b 0E       		.byte	14
+ 569 021c C8       		.byte	-56
+ 570 021d 1F       		.byte	31
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccQiKAv3.s 			page 11
+
+
+ 571 021e C9       		.byte	-55
+ 572 021f FF       		.byte	-1
+ 573 0220 CA       		.byte	-54
+ 574 0221 FF       		.byte	-1
+ 575 0222 CB       		.byte	-53
+ 576 0223 FF       		.byte	-1
+ 577 0224 CD       		.byte	-51
+ 578 0225 AF       		.byte	-81
+ 579 0226 CE       		.byte	-50
+ 580 0227 07       		.byte	7
+ 581 0228 CF       		.byte	-49
+ 582 0229 01       		.byte	1
+ 583 022a D0       		.byte	-48
+ 584 022b 18       		.byte	24
+ 585 022c D2       		.byte	-46
+ 586 022d 80       		.byte	-128
+ 587 022e D4       		.byte	-44
+ 588 022f 07       		.byte	7
+ 589 0230 D8       		.byte	-40
+ 590 0231 04       		.byte	4
+ 591 0232 D9       		.byte	-39
+ 592 0233 04       		.byte	4
+ 593 0234 DA       		.byte	-38
+ 594 0235 04       		.byte	4
+ 595 0236 DB       		.byte	-37
+ 596 0237 04       		.byte	4
+ 597 0238 DF       		.byte	-33
+ 598 0239 05       		.byte	5
+ 599 023a E0       		.byte	-32
+ 600 023b 40       		.byte	64
+ 601 023c E2       		.byte	-30
+ 602 023d 80       		.byte	-128
+ 603 023e E4       		.byte	-28
+ 604 023f 40       		.byte	64
+ 605 0240 E5       		.byte	-27
+ 606 0241 40       		.byte	64
+ 607 0242 E6       		.byte	-26
+ 608 0243 80       		.byte	-128
+ 609 0244 E8       		.byte	-24
+ 610 0245 40       		.byte	64
+ 611 0246 EA       		.byte	-22
+ 612 0247 50       		.byte	80
+ 613 0248 EB       		.byte	-21
+ 614 0249 A8       		.byte	-88
+ 615 024a EC       		.byte	-20
+ 616 024b 40       		.byte	64
+ 617 024c ED       		.byte	-19
+ 618 024d 20       		.byte	32
+ 619 024e EE       		.byte	-18
+ 620 024f 50       		.byte	80
+ 621 0250 EF       		.byte	-17
+ 622 0251 A8       		.byte	-88
+ 623 0252 00       		.byte	0
+ 624 0253 44       		.byte	68
+ 625 0254 05       		.byte	5
+ 626 0255 48       		.byte	72
+ 627 0256 07       		.byte	7
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccQiKAv3.s 			page 12
+
+
+ 628 0257 40       		.byte	64
+ 629 0258 09       		.byte	9
+ 630 0259 82       		.byte	-126
+ 631 025a 0A       		.byte	10
+ 632 025b 04       		.byte	4
+ 633 025c 0C       		.byte	12
+ 634 025d 80       		.byte	-128
+ 635 025e 0E       		.byte	14
+ 636 025f 20       		.byte	32
+ 637 0260 10       		.byte	16
+ 638 0261 82       		.byte	-126
+ 639 0262 16       		.byte	22
+ 640 0263 40       		.byte	64
+ 641 0264 17       		.byte	23
+ 642 0265 20       		.byte	32
+ 643 0266 18       		.byte	24
+ 644 0267 41       		.byte	65
+ 645 0268 19       		.byte	25
+ 646 0269 20       		.byte	32
+ 647 026a 1A       		.byte	26
+ 648 026b 06       		.byte	6
+ 649 026c 1D       		.byte	29
+ 650 026d 48       		.byte	72
+ 651 026e 1E       		.byte	30
+ 652 026f 88       		.byte	-120
+ 653 0270 26       		.byte	38
+ 654 0271 10       		.byte	16
+ 655 0272 27       		.byte	39
+ 656 0273 20       		.byte	32
+ 657 0274 35       		.byte	53
+ 658 0275 08       		.byte	8
+ 659 0276 3D       		.byte	61
+ 660 0277 80       		.byte	-128
+ 661 0278 3E       		.byte	62
+ 662 0279 30       		.byte	48
+ 663 027a 40       		.byte	64
+ 664 027b 01       		.byte	1
+ 665 027c 41       		.byte	65
+ 666 027d 18       		.byte	24
+ 667 027e 43       		.byte	67
+ 668 027f 10       		.byte	16
+ 669 0280 45       		.byte	69
+ 670 0281 08       		.byte	8
+ 671 0282 47       		.byte	71
+ 672 0283 10       		.byte	16
+ 673 0284 4C       		.byte	76
+ 674 0285 80       		.byte	-128
+ 675 0286 4E       		.byte	78
+ 676 0287 01       		.byte	1
+ 677 0288 4F       		.byte	79
+ 678 0289 04       		.byte	4
+ 679 028a 55       		.byte	85
+ 680 028b 40       		.byte	64
+ 681 028c 56       		.byte	86
+ 682 028d 68       		.byte	104
+ 683 028e 5E       		.byte	94
+ 684 028f 98       		.byte	-104
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccQiKAv3.s 			page 13
+
+
+ 685 0290 66       		.byte	102
+ 686 0291 08       		.byte	8
+ 687 0292 67       		.byte	103
+ 688 0293 04       		.byte	4
+ 689 0294 68       		.byte	104
+ 690 0295 02       		.byte	2
+ 691 0296 69       		.byte	105
+ 692 0297 40       		.byte	64
+ 693 0298 6A       		.byte	106
+ 694 0299 40       		.byte	64
+ 695 029a 6B       		.byte	107
+ 696 029b 02       		.byte	2
+ 697 029c 77       		.byte	119
+ 698 029d 40       		.byte	64
+ 699 029e 7D       		.byte	125
+ 700 029f 40       		.byte	64
+ 701 02a0 84       		.byte	-124
+ 702 02a1 40       		.byte	64
+ 703 02a2 85       		.byte	-123
+ 704 02a3 40       		.byte	64
+ 705 02a4 90       		.byte	-112
+ 706 02a5 04       		.byte	4
+ 707 02a6 91       		.byte	-111
+ 708 02a7 20       		.byte	32
+ 709 02a8 96       		.byte	-106
+ 710 02a9 40       		.byte	64
+ 711 02aa 99       		.byte	-103
+ 712 02ab 08       		.byte	8
+ 713 02ac 9D       		.byte	-99
+ 714 02ad 20       		.byte	32
+ 715 02ae 9F       		.byte	-97
+ 716 02af 02       		.byte	2
+ 717 02b0 A0       		.byte	-96
+ 718 02b1 40       		.byte	64
+ 719 02b2 A1       		.byte	-95
+ 720 02b3 82       		.byte	-126
+ 721 02b4 A9       		.byte	-87
+ 722 02b5 08       		.byte	8
+ 723 02b6 B1       		.byte	-79
+ 724 02b7 40       		.byte	64
+ 725 02b8 C0       		.byte	-64
+ 726 02b9 B5       		.byte	-75
+ 727 02ba C2       		.byte	-62
+ 728 02bb AB       		.byte	-85
+ 729 02bc C4       		.byte	-60
+ 730 02bd 59       		.byte	89
+ 731 02be CC       		.byte	-52
+ 732 02bf 40       		.byte	64
+ 733 02c0 CE       		.byte	-50
+ 734 02c1 10       		.byte	16
+ 735 02c2 D0       		.byte	-48
+ 736 02c3 6E       		.byte	110
+ 737 02c4 D2       		.byte	-46
+ 738 02c5 10       		.byte	16
+ 739 02c6 D6       		.byte	-42
+ 740 02c7 70       		.byte	112
+ 741 02c8 D8       		.byte	-40
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccQiKAv3.s 			page 14
+
+
+ 742 02c9 60       		.byte	96
+ 743 02ca DE       		.byte	-34
+ 744 02cb 10       		.byte	16
+ 745 02cc E0       		.byte	-32
+ 746 02cd 08       		.byte	8
+ 747 02ce E4       		.byte	-28
+ 748 02cf 01       		.byte	1
+ 749 02d0 EA       		.byte	-22
+ 750 02d1 05       		.byte	5
+ 751 02d2 EE       		.byte	-18
+ 752 02d3 20       		.byte	32
+ 753 02d4 07       		.byte	7
+ 754 02d5 01       		.byte	1
+ 755 02d6 0B       		.byte	11
+ 756 02d7 01       		.byte	1
+ 757 02d8 37       		.byte	55
+ 758 02d9 01       		.byte	1
+ 759 02da 40       		.byte	64
+ 760 02db 61       		.byte	97
+ 761 02dc 41       		.byte	65
+ 762 02dd 04       		.byte	4
+ 763 02de 49       		.byte	73
+ 764 02df FF       		.byte	-1
+ 765 02e0 4A       		.byte	74
+ 766 02e1 FF       		.byte	-1
+ 767 02e2 4B       		.byte	75
+ 768 02e3 FF       		.byte	-1
+ 769 02e4 4F       		.byte	79
+ 770 02e5 01       		.byte	1
+ 771 02e6 50       		.byte	80
+ 772 02e7 18       		.byte	24
+ 773 02e8 59       		.byte	89
+ 774 02e9 04       		.byte	4
+ 775 02ea 5A       		.byte	90
+ 776 02eb 04       		.byte	4
+ 777 02ec 5C       		.byte	92
+ 778 02ed 30       		.byte	48
+ 779 02ee 5D       		.byte	93
+ 780 02ef 01       		.byte	1
+ 781 02f0 5F       		.byte	95
+ 782 02f1 01       		.byte	1
+ 783 02f2 60       		.byte	96
+ 784 02f3 40       		.byte	64
+ 785 02f4 62       		.byte	98
+ 786 02f5 40       		.byte	64
+ 787 02f6 64       		.byte	100
+ 788 02f7 40       		.byte	64
+ 789 02f8 65       		.byte	101
+ 790 02f9 40       		.byte	64
+ 791 02fa 66       		.byte	102
+ 792 02fb 80       		.byte	-128
+ 793 02fc 68       		.byte	104
+ 794 02fd 80       		.byte	-128
+ 795 02fe 6A       		.byte	106
+ 796 02ff 80       		.byte	-128
+ 797 0300 6C       		.byte	108
+ 798 0301 80       		.byte	-128
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccQiKAv3.s 			page 15
+
+
+ 799 0302 6E       		.byte	110
+ 800 0303 80       		.byte	-128
+ 801 0304 83       		.byte	-125
+ 802 0305 01       		.byte	1
+ 803 0306 86       		.byte	-122
+ 804 0307 02       		.byte	2
+ 805 0308 87       		.byte	-121
+ 806 0309 01       		.byte	1
+ 807 030a 92       		.byte	-110
+ 808 030b 01       		.byte	1
+ 809 030c 9E       		.byte	-98
+ 810 030d 02       		.byte	2
+ 811 030e B1       		.byte	-79
+ 812 030f 01       		.byte	1
+ 813 0310 B4       		.byte	-76
+ 814 0311 01       		.byte	1
+ 815 0312 B6       		.byte	-74
+ 816 0313 02       		.byte	2
+ 817 0314 BE       		.byte	-66
+ 818 0315 40       		.byte	64
+ 819 0316 C0       		.byte	-64
+ 820 0317 65       		.byte	101
+ 821 0318 C1       		.byte	-63
+ 822 0319 04       		.byte	4
+ 823 031a C5       		.byte	-59
+ 824 031b EC       		.byte	-20
+ 825 031c C6       		.byte	-58
+ 826 031d 02       		.byte	2
+ 827 031e C8       		.byte	-56
+ 828 031f 07       		.byte	7
+ 829 0320 C9       		.byte	-55
+ 830 0321 FF       		.byte	-1
+ 831 0322 CA       		.byte	-54
+ 832 0323 FF       		.byte	-1
+ 833 0324 CB       		.byte	-53
+ 834 0325 FF       		.byte	-1
+ 835 0326 CD       		.byte	-51
+ 836 0327 83       		.byte	-125
+ 837 0328 CE       		.byte	-50
+ 838 0329 03       		.byte	3
+ 839 032a CF       		.byte	-49
+ 840 032b 01       		.byte	1
+ 841 032c D0       		.byte	-48
+ 842 032d 18       		.byte	24
+ 843 032e D2       		.byte	-46
+ 844 032f 80       		.byte	-128
+ 845 0330 D4       		.byte	-44
+ 846 0331 01       		.byte	1
+ 847 0332 D6       		.byte	-42
+ 848 0333 04       		.byte	4
+ 849 0334 D8       		.byte	-40
+ 850 0335 04       		.byte	4
+ 851 0336 D9       		.byte	-39
+ 852 0337 04       		.byte	4
+ 853 0338 DA       		.byte	-38
+ 854 0339 04       		.byte	4
+ 855 033a DB       		.byte	-37
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccQiKAv3.s 			page 16
+
+
+ 856 033b 04       		.byte	4
+ 857 033c DC       		.byte	-36
+ 858 033d 21       		.byte	33
+ 859 033e DD       		.byte	-35
+ 860 033f 11       		.byte	17
+ 861 0340 DF       		.byte	-33
+ 862 0341 05       		.byte	5
+ 863 0342 E0       		.byte	-32
+ 864 0343 40       		.byte	64
+ 865 0344 E2       		.byte	-30
+ 866 0345 40       		.byte	64
+ 867 0346 E4       		.byte	-28
+ 868 0347 40       		.byte	64
+ 869 0348 E5       		.byte	-27
+ 870 0349 40       		.byte	64
+ 871 034a E6       		.byte	-26
+ 872 034b 80       		.byte	-128
+ 873 034c E8       		.byte	-24
+ 874 034d 80       		.byte	-128
+ 875 034e EA       		.byte	-22
+ 876 034f 80       		.byte	-128
+ 877 0350 EC       		.byte	-20
+ 878 0351 80       		.byte	-128
+ 879 0352 EE       		.byte	-18
+ 880 0353 80       		.byte	-128
+ 881 0354 00       		.byte	0
+ 882 0355 04       		.byte	4
+ 883 0356 09       		.byte	9
+ 884 0357 82       		.byte	-126
+ 885 0358 18       		.byte	24
+ 886 0359 04       		.byte	4
+ 887 035a 19       		.byte	25
+ 888 035b 40       		.byte	64
+ 889 035c 20       		.byte	32
+ 890 035d 80       		.byte	-128
+ 891 035e 25       		.byte	37
+ 892 035f 40       		.byte	64
+ 893 0360 38       		.byte	56
+ 894 0361 01       		.byte	1
+ 895 0362 39       		.byte	57
+ 896 0363 08       		.byte	8
+ 897 0364 3C       		.byte	60
+ 898 0365 08       		.byte	8
+ 899 0366 3E       		.byte	62
+ 900 0367 10       		.byte	16
+ 901 0368 40       		.byte	64
+ 902 0369 80       		.byte	-128
+ 903 036a 42       		.byte	66
+ 904 036b 40       		.byte	64
+ 905 036c 45       		.byte	69
+ 906 036d 80       		.byte	-128
+ 907 036e 47       		.byte	71
+ 908 036f 02       		.byte	2
+ 909 0370 49       		.byte	73
+ 910 0371 25       		.byte	37
+ 911 0372 4B       		.byte	75
+ 912 0373 80       		.byte	-128
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccQiKAv3.s 			page 17
+
+
+ 913 0374 4D       		.byte	77
+ 914 0375 20       		.byte	32
+ 915 0376 51       		.byte	81
+ 916 0377 80       		.byte	-128
+ 917 0378 53       		.byte	83
+ 918 0379 40       		.byte	64
+ 919 037a 59       		.byte	89
+ 920 037b 45       		.byte	69
+ 921 037c 63       		.byte	99
+ 922 037d 40       		.byte	64
+ 923 037e 71       		.byte	113
+ 924 037f 02       		.byte	2
+ 925 0380 78       		.byte	120
+ 926 0381 80       		.byte	-128
+ 927 0382 87       		.byte	-121
+ 928 0383 40       		.byte	64
+ 929 0384 90       		.byte	-112
+ 930 0385 01       		.byte	1
+ 931 0386 91       		.byte	-111
+ 932 0387 28       		.byte	40
+ 933 0388 92       		.byte	-110
+ 934 0389 10       		.byte	16
+ 935 038a A0       		.byte	-96
+ 936 038b 04       		.byte	4
+ 937 038c C0       		.byte	-64
+ 938 038d 04       		.byte	4
+ 939 038e C2       		.byte	-62
+ 940 038f 09       		.byte	9
+ 941 0390 CE       		.byte	-50
+ 942 0391 63       		.byte	99
+ 943 0392 D0       		.byte	-48
+ 944 0393 91       		.byte	-111
+ 945 0394 D2       		.byte	-46
+ 946 0395 2C       		.byte	44
+ 947 0396 D6       		.byte	-42
+ 948 0397 0B       		.byte	11
+ 949 0398 D8       		.byte	-40
+ 950 0399 01       		.byte	1
+ 951 039a DE       		.byte	-34
+ 952 039b 08       		.byte	8
+ 953 039c E6       		.byte	-26
+ 954 039d 08       		.byte	8
+ 955 039e E6       		.byte	-26
+ 956 039f 08       		.byte	8
+ 957 03a0 E0       		.byte	-32
+ 958 03a1 08       		.byte	8
+ 959 03a2 E4       		.byte	-28
+ 960 03a3 01       		.byte	1
+ 961 03a4 EA       		.byte	-22
+ 962 03a5 05       		.byte	5
+ 963 03a6 30       		.byte	48
+ 964 03a7 40       		.byte	64
+ 965 03a8 33       		.byte	51
+ 966 03a9 08       		.byte	8
+ 967 03aa 36       		.byte	54
+ 968 03ab 40       		.byte	64
+ 969 03ac 8B       		.byte	-117
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccQiKAv3.s 			page 18
+
+
+ 970 03ad 08       		.byte	8
+ 971 03ae CC       		.byte	-52
+ 972 03af 70       		.byte	112
+ 973 03b0 0B       		.byte	11
+ 974 03b1 02       		.byte	2
+ 975 03b2 9C       		.byte	-100
+ 976 03b3 40       		.byte	64
+ 977 03b4 A6       		.byte	-90
+ 978 03b5 40       		.byte	64
+ 979 03b6 C2       		.byte	-62
+ 980 03b7 40       		.byte	64
+ 981 03b8 3E       		.byte	62
+ 982 03b9 10       		.byte	16
+ 983 03ba 93       		.byte	-109
+ 984 03bb 02       		.byte	2
+ 985 03bc 9C       		.byte	-100
+ 986 03bd 40       		.byte	64
+ 987 03be A6       		.byte	-90
+ 988 03bf 40       		.byte	64
+ 989 03c0 CE       		.byte	-50
+ 990 03c1 20       		.byte	32
+ 991 03c2 93       		.byte	-109
+ 992 03c3 02       		.byte	2
+ 993 03c4 96       		.byte	-106
+ 994 03c5 10       		.byte	16
+ 995 03c6 9C       		.byte	-100
+ 996 03c7 40       		.byte	64
+ 997 03c8 A6       		.byte	-90
+ 998 03c9 40       		.byte	64
+ 999 03ca 8B       		.byte	-117
+ 1000 03cb 10       		.byte	16
+ 1001 03cc E2       		.byte	-30
+ 1002 03cd 04       		.byte	4
+ 1003 03ce 97       		.byte	-105
+ 1004 03cf 20       		.byte	32
+ 1005 03d0 97       		.byte	-105
+ 1006 03d1 20       		.byte	32
+ 1007 03d2 97       		.byte	-105
+ 1008 03d3 20       		.byte	32
+ 1009 03d4 85       		.byte	-123
+ 1010 03d5 08       		.byte	8
+ 1011 03d6 86       		.byte	-122
+ 1012 03d7 40       		.byte	64
+ 1013 03d8 93       		.byte	-109
+ 1014 03d9 02       		.byte	2
+ 1015 03da 96       		.byte	-106
+ 1016 03db 10       		.byte	16
+ 1017 03dc 9C       		.byte	-100
+ 1018 03dd 40       		.byte	64
+ 1019 03de A6       		.byte	-90
+ 1020 03df 40       		.byte	64
+ 1021 03e0 E6       		.byte	-26
+ 1022 03e1 50       		.byte	80
+ 1023 03e2 12       		.byte	18
+ 1024 03e3 20       		.byte	32
+ 1025 03e4 16       		.byte	22
+ 1026 03e5 40       		.byte	64
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccQiKAv3.s 			page 19
+
+
+ 1027 03e6 51       		.byte	81
+ 1028 03e7 10       		.byte	16
+ 1029 03e8 56       		.byte	86
+ 1030 03e9 10       		.byte	16
+ 1031 03ea 75       		.byte	117
+ 1032 03eb 08       		.byte	8
+ 1033 03ec 7B       		.byte	123
+ 1034 03ed 02       		.byte	2
+ 1035 03ee 82       		.byte	-126
+ 1036 03ef 20       		.byte	32
+ 1037 03f0 84       		.byte	-124
+ 1038 03f1 40       		.byte	64
+ 1039 03f2 86       		.byte	-122
+ 1040 03f3 50       		.byte	80
+ 1041 03f4 91       		.byte	-111
+ 1042 03f5 20       		.byte	32
+ 1043 03f6 99       		.byte	-103
+ 1044 03f7 08       		.byte	8
+ 1045 03f8 9C       		.byte	-100
+ 1046 03f9 40       		.byte	64
+ 1047 03fa A3       		.byte	-93
+ 1048 03fb 02       		.byte	2
+ 1049 03fc AA       		.byte	-86
+ 1050 03fd 10       		.byte	16
+ 1051 03fe AB       		.byte	-85
+ 1052 03ff 03       		.byte	3
+ 1053 0400 B1       		.byte	-79
+ 1054 0401 10       		.byte	16
+ 1055 0402 C4       		.byte	-60
+ 1056 0403 30       		.byte	48
+ 1057 0404 D4       		.byte	-44
+ 1058 0405 60       		.byte	96
+ 1059 0406 DC       		.byte	-36
+ 1060 0407 80       		.byte	-128
+ 1061 0408 DE       		.byte	-34
+ 1062 0409 20       		.byte	32
+ 1063 040a E0       		.byte	-32
+ 1064 040b 10       		.byte	16
+ 1065 040c E2       		.byte	-30
+ 1066 040d 40       		.byte	64
+ 1067 040e E4       		.byte	-28
+ 1068 040f 80       		.byte	-128
+ 1069 0410 E6       		.byte	-26
+ 1070 0411 10       		.byte	16
+ 1071 0412 EA       		.byte	-22
+ 1072 0413 A0       		.byte	-96
+ 1073 0414 EC       		.byte	-20
+ 1074 0415 20       		.byte	32
+ 1075 0416 13       		.byte	19
+ 1076 0417 28       		.byte	40
+ 1077 0418 14       		.byte	20
+ 1078 0419 40       		.byte	64
+ 1079 041a 1F       		.byte	31
+ 1080 041b 10       		.byte	16
+ 1081 041c 7B       		.byte	123
+ 1082 041d 10       		.byte	16
+ 1083 041e 7F       		.byte	127
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccQiKAv3.s 			page 20
+
+
+ 1084 041f 40       		.byte	64
+ 1085 0420 84       		.byte	-124
+ 1086 0421 40       		.byte	64
+ 1087 0422 97       		.byte	-105
+ 1088 0423 20       		.byte	32
+ 1089 0424 C4       		.byte	-60
+ 1090 0425 0E       		.byte	14
+ 1091 0426 C6       		.byte	-58
+ 1092 0427 01       		.byte	1
+ 1093 0428 DE       		.byte	-34
+ 1094 0429 03       		.byte	3
+ 1095 042a 83       		.byte	-125
+ 1096 042b 10       		.byte	16
+ 1097 042c 87       		.byte	-121
+ 1098 042d 40       		.byte	64
+ 1099 042e 97       		.byte	-105
+ 1100 042f 80       		.byte	-128
+ 1101 0430 A7       		.byte	-89
+ 1102 0431 10       		.byte	16
+ 1103 0432 AB       		.byte	-85
+ 1104 0433 28       		.byte	40
+ 1105 0434 00       		.byte	0
+ 1106 0435 0C       		.byte	12
+ 1107 0436 0A       		.byte	10
+ 1108 0437 0C       		.byte	12
+ 1109 0438 10       		.byte	16
+ 1110 0439 0F       		.byte	15
+ 1111 043a 1A       		.byte	26
+ 1112 043b 0F       		.byte	15
+ 1113 043c 00       		.byte	0
+ 1114 043d 3F       		.byte	63
+ 1115 043e 03       		.byte	3
+ 1116 043f C0       		.byte	-64
+ 1117 0440 49       		.byte	73
+ 1118 0441 00       		.byte	0
+ 1119 0442 C0       		.byte	-64
+ 1120 0443 39       		.byte	57
+ 1121 0444 39       		.byte	57
+ 1122 0445 00       		.byte	0
+ 1123 0446 00       		.byte	0
+ 1124 0447 00       		.byte	0
+ 1125 0448 06       		.byte	6
+ 1126 0449 00       		.byte	0
+ 1127 044a 00       		.byte	0
+ 1128 044b 00       		.byte	0
+ 1129 044c 03       		.byte	3
+ 1130 044d 00       		.byte	0
+ 1131 044e 00       		.byte	0
+ 1132 044f 00       		.byte	0
+ 1133 0450 03       		.byte	3
+ 1134 0451 00       		.byte	0
+ 1135 0452 03       		.byte	3
+ 1136 0453 00       		.byte	0
+ 1137 0454 00       		.byte	0
+ 1138 0455 00       		.byte	0
+ 1139 0456 00       		.byte	0
+ 1140 0457 00       		.byte	0
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccQiKAv3.s 			page 21
+
+
+ 1141 0458 00       		.byte	0
+ 1142 0459 0B       		.byte	11
+ 1143 045a 0B       		.byte	11
+ 1144 045b 00       		.byte	0
+ 1145 045c 00       		.byte	0
+ 1146 045d 00       		.byte	0
+ 1147 045e 00       		.byte	0
+ 1148 045f 00       		.byte	0
+ 1149 0460 00       		.byte	0
+ 1150 0461 3F       		.byte	63
+ 1151 0462 3F       		.byte	63
+ 1152 0463 00       		.byte	0
+ 1153 0464 03       		.byte	3
+ 1154 0465 00       		.byte	0
+ 1155 0466 00       		.byte	0
+ 1156 0467 00       		.byte	0
+ 1157 0468 0C       		.byte	12
+ 1158 0469 00       		.byte	0
+ 1159 046a 18       		.byte	24
+ 1160 046b 01       		.byte	1
+ 1161              		.section	.cywolatch,"a",%progbits
+ 1162              		.align	2
+ 1163              		.type	cy_meta_wonvl, %object
+ 1164              		.size	cy_meta_wonvl, 4
+ 1165              	cy_meta_wonvl:
+ 1166 0000 BC       		.byte	-68
+ 1167 0001 90       		.byte	-112
+ 1168 0002 AC       		.byte	-84
+ 1169 0003 AF       		.byte	-81
+ 1170              		.section	.cycustnvl,"a",%progbits
+ 1171              		.align	2
+ 1172              		.type	cy_meta_custnvl, %object
+ 1173              		.size	cy_meta_custnvl, 4
+ 1174              	cy_meta_custnvl:
+ 1175 0000 00       		.byte	0
+ 1176 0001 00       		.byte	0
+ 1177 0002 40       		.byte	64
+ 1178 0003 05       		.byte	5
+ 1179              		.section	.cymeta,"a",%progbits
+ 1180              		.align	2
+ 1181              		.type	cy_metadata, %object
+ 1182              		.size	cy_metadata, 12
+ 1183              	cy_metadata:
+ 1184 0000 00       		.byte	0
+ 1185 0001 01       		.byte	1
+ 1186 0002 2E       		.byte	46
+ 1187 0003 16       		.byte	22
+ 1188 0004 10       		.byte	16
+ 1189 0005 69       		.byte	105
+ 1190 0006 00       		.byte	0
+ 1191 0007 01       		.byte	1
+ 1192 0008 00       		.byte	0
+ 1193 0009 00       		.byte	0
+ 1194 000a 00       		.byte	0
+ 1195 000b 00       		.byte	0
+ 1196              		.section	.cyflashprotect,"a",%progbits
+ 1197              		.align	2
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccQiKAv3.s 			page 22
+
+
+ 1198              		.type	cy_meta_flashprotect, %object
+ 1199              		.size	cy_meta_flashprotect, 256
+ 1200              	cy_meta_flashprotect:
+ 1201 0000 00000000 		.space	256
+ 1201      00000000 
+ 1201      00000000 
+ 1201      00000000 
+ 1201      00000000 
+ 1202              		.text
+ 1203              	.Letext0:
+ 1204              		.file 1 "c:\\program files (x86)\\cypress\\psoc creator\\4.3\\psoc creator\\import\\gnu\\arm\\5.4.
+ 1205              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.3\\psoc creator\\import\\gnu\\arm\\5.4.
+ 1206              		.file 3 "Generated_Source\\PSoC5\\cymetadata.c"
+ 1207              		.section	.debug_info,"",%progbits
+ 1208              	.Ldebug_info0:
+ 1209 0000 32010000 		.4byte	0x132
+ 1210 0004 0400     		.2byte	0x4
+ 1211 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 1212 000a 04       		.byte	0x4
+ 1213 000b 01       		.uleb128 0x1
+ 1214 000c 24000000 		.4byte	.LASF17
+ 1215 0010 0C       		.byte	0xc
+ 1216 0011 CA010000 		.4byte	.LASF18
+ 1217 0015 B2000000 		.4byte	.LASF19
+ 1218 0019 00000000 		.4byte	.Ldebug_line0
+ 1219 001d 02       		.uleb128 0x2
+ 1220 001e 01       		.byte	0x1
+ 1221 001f 06       		.byte	0x6
+ 1222 0020 BE010000 		.4byte	.LASF0
+ 1223 0024 03       		.uleb128 0x3
+ 1224 0025 00000000 		.4byte	.LASF9
+ 1225 0029 01       		.byte	0x1
+ 1226 002a 1D       		.byte	0x1d
+ 1227 002b 2F000000 		.4byte	0x2f
+ 1228 002f 02       		.uleb128 0x2
+ 1229 0030 01       		.byte	0x1
+ 1230 0031 08       		.byte	0x8
+ 1231 0032 16000000 		.4byte	.LASF1
+ 1232 0036 02       		.uleb128 0x2
+ 1233 0037 02       		.byte	0x2
+ 1234 0038 05       		.byte	0x5
+ 1235 0039 AB010000 		.4byte	.LASF2
+ 1236 003d 02       		.uleb128 0x2
+ 1237 003e 02       		.byte	0x2
+ 1238 003f 07       		.byte	0x7
+ 1239 0040 FE000000 		.4byte	.LASF3
+ 1240 0044 02       		.uleb128 0x2
+ 1241 0045 04       		.byte	0x4
+ 1242 0046 05       		.byte	0x5
+ 1243 0047 B5010000 		.4byte	.LASF4
+ 1244 004b 02       		.uleb128 0x2
+ 1245 004c 04       		.byte	0x4
+ 1246 004d 07       		.byte	0x7
+ 1247 004e 11010000 		.4byte	.LASF5
+ 1248 0052 02       		.uleb128 0x2
+ 1249 0053 08       		.byte	0x8
+ 1250 0054 05       		.byte	0x5
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccQiKAv3.s 			page 23
+
+
+ 1251 0055 9D010000 		.4byte	.LASF6
+ 1252 0059 02       		.uleb128 0x2
+ 1253 005a 08       		.byte	0x8
+ 1254 005b 07       		.byte	0x7
+ 1255 005c 52010000 		.4byte	.LASF7
+ 1256 0060 04       		.uleb128 0x4
+ 1257 0061 04       		.byte	0x4
+ 1258 0062 05       		.byte	0x5
+ 1259 0063 696E7400 		.ascii	"int\000"
+ 1260 0067 02       		.uleb128 0x2
+ 1261 0068 04       		.byte	0x4
+ 1262 0069 07       		.byte	0x7
+ 1263 006a 45010000 		.4byte	.LASF8
+ 1264 006e 03       		.uleb128 0x3
+ 1265 006f 69010000 		.4byte	.LASF10
+ 1266 0073 02       		.byte	0x2
+ 1267 0074 18       		.byte	0x18
+ 1268 0075 24000000 		.4byte	0x24
+ 1269 0079 05       		.uleb128 0x5
+ 1270 007a 91000000 		.4byte	0x91
+ 1271 007e 8A000000 		.4byte	0x8a
+ 1272 0082 06       		.uleb128 0x6
+ 1273 0083 8A000000 		.4byte	0x8a
+ 1274 0087 6B04     		.2byte	0x46b
+ 1275 0089 00       		.byte	0
+ 1276 008a 02       		.uleb128 0x2
+ 1277 008b 04       		.byte	0x4
+ 1278 008c 07       		.byte	0x7
+ 1279 008d 94010000 		.4byte	.LASF11
+ 1280 0091 07       		.uleb128 0x7
+ 1281 0092 6E000000 		.4byte	0x6e
+ 1282 0096 08       		.uleb128 0x8
+ 1283 0097 33010000 		.4byte	.LASF12
+ 1284 009b 03       		.byte	0x3
+ 1285 009c 1F       		.byte	0x1f
+ 1286 009d A7000000 		.4byte	0xa7
+ 1287 00a1 05       		.uleb128 0x5
+ 1288 00a2 03       		.byte	0x3
+ 1289 00a3 00000000 		.4byte	cy_meta_configecc
+ 1290 00a7 07       		.uleb128 0x7
+ 1291 00a8 79000000 		.4byte	0x79
+ 1292 00ac 05       		.uleb128 0x5
+ 1293 00ad 91000000 		.4byte	0x91
+ 1294 00b1 BC000000 		.4byte	0xbc
+ 1295 00b5 09       		.uleb128 0x9
+ 1296 00b6 8A000000 		.4byte	0x8a
+ 1297 00ba 03       		.byte	0x3
+ 1298 00bb 00       		.byte	0
+ 1299 00bc 08       		.uleb128 0x8
+ 1300 00bd 23010000 		.4byte	.LASF13
+ 1301 00c1 03       		.byte	0x3
+ 1302 00c2 BA       		.byte	0xba
+ 1303 00c3 CD000000 		.4byte	0xcd
+ 1304 00c7 05       		.uleb128 0x5
+ 1305 00c8 03       		.byte	0x3
+ 1306 00c9 00000000 		.4byte	cy_meta_custnvl
+ 1307 00cd 07       		.uleb128 0x7
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccQiKAv3.s 			page 24
+
+
+ 1308 00ce AC000000 		.4byte	0xac
+ 1309 00d2 08       		.uleb128 0x8
+ 1310 00d3 86010000 		.4byte	.LASF14
+ 1311 00d7 03       		.byte	0x3
+ 1312 00d8 C8       		.byte	0xc8
+ 1313 00d9 E3000000 		.4byte	0xe3
+ 1314 00dd 05       		.uleb128 0x5
+ 1315 00de 03       		.byte	0x3
+ 1316 00df 00000000 		.4byte	cy_meta_wonvl
+ 1317 00e3 07       		.uleb128 0x7
+ 1318 00e4 AC000000 		.4byte	0xac
+ 1319 00e8 05       		.uleb128 0x5
+ 1320 00e9 91000000 		.4byte	0x91
+ 1321 00ed F8000000 		.4byte	0xf8
+ 1322 00f1 09       		.uleb128 0x9
+ 1323 00f2 8A000000 		.4byte	0x8a
+ 1324 00f6 FF       		.byte	0xff
+ 1325 00f7 00       		.byte	0
+ 1326 00f8 08       		.uleb128 0x8
+ 1327 00f9 71010000 		.4byte	.LASF15
+ 1328 00fd 03       		.byte	0x3
+ 1329 00fe D6       		.byte	0xd6
+ 1330 00ff 09010000 		.4byte	0x109
+ 1331 0103 05       		.uleb128 0x5
+ 1332 0104 03       		.byte	0x3
+ 1333 0105 00000000 		.4byte	cy_meta_flashprotect
+ 1334 0109 07       		.uleb128 0x7
+ 1335 010a E8000000 		.4byte	0xe8
+ 1336 010e 05       		.uleb128 0x5
+ 1337 010f 91000000 		.4byte	0x91
+ 1338 0113 1E010000 		.4byte	0x11e
+ 1339 0117 09       		.uleb128 0x9
+ 1340 0118 8A000000 		.4byte	0x8a
+ 1341 011c 0B       		.byte	0xb
+ 1342 011d 00       		.byte	0
+ 1343 011e 0A       		.uleb128 0xa
+ 1344 011f 0A000000 		.4byte	.LASF16
+ 1345 0123 03       		.byte	0x3
+ 1346 0124 0301     		.2byte	0x103
+ 1347 0126 30010000 		.4byte	0x130
+ 1348 012a 05       		.uleb128 0x5
+ 1349 012b 03       		.byte	0x3
+ 1350 012c 00000000 		.4byte	cy_metadata
+ 1351 0130 07       		.uleb128 0x7
+ 1352 0131 0E010000 		.4byte	0x10e
+ 1353 0135 00       		.byte	0
+ 1354              		.section	.debug_abbrev,"",%progbits
+ 1355              	.Ldebug_abbrev0:
+ 1356 0000 01       		.uleb128 0x1
+ 1357 0001 11       		.uleb128 0x11
+ 1358 0002 01       		.byte	0x1
+ 1359 0003 25       		.uleb128 0x25
+ 1360 0004 0E       		.uleb128 0xe
+ 1361 0005 13       		.uleb128 0x13
+ 1362 0006 0B       		.uleb128 0xb
+ 1363 0007 03       		.uleb128 0x3
+ 1364 0008 0E       		.uleb128 0xe
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccQiKAv3.s 			page 25
+
+
+ 1365 0009 1B       		.uleb128 0x1b
+ 1366 000a 0E       		.uleb128 0xe
+ 1367 000b 10       		.uleb128 0x10
+ 1368 000c 17       		.uleb128 0x17
+ 1369 000d 00       		.byte	0
+ 1370 000e 00       		.byte	0
+ 1371 000f 02       		.uleb128 0x2
+ 1372 0010 24       		.uleb128 0x24
+ 1373 0011 00       		.byte	0
+ 1374 0012 0B       		.uleb128 0xb
+ 1375 0013 0B       		.uleb128 0xb
+ 1376 0014 3E       		.uleb128 0x3e
+ 1377 0015 0B       		.uleb128 0xb
+ 1378 0016 03       		.uleb128 0x3
+ 1379 0017 0E       		.uleb128 0xe
+ 1380 0018 00       		.byte	0
+ 1381 0019 00       		.byte	0
+ 1382 001a 03       		.uleb128 0x3
+ 1383 001b 16       		.uleb128 0x16
+ 1384 001c 00       		.byte	0
+ 1385 001d 03       		.uleb128 0x3
+ 1386 001e 0E       		.uleb128 0xe
+ 1387 001f 3A       		.uleb128 0x3a
+ 1388 0020 0B       		.uleb128 0xb
+ 1389 0021 3B       		.uleb128 0x3b
+ 1390 0022 0B       		.uleb128 0xb
+ 1391 0023 49       		.uleb128 0x49
+ 1392 0024 13       		.uleb128 0x13
+ 1393 0025 00       		.byte	0
+ 1394 0026 00       		.byte	0
+ 1395 0027 04       		.uleb128 0x4
+ 1396 0028 24       		.uleb128 0x24
+ 1397 0029 00       		.byte	0
+ 1398 002a 0B       		.uleb128 0xb
+ 1399 002b 0B       		.uleb128 0xb
+ 1400 002c 3E       		.uleb128 0x3e
+ 1401 002d 0B       		.uleb128 0xb
+ 1402 002e 03       		.uleb128 0x3
+ 1403 002f 08       		.uleb128 0x8
+ 1404 0030 00       		.byte	0
+ 1405 0031 00       		.byte	0
+ 1406 0032 05       		.uleb128 0x5
+ 1407 0033 01       		.uleb128 0x1
+ 1408 0034 01       		.byte	0x1
+ 1409 0035 49       		.uleb128 0x49
+ 1410 0036 13       		.uleb128 0x13
+ 1411 0037 01       		.uleb128 0x1
+ 1412 0038 13       		.uleb128 0x13
+ 1413 0039 00       		.byte	0
+ 1414 003a 00       		.byte	0
+ 1415 003b 06       		.uleb128 0x6
+ 1416 003c 21       		.uleb128 0x21
+ 1417 003d 00       		.byte	0
+ 1418 003e 49       		.uleb128 0x49
+ 1419 003f 13       		.uleb128 0x13
+ 1420 0040 2F       		.uleb128 0x2f
+ 1421 0041 05       		.uleb128 0x5
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccQiKAv3.s 			page 26
+
+
+ 1422 0042 00       		.byte	0
+ 1423 0043 00       		.byte	0
+ 1424 0044 07       		.uleb128 0x7
+ 1425 0045 26       		.uleb128 0x26
+ 1426 0046 00       		.byte	0
+ 1427 0047 49       		.uleb128 0x49
+ 1428 0048 13       		.uleb128 0x13
+ 1429 0049 00       		.byte	0
+ 1430 004a 00       		.byte	0
+ 1431 004b 08       		.uleb128 0x8
+ 1432 004c 34       		.uleb128 0x34
+ 1433 004d 00       		.byte	0
+ 1434 004e 03       		.uleb128 0x3
+ 1435 004f 0E       		.uleb128 0xe
+ 1436 0050 3A       		.uleb128 0x3a
+ 1437 0051 0B       		.uleb128 0xb
+ 1438 0052 3B       		.uleb128 0x3b
+ 1439 0053 0B       		.uleb128 0xb
+ 1440 0054 49       		.uleb128 0x49
+ 1441 0055 13       		.uleb128 0x13
+ 1442 0056 3F       		.uleb128 0x3f
+ 1443 0057 19       		.uleb128 0x19
+ 1444 0058 02       		.uleb128 0x2
+ 1445 0059 18       		.uleb128 0x18
+ 1446 005a 00       		.byte	0
+ 1447 005b 00       		.byte	0
+ 1448 005c 09       		.uleb128 0x9
+ 1449 005d 21       		.uleb128 0x21
+ 1450 005e 00       		.byte	0
+ 1451 005f 49       		.uleb128 0x49
+ 1452 0060 13       		.uleb128 0x13
+ 1453 0061 2F       		.uleb128 0x2f
+ 1454 0062 0B       		.uleb128 0xb
+ 1455 0063 00       		.byte	0
+ 1456 0064 00       		.byte	0
+ 1457 0065 0A       		.uleb128 0xa
+ 1458 0066 34       		.uleb128 0x34
+ 1459 0067 00       		.byte	0
+ 1460 0068 03       		.uleb128 0x3
+ 1461 0069 0E       		.uleb128 0xe
+ 1462 006a 3A       		.uleb128 0x3a
+ 1463 006b 0B       		.uleb128 0xb
+ 1464 006c 3B       		.uleb128 0x3b
+ 1465 006d 05       		.uleb128 0x5
+ 1466 006e 49       		.uleb128 0x49
+ 1467 006f 13       		.uleb128 0x13
+ 1468 0070 3F       		.uleb128 0x3f
+ 1469 0071 19       		.uleb128 0x19
+ 1470 0072 02       		.uleb128 0x2
+ 1471 0073 18       		.uleb128 0x18
+ 1472 0074 00       		.byte	0
+ 1473 0075 00       		.byte	0
+ 1474 0076 00       		.byte	0
+ 1475              		.section	.debug_aranges,"",%progbits
+ 1476 0000 14000000 		.4byte	0x14
+ 1477 0004 0200     		.2byte	0x2
+ 1478 0006 00000000 		.4byte	.Ldebug_info0
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccQiKAv3.s 			page 27
+
+
+ 1479 000a 04       		.byte	0x4
+ 1480 000b 00       		.byte	0
+ 1481 000c 0000     		.2byte	0
+ 1482 000e 0000     		.2byte	0
+ 1483 0010 00000000 		.4byte	0
+ 1484 0014 00000000 		.4byte	0
+ 1485              		.section	.debug_line,"",%progbits
+ 1486              	.Ldebug_line0:
+ 1487 0000 3D010000 		.section	.debug_str,"MS",%progbits,1
+ 1487      02003701 
+ 1487      00000201 
+ 1487      FB0E0D00 
+ 1487      01010101 
+ 1488              	.LASF9:
+ 1489 0000 5F5F7569 		.ascii	"__uint8_t\000"
+ 1489      6E74385F 
+ 1489      7400
+ 1490              	.LASF16:
+ 1491 000a 63795F6D 		.ascii	"cy_metadata\000"
+ 1491      65746164 
+ 1491      61746100 
+ 1492              	.LASF1:
+ 1493 0016 756E7369 		.ascii	"unsigned char\000"
+ 1493      676E6564 
+ 1493      20636861 
+ 1493      7200
+ 1494              	.LASF17:
+ 1495 0024 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1495      43313120 
+ 1495      352E342E 
+ 1495      31203230 
+ 1495      31363036 
+ 1496 0057 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 1496      20726576 
+ 1496      6973696F 
+ 1496      6E203233 
+ 1496      37373135 
+ 1497 008a 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1497      66756E63 
+ 1497      74696F6E 
+ 1497      2D736563 
+ 1497      74696F6E 
+ 1498              	.LASF19:
+ 1499 00b2 433A5C55 		.ascii	"C:\\Users\\Simon\\Desktop\\Projekt3-2020\\Kode\\mai"
+ 1499      73657273 
+ 1499      5C53696D 
+ 1499      6F6E5C44 
+ 1499      65736B74 
+ 1500 00df 6E5F7073 		.ascii	"n_psoc\\Main_Project\\Main.cydsn\000"
+ 1500      6F635C4D 
+ 1500      61696E5F 
+ 1500      50726F6A 
+ 1500      6563745C 
+ 1501              	.LASF3:
+ 1502 00fe 73686F72 		.ascii	"short unsigned int\000"
+ 1502      7420756E 
+ 1502      7369676E 
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccQiKAv3.s 			page 28
+
+
+ 1502      65642069 
+ 1502      6E7400
+ 1503              	.LASF5:
+ 1504 0111 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1504      20756E73 
+ 1504      69676E65 
+ 1504      6420696E 
+ 1504      7400
+ 1505              	.LASF13:
+ 1506 0123 63795F6D 		.ascii	"cy_meta_custnvl\000"
+ 1506      6574615F 
+ 1506      63757374 
+ 1506      6E766C00 
+ 1507              	.LASF12:
+ 1508 0133 63795F6D 		.ascii	"cy_meta_configecc\000"
+ 1508      6574615F 
+ 1508      636F6E66 
+ 1508      69676563 
+ 1508      6300
+ 1509              	.LASF8:
+ 1510 0145 756E7369 		.ascii	"unsigned int\000"
+ 1510      676E6564 
+ 1510      20696E74 
+ 1510      00
+ 1511              	.LASF7:
+ 1512 0152 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1512      206C6F6E 
+ 1512      6720756E 
+ 1512      7369676E 
+ 1512      65642069 
+ 1513              	.LASF10:
+ 1514 0169 75696E74 		.ascii	"uint8_t\000"
+ 1514      385F7400 
+ 1515              	.LASF15:
+ 1516 0171 63795F6D 		.ascii	"cy_meta_flashprotect\000"
+ 1516      6574615F 
+ 1516      666C6173 
+ 1516      6870726F 
+ 1516      74656374 
+ 1517              	.LASF14:
+ 1518 0186 63795F6D 		.ascii	"cy_meta_wonvl\000"
+ 1518      6574615F 
+ 1518      776F6E76 
+ 1518      6C00
+ 1519              	.LASF11:
+ 1520 0194 73697A65 		.ascii	"sizetype\000"
+ 1520      74797065 
+ 1520      00
+ 1521              	.LASF6:
+ 1522 019d 6C6F6E67 		.ascii	"long long int\000"
+ 1522      206C6F6E 
+ 1522      6720696E 
+ 1522      7400
+ 1523              	.LASF2:
+ 1524 01ab 73686F72 		.ascii	"short int\000"
+ 1524      7420696E 
+ 1524      7400
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccQiKAv3.s 			page 29
+
+
+ 1525              	.LASF4:
+ 1526 01b5 6C6F6E67 		.ascii	"long int\000"
+ 1526      20696E74 
+ 1526      00
+ 1527              	.LASF0:
+ 1528 01be 7369676E 		.ascii	"signed char\000"
+ 1528      65642063 
+ 1528      68617200 
+ 1529              	.LASF18:
+ 1530 01ca 47656E65 		.ascii	"Generated_Source\\PSoC5\\cymetadata.c\000"
+ 1530      72617465 
+ 1530      645F536F 
+ 1530      75726365 
+ 1530      5C50536F 
+ 1531              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

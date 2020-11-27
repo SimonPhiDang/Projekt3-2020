@@ -11,15 +11,21 @@
 */
 #include "project.h"
 
+// Includes af bibloteker
+#include "motorStyring.h"
+#include "Scale.h"
+
 int main(void)
 {
     CyGlobalIntEnable; /* Enable global interrupts. */
-
-    /* Place your initialization/startup code here (e.g. MyInst_Start()) */
+    
+    //inits
+    initMotor(); //Motor
+    ADC_init();  //Vægtsensor
 
     for(;;)
     {
-        /* Place your application code here. */
+        
     }
 }
 
