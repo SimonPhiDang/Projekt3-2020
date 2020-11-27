@@ -1,0 +1,2763 @@
+ARM GAS  C:\Users\shynt\AppData\Local\Temp\ccxjykpB.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"colorSensor.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.timer_isr,"ax",%progbits
+  20              		.align	2
+  21              		.global	timer_isr
+  22              		.thumb
+  23              		.thumb_func
+  24              		.type	timer_isr, %function
+  25              	timer_isr:
+  26              	.LFB64:
+  27              		.file 1 "colorSensor.c"
+   1:colorSensor.c **** 
+   2:colorSensor.c **** /* ========================================
+   3:colorSensor.c ****  *
+   4:colorSensor.c ****  * Copyright Lucas, 2020
+   5:colorSensor.c ****  * All Rights Reserved
+   6:colorSensor.c ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   7:colorSensor.c ****  *
+   8:colorSensor.c ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   9:colorSensor.c ****  * WHICH IS THE PROPERTY OF your company.
+  10:colorSensor.c ****  *
+  11:colorSensor.c ****  * ========================================
+  12:colorSensor.c **** */
+  13:colorSensor.c **** #include "project.h"
+  14:colorSensor.c **** #include <stdio.h>
+  15:colorSensor.c **** #include <stdint.h>
+  16:colorSensor.c **** #include "colorSensor.h"
+  17:colorSensor.c **** 
+  18:colorSensor.c **** #define COUNTER_SIZE 10000
+  19:colorSensor.c **** uint32_t freq = 0;
+  20:colorSensor.c **** int dataReady = 0;
+  21:colorSensor.c **** int Counter_cycle = 0;
+  22:colorSensor.c **** 
+  23:colorSensor.c **** #define STRING_LENGTH 128  
+  24:colorSensor.c **** extern char str[] ;
+  25:colorSensor.c **** void print(char *str) ;
+  26:colorSensor.c **** 
+  27:colorSensor.c **** CY_ISR(timer_isr)//Timer i interrupt routine
+  28:colorSensor.c **** {
+  28              		.loc 1 28 0
+  29              		.cfi_startproc
+ARM GAS  C:\Users\shynt\AppData\Local\Temp\ccxjykpB.s 			page 2
+
+
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32 0000 10B5     		push	{r4, lr}
+  33              		.cfi_def_cfa_offset 8
+  34              		.cfi_offset 4, -8
+  35              		.cfi_offset 14, -4
+  29:colorSensor.c ****     Counter_Stop();
+  36              		.loc 1 29 0
+  37 0002 FFF7FEFF 		bl	Counter_Stop
+  38              	.LVL0:
+  30:colorSensor.c ****     Timer_Stop();
+  39              		.loc 1 30 0
+  40 0006 FFF7FEFF 		bl	Timer_Stop
+  41              	.LVL1:
+  31:colorSensor.c ****     freq = Counter_ReadCounter();
+  42              		.loc 1 31 0
+  43 000a FFF7FEFF 		bl	Counter_ReadCounter
+  44              	.LVL2:
+  45 000e 074C     		ldr	r4, .L3
+  32:colorSensor.c ****     freq += Counter_cycle * COUNTER_SIZE;
+  46              		.loc 1 32 0
+  47 0010 6368     		ldr	r3, [r4, #4]
+  48 0012 42F21072 		movw	r2, #10000
+  49 0016 02FB0300 		mla	r0, r2, r3, r0
+  50 001a 2060     		str	r0, [r4]
+  33:colorSensor.c ****     OE_Write(1);
+  51              		.loc 1 33 0
+  52 001c 0120     		movs	r0, #1
+  53 001e FFF7FEFF 		bl	OE_Write
+  54              	.LVL3:
+  34:colorSensor.c ****     Timer_INT_ClearPending();
+  55              		.loc 1 34 0
+  56 0022 FFF7FEFF 		bl	Timer_INT_ClearPending
+  57              	.LVL4:
+  35:colorSensor.c ****     dataReady = 1;
+  58              		.loc 1 35 0
+  59 0026 0123     		movs	r3, #1
+  60 0028 A360     		str	r3, [r4, #8]
+  61 002a 10BD     		pop	{r4, pc}
+  62              	.L4:
+  63              		.align	2
+  64              	.L3:
+  65 002c 00000000 		.word	.LANCHOR0
+  66              		.cfi_endproc
+  67              	.LFE64:
+  68              		.size	timer_isr, .-timer_isr
+  69              		.section	.text.counter_isr,"ax",%progbits
+  70              		.align	2
+  71              		.global	counter_isr
+  72              		.thumb
+  73              		.thumb_func
+  74              		.type	counter_isr, %function
+  75              	counter_isr:
+  76              	.LFB65:
+  36:colorSensor.c **** }
+  37:colorSensor.c **** 
+  38:colorSensor.c **** 
+ARM GAS  C:\Users\shynt\AppData\Local\Temp\ccxjykpB.s 			page 3
+
+
+  39:colorSensor.c **** CY_ISR(counter_isr)//Counter i interrupt routine
+  40:colorSensor.c **** {
+  77              		.loc 1 40 0
+  78              		.cfi_startproc
+  79              		@ args = 0, pretend = 0, frame = 0
+  80              		@ frame_needed = 0, uses_anonymous_args = 0
+  81 0000 08B5     		push	{r3, lr}
+  82              		.cfi_def_cfa_offset 8
+  83              		.cfi_offset 3, -8
+  84              		.cfi_offset 14, -4
+  41:colorSensor.c ****     Counter_INT_ClearPending();
+  85              		.loc 1 41 0
+  86 0002 FFF7FEFF 		bl	Counter_INT_ClearPending
+  87              	.LVL5:
+  42:colorSensor.c ****     Counter_cycle++;
+  88              		.loc 1 42 0
+  89 0006 024A     		ldr	r2, .L7
+  90 0008 5368     		ldr	r3, [r2, #4]
+  91 000a 0133     		adds	r3, r3, #1
+  92 000c 5360     		str	r3, [r2, #4]
+  93 000e 08BD     		pop	{r3, pc}
+  94              	.L8:
+  95              		.align	2
+  96              	.L7:
+  97 0010 00000000 		.word	.LANCHOR0
+  98              		.cfi_endproc
+  99              	.LFE65:
+ 100              		.size	counter_isr, .-counter_isr
+ 101              		.section	.text.init_start,"ax",%progbits
+ 102              		.align	2
+ 103              		.global	init_start
+ 104              		.thumb
+ 105              		.thumb_func
+ 106              		.type	init_start, %function
+ 107              	init_start:
+ 108              	.LFB66:
+  43:colorSensor.c **** }
+  44:colorSensor.c **** 
+  45:colorSensor.c **** void init_start(void)//Starter de indbyggede funktioner fra topdesign: UART, Timer, Counter
+  46:colorSensor.c **** {
+ 109              		.loc 1 46 0
+ 110              		.cfi_startproc
+ 111              		@ args = 0, pretend = 0, frame = 0
+ 112              		@ frame_needed = 0, uses_anonymous_args = 0
+ 113 0000 08B5     		push	{r3, lr}
+ 114              		.cfi_def_cfa_offset 8
+ 115              		.cfi_offset 3, -8
+ 116              		.cfi_offset 14, -4
+  47:colorSensor.c ****     CyGlobalIntEnable;
+ 117              		.loc 1 47 0
+ 118              		.syntax unified
+ 119              	@ 47 "colorSensor.c" 1
+ 120 0002 62B6     		CPSIE   i
+ 121              	@ 0 "" 2
+  48:colorSensor.c ****     UART_1_Start();
+ 122              		.loc 1 48 0
+ 123              		.thumb
+ARM GAS  C:\Users\shynt\AppData\Local\Temp\ccxjykpB.s 			page 4
+
+
+ 124              		.syntax unified
+ 125 0004 FFF7FEFF 		bl	UART_1_Start
+ 126              	.LVL6:
+  49:colorSensor.c ****     Timer_INT_StartEx(timer_isr);
+ 127              		.loc 1 49 0
+ 128 0008 0348     		ldr	r0, .L11
+ 129 000a FFF7FEFF 		bl	Timer_INT_StartEx
+ 130              	.LVL7:
+  50:colorSensor.c ****     Counter_INT_StartEx(counter_isr);
+ 131              		.loc 1 50 0
+ 132 000e 0348     		ldr	r0, .L11+4
+ 133 0010 FFF7FEFF 		bl	Counter_INT_StartEx
+ 134              	.LVL8:
+ 135 0014 08BD     		pop	{r3, pc}
+ 136              	.L12:
+ 137 0016 00BF     		.align	2
+ 138              	.L11:
+ 139 0018 00000000 		.word	timer_isr
+ 140 001c 00000000 		.word	counter_isr
+ 141              		.cfi_endproc
+ 142              	.LFE66:
+ 143              		.size	init_start, .-init_start
+ 144              		.section	.text.read_color,"ax",%progbits
+ 145              		.align	2
+ 146              		.global	read_color
+ 147              		.thumb
+ 148              		.thumb_func
+ 149              		.type	read_color, %function
+ 150              	read_color:
+ 151              	.LFB67:
+  51:colorSensor.c **** }
+  52:colorSensor.c **** 
+  53:colorSensor.c **** void read_color(void)//Omdanner inputs til frekvens vha. counter og timeren
+  54:colorSensor.c **** {
+ 152              		.loc 1 54 0
+ 153              		.cfi_startproc
+ 154              		@ args = 0, pretend = 0, frame = 0
+ 155              		@ frame_needed = 0, uses_anonymous_args = 0
+ 156 0000 08B5     		push	{r3, lr}
+ 157              		.cfi_def_cfa_offset 8
+ 158              		.cfi_offset 3, -8
+ 159              		.cfi_offset 14, -4
+  55:colorSensor.c ****     OE_Write(0);
+ 160              		.loc 1 55 0
+ 161 0002 0020     		movs	r0, #0
+ 162 0004 FFF7FEFF 		bl	OE_Write
+ 163              	.LVL9:
+  56:colorSensor.c ****     Control_Reg_Write(1);
+ 164              		.loc 1 56 0
+ 165 0008 0120     		movs	r0, #1
+ 166 000a FFF7FEFF 		bl	Control_Reg_Write
+ 167              	.LVL10:
+  57:colorSensor.c ****     CyDelay(1);
+ 168              		.loc 1 57 0
+ 169 000e 0120     		movs	r0, #1
+ 170 0010 FFF7FEFF 		bl	CyDelay
+ 171              	.LVL11:
+ARM GAS  C:\Users\shynt\AppData\Local\Temp\ccxjykpB.s 			page 5
+
+
+  58:colorSensor.c ****     Control_Reg_Write(0);
+ 172              		.loc 1 58 0
+ 173 0014 0020     		movs	r0, #0
+ 174 0016 FFF7FEFF 		bl	Control_Reg_Write
+ 175              	.LVL12:
+  59:colorSensor.c ****     dataReady = 0;
+ 176              		.loc 1 59 0
+ 177 001a 074B     		ldr	r3, .L15
+ 178 001c 0022     		movs	r2, #0
+ 179 001e 9A60     		str	r2, [r3, #8]
+  60:colorSensor.c ****     Counter_cycle = 0;
+ 180              		.loc 1 60 0
+ 181 0020 5A60     		str	r2, [r3, #4]
+  61:colorSensor.c ****     Counter_Start();
+ 182              		.loc 1 61 0
+ 183 0022 FFF7FEFF 		bl	Counter_Start
+ 184              	.LVL13:
+  62:colorSensor.c ****     Timer_INT_StartEx(timer_isr);
+ 185              		.loc 1 62 0
+ 186 0026 0548     		ldr	r0, .L15+4
+ 187 0028 FFF7FEFF 		bl	Timer_INT_StartEx
+ 188              	.LVL14:
+  63:colorSensor.c ****     Counter_INT_StartEx(counter_isr);
+ 189              		.loc 1 63 0
+ 190 002c 0448     		ldr	r0, .L15+8
+ 191 002e FFF7FEFF 		bl	Counter_INT_StartEx
+ 192              	.LVL15:
+  64:colorSensor.c ****     
+  65:colorSensor.c ****     Timer_Start();
+ 193              		.loc 1 65 0
+ 194 0032 FFF7FEFF 		bl	Timer_Start
+ 195              	.LVL16:
+ 196 0036 08BD     		pop	{r3, pc}
+ 197              	.L16:
+ 198              		.align	2
+ 199              	.L15:
+ 200 0038 00000000 		.word	.LANCHOR0
+ 201 003c 00000000 		.word	timer_isr
+ 202 0040 00000000 		.word	counter_isr
+ 203              		.cfi_endproc
+ 204              	.LFE67:
+ 205              		.size	read_color, .-read_color
+ 206              		.section	.text.get_freq,"ax",%progbits
+ 207              		.align	2
+ 208              		.global	get_freq
+ 209              		.thumb
+ 210              		.thumb_func
+ 211              		.type	get_freq, %function
+ 212              	get_freq:
+ 213              	.LFB68:
+  66:colorSensor.c **** }
+  67:colorSensor.c **** 
+  68:colorSensor.c **** int get_freq(char color)//Modtager input på baggrund af indstillinger for farvefilter samt scaling
+  69:colorSensor.c **** {
+ 214              		.loc 1 69 0
+ 215              		.cfi_startproc
+ 216              		@ args = 0, pretend = 0, frame = 0
+ARM GAS  C:\Users\shynt\AppData\Local\Temp\ccxjykpB.s 			page 6
+
+
+ 217              		@ frame_needed = 0, uses_anonymous_args = 0
+ 218              	.LVL17:
+ 219 0000 10B5     		push	{r4, lr}
+ 220              		.cfi_def_cfa_offset 8
+ 221              		.cfi_offset 4, -8
+ 222              		.cfi_offset 14, -4
+ 223 0002 0446     		mov	r4, r0
+  70:colorSensor.c ****     //scaling 2%
+  71:colorSensor.c ****     S0_Write(0);
+ 224              		.loc 1 71 0
+ 225 0004 0020     		movs	r0, #0
+ 226              	.LVL18:
+ 227 0006 FFF7FEFF 		bl	S0_Write
+ 228              	.LVL19:
+  72:colorSensor.c ****     S1_Write(1);
+ 229              		.loc 1 72 0
+ 230 000a 0120     		movs	r0, #1
+ 231 000c FFF7FEFF 		bl	S1_Write
+ 232              	.LVL20:
+  73:colorSensor.c ****     
+  74:colorSensor.c ****    if(color=='r')//Rød farve-filter tilføjes og frekvensen registeres
+ 233              		.loc 1 74 0
+ 234 0010 722C     		cmp	r4, #114
+ 235 0012 08D1     		bne	.L18
+  75:colorSensor.c ****     {   
+  76:colorSensor.c ****         S2_Write(0);
+ 236              		.loc 1 76 0
+ 237 0014 0020     		movs	r0, #0
+ 238 0016 FFF7FEFF 		bl	S2_Write
+ 239              	.LVL21:
+  77:colorSensor.c ****         S3_Write(0);
+ 240              		.loc 1 77 0
+ 241 001a 0020     		movs	r0, #0
+ 242 001c FFF7FEFF 		bl	S3_Write
+ 243              	.LVL22:
+  78:colorSensor.c ****         read_color();
+ 244              		.loc 1 78 0
+ 245 0020 FFF7FEFF 		bl	read_color
+ 246              	.LVL23:
+ 247 0024 1FE0     		b	.L22
+ 248              	.L18:
+  79:colorSensor.c ****     }
+  80:colorSensor.c ****     
+  81:colorSensor.c ****     else if(color=='g')//Grøn farve-filter tilføjes og frekvensen registeres
+ 249              		.loc 1 81 0
+ 250 0026 672C     		cmp	r4, #103
+ 251 0028 08D1     		bne	.L20
+  82:colorSensor.c ****     { 
+  83:colorSensor.c ****         S2_Write(1);
+ 252              		.loc 1 83 0
+ 253 002a 0120     		movs	r0, #1
+ 254 002c FFF7FEFF 		bl	S2_Write
+ 255              	.LVL24:
+  84:colorSensor.c ****         S3_Write(1);
+ 256              		.loc 1 84 0
+ 257 0030 0120     		movs	r0, #1
+ 258 0032 FFF7FEFF 		bl	S3_Write
+ARM GAS  C:\Users\shynt\AppData\Local\Temp\ccxjykpB.s 			page 7
+
+
+ 259              	.LVL25:
+  85:colorSensor.c ****         read_color();
+ 260              		.loc 1 85 0
+ 261 0036 FFF7FEFF 		bl	read_color
+ 262              	.LVL26:
+ 263 003a 14E0     		b	.L22
+ 264              	.L20:
+  86:colorSensor.c ****     }
+  87:colorSensor.c ****     
+  88:colorSensor.c ****     else if(color=='b')//Blå farve-filter tilføjes og frekvensen registeres
+ 265              		.loc 1 88 0
+ 266 003c 622C     		cmp	r4, #98
+ 267 003e 08D1     		bne	.L21
+  89:colorSensor.c ****     {
+  90:colorSensor.c ****         S2_Write(0);
+ 268              		.loc 1 90 0
+ 269 0040 0020     		movs	r0, #0
+ 270 0042 FFF7FEFF 		bl	S2_Write
+ 271              	.LVL27:
+  91:colorSensor.c ****         S3_Write(1);
+ 272              		.loc 1 91 0
+ 273 0046 0120     		movs	r0, #1
+ 274 0048 FFF7FEFF 		bl	S3_Write
+ 275              	.LVL28:
+  92:colorSensor.c ****         read_color();
+ 276              		.loc 1 92 0
+ 277 004c FFF7FEFF 		bl	read_color
+ 278              	.LVL29:
+ 279 0050 09E0     		b	.L22
+ 280              	.L21:
+  93:colorSensor.c ****     }
+  94:colorSensor.c ****     else if(color=='c')//'Clear' farve-filter tilføjes og frekvensen registeres
+ 281              		.loc 1 94 0
+ 282 0052 632C     		cmp	r4, #99
+ 283 0054 07D1     		bne	.L22
+  95:colorSensor.c ****     {
+  96:colorSensor.c ****         S2_Write(1);
+ 284              		.loc 1 96 0
+ 285 0056 0120     		movs	r0, #1
+ 286 0058 FFF7FEFF 		bl	S2_Write
+ 287              	.LVL30:
+  97:colorSensor.c ****         S3_Write(0);
+ 288              		.loc 1 97 0
+ 289 005c 0020     		movs	r0, #0
+ 290 005e FFF7FEFF 		bl	S3_Write
+ 291              	.LVL31:
+  98:colorSensor.c ****         read_color();
+ 292              		.loc 1 98 0
+ 293 0062 FFF7FEFF 		bl	read_color
+ 294              	.LVL32:
+ 295              	.L22:
+  99:colorSensor.c ****     }
+ 100:colorSensor.c ****     
+ 101:colorSensor.c ****    
+ 102:colorSensor.c ****     
+ 103:colorSensor.c ****     while(!dataReady)
+ 296              		.loc 1 103 0 discriminator 1
+ARM GAS  C:\Users\shynt\AppData\Local\Temp\ccxjykpB.s 			page 8
+
+
+ 297 0066 034B     		ldr	r3, .L24
+ 298 0068 9B68     		ldr	r3, [r3, #8]
+ 299 006a 002B     		cmp	r3, #0
+ 300 006c FBD0     		beq	.L22
+ 104:colorSensor.c ****     {
+ 105:colorSensor.c ****     ;
+ 106:colorSensor.c ****     }
+ 107:colorSensor.c ****     return freq;
+ 108:colorSensor.c ****     
+ 109:colorSensor.c ****  
+ 110:colorSensor.c **** 
+ 111:colorSensor.c **** }
+ 301              		.loc 1 111 0
+ 302 006e 014B     		ldr	r3, .L24
+ 303 0070 1868     		ldr	r0, [r3]
+ 304 0072 10BD     		pop	{r4, pc}
+ 305              	.L25:
+ 306              		.align	2
+ 307              	.L24:
+ 308 0074 00000000 		.word	.LANCHOR0
+ 309              		.cfi_endproc
+ 310              	.LFE68:
+ 311              		.size	get_freq, .-get_freq
+ 312              		.section	.text.print,"ax",%progbits
+ 313              		.align	2
+ 314              		.global	print
+ 315              		.thumb
+ 316              		.thumb_func
+ 317              		.type	print, %function
+ 318              	print:
+ 319              	.LFB69:
+ 112:colorSensor.c **** 
+ 113:colorSensor.c **** char str[STRING_LENGTH+1] ; /* print buff */
+ 114:colorSensor.c **** 
+ 115:colorSensor.c **** void print(char *str)
+ 116:colorSensor.c **** {
+ 320              		.loc 1 116 0
+ 321              		.cfi_startproc
+ 322              		@ args = 0, pretend = 0, frame = 0
+ 323              		@ frame_needed = 0, uses_anonymous_args = 0
+ 324              	.LVL33:
+ 325 0000 08B5     		push	{r3, lr}
+ 326              		.cfi_def_cfa_offset 8
+ 327              		.cfi_offset 3, -8
+ 328              		.cfi_offset 14, -4
+ 117:colorSensor.c ****     UART_1_PutString(str) ;
+ 329              		.loc 1 117 0
+ 330 0002 FFF7FEFF 		bl	UART_1_PutString
+ 331              	.LVL34:
+ 332 0006 08BD     		pop	{r3, pc}
+ 333              		.cfi_endproc
+ 334              	.LFE69:
+ 335              		.size	print, .-print
+ 336              		.global	__aeabi_ui2d
+ 337              		.global	__aeabi_dmul
+ 338              		.global	__aeabi_dcmpgt
+ 339              		.global	__aeabi_dadd
+ARM GAS  C:\Users\shynt\AppData\Local\Temp\ccxjykpB.s 			page 9
+
+
+ 340              		.section	.text.getColor,"ax",%progbits
+ 341              		.align	2
+ 342              		.global	getColor
+ 343              		.thumb
+ 344              		.thumb_func
+ 345              		.type	getColor, %function
+ 346              	getColor:
+ 347              	.LFB70:
+ 118:colorSensor.c **** }
+ 119:colorSensor.c **** 
+ 120:colorSensor.c **** int getColor()
+ 121:colorSensor.c **** {
+ 348              		.loc 1 121 0
+ 349              		.cfi_startproc
+ 350              		@ args = 0, pretend = 0, frame = 16
+ 351              		@ frame_needed = 0, uses_anonymous_args = 0
+ 352 0000 2DE9F04F 		push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}
+ 353              		.cfi_def_cfa_offset 36
+ 354              		.cfi_offset 4, -36
+ 355              		.cfi_offset 5, -32
+ 356              		.cfi_offset 6, -28
+ 357              		.cfi_offset 7, -24
+ 358              		.cfi_offset 8, -20
+ 359              		.cfi_offset 9, -16
+ 360              		.cfi_offset 10, -12
+ 361              		.cfi_offset 11, -8
+ 362              		.cfi_offset 14, -4
+ 363 0004 85B0     		sub	sp, sp, #20
+ 364              		.cfi_def_cfa_offset 56
+ 365              	.LVL35:
+ 122:colorSensor.c **** uint freqR_0, freqG_0, freqB_0, freqR, freqG, freqB = 0;
+ 123:colorSensor.c **** uint countR = 0;
+ 124:colorSensor.c **** uint countG = 0;
+ 125:colorSensor.c **** uint countB = 0;
+ 126:colorSensor.c **** uint countU = 0;
+ 127:colorSensor.c **** 
+ 128:colorSensor.c ****     
+ 129:colorSensor.c ****     init_start();
+ 366              		.loc 1 129 0
+ 367 0006 FFF7FEFF 		bl	init_start
+ 368              	.LVL36:
+ 130:colorSensor.c ****     read_color();
+ 369              		.loc 1 130 0
+ 370 000a FFF7FEFF 		bl	read_color
+ 371              	.LVL37:
+ 131:colorSensor.c ****     
+ 132:colorSensor.c ****     freqR_0 = get_freq('r');
+ 372              		.loc 1 132 0
+ 373 000e 7220     		movs	r0, #114
+ 374 0010 FFF7FEFF 		bl	get_freq
+ 375              	.LVL38:
+ 376 0014 0090     		str	r0, [sp]
+ 377              	.LVL39:
+ 133:colorSensor.c ****     freqG_0 = get_freq('g');
+ 378              		.loc 1 133 0
+ 379 0016 6720     		movs	r0, #103
+ 380              	.LVL40:
+ARM GAS  C:\Users\shynt\AppData\Local\Temp\ccxjykpB.s 			page 10
+
+
+ 381 0018 FFF7FEFF 		bl	get_freq
+ 382              	.LVL41:
+ 383 001c 0190     		str	r0, [sp, #4]
+ 384              	.LVL42:
+ 134:colorSensor.c ****     freqB_0 = get_freq('b');
+ 385              		.loc 1 134 0
+ 386 001e 6220     		movs	r0, #98
+ 387              	.LVL43:
+ 388 0020 FFF7FEFF 		bl	get_freq
+ 389              	.LVL44:
+ 390 0024 0290     		str	r0, [sp, #8]
+ 391              	.LVL45:
+ 126:colorSensor.c **** 
+ 392              		.loc 1 126 0
+ 393 0026 4FF0000A 		mov	r10, #0
+ 125:colorSensor.c **** uint countU = 0;
+ 394              		.loc 1 125 0
+ 395 002a CDF80CA0 		str	r10, [sp, #12]
+ 124:colorSensor.c **** uint countB = 0;
+ 396              		.loc 1 124 0
+ 397 002e D046     		mov	r8, r10
+ 123:colorSensor.c **** uint countG = 0;
+ 398              		.loc 1 123 0
+ 399 0030 D146     		mov	r9, r10
+ 400              	.LVL46:
+ 401              	.L29:
+ 135:colorSensor.c ****     
+ 136:colorSensor.c ****         for(;;)
+ 137:colorSensor.c ****         {
+ 138:colorSensor.c ****             
+ 139:colorSensor.c ****             freqR = get_freq('r');
+ 402              		.loc 1 139 0
+ 403 0032 7220     		movs	r0, #114
+ 404 0034 FFF7FEFF 		bl	get_freq
+ 405              	.LVL47:
+ 406 0038 8346     		mov	fp, r0
+ 407              	.LVL48:
+ 140:colorSensor.c ****             freqG = get_freq('g');
+ 408              		.loc 1 140 0
+ 409 003a 6720     		movs	r0, #103
+ 410              	.LVL49:
+ 411 003c FFF7FEFF 		bl	get_freq
+ 412              	.LVL50:
+ 413 0040 0446     		mov	r4, r0
+ 414              	.LVL51:
+ 141:colorSensor.c ****             freqB = get_freq('b');
+ 415              		.loc 1 141 0
+ 416 0042 6220     		movs	r0, #98
+ 417              	.LVL52:
+ 418 0044 FFF7FEFF 		bl	get_freq
+ 419              	.LVL53:
+ 420 0048 0546     		mov	r5, r0
+ 421              	.LVL54:
+ 142:colorSensor.c ****            
+ 143:colorSensor.c ****             
+ 144:colorSensor.c ****             //Nedenstående to sætninger bruges til at se frekvensen på farverne
+ 145:colorSensor.c ****             //sprintf(str,"Red freq: %u Hz, Green freq: %u, Blue freq: %u, Clear freq: %u, R0: %u, 
+ARM GAS  C:\Users\shynt\AppData\Local\Temp\ccxjykpB.s 			page 11
+
+
+ 146:colorSensor.c ****             //print(str);
+ 147:colorSensor.c ****             
+ 148:colorSensor.c ****             //Nedenstående er koden der skal bruges
+ 149:colorSensor.c ****             
+ 150:colorSensor.c ****         
+ 151:colorSensor.c ****             
+ 152:colorSensor.c ****              if(freqR>freqR_0*1.1)
+ 422              		.loc 1 152 0
+ 423 004a 5846     		mov	r0, fp
+ 424              	.LVL55:
+ 425 004c FFF7FEFF 		bl	__aeabi_ui2d
+ 426              	.LVL56:
+ 427 0050 0646     		mov	r6, r0
+ 428 0052 0F46     		mov	r7, r1
+ 429 0054 0098     		ldr	r0, [sp]
+ 430 0056 FFF7FEFF 		bl	__aeabi_ui2d
+ 431              	.LVL57:
+ 432 005a 61A3     		adr	r3, .L49
+ 433 005c D3E90023 		ldrd	r2, [r3]
+ 434 0060 FFF7FEFF 		bl	__aeabi_dmul
+ 435              	.LVL58:
+ 436 0064 0246     		mov	r2, r0
+ 437 0066 0B46     		mov	r3, r1
+ 438 0068 3046     		mov	r0, r6
+ 439 006a 3946     		mov	r1, r7
+ 440 006c FFF7FEFF 		bl	__aeabi_dcmpgt
+ 441              	.LVL59:
+ 442 0070 50B3     		cbz	r0, .L44
+ 153:colorSensor.c ****                 {
+ 154:colorSensor.c ****                     if(freqR>freqG&&freqR>freqB)
+ 443              		.loc 1 154 0
+ 444 0072 A345     		cmp	fp, r4
+ 445 0074 17D9     		bls	.L32
+ 446              		.loc 1 154 0 is_stmt 0 discriminator 1
+ 447 0076 AB45     		cmp	fp, r5
+ 448 0078 15D9     		bls	.L32
+ 155:colorSensor.c ****                     {
+ 156:colorSensor.c ****                         countR ++;
+ 449              		.loc 1 156 0 is_stmt 1
+ 450 007a 09F10109 		add	r9, r9, #1
+ 451              	.LVL60:
+ 157:colorSensor.c **** 
+ 158:colorSensor.c ****                         if(countR==2)
+ 452              		.loc 1 158 0
+ 453 007e B9F1020F 		cmp	r9, #2
+ 454 0082 D6D1     		bne	.L29
+ 159:colorSensor.c ****                         {
+ 160:colorSensor.c ****                             //Indsæt 'driveForward funktion'
+ 161:colorSensor.c ****                         sprintf(str,"Red color detected\n\r");
+ 455              		.loc 1 161 0
+ 456 0084 5A4D     		ldr	r5, .L49+16
+ 457              	.LVL61:
+ 458 0086 5B4C     		ldr	r4, .L49+20
+ 459              	.LVL62:
+ 460 0088 0FCC     		ldmia	r4!, {r0, r1, r2, r3}
+ 461 008a 2860     		str	r0, [r5]	@ unaligned
+ 462 008c 6960     		str	r1, [r5, #4]	@ unaligned
+ARM GAS  C:\Users\shynt\AppData\Local\Temp\ccxjykpB.s 			page 12
+
+
+ 463 008e AA60     		str	r2, [r5, #8]	@ unaligned
+ 464 0090 EB60     		str	r3, [r5, #12]	@ unaligned
+ 465 0092 2068     		ldr	r0, [r4]	@ unaligned
+ 466 0094 2861     		str	r0, [r5, #16]	@ unaligned
+ 467 0096 2379     		ldrb	r3, [r4, #4]	@ zero_extendqisi2
+ 468 0098 2B75     		strb	r3, [r5, #20]
+ 162:colorSensor.c ****                         print(str);
+ 469              		.loc 1 162 0
+ 470 009a 2846     		mov	r0, r5
+ 471 009c FFF7FEFF 		bl	print
+ 472              	.LVL63:
+ 163:colorSensor.c ****                         countR = 0;
+ 473              		.loc 1 163 0
+ 474 00a0 4FF00009 		mov	r9, #0
+ 475 00a4 C5E7     		b	.L29
+ 476              	.LVL64:
+ 477              	.L32:
+ 164:colorSensor.c ****                         }
+ 165:colorSensor.c ****                         
+ 166:colorSensor.c ****                     }
+ 167:colorSensor.c ****                    
+ 168:colorSensor.c ****                     else
+ 169:colorSensor.c ****                     {
+ 170:colorSensor.c ****                         //Indsæt 'driveLeft funktion'
+ 171:colorSensor.c ****                         sprintf(str,"Unknown color in red\n\r");
+ 478              		.loc 1 171 0
+ 479 00a6 524D     		ldr	r5, .L49+16
+ 480              	.LVL65:
+ 481 00a8 534C     		ldr	r4, .L49+24
+ 482              	.LVL66:
+ 483 00aa 0FCC     		ldmia	r4!, {r0, r1, r2, r3}
+ 484 00ac 2860     		str	r0, [r5]	@ unaligned
+ 485 00ae 6960     		str	r1, [r5, #4]	@ unaligned
+ 486 00b0 AA60     		str	r2, [r5, #8]	@ unaligned
+ 487 00b2 EB60     		str	r3, [r5, #12]	@ unaligned
+ 488 00b4 2068     		ldr	r0, [r4]	@ unaligned
+ 489 00b6 2861     		str	r0, [r5, #16]	@ unaligned
+ 490 00b8 A288     		ldrh	r2, [r4, #4]	@ unaligned
+ 491 00ba A379     		ldrb	r3, [r4, #6]	@ zero_extendqisi2
+ 492 00bc AA82     		strh	r2, [r5, #20]	@ unaligned
+ 493 00be AB75     		strb	r3, [r5, #22]
+ 172:colorSensor.c ****                         print(str);
+ 494              		.loc 1 172 0
+ 495 00c0 2846     		mov	r0, r5
+ 496 00c2 FFF7FEFF 		bl	print
+ 497              	.LVL67:
+ 498 00c6 B4E7     		b	.L29
+ 499              	.LVL68:
+ 500              	.L44:
+ 173:colorSensor.c ****                     }    
+ 174:colorSensor.c ****                 }
+ 175:colorSensor.c **** 
+ 176:colorSensor.c ****             else if (freqG>freqG_0+1.1)
+ 501              		.loc 1 176 0
+ 502 00c8 2046     		mov	r0, r4
+ 503 00ca FFF7FEFF 		bl	__aeabi_ui2d
+ 504              	.LVL69:
+ARM GAS  C:\Users\shynt\AppData\Local\Temp\ccxjykpB.s 			page 13
+
+
+ 505 00ce 0646     		mov	r6, r0
+ 506 00d0 0F46     		mov	r7, r1
+ 507 00d2 0198     		ldr	r0, [sp, #4]
+ 508 00d4 FFF7FEFF 		bl	__aeabi_ui2d
+ 509              	.LVL70:
+ 510 00d8 41A3     		adr	r3, .L49
+ 511 00da D3E90023 		ldrd	r2, [r3]
+ 512 00de FFF7FEFF 		bl	__aeabi_dadd
+ 513              	.LVL71:
+ 514 00e2 0246     		mov	r2, r0
+ 515 00e4 0B46     		mov	r3, r1
+ 516 00e6 3046     		mov	r0, r6
+ 517 00e8 3946     		mov	r1, r7
+ 518 00ea FFF7FEFF 		bl	__aeabi_dcmpgt
+ 519              	.LVL72:
+ 520 00ee A8B3     		cbz	r0, .L45
+ 177:colorSensor.c ****             {    
+ 178:colorSensor.c ****                 if (freqG>freqB*0.9)
+ 521              		.loc 1 178 0
+ 522 00f0 2846     		mov	r0, r5
+ 523 00f2 FFF7FEFF 		bl	__aeabi_ui2d
+ 524              	.LVL73:
+ 525 00f6 3CA3     		adr	r3, .L49+8
+ 526 00f8 D3E90023 		ldrd	r2, [r3]
+ 527 00fc FFF7FEFF 		bl	__aeabi_dmul
+ 528              	.LVL74:
+ 529 0100 0246     		mov	r2, r0
+ 530 0102 0B46     		mov	r3, r1
+ 531 0104 3046     		mov	r0, r6
+ 532 0106 3946     		mov	r1, r7
+ 533 0108 FFF7FEFF 		bl	__aeabi_dcmpgt
+ 534              	.LVL75:
+ 535 010c B8B1     		cbz	r0, .L46
+ 179:colorSensor.c ****                 {
+ 180:colorSensor.c ****                         countG ++;
+ 536              		.loc 1 180 0
+ 537 010e 08F10108 		add	r8, r8, #1
+ 538              	.LVL76:
+ 181:colorSensor.c ****                         if(countG==2)
+ 539              		.loc 1 181 0
+ 540 0112 B8F1020F 		cmp	r8, #2
+ 541 0116 8CD1     		bne	.L29
+ 182:colorSensor.c ****                         {
+ 183:colorSensor.c ****                             //Indsæt
+ 184:colorSensor.c ****                         sprintf(str,"Green color detected\n\r");
+ 542              		.loc 1 184 0
+ 543 0118 354D     		ldr	r5, .L49+16
+ 544              	.LVL77:
+ 545 011a 384C     		ldr	r4, .L49+28
+ 546              	.LVL78:
+ 547 011c 0FCC     		ldmia	r4!, {r0, r1, r2, r3}
+ 548 011e 2860     		str	r0, [r5]	@ unaligned
+ 549 0120 6960     		str	r1, [r5, #4]	@ unaligned
+ 550 0122 AA60     		str	r2, [r5, #8]	@ unaligned
+ 551 0124 EB60     		str	r3, [r5, #12]	@ unaligned
+ 552 0126 2068     		ldr	r0, [r4]	@ unaligned
+ 553 0128 2861     		str	r0, [r5, #16]	@ unaligned
+ARM GAS  C:\Users\shynt\AppData\Local\Temp\ccxjykpB.s 			page 14
+
+
+ 554 012a A288     		ldrh	r2, [r4, #4]	@ unaligned
+ 555 012c A379     		ldrb	r3, [r4, #6]	@ zero_extendqisi2
+ 556 012e AA82     		strh	r2, [r5, #20]	@ unaligned
+ 557 0130 AB75     		strb	r3, [r5, #22]
+ 185:colorSensor.c ****                         print(str);
+ 558              		.loc 1 185 0
+ 559 0132 2846     		mov	r0, r5
+ 560 0134 FFF7FEFF 		bl	print
+ 561              	.LVL79:
+ 186:colorSensor.c ****                         countG = 0;
+ 562              		.loc 1 186 0
+ 563 0138 4FF00008 		mov	r8, #0
+ 564 013c 79E7     		b	.L29
+ 565              	.LVL80:
+ 566              	.L46:
+ 187:colorSensor.c ****                         }
+ 188:colorSensor.c ****                 }
+ 189:colorSensor.c ****                 else
+ 190:colorSensor.c ****                 {
+ 191:colorSensor.c ****                       sprintf(str,"Blue color detected\n\r");
+ 567              		.loc 1 191 0
+ 568 013e 2C4D     		ldr	r5, .L49+16
+ 569              	.LVL81:
+ 570 0140 2F4C     		ldr	r4, .L49+32
+ 571              	.LVL82:
+ 572 0142 0FCC     		ldmia	r4!, {r0, r1, r2, r3}
+ 573 0144 2860     		str	r0, [r5]	@ unaligned
+ 574 0146 6960     		str	r1, [r5, #4]	@ unaligned
+ 575 0148 AA60     		str	r2, [r5, #8]	@ unaligned
+ 576 014a EB60     		str	r3, [r5, #12]	@ unaligned
+ 577 014c 2068     		ldr	r0, [r4]	@ unaligned
+ 578 014e 2861     		str	r0, [r5, #16]	@ unaligned
+ 579 0150 A388     		ldrh	r3, [r4, #4]	@ unaligned
+ 580 0152 AB82     		strh	r3, [r5, #20]	@ unaligned
+ 192:colorSensor.c ****                       print(str);               
+ 581              		.loc 1 192 0
+ 582 0154 2846     		mov	r0, r5
+ 583 0156 FFF7FEFF 		bl	print
+ 584              	.LVL83:
+ 585 015a 6AE7     		b	.L29
+ 586              	.LVL84:
+ 587              	.L45:
+ 193:colorSensor.c ****                 }
+ 194:colorSensor.c ****             }    
+ 195:colorSensor.c ****             else if (freqB>freqB_0*1.1)
+ 588              		.loc 1 195 0
+ 589 015c 2846     		mov	r0, r5
+ 590 015e FFF7FEFF 		bl	__aeabi_ui2d
+ 591              	.LVL85:
+ 592 0162 0646     		mov	r6, r0
+ 593 0164 0F46     		mov	r7, r1
+ 594 0166 0298     		ldr	r0, [sp, #8]
+ 595 0168 FFF7FEFF 		bl	__aeabi_ui2d
+ 596              	.LVL86:
+ 597 016c 1CA3     		adr	r3, .L49
+ 598 016e D3E90023 		ldrd	r2, [r3]
+ 599 0172 FFF7FEFF 		bl	__aeabi_dmul
+ARM GAS  C:\Users\shynt\AppData\Local\Temp\ccxjykpB.s 			page 15
+
+
+ 600              	.LVL87:
+ 601 0176 0246     		mov	r2, r0
+ 602 0178 0B46     		mov	r3, r1
+ 603 017a 3046     		mov	r0, r6
+ 604 017c 3946     		mov	r1, r7
+ 605 017e FFF7FEFF 		bl	__aeabi_dcmpgt
+ 606              	.LVL88:
+ 607 0182 C8B1     		cbz	r0, .L47
+ 196:colorSensor.c ****             {
+ 197:colorSensor.c ****             
+ 198:colorSensor.c ****             
+ 199:colorSensor.c ****                 if (freqB>freqG)
+ 608              		.loc 1 199 0
+ 609 0184 AC42     		cmp	r4, r5
+ 610 0186 BFF454AF 		bcs	.L29
+ 200:colorSensor.c ****                 {
+ 201:colorSensor.c ****                         countB ++;
+ 611              		.loc 1 201 0
+ 612 018a 039B     		ldr	r3, [sp, #12]
+ 613 018c 0133     		adds	r3, r3, #1
+ 614 018e 0393     		str	r3, [sp, #12]
+ 615              	.LVL89:
+ 202:colorSensor.c ****                         if(countB==2)
+ 616              		.loc 1 202 0
+ 617 0190 022B     		cmp	r3, #2
+ 618 0192 7FF44EAF 		bne	.L29
+ 203:colorSensor.c ****                         {
+ 204:colorSensor.c ****                         sprintf(str,"Blue color detected\n\r");
+ 619              		.loc 1 204 0
+ 620 0196 164D     		ldr	r5, .L49+16
+ 621              	.LVL90:
+ 622 0198 194C     		ldr	r4, .L49+32
+ 623              	.LVL91:
+ 624 019a 0FCC     		ldmia	r4!, {r0, r1, r2, r3}
+ 625              	.LVL92:
+ 626 019c 2860     		str	r0, [r5]	@ unaligned
+ 627 019e 6960     		str	r1, [r5, #4]	@ unaligned
+ 628 01a0 AA60     		str	r2, [r5, #8]	@ unaligned
+ 629 01a2 EB60     		str	r3, [r5, #12]	@ unaligned
+ 630 01a4 2068     		ldr	r0, [r4]	@ unaligned
+ 631 01a6 2861     		str	r0, [r5, #16]	@ unaligned
+ 632 01a8 A388     		ldrh	r3, [r4, #4]	@ unaligned
+ 633 01aa AB82     		strh	r3, [r5, #20]	@ unaligned
+ 205:colorSensor.c ****                         print(str);
+ 634              		.loc 1 205 0
+ 635 01ac 2846     		mov	r0, r5
+ 636 01ae FFF7FEFF 		bl	print
+ 637              	.LVL93:
+ 206:colorSensor.c ****                         countB = 0;
+ 638              		.loc 1 206 0
+ 639 01b2 0023     		movs	r3, #0
+ 640 01b4 0393     		str	r3, [sp, #12]
+ 641 01b6 3CE7     		b	.L29
+ 642              	.LVL94:
+ 643              	.L47:
+ 207:colorSensor.c ****                         }
+ 208:colorSensor.c ****                 }
+ARM GAS  C:\Users\shynt\AppData\Local\Temp\ccxjykpB.s 			page 16
+
+
+ 209:colorSensor.c ****              }
+ 210:colorSensor.c ****            
+ 211:colorSensor.c ****             else
+ 212:colorSensor.c ****                 {
+ 213:colorSensor.c ****                     countU ++;
+ 644              		.loc 1 213 0
+ 645 01b8 0AF1010A 		add	r10, r10, #1
+ 646              	.LVL95:
+ 214:colorSensor.c ****                     if(countU==2)
+ 647              		.loc 1 214 0
+ 648 01bc BAF1020F 		cmp	r10, #2
+ 649 01c0 7FF437AF 		bne	.L29
+ 215:colorSensor.c ****                      {   //Indsæt 'driveLeft funktion'
+ 216:colorSensor.c ****                     sprintf(str,"Unknown color\n\r");
+ 650              		.loc 1 216 0
+ 651 01c4 0A4D     		ldr	r5, .L49+16
+ 652              	.LVL96:
+ 653 01c6 0F4C     		ldr	r4, .L49+36
+ 654              	.LVL97:
+ 655 01c8 0FCC     		ldmia	r4!, {r0, r1, r2, r3}
+ 656 01ca 2860     		str	r0, [r5]	@ unaligned
+ 657 01cc 6960     		str	r1, [r5, #4]	@ unaligned
+ 658 01ce AA60     		str	r2, [r5, #8]	@ unaligned
+ 659 01d0 EB60     		str	r3, [r5, #12]	@ unaligned
+ 217:colorSensor.c ****                     print(str);
+ 660              		.loc 1 217 0
+ 661 01d2 2846     		mov	r0, r5
+ 662 01d4 FFF7FEFF 		bl	print
+ 663              	.LVL98:
+ 218:colorSensor.c ****                     countU = 0;}
+ 664              		.loc 1 218 0
+ 665 01d8 4FF0000A 		mov	r10, #0
+ 666 01dc 29E7     		b	.L29
+ 667              	.L50:
+ 668 01de 00BF     		.align	3
+ 669              	.L49:
+ 670 01e0 9A999999 		.word	-1717986918
+ 671 01e4 9999F13F 		.word	1072798105
+ 672 01e8 CDCCCCCC 		.word	-858993459
+ 673 01ec CCCCEC3F 		.word	1072483532
+ 674 01f0 00000000 		.word	str
+ 675 01f4 00000000 		.word	.LC0
+ 676 01f8 18000000 		.word	.LC1
+ 677 01fc 30000000 		.word	.LC2
+ 678 0200 48000000 		.word	.LC3
+ 679 0204 60000000 		.word	.LC4
+ 680              		.cfi_endproc
+ 681              	.LFE70:
+ 682              		.size	getColor, .-getColor
+ 683              		.comm	str,129,4
+ 684              		.global	Counter_cycle
+ 685              		.global	dataReady
+ 686              		.global	freq
+ 687              		.section	.rodata.str1.4,"aMS",%progbits,1
+ 688              		.align	2
+ 689              	.LC0:
+ 690 0000 52656420 		.ascii	"Red color detected\012\015\000"
+ARM GAS  C:\Users\shynt\AppData\Local\Temp\ccxjykpB.s 			page 17
+
+
+ 690      636F6C6F 
+ 690      72206465 
+ 690      74656374 
+ 690      65640A0D 
+ 691 0015 000000   		.space	3
+ 692              	.LC1:
+ 693 0018 556E6B6E 		.ascii	"Unknown color in red\012\015\000"
+ 693      6F776E20 
+ 693      636F6C6F 
+ 693      7220696E 
+ 693      20726564 
+ 694 002f 00       		.space	1
+ 695              	.LC2:
+ 696 0030 47726565 		.ascii	"Green color detected\012\015\000"
+ 696      6E20636F 
+ 696      6C6F7220 
+ 696      64657465 
+ 696      63746564 
+ 697 0047 00       		.space	1
+ 698              	.LC3:
+ 699 0048 426C7565 		.ascii	"Blue color detected\012\015\000"
+ 699      20636F6C 
+ 699      6F722064 
+ 699      65746563 
+ 699      7465640A 
+ 700 005e 0000     		.space	2
+ 701              	.LC4:
+ 702 0060 556E6B6E 		.ascii	"Unknown color\012\015\000"
+ 702      6F776E20 
+ 702      636F6C6F 
+ 702      720A0D00 
+ 703              		.bss
+ 704              		.align	2
+ 705              		.set	.LANCHOR0,. + 0
+ 706              		.type	freq, %object
+ 707              		.size	freq, 4
+ 708              	freq:
+ 709 0000 00000000 		.space	4
+ 710              		.type	Counter_cycle, %object
+ 711              		.size	Counter_cycle, 4
+ 712              	Counter_cycle:
+ 713 0004 00000000 		.space	4
+ 714              		.type	dataReady, %object
+ 715              		.size	dataReady, 4
+ 716              	dataReady:
+ 717 0008 00000000 		.space	4
+ 718              		.text
+ 719              	.Letext0:
+ 720              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.3\\psoc creator\\import\\gnu\\arm\\5.4.
+ 721              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.3\\psoc creator\\import\\gnu\\arm\\5.4.
+ 722              		.file 4 "c:\\program files (x86)\\cypress\\psoc creator\\4.3\\psoc creator\\import\\gnu\\arm\\5.4.
+ 723              		.file 5 "Generated_Source\\PSoC5/core_cm3.h"
+ 724              		.file 6 "Generated_Source\\PSoC5/Counter.h"
+ 725              		.file 7 "Generated_Source\\PSoC5/Timer.h"
+ 726              		.file 8 "Generated_Source\\PSoC5/OE.h"
+ 727              		.file 9 "Generated_Source\\PSoC5/Timer_INT.h"
+ 728              		.file 10 "Generated_Source\\PSoC5/Counter_INT.h"
+ARM GAS  C:\Users\shynt\AppData\Local\Temp\ccxjykpB.s 			page 18
+
+
+ 729              		.file 11 "Generated_Source\\PSoC5/UART_1.h"
+ 730              		.file 12 "Generated_Source\\PSoC5/Control_Reg.h"
+ 731              		.file 13 "Generated_Source\\PSoC5/CyLib.h"
+ 732              		.file 14 "Generated_Source\\PSoC5/S0.h"
+ 733              		.file 15 "Generated_Source\\PSoC5/S1.h"
+ 734              		.file 16 "Generated_Source\\PSoC5/S2.h"
+ 735              		.file 17 "Generated_Source\\PSoC5/S3.h"
+ 736              		.section	.debug_info,"",%progbits
+ 737              	.Ldebug_info0:
+ 738 0000 39060000 		.4byte	0x639
+ 739 0004 0400     		.2byte	0x4
+ 740 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 741 000a 04       		.byte	0x4
+ 742 000b 01       		.uleb128 0x1
+ 743 000c E1020000 		.4byte	.LASF59
+ 744 0010 0C       		.byte	0xc
+ 745 0011 32020000 		.4byte	.LASF60
+ 746 0015 AD010000 		.4byte	.LASF61
+ 747 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 748 001d 00000000 		.4byte	0
+ 749 0021 00000000 		.4byte	.Ldebug_line0
+ 750 0025 02       		.uleb128 0x2
+ 751 0026 01       		.byte	0x1
+ 752 0027 06       		.byte	0x6
+ 753 0028 35010000 		.4byte	.LASF0
+ 754 002c 02       		.uleb128 0x2
+ 755 002d 01       		.byte	0x1
+ 756 002e 08       		.byte	0x8
+ 757 002f 10010000 		.4byte	.LASF1
+ 758 0033 02       		.uleb128 0x2
+ 759 0034 02       		.byte	0x2
+ 760 0035 05       		.byte	0x5
+ 761 0036 21000000 		.4byte	.LASF2
+ 762 003a 02       		.uleb128 0x2
+ 763 003b 02       		.byte	0x2
+ 764 003c 07       		.byte	0x7
+ 765 003d 8A010000 		.4byte	.LASF3
+ 766 0041 03       		.uleb128 0x3
+ 767 0042 7C020000 		.4byte	.LASF5
+ 768 0046 02       		.byte	0x2
+ 769 0047 3F       		.byte	0x3f
+ 770 0048 4C000000 		.4byte	0x4c
+ 771 004c 02       		.uleb128 0x2
+ 772 004d 04       		.byte	0x4
+ 773 004e 05       		.byte	0x5
+ 774 004f F2000000 		.4byte	.LASF4
+ 775 0053 03       		.uleb128 0x3
+ 776 0054 5E000000 		.4byte	.LASF6
+ 777 0058 02       		.byte	0x2
+ 778 0059 41       		.byte	0x41
+ 779 005a 5E000000 		.4byte	0x5e
+ 780 005e 02       		.uleb128 0x2
+ 781 005f 04       		.byte	0x4
+ 782 0060 07       		.byte	0x7
+ 783 0061 40020000 		.4byte	.LASF7
+ 784 0065 02       		.uleb128 0x2
+ 785 0066 08       		.byte	0x8
+ARM GAS  C:\Users\shynt\AppData\Local\Temp\ccxjykpB.s 			page 19
+
+
+ 786 0067 05       		.byte	0x5
+ 787 0068 50000000 		.4byte	.LASF8
+ 788 006c 02       		.uleb128 0x2
+ 789 006d 08       		.byte	0x8
+ 790 006e 07       		.byte	0x7
+ 791 006f 49010000 		.4byte	.LASF9
+ 792 0073 04       		.uleb128 0x4
+ 793 0074 04       		.byte	0x4
+ 794 0075 05       		.byte	0x5
+ 795 0076 696E7400 		.ascii	"int\000"
+ 796 007a 02       		.uleb128 0x2
+ 797 007b 04       		.byte	0x4
+ 798 007c 07       		.byte	0x7
+ 799 007d 6F010000 		.4byte	.LASF10
+ 800 0081 03       		.uleb128 0x3
+ 801 0082 41010000 		.4byte	.LASF11
+ 802 0086 03       		.byte	0x3
+ 803 0087 2C       		.byte	0x2c
+ 804 0088 41000000 		.4byte	0x41
+ 805 008c 03       		.uleb128 0x3
+ 806 008d 66010000 		.4byte	.LASF12
+ 807 0091 03       		.byte	0x3
+ 808 0092 30       		.byte	0x30
+ 809 0093 53000000 		.4byte	0x53
+ 810 0097 02       		.uleb128 0x2
+ 811 0098 04       		.byte	0x4
+ 812 0099 04       		.byte	0x4
+ 813 009a BF000000 		.4byte	.LASF13
+ 814 009e 02       		.uleb128 0x2
+ 815 009f 08       		.byte	0x8
+ 816 00a0 04       		.byte	0x4
+ 817 00a1 52020000 		.4byte	.LASF14
+ 818 00a5 02       		.uleb128 0x2
+ 819 00a6 01       		.byte	0x1
+ 820 00a7 08       		.byte	0x8
+ 821 00a8 9D010000 		.4byte	.LASF15
+ 822 00ac 02       		.uleb128 0x2
+ 823 00ad 08       		.byte	0x8
+ 824 00ae 04       		.byte	0x4
+ 825 00af 04010000 		.4byte	.LASF16
+ 826 00b3 02       		.uleb128 0x2
+ 827 00b4 04       		.byte	0x4
+ 828 00b5 07       		.byte	0x7
+ 829 00b6 9F020000 		.4byte	.LASF17
+ 830 00ba 05       		.uleb128 0x5
+ 831 00bb 04       		.byte	0x4
+ 832 00bc A5000000 		.4byte	0xa5
+ 833 00c0 03       		.uleb128 0x3
+ 834 00c1 69000000 		.4byte	.LASF18
+ 835 00c5 04       		.byte	0x4
+ 836 00c6 6C       		.byte	0x6c
+ 837 00c7 7A000000 		.4byte	0x7a
+ 838 00cb 06       		.uleb128 0x6
+ 839 00cc C1020000 		.4byte	.LASF19
+ 840 00d0 01       		.byte	0x1
+ 841 00d1 1B       		.byte	0x1b
+ 842 00d2 00000000 		.4byte	.LFB64
+ARM GAS  C:\Users\shynt\AppData\Local\Temp\ccxjykpB.s 			page 20
+
+
+ 843 00d6 30000000 		.4byte	.LFE64-.LFB64
+ 844 00da 01       		.uleb128 0x1
+ 845 00db 9C       		.byte	0x9c
+ 846 00dc 18010000 		.4byte	0x118
+ 847 00e0 07       		.uleb128 0x7
+ 848 00e1 06000000 		.4byte	.LVL0
+ 849 00e5 76050000 		.4byte	0x576
+ 850 00e9 07       		.uleb128 0x7
+ 851 00ea 0A000000 		.4byte	.LVL1
+ 852 00ee 81050000 		.4byte	0x581
+ 853 00f2 07       		.uleb128 0x7
+ 854 00f3 0E000000 		.4byte	.LVL2
+ 855 00f7 8C050000 		.4byte	0x58c
+ 856 00fb 08       		.uleb128 0x8
+ 857 00fc 22000000 		.4byte	.LVL3
+ 858 0100 97050000 		.4byte	0x597
+ 859 0104 0E010000 		.4byte	0x10e
+ 860 0108 09       		.uleb128 0x9
+ 861 0109 01       		.uleb128 0x1
+ 862 010a 50       		.byte	0x50
+ 863 010b 01       		.uleb128 0x1
+ 864 010c 31       		.byte	0x31
+ 865 010d 00       		.byte	0
+ 866 010e 07       		.uleb128 0x7
+ 867 010f 26000000 		.4byte	.LVL4
+ 868 0113 A2050000 		.4byte	0x5a2
+ 869 0117 00       		.byte	0
+ 870 0118 06       		.uleb128 0x6
+ 871 0119 00000000 		.4byte	.LASF20
+ 872 011d 01       		.byte	0x1
+ 873 011e 27       		.byte	0x27
+ 874 011f 00000000 		.4byte	.LFB65
+ 875 0123 14000000 		.4byte	.LFE65-.LFB65
+ 876 0127 01       		.uleb128 0x1
+ 877 0128 9C       		.byte	0x9c
+ 878 0129 37010000 		.4byte	0x137
+ 879 012d 07       		.uleb128 0x7
+ 880 012e 06000000 		.4byte	.LVL5
+ 881 0132 AD050000 		.4byte	0x5ad
+ 882 0136 00       		.byte	0
+ 883 0137 06       		.uleb128 0x6
+ 884 0138 A7000000 		.4byte	.LASF21
+ 885 013c 01       		.byte	0x1
+ 886 013d 2D       		.byte	0x2d
+ 887 013e 00000000 		.4byte	.LFB66
+ 888 0142 20000000 		.4byte	.LFE66-.LFB66
+ 889 0146 01       		.uleb128 0x1
+ 890 0147 9C       		.byte	0x9c
+ 891 0148 80010000 		.4byte	0x180
+ 892 014c 07       		.uleb128 0x7
+ 893 014d 08000000 		.4byte	.LVL6
+ 894 0151 B8050000 		.4byte	0x5b8
+ 895 0155 08       		.uleb128 0x8
+ 896 0156 0E000000 		.4byte	.LVL7
+ 897 015a C3050000 		.4byte	0x5c3
+ 898 015e 6C010000 		.4byte	0x16c
+ 899 0162 09       		.uleb128 0x9
+ARM GAS  C:\Users\shynt\AppData\Local\Temp\ccxjykpB.s 			page 21
+
+
+ 900 0163 01       		.uleb128 0x1
+ 901 0164 50       		.byte	0x50
+ 902 0165 05       		.uleb128 0x5
+ 903 0166 03       		.byte	0x3
+ 904 0167 00000000 		.4byte	timer_isr
+ 905 016b 00       		.byte	0
+ 906 016c 0A       		.uleb128 0xa
+ 907 016d 14000000 		.4byte	.LVL8
+ 908 0171 CE050000 		.4byte	0x5ce
+ 909 0175 09       		.uleb128 0x9
+ 910 0176 01       		.uleb128 0x1
+ 911 0177 50       		.byte	0x50
+ 912 0178 05       		.uleb128 0x5
+ 913 0179 03       		.byte	0x3
+ 914 017a 00000000 		.4byte	counter_isr
+ 915 017e 00       		.byte	0
+ 916 017f 00       		.byte	0
+ 917 0180 06       		.uleb128 0x6
+ 918 0181 A2010000 		.4byte	.LASF22
+ 919 0185 01       		.byte	0x1
+ 920 0186 35       		.byte	0x35
+ 921 0187 00000000 		.4byte	.LFB67
+ 922 018b 44000000 		.4byte	.LFE67-.LFB67
+ 923 018f 01       		.uleb128 0x1
+ 924 0190 9C       		.byte	0x9c
+ 925 0191 22020000 		.4byte	0x222
+ 926 0195 08       		.uleb128 0x8
+ 927 0196 08000000 		.4byte	.LVL9
+ 928 019a 97050000 		.4byte	0x597
+ 929 019e A8010000 		.4byte	0x1a8
+ 930 01a2 09       		.uleb128 0x9
+ 931 01a3 01       		.uleb128 0x1
+ 932 01a4 50       		.byte	0x50
+ 933 01a5 01       		.uleb128 0x1
+ 934 01a6 30       		.byte	0x30
+ 935 01a7 00       		.byte	0
+ 936 01a8 08       		.uleb128 0x8
+ 937 01a9 0E000000 		.4byte	.LVL10
+ 938 01ad D9050000 		.4byte	0x5d9
+ 939 01b1 BB010000 		.4byte	0x1bb
+ 940 01b5 09       		.uleb128 0x9
+ 941 01b6 01       		.uleb128 0x1
+ 942 01b7 50       		.byte	0x50
+ 943 01b8 01       		.uleb128 0x1
+ 944 01b9 31       		.byte	0x31
+ 945 01ba 00       		.byte	0
+ 946 01bb 08       		.uleb128 0x8
+ 947 01bc 14000000 		.4byte	.LVL11
+ 948 01c0 E4050000 		.4byte	0x5e4
+ 949 01c4 CE010000 		.4byte	0x1ce
+ 950 01c8 09       		.uleb128 0x9
+ 951 01c9 01       		.uleb128 0x1
+ 952 01ca 50       		.byte	0x50
+ 953 01cb 01       		.uleb128 0x1
+ 954 01cc 31       		.byte	0x31
+ 955 01cd 00       		.byte	0
+ 956 01ce 08       		.uleb128 0x8
+ARM GAS  C:\Users\shynt\AppData\Local\Temp\ccxjykpB.s 			page 22
+
+
+ 957 01cf 1A000000 		.4byte	.LVL12
+ 958 01d3 D9050000 		.4byte	0x5d9
+ 959 01d7 E1010000 		.4byte	0x1e1
+ 960 01db 09       		.uleb128 0x9
+ 961 01dc 01       		.uleb128 0x1
+ 962 01dd 50       		.byte	0x50
+ 963 01de 01       		.uleb128 0x1
+ 964 01df 30       		.byte	0x30
+ 965 01e0 00       		.byte	0
+ 966 01e1 07       		.uleb128 0x7
+ 967 01e2 26000000 		.4byte	.LVL13
+ 968 01e6 EF050000 		.4byte	0x5ef
+ 969 01ea 08       		.uleb128 0x8
+ 970 01eb 2C000000 		.4byte	.LVL14
+ 971 01ef C3050000 		.4byte	0x5c3
+ 972 01f3 01020000 		.4byte	0x201
+ 973 01f7 09       		.uleb128 0x9
+ 974 01f8 01       		.uleb128 0x1
+ 975 01f9 50       		.byte	0x50
+ 976 01fa 05       		.uleb128 0x5
+ 977 01fb 03       		.byte	0x3
+ 978 01fc 00000000 		.4byte	timer_isr
+ 979 0200 00       		.byte	0
+ 980 0201 08       		.uleb128 0x8
+ 981 0202 32000000 		.4byte	.LVL15
+ 982 0206 CE050000 		.4byte	0x5ce
+ 983 020a 18020000 		.4byte	0x218
+ 984 020e 09       		.uleb128 0x9
+ 985 020f 01       		.uleb128 0x1
+ 986 0210 50       		.byte	0x50
+ 987 0211 05       		.uleb128 0x5
+ 988 0212 03       		.byte	0x3
+ 989 0213 00000000 		.4byte	counter_isr
+ 990 0217 00       		.byte	0
+ 991 0218 07       		.uleb128 0x7
+ 992 0219 36000000 		.4byte	.LVL16
+ 993 021d FA050000 		.4byte	0x5fa
+ 994 0221 00       		.byte	0
+ 995 0222 0B       		.uleb128 0xb
+ 996 0223 0C000000 		.4byte	.LASF25
+ 997 0227 01       		.byte	0x1
+ 998 0228 44       		.byte	0x44
+ 999 0229 73000000 		.4byte	0x73
+ 1000 022d 00000000 		.4byte	.LFB68
+ 1001 0231 78000000 		.4byte	.LFE68-.LFB68
+ 1002 0235 01       		.uleb128 0x1
+ 1003 0236 9C       		.byte	0x9c
+ 1004 0237 2D030000 		.4byte	0x32d
+ 1005 023b 0C       		.uleb128 0xc
+ 1006 023c 7C010000 		.4byte	.LASF24
+ 1007 0240 01       		.byte	0x1
+ 1008 0241 44       		.byte	0x44
+ 1009 0242 A5000000 		.4byte	0xa5
+ 1010 0246 00000000 		.4byte	.LLST0
+ 1011 024a 08       		.uleb128 0x8
+ 1012 024b 0A000000 		.4byte	.LVL19
+ 1013 024f 05060000 		.4byte	0x605
+ARM GAS  C:\Users\shynt\AppData\Local\Temp\ccxjykpB.s 			page 23
+
+
+ 1014 0253 5D020000 		.4byte	0x25d
+ 1015 0257 09       		.uleb128 0x9
+ 1016 0258 01       		.uleb128 0x1
+ 1017 0259 50       		.byte	0x50
+ 1018 025a 01       		.uleb128 0x1
+ 1019 025b 30       		.byte	0x30
+ 1020 025c 00       		.byte	0
+ 1021 025d 08       		.uleb128 0x8
+ 1022 025e 10000000 		.4byte	.LVL20
+ 1023 0262 10060000 		.4byte	0x610
+ 1024 0266 70020000 		.4byte	0x270
+ 1025 026a 09       		.uleb128 0x9
+ 1026 026b 01       		.uleb128 0x1
+ 1027 026c 50       		.byte	0x50
+ 1028 026d 01       		.uleb128 0x1
+ 1029 026e 31       		.byte	0x31
+ 1030 026f 00       		.byte	0
+ 1031 0270 08       		.uleb128 0x8
+ 1032 0271 1A000000 		.4byte	.LVL21
+ 1033 0275 1B060000 		.4byte	0x61b
+ 1034 0279 83020000 		.4byte	0x283
+ 1035 027d 09       		.uleb128 0x9
+ 1036 027e 01       		.uleb128 0x1
+ 1037 027f 50       		.byte	0x50
+ 1038 0280 01       		.uleb128 0x1
+ 1039 0281 30       		.byte	0x30
+ 1040 0282 00       		.byte	0
+ 1041 0283 08       		.uleb128 0x8
+ 1042 0284 20000000 		.4byte	.LVL22
+ 1043 0288 26060000 		.4byte	0x626
+ 1044 028c 96020000 		.4byte	0x296
+ 1045 0290 09       		.uleb128 0x9
+ 1046 0291 01       		.uleb128 0x1
+ 1047 0292 50       		.byte	0x50
+ 1048 0293 01       		.uleb128 0x1
+ 1049 0294 30       		.byte	0x30
+ 1050 0295 00       		.byte	0
+ 1051 0296 07       		.uleb128 0x7
+ 1052 0297 24000000 		.4byte	.LVL23
+ 1053 029b 80010000 		.4byte	0x180
+ 1054 029f 08       		.uleb128 0x8
+ 1055 02a0 30000000 		.4byte	.LVL24
+ 1056 02a4 1B060000 		.4byte	0x61b
+ 1057 02a8 B2020000 		.4byte	0x2b2
+ 1058 02ac 09       		.uleb128 0x9
+ 1059 02ad 01       		.uleb128 0x1
+ 1060 02ae 50       		.byte	0x50
+ 1061 02af 01       		.uleb128 0x1
+ 1062 02b0 31       		.byte	0x31
+ 1063 02b1 00       		.byte	0
+ 1064 02b2 08       		.uleb128 0x8
+ 1065 02b3 36000000 		.4byte	.LVL25
+ 1066 02b7 26060000 		.4byte	0x626
+ 1067 02bb C5020000 		.4byte	0x2c5
+ 1068 02bf 09       		.uleb128 0x9
+ 1069 02c0 01       		.uleb128 0x1
+ 1070 02c1 50       		.byte	0x50
+ARM GAS  C:\Users\shynt\AppData\Local\Temp\ccxjykpB.s 			page 24
+
+
+ 1071 02c2 01       		.uleb128 0x1
+ 1072 02c3 31       		.byte	0x31
+ 1073 02c4 00       		.byte	0
+ 1074 02c5 07       		.uleb128 0x7
+ 1075 02c6 3A000000 		.4byte	.LVL26
+ 1076 02ca 80010000 		.4byte	0x180
+ 1077 02ce 08       		.uleb128 0x8
+ 1078 02cf 46000000 		.4byte	.LVL27
+ 1079 02d3 1B060000 		.4byte	0x61b
+ 1080 02d7 E1020000 		.4byte	0x2e1
+ 1081 02db 09       		.uleb128 0x9
+ 1082 02dc 01       		.uleb128 0x1
+ 1083 02dd 50       		.byte	0x50
+ 1084 02de 01       		.uleb128 0x1
+ 1085 02df 30       		.byte	0x30
+ 1086 02e0 00       		.byte	0
+ 1087 02e1 08       		.uleb128 0x8
+ 1088 02e2 4C000000 		.4byte	.LVL28
+ 1089 02e6 26060000 		.4byte	0x626
+ 1090 02ea F4020000 		.4byte	0x2f4
+ 1091 02ee 09       		.uleb128 0x9
+ 1092 02ef 01       		.uleb128 0x1
+ 1093 02f0 50       		.byte	0x50
+ 1094 02f1 01       		.uleb128 0x1
+ 1095 02f2 31       		.byte	0x31
+ 1096 02f3 00       		.byte	0
+ 1097 02f4 07       		.uleb128 0x7
+ 1098 02f5 50000000 		.4byte	.LVL29
+ 1099 02f9 80010000 		.4byte	0x180
+ 1100 02fd 08       		.uleb128 0x8
+ 1101 02fe 5C000000 		.4byte	.LVL30
+ 1102 0302 1B060000 		.4byte	0x61b
+ 1103 0306 10030000 		.4byte	0x310
+ 1104 030a 09       		.uleb128 0x9
+ 1105 030b 01       		.uleb128 0x1
+ 1106 030c 50       		.byte	0x50
+ 1107 030d 01       		.uleb128 0x1
+ 1108 030e 31       		.byte	0x31
+ 1109 030f 00       		.byte	0
+ 1110 0310 08       		.uleb128 0x8
+ 1111 0311 62000000 		.4byte	.LVL31
+ 1112 0315 26060000 		.4byte	0x626
+ 1113 0319 23030000 		.4byte	0x323
+ 1114 031d 09       		.uleb128 0x9
+ 1115 031e 01       		.uleb128 0x1
+ 1116 031f 50       		.byte	0x50
+ 1117 0320 01       		.uleb128 0x1
+ 1118 0321 30       		.byte	0x30
+ 1119 0322 00       		.byte	0
+ 1120 0323 07       		.uleb128 0x7
+ 1121 0324 66000000 		.4byte	.LVL32
+ 1122 0328 80010000 		.4byte	0x180
+ 1123 032c 00       		.byte	0
+ 1124 032d 06       		.uleb128 0x6
+ 1125 032e 60010000 		.4byte	.LASF23
+ 1126 0332 01       		.byte	0x1
+ 1127 0333 73       		.byte	0x73
+ARM GAS  C:\Users\shynt\AppData\Local\Temp\ccxjykpB.s 			page 25
+
+
+ 1128 0334 00000000 		.4byte	.LFB69
+ 1129 0338 08000000 		.4byte	.LFE69-.LFB69
+ 1130 033c 01       		.uleb128 0x1
+ 1131 033d 9C       		.byte	0x9c
+ 1132 033e 63030000 		.4byte	0x363
+ 1133 0342 0D       		.uleb128 0xd
+ 1134 0343 73747200 		.ascii	"str\000"
+ 1135 0347 01       		.byte	0x1
+ 1136 0348 73       		.byte	0x73
+ 1137 0349 BA000000 		.4byte	0xba
+ 1138 034d 21000000 		.4byte	.LLST1
+ 1139 0351 0A       		.uleb128 0xa
+ 1140 0352 06000000 		.4byte	.LVL34
+ 1141 0356 31060000 		.4byte	0x631
+ 1142 035a 09       		.uleb128 0x9
+ 1143 035b 01       		.uleb128 0x1
+ 1144 035c 50       		.byte	0x50
+ 1145 035d 03       		.uleb128 0x3
+ 1146 035e F3       		.byte	0xf3
+ 1147 035f 01       		.uleb128 0x1
+ 1148 0360 50       		.byte	0x50
+ 1149 0361 00       		.byte	0
+ 1150 0362 00       		.byte	0
+ 1151 0363 0E       		.uleb128 0xe
+ 1152 0364 CB020000 		.4byte	.LASF26
+ 1153 0368 01       		.byte	0x1
+ 1154 0369 78       		.byte	0x78
+ 1155 036a 73000000 		.4byte	0x73
+ 1156 036e 00000000 		.4byte	.LFB70
+ 1157 0372 08020000 		.4byte	.LFE70-.LFB70
+ 1158 0376 01       		.uleb128 0x1
+ 1159 0377 9C       		.byte	0x9c
+ 1160 0378 11050000 		.4byte	0x511
+ 1161 037c 0F       		.uleb128 0xf
+ 1162 037d CA000000 		.4byte	.LASF27
+ 1163 0381 01       		.byte	0x1
+ 1164 0382 7A       		.byte	0x7a
+ 1165 0383 C0000000 		.4byte	0xc0
+ 1166 0387 42000000 		.4byte	.LLST2
+ 1167 038b 0F       		.uleb128 0xf
+ 1168 038c 82010000 		.4byte	.LASF28
+ 1169 0390 01       		.byte	0x1
+ 1170 0391 7A       		.byte	0x7a
+ 1171 0392 C0000000 		.4byte	0xc0
+ 1172 0396 61000000 		.4byte	.LLST3
+ 1173 039a 0F       		.uleb128 0xf
+ 1174 039b 6E000000 		.4byte	.LASF29
+ 1175 039f 01       		.byte	0x1
+ 1176 03a0 7A       		.byte	0x7a
+ 1177 03a1 C0000000 		.4byte	0xc0
+ 1178 03a5 80000000 		.4byte	.LLST4
+ 1179 03a9 0F       		.uleb128 0xf
+ 1180 03aa 15000000 		.4byte	.LASF30
+ 1181 03ae 01       		.byte	0x1
+ 1182 03af 7A       		.byte	0x7a
+ 1183 03b0 C0000000 		.4byte	0xc0
+ 1184 03b4 9F000000 		.4byte	.LLST5
+ARM GAS  C:\Users\shynt\AppData\Local\Temp\ccxjykpB.s 			page 26
+
+
+ 1185 03b8 0F       		.uleb128 0xf
+ 1186 03b9 85030000 		.4byte	.LASF31
+ 1187 03bd 01       		.byte	0x1
+ 1188 03be 7A       		.byte	0x7a
+ 1189 03bf C0000000 		.4byte	0xc0
+ 1190 03c3 BD000000 		.4byte	.LLST6
+ 1191 03c7 0F       		.uleb128 0xf
+ 1192 03c8 1B000000 		.4byte	.LASF32
+ 1193 03cc 01       		.byte	0x1
+ 1194 03cd 7A       		.byte	0x7a
+ 1195 03ce C0000000 		.4byte	0xc0
+ 1196 03d2 12010000 		.4byte	.LLST7
+ 1197 03d6 0F       		.uleb128 0xf
+ 1198 03d7 77030000 		.4byte	.LASF33
+ 1199 03db 01       		.byte	0x1
+ 1200 03dc 7B       		.byte	0x7b
+ 1201 03dd C0000000 		.4byte	0xc0
+ 1202 03e1 73010000 		.4byte	.LLST8
+ 1203 03e5 0F       		.uleb128 0xf
+ 1204 03e6 8E000000 		.4byte	.LASF34
+ 1205 03ea 01       		.byte	0x1
+ 1206 03eb 7C       		.byte	0x7c
+ 1207 03ec C0000000 		.4byte	0xc0
+ 1208 03f0 A9010000 		.4byte	.LLST9
+ 1209 03f4 0F       		.uleb128 0xf
+ 1210 03f5 B1020000 		.4byte	.LASF35
+ 1211 03f9 01       		.byte	0x1
+ 1212 03fa 7D       		.byte	0x7d
+ 1213 03fb C0000000 		.4byte	0xc0
+ 1214 03ff DF010000 		.4byte	.LLST10
+ 1215 0403 0F       		.uleb128 0xf
+ 1216 0404 7E030000 		.4byte	.LASF36
+ 1217 0408 01       		.byte	0x1
+ 1218 0409 7E       		.byte	0x7e
+ 1219 040a C0000000 		.4byte	0xc0
+ 1220 040e 2E020000 		.4byte	.LLST11
+ 1221 0412 07       		.uleb128 0x7
+ 1222 0413 0A000000 		.4byte	.LVL36
+ 1223 0417 37010000 		.4byte	0x137
+ 1224 041b 07       		.uleb128 0x7
+ 1225 041c 0E000000 		.4byte	.LVL37
+ 1226 0420 80010000 		.4byte	0x180
+ 1227 0424 08       		.uleb128 0x8
+ 1228 0425 14000000 		.4byte	.LVL38
+ 1229 0429 22020000 		.4byte	0x222
+ 1230 042d 38040000 		.4byte	0x438
+ 1231 0431 09       		.uleb128 0x9
+ 1232 0432 01       		.uleb128 0x1
+ 1233 0433 50       		.byte	0x50
+ 1234 0434 02       		.uleb128 0x2
+ 1235 0435 08       		.byte	0x8
+ 1236 0436 72       		.byte	0x72
+ 1237 0437 00       		.byte	0
+ 1238 0438 08       		.uleb128 0x8
+ 1239 0439 1C000000 		.4byte	.LVL41
+ 1240 043d 22020000 		.4byte	0x222
+ 1241 0441 4C040000 		.4byte	0x44c
+ARM GAS  C:\Users\shynt\AppData\Local\Temp\ccxjykpB.s 			page 27
+
+
+ 1242 0445 09       		.uleb128 0x9
+ 1243 0446 01       		.uleb128 0x1
+ 1244 0447 50       		.byte	0x50
+ 1245 0448 02       		.uleb128 0x2
+ 1246 0449 08       		.byte	0x8
+ 1247 044a 67       		.byte	0x67
+ 1248 044b 00       		.byte	0
+ 1249 044c 08       		.uleb128 0x8
+ 1250 044d 24000000 		.4byte	.LVL44
+ 1251 0451 22020000 		.4byte	0x222
+ 1252 0455 60040000 		.4byte	0x460
+ 1253 0459 09       		.uleb128 0x9
+ 1254 045a 01       		.uleb128 0x1
+ 1255 045b 50       		.byte	0x50
+ 1256 045c 02       		.uleb128 0x2
+ 1257 045d 08       		.byte	0x8
+ 1258 045e 62       		.byte	0x62
+ 1259 045f 00       		.byte	0
+ 1260 0460 08       		.uleb128 0x8
+ 1261 0461 38000000 		.4byte	.LVL47
+ 1262 0465 22020000 		.4byte	0x222
+ 1263 0469 74040000 		.4byte	0x474
+ 1264 046d 09       		.uleb128 0x9
+ 1265 046e 01       		.uleb128 0x1
+ 1266 046f 50       		.byte	0x50
+ 1267 0470 02       		.uleb128 0x2
+ 1268 0471 08       		.byte	0x8
+ 1269 0472 72       		.byte	0x72
+ 1270 0473 00       		.byte	0
+ 1271 0474 08       		.uleb128 0x8
+ 1272 0475 40000000 		.4byte	.LVL50
+ 1273 0479 22020000 		.4byte	0x222
+ 1274 047d 88040000 		.4byte	0x488
+ 1275 0481 09       		.uleb128 0x9
+ 1276 0482 01       		.uleb128 0x1
+ 1277 0483 50       		.byte	0x50
+ 1278 0484 02       		.uleb128 0x2
+ 1279 0485 08       		.byte	0x8
+ 1280 0486 67       		.byte	0x67
+ 1281 0487 00       		.byte	0
+ 1282 0488 08       		.uleb128 0x8
+ 1283 0489 48000000 		.4byte	.LVL53
+ 1284 048d 22020000 		.4byte	0x222
+ 1285 0491 9C040000 		.4byte	0x49c
+ 1286 0495 09       		.uleb128 0x9
+ 1287 0496 01       		.uleb128 0x1
+ 1288 0497 50       		.byte	0x50
+ 1289 0498 02       		.uleb128 0x2
+ 1290 0499 08       		.byte	0x8
+ 1291 049a 62       		.byte	0x62
+ 1292 049b 00       		.byte	0
+ 1293 049c 08       		.uleb128 0x8
+ 1294 049d A0000000 		.4byte	.LVL63
+ 1295 04a1 2D030000 		.4byte	0x32d
+ 1296 04a5 B0040000 		.4byte	0x4b0
+ 1297 04a9 09       		.uleb128 0x9
+ 1298 04aa 01       		.uleb128 0x1
+ARM GAS  C:\Users\shynt\AppData\Local\Temp\ccxjykpB.s 			page 28
+
+
+ 1299 04ab 50       		.byte	0x50
+ 1300 04ac 02       		.uleb128 0x2
+ 1301 04ad 75       		.byte	0x75
+ 1302 04ae 00       		.sleb128 0
+ 1303 04af 00       		.byte	0
+ 1304 04b0 08       		.uleb128 0x8
+ 1305 04b1 C6000000 		.4byte	.LVL67
+ 1306 04b5 2D030000 		.4byte	0x32d
+ 1307 04b9 C4040000 		.4byte	0x4c4
+ 1308 04bd 09       		.uleb128 0x9
+ 1309 04be 01       		.uleb128 0x1
+ 1310 04bf 50       		.byte	0x50
+ 1311 04c0 02       		.uleb128 0x2
+ 1312 04c1 75       		.byte	0x75
+ 1313 04c2 00       		.sleb128 0
+ 1314 04c3 00       		.byte	0
+ 1315 04c4 08       		.uleb128 0x8
+ 1316 04c5 38010000 		.4byte	.LVL79
+ 1317 04c9 2D030000 		.4byte	0x32d
+ 1318 04cd D8040000 		.4byte	0x4d8
+ 1319 04d1 09       		.uleb128 0x9
+ 1320 04d2 01       		.uleb128 0x1
+ 1321 04d3 50       		.byte	0x50
+ 1322 04d4 02       		.uleb128 0x2
+ 1323 04d5 75       		.byte	0x75
+ 1324 04d6 00       		.sleb128 0
+ 1325 04d7 00       		.byte	0
+ 1326 04d8 08       		.uleb128 0x8
+ 1327 04d9 5A010000 		.4byte	.LVL83
+ 1328 04dd 2D030000 		.4byte	0x32d
+ 1329 04e1 EC040000 		.4byte	0x4ec
+ 1330 04e5 09       		.uleb128 0x9
+ 1331 04e6 01       		.uleb128 0x1
+ 1332 04e7 50       		.byte	0x50
+ 1333 04e8 02       		.uleb128 0x2
+ 1334 04e9 75       		.byte	0x75
+ 1335 04ea 00       		.sleb128 0
+ 1336 04eb 00       		.byte	0
+ 1337 04ec 08       		.uleb128 0x8
+ 1338 04ed B2010000 		.4byte	.LVL93
+ 1339 04f1 2D030000 		.4byte	0x32d
+ 1340 04f5 00050000 		.4byte	0x500
+ 1341 04f9 09       		.uleb128 0x9
+ 1342 04fa 01       		.uleb128 0x1
+ 1343 04fb 50       		.byte	0x50
+ 1344 04fc 02       		.uleb128 0x2
+ 1345 04fd 75       		.byte	0x75
+ 1346 04fe 00       		.sleb128 0
+ 1347 04ff 00       		.byte	0
+ 1348 0500 0A       		.uleb128 0xa
+ 1349 0501 D8010000 		.4byte	.LVL98
+ 1350 0505 2D030000 		.4byte	0x32d
+ 1351 0509 09       		.uleb128 0x9
+ 1352 050a 01       		.uleb128 0x1
+ 1353 050b 50       		.byte	0x50
+ 1354 050c 02       		.uleb128 0x2
+ 1355 050d 75       		.byte	0x75
+ARM GAS  C:\Users\shynt\AppData\Local\Temp\ccxjykpB.s 			page 29
+
+
+ 1356 050e 00       		.sleb128 0
+ 1357 050f 00       		.byte	0
+ 1358 0510 00       		.byte	0
+ 1359 0511 10       		.uleb128 0x10
+ 1360 0512 D4020000 		.4byte	.LASF37
+ 1361 0516 05       		.byte	0x5
+ 1362 0517 1207     		.2byte	0x712
+ 1363 0519 1D050000 		.4byte	0x51d
+ 1364 051d 11       		.uleb128 0x11
+ 1365 051e 81000000 		.4byte	0x81
+ 1366 0522 12       		.uleb128 0x12
+ 1367 0523 C5000000 		.4byte	.LASF38
+ 1368 0527 01       		.byte	0x1
+ 1369 0528 13       		.byte	0x13
+ 1370 0529 8C000000 		.4byte	0x8c
+ 1371 052d 05       		.uleb128 0x5
+ 1372 052e 03       		.byte	0x3
+ 1373 052f 00000000 		.4byte	freq
+ 1374 0533 12       		.uleb128 0x12
+ 1375 0534 28020000 		.4byte	.LASF39
+ 1376 0538 01       		.byte	0x1
+ 1377 0539 14       		.byte	0x14
+ 1378 053a 73000000 		.4byte	0x73
+ 1379 053e 05       		.uleb128 0x5
+ 1380 053f 03       		.byte	0x3
+ 1381 0540 00000000 		.4byte	dataReady
+ 1382 0544 12       		.uleb128 0x12
+ 1383 0545 42000000 		.4byte	.LASF40
+ 1384 0549 01       		.byte	0x1
+ 1385 054a 15       		.byte	0x15
+ 1386 054b 73000000 		.4byte	0x73
+ 1387 054f 05       		.uleb128 0x5
+ 1388 0550 03       		.byte	0x3
+ 1389 0551 00000000 		.4byte	Counter_cycle
+ 1390 0555 13       		.uleb128 0x13
+ 1391 0556 A5000000 		.4byte	0xa5
+ 1392 055a 65050000 		.4byte	0x565
+ 1393 055e 14       		.uleb128 0x14
+ 1394 055f B3000000 		.4byte	0xb3
+ 1395 0563 80       		.byte	0x80
+ 1396 0564 00       		.byte	0
+ 1397 0565 15       		.uleb128 0x15
+ 1398 0566 73747200 		.ascii	"str\000"
+ 1399 056a 01       		.byte	0x1
+ 1400 056b 71       		.byte	0x71
+ 1401 056c 55050000 		.4byte	0x555
+ 1402 0570 05       		.uleb128 0x5
+ 1403 0571 03       		.byte	0x3
+ 1404 0572 00000000 		.4byte	str
+ 1405 0576 16       		.uleb128 0x16
+ 1406 0577 76000000 		.4byte	.LASF41
+ 1407 057b 76000000 		.4byte	.LASF41
+ 1408 057f 06       		.byte	0x6
+ 1409 0580 50       		.byte	0x50
+ 1410 0581 16       		.uleb128 0x16
+ 1411 0582 83000000 		.4byte	.LASF42
+ 1412 0586 83000000 		.4byte	.LASF42
+ARM GAS  C:\Users\shynt\AppData\Local\Temp\ccxjykpB.s 			page 30
+
+
+ 1413 058a 07       		.byte	0x7
+ 1414 058b 5B       		.byte	0x5b
+ 1415 058c 16       		.uleb128 0x16
+ 1416 058d D2000000 		.4byte	.LASF43
+ 1417 0591 D2000000 		.4byte	.LASF43
+ 1418 0595 06       		.byte	0x6
+ 1419 0596 5D       		.byte	0x5d
+ 1420 0597 16       		.uleb128 0x16
+ 1421 0598 A8020000 		.4byte	.LASF44
+ 1422 059c A8020000 		.4byte	.LASF44
+ 1423 05a0 08       		.byte	0x8
+ 1424 05a1 26       		.byte	0x26
+ 1425 05a2 16       		.uleb128 0x16
+ 1426 05a3 1E010000 		.4byte	.LASF45
+ 1427 05a7 1E010000 		.4byte	.LASF45
+ 1428 05ab 09       		.byte	0x9
+ 1429 05ac 28       		.byte	0x28
+ 1430 05ad 16       		.uleb128 0x16
+ 1431 05ae 86020000 		.4byte	.LASF46
+ 1432 05b2 86020000 		.4byte	.LASF46
+ 1433 05b6 0A       		.byte	0xa
+ 1434 05b7 28       		.byte	0x28
+ 1435 05b8 16       		.uleb128 0x16
+ 1436 05b9 B2000000 		.4byte	.LASF47
+ 1437 05bd B2000000 		.4byte	.LASF47
+ 1438 05c1 0B       		.byte	0xb
+ 1439 05c2 54       		.byte	0x54
+ 1440 05c3 16       		.uleb128 0x16
+ 1441 05c4 95000000 		.4byte	.LASF48
+ 1442 05c8 95000000 		.4byte	.LASF48
+ 1443 05cc 09       		.byte	0x9
+ 1444 05cd 18       		.byte	0x18
+ 1445 05ce 16       		.uleb128 0x16
+ 1446 05cf 14020000 		.4byte	.LASF49
+ 1447 05d3 14020000 		.4byte	.LASF49
+ 1448 05d7 0A       		.byte	0xa
+ 1449 05d8 18       		.byte	0x18
+ 1450 05d9 16       		.uleb128 0x16
+ 1451 05da 6A020000 		.4byte	.LASF50
+ 1452 05de 6A020000 		.4byte	.LASF50
+ 1453 05e2 0C       		.byte	0xc
+ 1454 05e3 2F       		.byte	0x2f
+ 1455 05e4 16       		.uleb128 0x16
+ 1456 05e5 6F030000 		.4byte	.LASF51
+ 1457 05e9 6F030000 		.4byte	.LASF51
+ 1458 05ed 0D       		.byte	0xd
+ 1459 05ee 76       		.byte	0x76
+ 1460 05ef 16       		.uleb128 0x16
+ 1461 05f0 34000000 		.4byte	.LASF52
+ 1462 05f4 34000000 		.4byte	.LASF52
+ 1463 05f8 06       		.byte	0x6
+ 1464 05f9 4F       		.byte	0x4f
+ 1465 05fa 16       		.uleb128 0x16
+ 1466 05fb E6000000 		.4byte	.LASF53
+ 1467 05ff E6000000 		.4byte	.LASF53
+ 1468 0603 07       		.byte	0x7
+ 1469 0604 5A       		.byte	0x5a
+ARM GAS  C:\Users\shynt\AppData\Local\Temp\ccxjykpB.s 			page 31
+
+
+ 1470 0605 16       		.uleb128 0x16
+ 1471 0606 2B000000 		.4byte	.LASF54
+ 1472 060a 2B000000 		.4byte	.LASF54
+ 1473 060e 0E       		.byte	0xe
+ 1474 060f 26       		.byte	0x26
+ 1475 0610 16       		.uleb128 0x16
+ 1476 0611 B8020000 		.4byte	.LASF55
+ 1477 0615 B8020000 		.4byte	.LASF55
+ 1478 0619 0F       		.byte	0xf
+ 1479 061a 26       		.byte	0x26
+ 1480 061b 16       		.uleb128 0x16
+ 1481 061c FB000000 		.4byte	.LASF56
+ 1482 0620 FB000000 		.4byte	.LASF56
+ 1483 0624 10       		.byte	0x10
+ 1484 0625 26       		.byte	0x26
+ 1485 0626 16       		.uleb128 0x16
+ 1486 0627 8B030000 		.4byte	.LASF57
+ 1487 062b 8B030000 		.4byte	.LASF57
+ 1488 062f 11       		.byte	0x11
+ 1489 0630 26       		.byte	0x26
+ 1490 0631 16       		.uleb128 0x16
+ 1491 0632 59020000 		.4byte	.LASF58
+ 1492 0636 59020000 		.4byte	.LASF58
+ 1493 063a 0B       		.byte	0xb
+ 1494 063b 8B       		.byte	0x8b
+ 1495 063c 00       		.byte	0
+ 1496              		.section	.debug_abbrev,"",%progbits
+ 1497              	.Ldebug_abbrev0:
+ 1498 0000 01       		.uleb128 0x1
+ 1499 0001 11       		.uleb128 0x11
+ 1500 0002 01       		.byte	0x1
+ 1501 0003 25       		.uleb128 0x25
+ 1502 0004 0E       		.uleb128 0xe
+ 1503 0005 13       		.uleb128 0x13
+ 1504 0006 0B       		.uleb128 0xb
+ 1505 0007 03       		.uleb128 0x3
+ 1506 0008 0E       		.uleb128 0xe
+ 1507 0009 1B       		.uleb128 0x1b
+ 1508 000a 0E       		.uleb128 0xe
+ 1509 000b 55       		.uleb128 0x55
+ 1510 000c 17       		.uleb128 0x17
+ 1511 000d 11       		.uleb128 0x11
+ 1512 000e 01       		.uleb128 0x1
+ 1513 000f 10       		.uleb128 0x10
+ 1514 0010 17       		.uleb128 0x17
+ 1515 0011 00       		.byte	0
+ 1516 0012 00       		.byte	0
+ 1517 0013 02       		.uleb128 0x2
+ 1518 0014 24       		.uleb128 0x24
+ 1519 0015 00       		.byte	0
+ 1520 0016 0B       		.uleb128 0xb
+ 1521 0017 0B       		.uleb128 0xb
+ 1522 0018 3E       		.uleb128 0x3e
+ 1523 0019 0B       		.uleb128 0xb
+ 1524 001a 03       		.uleb128 0x3
+ 1525 001b 0E       		.uleb128 0xe
+ 1526 001c 00       		.byte	0
+ARM GAS  C:\Users\shynt\AppData\Local\Temp\ccxjykpB.s 			page 32
+
+
+ 1527 001d 00       		.byte	0
+ 1528 001e 03       		.uleb128 0x3
+ 1529 001f 16       		.uleb128 0x16
+ 1530 0020 00       		.byte	0
+ 1531 0021 03       		.uleb128 0x3
+ 1532 0022 0E       		.uleb128 0xe
+ 1533 0023 3A       		.uleb128 0x3a
+ 1534 0024 0B       		.uleb128 0xb
+ 1535 0025 3B       		.uleb128 0x3b
+ 1536 0026 0B       		.uleb128 0xb
+ 1537 0027 49       		.uleb128 0x49
+ 1538 0028 13       		.uleb128 0x13
+ 1539 0029 00       		.byte	0
+ 1540 002a 00       		.byte	0
+ 1541 002b 04       		.uleb128 0x4
+ 1542 002c 24       		.uleb128 0x24
+ 1543 002d 00       		.byte	0
+ 1544 002e 0B       		.uleb128 0xb
+ 1545 002f 0B       		.uleb128 0xb
+ 1546 0030 3E       		.uleb128 0x3e
+ 1547 0031 0B       		.uleb128 0xb
+ 1548 0032 03       		.uleb128 0x3
+ 1549 0033 08       		.uleb128 0x8
+ 1550 0034 00       		.byte	0
+ 1551 0035 00       		.byte	0
+ 1552 0036 05       		.uleb128 0x5
+ 1553 0037 0F       		.uleb128 0xf
+ 1554 0038 00       		.byte	0
+ 1555 0039 0B       		.uleb128 0xb
+ 1556 003a 0B       		.uleb128 0xb
+ 1557 003b 49       		.uleb128 0x49
+ 1558 003c 13       		.uleb128 0x13
+ 1559 003d 00       		.byte	0
+ 1560 003e 00       		.byte	0
+ 1561 003f 06       		.uleb128 0x6
+ 1562 0040 2E       		.uleb128 0x2e
+ 1563 0041 01       		.byte	0x1
+ 1564 0042 3F       		.uleb128 0x3f
+ 1565 0043 19       		.uleb128 0x19
+ 1566 0044 03       		.uleb128 0x3
+ 1567 0045 0E       		.uleb128 0xe
+ 1568 0046 3A       		.uleb128 0x3a
+ 1569 0047 0B       		.uleb128 0xb
+ 1570 0048 3B       		.uleb128 0x3b
+ 1571 0049 0B       		.uleb128 0xb
+ 1572 004a 27       		.uleb128 0x27
+ 1573 004b 19       		.uleb128 0x19
+ 1574 004c 11       		.uleb128 0x11
+ 1575 004d 01       		.uleb128 0x1
+ 1576 004e 12       		.uleb128 0x12
+ 1577 004f 06       		.uleb128 0x6
+ 1578 0050 40       		.uleb128 0x40
+ 1579 0051 18       		.uleb128 0x18
+ 1580 0052 9742     		.uleb128 0x2117
+ 1581 0054 19       		.uleb128 0x19
+ 1582 0055 01       		.uleb128 0x1
+ 1583 0056 13       		.uleb128 0x13
+ARM GAS  C:\Users\shynt\AppData\Local\Temp\ccxjykpB.s 			page 33
+
+
+ 1584 0057 00       		.byte	0
+ 1585 0058 00       		.byte	0
+ 1586 0059 07       		.uleb128 0x7
+ 1587 005a 898201   		.uleb128 0x4109
+ 1588 005d 00       		.byte	0
+ 1589 005e 11       		.uleb128 0x11
+ 1590 005f 01       		.uleb128 0x1
+ 1591 0060 31       		.uleb128 0x31
+ 1592 0061 13       		.uleb128 0x13
+ 1593 0062 00       		.byte	0
+ 1594 0063 00       		.byte	0
+ 1595 0064 08       		.uleb128 0x8
+ 1596 0065 898201   		.uleb128 0x4109
+ 1597 0068 01       		.byte	0x1
+ 1598 0069 11       		.uleb128 0x11
+ 1599 006a 01       		.uleb128 0x1
+ 1600 006b 31       		.uleb128 0x31
+ 1601 006c 13       		.uleb128 0x13
+ 1602 006d 01       		.uleb128 0x1
+ 1603 006e 13       		.uleb128 0x13
+ 1604 006f 00       		.byte	0
+ 1605 0070 00       		.byte	0
+ 1606 0071 09       		.uleb128 0x9
+ 1607 0072 8A8201   		.uleb128 0x410a
+ 1608 0075 00       		.byte	0
+ 1609 0076 02       		.uleb128 0x2
+ 1610 0077 18       		.uleb128 0x18
+ 1611 0078 9142     		.uleb128 0x2111
+ 1612 007a 18       		.uleb128 0x18
+ 1613 007b 00       		.byte	0
+ 1614 007c 00       		.byte	0
+ 1615 007d 0A       		.uleb128 0xa
+ 1616 007e 898201   		.uleb128 0x4109
+ 1617 0081 01       		.byte	0x1
+ 1618 0082 11       		.uleb128 0x11
+ 1619 0083 01       		.uleb128 0x1
+ 1620 0084 31       		.uleb128 0x31
+ 1621 0085 13       		.uleb128 0x13
+ 1622 0086 00       		.byte	0
+ 1623 0087 00       		.byte	0
+ 1624 0088 0B       		.uleb128 0xb
+ 1625 0089 2E       		.uleb128 0x2e
+ 1626 008a 01       		.byte	0x1
+ 1627 008b 3F       		.uleb128 0x3f
+ 1628 008c 19       		.uleb128 0x19
+ 1629 008d 03       		.uleb128 0x3
+ 1630 008e 0E       		.uleb128 0xe
+ 1631 008f 3A       		.uleb128 0x3a
+ 1632 0090 0B       		.uleb128 0xb
+ 1633 0091 3B       		.uleb128 0x3b
+ 1634 0092 0B       		.uleb128 0xb
+ 1635 0093 27       		.uleb128 0x27
+ 1636 0094 19       		.uleb128 0x19
+ 1637 0095 49       		.uleb128 0x49
+ 1638 0096 13       		.uleb128 0x13
+ 1639 0097 11       		.uleb128 0x11
+ 1640 0098 01       		.uleb128 0x1
+ARM GAS  C:\Users\shynt\AppData\Local\Temp\ccxjykpB.s 			page 34
+
+
+ 1641 0099 12       		.uleb128 0x12
+ 1642 009a 06       		.uleb128 0x6
+ 1643 009b 40       		.uleb128 0x40
+ 1644 009c 18       		.uleb128 0x18
+ 1645 009d 9742     		.uleb128 0x2117
+ 1646 009f 19       		.uleb128 0x19
+ 1647 00a0 01       		.uleb128 0x1
+ 1648 00a1 13       		.uleb128 0x13
+ 1649 00a2 00       		.byte	0
+ 1650 00a3 00       		.byte	0
+ 1651 00a4 0C       		.uleb128 0xc
+ 1652 00a5 05       		.uleb128 0x5
+ 1653 00a6 00       		.byte	0
+ 1654 00a7 03       		.uleb128 0x3
+ 1655 00a8 0E       		.uleb128 0xe
+ 1656 00a9 3A       		.uleb128 0x3a
+ 1657 00aa 0B       		.uleb128 0xb
+ 1658 00ab 3B       		.uleb128 0x3b
+ 1659 00ac 0B       		.uleb128 0xb
+ 1660 00ad 49       		.uleb128 0x49
+ 1661 00ae 13       		.uleb128 0x13
+ 1662 00af 02       		.uleb128 0x2
+ 1663 00b0 17       		.uleb128 0x17
+ 1664 00b1 00       		.byte	0
+ 1665 00b2 00       		.byte	0
+ 1666 00b3 0D       		.uleb128 0xd
+ 1667 00b4 05       		.uleb128 0x5
+ 1668 00b5 00       		.byte	0
+ 1669 00b6 03       		.uleb128 0x3
+ 1670 00b7 08       		.uleb128 0x8
+ 1671 00b8 3A       		.uleb128 0x3a
+ 1672 00b9 0B       		.uleb128 0xb
+ 1673 00ba 3B       		.uleb128 0x3b
+ 1674 00bb 0B       		.uleb128 0xb
+ 1675 00bc 49       		.uleb128 0x49
+ 1676 00bd 13       		.uleb128 0x13
+ 1677 00be 02       		.uleb128 0x2
+ 1678 00bf 17       		.uleb128 0x17
+ 1679 00c0 00       		.byte	0
+ 1680 00c1 00       		.byte	0
+ 1681 00c2 0E       		.uleb128 0xe
+ 1682 00c3 2E       		.uleb128 0x2e
+ 1683 00c4 01       		.byte	0x1
+ 1684 00c5 3F       		.uleb128 0x3f
+ 1685 00c6 19       		.uleb128 0x19
+ 1686 00c7 03       		.uleb128 0x3
+ 1687 00c8 0E       		.uleb128 0xe
+ 1688 00c9 3A       		.uleb128 0x3a
+ 1689 00ca 0B       		.uleb128 0xb
+ 1690 00cb 3B       		.uleb128 0x3b
+ 1691 00cc 0B       		.uleb128 0xb
+ 1692 00cd 49       		.uleb128 0x49
+ 1693 00ce 13       		.uleb128 0x13
+ 1694 00cf 8701     		.uleb128 0x87
+ 1695 00d1 19       		.uleb128 0x19
+ 1696 00d2 11       		.uleb128 0x11
+ 1697 00d3 01       		.uleb128 0x1
+ARM GAS  C:\Users\shynt\AppData\Local\Temp\ccxjykpB.s 			page 35
+
+
+ 1698 00d4 12       		.uleb128 0x12
+ 1699 00d5 06       		.uleb128 0x6
+ 1700 00d6 40       		.uleb128 0x40
+ 1701 00d7 18       		.uleb128 0x18
+ 1702 00d8 9642     		.uleb128 0x2116
+ 1703 00da 19       		.uleb128 0x19
+ 1704 00db 01       		.uleb128 0x1
+ 1705 00dc 13       		.uleb128 0x13
+ 1706 00dd 00       		.byte	0
+ 1707 00de 00       		.byte	0
+ 1708 00df 0F       		.uleb128 0xf
+ 1709 00e0 34       		.uleb128 0x34
+ 1710 00e1 00       		.byte	0
+ 1711 00e2 03       		.uleb128 0x3
+ 1712 00e3 0E       		.uleb128 0xe
+ 1713 00e4 3A       		.uleb128 0x3a
+ 1714 00e5 0B       		.uleb128 0xb
+ 1715 00e6 3B       		.uleb128 0x3b
+ 1716 00e7 0B       		.uleb128 0xb
+ 1717 00e8 49       		.uleb128 0x49
+ 1718 00e9 13       		.uleb128 0x13
+ 1719 00ea 02       		.uleb128 0x2
+ 1720 00eb 17       		.uleb128 0x17
+ 1721 00ec 00       		.byte	0
+ 1722 00ed 00       		.byte	0
+ 1723 00ee 10       		.uleb128 0x10
+ 1724 00ef 34       		.uleb128 0x34
+ 1725 00f0 00       		.byte	0
+ 1726 00f1 03       		.uleb128 0x3
+ 1727 00f2 0E       		.uleb128 0xe
+ 1728 00f3 3A       		.uleb128 0x3a
+ 1729 00f4 0B       		.uleb128 0xb
+ 1730 00f5 3B       		.uleb128 0x3b
+ 1731 00f6 05       		.uleb128 0x5
+ 1732 00f7 49       		.uleb128 0x49
+ 1733 00f8 13       		.uleb128 0x13
+ 1734 00f9 3F       		.uleb128 0x3f
+ 1735 00fa 19       		.uleb128 0x19
+ 1736 00fb 3C       		.uleb128 0x3c
+ 1737 00fc 19       		.uleb128 0x19
+ 1738 00fd 00       		.byte	0
+ 1739 00fe 00       		.byte	0
+ 1740 00ff 11       		.uleb128 0x11
+ 1741 0100 35       		.uleb128 0x35
+ 1742 0101 00       		.byte	0
+ 1743 0102 49       		.uleb128 0x49
+ 1744 0103 13       		.uleb128 0x13
+ 1745 0104 00       		.byte	0
+ 1746 0105 00       		.byte	0
+ 1747 0106 12       		.uleb128 0x12
+ 1748 0107 34       		.uleb128 0x34
+ 1749 0108 00       		.byte	0
+ 1750 0109 03       		.uleb128 0x3
+ 1751 010a 0E       		.uleb128 0xe
+ 1752 010b 3A       		.uleb128 0x3a
+ 1753 010c 0B       		.uleb128 0xb
+ 1754 010d 3B       		.uleb128 0x3b
+ARM GAS  C:\Users\shynt\AppData\Local\Temp\ccxjykpB.s 			page 36
+
+
+ 1755 010e 0B       		.uleb128 0xb
+ 1756 010f 49       		.uleb128 0x49
+ 1757 0110 13       		.uleb128 0x13
+ 1758 0111 3F       		.uleb128 0x3f
+ 1759 0112 19       		.uleb128 0x19
+ 1760 0113 02       		.uleb128 0x2
+ 1761 0114 18       		.uleb128 0x18
+ 1762 0115 00       		.byte	0
+ 1763 0116 00       		.byte	0
+ 1764 0117 13       		.uleb128 0x13
+ 1765 0118 01       		.uleb128 0x1
+ 1766 0119 01       		.byte	0x1
+ 1767 011a 49       		.uleb128 0x49
+ 1768 011b 13       		.uleb128 0x13
+ 1769 011c 01       		.uleb128 0x1
+ 1770 011d 13       		.uleb128 0x13
+ 1771 011e 00       		.byte	0
+ 1772 011f 00       		.byte	0
+ 1773 0120 14       		.uleb128 0x14
+ 1774 0121 21       		.uleb128 0x21
+ 1775 0122 00       		.byte	0
+ 1776 0123 49       		.uleb128 0x49
+ 1777 0124 13       		.uleb128 0x13
+ 1778 0125 2F       		.uleb128 0x2f
+ 1779 0126 0B       		.uleb128 0xb
+ 1780 0127 00       		.byte	0
+ 1781 0128 00       		.byte	0
+ 1782 0129 15       		.uleb128 0x15
+ 1783 012a 34       		.uleb128 0x34
+ 1784 012b 00       		.byte	0
+ 1785 012c 03       		.uleb128 0x3
+ 1786 012d 08       		.uleb128 0x8
+ 1787 012e 3A       		.uleb128 0x3a
+ 1788 012f 0B       		.uleb128 0xb
+ 1789 0130 3B       		.uleb128 0x3b
+ 1790 0131 0B       		.uleb128 0xb
+ 1791 0132 49       		.uleb128 0x49
+ 1792 0133 13       		.uleb128 0x13
+ 1793 0134 3F       		.uleb128 0x3f
+ 1794 0135 19       		.uleb128 0x19
+ 1795 0136 02       		.uleb128 0x2
+ 1796 0137 18       		.uleb128 0x18
+ 1797 0138 00       		.byte	0
+ 1798 0139 00       		.byte	0
+ 1799 013a 16       		.uleb128 0x16
+ 1800 013b 2E       		.uleb128 0x2e
+ 1801 013c 00       		.byte	0
+ 1802 013d 3F       		.uleb128 0x3f
+ 1803 013e 19       		.uleb128 0x19
+ 1804 013f 3C       		.uleb128 0x3c
+ 1805 0140 19       		.uleb128 0x19
+ 1806 0141 6E       		.uleb128 0x6e
+ 1807 0142 0E       		.uleb128 0xe
+ 1808 0143 03       		.uleb128 0x3
+ 1809 0144 0E       		.uleb128 0xe
+ 1810 0145 3A       		.uleb128 0x3a
+ 1811 0146 0B       		.uleb128 0xb
+ARM GAS  C:\Users\shynt\AppData\Local\Temp\ccxjykpB.s 			page 37
+
+
+ 1812 0147 3B       		.uleb128 0x3b
+ 1813 0148 0B       		.uleb128 0xb
+ 1814 0149 00       		.byte	0
+ 1815 014a 00       		.byte	0
+ 1816 014b 00       		.byte	0
+ 1817              		.section	.debug_loc,"",%progbits
+ 1818              	.Ldebug_loc0:
+ 1819              	.LLST0:
+ 1820 0000 00000000 		.4byte	.LVL17
+ 1821 0004 06000000 		.4byte	.LVL18
+ 1822 0008 0100     		.2byte	0x1
+ 1823 000a 50       		.byte	0x50
+ 1824 000b 06000000 		.4byte	.LVL18
+ 1825 000f 78000000 		.4byte	.LFE68
+ 1826 0013 0400     		.2byte	0x4
+ 1827 0015 F3       		.byte	0xf3
+ 1828 0016 01       		.uleb128 0x1
+ 1829 0017 50       		.byte	0x50
+ 1830 0018 9F       		.byte	0x9f
+ 1831 0019 00000000 		.4byte	0
+ 1832 001d 00000000 		.4byte	0
+ 1833              	.LLST1:
+ 1834 0021 00000000 		.4byte	.LVL33
+ 1835 0025 05000000 		.4byte	.LVL34-1
+ 1836 0029 0100     		.2byte	0x1
+ 1837 002b 50       		.byte	0x50
+ 1838 002c 05000000 		.4byte	.LVL34-1
+ 1839 0030 08000000 		.4byte	.LFE69
+ 1840 0034 0400     		.2byte	0x4
+ 1841 0036 F3       		.byte	0xf3
+ 1842 0037 01       		.uleb128 0x1
+ 1843 0038 50       		.byte	0x50
+ 1844 0039 9F       		.byte	0x9f
+ 1845 003a 00000000 		.4byte	0
+ 1846 003e 00000000 		.4byte	0
+ 1847              	.LLST2:
+ 1848 0042 16000000 		.4byte	.LVL39
+ 1849 0046 18000000 		.4byte	.LVL40
+ 1850 004a 0100     		.2byte	0x1
+ 1851 004c 50       		.byte	0x50
+ 1852 004d 18000000 		.4byte	.LVL40
+ 1853 0051 08020000 		.4byte	.LFE70
+ 1854 0055 0200     		.2byte	0x2
+ 1855 0057 7D       		.byte	0x7d
+ 1856 0058 00       		.sleb128 0
+ 1857 0059 00000000 		.4byte	0
+ 1858 005d 00000000 		.4byte	0
+ 1859              	.LLST3:
+ 1860 0061 1E000000 		.4byte	.LVL42
+ 1861 0065 20000000 		.4byte	.LVL43
+ 1862 0069 0100     		.2byte	0x1
+ 1863 006b 50       		.byte	0x50
+ 1864 006c 20000000 		.4byte	.LVL43
+ 1865 0070 08020000 		.4byte	.LFE70
+ 1866 0074 0200     		.2byte	0x2
+ 1867 0076 91       		.byte	0x91
+ 1868 0077 4C       		.sleb128 -52
+ARM GAS  C:\Users\shynt\AppData\Local\Temp\ccxjykpB.s 			page 38
+
+
+ 1869 0078 00000000 		.4byte	0
+ 1870 007c 00000000 		.4byte	0
+ 1871              	.LLST4:
+ 1872 0080 26000000 		.4byte	.LVL45
+ 1873 0084 32000000 		.4byte	.LVL46
+ 1874 0088 0100     		.2byte	0x1
+ 1875 008a 50       		.byte	0x50
+ 1876 008b 32000000 		.4byte	.LVL46
+ 1877 008f 08020000 		.4byte	.LFE70
+ 1878 0093 0200     		.2byte	0x2
+ 1879 0095 91       		.byte	0x91
+ 1880 0096 50       		.sleb128 -48
+ 1881 0097 00000000 		.4byte	0
+ 1882 009b 00000000 		.4byte	0
+ 1883              	.LLST5:
+ 1884 009f 3A000000 		.4byte	.LVL48
+ 1885 00a3 3C000000 		.4byte	.LVL49
+ 1886 00a7 0100     		.2byte	0x1
+ 1887 00a9 50       		.byte	0x50
+ 1888 00aa 3C000000 		.4byte	.LVL49
+ 1889 00ae 08020000 		.4byte	.LFE70
+ 1890 00b2 0100     		.2byte	0x1
+ 1891 00b4 5B       		.byte	0x5b
+ 1892 00b5 00000000 		.4byte	0
+ 1893 00b9 00000000 		.4byte	0
+ 1894              	.LLST6:
+ 1895 00bd 42000000 		.4byte	.LVL51
+ 1896 00c1 44000000 		.4byte	.LVL52
+ 1897 00c5 0100     		.2byte	0x1
+ 1898 00c7 50       		.byte	0x50
+ 1899 00c8 44000000 		.4byte	.LVL52
+ 1900 00cc 88000000 		.4byte	.LVL62
+ 1901 00d0 0100     		.2byte	0x1
+ 1902 00d2 54       		.byte	0x54
+ 1903 00d3 A6000000 		.4byte	.LVL64
+ 1904 00d7 AA000000 		.4byte	.LVL66
+ 1905 00db 0100     		.2byte	0x1
+ 1906 00dd 54       		.byte	0x54
+ 1907 00de C8000000 		.4byte	.LVL68
+ 1908 00e2 1C010000 		.4byte	.LVL78
+ 1909 00e6 0100     		.2byte	0x1
+ 1910 00e8 54       		.byte	0x54
+ 1911 00e9 3E010000 		.4byte	.LVL80
+ 1912 00ed 42010000 		.4byte	.LVL82
+ 1913 00f1 0100     		.2byte	0x1
+ 1914 00f3 54       		.byte	0x54
+ 1915 00f4 5C010000 		.4byte	.LVL84
+ 1916 00f8 9A010000 		.4byte	.LVL91
+ 1917 00fc 0100     		.2byte	0x1
+ 1918 00fe 54       		.byte	0x54
+ 1919 00ff B8010000 		.4byte	.LVL94
+ 1920 0103 C8010000 		.4byte	.LVL97
+ 1921 0107 0100     		.2byte	0x1
+ 1922 0109 54       		.byte	0x54
+ 1923 010a 00000000 		.4byte	0
+ 1924 010e 00000000 		.4byte	0
+ 1925              	.LLST7:
+ARM GAS  C:\Users\shynt\AppData\Local\Temp\ccxjykpB.s 			page 39
+
+
+ 1926 0112 06000000 		.4byte	.LVL35
+ 1927 0116 32000000 		.4byte	.LVL46
+ 1928 011a 0200     		.2byte	0x2
+ 1929 011c 30       		.byte	0x30
+ 1930 011d 9F       		.byte	0x9f
+ 1931 011e 4A000000 		.4byte	.LVL54
+ 1932 0122 4C000000 		.4byte	.LVL55
+ 1933 0126 0100     		.2byte	0x1
+ 1934 0128 50       		.byte	0x50
+ 1935 0129 4C000000 		.4byte	.LVL55
+ 1936 012d 86000000 		.4byte	.LVL61
+ 1937 0131 0100     		.2byte	0x1
+ 1938 0133 55       		.byte	0x55
+ 1939 0134 A6000000 		.4byte	.LVL64
+ 1940 0138 A8000000 		.4byte	.LVL65
+ 1941 013c 0100     		.2byte	0x1
+ 1942 013e 55       		.byte	0x55
+ 1943 013f C8000000 		.4byte	.LVL68
+ 1944 0143 1A010000 		.4byte	.LVL77
+ 1945 0147 0100     		.2byte	0x1
+ 1946 0149 55       		.byte	0x55
+ 1947 014a 3E010000 		.4byte	.LVL80
+ 1948 014e 40010000 		.4byte	.LVL81
+ 1949 0152 0100     		.2byte	0x1
+ 1950 0154 55       		.byte	0x55
+ 1951 0155 5C010000 		.4byte	.LVL84
+ 1952 0159 98010000 		.4byte	.LVL90
+ 1953 015d 0100     		.2byte	0x1
+ 1954 015f 55       		.byte	0x55
+ 1955 0160 B8010000 		.4byte	.LVL94
+ 1956 0164 C6010000 		.4byte	.LVL96
+ 1957 0168 0100     		.2byte	0x1
+ 1958 016a 55       		.byte	0x55
+ 1959 016b 00000000 		.4byte	0
+ 1960 016f 00000000 		.4byte	0
+ 1961              	.LLST8:
+ 1962 0173 06000000 		.4byte	.LVL35
+ 1963 0177 32000000 		.4byte	.LVL46
+ 1964 017b 0200     		.2byte	0x2
+ 1965 017d 30       		.byte	0x30
+ 1966 017e 9F       		.byte	0x9f
+ 1967 017f 32000000 		.4byte	.LVL46
+ 1968 0183 A0000000 		.4byte	.LVL63
+ 1969 0187 0100     		.2byte	0x1
+ 1970 0189 59       		.byte	0x59
+ 1971 018a A0000000 		.4byte	.LVL63
+ 1972 018e A6000000 		.4byte	.LVL64
+ 1973 0192 0200     		.2byte	0x2
+ 1974 0194 30       		.byte	0x30
+ 1975 0195 9F       		.byte	0x9f
+ 1976 0196 A6000000 		.4byte	.LVL64
+ 1977 019a 08020000 		.4byte	.LFE70
+ 1978 019e 0100     		.2byte	0x1
+ 1979 01a0 59       		.byte	0x59
+ 1980 01a1 00000000 		.4byte	0
+ 1981 01a5 00000000 		.4byte	0
+ 1982              	.LLST9:
+ARM GAS  C:\Users\shynt\AppData\Local\Temp\ccxjykpB.s 			page 40
+
+
+ 1983 01a9 06000000 		.4byte	.LVL35
+ 1984 01ad 32000000 		.4byte	.LVL46
+ 1985 01b1 0200     		.2byte	0x2
+ 1986 01b3 30       		.byte	0x30
+ 1987 01b4 9F       		.byte	0x9f
+ 1988 01b5 32000000 		.4byte	.LVL46
+ 1989 01b9 38010000 		.4byte	.LVL79
+ 1990 01bd 0100     		.2byte	0x1
+ 1991 01bf 58       		.byte	0x58
+ 1992 01c0 38010000 		.4byte	.LVL79
+ 1993 01c4 3E010000 		.4byte	.LVL80
+ 1994 01c8 0200     		.2byte	0x2
+ 1995 01ca 30       		.byte	0x30
+ 1996 01cb 9F       		.byte	0x9f
+ 1997 01cc 3E010000 		.4byte	.LVL80
+ 1998 01d0 08020000 		.4byte	.LFE70
+ 1999 01d4 0100     		.2byte	0x1
+ 2000 01d6 58       		.byte	0x58
+ 2001 01d7 00000000 		.4byte	0
+ 2002 01db 00000000 		.4byte	0
+ 2003              	.LLST10:
+ 2004 01df 06000000 		.4byte	.LVL35
+ 2005 01e3 32000000 		.4byte	.LVL46
+ 2006 01e7 0200     		.2byte	0x2
+ 2007 01e9 30       		.byte	0x30
+ 2008 01ea 9F       		.byte	0x9f
+ 2009 01eb 32000000 		.4byte	.LVL46
+ 2010 01ef 90010000 		.4byte	.LVL89
+ 2011 01f3 0200     		.2byte	0x2
+ 2012 01f5 91       		.byte	0x91
+ 2013 01f6 54       		.sleb128 -44
+ 2014 01f7 90010000 		.4byte	.LVL89
+ 2015 01fb 9C010000 		.4byte	.LVL92
+ 2016 01ff 0100     		.2byte	0x1
+ 2017 0201 53       		.byte	0x53
+ 2018 0202 9C010000 		.4byte	.LVL92
+ 2019 0206 B2010000 		.4byte	.LVL93
+ 2020 020a 0200     		.2byte	0x2
+ 2021 020c 91       		.byte	0x91
+ 2022 020d 54       		.sleb128 -44
+ 2023 020e B2010000 		.4byte	.LVL93
+ 2024 0212 B8010000 		.4byte	.LVL94
+ 2025 0216 0200     		.2byte	0x2
+ 2026 0218 30       		.byte	0x30
+ 2027 0219 9F       		.byte	0x9f
+ 2028 021a B8010000 		.4byte	.LVL94
+ 2029 021e 08020000 		.4byte	.LFE70
+ 2030 0222 0200     		.2byte	0x2
+ 2031 0224 91       		.byte	0x91
+ 2032 0225 54       		.sleb128 -44
+ 2033 0226 00000000 		.4byte	0
+ 2034 022a 00000000 		.4byte	0
+ 2035              	.LLST11:
+ 2036 022e 06000000 		.4byte	.LVL35
+ 2037 0232 32000000 		.4byte	.LVL46
+ 2038 0236 0200     		.2byte	0x2
+ 2039 0238 30       		.byte	0x30
+ARM GAS  C:\Users\shynt\AppData\Local\Temp\ccxjykpB.s 			page 41
+
+
+ 2040 0239 9F       		.byte	0x9f
+ 2041 023a 32000000 		.4byte	.LVL46
+ 2042 023e D8010000 		.4byte	.LVL98
+ 2043 0242 0100     		.2byte	0x1
+ 2044 0244 5A       		.byte	0x5a
+ 2045 0245 D8010000 		.4byte	.LVL98
+ 2046 0249 08020000 		.4byte	.LFE70
+ 2047 024d 0200     		.2byte	0x2
+ 2048 024f 30       		.byte	0x30
+ 2049 0250 9F       		.byte	0x9f
+ 2050 0251 00000000 		.4byte	0
+ 2051 0255 00000000 		.4byte	0
+ 2052              		.section	.debug_aranges,"",%progbits
+ 2053 0000 4C000000 		.4byte	0x4c
+ 2054 0004 0200     		.2byte	0x2
+ 2055 0006 00000000 		.4byte	.Ldebug_info0
+ 2056 000a 04       		.byte	0x4
+ 2057 000b 00       		.byte	0
+ 2058 000c 0000     		.2byte	0
+ 2059 000e 0000     		.2byte	0
+ 2060 0010 00000000 		.4byte	.LFB64
+ 2061 0014 30000000 		.4byte	.LFE64-.LFB64
+ 2062 0018 00000000 		.4byte	.LFB65
+ 2063 001c 14000000 		.4byte	.LFE65-.LFB65
+ 2064 0020 00000000 		.4byte	.LFB66
+ 2065 0024 20000000 		.4byte	.LFE66-.LFB66
+ 2066 0028 00000000 		.4byte	.LFB67
+ 2067 002c 44000000 		.4byte	.LFE67-.LFB67
+ 2068 0030 00000000 		.4byte	.LFB68
+ 2069 0034 78000000 		.4byte	.LFE68-.LFB68
+ 2070 0038 00000000 		.4byte	.LFB69
+ 2071 003c 08000000 		.4byte	.LFE69-.LFB69
+ 2072 0040 00000000 		.4byte	.LFB70
+ 2073 0044 08020000 		.4byte	.LFE70-.LFB70
+ 2074 0048 00000000 		.4byte	0
+ 2075 004c 00000000 		.4byte	0
+ 2076              		.section	.debug_ranges,"",%progbits
+ 2077              	.Ldebug_ranges0:
+ 2078 0000 00000000 		.4byte	.LFB64
+ 2079 0004 30000000 		.4byte	.LFE64
+ 2080 0008 00000000 		.4byte	.LFB65
+ 2081 000c 14000000 		.4byte	.LFE65
+ 2082 0010 00000000 		.4byte	.LFB66
+ 2083 0014 20000000 		.4byte	.LFE66
+ 2084 0018 00000000 		.4byte	.LFB67
+ 2085 001c 44000000 		.4byte	.LFE67
+ 2086 0020 00000000 		.4byte	.LFB68
+ 2087 0024 78000000 		.4byte	.LFE68
+ 2088 0028 00000000 		.4byte	.LFB69
+ 2089 002c 08000000 		.4byte	.LFE69
+ 2090 0030 00000000 		.4byte	.LFB70
+ 2091 0034 08020000 		.4byte	.LFE70
+ 2092 0038 00000000 		.4byte	0
+ 2093 003c 00000000 		.4byte	0
+ 2094              		.section	.debug_line,"",%progbits
+ 2095              	.Ldebug_line0:
+ 2096 0000 B5020000 		.section	.debug_str,"MS",%progbits,1
+ARM GAS  C:\Users\shynt\AppData\Local\Temp\ccxjykpB.s 			page 42
+
+
+ 2096      0200D901 
+ 2096      00000201 
+ 2096      FB0E0D00 
+ 2096      01010101 
+ 2097              	.LASF20:
+ 2098 0000 636F756E 		.ascii	"counter_isr\000"
+ 2098      7465725F 
+ 2098      69737200 
+ 2099              	.LASF25:
+ 2100 000c 6765745F 		.ascii	"get_freq\000"
+ 2100      66726571 
+ 2100      00
+ 2101              	.LASF30:
+ 2102 0015 66726571 		.ascii	"freqR\000"
+ 2102      5200
+ 2103              	.LASF32:
+ 2104 001b 66726571 		.ascii	"freqB\000"
+ 2104      4200
+ 2105              	.LASF2:
+ 2106 0021 73686F72 		.ascii	"short int\000"
+ 2106      7420696E 
+ 2106      7400
+ 2107              	.LASF54:
+ 2108 002b 53305F57 		.ascii	"S0_Write\000"
+ 2108      72697465 
+ 2108      00
+ 2109              	.LASF52:
+ 2110 0034 436F756E 		.ascii	"Counter_Start\000"
+ 2110      7465725F 
+ 2110      53746172 
+ 2110      7400
+ 2111              	.LASF40:
+ 2112 0042 436F756E 		.ascii	"Counter_cycle\000"
+ 2112      7465725F 
+ 2112      6379636C 
+ 2112      6500
+ 2113              	.LASF8:
+ 2114 0050 6C6F6E67 		.ascii	"long long int\000"
+ 2114      206C6F6E 
+ 2114      6720696E 
+ 2114      7400
+ 2115              	.LASF6:
+ 2116 005e 5F5F7569 		.ascii	"__uint32_t\000"
+ 2116      6E743332 
+ 2116      5F7400
+ 2117              	.LASF18:
+ 2118 0069 75696E74 		.ascii	"uint\000"
+ 2118      00
+ 2119              	.LASF29:
+ 2120 006e 66726571 		.ascii	"freqB_0\000"
+ 2120      425F3000 
+ 2121              	.LASF41:
+ 2122 0076 436F756E 		.ascii	"Counter_Stop\000"
+ 2122      7465725F 
+ 2122      53746F70 
+ 2122      00
+ 2123              	.LASF42:
+ARM GAS  C:\Users\shynt\AppData\Local\Temp\ccxjykpB.s 			page 43
+
+
+ 2124 0083 54696D65 		.ascii	"Timer_Stop\000"
+ 2124      725F5374 
+ 2124      6F7000
+ 2125              	.LASF34:
+ 2126 008e 636F756E 		.ascii	"countG\000"
+ 2126      744700
+ 2127              	.LASF48:
+ 2128 0095 54696D65 		.ascii	"Timer_INT_StartEx\000"
+ 2128      725F494E 
+ 2128      545F5374 
+ 2128      61727445 
+ 2128      7800
+ 2129              	.LASF21:
+ 2130 00a7 696E6974 		.ascii	"init_start\000"
+ 2130      5F737461 
+ 2130      727400
+ 2131              	.LASF47:
+ 2132 00b2 55415254 		.ascii	"UART_1_Start\000"
+ 2132      5F315F53 
+ 2132      74617274 
+ 2132      00
+ 2133              	.LASF13:
+ 2134 00bf 666C6F61 		.ascii	"float\000"
+ 2134      7400
+ 2135              	.LASF38:
+ 2136 00c5 66726571 		.ascii	"freq\000"
+ 2136      00
+ 2137              	.LASF27:
+ 2138 00ca 66726571 		.ascii	"freqR_0\000"
+ 2138      525F3000 
+ 2139              	.LASF43:
+ 2140 00d2 436F756E 		.ascii	"Counter_ReadCounter\000"
+ 2140      7465725F 
+ 2140      52656164 
+ 2140      436F756E 
+ 2140      74657200 
+ 2141              	.LASF53:
+ 2142 00e6 54696D65 		.ascii	"Timer_Start\000"
+ 2142      725F5374 
+ 2142      61727400 
+ 2143              	.LASF4:
+ 2144 00f2 6C6F6E67 		.ascii	"long int\000"
+ 2144      20696E74 
+ 2144      00
+ 2145              	.LASF56:
+ 2146 00fb 53325F57 		.ascii	"S2_Write\000"
+ 2146      72697465 
+ 2146      00
+ 2147              	.LASF16:
+ 2148 0104 6C6F6E67 		.ascii	"long double\000"
+ 2148      20646F75 
+ 2148      626C6500 
+ 2149              	.LASF1:
+ 2150 0110 756E7369 		.ascii	"unsigned char\000"
+ 2150      676E6564 
+ 2150      20636861 
+ 2150      7200
+ARM GAS  C:\Users\shynt\AppData\Local\Temp\ccxjykpB.s 			page 44
+
+
+ 2151              	.LASF45:
+ 2152 011e 54696D65 		.ascii	"Timer_INT_ClearPending\000"
+ 2152      725F494E 
+ 2152      545F436C 
+ 2152      65617250 
+ 2152      656E6469 
+ 2153              	.LASF0:
+ 2154 0135 7369676E 		.ascii	"signed char\000"
+ 2154      65642063 
+ 2154      68617200 
+ 2155              	.LASF11:
+ 2156 0141 696E7433 		.ascii	"int32_t\000"
+ 2156      325F7400 
+ 2157              	.LASF9:
+ 2158 0149 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 2158      206C6F6E 
+ 2158      6720756E 
+ 2158      7369676E 
+ 2158      65642069 
+ 2159              	.LASF23:
+ 2160 0160 7072696E 		.ascii	"print\000"
+ 2160      7400
+ 2161              	.LASF12:
+ 2162 0166 75696E74 		.ascii	"uint32_t\000"
+ 2162      33325F74 
+ 2162      00
+ 2163              	.LASF10:
+ 2164 016f 756E7369 		.ascii	"unsigned int\000"
+ 2164      676E6564 
+ 2164      20696E74 
+ 2164      00
+ 2165              	.LASF24:
+ 2166 017c 636F6C6F 		.ascii	"color\000"
+ 2166      7200
+ 2167              	.LASF28:
+ 2168 0182 66726571 		.ascii	"freqG_0\000"
+ 2168      475F3000 
+ 2169              	.LASF3:
+ 2170 018a 73686F72 		.ascii	"short unsigned int\000"
+ 2170      7420756E 
+ 2170      7369676E 
+ 2170      65642069 
+ 2170      6E7400
+ 2171              	.LASF15:
+ 2172 019d 63686172 		.ascii	"char\000"
+ 2172      00
+ 2173              	.LASF22:
+ 2174 01a2 72656164 		.ascii	"read_color\000"
+ 2174      5F636F6C 
+ 2174      6F7200
+ 2175              	.LASF61:
+ 2176 01ad 433A5C55 		.ascii	"C:\\Users\\shynt\\OneDrive\\Skrivebord\\Projekt3-20"
+ 2176      73657273 
+ 2176      5C736879 
+ 2176      6E745C4F 
+ 2176      6E654472 
+ 2177 01db 32302D6D 		.ascii	"20-master\\Kode\\ColorSensor\\colorSensor\\colorSen"
+ARM GAS  C:\Users\shynt\AppData\Local\Temp\ccxjykpB.s 			page 45
+
+
+ 2177      61737465 
+ 2177      725C4B6F 
+ 2177      64655C43 
+ 2177      6F6C6F72 
+ 2178 020a 736F722E 		.ascii	"sor.cydsn\000"
+ 2178      63796473 
+ 2178      6E00
+ 2179              	.LASF49:
+ 2180 0214 436F756E 		.ascii	"Counter_INT_StartEx\000"
+ 2180      7465725F 
+ 2180      494E545F 
+ 2180      53746172 
+ 2180      74457800 
+ 2181              	.LASF39:
+ 2182 0228 64617461 		.ascii	"dataReady\000"
+ 2182      52656164 
+ 2182      7900
+ 2183              	.LASF60:
+ 2184 0232 636F6C6F 		.ascii	"colorSensor.c\000"
+ 2184      7253656E 
+ 2184      736F722E 
+ 2184      6300
+ 2185              	.LASF7:
+ 2186 0240 6C6F6E67 		.ascii	"long unsigned int\000"
+ 2186      20756E73 
+ 2186      69676E65 
+ 2186      6420696E 
+ 2186      7400
+ 2187              	.LASF14:
+ 2188 0252 646F7562 		.ascii	"double\000"
+ 2188      6C6500
+ 2189              	.LASF58:
+ 2190 0259 55415254 		.ascii	"UART_1_PutString\000"
+ 2190      5F315F50 
+ 2190      75745374 
+ 2190      72696E67 
+ 2190      00
+ 2191              	.LASF50:
+ 2192 026a 436F6E74 		.ascii	"Control_Reg_Write\000"
+ 2192      726F6C5F 
+ 2192      5265675F 
+ 2192      57726974 
+ 2192      6500
+ 2193              	.LASF5:
+ 2194 027c 5F5F696E 		.ascii	"__int32_t\000"
+ 2194      7433325F 
+ 2194      7400
+ 2195              	.LASF46:
+ 2196 0286 436F756E 		.ascii	"Counter_INT_ClearPending\000"
+ 2196      7465725F 
+ 2196      494E545F 
+ 2196      436C6561 
+ 2196      7250656E 
+ 2197              	.LASF17:
+ 2198 029f 73697A65 		.ascii	"sizetype\000"
+ 2198      74797065 
+ 2198      00
+ARM GAS  C:\Users\shynt\AppData\Local\Temp\ccxjykpB.s 			page 46
+
+
+ 2199              	.LASF44:
+ 2200 02a8 4F455F57 		.ascii	"OE_Write\000"
+ 2200      72697465 
+ 2200      00
+ 2201              	.LASF35:
+ 2202 02b1 636F756E 		.ascii	"countB\000"
+ 2202      744200
+ 2203              	.LASF55:
+ 2204 02b8 53315F57 		.ascii	"S1_Write\000"
+ 2204      72697465 
+ 2204      00
+ 2205              	.LASF19:
+ 2206 02c1 74696D65 		.ascii	"timer_isr\000"
+ 2206      725F6973 
+ 2206      7200
+ 2207              	.LASF26:
+ 2208 02cb 67657443 		.ascii	"getColor\000"
+ 2208      6F6C6F72 
+ 2208      00
+ 2209              	.LASF37:
+ 2210 02d4 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 2210      52784275 
+ 2210      66666572 
+ 2210      00
+ 2211              	.LASF59:
+ 2212 02e1 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 2212      43313120 
+ 2212      352E342E 
+ 2212      31203230 
+ 2212      31363036 
+ 2213 0314 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 2213      20726576 
+ 2213      6973696F 
+ 2213      6E203233 
+ 2213      37373135 
+ 2214 0347 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 2214      66756E63 
+ 2214      74696F6E 
+ 2214      2D736563 
+ 2214      74696F6E 
+ 2215              	.LASF51:
+ 2216 036f 43794465 		.ascii	"CyDelay\000"
+ 2216      6C617900 
+ 2217              	.LASF33:
+ 2218 0377 636F756E 		.ascii	"countR\000"
+ 2218      745200
+ 2219              	.LASF36:
+ 2220 037e 636F756E 		.ascii	"countU\000"
+ 2220      745500
+ 2221              	.LASF31:
+ 2222 0385 66726571 		.ascii	"freqG\000"
+ 2222      4700
+ 2223              	.LASF57:
+ 2224 038b 53335F57 		.ascii	"S3_Write\000"
+ 2224      72697465 
+ 2224      00
+ 2225              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ARM GAS  C:\Users\shynt\AppData\Local\Temp\ccxjykpB.s 			page 47
+
+

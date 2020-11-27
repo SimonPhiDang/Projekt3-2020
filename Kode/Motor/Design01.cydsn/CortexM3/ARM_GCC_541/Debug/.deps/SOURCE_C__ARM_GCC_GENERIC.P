@@ -1,0 +1,82 @@
+C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/CortexM3/ARM_GCC_541/Debug/main.o : C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/Generated_Source/PSoC5/ClockPWM.h C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/Generated_Source/PSoC5/ClockPWM_1.h C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/Generated_Source/PSoC5/CyDmac.h C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/Generated_Source/PSoC5/CyFlash.h C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/Generated_Source/PSoC5/CyLib.h C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/Generated_Source/PSoC5/CySpc.h C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/Generated_Source/PSoC5/PWM1.h C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/Generated_Source/PSoC5/PWM2.h C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/Generated_Source/PSoC5/PwmPIN1.h C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/Generated_Source/PSoC5/PwmPIN1_aliases.h C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/Generated_Source/PSoC5/PwmPIN2.h C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/Generated_Source/PSoC5/PwmPIN2_aliases.h C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/Generated_Source/PSoC5/UART.h C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/Generated_Source/PSoC5/UART_IntClock.h C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/Generated_Source/PSoC5/cmsis_armcc.h C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/Generated_Source/PSoC5/cmsis_compiler.h C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/Generated_Source/PSoC5/cmsis_gcc.h C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/Generated_Source/PSoC5/core_cm3.h C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/Generated_Source/PSoC5/core_cm3_psoc5.h C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/Generated_Source/PSoC5/cyPm.h C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/Generated_Source/PSoC5/cy_em_eeprom.h C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/Generated_Source/PSoC5/cydevice.h C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/Generated_Source/PSoC5/cydevice_trm.h C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/Generated_Source/PSoC5/cydisabledsheets.h C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/Generated_Source/PSoC5/cyfitter.h C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/Generated_Source/PSoC5/cyfitter_cfg.h C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/Generated_Source/PSoC5/cypins.h C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/Generated_Source/PSoC5/cytypes.h C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/Generated_Source/PSoC5/in1.h C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/Generated_Source/PSoC5/in1_aliases.h C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/Generated_Source/PSoC5/in2.h C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/Generated_Source/PSoC5/in2_aliases.h C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/Generated_Source/PSoC5/in3.h C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/Generated_Source/PSoC5/in3_aliases.h C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/Generated_Source/PSoC5/in4.h C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/Generated_Source/PSoC5/in4_aliases.h C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/Generated_Source/PSoC5/isrUART.h C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/Generated_Source/PSoC5/project.h C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/main.c C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/motorStyring.h 
+
+C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/Generated_Source/PSoC5/ClockPWM.h : 
+
+C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/Generated_Source/PSoC5/ClockPWM_1.h : 
+
+C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/Generated_Source/PSoC5/CyDmac.h : 
+
+C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/Generated_Source/PSoC5/CyFlash.h : 
+
+C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/Generated_Source/PSoC5/CyLib.h : 
+
+C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/Generated_Source/PSoC5/CySpc.h : 
+
+C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/Generated_Source/PSoC5/PWM1.h : 
+
+C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/Generated_Source/PSoC5/PWM2.h : 
+
+C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/Generated_Source/PSoC5/PwmPIN1.h : 
+
+C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/Generated_Source/PSoC5/PwmPIN1_aliases.h : 
+
+C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/Generated_Source/PSoC5/PwmPIN2.h : 
+
+C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/Generated_Source/PSoC5/PwmPIN2_aliases.h : 
+
+C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/Generated_Source/PSoC5/UART.h : 
+
+C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/Generated_Source/PSoC5/UART_IntClock.h : 
+
+C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/Generated_Source/PSoC5/cmsis_armcc.h : 
+
+C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/Generated_Source/PSoC5/cmsis_compiler.h : 
+
+C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/Generated_Source/PSoC5/cmsis_gcc.h : 
+
+C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/Generated_Source/PSoC5/core_cm3.h : 
+
+C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/Generated_Source/PSoC5/core_cm3_psoc5.h : 
+
+C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/Generated_Source/PSoC5/cyPm.h : 
+
+C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/Generated_Source/PSoC5/cy_em_eeprom.h : 
+
+C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/Generated_Source/PSoC5/cydevice.h : 
+
+C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/Generated_Source/PSoC5/cydevice_trm.h : 
+
+C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/Generated_Source/PSoC5/cydisabledsheets.h : 
+
+C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/Generated_Source/PSoC5/cyfitter.h : 
+
+C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/Generated_Source/PSoC5/cyfitter_cfg.h : 
+
+C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/Generated_Source/PSoC5/cypins.h : 
+
+C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/Generated_Source/PSoC5/cytypes.h : 
+
+C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/Generated_Source/PSoC5/in1.h : 
+
+C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/Generated_Source/PSoC5/in1_aliases.h : 
+
+C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/Generated_Source/PSoC5/in2.h : 
+
+C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/Generated_Source/PSoC5/in2_aliases.h : 
+
+C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/Generated_Source/PSoC5/in3.h : 
+
+C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/Generated_Source/PSoC5/in3_aliases.h : 
+
+C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/Generated_Source/PSoC5/in4.h : 
+
+C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/Generated_Source/PSoC5/in4_aliases.h : 
+
+C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/Generated_Source/PSoC5/isrUART.h : 
+
+C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/Generated_Source/PSoC5/project.h : 
+
+C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/main.c : 
+
+C:/IKT/3semesterprojekt/Workspace01/Design01.cydsn/motorStyring.h : 
+

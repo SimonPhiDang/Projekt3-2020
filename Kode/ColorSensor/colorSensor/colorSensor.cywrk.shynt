@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CyXmlSerializer>
+<!--This file is machine generated and read. It is not intended to be edited by hand.-->
+<!--Due to this, there is no schema for this file.-->
+<CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtWrkspcCustomData" version="4">
+<CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997 type_name="CyDesigner.Common.Base.CyCustomData" version="2">
+<userData>
+<dataGuid v="1b906a0f-a7b6-4e4d-a428-82f98b53cb35">
+<CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35 type_name="CyDesigner.Common.ProjMgmt.GUI.CyExplorerWindow+CyExplorerWindowState" version="3" SelectedTab="Source">
+<TreeKeys>
+<v>Source</v>
+<v>Components</v>
+<v>Output</v>
+</TreeKeys>
+<TreeStates>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="colorSensor\colorSensor\Source Files\colorSensor.c">
+<ExpandedNodeIds>
+<v>colorSensor</v>
+<v>colorSensor\colorSensor</v>
+<v>colorSensor\colorSensor\TopDesign</v>
+<v>colorSensor\colorSensor\colorSensor.cydwr</v>
+<v>colorSensor\colorSensor\colorSensor.cydwr\Pins</v>
+<v>colorSensor\colorSensor\colorSensor.cydwr\Analog</v>
+<v>colorSensor\colorSensor\colorSensor.cydwr\Clocks</v>
+<v>colorSensor\colorSensor\colorSensor.cydwr\Interrupts</v>
+<v>colorSensor\colorSensor\colorSensor.cydwr\DMA</v>
+<v>colorSensor\colorSensor\colorSensor.cydwr\System</v>
+<v>colorSensor\colorSensor\colorSensor.cydwr\Directives</v>
+<v>colorSensor\colorSensor\colorSensor.cydwr\Flash Security</v>
+<v>colorSensor\colorSensor\colorSensor.cydwr\EEPROM</v>
+<v>colorSensor\colorSensor\Header Files</v>
+<v>colorSensor\colorSensor\Header Files\colorSensor.h</v>
+<v>colorSensor\colorSensor\Header Files\cyapicallbacks.h</v>
+<v>colorSensor\colorSensor\Source Files</v>
+<v>colorSensor\colorSensor\Source Files\colorSensor.c</v>
+<v>colorSensor\colorSensor\Source Files\main.c</v>
+<v>colorSensor\colorSensor\Generated_Source</v>
+<v>colorSensor\colorSensor\Generated_Source\PSoC5</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>colorSensor</v>
+<v>colorSensor\colorSensor</v>
+<v>colorSensor\colorSensor\TopDesign</v>
+<v>colorSensor\colorSensor\colorSensor.cydwr</v>
+<v>colorSensor\colorSensor\colorSensor.cydwr\Pins</v>
+<v>colorSensor\colorSensor\colorSensor.cydwr\Analog</v>
+<v>colorSensor\colorSensor\colorSensor.cydwr\Clocks</v>
+<v>colorSensor\colorSensor\colorSensor.cydwr\Interrupts</v>
+<v>colorSensor\colorSensor\colorSensor.cydwr\DMA</v>
+<v>colorSensor\colorSensor\colorSensor.cydwr\System</v>
+<v>colorSensor\colorSensor\colorSensor.cydwr\Directives</v>
+<v>colorSensor\colorSensor\colorSensor.cydwr\Flash Security</v>
+<v>colorSensor\colorSensor\colorSensor.cydwr\EEPROM</v>
+<v>colorSensor\colorSensor\Header Files</v>
+<v>colorSensor\colorSensor\Header Files\colorSensor.h</v>
+<v>colorSensor\colorSensor\Header Files\cyapicallbacks.h</v>
+<v>colorSensor\colorSensor\Source Files</v>
+<v>colorSensor\colorSensor\Source Files\colorSensor.c</v>
+<v>colorSensor\colorSensor\Source Files\main.c</v>
+<v>colorSensor\colorSensor\Generated_Source</v>
+<v>colorSensor\colorSensor\Generated_Source\PSoC5</v>
+<v>colorSensor\colorSensor\Generated_Source\PSoC5\Clock_100kHz</v>
+<v>colorSensor\colorSensor\Generated_Source\PSoC5\Clock_10kHz</v>
+<v>colorSensor\colorSensor\Generated_Source\PSoC5\Control_Reg</v>
+<v>colorSensor\colorSensor\Generated_Source\PSoC5\Counter</v>
+<v>colorSensor\colorSensor\Generated_Source\PSoC5\Counter_INT</v>
+<v>colorSensor\colorSensor\Generated_Source\PSoC5\cy_boot</v>
+<v>colorSensor\colorSensor\Generated_Source\PSoC5\Em_EEPROM_Dynamic</v>
+<v>colorSensor\colorSensor\Generated_Source\PSoC5\isr_uart_rx</v>
+<v>colorSensor\colorSensor\Generated_Source\PSoC5\OE</v>
+<v>colorSensor\colorSensor\Generated_Source\PSoC5\S0</v>
+<v>colorSensor\colorSensor\Generated_Source\PSoC5\S1</v>
+<v>colorSensor\colorSensor\Generated_Source\PSoC5\S2</v>
+<v>colorSensor\colorSensor\Generated_Source\PSoC5\S3</v>
+<v>colorSensor\colorSensor\Generated_Source\PSoC5\SensorOut</v>
+<v>colorSensor\colorSensor\Generated_Source\PSoC5\Timer</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>colorSensor</v>
+<v>colorSensor\colorSensor</v>
+<v>colorSensor\colorSensor\TopDesign</v>
+<v>colorSensor\colorSensor\TopDesign\TopDesign.cysch</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>colorSensor</v>
+<v>colorSensor\colorSensor</v>
+<v>colorSensor\colorSensor\TopDesign</v>
+<v>colorSensor\colorSensor\TopDesign\TopDesign.cysch</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>colorSensor</v>
+<v>colorSensor\colorSensor</v>
+<v>colorSensor\colorSensor\CortexM3</v>
+<v>colorSensor\colorSensor\CortexM3\ARM_GCC_541</v>
+<v>colorSensor\colorSensor\CortexM3\ARM_GCC_541\Debug</v>
+<v>colorSensor\colorSensor\CortexM3\ARM_GCC_541\Debug\Listing Files</v>
+<v>colorSensor\colorSensor\CortexM3\ARM_GCC_541\Debug\Listing Files\Clock_100kHz.lst</v>
+<v>colorSensor\colorSensor\CortexM3\ARM_GCC_541\Debug\Listing Files\Clock_10kHz.lst</v>
+<v>colorSensor\colorSensor\CortexM3\ARM_GCC_541\Debug\Listing Files\Cm3Start.lst</v>
+<v>colorSensor\colorSensor\CortexM3\ARM_GCC_541\Debug\Listing Files\colorSensor.lst</v>
+<v>colorSensor\colorSensor\CortexM3\ARM_GCC_541\Debug\Listing Files\Control_Reg.lst</v>
+<v>colorSensor\colorSensor\CortexM3\ARM_GCC_541\Debug\Listing Files\Control_Reg_PM.lst</v>
+<v>colorSensor\colorSensor\CortexM3\ARM_GCC_541\Debug\Listing Files\Counter.lst</v>
+<v>colorSensor\colorSensor\CortexM3\ARM_GCC_541\Debug\Listing Files\Counter_INT.lst</v>
+<v>colorSensor\colorSensor\CortexM3\ARM_GCC_541\Debug\Listing Files\Counter_PM.lst</v>
+<v>colorSensor\colorSensor\CortexM3\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>colorSensor\colorSensor\CortexM3\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>colorSensor\colorSensor\CortexM3\ARM_GCC_541\Debug\Listing Files\CyDmac.lst</v>
+<v>colorSensor\colorSensor\CortexM3\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>colorSensor\colorSensor\CortexM3\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>colorSensor\colorSensor\CortexM3\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>colorSensor\colorSensor\CortexM3\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>colorSensor\colorSensor\CortexM3\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>colorSensor\colorSensor\CortexM3\ARM_GCC_541\Debug\Listing Files\CySpc.lst</v>
+<v>colorSensor\colorSensor\CortexM3\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>colorSensor\colorSensor\CortexM3\ARM_GCC_541\Debug\Listing Files\isr_uart_rx.lst</v>
+<v>colorSensor\colorSensor\CortexM3\ARM_GCC_541\Debug\Listing Files\main.lst</v>
+<v>colorSensor\colorSensor\CortexM3\ARM_GCC_541\Debug\Listing Files\OE.lst</v>
+<v>colorSensor\colorSensor\CortexM3\ARM_GCC_541\Debug\Listing Files\S0.lst</v>
+<v>colorSensor\colorSensor\CortexM3\ARM_GCC_541\Debug\Listing Files\S1.lst</v>
+<v>colorSensor\colorSensor\CortexM3\ARM_GCC_541\Debug\Listing Files\S2.lst</v>
+<v>colorSensor\colorSensor\CortexM3\ARM_GCC_541\Debug\Listing Files\S3.lst</v>
+<v>colorSensor\colorSensor\CortexM3\ARM_GCC_541\Debug\Listing Files\SensorOut.lst</v>
+<v>colorSensor\colorSensor\CortexM3\ARM_GCC_541\Debug\Listing Files\Timer.lst</v>
+<v>colorSensor\colorSensor\CortexM3\ARM_GCC_541\Debug\Listing Files\Timer_INT.lst</v>
+<v>colorSensor\colorSensor\CortexM3\ARM_GCC_541\Debug\Listing Files\Timer_PM.lst</v>
+<v>colorSensor\colorSensor\CortexM3\ARM_GCC_541\Debug\Listing Files\UART_1.lst</v>
+<v>colorSensor\colorSensor\CortexM3\ARM_GCC_541\Debug\Listing Files\UART_1_BOOT.lst</v>
+<v>colorSensor\colorSensor\CortexM3\ARM_GCC_541\Debug\Listing Files\UART_1_INT.lst</v>
+<v>colorSensor\colorSensor\CortexM3\ARM_GCC_541\Debug\Listing Files\UART_1_IntClock.lst</v>
+<v>colorSensor\colorSensor\CortexM3\ARM_GCC_541\Debug\Listing Files\UART_1_PM.lst</v>
+<v>colorSensor\colorSensor\CortexM3\ARM_GCC_541\Debug\colorSensor.elf</v>
+<v>colorSensor\colorSensor\CortexM3\ARM_GCC_541\Debug\colorSensor.hex</v>
+<v>colorSensor\colorSensor\CortexM3\ARM_GCC_541\Debug\colorSensor.map</v>
+<v>colorSensor\colorSensor\colorSensor.gpdsc</v>
+<v>colorSensor\colorSensor\colorSensor.rpt</v>
+<v>colorSensor\colorSensor\colorSensor_timing.html</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>colorSensor</v>
+<v>colorSensor\colorSensor</v>
+<v>colorSensor\colorSensor\CortexM3</v>
+<v>colorSensor\colorSensor\CortexM3\ARM_GCC_541</v>
+<v>colorSensor\colorSensor\CortexM3\ARM_GCC_541\Debug</v>
+<v>colorSensor\colorSensor\CortexM3\ARM_GCC_541\Debug\Listing Files</v>
+<v>colorSensor\colorSensor\CortexM3\ARM_GCC_541\Debug\Listing Files\Clock_100kHz.lst</v>
+<v>colorSensor\colorSensor\CortexM3\ARM_GCC_541\Debug\Listing Files\Clock_10kHz.lst</v>
+<v>colorSensor\colorSensor\CortexM3\ARM_GCC_541\Debug\Listing Files\Cm3Start.lst</v>
+<v>colorSensor\colorSensor\CortexM3\ARM_GCC_541\Debug\Listing Files\colorSensor.lst</v>
+<v>colorSensor\colorSensor\CortexM3\ARM_GCC_541\Debug\Listing Files\Control_Reg.lst</v>
+<v>colorSensor\colorSensor\CortexM3\ARM_GCC_541\Debug\Listing Files\Control_Reg_PM.lst</v>
+<v>colorSensor\colorSensor\CortexM3\ARM_GCC_541\Debug\Listing Files\Counter.lst</v>
+<v>colorSensor\colorSensor\CortexM3\ARM_GCC_541\Debug\Listing Files\Counter_INT.lst</v>
+<v>colorSensor\colorSensor\CortexM3\ARM_GCC_541\Debug\Listing Files\Counter_PM.lst</v>
+<v>colorSensor\colorSensor\CortexM3\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>colorSensor\colorSensor\CortexM3\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>colorSensor\colorSensor\CortexM3\ARM_GCC_541\Debug\Listing Files\CyDmac.lst</v>
+<v>colorSensor\colorSensor\CortexM3\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>colorSensor\colorSensor\CortexM3\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>colorSensor\colorSensor\CortexM3\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>colorSensor\colorSensor\CortexM3\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>colorSensor\colorSensor\CortexM3\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>colorSensor\colorSensor\CortexM3\ARM_GCC_541\Debug\Listing Files\CySpc.lst</v>
+<v>colorSensor\colorSensor\CortexM3\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>colorSensor\colorSensor\CortexM3\ARM_GCC_541\Debug\Listing Files\isr_uart_rx.lst</v>
+<v>colorSensor\colorSensor\CortexM3\ARM_GCC_541\Debug\Listing Files\main.lst</v>
+<v>colorSensor\colorSensor\CortexM3\ARM_GCC_541\Debug\Listing Files\OE.lst</v>
+<v>colorSensor\colorSensor\CortexM3\ARM_GCC_541\Debug\Listing Files\S0.lst</v>
+<v>colorSensor\colorSensor\CortexM3\ARM_GCC_541\Debug\Listing Files\S1.lst</v>
+<v>colorSensor\colorSensor\CortexM3\ARM_GCC_541\Debug\Listing Files\S2.lst</v>
+<v>colorSensor\colorSensor\CortexM3\ARM_GCC_541\Debug\Listing Files\S3.lst</v>
+<v>colorSensor\colorSensor\CortexM3\ARM_GCC_541\Debug\Listing Files\SensorOut.lst</v>
+<v>colorSensor\colorSensor\CortexM3\ARM_GCC_541\Debug\Listing Files\Timer.lst</v>
+<v>colorSensor\colorSensor\CortexM3\ARM_GCC_541\Debug\Listing Files\Timer_INT.lst</v>
+<v>colorSensor\colorSensor\CortexM3\ARM_GCC_541\Debug\Listing Files\Timer_PM.lst</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStates>
+<TreeKeysV2>
+<v>Datasheet</v>
+</TreeKeysV2>
+<TreeStatesV2>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>colorSensor</v>
+<v>colorSensor\colorSensor</v>
+<v>colorSensor\colorSensor\PSoC 5LP Architecture TRM</v>
+<v>colorSensor\colorSensor\CY8C58LP Family Datasheet</v>
+<v>colorSensor\colorSensor\System Reference Guides</v>
+<v>colorSensor\colorSensor\System Reference Guides\cy_boot_v5_90</v>
+<v>colorSensor\colorSensor\Counter_v3_0.pdf</v>
+<v>colorSensor\colorSensor\cy_clock_v2_20</v>
+<v>colorSensor\colorSensor\cy_clock_v2_20\cy_clock_v2_20.pdf</v>
+<v>colorSensor\colorSensor\cy_isr_v1_70</v>
+<v>colorSensor\colorSensor\cy_isr_v1_70\cy_isr_v1_70.pdf</v>
+<v>colorSensor\colorSensor\cy_pins_v2_20</v>
+<v>colorSensor\colorSensor\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>colorSensor\colorSensor\CyControlReg_v1_80.pdf</v>
+<v>colorSensor\colorSensor\Timer_v2_80.pdf</v>
+<v>colorSensor\colorSensor\UART_v2_50.pdf</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>colorSensor</v>
+<v>colorSensor\colorSensor</v>
+<v>colorSensor\colorSensor\PSoC 5LP Architecture TRM</v>
+<v>colorSensor\colorSensor\CY8C58LP Family Datasheet</v>
+<v>colorSensor\colorSensor\System Reference Guides</v>
+<v>colorSensor\colorSensor\System Reference Guides\cy_boot_v5_90</v>
+<v>colorSensor\colorSensor\Counter_v3_0.pdf</v>
+<v>colorSensor\colorSensor\cy_clock_v2_20</v>
+<v>colorSensor\colorSensor\cy_clock_v2_20\cy_clock_v2_20.pdf</v>
+<v>colorSensor\colorSensor\cy_isr_v1_70</v>
+<v>colorSensor\colorSensor\cy_isr_v1_70\cy_isr_v1_70.pdf</v>
+<v>colorSensor\colorSensor\cy_pins_v2_20</v>
+<v>colorSensor\colorSensor\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>colorSensor\colorSensor\CyControlReg_v1_80.pdf</v>
+<v>colorSensor\colorSensor\Timer_v2_80.pdf</v>
+<v>colorSensor\colorSensor\UART_v2_50.pdf</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStatesV2>
+</CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35>
+</dataGuid>
+</userData>
+</CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
+<Unloaded />
+<OpenDocs>
+<name v=".\colorSensor.cydsn\TopDesign\TopDesign.cysch" />
+<name v=".\colorSensor.cydsn\colorSensor.cydwr" />
+<name v=".\colorSensor.cydsn\main.c" />
+<name v=".\colorSensor.cydsn\colorSensor.h" />
+</OpenDocs>
+<OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
+
+  Actipro Docking/MDI for WinForms
+  Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
+  http://www.actiprosoftware.com
+
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1309, 495" SelectedTabbedMdiWindow="ea9ab710-c42f-4a72-b625-94c29952855e"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="ea9ab710-c42f-4a72-b625-94c29952855e" /><DocumentWindow Key="C:\Users\shynt\OneDrive\Skrivebord\Projekt3-2020-master\Kode\ColorSensor\colorSensor\colorSensor.cydsn\TopDesign\TopDesign.cysch" Guid="0830f608-ad01-4288-938d-e6c9bdc6c905" /><DocumentWindow Key="C:\Users\shynt\OneDrive\Skrivebord\Projekt3-2020-master\Kode\ColorSensor\colorSensor\colorSensor.cydsn\colorSensor.cydwr" Guid="e8548055-16fd-45e9-bc46-ce41fed712a8" /><DocumentWindow Key="C:\Users\shynt\OneDrive\Skrivebord\Projekt3-2020-master\Kode\ColorSensor\colorSensor\colorSensor.cydsn\main.c" Guid="83657fc7-1c0a-4398-a708-507d7bd93441" /><DocumentWindow Key="C:\Users\shynt\OneDrive\Skrivebord\Projekt3-2020-master\Kode\ColorSensor\colorSensor\colorSensor.cydsn\colorSensor.h" Guid="e78ebb0c-a183-49c0-8dc5-250e26ccc5a3" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+<config v="" />
+<AutoUpdate v="true" />
+</CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
+</CyXmlSerializer>

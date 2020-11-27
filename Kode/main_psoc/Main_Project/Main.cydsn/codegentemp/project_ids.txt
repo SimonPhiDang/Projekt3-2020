@@ -1,0 +1,6 @@
+C:\Users\Simon\Desktop\Projekt3-2020\Kode\main_psoc\Main_Project\Main.cydsn\Main.cyprj|d1f216b1-ba2f-479e-9eee-aebf7224a430
+C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|f4c3802e-faf2-46f9-9c50-758454fc0b11
+C:\Users\Simon\Documents\PSoC Creator\4.3\Downloads ( 4.3).cylib\Downloads ( 4.3).cyprj|5031b185-bfc4-43f2-a3f8-2b2ffe4d7144
+C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|b2f13813-fb9b-484d-a085-8e90892c96f4
+C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|4e4e2ec1-6a2d-442a-a2b0-c73574adb482
+C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|7e15ccc6-68cc-4db7-9139-2ab9fc5b4a6b
