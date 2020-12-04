@@ -1,0 +1,797 @@
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccXpcHIm.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"Afstandssensor.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.Timer_int_Handler,"ax",%progbits
+  20              		.align	2
+  21              		.global	Timer_int_Handler
+  22              		.thumb
+  23              		.thumb_func
+  24              		.type	Timer_int_Handler, %function
+  25              	Timer_int_Handler:
+  26              	.LFB66:
+  27              		.file 1 "Afstandssensor.c"
+   1:Afstandssensor.c **** /* ========================================
+   2:Afstandssensor.c ****  *
+   3:Afstandssensor.c ****  * Copyright YOUR COMPANY, THE YEAR
+   4:Afstandssensor.c ****  * All Rights Reserved
+   5:Afstandssensor.c ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:Afstandssensor.c ****  *
+   7:Afstandssensor.c ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:Afstandssensor.c ****  * WHICH IS THE PROPERTY OF your company.
+   9:Afstandssensor.c ****  *
+  10:Afstandssensor.c ****  * ========================================
+  11:Afstandssensor.c **** */
+  12:Afstandssensor.c **** #include "project.h"
+  13:Afstandssensor.c **** #include <stdio.h>
+  14:Afstandssensor.c **** #include <stdlib.h>
+  15:Afstandssensor.c **** 
+  16:Afstandssensor.c **** int distance;
+  17:Afstandssensor.c **** CY_ISR_PROTO(Timer_int_Handler);
+  18:Afstandssensor.c **** 
+  19:Afstandssensor.c **** 
+  20:Afstandssensor.c **** void initDistSens()
+  21:Afstandssensor.c **** {
+  22:Afstandssensor.c ****     PWM_Trigger_Start();
+  23:Afstandssensor.c ****     Timer_1_Start();
+  24:Afstandssensor.c ****     Timer_int_1_StartEx(Timer_int_Handler);
+  25:Afstandssensor.c **** }
+  26:Afstandssensor.c **** 
+  27:Afstandssensor.c **** int calcDist()
+  28:Afstandssensor.c **** {
+  29:Afstandssensor.c ****     distance = (65535 - Timer_ReadCapture()) * 0.017;
+  30:Afstandssensor.c ****     return distance;
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccXpcHIm.s 			page 2
+
+
+  31:Afstandssensor.c **** }
+  32:Afstandssensor.c **** 
+  33:Afstandssensor.c **** CY_ISR(Timer_int_Handler)
+  34:Afstandssensor.c **** {
+  28              		.loc 1 34 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32 0000 08B5     		push	{r3, lr}
+  33              		.cfi_def_cfa_offset 8
+  34              		.cfi_offset 3, -8
+  35              		.cfi_offset 14, -4
+  35:Afstandssensor.c ****     Timer_1_ClearFIFO();
+  36              		.loc 1 35 0
+  37 0002 FFF7FEFF 		bl	Timer_1_ClearFIFO
+  38              	.LVL0:
+  39 0006 08BD     		pop	{r3, pc}
+  40              		.cfi_endproc
+  41              	.LFE66:
+  42              		.size	Timer_int_Handler, .-Timer_int_Handler
+  43              		.section	.text.initDistSens,"ax",%progbits
+  44              		.align	2
+  45              		.global	initDistSens
+  46              		.thumb
+  47              		.thumb_func
+  48              		.type	initDistSens, %function
+  49              	initDistSens:
+  50              	.LFB64:
+  21:Afstandssensor.c ****     PWM_Trigger_Start();
+  51              		.loc 1 21 0
+  52              		.cfi_startproc
+  53              		@ args = 0, pretend = 0, frame = 0
+  54              		@ frame_needed = 0, uses_anonymous_args = 0
+  55 0000 08B5     		push	{r3, lr}
+  56              		.cfi_def_cfa_offset 8
+  57              		.cfi_offset 3, -8
+  58              		.cfi_offset 14, -4
+  22:Afstandssensor.c ****     Timer_1_Start();
+  59              		.loc 1 22 0
+  60 0002 FFF7FEFF 		bl	PWM_Trigger_Start
+  61              	.LVL1:
+  23:Afstandssensor.c ****     Timer_int_1_StartEx(Timer_int_Handler);
+  62              		.loc 1 23 0
+  63 0006 FFF7FEFF 		bl	Timer_1_Start
+  64              	.LVL2:
+  24:Afstandssensor.c **** }
+  65              		.loc 1 24 0
+  66 000a 0248     		ldr	r0, .L5
+  67 000c FFF7FEFF 		bl	Timer_int_1_StartEx
+  68              	.LVL3:
+  69 0010 08BD     		pop	{r3, pc}
+  70              	.L6:
+  71 0012 00BF     		.align	2
+  72              	.L5:
+  73 0014 00000000 		.word	Timer_int_Handler
+  74              		.cfi_endproc
+  75              	.LFE64:
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccXpcHIm.s 			page 3
+
+
+  76              		.size	initDistSens, .-initDistSens
+  77              		.global	__aeabi_i2d
+  78              		.global	__aeabi_dmul
+  79              		.global	__aeabi_d2iz
+  80              		.section	.text.calcDist,"ax",%progbits
+  81              		.align	2
+  82              		.global	calcDist
+  83              		.thumb
+  84              		.thumb_func
+  85              		.type	calcDist, %function
+  86              	calcDist:
+  87              	.LFB65:
+  28:Afstandssensor.c ****     distance = (65535 - Timer_ReadCapture()) * 0.017;
+  88              		.loc 1 28 0
+  89              		.cfi_startproc
+  90              		@ args = 0, pretend = 0, frame = 0
+  91              		@ frame_needed = 0, uses_anonymous_args = 0
+  92 0000 08B5     		push	{r3, lr}
+  93              		.cfi_def_cfa_offset 8
+  94              		.cfi_offset 3, -8
+  95              		.cfi_offset 14, -4
+  29:Afstandssensor.c ****     return distance;
+  96              		.loc 1 29 0
+  97 0002 FFF7FEFF 		bl	Timer_ReadCapture
+  98              	.LVL4:
+  99 0006 C0F57F40 		rsb	r0, r0, #65280
+ 100 000a FF30     		adds	r0, r0, #255
+ 101 000c FFF7FEFF 		bl	__aeabi_i2d
+ 102              	.LVL5:
+ 103 0010 05A3     		adr	r3, .L9
+ 104 0012 D3E90023 		ldrd	r2, [r3]
+ 105 0016 FFF7FEFF 		bl	__aeabi_dmul
+ 106              	.LVL6:
+ 107 001a FFF7FEFF 		bl	__aeabi_d2iz
+ 108              	.LVL7:
+ 109 001e 044B     		ldr	r3, .L9+8
+ 110 0020 1860     		str	r0, [r3]
+  31:Afstandssensor.c **** 
+ 111              		.loc 1 31 0
+ 112 0022 08BD     		pop	{r3, pc}
+ 113              	.L10:
+ 114 0024 AFF30080 		.align	3
+ 115              	.L9:
+ 116 0028 9CC420B0 		.word	-1340029796
+ 117 002c 7268913F 		.word	1066494066
+ 118 0030 00000000 		.word	distance
+ 119              		.cfi_endproc
+ 120              	.LFE65:
+ 121              		.size	calcDist, .-calcDist
+ 122              		.comm	distance,4,4
+ 123              		.text
+ 124              	.Letext0:
+ 125              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.3\\psoc creator\\import\\gnu\\arm\\5.4.
+ 126              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.3\\psoc creator\\import\\gnu\\arm\\5.4.
+ 127              		.file 4 "Generated_Source\\PSoC5/core_cm3.h"
+ 128              		.file 5 "Generated_Source\\PSoC5/Timer_1.h"
+ 129              		.file 6 "Generated_Source\\PSoC5/PWM_Trigger.h"
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccXpcHIm.s 			page 4
+
+
+ 130              		.file 7 "Generated_Source\\PSoC5/Timer_int_1.h"
+ 131              		.file 8 "Generated_Source\\PSoC5/Timer.h"
+ 132              		.section	.debug_info,"",%progbits
+ 133              	.Ldebug_info0:
+ 134 0000 77010000 		.4byte	0x177
+ 135 0004 0400     		.2byte	0x4
+ 136 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 137 000a 04       		.byte	0x4
+ 138 000b 01       		.uleb128 0x1
+ 139 000c 37000000 		.4byte	.LASF25
+ 140 0010 0C       		.byte	0xc
+ 141 0011 13010000 		.4byte	.LASF26
+ 142 0015 44010000 		.4byte	.LASF27
+ 143 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 144 001d 00000000 		.4byte	0
+ 145 0021 00000000 		.4byte	.Ldebug_line0
+ 146 0025 02       		.uleb128 0x2
+ 147 0026 01       		.byte	0x1
+ 148 0027 06       		.byte	0x6
+ 149 0028 C5010000 		.4byte	.LASF0
+ 150 002c 02       		.uleb128 0x2
+ 151 002d 01       		.byte	0x1
+ 152 002e 08       		.byte	0x8
+ 153 002f 05010000 		.4byte	.LASF1
+ 154 0033 02       		.uleb128 0x2
+ 155 0034 02       		.byte	0x2
+ 156 0035 05       		.byte	0x5
+ 157 0036 11020000 		.4byte	.LASF2
+ 158 003a 02       		.uleb128 0x2
+ 159 003b 02       		.byte	0x2
+ 160 003c 07       		.byte	0x7
+ 161 003d 0E000000 		.4byte	.LASF3
+ 162 0041 03       		.uleb128 0x3
+ 163 0042 DD010000 		.4byte	.LASF9
+ 164 0046 02       		.byte	0x2
+ 165 0047 3F       		.byte	0x3f
+ 166 0048 4C000000 		.4byte	0x4c
+ 167 004c 02       		.uleb128 0x2
+ 168 004d 04       		.byte	0x4
+ 169 004e 05       		.byte	0x5
+ 170 004f 3B010000 		.4byte	.LASF4
+ 171 0053 02       		.uleb128 0x2
+ 172 0054 04       		.byte	0x4
+ 173 0055 07       		.byte	0x7
+ 174 0056 C5000000 		.4byte	.LASF5
+ 175 005a 02       		.uleb128 0x2
+ 176 005b 08       		.byte	0x8
+ 177 005c 05       		.byte	0x5
+ 178 005d 00000000 		.4byte	.LASF6
+ 179 0061 02       		.uleb128 0x2
+ 180 0062 08       		.byte	0x8
+ 181 0063 07       		.byte	0x7
+ 182 0064 D7000000 		.4byte	.LASF7
+ 183 0068 04       		.uleb128 0x4
+ 184 0069 04       		.byte	0x4
+ 185 006a 05       		.byte	0x5
+ 186 006b 696E7400 		.ascii	"int\000"
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccXpcHIm.s 			page 5
+
+
+ 187 006f 02       		.uleb128 0x2
+ 188 0070 04       		.byte	0x4
+ 189 0071 07       		.byte	0x7
+ 190 0072 21000000 		.4byte	.LASF8
+ 191 0076 03       		.uleb128 0x3
+ 192 0077 1B020000 		.4byte	.LASF10
+ 193 007b 03       		.byte	0x3
+ 194 007c 2C       		.byte	0x2c
+ 195 007d 41000000 		.4byte	0x41
+ 196 0081 02       		.uleb128 0x2
+ 197 0082 04       		.byte	0x4
+ 198 0083 04       		.byte	0x4
+ 199 0084 0B020000 		.4byte	.LASF11
+ 200 0088 02       		.uleb128 0x2
+ 201 0089 08       		.byte	0x8
+ 202 008a 04       		.byte	0x4
+ 203 008b 90010000 		.4byte	.LASF12
+ 204 008f 02       		.uleb128 0x2
+ 205 0090 01       		.byte	0x1
+ 206 0091 08       		.byte	0x8
+ 207 0092 24010000 		.4byte	.LASF13
+ 208 0096 02       		.uleb128 0x2
+ 209 0097 08       		.byte	0x8
+ 210 0098 04       		.byte	0x4
+ 211 0099 D1010000 		.4byte	.LASF14
+ 212 009d 02       		.uleb128 0x2
+ 213 009e 04       		.byte	0x4
+ 214 009f 07       		.byte	0x7
+ 215 00a0 35020000 		.4byte	.LASF15
+ 216 00a4 05       		.uleb128 0x5
+ 217 00a5 29010000 		.4byte	.LASF16
+ 218 00a9 01       		.byte	0x1
+ 219 00aa 21       		.byte	0x21
+ 220 00ab 00000000 		.4byte	.LFB66
+ 221 00af 08000000 		.4byte	.LFE66-.LFB66
+ 222 00b3 01       		.uleb128 0x1
+ 223 00b4 9C       		.byte	0x9c
+ 224 00b5 C3000000 		.4byte	0xc3
+ 225 00b9 06       		.uleb128 0x6
+ 226 00ba 06000000 		.4byte	.LVL0
+ 227 00be 43010000 		.4byte	0x143
+ 228 00c2 00       		.byte	0
+ 229 00c3 07       		.uleb128 0x7
+ 230 00c4 AB010000 		.4byte	.LASF28
+ 231 00c8 01       		.byte	0x1
+ 232 00c9 14       		.byte	0x14
+ 233 00ca 00000000 		.4byte	.LFB64
+ 234 00ce 18000000 		.4byte	.LFE64-.LFB64
+ 235 00d2 01       		.uleb128 0x1
+ 236 00d3 9C       		.byte	0x9c
+ 237 00d4 FE000000 		.4byte	0xfe
+ 238 00d8 06       		.uleb128 0x6
+ 239 00d9 06000000 		.4byte	.LVL1
+ 240 00dd 4E010000 		.4byte	0x14e
+ 241 00e1 06       		.uleb128 0x6
+ 242 00e2 0A000000 		.4byte	.LVL2
+ 243 00e6 59010000 		.4byte	0x159
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccXpcHIm.s 			page 6
+
+
+ 244 00ea 08       		.uleb128 0x8
+ 245 00eb 10000000 		.4byte	.LVL3
+ 246 00ef 64010000 		.4byte	0x164
+ 247 00f3 09       		.uleb128 0x9
+ 248 00f4 01       		.uleb128 0x1
+ 249 00f5 50       		.byte	0x50
+ 250 00f6 05       		.uleb128 0x5
+ 251 00f7 03       		.byte	0x3
+ 252 00f8 00000000 		.4byte	Timer_int_Handler
+ 253 00fc 00       		.byte	0
+ 254 00fd 00       		.byte	0
+ 255 00fe 0A       		.uleb128 0xa
+ 256 00ff 2E000000 		.4byte	.LASF17
+ 257 0103 01       		.byte	0x1
+ 258 0104 1B       		.byte	0x1b
+ 259 0105 68000000 		.4byte	0x68
+ 260 0109 00000000 		.4byte	.LFB65
+ 261 010d 34000000 		.4byte	.LFE65-.LFB65
+ 262 0111 01       		.uleb128 0x1
+ 263 0112 9C       		.byte	0x9c
+ 264 0113 21010000 		.4byte	0x121
+ 265 0117 06       		.uleb128 0x6
+ 266 0118 06000000 		.4byte	.LVL4
+ 267 011c 6F010000 		.4byte	0x16f
+ 268 0120 00       		.byte	0
+ 269 0121 0B       		.uleb128 0xb
+ 270 0122 B8010000 		.4byte	.LASF18
+ 271 0126 04       		.byte	0x4
+ 272 0127 1207     		.2byte	0x712
+ 273 0129 2D010000 		.4byte	0x12d
+ 274 012d 0C       		.uleb128 0xc
+ 275 012e 76000000 		.4byte	0x76
+ 276 0132 0D       		.uleb128 0xd
+ 277 0133 FC000000 		.4byte	.LASF19
+ 278 0137 01       		.byte	0x1
+ 279 0138 10       		.byte	0x10
+ 280 0139 68000000 		.4byte	0x68
+ 281 013d 05       		.uleb128 0x5
+ 282 013e 03       		.byte	0x3
+ 283 013f 00000000 		.4byte	distance
+ 284 0143 0E       		.uleb128 0xe
+ 285 0144 23020000 		.4byte	.LASF20
+ 286 0148 23020000 		.4byte	.LASF20
+ 287 014c 05       		.byte	0x5
+ 288 014d 86       		.byte	0x86
+ 289 014e 0E       		.uleb128 0xe
+ 290 014f F9010000 		.4byte	.LASF21
+ 291 0153 F9010000 		.4byte	.LASF21
+ 292 0157 06       		.byte	0x6
+ 293 0158 92       		.byte	0x92
+ 294 0159 0E       		.uleb128 0xe
+ 295 015a EE000000 		.4byte	.LASF22
+ 296 015e EE000000 		.4byte	.LASF22
+ 297 0162 05       		.byte	0x5
+ 298 0163 5A       		.byte	0x5a
+ 299 0164 0E       		.uleb128 0xe
+ 300 0165 97010000 		.4byte	.LASF23
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccXpcHIm.s 			page 7
+
+
+ 301 0169 97010000 		.4byte	.LASF23
+ 302 016d 07       		.byte	0x7
+ 303 016e 18       		.byte	0x18
+ 304 016f 0E       		.uleb128 0xe
+ 305 0170 E7010000 		.4byte	.LASF24
+ 306 0174 E7010000 		.4byte	.LASF24
+ 307 0178 08       		.byte	0x8
+ 308 0179 6B       		.byte	0x6b
+ 309 017a 00       		.byte	0
+ 310              		.section	.debug_abbrev,"",%progbits
+ 311              	.Ldebug_abbrev0:
+ 312 0000 01       		.uleb128 0x1
+ 313 0001 11       		.uleb128 0x11
+ 314 0002 01       		.byte	0x1
+ 315 0003 25       		.uleb128 0x25
+ 316 0004 0E       		.uleb128 0xe
+ 317 0005 13       		.uleb128 0x13
+ 318 0006 0B       		.uleb128 0xb
+ 319 0007 03       		.uleb128 0x3
+ 320 0008 0E       		.uleb128 0xe
+ 321 0009 1B       		.uleb128 0x1b
+ 322 000a 0E       		.uleb128 0xe
+ 323 000b 55       		.uleb128 0x55
+ 324 000c 17       		.uleb128 0x17
+ 325 000d 11       		.uleb128 0x11
+ 326 000e 01       		.uleb128 0x1
+ 327 000f 10       		.uleb128 0x10
+ 328 0010 17       		.uleb128 0x17
+ 329 0011 00       		.byte	0
+ 330 0012 00       		.byte	0
+ 331 0013 02       		.uleb128 0x2
+ 332 0014 24       		.uleb128 0x24
+ 333 0015 00       		.byte	0
+ 334 0016 0B       		.uleb128 0xb
+ 335 0017 0B       		.uleb128 0xb
+ 336 0018 3E       		.uleb128 0x3e
+ 337 0019 0B       		.uleb128 0xb
+ 338 001a 03       		.uleb128 0x3
+ 339 001b 0E       		.uleb128 0xe
+ 340 001c 00       		.byte	0
+ 341 001d 00       		.byte	0
+ 342 001e 03       		.uleb128 0x3
+ 343 001f 16       		.uleb128 0x16
+ 344 0020 00       		.byte	0
+ 345 0021 03       		.uleb128 0x3
+ 346 0022 0E       		.uleb128 0xe
+ 347 0023 3A       		.uleb128 0x3a
+ 348 0024 0B       		.uleb128 0xb
+ 349 0025 3B       		.uleb128 0x3b
+ 350 0026 0B       		.uleb128 0xb
+ 351 0027 49       		.uleb128 0x49
+ 352 0028 13       		.uleb128 0x13
+ 353 0029 00       		.byte	0
+ 354 002a 00       		.byte	0
+ 355 002b 04       		.uleb128 0x4
+ 356 002c 24       		.uleb128 0x24
+ 357 002d 00       		.byte	0
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccXpcHIm.s 			page 8
+
+
+ 358 002e 0B       		.uleb128 0xb
+ 359 002f 0B       		.uleb128 0xb
+ 360 0030 3E       		.uleb128 0x3e
+ 361 0031 0B       		.uleb128 0xb
+ 362 0032 03       		.uleb128 0x3
+ 363 0033 08       		.uleb128 0x8
+ 364 0034 00       		.byte	0
+ 365 0035 00       		.byte	0
+ 366 0036 05       		.uleb128 0x5
+ 367 0037 2E       		.uleb128 0x2e
+ 368 0038 01       		.byte	0x1
+ 369 0039 3F       		.uleb128 0x3f
+ 370 003a 19       		.uleb128 0x19
+ 371 003b 03       		.uleb128 0x3
+ 372 003c 0E       		.uleb128 0xe
+ 373 003d 3A       		.uleb128 0x3a
+ 374 003e 0B       		.uleb128 0xb
+ 375 003f 3B       		.uleb128 0x3b
+ 376 0040 0B       		.uleb128 0xb
+ 377 0041 27       		.uleb128 0x27
+ 378 0042 19       		.uleb128 0x19
+ 379 0043 11       		.uleb128 0x11
+ 380 0044 01       		.uleb128 0x1
+ 381 0045 12       		.uleb128 0x12
+ 382 0046 06       		.uleb128 0x6
+ 383 0047 40       		.uleb128 0x40
+ 384 0048 18       		.uleb128 0x18
+ 385 0049 9742     		.uleb128 0x2117
+ 386 004b 19       		.uleb128 0x19
+ 387 004c 01       		.uleb128 0x1
+ 388 004d 13       		.uleb128 0x13
+ 389 004e 00       		.byte	0
+ 390 004f 00       		.byte	0
+ 391 0050 06       		.uleb128 0x6
+ 392 0051 898201   		.uleb128 0x4109
+ 393 0054 00       		.byte	0
+ 394 0055 11       		.uleb128 0x11
+ 395 0056 01       		.uleb128 0x1
+ 396 0057 31       		.uleb128 0x31
+ 397 0058 13       		.uleb128 0x13
+ 398 0059 00       		.byte	0
+ 399 005a 00       		.byte	0
+ 400 005b 07       		.uleb128 0x7
+ 401 005c 2E       		.uleb128 0x2e
+ 402 005d 01       		.byte	0x1
+ 403 005e 3F       		.uleb128 0x3f
+ 404 005f 19       		.uleb128 0x19
+ 405 0060 03       		.uleb128 0x3
+ 406 0061 0E       		.uleb128 0xe
+ 407 0062 3A       		.uleb128 0x3a
+ 408 0063 0B       		.uleb128 0xb
+ 409 0064 3B       		.uleb128 0x3b
+ 410 0065 0B       		.uleb128 0xb
+ 411 0066 11       		.uleb128 0x11
+ 412 0067 01       		.uleb128 0x1
+ 413 0068 12       		.uleb128 0x12
+ 414 0069 06       		.uleb128 0x6
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccXpcHIm.s 			page 9
+
+
+ 415 006a 40       		.uleb128 0x40
+ 416 006b 18       		.uleb128 0x18
+ 417 006c 9742     		.uleb128 0x2117
+ 418 006e 19       		.uleb128 0x19
+ 419 006f 01       		.uleb128 0x1
+ 420 0070 13       		.uleb128 0x13
+ 421 0071 00       		.byte	0
+ 422 0072 00       		.byte	0
+ 423 0073 08       		.uleb128 0x8
+ 424 0074 898201   		.uleb128 0x4109
+ 425 0077 01       		.byte	0x1
+ 426 0078 11       		.uleb128 0x11
+ 427 0079 01       		.uleb128 0x1
+ 428 007a 31       		.uleb128 0x31
+ 429 007b 13       		.uleb128 0x13
+ 430 007c 00       		.byte	0
+ 431 007d 00       		.byte	0
+ 432 007e 09       		.uleb128 0x9
+ 433 007f 8A8201   		.uleb128 0x410a
+ 434 0082 00       		.byte	0
+ 435 0083 02       		.uleb128 0x2
+ 436 0084 18       		.uleb128 0x18
+ 437 0085 9142     		.uleb128 0x2111
+ 438 0087 18       		.uleb128 0x18
+ 439 0088 00       		.byte	0
+ 440 0089 00       		.byte	0
+ 441 008a 0A       		.uleb128 0xa
+ 442 008b 2E       		.uleb128 0x2e
+ 443 008c 01       		.byte	0x1
+ 444 008d 3F       		.uleb128 0x3f
+ 445 008e 19       		.uleb128 0x19
+ 446 008f 03       		.uleb128 0x3
+ 447 0090 0E       		.uleb128 0xe
+ 448 0091 3A       		.uleb128 0x3a
+ 449 0092 0B       		.uleb128 0xb
+ 450 0093 3B       		.uleb128 0x3b
+ 451 0094 0B       		.uleb128 0xb
+ 452 0095 49       		.uleb128 0x49
+ 453 0096 13       		.uleb128 0x13
+ 454 0097 11       		.uleb128 0x11
+ 455 0098 01       		.uleb128 0x1
+ 456 0099 12       		.uleb128 0x12
+ 457 009a 06       		.uleb128 0x6
+ 458 009b 40       		.uleb128 0x40
+ 459 009c 18       		.uleb128 0x18
+ 460 009d 9642     		.uleb128 0x2116
+ 461 009f 19       		.uleb128 0x19
+ 462 00a0 01       		.uleb128 0x1
+ 463 00a1 13       		.uleb128 0x13
+ 464 00a2 00       		.byte	0
+ 465 00a3 00       		.byte	0
+ 466 00a4 0B       		.uleb128 0xb
+ 467 00a5 34       		.uleb128 0x34
+ 468 00a6 00       		.byte	0
+ 469 00a7 03       		.uleb128 0x3
+ 470 00a8 0E       		.uleb128 0xe
+ 471 00a9 3A       		.uleb128 0x3a
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccXpcHIm.s 			page 10
+
+
+ 472 00aa 0B       		.uleb128 0xb
+ 473 00ab 3B       		.uleb128 0x3b
+ 474 00ac 05       		.uleb128 0x5
+ 475 00ad 49       		.uleb128 0x49
+ 476 00ae 13       		.uleb128 0x13
+ 477 00af 3F       		.uleb128 0x3f
+ 478 00b0 19       		.uleb128 0x19
+ 479 00b1 3C       		.uleb128 0x3c
+ 480 00b2 19       		.uleb128 0x19
+ 481 00b3 00       		.byte	0
+ 482 00b4 00       		.byte	0
+ 483 00b5 0C       		.uleb128 0xc
+ 484 00b6 35       		.uleb128 0x35
+ 485 00b7 00       		.byte	0
+ 486 00b8 49       		.uleb128 0x49
+ 487 00b9 13       		.uleb128 0x13
+ 488 00ba 00       		.byte	0
+ 489 00bb 00       		.byte	0
+ 490 00bc 0D       		.uleb128 0xd
+ 491 00bd 34       		.uleb128 0x34
+ 492 00be 00       		.byte	0
+ 493 00bf 03       		.uleb128 0x3
+ 494 00c0 0E       		.uleb128 0xe
+ 495 00c1 3A       		.uleb128 0x3a
+ 496 00c2 0B       		.uleb128 0xb
+ 497 00c3 3B       		.uleb128 0x3b
+ 498 00c4 0B       		.uleb128 0xb
+ 499 00c5 49       		.uleb128 0x49
+ 500 00c6 13       		.uleb128 0x13
+ 501 00c7 3F       		.uleb128 0x3f
+ 502 00c8 19       		.uleb128 0x19
+ 503 00c9 02       		.uleb128 0x2
+ 504 00ca 18       		.uleb128 0x18
+ 505 00cb 00       		.byte	0
+ 506 00cc 00       		.byte	0
+ 507 00cd 0E       		.uleb128 0xe
+ 508 00ce 2E       		.uleb128 0x2e
+ 509 00cf 00       		.byte	0
+ 510 00d0 3F       		.uleb128 0x3f
+ 511 00d1 19       		.uleb128 0x19
+ 512 00d2 3C       		.uleb128 0x3c
+ 513 00d3 19       		.uleb128 0x19
+ 514 00d4 6E       		.uleb128 0x6e
+ 515 00d5 0E       		.uleb128 0xe
+ 516 00d6 03       		.uleb128 0x3
+ 517 00d7 0E       		.uleb128 0xe
+ 518 00d8 3A       		.uleb128 0x3a
+ 519 00d9 0B       		.uleb128 0xb
+ 520 00da 3B       		.uleb128 0x3b
+ 521 00db 0B       		.uleb128 0xb
+ 522 00dc 00       		.byte	0
+ 523 00dd 00       		.byte	0
+ 524 00de 00       		.byte	0
+ 525              		.section	.debug_aranges,"",%progbits
+ 526 0000 2C000000 		.4byte	0x2c
+ 527 0004 0200     		.2byte	0x2
+ 528 0006 00000000 		.4byte	.Ldebug_info0
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccXpcHIm.s 			page 11
+
+
+ 529 000a 04       		.byte	0x4
+ 530 000b 00       		.byte	0
+ 531 000c 0000     		.2byte	0
+ 532 000e 0000     		.2byte	0
+ 533 0010 00000000 		.4byte	.LFB66
+ 534 0014 08000000 		.4byte	.LFE66-.LFB66
+ 535 0018 00000000 		.4byte	.LFB64
+ 536 001c 18000000 		.4byte	.LFE64-.LFB64
+ 537 0020 00000000 		.4byte	.LFB65
+ 538 0024 34000000 		.4byte	.LFE65-.LFB65
+ 539 0028 00000000 		.4byte	0
+ 540 002c 00000000 		.4byte	0
+ 541              		.section	.debug_ranges,"",%progbits
+ 542              	.Ldebug_ranges0:
+ 543 0000 00000000 		.4byte	.LFB66
+ 544 0004 08000000 		.4byte	.LFE66
+ 545 0008 00000000 		.4byte	.LFB64
+ 546 000c 18000000 		.4byte	.LFE64
+ 547 0010 00000000 		.4byte	.LFB65
+ 548 0014 34000000 		.4byte	.LFE65
+ 549 0018 00000000 		.4byte	0
+ 550 001c 00000000 		.4byte	0
+ 551              		.section	.debug_line,"",%progbits
+ 552              	.Ldebug_line0:
+ 553 0000 BC010000 		.section	.debug_str,"MS",%progbits,1
+ 553      02008301 
+ 553      00000201 
+ 553      FB0E0D00 
+ 553      01010101 
+ 554              	.LASF6:
+ 555 0000 6C6F6E67 		.ascii	"long long int\000"
+ 555      206C6F6E 
+ 555      6720696E 
+ 555      7400
+ 556              	.LASF3:
+ 557 000e 73686F72 		.ascii	"short unsigned int\000"
+ 557      7420756E 
+ 557      7369676E 
+ 557      65642069 
+ 557      6E7400
+ 558              	.LASF8:
+ 559 0021 756E7369 		.ascii	"unsigned int\000"
+ 559      676E6564 
+ 559      20696E74 
+ 559      00
+ 560              	.LASF17:
+ 561 002e 63616C63 		.ascii	"calcDist\000"
+ 561      44697374 
+ 561      00
+ 562              	.LASF25:
+ 563 0037 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 563      43313120 
+ 563      352E342E 
+ 563      31203230 
+ 563      31363036 
+ 564 006a 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 564      20726576 
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccXpcHIm.s 			page 12
+
+
+ 564      6973696F 
+ 564      6E203233 
+ 564      37373135 
+ 565 009d 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 565      66756E63 
+ 565      74696F6E 
+ 565      2D736563 
+ 565      74696F6E 
+ 566              	.LASF5:
+ 567 00c5 6C6F6E67 		.ascii	"long unsigned int\000"
+ 567      20756E73 
+ 567      69676E65 
+ 567      6420696E 
+ 567      7400
+ 568              	.LASF7:
+ 569 00d7 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 569      206C6F6E 
+ 569      6720756E 
+ 569      7369676E 
+ 569      65642069 
+ 570              	.LASF22:
+ 571 00ee 54696D65 		.ascii	"Timer_1_Start\000"
+ 571      725F315F 
+ 571      53746172 
+ 571      7400
+ 572              	.LASF19:
+ 573 00fc 64697374 		.ascii	"distance\000"
+ 573      616E6365 
+ 573      00
+ 574              	.LASF1:
+ 575 0105 756E7369 		.ascii	"unsigned char\000"
+ 575      676E6564 
+ 575      20636861 
+ 575      7200
+ 576              	.LASF26:
+ 577 0113 41667374 		.ascii	"Afstandssensor.c\000"
+ 577      616E6473 
+ 577      73656E73 
+ 577      6F722E63 
+ 577      00
+ 578              	.LASF13:
+ 579 0124 63686172 		.ascii	"char\000"
+ 579      00
+ 580              	.LASF16:
+ 581 0129 54696D65 		.ascii	"Timer_int_Handler\000"
+ 581      725F696E 
+ 581      745F4861 
+ 581      6E646C65 
+ 581      7200
+ 582              	.LASF4:
+ 583 013b 6C6F6E67 		.ascii	"long int\000"
+ 583      20696E74 
+ 583      00
+ 584              	.LASF27:
+ 585 0144 433A5C55 		.ascii	"C:\\Users\\Simon\\Desktop\\Projekt3-2020\\Kode\\mai"
+ 585      73657273 
+ 585      5C53696D 
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccXpcHIm.s 			page 13
+
+
+ 585      6F6E5C44 
+ 585      65736B74 
+ 586 0171 6E5F7073 		.ascii	"n_psoc\\Main_Project\\Main.cydsn\000"
+ 586      6F635C4D 
+ 586      61696E5F 
+ 586      50726F6A 
+ 586      6563745C 
+ 587              	.LASF12:
+ 588 0190 646F7562 		.ascii	"double\000"
+ 588      6C6500
+ 589              	.LASF23:
+ 590 0197 54696D65 		.ascii	"Timer_int_1_StartEx\000"
+ 590      725F696E 
+ 590      745F315F 
+ 590      53746172 
+ 590      74457800 
+ 591              	.LASF28:
+ 592 01ab 696E6974 		.ascii	"initDistSens\000"
+ 592      44697374 
+ 592      53656E73 
+ 592      00
+ 593              	.LASF18:
+ 594 01b8 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 594      52784275 
+ 594      66666572 
+ 594      00
+ 595              	.LASF0:
+ 596 01c5 7369676E 		.ascii	"signed char\000"
+ 596      65642063 
+ 596      68617200 
+ 597              	.LASF14:
+ 598 01d1 6C6F6E67 		.ascii	"long double\000"
+ 598      20646F75 
+ 598      626C6500 
+ 599              	.LASF9:
+ 600 01dd 5F5F696E 		.ascii	"__int32_t\000"
+ 600      7433325F 
+ 600      7400
+ 601              	.LASF24:
+ 602 01e7 54696D65 		.ascii	"Timer_ReadCapture\000"
+ 602      725F5265 
+ 602      61644361 
+ 602      70747572 
+ 602      6500
+ 603              	.LASF21:
+ 604 01f9 50574D5F 		.ascii	"PWM_Trigger_Start\000"
+ 604      54726967 
+ 604      6765725F 
+ 604      53746172 
+ 604      7400
+ 605              	.LASF11:
+ 606 020b 666C6F61 		.ascii	"float\000"
+ 606      7400
+ 607              	.LASF2:
+ 608 0211 73686F72 		.ascii	"short int\000"
+ 608      7420696E 
+ 608      7400
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccXpcHIm.s 			page 14
+
+
+ 609              	.LASF10:
+ 610 021b 696E7433 		.ascii	"int32_t\000"
+ 610      325F7400 
+ 611              	.LASF20:
+ 612 0223 54696D65 		.ascii	"Timer_1_ClearFIFO\000"
+ 612      725F315F 
+ 612      436C6561 
+ 612      72464946 
+ 612      4F00
+ 613              	.LASF15:
+ 614 0235 73697A65 		.ascii	"sizetype\000"
+ 614      74797065 
+ 614      00
+ 615              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

@@ -256,6 +256,7 @@
       <Data key="02f2cf2c-2c7a-49df-9246-7a3435c21be3" value="SCL_1" />
       <Data key="5d6a5e6c-00ab-40bc-887a-54a1a78ecb6c" value="in1" />
       <Data key="7b6a44ba-8e9c-4965-b896-f8b9f6c2aa9d" value="in3" />
+      <Data key="7f274c26-7feb-45d3-926e-58ac7793a71c" value="Trigger" />
       <Data key="8d318d8b-cf7b-4b6b-b02c-ab1c5c49d0ba" value="Pin_ADC_in" />
       <Data key="9d754eb2-02aa-45dc-af34-13794dcd11e2" value="S2" />
       <Data key="37d78951-14b4-43a2-a69d-324c39709d0b" value="S0" />
@@ -265,6 +266,7 @@
       <Data key="72220aa3-8412-4928-a91d-584e3e0de84f" value="in4" />
       <Data key="23880638-00de-4f3b-9f8e-93ddd025b6d6" value="S1" />
       <Data key="a6050642-13ff-4c9c-b0e1-ace1fa36a04a" value="Done" />
+      <Data key="b7160d76-65f8-4ba0-9fbd-07893aef154b" value="Echo" />
       <Data key="c6ef485c-08a5-43a5-af3d-28f56558d1e0" value="SensorOut" />
       <Data key="cce288b9-3ded-4fbc-b75e-909e8766a5f8" value="OE" />
       <Data key="e851a3b9-efb8-48be-bbb8-b303b216c393" value="PwmPIN1" />
@@ -3379,6 +3381,11 @@
         <Data key="Port Format" value="3,4" />
       </Group>
     </Group>
+    <Group key="7f274c26-7feb-45d3-926e-58ac7793a71c">
+      <Group key="0">
+        <Data key="Port Format" value="3,7" />
+      </Group>
+    </Group>
     <Group key="8d318d8b-cf7b-4b6b-b02c-ab1c5c49d0ba">
       <Group key="0">
         <Data key="Port Format" value="0,1" />
@@ -3422,6 +3429,11 @@
     <Group key="a6050642-13ff-4c9c-b0e1-ace1fa36a04a">
       <Group key="0">
         <Data key="Port Format" value="1,6" />
+      </Group>
+    </Group>
+    <Group key="b7160d76-65f8-4ba0-9fbd-07893aef154b">
+      <Group key="0">
+        <Data key="Port Format" value="3,6" />
       </Group>
     </Group>
     <Group key="c6ef485c-08a5-43a5-af3d-28f56558d1e0">

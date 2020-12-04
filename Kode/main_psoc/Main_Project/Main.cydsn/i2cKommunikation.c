@@ -34,7 +34,7 @@ void init_i2c()
 //    I2C_Start();
 }
 
-void I2C_Kommunikation()
+int I2C_Kommunikation()
 {
       if(0u != (I2C_SlaveStatus() & I2C_SSTAT_WR_CMPLT)) 
          { 
@@ -44,10 +44,13 @@ void I2C_Kommunikation()
             if(wrBuf[0] == 0b00000001)
                 {
                   //Funktion
+                    
+                 return 1;
                 }
             else if (wrBuf[0] == 0b00000010)
             {
                 // funktion
+                return 2;
             }
             I2C_SlaveClearWriteBuf(); 
          }

@@ -1,5 +1,5 @@
 # Main
-# 2020-11-27 13:09:51Z
+# 2020-12-04 11:28:47Z
 
 # IO_0@[IOP=(1)][IoId=(0)] is reserved: SWDDebugEnabled
 dont_use_io iocell 1 0
@@ -24,4 +24,6 @@ set_io "S2(0)" iocell 0 3
 set_io "S3(0)" iocell 0 4
 set_io "OE(0)" iocell 0 7
 set_io "Done(0)" iocell 1 6
+set_io "Trigger(0)" iocell 3 7
+set_io "Echo(0)" iocell 3 6
 set_location "\ADC_SAR_1:ADC_SAR\" sarcell -1 -1 1

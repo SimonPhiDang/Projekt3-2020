@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccM4kIDY.s 			page 1
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\cc4rqd0b.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccM4kIDY.s 			page 1
   28:colorSensor.c **** {
   28              		.loc 1 28 0
   29              		.cfi_startproc
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccM4kIDY.s 			page 2
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\cc4rqd0b.s 			page 2
 
 
   30              		@ args = 0, pretend = 0, frame = 0
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccM4kIDY.s 			page 1
   36:colorSensor.c **** }
   37:colorSensor.c **** 
   38:colorSensor.c **** 
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccM4kIDY.s 			page 3
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\cc4rqd0b.s 			page 3
 
 
   39:colorSensor.c **** CY_ISR(counter_isr)//Counter i interrupt routine
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccM4kIDY.s 			page 1
  121              		.loc 1 48 0
  122 0008 0248     		ldr	r0, .L11+4
  123 000a FFF7FEFF 		bl	Counter_INT_StartEx
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccM4kIDY.s 			page 4
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\cc4rqd0b.s 			page 4
 
 
  124              	.LVL7:
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccM4kIDY.s 			page 1
  169 001e 9A60     		str	r2, [r3, #8]
   58:colorSensor.c ****     Counter_cycle = 0;
  170              		.loc 1 58 0
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccM4kIDY.s 			page 5
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\cc4rqd0b.s 			page 5
 
 
  171 0020 5A60     		str	r2, [r3, #4]
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccM4kIDY.s 			page 1
  214              		.loc 1 69 0
  215 0004 0020     		movs	r0, #0
  216              	.LVL17:
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccM4kIDY.s 			page 6
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\cc4rqd0b.s 			page 6
 
 
  217 0006 FFF7FEFF 		bl	S0_Write
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccM4kIDY.s 			page 1
   86:colorSensor.c ****     else if(color=='b')//Blå farve-filter tilføjes og frekvensen registeres
  255              		.loc 1 86 0
  256 003c 622C     		cmp	r4, #98
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccM4kIDY.s 			page 7
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\cc4rqd0b.s 			page 7
 
 
  257 003e 08D1     		bne	.L21
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccM4kIDY.s 			page 1
  293 0070 1868     		ldr	r0, [r3]
  294 0072 10BD     		pop	{r4, pc}
  295              	.L25:
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccM4kIDY.s 			page 8
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\cc4rqd0b.s 			page 8
 
 
  296              		.align	2
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccM4kIDY.s 			page 1
  334 000e 7220     		movs	r0, #114
  335 0010 FFF7FEFF 		bl	get_freq
  336              	.LVL36:
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccM4kIDY.s 			page 9
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\cc4rqd0b.s 			page 9
 
 
  337 0014 A0F10A04 		sub	r4, r0, #10
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccM4kIDY.s 			page 1
  373 0048 AA60     		str	r2, [r5, #8]	@ unaligned
  374 004a EB60     		str	r3, [r5, #12]	@ unaligned
  375 004c 2068     		ldr	r0, [r4]	@ unaligned
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccM4kIDY.s 			page 10
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\cc4rqd0b.s 			page 10
 
 
  376 004e 2861     		str	r0, [r5, #16]	@ unaligned
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccM4kIDY.s 			page 1
  414              	.LVL52:
  154:colorSensor.c ****                         if(countG==5)
  415              		.loc 1 154 0
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccM4kIDY.s 			page 11
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\cc4rqd0b.s 			page 11
 
 
  416 0080 052F     		cmp	r7, #5
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccM4kIDY.s 			page 1
  456              		.loc 1 168 0
  457 00b6 0D4D     		ldr	r5, .L34
  458              	.LVL59:
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccM4kIDY.s 			page 12
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\cc4rqd0b.s 			page 12
 
 
  459 00b8 104C     		ldr	r4, .L34+16
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccM4kIDY.s 			page 1
  503 00fc 40000000 		.word	.LC3
  504              		.cfi_endproc
  505              	.LFE69:
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccM4kIDY.s 			page 13
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\cc4rqd0b.s 			page 13
 
 
  506              		.size	getColor, .-getColor
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccM4kIDY.s 			page 1
  545              		.file 7 "Generated_Source\\PSoC5/Timer.h"
  546              		.file 8 "Generated_Source\\PSoC5/OE.h"
  547              		.file 9 "Generated_Source\\PSoC5/Timer_INT.h"
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccM4kIDY.s 			page 14
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\cc4rqd0b.s 			page 14
 
 
  548              		.file 10 "Generated_Source\\PSoC5/Counter_INT.h"
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccM4kIDY.s 			page 1
  602 0061 E8010000 		.4byte	.LASF7
  603 0065 02       		.uleb128 0x2
  604 0066 08       		.byte	0x8
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccM4kIDY.s 			page 15
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\cc4rqd0b.s 			page 15
 
 
  605 0067 05       		.byte	0x5
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccM4kIDY.s 			page 1
  659 00d0 30000000 		.4byte	.LFE64-.LFB64
  660 00d4 01       		.uleb128 0x1
  661 00d5 9C       		.byte	0x9c
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccM4kIDY.s 			page 16
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\cc4rqd0b.s 			page 16
 
 
  662 00d6 12010000 		.4byte	0x112
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccM4kIDY.s 			page 1
  716 0157 03       		.byte	0x3
  717 0158 00000000 		.4byte	timer_isr
  718 015c 00       		.byte	0
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccM4kIDY.s 			page 17
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\cc4rqd0b.s 			page 17
 
 
  719 015d 09       		.uleb128 0x9
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccM4kIDY.s 			page 1
  773 01cc 08       		.uleb128 0x8
  774 01cd 01       		.uleb128 0x1
  775 01ce 50       		.byte	0x50
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccM4kIDY.s 			page 18
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\cc4rqd0b.s 			page 18
 
 
  776 01cf 01       		.uleb128 0x1
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccM4kIDY.s 			page 1
  830 024a 50       		.byte	0x50
  831 024b 01       		.uleb128 0x1
  832 024c 30       		.byte	0x30
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccM4kIDY.s 			page 19
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\cc4rqd0b.s 			page 19
 
 
  833 024d 00       		.byte	0
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccM4kIDY.s 			page 1
  887 02b6 06       		.uleb128 0x6
  888 02b7 3A000000 		.4byte	.LVL25
  889 02bb 71010000 		.4byte	0x171
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccM4kIDY.s 			page 20
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\cc4rqd0b.s 			page 20
 
 
  890 02bf 07       		.uleb128 0x7
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccM4kIDY.s 			page 1
  944 0331 01       		.uleb128 0x1
  945 0332 9C       		.byte	0x9c
  946 0333 40040000 		.4byte	0x440
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccM4kIDY.s 			page 21
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\cc4rqd0b.s 			page 21
 
 
  947 0337 0D       		.uleb128 0xd
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccM4kIDY.s 			page 1
  1001 03b8 1E000000 		.4byte	.LVL38
  1002 03bc 13020000 		.4byte	0x213
  1003 03c0 CB030000 		.4byte	0x3cb
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccM4kIDY.s 			page 22
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\cc4rqd0b.s 			page 22
 
 
  1004 03c4 08       		.uleb128 0x8
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccM4kIDY.s 			page 1
  1058 0424 2F040000 		.4byte	0x42f
  1059 0428 08       		.uleb128 0x8
  1060 0429 01       		.uleb128 0x1
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccM4kIDY.s 			page 23
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\cc4rqd0b.s 			page 23
 
 
  1061 042a 50       		.byte	0x50
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccM4kIDY.s 			page 1
  1115 0494 13       		.uleb128 0x13
  1116 0495 73747200 		.ascii	"str\000"
  1117 0499 01       		.byte	0x1
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccM4kIDY.s 			page 24
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\cc4rqd0b.s 			page 24
 
 
  1118 049a 6A       		.byte	0x6a
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccM4kIDY.s 			page 1
  1172 0512 76       		.byte	0x76
  1173 0513 14       		.uleb128 0x14
  1174 0514 DA010000 		.4byte	.LASF45
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccM4kIDY.s 			page 25
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\cc4rqd0b.s 			page 25
 
 
  1175 0518 DA010000 		.4byte	.LASF45
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccM4kIDY.s 			page 1
  1229 0012 00       		.byte	0
  1230 0013 02       		.uleb128 0x2
  1231 0014 24       		.uleb128 0x24
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccM4kIDY.s 			page 26
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\cc4rqd0b.s 			page 26
 
 
  1232 0015 00       		.byte	0
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccM4kIDY.s 			page 1
  1286 004c 01       		.uleb128 0x1
  1287 004d 13       		.uleb128 0x13
  1288 004e 00       		.byte	0
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccM4kIDY.s 			page 27
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\cc4rqd0b.s 			page 27
 
 
  1289 004f 00       		.byte	0
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccM4kIDY.s 			page 1
  1343 008e 11       		.uleb128 0x11
  1344 008f 01       		.uleb128 0x1
  1345 0090 12       		.uleb128 0x12
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccM4kIDY.s 			page 28
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\cc4rqd0b.s 			page 28
 
 
  1346 0091 06       		.uleb128 0x6
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccM4kIDY.s 			page 1
  1400 00ca 03       		.uleb128 0x3
  1401 00cb 0E       		.uleb128 0xe
  1402 00cc 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccM4kIDY.s 			page 29
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\cc4rqd0b.s 			page 29
 
 
  1403 00cd 0B       		.uleb128 0xb
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccM4kIDY.s 			page 1
  1457 0103 13       		.uleb128 0x13
  1458 0104 01       		.uleb128 0x1
  1459 0105 13       		.uleb128 0x13
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccM4kIDY.s 			page 30
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\cc4rqd0b.s 			page 30
 
 
  1460 0106 00       		.byte	0
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccM4kIDY.s 			page 1
  1514 000f 78000000 		.4byte	.LFE68
  1515 0013 0400     		.2byte	0x4
  1516 0015 F3       		.byte	0xf3
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccM4kIDY.s 			page 31
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\cc4rqd0b.s 			page 31
 
 
  1517 0016 01       		.uleb128 0x1
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccM4kIDY.s 			page 1
  1571 00a7 0200     		.2byte	0x2
  1572 00a9 30       		.byte	0x30
  1573 00aa 9F       		.byte	0x9f
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccM4kIDY.s 			page 32
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\cc4rqd0b.s 			page 32
 
 
  1574 00ab 28000000 		.4byte	.LVL40
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccM4kIDY.s 			page 1
  1628              	.LLST6:
  1629 013e 04000000 		.4byte	.LVL32
  1630 0142 0E000000 		.4byte	.LVL35
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccM4kIDY.s 			page 33
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\cc4rqd0b.s 			page 33
 
 
  1631 0146 0200     		.2byte	0x2
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccM4kIDY.s 			page 1
  1685 0030 00000000 		.4byte	0
  1686 0034 00000000 		.4byte	0
  1687              		.section	.debug_line,"",%progbits
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccM4kIDY.s 			page 34
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\cc4rqd0b.s 			page 34
 
 
  1688              	.Ldebug_line0:
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccM4kIDY.s 			page 1
  1715      325F7400 
  1716              	.LASF36:
  1717 007f 54696D65 		.ascii	"Timer_Stop\000"
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccM4kIDY.s 			page 35
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\cc4rqd0b.s 			page 35
 
 
  1717      725F5374 
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccM4kIDY.s 			page 1
  1736      74457800 
  1737              	.LASF37:
  1738 01ab 436F756E 		.ascii	"Counter_ReadCounter\000"
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccM4kIDY.s 			page 36
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\cc4rqd0b.s 			page 36
 
 
  1738      7465725F 
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccM4kIDY.s 			page 1
  1760      20696E74 
  1760      00
  1761              	.LASF38:
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccM4kIDY.s 			page 37
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\cc4rqd0b.s 			page 37
 
 
  1762 0250 4F455F57 		.ascii	"OE_Write\000"
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccM4kIDY.s 			page 1
  1787              	.LASF12:
  1788 02e0 75696E74 		.ascii	"uint32_t\000"
  1788      33325F74 
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccM4kIDY.s 			page 38
+ARM GAS  C:\Users\Simon\AppData\Local\Temp\cc4rqd0b.s 			page 38
 
 
  1788      00

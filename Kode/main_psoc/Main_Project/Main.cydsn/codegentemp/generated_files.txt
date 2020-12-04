@@ -105,6 +105,24 @@
   <file name="C:\Users\Simon\Desktop\Projekt3-2020\Kode\main_psoc\Main_Project\Main.cydsn\codegentemp\Done_aliases.h" value="HEADER;;;;;Done" />
   <file name="C:\Users\Simon\Desktop\Projekt3-2020\Kode\main_psoc\Main_Project\Main.cydsn\codegentemp\Done.c" value="SOURCE_C;CortexM3;;;;Done" />
   <file name="C:\Users\Simon\Desktop\Projekt3-2020\Kode\main_psoc\Main_Project\Main.cydsn\codegentemp\Done.h" value="HEADER;;;;;Done" />
+  <file name="C:\Users\Simon\Desktop\Projekt3-2020\Kode\main_psoc\Main_Project\Main.cydsn\codegentemp\PWM_Trigger.c" value="SOURCE_C;CortexM3;;;;PWM_Trigger" />
+  <file name="C:\Users\Simon\Desktop\Projekt3-2020\Kode\main_psoc\Main_Project\Main.cydsn\codegentemp\PWM_Trigger.h" value="HEADER;;;;;PWM_Trigger" />
+  <file name="C:\Users\Simon\Desktop\Projekt3-2020\Kode\main_psoc\Main_Project\Main.cydsn\codegentemp\PWM_Trigger_PM.c" value="SOURCE_C;CortexM3;;;;PWM_Trigger" />
+  <file name="C:\Users\Simon\Desktop\Projekt3-2020\Kode\main_psoc\Main_Project\Main.cydsn\codegentemp\Clock_Trigger.c" value="SOURCE_C;CortexM3;;;;Clock_Trigger" />
+  <file name="C:\Users\Simon\Desktop\Projekt3-2020\Kode\main_psoc\Main_Project\Main.cydsn\codegentemp\Clock_Trigger.h" value="HEADER;;;;;Clock_Trigger" />
+  <file name="C:\Users\Simon\Desktop\Projekt3-2020\Kode\main_psoc\Main_Project\Main.cydsn\codegentemp\Timer_1.c" value="SOURCE_C;CortexM3;;;;Timer_1" />
+  <file name="C:\Users\Simon\Desktop\Projekt3-2020\Kode\main_psoc\Main_Project\Main.cydsn\codegentemp\Timer_1.h" value="HEADER;;;;;Timer_1" />
+  <file name="C:\Users\Simon\Desktop\Projekt3-2020\Kode\main_psoc\Main_Project\Main.cydsn\codegentemp\Timer_1_PM.c" value="SOURCE_C;CortexM3;;;;Timer_1" />
+  <file name="C:\Users\Simon\Desktop\Projekt3-2020\Kode\main_psoc\Main_Project\Main.cydsn\codegentemp\Trigger_aliases.h" value="HEADER;;;;;Trigger" />
+  <file name="C:\Users\Simon\Desktop\Projekt3-2020\Kode\main_psoc\Main_Project\Main.cydsn\codegentemp\Trigger.c" value="SOURCE_C;CortexM3;;;;Trigger" />
+  <file name="C:\Users\Simon\Desktop\Projekt3-2020\Kode\main_psoc\Main_Project\Main.cydsn\codegentemp\Trigger.h" value="HEADER;;;;;Trigger" />
+  <file name="C:\Users\Simon\Desktop\Projekt3-2020\Kode\main_psoc\Main_Project\Main.cydsn\codegentemp\Clock_1.c" value="SOURCE_C;CortexM3;;;;Clock_1" />
+  <file name="C:\Users\Simon\Desktop\Projekt3-2020\Kode\main_psoc\Main_Project\Main.cydsn\codegentemp\Clock_1.h" value="HEADER;;;;;Clock_1" />
+  <file name="C:\Users\Simon\Desktop\Projekt3-2020\Kode\main_psoc\Main_Project\Main.cydsn\codegentemp\Echo_aliases.h" value="HEADER;;;;;Echo" />
+  <file name="C:\Users\Simon\Desktop\Projekt3-2020\Kode\main_psoc\Main_Project\Main.cydsn\codegentemp\Echo.c" value="SOURCE_C;CortexM3;;;;Echo" />
+  <file name="C:\Users\Simon\Desktop\Projekt3-2020\Kode\main_psoc\Main_Project\Main.cydsn\codegentemp\Echo.h" value="HEADER;;;;;Echo" />
+  <file name="C:\Users\Simon\Desktop\Projekt3-2020\Kode\main_psoc\Main_Project\Main.cydsn\codegentemp\Timer_int_1.c" value="SOURCE_C;CortexM3;;;;Timer_int_1" />
+  <file name="C:\Users\Simon\Desktop\Projekt3-2020\Kode\main_psoc\Main_Project\Main.cydsn\codegentemp\Timer_int_1.h" value="HEADER;;;;;Timer_int_1" />
   <file name="C:\Users\Simon\Desktop\Projekt3-2020\Kode\main_psoc\Main_Project\Main.cydsn\codegentemp\ADC_SAR_1_IRQ.c" value="SOURCE_C;CortexM3;;;;ADC_SAR_1_IRQ" />
   <file name="C:\Users\Simon\Desktop\Projekt3-2020\Kode\main_psoc\Main_Project\Main.cydsn\codegentemp\ADC_SAR_1_IRQ.h" value="HEADER;;;;;ADC_SAR_1_IRQ" />
   <file name="C:\Users\Simon\Desktop\Projekt3-2020\Kode\main_psoc\Main_Project\Main.cydsn\codegentemp\ADC_SAR_1_theACLK.c" value="SOURCE_C;CortexM3;;;;ADC_SAR_1_theACLK" />
