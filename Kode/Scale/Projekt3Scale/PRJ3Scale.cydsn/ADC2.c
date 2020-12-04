@@ -16,6 +16,8 @@ float ADC_Measure()
     if (ADC_SAR_1_IsEndConversion(ADC_SAR_1_WAIT_FOR_RESULT))
         {
             uint16_t result = ADC_SAR_1_GetResult16();
+            uint16_t offset = 0x128;
+            result = result - offset;
             float kg = 0.0005 * result - 0.0553;
             return kg;
         }
