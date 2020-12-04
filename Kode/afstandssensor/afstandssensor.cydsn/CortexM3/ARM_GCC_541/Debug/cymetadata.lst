@@ -1,0 +1,2416 @@
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccBiGH6B.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"cymetadata.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.global	cy_metadata
+  20              		.global	cy_meta_flashprotect
+  21              		.global	cy_meta_wonvl
+  22              		.global	cy_meta_custnvl
+  23              		.global	cy_meta_configecc
+  24              		.section	.cyconfigecc,"a",%progbits
+  25              		.align	2
+  26              		.type	cy_meta_configecc, %object
+  27              		.size	cy_meta_configecc, 1812
+  28              	cy_meta_configecc:
+  29 0000 01       		.byte	1
+  30 0001 52       		.byte	82
+  31 0002 00       		.byte	0
+  32 0003 40       		.byte	64
+  33 0004 01       		.byte	1
+  34 0005 64       		.byte	100
+  35 0006 00       		.byte	0
+  36 0007 40       		.byte	64
+  37 0008 04       		.byte	4
+  38 0009 65       		.byte	101
+  39 000a 00       		.byte	0
+  40 000b 40       		.byte	64
+  41 000c 55       		.byte	85
+  42 000d 06       		.byte	6
+  43 000e 01       		.byte	1
+  44 000f 40       		.byte	64
+  45 0010 2B       		.byte	43
+  46 0011 07       		.byte	7
+  47 0012 01       		.byte	1
+  48 0013 40       		.byte	64
+  49 0014 4B       		.byte	75
+  50 0015 08       		.byte	8
+  51 0016 01       		.byte	1
+  52 0017 40       		.byte	64
+  53 0018 34       		.byte	52
+  54 0019 09       		.byte	9
+  55 001a 01       		.byte	1
+  56 001b 40       		.byte	64
+  57 001c 57       		.byte	87
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccBiGH6B.s 			page 2
+
+
+  58 001d 14       		.byte	20
+  59 001e 01       		.byte	1
+  60 001f 40       		.byte	64
+  61 0020 3B       		.byte	59
+  62 0021 15       		.byte	21
+  63 0022 01       		.byte	1
+  64 0023 40       		.byte	64
+  65 0024 30       		.byte	48
+  66 0025 16       		.byte	22
+  67 0026 01       		.byte	1
+  68 0027 40       		.byte	64
+  69 0028 3A       		.byte	58
+  70 0029 17       		.byte	23
+  71 002a 01       		.byte	1
+  72 002b 40       		.byte	64
+  73 002c 59       		.byte	89
+  74 002d 18       		.byte	24
+  75 002e 01       		.byte	1
+  76 002f 40       		.byte	64
+  77 0030 3F       		.byte	63
+  78 0031 19       		.byte	25
+  79 0032 01       		.byte	1
+  80 0033 40       		.byte	64
+  81 0034 3F       		.byte	63
+  82 0035 1A       		.byte	26
+  83 0036 01       		.byte	1
+  84 0037 40       		.byte	64
+  85 0038 49       		.byte	73
+  86 0039 1B       		.byte	27
+  87 003a 01       		.byte	1
+  88 003b 40       		.byte	64
+  89 003c 03       		.byte	3
+  90 003d 40       		.byte	64
+  91 003e 01       		.byte	1
+  92 003f 40       		.byte	64
+  93 0040 02       		.byte	2
+  94 0041 41       		.byte	65
+  95 0042 01       		.byte	1
+  96 0043 40       		.byte	64
+  97 0044 02       		.byte	2
+  98 0045 42       		.byte	66
+  99 0046 01       		.byte	1
+ 100 0047 40       		.byte	64
+ 101 0048 02       		.byte	2
+ 102 0049 43       		.byte	67
+ 103 004a 01       		.byte	1
+ 104 004b 40       		.byte	64
+ 105 004c 06       		.byte	6
+ 106 004d 48       		.byte	72
+ 107 004e 01       		.byte	1
+ 108 004f 40       		.byte	64
+ 109 0050 06       		.byte	6
+ 110 0051 49       		.byte	73
+ 111 0052 01       		.byte	1
+ 112 0053 40       		.byte	64
+ 113 0054 07       		.byte	7
+ 114 0055 4D       		.byte	77
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccBiGH6B.s 			page 3
+
+
+ 115 0056 01       		.byte	1
+ 116 0057 40       		.byte	64
+ 117 0058 06       		.byte	6
+ 118 0059 50       		.byte	80
+ 119 005a 01       		.byte	1
+ 120 005b 40       		.byte	64
+ 121 005c 01       		.byte	1
+ 122 005d 51       		.byte	81
+ 123 005e 01       		.byte	1
+ 124 005f 40       		.byte	64
+ 125 0060 19       		.byte	25
+ 126 0061 80       		.byte	-128
+ 127 0062 89       		.byte	-119
+ 128 0063 0F       		.byte	15
+ 129 0064 85       		.byte	-123
+ 130 0065 0D       		.byte	13
+ 131 0066 87       		.byte	-121
+ 132 0067 0F       		.byte	15
+ 133 0068 88       		.byte	-120
+ 134 0069 38       		.byte	56
+ 135 006a 8B       		.byte	-117
+ 136 006b 72       		.byte	114
+ 137 006c 12       		.byte	18
+ 138 006d 01       		.byte	1
+ 139 006e 1E       		.byte	30
+ 140 006f 01       		.byte	1
+ 141 0070 22       		.byte	34
+ 142 0071 01       		.byte	1
+ 143 0072 34       		.byte	52
+ 144 0073 01       		.byte	1
+ 145 0074 3B       		.byte	59
+ 146 0075 20       		.byte	32
+ 147 0076 3E       		.byte	62
+ 148 0077 10       		.byte	16
+ 149 0078 40       		.byte	64
+ 150 0079 25       		.byte	37
+ 151 007a 41       		.byte	65
+ 152 007b 03       		.byte	3
+ 153 007c 42       		.byte	66
+ 154 007d 06       		.byte	6
+ 155 007e 49       		.byte	73
+ 156 007f FF       		.byte	-1
+ 157 0080 4A       		.byte	74
+ 158 0081 FF       		.byte	-1
+ 159 0082 4B       		.byte	75
+ 160 0083 FF       		.byte	-1
+ 161 0084 4F       		.byte	79
+ 162 0085 01       		.byte	1
+ 163 0086 50       		.byte	80
+ 164 0087 18       		.byte	24
+ 165 0088 58       		.byte	88
+ 166 0089 04       		.byte	4
+ 167 008a 59       		.byte	89
+ 168 008b 04       		.byte	4
+ 169 008c 5A       		.byte	90
+ 170 008d 04       		.byte	4
+ 171 008e 5C       		.byte	92
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccBiGH6B.s 			page 4
+
+
+ 172 008f 10       		.byte	16
+ 173 0090 5F       		.byte	95
+ 174 0091 01       		.byte	1
+ 175 0092 60       		.byte	96
+ 176 0093 40       		.byte	64
+ 177 0094 62       		.byte	98
+ 178 0095 40       		.byte	64
+ 179 0096 64       		.byte	100
+ 180 0097 40       		.byte	64
+ 181 0098 65       		.byte	101
+ 182 0099 40       		.byte	64
+ 183 009a 66       		.byte	102
+ 184 009b 80       		.byte	-128
+ 185 009c 68       		.byte	104
+ 186 009d 80       		.byte	-128
+ 187 009e 6A       		.byte	106
+ 188 009f 80       		.byte	-128
+ 189 00a0 6C       		.byte	108
+ 190 00a1 80       		.byte	-128
+ 191 00a2 6E       		.byte	110
+ 192 00a3 80       		.byte	-128
+ 193 00a4 80       		.byte	-128
+ 194 00a5 04       		.byte	4
+ 195 00a6 82       		.byte	-126
+ 196 00a7 08       		.byte	8
+ 197 00a8 84       		.byte	-124
+ 198 00a9 10       		.byte	16
+ 199 00aa 86       		.byte	-122
+ 200 00ab 06       		.byte	6
+ 201 00ac 88       		.byte	-120
+ 202 00ad 06       		.byte	6
+ 203 00ae 89       		.byte	-119
+ 204 00af 01       		.byte	1
+ 205 00b0 8A       		.byte	-118
+ 206 00b1 19       		.byte	25
+ 207 00b2 8B       		.byte	-117
+ 208 00b3 02       		.byte	2
+ 209 00b4 8E       		.byte	-114
+ 210 00b5 20       		.byte	32
+ 211 00b6 8F       		.byte	-113
+ 212 00b7 04       		.byte	4
+ 213 00b8 90       		.byte	-112
+ 214 00b9 09       		.byte	9
+ 215 00ba 92       		.byte	-110
+ 216 00bb 06       		.byte	6
+ 217 00bc 94       		.byte	-108
+ 218 00bd 1F       		.byte	31
+ 219 00be 95       		.byte	-107
+ 220 00bf 0F       		.byte	15
+ 221 00c0 99       		.byte	-103
+ 222 00c1 08       		.byte	8
+ 223 00c2 9B       		.byte	-101
+ 224 00c3 07       		.byte	7
+ 225 00c4 9D       		.byte	-99
+ 226 00c5 07       		.byte	7
+ 227 00c6 9E       		.byte	-98
+ 228 00c7 20       		.byte	32
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccBiGH6B.s 			page 5
+
+
+ 229 00c8 9F       		.byte	-97
+ 230 00c9 08       		.byte	8
+ 231 00ca A2       		.byte	-94
+ 232 00cb 20       		.byte	32
+ 233 00cc A8       		.byte	-88
+ 234 00cd 01       		.byte	1
+ 235 00ce A9       		.byte	-87
+ 236 00cf 02       		.byte	2
+ 237 00d0 AA       		.byte	-86
+ 238 00d1 02       		.byte	2
+ 239 00d2 AB       		.byte	-85
+ 240 00d3 01       		.byte	1
+ 241 00d4 AE       		.byte	-82
+ 242 00d5 20       		.byte	32
+ 243 00d6 B0       		.byte	-80
+ 244 00d7 20       		.byte	32
+ 245 00d8 B4       		.byte	-76
+ 246 00d9 1F       		.byte	31
+ 247 00da B7       		.byte	-73
+ 248 00db 0F       		.byte	15
+ 249 00dc BE       		.byte	-66
+ 250 00dd 01       		.byte	1
+ 251 00de C0       		.byte	-64
+ 252 00df 25       		.byte	37
+ 253 00e0 C1       		.byte	-63
+ 254 00e1 03       		.byte	3
+ 255 00e2 C2       		.byte	-62
+ 256 00e3 06       		.byte	6
+ 257 00e4 C5       		.byte	-59
+ 258 00e5 EC       		.byte	-20
+ 259 00e6 C7       		.byte	-57
+ 260 00e7 20       		.byte	32
+ 261 00e8 C8       		.byte	-56
+ 262 00e9 23       		.byte	35
+ 263 00ea C9       		.byte	-55
+ 264 00eb FF       		.byte	-1
+ 265 00ec CA       		.byte	-54
+ 266 00ed FF       		.byte	-1
+ 267 00ee CB       		.byte	-53
+ 268 00ef FF       		.byte	-1
+ 269 00f0 CD       		.byte	-51
+ 270 00f1 83       		.byte	-125
+ 271 00f2 CE       		.byte	-50
+ 272 00f3 03       		.byte	3
+ 273 00f4 CF       		.byte	-49
+ 274 00f5 01       		.byte	1
+ 275 00f6 D0       		.byte	-48
+ 276 00f7 18       		.byte	24
+ 277 00f8 D2       		.byte	-46
+ 278 00f9 93       		.byte	-109
+ 279 00fa D8       		.byte	-40
+ 280 00fb 04       		.byte	4
+ 281 00fc D9       		.byte	-39
+ 282 00fd 04       		.byte	4
+ 283 00fe DA       		.byte	-38
+ 284 00ff 04       		.byte	4
+ 285 0100 DB       		.byte	-37
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccBiGH6B.s 			page 6
+
+
+ 286 0101 04       		.byte	4
+ 287 0102 DF       		.byte	-33
+ 288 0103 01       		.byte	1
+ 289 0104 E0       		.byte	-32
+ 290 0105 40       		.byte	64
+ 291 0106 E2       		.byte	-30
+ 292 0107 40       		.byte	64
+ 293 0108 E4       		.byte	-28
+ 294 0109 40       		.byte	64
+ 295 010a E5       		.byte	-27
+ 296 010b 40       		.byte	64
+ 297 010c E6       		.byte	-26
+ 298 010d 80       		.byte	-128
+ 299 010e E8       		.byte	-24
+ 300 010f 80       		.byte	-128
+ 301 0110 EA       		.byte	-22
+ 302 0111 80       		.byte	-128
+ 303 0112 EC       		.byte	-20
+ 304 0113 80       		.byte	-128
+ 305 0114 EE       		.byte	-18
+ 306 0115 80       		.byte	-128
+ 307 0116 00       		.byte	0
+ 308 0117 02       		.byte	2
+ 309 0118 01       		.byte	1
+ 310 0119 20       		.byte	32
+ 311 011a 02       		.byte	2
+ 312 011b 02       		.byte	2
+ 313 011c 03       		.byte	3
+ 314 011d 10       		.byte	16
+ 315 011e 08       		.byte	8
+ 316 011f 40       		.byte	64
+ 317 0120 09       		.byte	9
+ 318 0121 08       		.byte	8
+ 319 0122 0A       		.byte	10
+ 320 0123 80       		.byte	-128
+ 321 0124 0F       		.byte	15
+ 322 0125 41       		.byte	65
+ 323 0126 10       		.byte	16
+ 324 0127 08       		.byte	8
+ 325 0128 13       		.byte	19
+ 326 0129 41       		.byte	65
+ 327 012a 14       		.byte	20
+ 328 012b 40       		.byte	64
+ 329 012c 15       		.byte	21
+ 330 012d 02       		.byte	2
+ 331 012e 19       		.byte	25
+ 332 012f 20       		.byte	32
+ 333 0130 1A       		.byte	26
+ 334 0131 40       		.byte	64
+ 335 0132 1D       		.byte	29
+ 336 0133 20       		.byte	32
+ 337 0134 22       		.byte	34
+ 338 0135 40       		.byte	64
+ 339 0136 25       		.byte	37
+ 340 0137 10       		.byte	16
+ 341 0138 26       		.byte	38
+ 342 0139 20       		.byte	32
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccBiGH6B.s 			page 7
+
+
+ 343 013a 29       		.byte	41
+ 344 013b 20       		.byte	32
+ 345 013c 31       		.byte	49
+ 346 013d 18       		.byte	24
+ 347 013e 32       		.byte	50
+ 348 013f 40       		.byte	64
+ 349 0140 33       		.byte	51
+ 350 0141 10       		.byte	16
+ 351 0142 39       		.byte	57
+ 352 0143 50       		.byte	80
+ 353 0144 41       		.byte	65
+ 354 0145 28       		.byte	40
+ 355 0146 45       		.byte	69
+ 356 0147 28       		.byte	40
+ 357 0148 49       		.byte	73
+ 358 0149 15       		.byte	21
+ 359 014a 4A       		.byte	74
+ 360 014b 02       		.byte	2
+ 361 014c 4B       		.byte	75
+ 362 014d 10       		.byte	16
+ 363 014e 4E       		.byte	78
+ 364 014f 02       		.byte	2
+ 365 0150 4F       		.byte	79
+ 366 0151 10       		.byte	16
+ 367 0152 52       		.byte	82
+ 368 0153 02       		.byte	2
+ 369 0154 68       		.byte	104
+ 370 0155 09       		.byte	9
+ 371 0156 69       		.byte	105
+ 372 0157 50       		.byte	80
+ 373 0158 6B       		.byte	107
+ 374 0159 01       		.byte	1
+ 375 015a 73       		.byte	115
+ 376 015b 41       		.byte	65
+ 377 015c C0       		.byte	-64
+ 378 015d 0F       		.byte	15
+ 379 015e C2       		.byte	-62
+ 380 015f 9D       		.byte	-99
+ 381 0160 C4       		.byte	-60
+ 382 0161 1B       		.byte	27
+ 383 0162 CA       		.byte	-54
+ 384 0163 04       		.byte	4
+ 385 0164 CC       		.byte	-52
+ 386 0165 0E       		.byte	14
+ 387 0166 CE       		.byte	-50
+ 388 0167 0C       		.byte	12
+ 389 0168 D0       		.byte	-48
+ 390 0169 66       		.byte	102
+ 391 016a D2       		.byte	-46
+ 392 016b 3C       		.byte	60
+ 393 016c 03       		.byte	3
+ 394 016d 08       		.byte	8
+ 395 016e 04       		.byte	4
+ 396 016f 01       		.byte	1
+ 397 0170 05       		.byte	5
+ 398 0171 06       		.byte	6
+ 399 0172 08       		.byte	8
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccBiGH6B.s 			page 8
+
+
+ 400 0173 04       		.byte	4
+ 401 0174 0B       		.byte	11
+ 402 0175 08       		.byte	8
+ 403 0176 0F       		.byte	15
+ 404 0177 02       		.byte	2
+ 405 0178 10       		.byte	16
+ 406 0179 02       		.byte	2
+ 407 017a 11       		.byte	17
+ 408 017b 04       		.byte	4
+ 409 017c 14       		.byte	20
+ 410 017d 01       		.byte	1
+ 411 017e 15       		.byte	21
+ 412 017f 08       		.byte	8
+ 413 0180 19       		.byte	25
+ 414 0181 08       		.byte	8
+ 415 0182 1C       		.byte	28
+ 416 0183 04       		.byte	4
+ 417 0184 1F       		.byte	31
+ 418 0185 01       		.byte	1
+ 419 0186 22       		.byte	34
+ 420 0187 01       		.byte	1
+ 421 0188 24       		.byte	36
+ 422 0189 04       		.byte	4
+ 423 018a 27       		.byte	39
+ 424 018b 01       		.byte	1
+ 425 018c 28       		.byte	40
+ 426 018d 04       		.byte	4
+ 427 018e 29       		.byte	41
+ 428 018f 06       		.byte	6
+ 429 0190 32       		.byte	50
+ 430 0191 03       		.byte	3
+ 431 0192 33       		.byte	51
+ 432 0193 06       		.byte	6
+ 433 0194 34       		.byte	52
+ 434 0195 04       		.byte	4
+ 435 0196 35       		.byte	53
+ 436 0197 01       		.byte	1
+ 437 0198 37       		.byte	55
+ 438 0199 08       		.byte	8
+ 439 019a 38       		.byte	56
+ 440 019b 08       		.byte	8
+ 441 019c 39       		.byte	57
+ 442 019d 88       		.byte	-120
+ 443 019e 3E       		.byte	62
+ 444 019f 10       		.byte	16
+ 445 01a0 3F       		.byte	63
+ 446 01a1 14       		.byte	20
+ 447 01a2 40       		.byte	64
+ 448 01a3 02       		.byte	2
+ 449 01a4 47       		.byte	71
+ 450 01a5 04       		.byte	4
+ 451 01a6 49       		.byte	73
+ 452 01a7 FF       		.byte	-1
+ 453 01a8 4A       		.byte	74
+ 454 01a9 07       		.byte	7
+ 455 01aa 4B       		.byte	75
+ 456 01ab FF       		.byte	-1
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccBiGH6B.s 			page 9
+
+
+ 457 01ac 4C       		.byte	76
+ 458 01ad 40       		.byte	64
+ 459 01ae 4D       		.byte	77
+ 460 01af 20       		.byte	32
+ 461 01b0 4E       		.byte	78
+ 462 01b1 F0       		.byte	-16
+ 463 01b2 4F       		.byte	79
+ 464 01b3 05       		.byte	5
+ 465 01b4 50       		.byte	80
+ 466 01b5 08       		.byte	8
+ 467 01b6 58       		.byte	88
+ 468 01b7 04       		.byte	4
+ 469 01b8 59       		.byte	89
+ 470 01b9 04       		.byte	4
+ 471 01ba 5A       		.byte	90
+ 472 01bb 04       		.byte	4
+ 473 01bc 5C       		.byte	92
+ 474 01bd 11       		.byte	17
+ 475 01be 5D       		.byte	93
+ 476 01bf 01       		.byte	1
+ 477 01c0 5F       		.byte	95
+ 478 01c1 01       		.byte	1
+ 479 01c2 60       		.byte	96
+ 480 01c3 40       		.byte	64
+ 481 01c4 61       		.byte	97
+ 482 01c5 A8       		.byte	-88
+ 483 01c6 62       		.byte	98
+ 484 01c7 40       		.byte	64
+ 485 01c8 63       		.byte	99
+ 486 01c9 20       		.byte	32
+ 487 01ca 81       		.byte	-127
+ 488 01cb 0C       		.byte	12
+ 489 01cc 83       		.byte	-125
+ 490 01cd 03       		.byte	3
+ 491 01ce 84       		.byte	-124
+ 492 01cf 01       		.byte	1
+ 493 01d0 85       		.byte	-123
+ 494 01d1 01       		.byte	1
+ 495 01d2 87       		.byte	-121
+ 496 01d3 0E       		.byte	14
+ 497 01d4 8A       		.byte	-118
+ 498 01d5 01       		.byte	1
+ 499 01d6 8D       		.byte	-115
+ 500 01d7 10       		.byte	16
+ 501 01d8 8E       		.byte	-114
+ 502 01d9 01       		.byte	1
+ 503 01da 97       		.byte	-105
+ 504 01db 0C       		.byte	12
+ 505 01dc 9E       		.byte	-98
+ 506 01dd 01       		.byte	1
+ 507 01de A3       		.byte	-93
+ 508 01df 03       		.byte	3
+ 509 01e0 A5       		.byte	-91
+ 510 01e1 01       		.byte	1
+ 511 01e2 A7       		.byte	-89
+ 512 01e3 06       		.byte	6
+ 513 01e4 A8       		.byte	-88
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccBiGH6B.s 			page 10
+
+
+ 514 01e5 01       		.byte	1
+ 515 01e6 AB       		.byte	-85
+ 516 01e7 08       		.byte	8
+ 517 01e8 B0       		.byte	-80
+ 518 01e9 01       		.byte	1
+ 519 01ea B1       		.byte	-79
+ 520 01eb 0F       		.byte	15
+ 521 01ec B3       		.byte	-77
+ 522 01ed 10       		.byte	16
+ 523 01ee BB       		.byte	-69
+ 524 01ef 02       		.byte	2
+ 525 01f0 BE       		.byte	-66
+ 526 01f1 01       		.byte	1
+ 527 01f2 BF       		.byte	-65
+ 528 01f3 04       		.byte	4
+ 529 01f4 D4       		.byte	-44
+ 530 01f5 01       		.byte	1
+ 531 01f6 D8       		.byte	-40
+ 532 01f7 04       		.byte	4
+ 533 01f8 D9       		.byte	-39
+ 534 01f9 04       		.byte	4
+ 535 01fa DB       		.byte	-37
+ 536 01fb 04       		.byte	4
+ 537 01fc DC       		.byte	-36
+ 538 01fd 10       		.byte	16
+ 539 01fe DD       		.byte	-35
+ 540 01ff 10       		.byte	16
+ 541 0200 DF       		.byte	-33
+ 542 0201 01       		.byte	1
+ 543 0202 00       		.byte	0
+ 544 0203 24       		.byte	36
+ 545 0204 01       		.byte	1
+ 546 0205 20       		.byte	32
+ 547 0206 02       		.byte	2
+ 548 0207 02       		.byte	2
+ 549 0208 04       		.byte	4
+ 550 0209 84       		.byte	-124
+ 551 020a 05       		.byte	5
+ 552 020b 10       		.byte	16
+ 553 020c 07       		.byte	7
+ 554 020d 02       		.byte	2
+ 555 020e 09       		.byte	9
+ 556 020f 40       		.byte	64
+ 557 0210 0C       		.byte	12
+ 558 0211 04       		.byte	4
+ 559 0212 0E       		.byte	14
+ 560 0213 01       		.byte	1
+ 561 0214 0F       		.byte	15
+ 562 0215 80       		.byte	-128
+ 563 0216 10       		.byte	16
+ 564 0217 04       		.byte	4
+ 565 0218 12       		.byte	18
+ 566 0219 04       		.byte	4
+ 567 021a 13       		.byte	19
+ 568 021b 0C       		.byte	12
+ 569 021c 14       		.byte	20
+ 570 021d 08       		.byte	8
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccBiGH6B.s 			page 11
+
+
+ 571 021e 15       		.byte	21
+ 572 021f 12       		.byte	18
+ 573 0220 17       		.byte	23
+ 574 0221 04       		.byte	4
+ 575 0222 1A       		.byte	26
+ 576 0223 80       		.byte	-128
+ 577 0224 1D       		.byte	29
+ 578 0225 08       		.byte	8
+ 579 0226 1E       		.byte	30
+ 580 0227 08       		.byte	8
+ 581 0228 21       		.byte	33
+ 582 0229 01       		.byte	1
+ 583 022a 22       		.byte	34
+ 584 022b 06       		.byte	6
+ 585 022c 26       		.byte	38
+ 586 022d 40       		.byte	64
+ 587 022e 27       		.byte	39
+ 588 022f 28       		.byte	40
+ 589 0230 2A       		.byte	42
+ 590 0231 04       		.byte	4
+ 591 0232 2B       		.byte	43
+ 592 0233 44       		.byte	68
+ 593 0234 2C       		.byte	44
+ 594 0235 04       		.byte	4
+ 595 0236 2D       		.byte	45
+ 596 0237 04       		.byte	4
+ 597 0238 2F       		.byte	47
+ 598 0239 08       		.byte	8
+ 599 023a 31       		.byte	49
+ 600 023b 08       		.byte	8
+ 601 023c 35       		.byte	53
+ 602 023d 10       		.byte	16
+ 603 023e 36       		.byte	54
+ 604 023f 42       		.byte	66
+ 605 0240 37       		.byte	55
+ 606 0241 04       		.byte	4
+ 607 0242 38       		.byte	56
+ 608 0243 84       		.byte	-124
+ 609 0244 39       		.byte	57
+ 610 0245 02       		.byte	2
+ 611 0246 3C       		.byte	60
+ 612 0247 44       		.byte	68
+ 613 0248 3D       		.byte	61
+ 614 0249 10       		.byte	16
+ 615 024a 3E       		.byte	62
+ 616 024b 01       		.byte	1
+ 617 024c 3F       		.byte	63
+ 618 024d 80       		.byte	-128
+ 619 024e 47       		.byte	71
+ 620 024f 20       		.byte	32
+ 621 0250 55       		.byte	85
+ 622 0251 40       		.byte	64
+ 623 0252 57       		.byte	87
+ 624 0253 44       		.byte	68
+ 625 0254 59       		.byte	89
+ 626 0255 20       		.byte	32
+ 627 0256 5A       		.byte	90
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccBiGH6B.s 			page 12
+
+
+ 628 0257 88       		.byte	-120
+ 629 0258 5B       		.byte	91
+ 630 0259 02       		.byte	2
+ 631 025a C0       		.byte	-64
+ 632 025b 67       		.byte	103
+ 633 025c C2       		.byte	-62
+ 634 025d B1       		.byte	-79
+ 635 025e C4       		.byte	-60
+ 636 025f 72       		.byte	114
+ 637 0260 CA       		.byte	-54
+ 638 0261 67       		.byte	103
+ 639 0262 CC       		.byte	-52
+ 640 0263 F2       		.byte	-14
+ 641 0264 CE       		.byte	-50
+ 642 0265 FB       		.byte	-5
+ 643 0266 D0       		.byte	-48
+ 644 0267 20       		.byte	32
+ 645 0268 D6       		.byte	-42
+ 646 0269 0F       		.byte	15
+ 647 026a 04       		.byte	4
+ 648 026b 04       		.byte	4
+ 649 026c 05       		.byte	5
+ 650 026d 04       		.byte	4
+ 651 026e 08       		.byte	8
+ 652 026f 02       		.byte	2
+ 653 0270 09       		.byte	9
+ 654 0271 02       		.byte	2
+ 655 0272 10       		.byte	16
+ 656 0273 06       		.byte	6
+ 657 0274 11       		.byte	17
+ 658 0275 06       		.byte	6
+ 659 0276 14       		.byte	20
+ 660 0277 06       		.byte	6
+ 661 0278 15       		.byte	21
+ 662 0279 06       		.byte	6
+ 663 027a 16       		.byte	22
+ 664 027b 01       		.byte	1
+ 665 027c 17       		.byte	23
+ 666 027d 01       		.byte	1
+ 667 027e 18       		.byte	24
+ 668 027f 01       		.byte	1
+ 669 0280 19       		.byte	25
+ 670 0281 07       		.byte	7
+ 671 0282 1A       		.byte	26
+ 672 0283 06       		.byte	6
+ 673 0284 1D       		.byte	29
+ 674 0285 06       		.byte	6
+ 675 0286 1E       		.byte	30
+ 676 0287 01       		.byte	1
+ 677 0288 1F       		.byte	31
+ 678 0289 01       		.byte	1
+ 679 028a 20       		.byte	32
+ 680 028b 07       		.byte	7
+ 681 028c 23       		.byte	35
+ 682 028d 01       		.byte	1
+ 683 028e 24       		.byte	36
+ 684 028f 07       		.byte	7
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccBiGH6B.s 			page 13
+
+
+ 685 0290 25       		.byte	37
+ 686 0291 01       		.byte	1
+ 687 0292 27       		.byte	39
+ 688 0293 06       		.byte	6
+ 689 0294 32       		.byte	50
+ 690 0295 07       		.byte	7
+ 691 0296 35       		.byte	53
+ 692 0297 07       		.byte	7
+ 693 0298 3B       		.byte	59
+ 694 0299 20       		.byte	32
+ 695 029a 40       		.byte	64
+ 696 029b 20       		.byte	32
+ 697 029c 41       		.byte	65
+ 698 029d 06       		.byte	6
+ 699 029e 49       		.byte	73
+ 700 029f FF       		.byte	-1
+ 701 02a0 4A       		.byte	74
+ 702 02a1 FF       		.byte	-1
+ 703 02a2 4B       		.byte	75
+ 704 02a3 FF       		.byte	-1
+ 705 02a4 4D       		.byte	77
+ 706 02a5 A0       		.byte	-96
+ 707 02a6 4F       		.byte	79
+ 708 02a7 04       		.byte	4
+ 709 02a8 50       		.byte	80
+ 710 02a9 18       		.byte	24
+ 711 02aa 58       		.byte	88
+ 712 02ab 04       		.byte	4
+ 713 02ac 59       		.byte	89
+ 714 02ad 04       		.byte	4
+ 715 02ae 5A       		.byte	90
+ 716 02af 04       		.byte	4
+ 717 02b0 5C       		.byte	92
+ 718 02b1 11       		.byte	17
+ 719 02b2 5D       		.byte	93
+ 720 02b3 02       		.byte	2
+ 721 02b4 5F       		.byte	95
+ 722 02b5 01       		.byte	1
+ 723 02b6 60       		.byte	96
+ 724 02b7 40       		.byte	64
+ 725 02b8 62       		.byte	98
+ 726 02b9 C0       		.byte	-64
+ 727 02ba 64       		.byte	100
+ 728 02bb 40       		.byte	64
+ 729 02bc 65       		.byte	101
+ 730 02bd 40       		.byte	64
+ 731 02be 66       		.byte	102
+ 732 02bf C0       		.byte	-64
+ 733 02c0 68       		.byte	104
+ 734 02c1 C0       		.byte	-64
+ 735 02c2 6A       		.byte	106
+ 736 02c3 C0       		.byte	-64
+ 737 02c4 6C       		.byte	108
+ 738 02c5 C0       		.byte	-64
+ 739 02c6 6E       		.byte	110
+ 740 02c7 C0       		.byte	-64
+ 741 02c8 82       		.byte	-126
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccBiGH6B.s 			page 14
+
+
+ 742 02c9 01       		.byte	1
+ 743 02ca 87       		.byte	-121
+ 744 02cb 01       		.byte	1
+ 745 02cc 96       		.byte	-106
+ 746 02cd 02       		.byte	2
+ 747 02ce A6       		.byte	-90
+ 748 02cf 02       		.byte	2
+ 749 02d0 A7       		.byte	-89
+ 750 02d1 01       		.byte	1
+ 751 02d2 B2       		.byte	-78
+ 752 02d3 02       		.byte	2
+ 753 02d4 B4       		.byte	-76
+ 754 02d5 01       		.byte	1
+ 755 02d6 B5       		.byte	-75
+ 756 02d7 01       		.byte	1
+ 757 02d8 BF       		.byte	-65
+ 758 02d9 10       		.byte	16
+ 759 02da C0       		.byte	-64
+ 760 02db 30       		.byte	48
+ 761 02dc C1       		.byte	-63
+ 762 02dd 02       		.byte	2
+ 763 02de C5       		.byte	-59
+ 764 02df D0       		.byte	-48
+ 765 02e0 C6       		.byte	-58
+ 766 02e1 10       		.byte	16
+ 767 02e2 C7       		.byte	-57
+ 768 02e3 02       		.byte	2
+ 769 02e4 C8       		.byte	-56
+ 770 02e5 1A       		.byte	26
+ 771 02e6 C9       		.byte	-55
+ 772 02e7 FF       		.byte	-1
+ 773 02e8 CA       		.byte	-54
+ 774 02e9 FF       		.byte	-1
+ 775 02ea CB       		.byte	-53
+ 776 02eb FF       		.byte	-1
+ 777 02ec CD       		.byte	-51
+ 778 02ed AF       		.byte	-81
+ 779 02ee CE       		.byte	-50
+ 780 02ef 0F       		.byte	15
+ 781 02f0 CF       		.byte	-49
+ 782 02f1 04       		.byte	4
+ 783 02f2 D0       		.byte	-48
+ 784 02f3 18       		.byte	24
+ 785 02f4 D2       		.byte	-46
+ 786 02f5 80       		.byte	-128
+ 787 02f6 D4       		.byte	-44
+ 788 02f7 05       		.byte	5
+ 789 02f8 D8       		.byte	-40
+ 790 02f9 04       		.byte	4
+ 791 02fa D9       		.byte	-39
+ 792 02fb 04       		.byte	4
+ 793 02fc DA       		.byte	-38
+ 794 02fd 04       		.byte	4
+ 795 02fe DB       		.byte	-37
+ 796 02ff 04       		.byte	4
+ 797 0300 DC       		.byte	-36
+ 798 0301 02       		.byte	2
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccBiGH6B.s 			page 15
+
+
+ 799 0302 DD       		.byte	-35
+ 800 0303 22       		.byte	34
+ 801 0304 DF       		.byte	-33
+ 802 0305 01       		.byte	1
+ 803 0306 E0       		.byte	-32
+ 804 0307 40       		.byte	64
+ 805 0308 E2       		.byte	-30
+ 806 0309 C0       		.byte	-64
+ 807 030a E4       		.byte	-28
+ 808 030b 40       		.byte	64
+ 809 030c E5       		.byte	-27
+ 810 030d 40       		.byte	64
+ 811 030e E6       		.byte	-26
+ 812 030f C0       		.byte	-64
+ 813 0310 E8       		.byte	-24
+ 814 0311 C0       		.byte	-64
+ 815 0312 EA       		.byte	-22
+ 816 0313 C0       		.byte	-64
+ 817 0314 EC       		.byte	-20
+ 818 0315 C0       		.byte	-64
+ 819 0316 EE       		.byte	-18
+ 820 0317 C0       		.byte	-64
+ 821 0318 00       		.byte	0
+ 822 0319 14       		.byte	20
+ 823 031a 06       		.byte	6
+ 824 031b 40       		.byte	64
+ 825 031c 08       		.byte	8
+ 826 031d A1       		.byte	-95
+ 827 031e 0A       		.byte	10
+ 828 031f 20       		.byte	32
+ 829 0320 0F       		.byte	15
+ 830 0321 20       		.byte	32
+ 831 0322 10       		.byte	16
+ 832 0323 80       		.byte	-128
+ 833 0324 12       		.byte	18
+ 834 0325 20       		.byte	32
+ 835 0326 14       		.byte	20
+ 836 0327 10       		.byte	16
+ 837 0328 19       		.byte	25
+ 838 0329 08       		.byte	8
+ 839 032a 1D       		.byte	29
+ 840 032b 28       		.byte	40
+ 841 032c 1E       		.byte	30
+ 842 032d 04       		.byte	4
+ 843 032e 21       		.byte	33
+ 844 032f 10       		.byte	16
+ 845 0330 22       		.byte	34
+ 846 0331 10       		.byte	16
+ 847 0332 27       		.byte	39
+ 848 0333 08       		.byte	8
+ 849 0334 28       		.byte	40
+ 850 0335 A0       		.byte	-96
+ 851 0336 2C       		.byte	44
+ 852 0337 10       		.byte	16
+ 853 0338 2E       		.byte	46
+ 854 0339 04       		.byte	4
+ 855 033a 30       		.byte	48
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccBiGH6B.s 			page 16
+
+
+ 856 033b 89       		.byte	-119
+ 857 033c 32       		.byte	50
+ 858 033d 20       		.byte	32
+ 859 033e 38       		.byte	56
+ 860 033f 14       		.byte	20
+ 861 0340 3C       		.byte	60
+ 862 0341 08       		.byte	8
+ 863 0342 41       		.byte	65
+ 864 0343 20       		.byte	32
+ 865 0344 44       		.byte	68
+ 866 0345 10       		.byte	16
+ 867 0346 46       		.byte	70
+ 868 0347 04       		.byte	4
+ 869 0348 48       		.byte	72
+ 870 0349 04       		.byte	4
+ 871 034a 4F       		.byte	79
+ 872 034b 01       		.byte	1
+ 873 034c 54       		.byte	84
+ 874 034d 04       		.byte	4
+ 875 034e 56       		.byte	86
+ 876 034f 04       		.byte	4
+ 877 0350 57       		.byte	87
+ 878 0351 10       		.byte	16
+ 879 0352 5E       		.byte	94
+ 880 0353 80       		.byte	-128
+ 881 0354 5F       		.byte	95
+ 882 0355 09       		.byte	9
+ 883 0356 76       		.byte	118
+ 884 0357 40       		.byte	64
+ 885 0358 80       		.byte	-128
+ 886 0359 20       		.byte	32
+ 887 035a 84       		.byte	-124
+ 888 035b 08       		.byte	8
+ 889 035c 85       		.byte	-123
+ 890 035d 18       		.byte	24
+ 891 035e 88       		.byte	-120
+ 892 035f 81       		.byte	-127
+ 893 0360 8C       		.byte	-116
+ 894 0361 14       		.byte	20
+ 895 0362 8D       		.byte	-115
+ 896 0363 08       		.byte	8
+ 897 0364 96       		.byte	-106
+ 898 0365 20       		.byte	32
+ 899 0366 98       		.byte	-104
+ 900 0367 80       		.byte	-128
+ 901 0368 A2       		.byte	-94
+ 902 0369 60       		.byte	96
+ 903 036a A5       		.byte	-91
+ 904 036b 08       		.byte	8
+ 905 036c A7       		.byte	-89
+ 906 036d 10       		.byte	16
+ 907 036e A8       		.byte	-88
+ 908 036f 80       		.byte	-128
+ 909 0370 AA       		.byte	-86
+ 910 0371 10       		.byte	16
+ 911 0372 C0       		.byte	-64
+ 912 0373 16       		.byte	22
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccBiGH6B.s 			page 17
+
+
+ 913 0374 C2       		.byte	-62
+ 914 0375 2F       		.byte	47
+ 915 0376 C4       		.byte	-60
+ 916 0377 2C       		.byte	44
+ 917 0378 CA       		.byte	-54
+ 918 0379 43       		.byte	67
+ 919 037a CC       		.byte	-52
+ 920 037b 0F       		.byte	15
+ 921 037c CE       		.byte	-50
+ 922 037d 46       		.byte	70
+ 923 037e D0       		.byte	-48
+ 924 037f 64       		.byte	100
+ 925 0380 D2       		.byte	-46
+ 926 0381 04       		.byte	4
+ 927 0382 D6       		.byte	-42
+ 928 0383 D0       		.byte	-48
+ 929 0384 E0       		.byte	-32
+ 930 0385 02       		.byte	2
+ 931 0386 E4       		.byte	-28
+ 932 0387 08       		.byte	8
+ 933 0388 E6       		.byte	-26
+ 934 0389 14       		.byte	20
+ 935 038a EC       		.byte	-20
+ 936 038b 04       		.byte	4
+ 937 038c EE       		.byte	-18
+ 938 038d 01       		.byte	1
+ 939 038e 03       		.byte	3
+ 940 038f 02       		.byte	2
+ 941 0390 05       		.byte	5
+ 942 0391 02       		.byte	2
+ 943 0392 0B       		.byte	11
+ 944 0393 01       		.byte	1
+ 945 0394 0F       		.byte	15
+ 946 0395 02       		.byte	2
+ 947 0396 13       		.byte	19
+ 948 0397 02       		.byte	2
+ 949 0398 16       		.byte	22
+ 950 0399 01       		.byte	1
+ 951 039a 29       		.byte	41
+ 952 039b 01       		.byte	1
+ 953 039c 2F       		.byte	47
+ 954 039d 02       		.byte	2
+ 955 039e 32       		.byte	50
+ 956 039f 01       		.byte	1
+ 957 03a0 33       		.byte	51
+ 958 03a1 02       		.byte	2
+ 959 03a2 37       		.byte	55
+ 960 03a3 01       		.byte	1
+ 961 03a4 3F       		.byte	63
+ 962 03a5 04       		.byte	4
+ 963 03a6 58       		.byte	88
+ 964 03a7 04       		.byte	4
+ 965 03a8 59       		.byte	89
+ 966 03a9 04       		.byte	4
+ 967 03aa 5C       		.byte	92
+ 968 03ab 22       		.byte	34
+ 969 03ac 5F       		.byte	95
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccBiGH6B.s 			page 18
+
+
+ 970 03ad 01       		.byte	1
+ 971 03ae 83       		.byte	-125
+ 972 03af 03       		.byte	3
+ 973 03b0 89       		.byte	-119
+ 974 03b1 0C       		.byte	12
+ 975 03b2 8B       		.byte	-117
+ 976 03b3 30       		.byte	48
+ 977 03b4 8E       		.byte	-114
+ 978 03b5 02       		.byte	2
+ 979 03b6 8F       		.byte	-113
+ 980 03b7 03       		.byte	3
+ 981 03b8 91       		.byte	-111
+ 982 03b9 14       		.byte	20
+ 983 03ba 92       		.byte	-110
+ 984 03bb 06       		.byte	6
+ 985 03bc 93       		.byte	-109
+ 986 03bd 28       		.byte	40
+ 987 03be 94       		.byte	-108
+ 988 03bf 06       		.byte	6
+ 989 03c0 95       		.byte	-107
+ 990 03c1 3F       		.byte	63
+ 991 03c2 9A       		.byte	-102
+ 992 03c3 04       		.byte	4
+ 993 03c4 9B       		.byte	-101
+ 994 03c5 3C       		.byte	60
+ 995 03c6 9D       		.byte	-99
+ 996 03c7 14       		.byte	20
+ 997 03c8 9E       		.byte	-98
+ 998 03c9 06       		.byte	6
+ 999 03ca 9F       		.byte	-97
+ 1000 03cb 28       		.byte	40
+ 1001 03cc A3       		.byte	-93
+ 1002 03cd 02       		.byte	2
+ 1003 03ce A7       		.byte	-89
+ 1004 03cf 01       		.byte	1
+ 1005 03d0 A9       		.byte	-87
+ 1006 03d1 0C       		.byte	12
+ 1007 03d2 AB       		.byte	-85
+ 1008 03d3 30       		.byte	48
+ 1009 03d4 AC       		.byte	-84
+ 1010 03d5 02       		.byte	2
+ 1011 03d6 AD       		.byte	-83
+ 1012 03d7 01       		.byte	1
+ 1013 03d8 AE       		.byte	-82
+ 1014 03d9 01       		.byte	1
+ 1015 03da B1       		.byte	-79
+ 1016 03db 03       		.byte	3
+ 1017 03dc B3       		.byte	-77
+ 1018 03dd 3C       		.byte	60
+ 1019 03de B4       		.byte	-76
+ 1020 03df 06       		.byte	6
+ 1021 03e0 B6       		.byte	-74
+ 1022 03e1 01       		.byte	1
+ 1023 03e2 D4       		.byte	-44
+ 1024 03e3 03       		.byte	3
+ 1025 03e4 D6       		.byte	-42
+ 1026 03e5 04       		.byte	4
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccBiGH6B.s 			page 19
+
+
+ 1027 03e6 D8       		.byte	-40
+ 1028 03e7 04       		.byte	4
+ 1029 03e8 D9       		.byte	-39
+ 1030 03e9 04       		.byte	4
+ 1031 03ea DB       		.byte	-37
+ 1032 03eb 04       		.byte	4
+ 1033 03ec DF       		.byte	-33
+ 1034 03ed 05       		.byte	5
+ 1035 03ee 01       		.byte	1
+ 1036 03ef 80       		.byte	-128
+ 1037 03f0 09       		.byte	9
+ 1038 03f1 08       		.byte	8
+ 1039 03f2 0A       		.byte	10
+ 1040 03f3 04       		.byte	4
+ 1041 03f4 0B       		.byte	11
+ 1042 03f5 41       		.byte	65
+ 1043 03f6 0F       		.byte	15
+ 1044 03f7 20       		.byte	32
+ 1045 03f8 11       		.byte	17
+ 1046 03f9 40       		.byte	64
+ 1047 03fa 19       		.byte	25
+ 1048 03fb 80       		.byte	-128
+ 1049 03fc 1A       		.byte	26
+ 1050 03fd 04       		.byte	4
+ 1051 03fe 1E       		.byte	30
+ 1052 03ff 10       		.byte	16
+ 1053 0400 21       		.byte	33
+ 1054 0401 01       		.byte	1
+ 1055 0402 22       		.byte	34
+ 1056 0403 02       		.byte	2
+ 1057 0404 23       		.byte	35
+ 1058 0405 20       		.byte	32
+ 1059 0406 26       		.byte	38
+ 1060 0407 40       		.byte	64
+ 1061 0408 27       		.byte	39
+ 1062 0409 10       		.byte	16
+ 1063 040a 28       		.byte	40
+ 1064 040b 20       		.byte	32
+ 1065 040c 29       		.byte	41
+ 1066 040d A2       		.byte	-94
+ 1067 040e 2D       		.byte	45
+ 1068 040f 80       		.byte	-128
+ 1069 0410 2E       		.byte	46
+ 1070 0411 10       		.byte	16
+ 1071 0412 30       		.byte	48
+ 1072 0413 04       		.byte	4
+ 1073 0414 31       		.byte	49
+ 1074 0415 08       		.byte	8
+ 1075 0416 32       		.byte	50
+ 1076 0417 40       		.byte	64
+ 1077 0418 33       		.byte	51
+ 1078 0419 11       		.byte	17
+ 1079 041a 35       		.byte	53
+ 1080 041b 02       		.byte	2
+ 1081 041c 36       		.byte	54
+ 1082 041d 02       		.byte	2
+ 1083 041e 39       		.byte	57
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccBiGH6B.s 			page 20
+
+
+ 1084 041f 10       		.byte	16
+ 1085 0420 3B       		.byte	59
+ 1086 0421 41       		.byte	65
+ 1087 0422 3F       		.byte	63
+ 1088 0423 69       		.byte	105
+ 1089 0424 59       		.byte	89
+ 1090 0425 05       		.byte	5
+ 1091 0426 5A       		.byte	90
+ 1092 0427 40       		.byte	64
+ 1093 0428 5B       		.byte	91
+ 1094 0429 20       		.byte	32
+ 1095 042a 62       		.byte	98
+ 1096 042b 01       		.byte	1
+ 1097 042c 78       		.byte	120
+ 1098 042d 04       		.byte	4
+ 1099 042e 8C       		.byte	-116
+ 1100 042f 20       		.byte	32
+ 1101 0430 8D       		.byte	-115
+ 1102 0431 40       		.byte	64
+ 1103 0432 8E       		.byte	-114
+ 1104 0433 01       		.byte	1
+ 1105 0434 8F       		.byte	-113
+ 1106 0435 04       		.byte	4
+ 1107 0436 91       		.byte	-111
+ 1108 0437 10       		.byte	16
+ 1109 0438 92       		.byte	-110
+ 1110 0439 C0       		.byte	-64
+ 1111 043a 93       		.byte	-109
+ 1112 043b 41       		.byte	65
+ 1113 043c 95       		.byte	-107
+ 1114 043d 02       		.byte	2
+ 1115 043e 99       		.byte	-103
+ 1116 043f 25       		.byte	37
+ 1117 0440 9B       		.byte	-101
+ 1118 0441 01       		.byte	1
+ 1119 0442 9F       		.byte	-97
+ 1120 0443 10       		.byte	16
+ 1121 0444 A2       		.byte	-94
+ 1122 0445 20       		.byte	32
+ 1123 0446 A5       		.byte	-91
+ 1124 0447 08       		.byte	8
+ 1125 0448 B5       		.byte	-75
+ 1126 0449 10       		.byte	16
+ 1127 044a C0       		.byte	-64
+ 1128 044b 01       		.byte	1
+ 1129 044c C2       		.byte	-62
+ 1130 044d 2F       		.byte	47
+ 1131 044e C4       		.byte	-60
+ 1132 044f 01       		.byte	1
+ 1133 0450 CA       		.byte	-54
+ 1134 0451 3F       		.byte	63
+ 1135 0452 CC       		.byte	-52
+ 1136 0453 8F       		.byte	-113
+ 1137 0454 CE       		.byte	-50
+ 1138 0455 FD       		.byte	-3
+ 1139 0456 D6       		.byte	-42
+ 1140 0457 0F       		.byte	15
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccBiGH6B.s 			page 21
+
+
+ 1141 0458 D8       		.byte	-40
+ 1142 0459 01       		.byte	1
+ 1143 045a DE       		.byte	-34
+ 1144 045b 02       		.byte	2
+ 1145 045c E0       		.byte	-32
+ 1146 045d 40       		.byte	64
+ 1147 045e E2       		.byte	-30
+ 1148 045f 08       		.byte	8
+ 1149 0460 E6       		.byte	-26
+ 1150 0461 40       		.byte	64
+ 1151 0462 02       		.byte	2
+ 1152 0463 0C       		.byte	12
+ 1153 0464 04       		.byte	4
+ 1154 0465 14       		.byte	20
+ 1155 0466 06       		.byte	6
+ 1156 0467 21       		.byte	33
+ 1157 0468 08       		.byte	8
+ 1158 0469 70       		.byte	112
+ 1159 046a 09       		.byte	9
+ 1160 046b 02       		.byte	2
+ 1161 046c 0F       		.byte	15
+ 1162 046d 01       		.byte	1
+ 1163 046e 10       		.byte	16
+ 1164 046f 2C       		.byte	44
+ 1165 0470 12       		.byte	18
+ 1166 0471 52       		.byte	82
+ 1167 0472 14       		.byte	20
+ 1168 0473 70       		.byte	112
+ 1169 0474 18       		.byte	24
+ 1170 0475 48       		.byte	72
+ 1171 0476 1A       		.byte	26
+ 1172 0477 21       		.byte	33
+ 1173 0478 1E       		.byte	30
+ 1174 0479 0C       		.byte	12
+ 1175 047a 20       		.byte	32
+ 1176 047b 0C       		.byte	12
+ 1177 047c 24       		.byte	36
+ 1178 047d 0C       		.byte	12
+ 1179 047e 25       		.byte	37
+ 1180 047f 02       		.byte	2
+ 1181 0480 2A       		.byte	42
+ 1182 0481 0C       		.byte	12
+ 1183 0482 2B       		.byte	43
+ 1184 0483 01       		.byte	1
+ 1185 0484 2D       		.byte	45
+ 1186 0485 02       		.byte	2
+ 1187 0486 30       		.byte	48
+ 1188 0487 70       		.byte	112
+ 1189 0488 31       		.byte	49
+ 1190 0489 02       		.byte	2
+ 1191 048a 34       		.byte	52
+ 1192 048b 0C       		.byte	12
+ 1193 048c 36       		.byte	54
+ 1194 048d 03       		.byte	3
+ 1195 048e 37       		.byte	55
+ 1196 048f 01       		.byte	1
+ 1197 0490 3E       		.byte	62
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccBiGH6B.s 			page 22
+
+
+ 1198 0491 40       		.byte	64
+ 1199 0492 3F       		.byte	63
+ 1200 0493 40       		.byte	64
+ 1201 0494 40       		.byte	64
+ 1202 0495 64       		.byte	100
+ 1203 0496 41       		.byte	65
+ 1204 0497 03       		.byte	3
+ 1205 0498 42       		.byte	66
+ 1206 0499 02       		.byte	2
+ 1207 049a 44       		.byte	68
+ 1208 049b 01       		.byte	1
+ 1209 049c 45       		.byte	69
+ 1210 049d 0E       		.byte	14
+ 1211 049e 46       		.byte	70
+ 1212 049f 0C       		.byte	12
+ 1213 04a0 48       		.byte	72
+ 1214 04a1 05       		.byte	5
+ 1215 04a2 49       		.byte	73
+ 1216 04a3 FF       		.byte	-1
+ 1217 04a4 4A       		.byte	74
+ 1218 04a5 FF       		.byte	-1
+ 1219 04a6 4B       		.byte	75
+ 1220 04a7 FF       		.byte	-1
+ 1221 04a8 4C       		.byte	76
+ 1222 04a9 62       		.byte	98
+ 1223 04aa 4D       		.byte	77
+ 1224 04ab A0       		.byte	-96
+ 1225 04ac 4E       		.byte	78
+ 1226 04ad F0       		.byte	-16
+ 1227 04ae 4F       		.byte	79
+ 1228 04af 41       		.byte	65
+ 1229 04b0 50       		.byte	80
+ 1230 04b1 0C       		.byte	12
+ 1231 04b2 54       		.byte	84
+ 1232 04b3 18       		.byte	24
+ 1233 04b4 56       		.byte	86
+ 1234 04b5 04       		.byte	4
+ 1235 04b6 58       		.byte	88
+ 1236 04b7 04       		.byte	4
+ 1237 04b8 59       		.byte	89
+ 1238 04b9 04       		.byte	4
+ 1239 04ba 5A       		.byte	90
+ 1240 04bb 04       		.byte	4
+ 1241 04bc 5B       		.byte	91
+ 1242 04bd 04       		.byte	4
+ 1243 04be 5C       		.byte	92
+ 1244 04bf 11       		.byte	17
+ 1245 04c0 5D       		.byte	93
+ 1246 04c1 11       		.byte	17
+ 1247 04c2 5F       		.byte	95
+ 1248 04c3 01       		.byte	1
+ 1249 04c4 66       		.byte	102
+ 1250 04c5 40       		.byte	64
+ 1251 04c6 67       		.byte	103
+ 1252 04c7 02       		.byte	2
+ 1253 04c8 69       		.byte	105
+ 1254 04c9 10       		.byte	16
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccBiGH6B.s 			page 23
+
+
+ 1255 04ca 6A       		.byte	106
+ 1256 04cb 30       		.byte	48
+ 1257 04cc 6B       		.byte	107
+ 1258 04cd 10       		.byte	16
+ 1259 04ce 6D       		.byte	109
+ 1260 04cf 10       		.byte	16
+ 1261 04d0 6E       		.byte	110
+ 1262 04d1 10       		.byte	16
+ 1263 04d2 6F       		.byte	111
+ 1264 04d3 12       		.byte	18
+ 1265 04d4 84       		.byte	-124
+ 1266 04d5 03       		.byte	3
+ 1267 04d6 86       		.byte	-122
+ 1268 04d7 04       		.byte	4
+ 1269 04d8 88       		.byte	-120
+ 1270 04d9 03       		.byte	3
+ 1271 04da 8A       		.byte	-118
+ 1272 04db 04       		.byte	4
+ 1273 04dc 8C       		.byte	-116
+ 1274 04dd 0A       		.byte	10
+ 1275 04de 8E       		.byte	-114
+ 1276 04df 04       		.byte	4
+ 1277 04e0 96       		.byte	-106
+ 1278 04e1 08       		.byte	8
+ 1279 04e2 98       		.byte	-104
+ 1280 04e3 03       		.byte	3
+ 1281 04e4 9A       		.byte	-102
+ 1282 04e5 0C       		.byte	12
+ 1283 04e6 AE       		.byte	-82
+ 1284 04e7 05       		.byte	5
+ 1285 04e8 B2       		.byte	-78
+ 1286 04e9 0F       		.byte	15
+ 1287 04ea BA       		.byte	-70
+ 1288 04eb 08       		.byte	8
+ 1289 04ec C0       		.byte	-64
+ 1290 04ed 34       		.byte	52
+ 1291 04ee C1       		.byte	-63
+ 1292 04ef 02       		.byte	2
+ 1293 04f0 C5       		.byte	-59
+ 1294 04f1 0C       		.byte	12
+ 1295 04f2 C6       		.byte	-58
+ 1296 04f3 0E       		.byte	14
+ 1297 04f4 C7       		.byte	-57
+ 1298 04f5 0B       		.byte	11
+ 1299 04f6 C8       		.byte	-56
+ 1300 04f7 15       		.byte	21
+ 1301 04f8 C9       		.byte	-55
+ 1302 04f9 FF       		.byte	-1
+ 1303 04fa CA       		.byte	-54
+ 1304 04fb FF       		.byte	-1
+ 1305 04fc CB       		.byte	-53
+ 1306 04fd FF       		.byte	-1
+ 1307 04fe CE       		.byte	-50
+ 1308 04ff F0       		.byte	-16
+ 1309 0500 CF       		.byte	-49
+ 1310 0501 44       		.byte	68
+ 1311 0502 D0       		.byte	-48
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccBiGH6B.s 			page 24
+
+
+ 1312 0503 0C       		.byte	12
+ 1313 0504 D8       		.byte	-40
+ 1314 0505 04       		.byte	4
+ 1315 0506 DA       		.byte	-38
+ 1316 0507 04       		.byte	4
+ 1317 0508 DC       		.byte	-36
+ 1318 0509 01       		.byte	1
+ 1319 050a DD       		.byte	-35
+ 1320 050b 01       		.byte	1
+ 1321 050c DF       		.byte	-33
+ 1322 050d 01       		.byte	1
+ 1323 050e E6       		.byte	-26
+ 1324 050f C0       		.byte	-64
+ 1325 0510 EA       		.byte	-22
+ 1326 0511 40       		.byte	64
+ 1327 0512 EB       		.byte	-21
+ 1328 0513 02       		.byte	2
+ 1329 0514 00       		.byte	0
+ 1330 0515 24       		.byte	36
+ 1331 0516 02       		.byte	2
+ 1332 0517 02       		.byte	2
+ 1333 0518 05       		.byte	5
+ 1334 0519 08       		.byte	8
+ 1335 051a 06       		.byte	6
+ 1336 051b 08       		.byte	8
+ 1337 051c 07       		.byte	7
+ 1338 051d 40       		.byte	64
+ 1339 051e 08       		.byte	8
+ 1340 051f 20       		.byte	32
+ 1341 0520 09       		.byte	9
+ 1342 0521 08       		.byte	8
+ 1343 0522 0D       		.byte	13
+ 1344 0523 20       		.byte	32
+ 1345 0524 0E       		.byte	14
+ 1346 0525 51       		.byte	81
+ 1347 0526 11       		.byte	17
+ 1348 0527 80       		.byte	-128
+ 1349 0528 14       		.byte	20
+ 1350 0529 88       		.byte	-120
+ 1351 052a 17       		.byte	23
+ 1352 052b 04       		.byte	4
+ 1353 052c 1B       		.byte	27
+ 1354 052d 08       		.byte	8
+ 1355 052e 1D       		.byte	29
+ 1356 052f 80       		.byte	-128
+ 1357 0530 1E       		.byte	30
+ 1358 0531 40       		.byte	64
+ 1359 0532 1F       		.byte	31
+ 1360 0533 10       		.byte	16
+ 1361 0534 25       		.byte	37
+ 1362 0535 02       		.byte	2
+ 1363 0536 26       		.byte	38
+ 1364 0537 80       		.byte	-128
+ 1365 0538 27       		.byte	39
+ 1366 0539 40       		.byte	64
+ 1367 053a 2C       		.byte	44
+ 1368 053b 24       		.byte	36
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccBiGH6B.s 			page 25
+
+
+ 1369 053c 2D       		.byte	45
+ 1370 053d 50       		.byte	80
+ 1371 053e 2E       		.byte	46
+ 1372 053f 08       		.byte	8
+ 1373 0540 3E       		.byte	62
+ 1374 0541 10       		.byte	16
+ 1375 0542 3F       		.byte	63
+ 1376 0543 80       		.byte	-128
+ 1377 0544 40       		.byte	64
+ 1378 0545 64       		.byte	100
+ 1379 0546 43       		.byte	67
+ 1380 0547 08       		.byte	8
+ 1381 0548 44       		.byte	68
+ 1382 0549 04       		.byte	4
+ 1383 054a 45       		.byte	69
+ 1384 054b 82       		.byte	-126
+ 1385 054c 47       		.byte	71
+ 1386 054d 04       		.byte	4
+ 1387 054e 48       		.byte	72
+ 1388 054f 10       		.byte	16
+ 1389 0550 4D       		.byte	77
+ 1390 0551 24       		.byte	36
+ 1391 0552 50       		.byte	80
+ 1392 0553 48       		.byte	72
+ 1393 0554 57       		.byte	87
+ 1394 0555 40       		.byte	64
+ 1395 0556 59       		.byte	89
+ 1396 0557 30       		.byte	48
+ 1397 0558 5F       		.byte	95
+ 1398 0559 02       		.byte	2
+ 1399 055a 62       		.byte	98
+ 1400 055b C0       		.byte	-64
+ 1401 055c 66       		.byte	102
+ 1402 055d 40       		.byte	64
+ 1403 055e 67       		.byte	103
+ 1404 055f 84       		.byte	-124
+ 1405 0560 87       		.byte	-121
+ 1406 0561 40       		.byte	64
+ 1407 0562 90       		.byte	-112
+ 1408 0563 40       		.byte	64
+ 1409 0564 93       		.byte	-109
+ 1410 0565 04       		.byte	4
+ 1411 0566 94       		.byte	-108
+ 1412 0567 84       		.byte	-124
+ 1413 0568 95       		.byte	-107
+ 1414 0569 04       		.byte	4
+ 1415 056a 96       		.byte	-106
+ 1416 056b 01       		.byte	1
+ 1417 056c 9B       		.byte	-101
+ 1418 056d 04       		.byte	4
+ 1419 056e 9C       		.byte	-100
+ 1420 056f 08       		.byte	8
+ 1421 0570 9D       		.byte	-99
+ 1422 0571 10       		.byte	16
+ 1423 0572 A1       		.byte	-95
+ 1424 0573 48       		.byte	72
+ 1425 0574 A2       		.byte	-94
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccBiGH6B.s 			page 26
+
+
+ 1426 0575 06       		.byte	6
+ 1427 0576 A3       		.byte	-93
+ 1428 0577 04       		.byte	4
+ 1429 0578 A4       		.byte	-92
+ 1430 0579 10       		.byte	16
+ 1431 057a A7       		.byte	-89
+ 1432 057b 08       		.byte	8
+ 1433 057c B7       		.byte	-73
+ 1434 057d 04       		.byte	4
+ 1435 057e C0       		.byte	-64
+ 1436 057f 77       		.byte	119
+ 1437 0580 C2       		.byte	-62
+ 1438 0581 F6       		.byte	-10
+ 1439 0582 C4       		.byte	-60
+ 1440 0583 71       		.byte	113
+ 1441 0584 CA       		.byte	-54
+ 1442 0585 70       		.byte	112
+ 1443 0586 CE       		.byte	-50
+ 1444 0587 30       		.byte	48
+ 1445 0588 D0       		.byte	-48
+ 1446 0589 F7       		.byte	-9
+ 1447 058a D2       		.byte	-46
+ 1448 058b 20       		.byte	32
+ 1449 058c D6       		.byte	-42
+ 1450 058d 80       		.byte	-128
+ 1451 058e D8       		.byte	-40
+ 1452 058f B0       		.byte	-80
+ 1453 0590 EC       		.byte	-20
+ 1454 0591 10       		.byte	16
+ 1455 0592 02       		.byte	2
+ 1456 0593 03       		.byte	3
+ 1457 0594 04       		.byte	4
+ 1458 0595 0C       		.byte	12
+ 1459 0596 06       		.byte	6
+ 1460 0597 11       		.byte	17
+ 1461 0598 07       		.byte	7
+ 1462 0599 03       		.byte	3
+ 1463 059a 08       		.byte	8
+ 1464 059b 10       		.byte	16
+ 1465 059c 0A       		.byte	10
+ 1466 059d 0C       		.byte	12
+ 1467 059e 0F       		.byte	15
+ 1468 059f 01       		.byte	1
+ 1469 05a0 11       		.byte	17
+ 1470 05a1 06       		.byte	6
+ 1471 05a2 13       		.byte	19
+ 1472 05a3 01       		.byte	1
+ 1473 05a4 14       		.byte	20
+ 1474 05a5 09       		.byte	9
+ 1475 05a6 16       		.byte	22
+ 1476 05a7 10       		.byte	16
+ 1477 05a8 17       		.byte	23
+ 1478 05a9 06       		.byte	6
+ 1479 05aa 1D       		.byte	29
+ 1480 05ab 08       		.byte	8
+ 1481 05ac 24       		.byte	36
+ 1482 05ad 10       		.byte	16
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccBiGH6B.s 			page 27
+
+
+ 1483 05ae 27       		.byte	39
+ 1484 05af 05       		.byte	5
+ 1485 05b0 28       		.byte	40
+ 1486 05b1 14       		.byte	20
+ 1487 05b2 2B       		.byte	43
+ 1488 05b3 02       		.byte	2
+ 1489 05b4 2C       		.byte	44
+ 1490 05b5 1C       		.byte	28
+ 1491 05b6 2E       		.byte	46
+ 1492 05b7 02       		.byte	2
+ 1493 05b8 30       		.byte	48
+ 1494 05b9 1F       		.byte	31
+ 1495 05ba 31       		.byte	49
+ 1496 05bb 08       		.byte	8
+ 1497 05bc 35       		.byte	53
+ 1498 05bd 07       		.byte	7
+ 1499 05be 3B       		.byte	59
+ 1500 05bf 20       		.byte	32
+ 1501 05c0 3F       		.byte	63
+ 1502 05c1 01       		.byte	1
+ 1503 05c2 58       		.byte	88
+ 1504 05c3 04       		.byte	4
+ 1505 05c4 59       		.byte	89
+ 1506 05c5 04       		.byte	4
+ 1507 05c6 5C       		.byte	92
+ 1508 05c7 11       		.byte	17
+ 1509 05c8 5F       		.byte	95
+ 1510 05c9 01       		.byte	1
+ 1511 05ca 82       		.byte	-126
+ 1512 05cb C3       		.byte	-61
+ 1513 05cc 85       		.byte	-123
+ 1514 05cd 03       		.byte	3
+ 1515 05ce 86       		.byte	-122
+ 1516 05cf 20       		.byte	32
+ 1517 05d0 88       		.byte	-120
+ 1518 05d1 E3       		.byte	-29
+ 1519 05d2 89       		.byte	-119
+ 1520 05d3 03       		.byte	3
+ 1521 05d4 8A       		.byte	-118
+ 1522 05d5 0C       		.byte	12
+ 1523 05d6 8C       		.byte	-116
+ 1524 05d7 08       		.byte	8
+ 1525 05d8 90       		.byte	-112
+ 1526 05d9 03       		.byte	3
+ 1527 05da 94       		.byte	-108
+ 1528 05db 21       		.byte	33
+ 1529 05dc 96       		.byte	-106
+ 1530 05dd 10       		.byte	16
+ 1531 05de 98       		.byte	-104
+ 1532 05df 02       		.byte	2
+ 1533 05e0 99       		.byte	-103
+ 1534 05e1 02       		.byte	2
+ 1535 05e2 9B       		.byte	-101
+ 1536 05e3 01       		.byte	1
+ 1537 05e4 9C       		.byte	-100
+ 1538 05e5 2C       		.byte	44
+ 1539 05e6 9E       		.byte	-98
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccBiGH6B.s 			page 28
+
+
+ 1540 05e7 83       		.byte	-125
+ 1541 05e8 A0       		.byte	-96
+ 1542 05e9 0C       		.byte	12
+ 1543 05ea A4       		.byte	-92
+ 1544 05eb EF       		.byte	-17
+ 1545 05ec A5       		.byte	-91
+ 1546 05ed 01       		.byte	1
+ 1547 05ee A7       		.byte	-89
+ 1548 05ef 02       		.byte	2
+ 1549 05f0 A8       		.byte	-88
+ 1550 05f1 04       		.byte	4
+ 1551 05f2 AC       		.byte	-84
+ 1552 05f3 2F       		.byte	47
+ 1553 05f4 AE       		.byte	-82
+ 1554 05f5 40       		.byte	64
+ 1555 05f6 B2       		.byte	-78
+ 1556 05f7 10       		.byte	16
+ 1557 05f8 B4       		.byte	-76
+ 1558 05f9 0F       		.byte	15
+ 1559 05fa B5       		.byte	-75
+ 1560 05fb 03       		.byte	3
+ 1561 05fc B6       		.byte	-74
+ 1562 05fd EC       		.byte	-20
+ 1563 05fe BA       		.byte	-70
+ 1564 05ff A0       		.byte	-96
+ 1565 0600 D6       		.byte	-42
+ 1566 0601 02       		.byte	2
+ 1567 0602 D7       		.byte	-41
+ 1568 0603 12       		.byte	18
+ 1569 0604 D8       		.byte	-40
+ 1570 0605 04       		.byte	4
+ 1571 0606 D9       		.byte	-39
+ 1572 0607 04       		.byte	4
+ 1573 0608 DB       		.byte	-37
+ 1574 0609 04       		.byte	4
+ 1575 060a DC       		.byte	-36
+ 1576 060b 11       		.byte	17
+ 1577 060c DD       		.byte	-35
+ 1578 060d 10       		.byte	16
+ 1579 060e DF       		.byte	-33
+ 1580 060f 01       		.byte	1
+ 1581 0610 00       		.byte	0
+ 1582 0611 04       		.byte	4
+ 1583 0612 01       		.byte	1
+ 1584 0613 02       		.byte	2
+ 1585 0614 02       		.byte	2
+ 1586 0615 04       		.byte	4
+ 1587 0616 03       		.byte	3
+ 1588 0617 08       		.byte	8
+ 1589 0618 05       		.byte	5
+ 1590 0619 14       		.byte	20
+ 1591 061a 06       		.byte	6
+ 1592 061b 01       		.byte	1
+ 1593 061c 07       		.byte	7
+ 1594 061d 40       		.byte	64
+ 1595 061e 09       		.byte	9
+ 1596 061f 08       		.byte	8
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccBiGH6B.s 			page 29
+
+
+ 1597 0620 0D       		.byte	13
+ 1598 0621 20       		.byte	32
+ 1599 0622 0E       		.byte	14
+ 1600 0623 61       		.byte	97
+ 1601 0624 10       		.byte	16
+ 1602 0625 08       		.byte	8
+ 1603 0626 12       		.byte	18
+ 1604 0627 12       		.byte	18
+ 1605 0628 14       		.byte	20
+ 1606 0629 01       		.byte	1
+ 1607 062a 16       		.byte	22
+ 1608 062b 88       		.byte	-120
+ 1609 062c 17       		.byte	23
+ 1610 062d 04       		.byte	4
+ 1611 062e 19       		.byte	25
+ 1612 062f 02       		.byte	2
+ 1613 0630 1A       		.byte	26
+ 1614 0631 80       		.byte	-128
+ 1615 0632 1D       		.byte	29
+ 1616 0633 14       		.byte	20
+ 1617 0634 1E       		.byte	30
+ 1618 0635 01       		.byte	1
+ 1619 0636 20       		.byte	32
+ 1620 0637 04       		.byte	4
+ 1621 0638 22       		.byte	34
+ 1622 0639 01       		.byte	1
+ 1623 063a 25       		.byte	37
+ 1624 063b 20       		.byte	32
+ 1625 063c 26       		.byte	38
+ 1626 063d 20       		.byte	32
+ 1627 063e 2A       		.byte	42
+ 1628 063f 14       		.byte	20
+ 1629 0640 2B       		.byte	43
+ 1630 0641 04       		.byte	4
+ 1631 0642 2D       		.byte	45
+ 1632 0643 08       		.byte	8
+ 1633 0644 31       		.byte	49
+ 1634 0645 08       		.byte	8
+ 1635 0646 32       		.byte	50
+ 1636 0647 42       		.byte	66
+ 1637 0648 36       		.byte	54
+ 1638 0649 20       		.byte	32
+ 1639 064a 38       		.byte	56
+ 1640 064b 44       		.byte	68
+ 1641 064c 3E       		.byte	62
+ 1642 064d 14       		.byte	20
+ 1643 064e 5E       		.byte	94
+ 1644 064f 08       		.byte	8
+ 1645 0650 6C       		.byte	108
+ 1646 0651 20       		.byte	32
+ 1647 0652 6D       		.byte	109
+ 1648 0653 40       		.byte	64
+ 1649 0654 6E       		.byte	110
+ 1650 0655 14       		.byte	20
+ 1651 0656 76       		.byte	118
+ 1652 0657 09       		.byte	9
+ 1653 0658 77       		.byte	119
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccBiGH6B.s 			page 30
+
+
+ 1654 0659 20       		.byte	32
+ 1655 065a 81       		.byte	-127
+ 1656 065b 10       		.byte	16
+ 1657 065c 84       		.byte	-124
+ 1658 065d 01       		.byte	1
+ 1659 065e 85       		.byte	-123
+ 1660 065f 10       		.byte	16
+ 1661 0660 86       		.byte	-122
+ 1662 0661 01       		.byte	1
+ 1663 0662 89       		.byte	-119
+ 1664 0663 08       		.byte	8
+ 1665 0664 8A       		.byte	-118
+ 1666 0665 91       		.byte	-111
+ 1667 0666 8B       		.byte	-117
+ 1668 0667 20       		.byte	32
+ 1669 0668 8E       		.byte	-114
+ 1670 0669 09       		.byte	9
+ 1671 066a 90       		.byte	-112
+ 1672 066b 40       		.byte	64
+ 1673 066c 92       		.byte	-110
+ 1674 066d 40       		.byte	64
+ 1675 066e 94       		.byte	-108
+ 1676 066f 04       		.byte	4
+ 1677 0670 95       		.byte	-107
+ 1678 0671 50       		.byte	80
+ 1679 0672 96       		.byte	-106
+ 1680 0673 11       		.byte	17
+ 1681 0674 9B       		.byte	-101
+ 1682 0675 44       		.byte	68
+ 1683 0676 9D       		.byte	-99
+ 1684 0677 18       		.byte	24
+ 1685 0678 A0       		.byte	-96
+ 1686 0679 08       		.byte	8
+ 1687 067a A1       		.byte	-95
+ 1688 067b 08       		.byte	8
+ 1689 067c A2       		.byte	-94
+ 1690 067d 06       		.byte	6
+ 1691 067e A3       		.byte	-93
+ 1692 067f 0C       		.byte	12
+ 1693 0680 A4       		.byte	-92
+ 1694 0681 20       		.byte	32
+ 1695 0682 A5       		.byte	-91
+ 1696 0683 20       		.byte	32
+ 1697 0684 A8       		.byte	-88
+ 1698 0685 08       		.byte	8
+ 1699 0686 AB       		.byte	-85
+ 1700 0687 40       		.byte	64
+ 1701 0688 B3       		.byte	-77
+ 1702 0689 12       		.byte	18
+ 1703 068a B4       		.byte	-76
+ 1704 068b 80       		.byte	-128
+ 1705 068c B5       		.byte	-75
+ 1706 068d 20       		.byte	32
+ 1707 068e C0       		.byte	-64
+ 1708 068f FE       		.byte	-2
+ 1709 0690 C2       		.byte	-62
+ 1710 0691 F4       		.byte	-12
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccBiGH6B.s 			page 31
+
+
+ 1711 0692 C4       		.byte	-60
+ 1712 0693 F7       		.byte	-9
+ 1713 0694 CA       		.byte	-54
+ 1714 0695 46       		.byte	70
+ 1715 0696 CC       		.byte	-52
+ 1716 0697 2B       		.byte	43
+ 1717 0698 CE       		.byte	-50
+ 1718 0699 6A       		.byte	106
+ 1719 069a D6       		.byte	-42
+ 1720 069b 40       		.byte	64
+ 1721 069c E2       		.byte	-30
+ 1722 069d 10       		.byte	16
+ 1723 069e E4       		.byte	-28
+ 1724 069f 02       		.byte	2
+ 1725 06a0 E6       		.byte	-26
+ 1726 06a1 E0       		.byte	-32
+ 1727 06a2 30       		.byte	48
+ 1728 06a3 80       		.byte	-128
+ 1729 06a4 35       		.byte	53
+ 1730 06a5 80       		.byte	-128
+ 1731 06a6 CC       		.byte	-52
+ 1732 06a7 30       		.byte	48
+ 1733 06a8 9D       		.byte	-99
+ 1734 06a9 80       		.byte	-128
+ 1735 06aa A4       		.byte	-92
+ 1736 06ab 80       		.byte	-128
+ 1737 06ac 9D       		.byte	-99
+ 1738 06ad 80       		.byte	-128
+ 1739 06ae A4       		.byte	-92
+ 1740 06af 80       		.byte	-128
+ 1741 06b0 9D       		.byte	-99
+ 1742 06b1 80       		.byte	-128
+ 1743 06b2 A4       		.byte	-92
+ 1744 06b3 80       		.byte	-128
+ 1745 06b4 85       		.byte	-123
+ 1746 06b5 80       		.byte	-128
+ 1747 06b6 8C       		.byte	-116
+ 1748 06b7 80       		.byte	-128
+ 1749 06b8 8F       		.byte	-113
+ 1750 06b9 01       		.byte	1
+ 1751 06ba 9D       		.byte	-99
+ 1752 06bb 80       		.byte	-128
+ 1753 06bc A4       		.byte	-92
+ 1754 06bd 80       		.byte	-128
+ 1755 06be E2       		.byte	-30
+ 1756 06bf 10       		.byte	16
+ 1757 06c0 0B       		.byte	11
+ 1758 06c1 02       		.byte	2
+ 1759 06c2 62       		.byte	98
+ 1760 06c3 04       		.byte	4
+ 1761 06c4 8E       		.byte	-114
+ 1762 06c5 04       		.byte	4
+ 1763 06c6 97       		.byte	-105
+ 1764 06c7 02       		.byte	2
+ 1765 06c8 C2       		.byte	-62
+ 1766 06c9 40       		.byte	64
+ 1767 06ca D8       		.byte	-40
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccBiGH6B.s 			page 32
+
+
+ 1768 06cb 40       		.byte	64
+ 1769 06cc 10       		.byte	16
+ 1770 06cd 40       		.byte	64
+ 1771 06ce 74       		.byte	116
+ 1772 06cf 04       		.byte	4
+ 1773 06d0 84       		.byte	-124
+ 1774 06d1 04       		.byte	4
+ 1775 06d2 88       		.byte	-120
+ 1776 06d3 40       		.byte	64
+ 1777 06d4 C4       		.byte	-60
+ 1778 06d5 08       		.byte	8
+ 1779 06d6 DE       		.byte	-34
+ 1780 06d7 04       		.byte	4
+ 1781 06d8 E2       		.byte	-30
+ 1782 06d9 01       		.byte	1
+ 1783 06da 00       		.byte	0
+ 1784 06db 03       		.byte	3
+ 1785 06dc 0A       		.byte	10
+ 1786 06dd 03       		.byte	3
+ 1787 06de 0C       		.byte	12
+ 1788 06df 02       		.byte	2
+ 1789 06e0 10       		.byte	16
+ 1790 06e1 07       		.byte	7
+ 1791 06e2 1A       		.byte	26
+ 1792 06e3 07       		.byte	7
+ 1793 06e4 1C       		.byte	28
+ 1794 06e5 02       		.byte	2
+ 1795 06e6 00       		.byte	0
+ 1796 06e7 0F       		.byte	15
+ 1797 06e8 80       		.byte	-128
+ 1798 06e9 80       		.byte	-128
+ 1799 06ea 00       		.byte	0
+ 1800 06eb 00       		.byte	0
+ 1801 06ec 40       		.byte	64
+ 1802 06ed 00       		.byte	0
+ 1803 06ee 00       		.byte	0
+ 1804 06ef 00       		.byte	0
+ 1805 06f0 80       		.byte	-128
+ 1806 06f1 00       		.byte	0
+ 1807 06f2 40       		.byte	64
+ 1808 06f3 80       		.byte	-128
+ 1809 06f4 80       		.byte	-128
+ 1810 06f5 00       		.byte	0
+ 1811 06f6 80       		.byte	-128
+ 1812 06f7 00       		.byte	0
+ 1813 06f8 00       		.byte	0
+ 1814 06f9 00       		.byte	0
+ 1815 06fa 00       		.byte	0
+ 1816 06fb 00       		.byte	0
+ 1817 06fc 00       		.byte	0
+ 1818 06fd 0B       		.byte	11
+ 1819 06fe 0B       		.byte	11
+ 1820 06ff 00       		.byte	0
+ 1821 0700 00       		.byte	0
+ 1822 0701 00       		.byte	0
+ 1823 0702 00       		.byte	0
+ 1824 0703 00       		.byte	0
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccBiGH6B.s 			page 33
+
+
+ 1825 0704 00       		.byte	0
+ 1826 0705 02       		.byte	2
+ 1827 0706 02       		.byte	2
+ 1828 0707 00       		.byte	0
+ 1829 0708 00       		.byte	0
+ 1830 0709 00       		.byte	0
+ 1831 070a 00       		.byte	0
+ 1832 070b 00       		.byte	0
+ 1833 070c 40       		.byte	64
+ 1834 070d 80       		.byte	-128
+ 1835 070e 80       		.byte	-128
+ 1836 070f 00       		.byte	0
+ 1837 0710 80       		.byte	-128
+ 1838 0711 00       		.byte	0
+ 1839 0712 00       		.byte	0
+ 1840 0713 00       		.byte	0
+ 1841              		.section	.cywolatch,"a",%progbits
+ 1842              		.align	2
+ 1843              		.type	cy_meta_wonvl, %object
+ 1844              		.size	cy_meta_wonvl, 4
+ 1845              	cy_meta_wonvl:
+ 1846 0000 BC       		.byte	-68
+ 1847 0001 90       		.byte	-112
+ 1848 0002 AC       		.byte	-84
+ 1849 0003 AF       		.byte	-81
+ 1850              		.section	.cycustnvl,"a",%progbits
+ 1851              		.align	2
+ 1852              		.type	cy_meta_custnvl, %object
+ 1853              		.size	cy_meta_custnvl, 4
+ 1854              	cy_meta_custnvl:
+ 1855 0000 00       		.byte	0
+ 1856 0001 00       		.byte	0
+ 1857 0002 40       		.byte	64
+ 1858 0003 05       		.byte	5
+ 1859              		.section	.cymeta,"a",%progbits
+ 1860              		.align	2
+ 1861              		.type	cy_metadata, %object
+ 1862              		.size	cy_metadata, 12
+ 1863              	cy_metadata:
+ 1864 0000 00       		.byte	0
+ 1865 0001 01       		.byte	1
+ 1866 0002 2E       		.byte	46
+ 1867 0003 16       		.byte	22
+ 1868 0004 10       		.byte	16
+ 1869 0005 69       		.byte	105
+ 1870 0006 00       		.byte	0
+ 1871 0007 01       		.byte	1
+ 1872 0008 00       		.byte	0
+ 1873 0009 00       		.byte	0
+ 1874 000a 00       		.byte	0
+ 1875 000b 00       		.byte	0
+ 1876              		.section	.cyflashprotect,"a",%progbits
+ 1877              		.align	2
+ 1878              		.type	cy_meta_flashprotect, %object
+ 1879              		.size	cy_meta_flashprotect, 256
+ 1880              	cy_meta_flashprotect:
+ 1881 0000 00000000 		.space	256
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccBiGH6B.s 			page 34
+
+
+ 1881      00000000 
+ 1881      00000000 
+ 1881      00000000 
+ 1881      00000000 
+ 1882              		.text
+ 1883              	.Letext0:
+ 1884              		.file 1 "c:\\program files (x86)\\cypress\\psoc creator\\4.3\\psoc creator\\import\\gnu\\arm\\5.4.
+ 1885              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.3\\psoc creator\\import\\gnu\\arm\\5.4.
+ 1886              		.file 3 "Generated_Source\\PSoC5\\cymetadata.c"
+ 1887              		.section	.debug_info,"",%progbits
+ 1888              	.Ldebug_info0:
+ 1889 0000 35010000 		.4byte	0x135
+ 1890 0004 0400     		.2byte	0x4
+ 1891 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 1892 000a 04       		.byte	0x4
+ 1893 000b 01       		.uleb128 0x1
+ 1894 000c 87000000 		.4byte	.LASF17
+ 1895 0010 0C       		.byte	0xc
+ 1896 0011 E1010000 		.4byte	.LASF18
+ 1897 0015 16000000 		.4byte	.LASF19
+ 1898 0019 00000000 		.4byte	.Ldebug_line0
+ 1899 001d 02       		.uleb128 0x2
+ 1900 001e 01       		.byte	0x1
+ 1901 001f 06       		.byte	0x6
+ 1902 0020 D5010000 		.4byte	.LASF0
+ 1903 0024 03       		.uleb128 0x3
+ 1904 0025 00000000 		.4byte	.LASF9
+ 1905 0029 01       		.byte	0x1
+ 1906 002a 1D       		.byte	0x1d
+ 1907 002b 2F000000 		.4byte	0x2f
+ 1908 002f 02       		.uleb128 0x2
+ 1909 0030 01       		.byte	0x1
+ 1910 0031 08       		.byte	0x8
+ 1911 0032 79000000 		.4byte	.LASF1
+ 1912 0036 02       		.uleb128 0x2
+ 1913 0037 02       		.byte	0x2
+ 1914 0038 05       		.byte	0x5
+ 1915 0039 C2010000 		.4byte	.LASF2
+ 1916 003d 02       		.uleb128 0x2
+ 1917 003e 02       		.byte	0x2
+ 1918 003f 07       		.byte	0x7
+ 1919 0040 27010000 		.4byte	.LASF3
+ 1920 0044 02       		.uleb128 0x2
+ 1921 0045 04       		.byte	0x4
+ 1922 0046 05       		.byte	0x5
+ 1923 0047 CC010000 		.4byte	.LASF4
+ 1924 004b 02       		.uleb128 0x2
+ 1925 004c 04       		.byte	0x4
+ 1926 004d 07       		.byte	0x7
+ 1927 004e 15010000 		.4byte	.LASF5
+ 1928 0052 02       		.uleb128 0x2
+ 1929 0053 08       		.byte	0x8
+ 1930 0054 05       		.byte	0x5
+ 1931 0055 B4010000 		.4byte	.LASF6
+ 1932 0059 02       		.uleb128 0x2
+ 1933 005a 08       		.byte	0x8
+ 1934 005b 07       		.byte	0x7
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccBiGH6B.s 			page 35
+
+
+ 1935 005c 69010000 		.4byte	.LASF7
+ 1936 0060 04       		.uleb128 0x4
+ 1937 0061 04       		.byte	0x4
+ 1938 0062 05       		.byte	0x5
+ 1939 0063 696E7400 		.ascii	"int\000"
+ 1940 0067 02       		.uleb128 0x2
+ 1941 0068 04       		.byte	0x4
+ 1942 0069 07       		.byte	0x7
+ 1943 006a 5C010000 		.4byte	.LASF8
+ 1944 006e 03       		.uleb128 0x3
+ 1945 006f 80010000 		.4byte	.LASF10
+ 1946 0073 02       		.byte	0x2
+ 1947 0074 18       		.byte	0x18
+ 1948 0075 24000000 		.4byte	0x24
+ 1949 0079 05       		.uleb128 0x5
+ 1950 007a 91000000 		.4byte	0x91
+ 1951 007e 8A000000 		.4byte	0x8a
+ 1952 0082 06       		.uleb128 0x6
+ 1953 0083 8A000000 		.4byte	0x8a
+ 1954 0087 1307     		.2byte	0x713
+ 1955 0089 00       		.byte	0
+ 1956 008a 02       		.uleb128 0x2
+ 1957 008b 04       		.byte	0x4
+ 1958 008c 07       		.byte	0x7
+ 1959 008d AB010000 		.4byte	.LASF11
+ 1960 0091 07       		.uleb128 0x7
+ 1961 0092 6E000000 		.4byte	0x6e
+ 1962 0096 08       		.uleb128 0x8
+ 1963 0097 4A010000 		.4byte	.LASF12
+ 1964 009b 03       		.byte	0x3
+ 1965 009c 1F       		.byte	0x1f
+ 1966 009d A7000000 		.4byte	0xa7
+ 1967 00a1 05       		.uleb128 0x5
+ 1968 00a2 03       		.byte	0x3
+ 1969 00a3 00000000 		.4byte	cy_meta_configecc
+ 1970 00a7 07       		.uleb128 0x7
+ 1971 00a8 79000000 		.4byte	0x79
+ 1972 00ac 05       		.uleb128 0x5
+ 1973 00ad 91000000 		.4byte	0x91
+ 1974 00b1 BC000000 		.4byte	0xbc
+ 1975 00b5 09       		.uleb128 0x9
+ 1976 00b6 8A000000 		.4byte	0x8a
+ 1977 00ba 03       		.byte	0x3
+ 1978 00bb 00       		.byte	0
+ 1979 00bc 0A       		.uleb128 0xa
+ 1980 00bd 3A010000 		.4byte	.LASF13
+ 1981 00c1 03       		.byte	0x3
+ 1982 00c2 0F01     		.2byte	0x10f
+ 1983 00c4 CE000000 		.4byte	0xce
+ 1984 00c8 05       		.uleb128 0x5
+ 1985 00c9 03       		.byte	0x3
+ 1986 00ca 00000000 		.4byte	cy_meta_custnvl
+ 1987 00ce 07       		.uleb128 0x7
+ 1988 00cf AC000000 		.4byte	0xac
+ 1989 00d3 0A       		.uleb128 0xa
+ 1990 00d4 9D010000 		.4byte	.LASF14
+ 1991 00d8 03       		.byte	0x3
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccBiGH6B.s 			page 36
+
+
+ 1992 00d9 1D01     		.2byte	0x11d
+ 1993 00db E5000000 		.4byte	0xe5
+ 1994 00df 05       		.uleb128 0x5
+ 1995 00e0 03       		.byte	0x3
+ 1996 00e1 00000000 		.4byte	cy_meta_wonvl
+ 1997 00e5 07       		.uleb128 0x7
+ 1998 00e6 AC000000 		.4byte	0xac
+ 1999 00ea 05       		.uleb128 0x5
+ 2000 00eb 91000000 		.4byte	0x91
+ 2001 00ef FA000000 		.4byte	0xfa
+ 2002 00f3 09       		.uleb128 0x9
+ 2003 00f4 8A000000 		.4byte	0x8a
+ 2004 00f8 FF       		.byte	0xff
+ 2005 00f9 00       		.byte	0
+ 2006 00fa 0A       		.uleb128 0xa
+ 2007 00fb 88010000 		.4byte	.LASF15
+ 2008 00ff 03       		.byte	0x3
+ 2009 0100 2B01     		.2byte	0x12b
+ 2010 0102 0C010000 		.4byte	0x10c
+ 2011 0106 05       		.uleb128 0x5
+ 2012 0107 03       		.byte	0x3
+ 2013 0108 00000000 		.4byte	cy_meta_flashprotect
+ 2014 010c 07       		.uleb128 0x7
+ 2015 010d EA000000 		.4byte	0xea
+ 2016 0111 05       		.uleb128 0x5
+ 2017 0112 91000000 		.4byte	0x91
+ 2018 0116 21010000 		.4byte	0x121
+ 2019 011a 09       		.uleb128 0x9
+ 2020 011b 8A000000 		.4byte	0x8a
+ 2021 011f 0B       		.byte	0xb
+ 2022 0120 00       		.byte	0
+ 2023 0121 0A       		.uleb128 0xa
+ 2024 0122 0A000000 		.4byte	.LASF16
+ 2025 0126 03       		.byte	0x3
+ 2026 0127 5801     		.2byte	0x158
+ 2027 0129 33010000 		.4byte	0x133
+ 2028 012d 05       		.uleb128 0x5
+ 2029 012e 03       		.byte	0x3
+ 2030 012f 00000000 		.4byte	cy_metadata
+ 2031 0133 07       		.uleb128 0x7
+ 2032 0134 11010000 		.4byte	0x111
+ 2033 0138 00       		.byte	0
+ 2034              		.section	.debug_abbrev,"",%progbits
+ 2035              	.Ldebug_abbrev0:
+ 2036 0000 01       		.uleb128 0x1
+ 2037 0001 11       		.uleb128 0x11
+ 2038 0002 01       		.byte	0x1
+ 2039 0003 25       		.uleb128 0x25
+ 2040 0004 0E       		.uleb128 0xe
+ 2041 0005 13       		.uleb128 0x13
+ 2042 0006 0B       		.uleb128 0xb
+ 2043 0007 03       		.uleb128 0x3
+ 2044 0008 0E       		.uleb128 0xe
+ 2045 0009 1B       		.uleb128 0x1b
+ 2046 000a 0E       		.uleb128 0xe
+ 2047 000b 10       		.uleb128 0x10
+ 2048 000c 17       		.uleb128 0x17
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccBiGH6B.s 			page 37
+
+
+ 2049 000d 00       		.byte	0
+ 2050 000e 00       		.byte	0
+ 2051 000f 02       		.uleb128 0x2
+ 2052 0010 24       		.uleb128 0x24
+ 2053 0011 00       		.byte	0
+ 2054 0012 0B       		.uleb128 0xb
+ 2055 0013 0B       		.uleb128 0xb
+ 2056 0014 3E       		.uleb128 0x3e
+ 2057 0015 0B       		.uleb128 0xb
+ 2058 0016 03       		.uleb128 0x3
+ 2059 0017 0E       		.uleb128 0xe
+ 2060 0018 00       		.byte	0
+ 2061 0019 00       		.byte	0
+ 2062 001a 03       		.uleb128 0x3
+ 2063 001b 16       		.uleb128 0x16
+ 2064 001c 00       		.byte	0
+ 2065 001d 03       		.uleb128 0x3
+ 2066 001e 0E       		.uleb128 0xe
+ 2067 001f 3A       		.uleb128 0x3a
+ 2068 0020 0B       		.uleb128 0xb
+ 2069 0021 3B       		.uleb128 0x3b
+ 2070 0022 0B       		.uleb128 0xb
+ 2071 0023 49       		.uleb128 0x49
+ 2072 0024 13       		.uleb128 0x13
+ 2073 0025 00       		.byte	0
+ 2074 0026 00       		.byte	0
+ 2075 0027 04       		.uleb128 0x4
+ 2076 0028 24       		.uleb128 0x24
+ 2077 0029 00       		.byte	0
+ 2078 002a 0B       		.uleb128 0xb
+ 2079 002b 0B       		.uleb128 0xb
+ 2080 002c 3E       		.uleb128 0x3e
+ 2081 002d 0B       		.uleb128 0xb
+ 2082 002e 03       		.uleb128 0x3
+ 2083 002f 08       		.uleb128 0x8
+ 2084 0030 00       		.byte	0
+ 2085 0031 00       		.byte	0
+ 2086 0032 05       		.uleb128 0x5
+ 2087 0033 01       		.uleb128 0x1
+ 2088 0034 01       		.byte	0x1
+ 2089 0035 49       		.uleb128 0x49
+ 2090 0036 13       		.uleb128 0x13
+ 2091 0037 01       		.uleb128 0x1
+ 2092 0038 13       		.uleb128 0x13
+ 2093 0039 00       		.byte	0
+ 2094 003a 00       		.byte	0
+ 2095 003b 06       		.uleb128 0x6
+ 2096 003c 21       		.uleb128 0x21
+ 2097 003d 00       		.byte	0
+ 2098 003e 49       		.uleb128 0x49
+ 2099 003f 13       		.uleb128 0x13
+ 2100 0040 2F       		.uleb128 0x2f
+ 2101 0041 05       		.uleb128 0x5
+ 2102 0042 00       		.byte	0
+ 2103 0043 00       		.byte	0
+ 2104 0044 07       		.uleb128 0x7
+ 2105 0045 26       		.uleb128 0x26
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccBiGH6B.s 			page 38
+
+
+ 2106 0046 00       		.byte	0
+ 2107 0047 49       		.uleb128 0x49
+ 2108 0048 13       		.uleb128 0x13
+ 2109 0049 00       		.byte	0
+ 2110 004a 00       		.byte	0
+ 2111 004b 08       		.uleb128 0x8
+ 2112 004c 34       		.uleb128 0x34
+ 2113 004d 00       		.byte	0
+ 2114 004e 03       		.uleb128 0x3
+ 2115 004f 0E       		.uleb128 0xe
+ 2116 0050 3A       		.uleb128 0x3a
+ 2117 0051 0B       		.uleb128 0xb
+ 2118 0052 3B       		.uleb128 0x3b
+ 2119 0053 0B       		.uleb128 0xb
+ 2120 0054 49       		.uleb128 0x49
+ 2121 0055 13       		.uleb128 0x13
+ 2122 0056 3F       		.uleb128 0x3f
+ 2123 0057 19       		.uleb128 0x19
+ 2124 0058 02       		.uleb128 0x2
+ 2125 0059 18       		.uleb128 0x18
+ 2126 005a 00       		.byte	0
+ 2127 005b 00       		.byte	0
+ 2128 005c 09       		.uleb128 0x9
+ 2129 005d 21       		.uleb128 0x21
+ 2130 005e 00       		.byte	0
+ 2131 005f 49       		.uleb128 0x49
+ 2132 0060 13       		.uleb128 0x13
+ 2133 0061 2F       		.uleb128 0x2f
+ 2134 0062 0B       		.uleb128 0xb
+ 2135 0063 00       		.byte	0
+ 2136 0064 00       		.byte	0
+ 2137 0065 0A       		.uleb128 0xa
+ 2138 0066 34       		.uleb128 0x34
+ 2139 0067 00       		.byte	0
+ 2140 0068 03       		.uleb128 0x3
+ 2141 0069 0E       		.uleb128 0xe
+ 2142 006a 3A       		.uleb128 0x3a
+ 2143 006b 0B       		.uleb128 0xb
+ 2144 006c 3B       		.uleb128 0x3b
+ 2145 006d 05       		.uleb128 0x5
+ 2146 006e 49       		.uleb128 0x49
+ 2147 006f 13       		.uleb128 0x13
+ 2148 0070 3F       		.uleb128 0x3f
+ 2149 0071 19       		.uleb128 0x19
+ 2150 0072 02       		.uleb128 0x2
+ 2151 0073 18       		.uleb128 0x18
+ 2152 0074 00       		.byte	0
+ 2153 0075 00       		.byte	0
+ 2154 0076 00       		.byte	0
+ 2155              		.section	.debug_aranges,"",%progbits
+ 2156 0000 14000000 		.4byte	0x14
+ 2157 0004 0200     		.2byte	0x2
+ 2158 0006 00000000 		.4byte	.Ldebug_info0
+ 2159 000a 04       		.byte	0x4
+ 2160 000b 00       		.byte	0
+ 2161 000c 0000     		.2byte	0
+ 2162 000e 0000     		.2byte	0
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccBiGH6B.s 			page 39
+
+
+ 2163 0010 00000000 		.4byte	0
+ 2164 0014 00000000 		.4byte	0
+ 2165              		.section	.debug_line,"",%progbits
+ 2166              	.Ldebug_line0:
+ 2167 0000 3D010000 		.section	.debug_str,"MS",%progbits,1
+ 2167      02003701 
+ 2167      00000201 
+ 2167      FB0E0D00 
+ 2167      01010101 
+ 2168              	.LASF9:
+ 2169 0000 5F5F7569 		.ascii	"__uint8_t\000"
+ 2169      6E74385F 
+ 2169      7400
+ 2170              	.LASF16:
+ 2171 000a 63795F6D 		.ascii	"cy_metadata\000"
+ 2171      65746164 
+ 2171      61746100 
+ 2172              	.LASF19:
+ 2173 0016 433A5C55 		.ascii	"C:\\Users\\Henry\\Documents\\IKT\\3. semester\\Seme"
+ 2173      73657273 
+ 2173      5C48656E 
+ 2173      72795C44 
+ 2173      6F63756D 
+ 2174 0043 73746572 		.ascii	"sterprojekt 3\\god\\afstandssensor\\afstandssensor."
+ 2174      70726F6A 
+ 2174      656B7420 
+ 2174      335C676F 
+ 2174      645C6166 
+ 2175 0073 63796473 		.ascii	"cydsn\000"
+ 2175      6E00
+ 2176              	.LASF1:
+ 2177 0079 756E7369 		.ascii	"unsigned char\000"
+ 2177      676E6564 
+ 2177      20636861 
+ 2177      7200
+ 2178              	.LASF17:
+ 2179 0087 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 2179      43313120 
+ 2179      352E342E 
+ 2179      31203230 
+ 2179      31363036 
+ 2180 00ba 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 2180      20726576 
+ 2180      6973696F 
+ 2180      6E203233 
+ 2180      37373135 
+ 2181 00ed 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 2181      66756E63 
+ 2181      74696F6E 
+ 2181      2D736563 
+ 2181      74696F6E 
+ 2182              	.LASF5:
+ 2183 0115 6C6F6E67 		.ascii	"long unsigned int\000"
+ 2183      20756E73 
+ 2183      69676E65 
+ 2183      6420696E 
+ 2183      7400
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccBiGH6B.s 			page 40
+
+
+ 2184              	.LASF3:
+ 2185 0127 73686F72 		.ascii	"short unsigned int\000"
+ 2185      7420756E 
+ 2185      7369676E 
+ 2185      65642069 
+ 2185      6E7400
+ 2186              	.LASF13:
+ 2187 013a 63795F6D 		.ascii	"cy_meta_custnvl\000"
+ 2187      6574615F 
+ 2187      63757374 
+ 2187      6E766C00 
+ 2188              	.LASF12:
+ 2189 014a 63795F6D 		.ascii	"cy_meta_configecc\000"
+ 2189      6574615F 
+ 2189      636F6E66 
+ 2189      69676563 
+ 2189      6300
+ 2190              	.LASF8:
+ 2191 015c 756E7369 		.ascii	"unsigned int\000"
+ 2191      676E6564 
+ 2191      20696E74 
+ 2191      00
+ 2192              	.LASF7:
+ 2193 0169 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 2193      206C6F6E 
+ 2193      6720756E 
+ 2193      7369676E 
+ 2193      65642069 
+ 2194              	.LASF10:
+ 2195 0180 75696E74 		.ascii	"uint8_t\000"
+ 2195      385F7400 
+ 2196              	.LASF15:
+ 2197 0188 63795F6D 		.ascii	"cy_meta_flashprotect\000"
+ 2197      6574615F 
+ 2197      666C6173 
+ 2197      6870726F 
+ 2197      74656374 
+ 2198              	.LASF14:
+ 2199 019d 63795F6D 		.ascii	"cy_meta_wonvl\000"
+ 2199      6574615F 
+ 2199      776F6E76 
+ 2199      6C00
+ 2200              	.LASF11:
+ 2201 01ab 73697A65 		.ascii	"sizetype\000"
+ 2201      74797065 
+ 2201      00
+ 2202              	.LASF6:
+ 2203 01b4 6C6F6E67 		.ascii	"long long int\000"
+ 2203      206C6F6E 
+ 2203      6720696E 
+ 2203      7400
+ 2204              	.LASF2:
+ 2205 01c2 73686F72 		.ascii	"short int\000"
+ 2205      7420696E 
+ 2205      7400
+ 2206              	.LASF4:
+ 2207 01cc 6C6F6E67 		.ascii	"long int\000"
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccBiGH6B.s 			page 41
+
+
+ 2207      20696E74 
+ 2207      00
+ 2208              	.LASF0:
+ 2209 01d5 7369676E 		.ascii	"signed char\000"
+ 2209      65642063 
+ 2209      68617200 
+ 2210              	.LASF18:
+ 2211 01e1 47656E65 		.ascii	"Generated_Source\\PSoC5\\cymetadata.c\000"
+ 2211      72617465 
+ 2211      645F536F 
+ 2211      75726365 
+ 2211      5C50536F 
+ 2212              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
