@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 1
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\cc2PQquk.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 1
   29:Generated_Source\PSoC5/cyfitter_cfg.c **** 
   30:Generated_Source\PSoC5/cyfitter_cfg.c **** #if defined(__GNUC__) || defined(__ARMCC_VERSION)
   31:Generated_Source\PSoC5/cyfitter_cfg.c ****     #define CYPACKED 
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 2
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\cc2PQquk.s 			page 2
 
 
   32:Generated_Source\PSoC5/cyfitter_cfg.c ****     #define CYPACKED_ATTR __attribute__ ((packed))
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 1
   86:Generated_Source\PSoC5/cyfitter_cfg.c **** 	(void)memcpy(dest, src, n);
   87:Generated_Source\PSoC5/cyfitter_cfg.c **** }
   88:Generated_Source\PSoC5/cyfitter_cfg.c **** CY_CFG_UNUSED
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 3
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\cc2PQquk.s 			page 3
 
 
   89:Generated_Source\PSoC5/cyfitter_cfg.c **** static void CYCONFIGCPYCODE(void *dest, const void *src, size_t n);
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 1
   41              		.thumb
   42              		.thumb_func
   43              		.type	cfg_write_bytes32, %function
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 4
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\cc2PQquk.s 			page 4
 
 
   44              	cfg_write_bytes32:
@@ -205,7 +205,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 1
  148:Generated_Source\PSoC5/cyfitter_cfg.c **** }
  149:Generated_Source\PSoC5/cyfitter_cfg.c **** #endif
  150:Generated_Source\PSoC5/cyfitter_cfg.c **** 
- 151:Generated_Source\PSoC5/cyfitter_cfg.c **** #define CY_CFG_BASE_ADDR_COUNT 24u
+ 151:Generated_Source\PSoC5/cyfitter_cfg.c **** #define CY_CFG_BASE_ADDR_COUNT 22u
  152:Generated_Source\PSoC5/cyfitter_cfg.c **** CYPACKED typedef struct
  153:Generated_Source\PSoC5/cyfitter_cfg.c **** {
  154:Generated_Source\PSoC5/cyfitter_cfg.c **** 	uint8 offset;
@@ -213,22 +213,22 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 1
  156:Generated_Source\PSoC5/cyfitter_cfg.c **** } CYPACKED_ATTR cy_cfg_addrvalue_t;
  157:Generated_Source\PSoC5/cyfitter_cfg.c **** 
  158:Generated_Source\PSoC5/cyfitter_cfg.c **** #define cy_cfg_addr_table ((const uint32 CYFAR *)0x48000000u)
- 159:Generated_Source\PSoC5/cyfitter_cfg.c **** #define cy_cfg_data_table ((const cy_cfg_addrvalue_t CYFAR *)0x48000060u)
+ 159:Generated_Source\PSoC5/cyfitter_cfg.c **** #define cy_cfg_data_table ((const cy_cfg_addrvalue_t CYFAR *)0x48000058u)
  160:Generated_Source\PSoC5/cyfitter_cfg.c **** 
  161:Generated_Source\PSoC5/cyfitter_cfg.c **** /* IOPORT_7 Address: CYDEV_PRTDSI_PRT12_BASE Size (bytes): 6 */
- 162:Generated_Source\PSoC5/cyfitter_cfg.c **** #define BS_IOPORT_7_VAL ((const uint8 CYFAR *)0x480006E8u)
+ 162:Generated_Source\PSoC5/cyfitter_cfg.c **** #define BS_IOPORT_7_VAL ((const uint8 CYFAR *)0x480006C4u)
  163:Generated_Source\PSoC5/cyfitter_cfg.c **** 
  164:Generated_Source\PSoC5/cyfitter_cfg.c **** /* IOPINS0_7 Address: CYREG_PRT12_DR Size (bytes): 10 */
- 165:Generated_Source\PSoC5/cyfitter_cfg.c **** #define BS_IOPINS0_7_VAL ((const uint8 CYFAR *)0x480006F0u)
+ 165:Generated_Source\PSoC5/cyfitter_cfg.c **** #define BS_IOPINS0_7_VAL ((const uint8 CYFAR *)0x480006CCu)
  166:Generated_Source\PSoC5/cyfitter_cfg.c **** 
  167:Generated_Source\PSoC5/cyfitter_cfg.c **** /* IOPINS0_1 Address: CYREG_PRT1_DM0 Size (bytes): 8 */
- 168:Generated_Source\PSoC5/cyfitter_cfg.c **** #define BS_IOPINS0_1_VAL ((const uint8 CYFAR *)0x480006FCu)
+ 168:Generated_Source\PSoC5/cyfitter_cfg.c **** #define BS_IOPINS0_1_VAL ((const uint8 CYFAR *)0x480006D8u)
  169:Generated_Source\PSoC5/cyfitter_cfg.c **** 
  170:Generated_Source\PSoC5/cyfitter_cfg.c **** /* IOPINS0_2 Address: CYREG_PRT2_DM0 Size (bytes): 8 */
- 171:Generated_Source\PSoC5/cyfitter_cfg.c **** #define BS_IOPINS0_2_VAL ((const uint8 CYFAR *)0x48000704u)
+ 171:Generated_Source\PSoC5/cyfitter_cfg.c **** #define BS_IOPINS0_2_VAL ((const uint8 CYFAR *)0x480006E0u)
  172:Generated_Source\PSoC5/cyfitter_cfg.c **** 
  173:Generated_Source\PSoC5/cyfitter_cfg.c **** /* IOPINS0_3 Address: CYREG_PRT3_DM0 Size (bytes): 8 */
- 174:Generated_Source\PSoC5/cyfitter_cfg.c **** #define BS_IOPINS0_3_VAL ((const uint8 CYFAR *)0x4800070Cu)
+ 174:Generated_Source\PSoC5/cyfitter_cfg.c **** #define BS_IOPINS0_3_VAL ((const uint8 CYFAR *)0x480006E8u)
  175:Generated_Source\PSoC5/cyfitter_cfg.c **** 
  176:Generated_Source\PSoC5/cyfitter_cfg.c **** 
  177:Generated_Source\PSoC5/cyfitter_cfg.c **** /*******************************************************************************
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 1
  181:Generated_Source\PSoC5/cyfitter_cfg.c **** *  This function is used for setting up the chip configuration areas that
  182:Generated_Source\PSoC5/cyfitter_cfg.c **** *  contain relatively sparse data.
  183:Generated_Source\PSoC5/cyfitter_cfg.c **** *
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 5
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\cc2PQquk.s 			page 5
 
 
  184:Generated_Source\PSoC5/cyfitter_cfg.c **** * Parameters:
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 1
   80              		.loc 1 203 0
   81 0014 01EB4205 		add	r5, r1, r2, lsl #1
   82 0018 11F81240 		ldrb	r4, [r1, r2, lsl #1]	@ zero_extendqisi2
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 6
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\cc2PQquk.s 			page 6
 
 
   83 001c 6D78     		ldrb	r5, [r5, #1]	@ zero_extendqisi2
@@ -326,7 +326,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 1
  101              	.L4:
  196:Generated_Source\PSoC5/cyfitter_cfg.c **** 	{
  102              		.loc 1 196 0 is_stmt 0 discriminator 1
- 103 002c 172F     		cmp	r7, #23
+ 103 002c 152F     		cmp	r7, #21
  104 002e EBD9     		bls	.L7
  206:Generated_Source\PSoC5/cyfitter_cfg.c **** 		}
  207:Generated_Source\PSoC5/cyfitter_cfg.c **** 	}
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 1
  214:Generated_Source\PSoC5/cyfitter_cfg.c **** * Summary:
  215:Generated_Source\PSoC5/cyfitter_cfg.c **** *  Performs the initialization of all of the clocks in the device based on the
  216:Generated_Source\PSoC5/cyfitter_cfg.c **** *  settings in the Clock tab of the DWR.  This includes enabling the requested
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 7
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\cc2PQquk.s 			page 7
 
 
  217:Generated_Source\PSoC5/cyfitter_cfg.c **** *  clocks and setting the necessary dividers to produce the desired frequency. 
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 1
  271:Generated_Source\PSoC5/cyfitter_cfg.c **** 	CY_SET_XTND_REG8((void CYFAR *)(CYREG_CLKDIST_LD), 0x02u);
  272:Generated_Source\PSoC5/cyfitter_cfg.c **** 
  273:Generated_Source\PSoC5/cyfitter_cfg.c **** 	CY_SET_XTND_REG8((void CYFAR *)(CYREG_PM_ACT_CFG2), ((CY_GET_XTND_REG8((void CYFAR *)CYREG_PM_ACT_
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 8
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\cc2PQquk.s 			page 8
 
 
  274:Generated_Source\PSoC5/cyfitter_cfg.c **** }
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 1
  150              	.L10:
  151 001c CF010049 		.word	1224737231
  152 0020 6E580040 		.word	1073764462
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 9
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\cc2PQquk.s 			page 9
 
 
  153 0024 76580040 		.word	1073764470
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 1
  203 0006 1A80     		strh	r2, [r3]	@ movhi
  235:Generated_Source\PSoC5/cyfitter_cfg.c **** 	CY_SET_XTND_REG16((void CYFAR *)(CYREG_CLKDIST_DCFG1_CFG0), 0x0033u);
  204              		.loc 1 235 0
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 10
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\cc2PQquk.s 			page 10
 
 
  205 0008 1823     		movs	r3, #24
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 1
  248              		.loc 1 253 0
  249 004e 0024     		movs	r4, #0
  254:Generated_Source\PSoC5/cyfitter_cfg.c **** 	{ 
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 11
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\cc2PQquk.s 			page 11
 
 
  250              		.loc 1 254 0
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 1
  294 008c 0A70     		strb	r2, [r1]
  269:Generated_Source\PSoC5/cyfitter_cfg.c **** 	CY_SET_XTND_REG8((void CYFAR *)(CYREG_CLKDIST_MSTR0), 0x00u);
  295              		.loc 1 269 0
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 12
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\cc2PQquk.s 			page 12
 
 
  296 008e 4820     		movs	r0, #72
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 1
  345 0002 FFF7FEFF 		bl	memcpy
  346              	.LVL26:
  347 0006 08BD     		pop	{r3, pc}
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 13
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\cc2PQquk.s 			page 13
 
 
  348              		.cfi_endproc
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 1
  370              		.loc 1 333 0
  371 0006 1370     		strb	r3, [r2]
  372 0008 7047     		bx	lr
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 14
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\cc2PQquk.s 			page 14
 
 
  373              	.L26:
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 1
  400              	@ 360 "Generated_Source\PSoC5\cyfitter_cfg.c" 1
  401 0002 72B6     		CPSID   i
  402              	@ 0 "" 2
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 15
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\cc2PQquk.s 			page 15
 
 
  361:Generated_Source\PSoC5/cyfitter_cfg.c **** #endif
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 1
  417              	.LBB4:
  401:Generated_Source\PSoC5/cyfitter_cfg.c **** 		{
  402:Generated_Source\PSoC5/cyfitter_cfg.c **** 			const cfg_memset_t CYCODE * CYDATA ms = &cfg_memset_list[i];
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 16
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\cc2PQquk.s 			page 16
 
 
  403:Generated_Source\PSoC5/cyfitter_cfg.c **** 			CYMEMZERO(ms->address, (size_t)(uint32)(ms->size));
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 1
  459 0044 FFF7FEFF 		bl	CYCONFIGCPY
  460              	.LVL39:
  461              	.LBE5:
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 17
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\cc2PQquk.s 			page 17
 
 
  407:Generated_Source\PSoC5/cyfitter_cfg.c **** 		{
@@ -981,8 +981,8 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 1
  474 0056 FFF7FEFF 		bl	cfg_write_bytes32
  475              	.LVL42:
  417:Generated_Source\PSoC5/cyfitter_cfg.c **** 
- 418:Generated_Source\PSoC5/cyfitter_cfg.c **** 		/* B1_P3_U1_CFG24 Starting address: CYDEV_UCFG_B1_P3_U1_CFG24 */
- 419:Generated_Source\PSoC5/cyfitter_cfg.c **** 		CY_SET_XTND_REG32((void CYFAR *)(CYREG_B1_P3_U1_CFG24), 0x84000404u);
+ 418:Generated_Source\PSoC5/cyfitter_cfg.c **** 		/* B1_P3_U0_CFG24 Starting address: CYDEV_UCFG_B1_P3_U0_CFG24 */
+ 419:Generated_Source\PSoC5/cyfitter_cfg.c **** 		CY_SET_XTND_REG32((void CYFAR *)(CYREG_B1_P3_U0_CFG24), 0xC4040404u);
  476              		.loc 1 419 0
  477 005a 254A     		ldr	r2, .L33+12
  478 005c 254B     		ldr	r3, .L33+16
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 1
  500 0086 43F01003 		orr	r3, r3, #16
  501 008a 1370     		strb	r3, [r2]
  502              	.LBE3:
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 18
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\cc2PQquk.s 			page 18
 
 
  428:Generated_Source\PSoC5/cyfitter_cfg.c **** 	}
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 1
  540 00c8 8123     		movs	r3, #129
  541 00ca 2B70     		strb	r3, [r5]
  445:Generated_Source\PSoC5/cyfitter_cfg.c **** 	CY_SET_XTND_REG8((void CYFAR *)(CYREG_PANTHER_WAITPIPE), 0x01u);
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 19
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\cc2PQquk.s 			page 19
 
 
  542              		.loc 1 445 0
@@ -1106,18 +1106,18 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 1
  558              	.L33:
  559 00e4 E8460040 		.word	1073759976
  560 00e8 00000000 		.word	.LANCHOR0
- 561 00ec 60000048 		.word	1207959648
- 562 00f0 04040084 		.word	-2080373756
- 563 00f4 D8160140 		.word	1073813208
+ 561 00ec 58000048 		.word	1207959640
+ 562 00f0 040404C4 		.word	-1006369788
+ 563 00f4 58160140 		.word	1073813080
  564 00f8 03500140 		.word	1073827843
  565 00fc A0430040 		.word	1073759136
- 566 0100 F0060048 		.word	1207961328
+ 566 0100 CC060048 		.word	1207961292
  567 0104 C0510040 		.word	1073762752
- 568 0108 FC060048 		.word	1207961340
+ 568 0108 D8060048 		.word	1207961304
  569 010c 12510040 		.word	1073762578
- 570 0110 04070048 		.word	1207961348
+ 570 0110 E0060048 		.word	1207961312
  571 0114 22510040 		.word	1073762594
- 572 0118 0C070048 		.word	1207961356
+ 572 0118 E8060048 		.word	1207961320
  573 011c 32510040 		.word	1073762610
  574 0120 22430040 		.word	1073759010
  575 0124 00480040 		.word	1073760256
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 1
  590 000a 3000     		.short	48
  591 000c F0510040 		.word	1073762800
  592 0010 1000     		.short	16
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 20
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\cc2PQquk.s 			page 20
 
 
  593 0012 00000140 		.4byte	1073807360
@@ -1155,7 +1155,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 1
  604              		.size	cfg_memcpy_list.5019, 10
  605              	cfg_memcpy_list.5019:
  606 0030 60520040 		.word	1073762912
- 607 0034 E8060048 		.word	1207961320
+ 607 0034 C4060048 		.word	1207961284
  608 0038 0600     		.short	6
  609              		.text
  610              	.Letext0:
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 1
  647 0047 04       		.byte	0x4
  648 0048 57010000 		.4byte	.LASF2
  649 004c 04       		.uleb128 0x4
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 21
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\cc2PQquk.s 			page 21
 
 
  650 004d 01       		.byte	0x1
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 1
  704 00b3 04       		.byte	0x4
  705 00b4 97010000 		.4byte	.LASF16
  706 00b8 04       		.uleb128 0x4
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 22
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\cc2PQquk.s 			page 22
 
 
  707 00b9 08       		.byte	0x8
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 1
  761 012e 9C       		.byte	0x9c
  762 012f 41010000 		.4byte	0x141
  763 0133 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 23
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\cc2PQquk.s 			page 23
 
 
  764 0134 A6000000 		.4byte	.LASF24
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 1
  818 01a8 C7       		.byte	0xc7
  819 01a9 8D000000 		.4byte	0x8d
  820 01ad 51000000 		.4byte	.LLST3
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 24
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\cc2PQquk.s 			page 24
 
 
  821 01b1 00       		.byte	0
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 1
  875 022a 50       		.byte	0x50
  876 022b 03       		.uleb128 0x3
  877 022c F3       		.byte	0xf3
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 25
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\cc2PQquk.s 			page 25
 
 
  878 022d 01       		.uleb128 0x1
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 1
  932 0291 01       		.uleb128 0x1
  933 0292 33       		.byte	0x33
  934 0293 00       		.byte	0
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 26
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\cc2PQquk.s 			page 26
 
 
  935 0294 00       		.byte	0
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 1
  989 02f5 10       		.uleb128 0x10
  990 02f6 04       		.byte	0x4
  991 02f7 FB020000 		.4byte	0x2fb
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 27
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\cc2PQquk.s 			page 27
 
 
  992 02fb 19       		.uleb128 0x19
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 1
  1046 0374 04       		.byte	0x4
  1047 0375 00       		.byte	0
  1048 0376 06       		.uleb128 0x6
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 28
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\cc2PQquk.s 			page 28
 
 
  1049 0377 75010000 		.4byte	.LASF44
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 1
  1103 03f0 FB030000 		.4byte	0x3fb
  1104 03f4 22       		.uleb128 0x22
  1105 03f5 7D000000 		.4byte	0x7d
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 29
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\cc2PQquk.s 			page 29
 
 
  1106 03f9 00       		.byte	0
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 1
  1160 0462 94       		.byte	0x94
  1161 0463 02       		.byte	0x2
  1162 0464 0A       		.byte	0xa
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 30
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\cc2PQquk.s 			page 30
 
 
  1163 0465 FFFF     		.2byte	0xffff
@@ -1798,13 +1798,13 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 1
  1217 04db 24       		.byte	0x24
  1218 04dc 16       		.uleb128 0x16
  1219 04dd 01       		.uleb128 0x1
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 31
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\cc2PQquk.s 			page 31
 
 
  1220 04de 51       		.byte	0x51
  1221 04df 05       		.uleb128 0x5
  1222 04e0 0C       		.byte	0xc
- 1223 04e1 60000048 		.4byte	0x48000060
+ 1223 04e1 58000048 		.4byte	0x48000058
  1224 04e5 00       		.byte	0
  1225 04e6 00       		.byte	0
  1226 04e7 17       		.uleb128 0x17
@@ -1822,7 +1822,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 1
  1238 04ff 51       		.byte	0x51
  1239 0500 05       		.uleb128 0x5
  1240 0501 0C       		.byte	0xc
- 1241 0502 F0060048 		.4byte	0x480006f0
+ 1241 0502 CC060048 		.4byte	0x480006cc
  1242 0506 16       		.uleb128 0x16
  1243 0507 01       		.uleb128 0x1
  1244 0508 52       		.byte	0x52
@@ -1844,7 +1844,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 1
  1260 0524 51       		.byte	0x51
  1261 0525 05       		.uleb128 0x5
  1262 0526 0C       		.byte	0xc
- 1263 0527 FC060048 		.4byte	0x480006fc
+ 1263 0527 D8060048 		.4byte	0x480006d8
  1264 052b 16       		.uleb128 0x16
  1265 052c 01       		.uleb128 0x1
  1266 052d 52       		.byte	0x52
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 1
  1274 053e 16       		.uleb128 0x16
  1275 053f 01       		.uleb128 0x1
  1276 0540 50       		.byte	0x50
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 32
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\cc2PQquk.s 			page 32
 
 
  1277 0541 05       		.uleb128 0x5
@@ -1869,7 +1869,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 1
  1282 0549 51       		.byte	0x51
  1283 054a 05       		.uleb128 0x5
  1284 054b 0C       		.byte	0xc
- 1285 054c 04070048 		.4byte	0x48000704
+ 1285 054c E0060048 		.4byte	0x480006e0
  1286 0550 16       		.uleb128 0x16
  1287 0551 01       		.uleb128 0x1
  1288 0552 52       		.byte	0x52
@@ -1891,7 +1891,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 1
  1304 056e 51       		.byte	0x51
  1305 056f 05       		.uleb128 0x5
  1306 0570 0C       		.byte	0xc
- 1307 0571 0C070048 		.4byte	0x4800070c
+ 1307 0571 E8060048 		.4byte	0x480006e8
  1308 0575 16       		.uleb128 0x16
  1309 0576 01       		.uleb128 0x1
  1310 0577 52       		.byte	0x52
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 1
  1331 05a1 51       		.byte	0x51
  1332 05a2 02       		.uleb128 0x2
  1333 05a3 74       		.byte	0x74
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 33
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\cc2PQquk.s 			page 33
 
 
  1334 05a4 00       		.sleb128 0
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 1
  1388 0020 00       		.byte	0
  1389 0021 03       		.uleb128 0x3
  1390 0022 0E       		.uleb128 0xe
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 34
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\cc2PQquk.s 			page 34
 
 
  1391 0023 3A       		.uleb128 0x3a
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 1
  1445 0059 0B       		.uleb128 0xb
  1446 005a 01       		.uleb128 0x1
  1447 005b 13       		.uleb128 0x13
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 35
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\cc2PQquk.s 			page 35
 
 
  1448 005c 00       		.byte	0
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 1
  1502 0094 18       		.uleb128 0x18
  1503 0095 00       		.byte	0
  1504 0096 00       		.byte	0
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 36
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\cc2PQquk.s 			page 36
 
 
  1505 0097 0C       		.uleb128 0xc
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 1
  1559 00ce 3B       		.uleb128 0x3b
  1560 00cf 0B       		.uleb128 0xb
  1561 00d0 49       		.uleb128 0x49
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 37
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\cc2PQquk.s 			page 37
 
 
  1562 00d1 13       		.uleb128 0x13
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 1
  1616 0108 13       		.uleb128 0x13
  1617 0109 02       		.uleb128 0x2
  1618 010a 17       		.uleb128 0x17
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 38
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\cc2PQquk.s 			page 38
 
 
  1619 010b 00       		.byte	0
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 1
  1673 0148 0B       		.uleb128 0xb
  1674 0149 49       		.uleb128 0x49
  1675 014a 13       		.uleb128 0x13
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 39
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\cc2PQquk.s 			page 39
 
 
  1676 014b 02       		.uleb128 0x2
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 1
  1730 0182 3A       		.uleb128 0x3a
  1731 0183 0B       		.uleb128 0xb
  1732 0184 3B       		.uleb128 0x3b
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 40
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\cc2PQquk.s 			page 40
 
 
  1733 0185 05       		.uleb128 0x5
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 1
  1787 01bb 05       		.uleb128 0x5
  1788 01bc 49       		.uleb128 0x49
  1789 01bd 13       		.uleb128 0x13
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 41
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\cc2PQquk.s 			page 41
 
 
  1790 01be 38       		.uleb128 0x38
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 1
  1844 01f6 0E       		.uleb128 0xe
  1845 01f7 03       		.uleb128 0x3
  1846 01f8 0E       		.uleb128 0xe
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 42
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\cc2PQquk.s 			page 42
 
 
  1847 01f9 00       		.byte	0
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 1
  1901 0051 0E000000 		.4byte	.LVL5
  1902 0055 24000000 		.4byte	.LVL8
  1903 0059 0100     		.2byte	0x1
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 43
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\cc2PQquk.s 			page 43
 
 
  1904 005b 53       		.byte	0x53
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 1
  1958 00e3 0100     		.2byte	0x1
  1959 00e5 55       		.byte	0x55
  1960 00e6 00000000 		.4byte	0
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 44
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\cc2PQquk.s 			page 44
 
 
  1961 00ea 00000000 		.4byte	0
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 1
  2015 0170 01       		.uleb128 0x1
  2016 0171 52       		.byte	0x52
  2017 0172 9F       		.byte	0x9f
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 45
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\cc2PQquk.s 			page 45
 
 
  2018 0173 00000000 		.4byte	0
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 1
  2072 01f5 0B00     		.2byte	0xb
  2073 01f7 74       		.byte	0x74
  2074 01f8 00       		.sleb128 0
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 46
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\cc2PQquk.s 			page 46
 
 
  2075 01f9 3A       		.byte	0x3a
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 1
  2129 0024 28000000 		.4byte	.LFE6-.LFB6
  2130 0028 00000000 		.4byte	.LFB0
  2131 002c 0C000000 		.4byte	.LFE0-.LFB0
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 47
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\cc2PQquk.s 			page 47
 
 
  2132 0030 00000000 		.4byte	.LFB5
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 1
  2174      75704572 
  2174      726F7200 
  2175              	.LASF26:
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 48
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\cc2PQquk.s 			page 48
 
 
  2176 0031 64617461 		.ascii	"data_table\000"
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 1
  2200      3800
  2201              	.LASF17:
  2202 00cc 646F7562 		.ascii	"double\000"
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 49
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\cc2PQquk.s 			page 49
 
 
  2202      6C6500
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 1
  2229              	.LASF2:
  2230 0157 6C6F6E67 		.ascii	"long double\000"
  2230      20646F75 
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 50
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\cc2PQquk.s 			page 50
 
 
  2230      626C6500 
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 1
  2254 0236 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
  2254      66756E63 
  2254      74696F6E 
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 51
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\cc2PQquk.s 			page 51
 
 
  2254      2D736563 
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 1
  2279      335C676F 
  2279      645C6166 
  2280 0348 63796473 		.ascii	"cydsn\000"
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHlukHo.s 			page 52
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\cc2PQquk.s 			page 52
 
 
  2280      6E00

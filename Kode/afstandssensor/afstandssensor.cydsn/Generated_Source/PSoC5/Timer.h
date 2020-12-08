@@ -44,7 +44,7 @@ extern uint8 Timer_initVar;
 #define Timer_UsingHWEnable              0u
 #define Timer_EnableTriggerMode          1u
 #define Timer_InterruptOnCaptureCount    1u
-#define Timer_RunModeUsed                0u
+#define Timer_RunModeUsed                1u
 #define Timer_ControlRegRemoved          0u
 
 #if defined(Timer_TimerUDB_sCTRLReg_SyncCtl_ctrlreg__CONTROL_REG)
@@ -168,7 +168,7 @@ void Timer_Wakeup(void)        ;
 *    Initialial Parameter Constants
 ***************************************/
 
-#define Timer_INIT_PERIOD             65535u
+#define Timer_INIT_PERIOD             65534u
 #define Timer_INIT_CAPTURE_MODE       ((uint8)((uint8)2u << Timer_CTRL_CAP_MODE_SHIFT))
 #define Timer_INIT_TRIGGER_MODE       ((uint8)((uint8)1u << Timer_CTRL_TRIG_MODE_SHIFT))
 #if (Timer_UsingFixedFunction)

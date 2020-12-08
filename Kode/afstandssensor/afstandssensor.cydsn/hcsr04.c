@@ -28,7 +28,15 @@ void initDistSens()
 
 int calcDist()
 {
-    distance = (65535 - Timer_ReadCapture()) * 0.017;
+    int capture = Timer_ReadCapture();
+    snprintf(outputBuffer, sizeof(outputBuffer), "Counter: %d \r\n", capture);
+    UART_1_PutString(outputBuffer);
+    
+    distance = (65535 - capture) * 0.017;
+    if(capture > 65250 && capture < 65340)
+    {
+        distance = 500;
+    }
     return distance;
 }
 

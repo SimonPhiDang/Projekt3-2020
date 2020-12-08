@@ -1,5 +1,5 @@
 -- Project:   afstandssensor
--- Generated: 12/04/2020 11:29:47
+-- Generated: 12/08/2020 18:43:24
 -- PSoC Creator  4.3
 
 ENTITY afstandssensor IS
@@ -68,7 +68,6 @@ ARCHITECTURE __DEFAULT__ OF afstandssensor IS
     SIGNAL \PWM_Trigger:PWMUDB:status_3\ : bit;
     SIGNAL \PWM_Trigger:PWMUDB:tc_i\ : bit;
     SIGNAL \Timer:TimerUDB:capt_fifo_load\ : bit;
-    ATTRIBUTE soft OF \Timer:TimerUDB:capt_fifo_load\ : SIGNAL IS 1;
     SIGNAL \Timer:TimerUDB:capt_int_temp\ : bit;
     SIGNAL \Timer:TimerUDB:capture_last\ : bit;
     SIGNAL \Timer:TimerUDB:control_0\ : bit;
@@ -82,9 +81,12 @@ ARCHITECTURE __DEFAULT__ OF afstandssensor IS
     SIGNAL \Timer:TimerUDB:int_capt_count_0\ : bit;
     SIGNAL \Timer:TimerUDB:int_capt_count_1\ : bit;
     SIGNAL \Timer:TimerUDB:per_zero\ : bit;
+    SIGNAL \Timer:TimerUDB:run_mode\ : bit;
     SIGNAL \Timer:TimerUDB:status_2\ : bit;
     SIGNAL \Timer:TimerUDB:status_3\ : bit;
     SIGNAL \Timer:TimerUDB:status_tc\ : bit;
+    SIGNAL \Timer:TimerUDB:timer_enable\ : bit;
+    SIGNAL \Timer:TimerUDB:trig_disable\ : bit;
     SIGNAL \Timer:TimerUDB:trig_fall_detected\ : bit;
     SIGNAL \Timer:TimerUDB:trig_reg\ : bit;
     SIGNAL \Timer:TimerUDB:trig_rise_detected\ : bit;
@@ -219,11 +221,14 @@ ARCHITECTURE __DEFAULT__ OF afstandssensor IS
     ATTRIBUTE lib_model OF \PWM_Trigger:PWMUDB:status_0\ : LABEL IS "macrocell31";
     ATTRIBUTE lib_model OF Net_13 : LABEL IS "macrocell32";
     ATTRIBUTE lib_model OF \Timer:TimerUDB:capture_last\ : LABEL IS "macrocell33";
-    ATTRIBUTE lib_model OF \Timer:TimerUDB:int_capt_count_1\ : LABEL IS "macrocell34";
-    ATTRIBUTE lib_model OF \Timer:TimerUDB:int_capt_count_0\ : LABEL IS "macrocell35";
-    ATTRIBUTE lib_model OF \Timer:TimerUDB:capt_int_temp\ : LABEL IS "macrocell36";
-    ATTRIBUTE lib_model OF \Timer:TimerUDB:trig_rise_detected\ : LABEL IS "macrocell37";
-    ATTRIBUTE lib_model OF \Timer:TimerUDB:trig_fall_detected\ : LABEL IS "macrocell38";
+    ATTRIBUTE lib_model OF \Timer:TimerUDB:run_mode\ : LABEL IS "macrocell34";
+    ATTRIBUTE lib_model OF \Timer:TimerUDB:int_capt_count_1\ : LABEL IS "macrocell35";
+    ATTRIBUTE lib_model OF \Timer:TimerUDB:int_capt_count_0\ : LABEL IS "macrocell36";
+    ATTRIBUTE lib_model OF \Timer:TimerUDB:capt_int_temp\ : LABEL IS "macrocell37";
+    ATTRIBUTE lib_model OF \Timer:TimerUDB:timer_enable\ : LABEL IS "macrocell38";
+    ATTRIBUTE lib_model OF \Timer:TimerUDB:trig_disable\ : LABEL IS "macrocell39";
+    ATTRIBUTE lib_model OF \Timer:TimerUDB:trig_rise_detected\ : LABEL IS "macrocell40";
+    ATTRIBUTE lib_model OF \Timer:TimerUDB:trig_fall_detected\ : LABEL IS "macrocell41";
     COMPONENT clockblockcell
         PORT (
             dclk_0 : OUT std_ulogic;
@@ -1127,17 +1132,14 @@ BEGIN
 
     \Timer:TimerUDB:capt_fifo_load\:macrocell
         GENERIC MAP(
-            soft => 1,
-            eqn_main => "(!main_0 * main_1 * main_2 * main_3 * main_4)",
+            eqn_main => "(!main_0 * main_1 * main_2)",
             regmode => 0,
             clken_mode => 1)
         PORT MAP(
             q => \Timer:TimerUDB:capt_fifo_load\,
             main_0 => Net_521,
-            main_1 => \Timer:TimerUDB:control_7\,
-            main_2 => \Timer:TimerUDB:control_4\,
-            main_3 => \Timer:TimerUDB:capture_last\,
-            main_4 => \Timer:TimerUDB:trig_rise_detected\);
+            main_1 => \Timer:TimerUDB:capture_last\,
+            main_2 => \Timer:TimerUDB:timer_enable\);
 
     \Timer:TimerUDB:status_tc\:macrocell
         GENERIC MAP(
@@ -1146,8 +1148,8 @@ BEGIN
             clken_mode => 1)
         PORT MAP(
             q => \Timer:TimerUDB:status_tc\,
-            main_0 => \Timer:TimerUDB:control_7\,
-            main_1 => \Timer:TimerUDB:control_4\,
+            main_0 => \Timer:TimerUDB:control_4\,
+            main_1 => \Timer:TimerUDB:run_mode\,
             main_2 => \Timer:TimerUDB:per_zero\,
             main_3 => \Timer:TimerUDB:trig_rise_detected\);
 
@@ -1158,8 +1160,8 @@ BEGIN
             clken_mode => 1)
         PORT MAP(
             q => \Timer:TimerUDB:trig_reg\,
-            main_0 => \Timer:TimerUDB:control_7\,
-            main_1 => \Timer:TimerUDB:control_4\,
+            main_0 => \Timer:TimerUDB:control_4\,
+            main_1 => \Timer:TimerUDB:timer_enable\,
             main_2 => \Timer:TimerUDB:trig_rise_detected\);
 
     \UART_1:BUART:sTX:TxShifter:u0\:datapathcell
@@ -1931,53 +1933,105 @@ BEGIN
             clock_0 => Net_485,
             main_0 => Net_521);
 
+    \Timer:TimerUDB:run_mode\:macrocell
+        GENERIC MAP(
+            eqn_main => "(main_0)",
+            regmode => 1,
+            clk_inv => '0',
+            clken_mode => 1)
+        PORT MAP(
+            q => \Timer:TimerUDB:run_mode\,
+            clock_0 => Net_485,
+            main_0 => \Timer:TimerUDB:control_7\);
+
     \Timer:TimerUDB:int_capt_count_1\:macrocell
         GENERIC MAP(
-            eqn_main => "(!main_0 * !main_1 * main_4 * !main_5) + (!main_0 * main_1 * main_3 * !main_4 * main_5) + (!main_0 * !main_2 * main_3 * !main_4 * main_5) + (!main_0 * main_2 * main_4 * !main_5) + (!main_0 * !main_3 * main_4)",
-            regmode => 1,
+            eqn_main => "(!main_0 * !main_1 * main_2 * main_4 * main_5 * main_7) + (!main_0 * !main_1 * !main_3 * main_4 * main_5 * main_7) + (!main_0 * main_2 * !main_3 * main_4 * main_5 * main_6) + (!main_0 * main_4 * main_5 * main_6 * main_7) + (main_1 * main_6)",
+            regmode => 2,
             clk_inv => '0',
             clken_mode => 1)
         PORT MAP(
             q => \Timer:TimerUDB:int_capt_count_1\,
             clock_0 => Net_485,
-            main_0 => Net_13,
-            main_1 => \Timer:TimerUDB:control_1\,
-            main_2 => \Timer:TimerUDB:control_0\,
-            main_3 => \Timer:TimerUDB:capt_fifo_load\,
-            main_4 => \Timer:TimerUDB:int_capt_count_1\,
-            main_5 => \Timer:TimerUDB:int_capt_count_0\);
+            main_0 => Net_521,
+            main_1 => Net_13,
+            main_2 => \Timer:TimerUDB:control_1\,
+            main_3 => \Timer:TimerUDB:control_0\,
+            main_4 => \Timer:TimerUDB:capture_last\,
+            main_5 => \Timer:TimerUDB:timer_enable\,
+            main_6 => \Timer:TimerUDB:int_capt_count_1\,
+            main_7 => \Timer:TimerUDB:int_capt_count_0\);
 
     \Timer:TimerUDB:int_capt_count_0\:macrocell
         GENERIC MAP(
-            eqn_main => "(!main_0 * !main_1 * main_3 * main_4 * !main_5) + (!main_0 * main_1 * main_3 * !main_4 * !main_5) + (!main_0 * main_2 * main_3 * !main_5) + (!main_0 * !main_3 * main_5)",
-            regmode => 1,
+            eqn_main => "(!main_0 * !main_1 * !main_2 * main_4 * main_5 * main_6) + (!main_0 * !main_1 * main_2 * main_4 * main_5 * !main_6) + (!main_0 * !main_1 * main_3 * main_4 * main_5) + (!main_0 * main_4 * main_5 * main_7) + (main_1 * main_7)",
+            regmode => 2,
             clk_inv => '0',
             clken_mode => 1)
         PORT MAP(
             q => \Timer:TimerUDB:int_capt_count_0\,
             clock_0 => Net_485,
-            main_0 => Net_13,
-            main_1 => \Timer:TimerUDB:control_1\,
-            main_2 => \Timer:TimerUDB:control_0\,
-            main_3 => \Timer:TimerUDB:capt_fifo_load\,
-            main_4 => \Timer:TimerUDB:int_capt_count_1\,
-            main_5 => \Timer:TimerUDB:int_capt_count_0\);
+            main_0 => Net_521,
+            main_1 => Net_13,
+            main_2 => \Timer:TimerUDB:control_1\,
+            main_3 => \Timer:TimerUDB:control_0\,
+            main_4 => \Timer:TimerUDB:capture_last\,
+            main_5 => \Timer:TimerUDB:timer_enable\,
+            main_6 => \Timer:TimerUDB:int_capt_count_1\,
+            main_7 => \Timer:TimerUDB:int_capt_count_0\);
 
     \Timer:TimerUDB:capt_int_temp\:macrocell
         GENERIC MAP(
-            eqn_main => "(!main_0 * !main_1 * !main_2 * main_3 * !main_4 * !main_5) + (!main_0 * !main_1 * main_2 * main_3 * !main_4 * main_5) + (!main_0 * main_1 * !main_2 * main_3 * main_4 * !main_5) + (!main_0 * main_1 * main_2 * main_3 * main_4 * main_5)",
+            eqn_main => "(!main_0 * !main_1 * !main_2 * !main_3 * main_4 * main_5 * !main_6 * !main_7) + (!main_0 * !main_1 * !main_2 * main_3 * main_4 * main_5 * !main_6 * main_7) + (!main_0 * !main_1 * main_2 * !main_3 * main_4 * main_5 * main_6 * !main_7) + (!main_0 * !main_1 * main_2 * main_3 * main_4 * main_5 * main_6 * main_7)",
             regmode => 1,
             clk_inv => '0',
             clken_mode => 1)
         PORT MAP(
             q => \Timer:TimerUDB:capt_int_temp\,
             clock_0 => Net_485,
+            main_0 => Net_521,
+            main_1 => Net_13,
+            main_2 => \Timer:TimerUDB:control_1\,
+            main_3 => \Timer:TimerUDB:control_0\,
+            main_4 => \Timer:TimerUDB:capture_last\,
+            main_5 => \Timer:TimerUDB:timer_enable\,
+            main_6 => \Timer:TimerUDB:int_capt_count_1\,
+            main_7 => \Timer:TimerUDB:int_capt_count_0\);
+
+    \Timer:TimerUDB:timer_enable\:macrocell
+        GENERIC MAP(
+            eqn_main => "(!main_0 * main_1 * main_2 * !main_3 * !main_6 * main_7) + (!main_0 * main_1 * main_2 * !main_4 * !main_6 * main_7) + (!main_0 * main_1 * main_2 * !main_5 * !main_6 * main_7)",
+            regmode => 1,
+            clk_inv => '0',
+            clken_mode => 1)
+        PORT MAP(
+            q => \Timer:TimerUDB:timer_enable\,
+            clock_0 => Net_485,
             main_0 => Net_13,
-            main_1 => \Timer:TimerUDB:control_1\,
-            main_2 => \Timer:TimerUDB:control_0\,
-            main_3 => \Timer:TimerUDB:capt_fifo_load\,
-            main_4 => \Timer:TimerUDB:int_capt_count_1\,
-            main_5 => \Timer:TimerUDB:int_capt_count_0\);
+            main_1 => \Timer:TimerUDB:control_7\,
+            main_2 => \Timer:TimerUDB:control_4\,
+            main_3 => \Timer:TimerUDB:timer_enable\,
+            main_4 => \Timer:TimerUDB:run_mode\,
+            main_5 => \Timer:TimerUDB:per_zero\,
+            main_6 => \Timer:TimerUDB:trig_disable\,
+            main_7 => \Timer:TimerUDB:trig_rise_detected\);
+
+    \Timer:TimerUDB:trig_disable\:macrocell
+        GENERIC MAP(
+            eqn_main => "(!main_0 * main_1 * main_2 * main_3 * main_4 * main_6) + (!main_0 * main_5)",
+            regmode => 1,
+            clk_inv => '0',
+            clken_mode => 1)
+        PORT MAP(
+            q => \Timer:TimerUDB:trig_disable\,
+            clock_0 => Net_485,
+            main_0 => Net_13,
+            main_1 => \Timer:TimerUDB:control_4\,
+            main_2 => \Timer:TimerUDB:timer_enable\,
+            main_3 => \Timer:TimerUDB:run_mode\,
+            main_4 => \Timer:TimerUDB:per_zero\,
+            main_5 => \Timer:TimerUDB:trig_disable\,
+            main_6 => \Timer:TimerUDB:trig_rise_detected\);
 
     \Timer:TimerUDB:trig_rise_detected\:macrocell
         GENERIC MAP(
