@@ -1,0 +1,911 @@
+ARM GAS  C:\Users\shynt\AppData\Local\Temp\ccTBjPE8.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"main.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.main,"ax",%progbits
+  20              		.align	2
+  21              		.global	main
+  22              		.thumb
+  23              		.thumb_func
+  24              		.type	main, %function
+  25              	main:
+  26              	.LFB64:
+  27              		.file 1 "main.c"
+   1:main.c        **** /* ========================================
+   2:main.c        ****  *
+   3:main.c        ****  * Copyright YOUR COMPANY, THE YEAR
+   4:main.c        ****  * All Rights Reserved
+   5:main.c        ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:main.c        ****  *
+   7:main.c        ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:main.c        ****  * WHICH IS THE PROPERTY OF your company.
+   9:main.c        ****  *
+  10:main.c        ****  * ========================================
+  11:main.c        **** */
+  12:main.c        **** #include "project.h"
+  13:main.c        **** #include <stdio.h>
+  14:main.c        **** #include <stdint.h>
+  15:main.c        **** #include "colorSensor.h"
+  16:main.c        **** 
+  17:main.c        **** static char str[128] ;
+  18:main.c        **** void print(char *str) ;
+  19:main.c        **** int main (void)
+  20:main.c        **** {
+  28              		.loc 1 20 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32 0000 38B5     		push	{r3, r4, r5, lr}
+  33              		.cfi_def_cfa_offset 16
+  34              		.cfi_offset 3, -16
+  35              		.cfi_offset 4, -12
+  36              		.cfi_offset 5, -8
+  37              		.cfi_offset 14, -4
+ARM GAS  C:\Users\shynt\AppData\Local\Temp\ccTBjPE8.s 			page 2
+
+
+  21:main.c        ****     standardColor();
+  38              		.loc 1 21 0
+  39 0002 FFF7FEFF 		bl	standardColor
+  40              	.LVL0:
+  22:main.c        ****     UART_1_Start();  
+  41              		.loc 1 22 0
+  42 0006 FFF7FEFF 		bl	UART_1_Start
+  43              	.LVL1:
+  23:main.c        ****     snprintf(str,sizeof(str),"MAIN"); 
+  44              		.loc 1 23 0
+  45 000a 204B     		ldr	r3, .L11
+  46 000c 204A     		ldr	r2, .L11+4
+  47 000e 92E80300 		ldmia	r2, {r0, r1}
+  48 0012 1860     		str	r0, [r3]
+  49 0014 1971     		strb	r1, [r3, #4]
+  50              	.L9:
+  51              	.LBB2:
+  24:main.c        ****     
+  25:main.c        ****  for(;;)
+  26:main.c        **** {
+  27:main.c        ****     int tal=getColor();
+  52              		.loc 1 27 0
+  53 0016 FFF7FEFF 		bl	getColor
+  54              	.LVL2:
+  55 001a 0446     		mov	r4, r0
+  56              	.LVL3:
+  28:main.c        ****     snprintf(str,sizeof(str),"%d",tal); 
+  57              		.loc 1 28 0
+  58 001c 1B4D     		ldr	r5, .L11
+  59 001e 0346     		mov	r3, r0
+  60 0020 1C4A     		ldr	r2, .L11+8
+  61 0022 8021     		movs	r1, #128
+  62 0024 2846     		mov	r0, r5
+  63              	.LVL4:
+  64 0026 FFF7FEFF 		bl	snprintf
+  65              	.LVL5:
+  29:main.c        ****     UART_1_PutString(str) ;
+  66              		.loc 1 29 0
+  67 002a 2846     		mov	r0, r5
+  68 002c FFF7FEFF 		bl	UART_1_PutString
+  69              	.LVL6:
+  30:main.c        ****     
+  31:main.c        ****     switch(tal)
+  70              		.loc 1 31 0
+  71 0030 013C     		subs	r4, r4, #1
+  72              	.LVL7:
+  73 0032 032C     		cmp	r4, #3
+  74 0034 20D8     		bhi	.L2
+  75 0036 DFE804F0 		tbb	[pc, r4]
+  76              	.L4:
+  77 003a 02       		.byte	(.L3-.L4)/2
+  78 003b 09       		.byte	(.L5-.L4)/2
+  79 003c 10       		.byte	(.L6-.L4)/2
+  80 003d 19       		.byte	(.L7-.L4)/2
+  81              		.p2align 1
+  82              	.L3:
+  32:main.c        ****     {
+ARM GAS  C:\Users\shynt\AppData\Local\Temp\ccTBjPE8.s 			page 3
+
+
+  33:main.c        ****      case 1:
+  34:main.c        ****         {snprintf(str,sizeof(str),"RED\n\r");}
+  83              		.loc 1 34 0
+  84 003e 134B     		ldr	r3, .L11
+  85 0040 154A     		ldr	r2, .L11+12
+  86 0042 92E80300 		ldmia	r2, {r0, r1}
+  87 0046 1860     		str	r0, [r3]
+  88 0048 9980     		strh	r1, [r3, #4]	@ movhi
+  35:main.c        ****         break;
+  89              		.loc 1 35 0
+  90 004a 1AE0     		b	.L8
+  91              	.L5:
+  36:main.c        ****      case 2:
+  37:main.c        ****         {snprintf(str,sizeof(str),"GREEN\n\r");}
+  92              		.loc 1 37 0
+  93 004c 0F4B     		ldr	r3, .L11
+  94 004e 134A     		ldr	r2, .L11+16
+  95 0050 92E80300 		ldmia	r2, {r0, r1}
+  96 0054 83E80300 		stmia	r3, {r0, r1}
+  38:main.c        ****         break;   
+  97              		.loc 1 38 0
+  98 0058 13E0     		b	.L8
+  99              	.L6:
+  39:main.c        ****      case 3:
+  40:main.c        ****         {snprintf(str,sizeof(str),"BLUE\n\r");}
+ 100              		.loc 1 40 0
+ 101 005a 0C4B     		ldr	r3, .L11
+ 102 005c 104A     		ldr	r2, .L11+20
+ 103 005e 92E80300 		ldmia	r2, {r0, r1}
+ 104 0062 1860     		str	r0, [r3]
+ 105 0064 9980     		strh	r1, [r3, #4]	@ movhi
+ 106 0066 090C     		lsrs	r1, r1, #16
+ 107 0068 9971     		strb	r1, [r3, #6]
+  41:main.c        ****         break; 
+ 108              		.loc 1 41 0
+ 109 006a 0AE0     		b	.L8
+ 110              	.L7:
+  42:main.c        ****      case 4:
+  43:main.c        ****         {snprintf(str,sizeof(str),"UNKNOWN\n\r");}
+ 111              		.loc 1 43 0
+ 112 006c 0D4A     		ldr	r2, .L11+24
+ 113 006e 074B     		ldr	r3, .L11
+ 114 0070 07CA     		ldmia	r2, {r0, r1, r2}
+ 115 0072 03C3     		stmia	r3!, {r0, r1}
+ 116 0074 1A80     		strh	r2, [r3]	@ movhi
+  44:main.c        ****         break; 
+ 117              		.loc 1 44 0
+ 118 0076 04E0     		b	.L8
+ 119              	.L2:
+  45:main.c        ****      default:
+  46:main.c        ****         {snprintf(str,sizeof(str),"DEFAULT\n\r");}
+ 120              		.loc 1 46 0
+ 121 0078 0B4A     		ldr	r2, .L11+28
+ 122 007a 044B     		ldr	r3, .L11
+ 123 007c 07CA     		ldmia	r2, {r0, r1, r2}
+ 124 007e 03C3     		stmia	r3!, {r0, r1}
+ 125 0080 1A80     		strh	r2, [r3]	@ movhi
+ARM GAS  C:\Users\shynt\AppData\Local\Temp\ccTBjPE8.s 			page 4
+
+
+ 126              	.L8:
+  47:main.c        ****         break;
+  48:main.c        ****     }
+  49:main.c        ****     
+  50:main.c        ****     UART_1_PutString(str) ;
+ 127              		.loc 1 50 0
+ 128 0082 0248     		ldr	r0, .L11
+ 129 0084 FFF7FEFF 		bl	UART_1_PutString
+ 130              	.LVL8:
+ 131              	.LBE2:
+  51:main.c        ****  } 
+ 132              		.loc 1 51 0
+ 133 0088 C5E7     		b	.L9
+ 134              	.L12:
+ 135 008a 00BF     		.align	2
+ 136              	.L11:
+ 137 008c 00000000 		.word	.LANCHOR0
+ 138 0090 00000000 		.word	.LC0
+ 139 0094 08000000 		.word	.LC1
+ 140 0098 0C000000 		.word	.LC2
+ 141 009c 14000000 		.word	.LC3
+ 142 00a0 1C000000 		.word	.LC4
+ 143 00a4 24000000 		.word	.LC5
+ 144 00a8 30000000 		.word	.LC6
+ 145              		.cfi_endproc
+ 146              	.LFE64:
+ 147              		.size	main, .-main
+ 148              		.section	.rodata.str1.4,"aMS",%progbits,1
+ 149              		.align	2
+ 150              	.LC0:
+ 151 0000 4D41494E 		.ascii	"MAIN\000"
+ 151      00
+ 152 0005 000000   		.space	3
+ 153              	.LC1:
+ 154 0008 256400   		.ascii	"%d\000"
+ 155 000b 00       		.space	1
+ 156              	.LC2:
+ 157 000c 5245440A 		.ascii	"RED\012\015\000"
+ 157      0D00
+ 158 0012 0000     		.space	2
+ 159              	.LC3:
+ 160 0014 47524545 		.ascii	"GREEN\012\015\000"
+ 160      4E0A0D00 
+ 161              	.LC4:
+ 162 001c 424C5545 		.ascii	"BLUE\012\015\000"
+ 162      0A0D00
+ 163 0023 00       		.space	1
+ 164              	.LC5:
+ 165 0024 554E4B4E 		.ascii	"UNKNOWN\012\015\000"
+ 165      4F574E0A 
+ 165      0D00
+ 166 002e 0000     		.space	2
+ 167              	.LC6:
+ 168 0030 44454641 		.ascii	"DEFAULT\012\015\000"
+ 168      554C540A 
+ 168      0D00
+ 169              		.bss
+ARM GAS  C:\Users\shynt\AppData\Local\Temp\ccTBjPE8.s 			page 5
+
+
+ 170              		.align	2
+ 171              		.set	.LANCHOR0,. + 0
+ 172              		.type	str, %object
+ 173              		.size	str, 128
+ 174              	str:
+ 175 0000 00000000 		.space	128
+ 175      00000000 
+ 175      00000000 
+ 175      00000000 
+ 175      00000000 
+ 176              		.text
+ 177              	.Letext0:
+ 178              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.3\\psoc creator\\import\\gnu\\arm\\5.4.
+ 179              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.3\\psoc creator\\import\\gnu\\arm\\5.4.
+ 180              		.file 4 "colorSensor.h"
+ 181              		.file 5 "c:\\program files (x86)\\cypress\\psoc creator\\4.3\\psoc creator\\import\\gnu\\arm\\5.4.
+ 182              		.file 6 "Generated_Source\\PSoC5/UART_1.h"
+ 183              		.file 7 "Generated_Source\\PSoC5/core_cm3.h"
+ 184              		.section	.debug_info,"",%progbits
+ 185              	.Ldebug_info0:
+ 186 0000 A9010000 		.4byte	0x1a9
+ 187 0004 0400     		.2byte	0x4
+ 188 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 189 000a 04       		.byte	0x4
+ 190 000b 01       		.uleb128 0x1
+ 191 000c 3A000000 		.4byte	.LASF21
+ 192 0010 0C       		.byte	0xc
+ 193 0011 2E000000 		.4byte	.LASF22
+ 194 0015 18010000 		.4byte	.LASF23
+ 195 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 196 001d 00000000 		.4byte	0
+ 197 0021 00000000 		.4byte	.Ldebug_line0
+ 198 0025 02       		.uleb128 0x2
+ 199 0026 01       		.byte	0x1
+ 200 0027 06       		.byte	0x6
+ 201 0028 92010000 		.4byte	.LASF0
+ 202 002c 02       		.uleb128 0x2
+ 203 002d 01       		.byte	0x1
+ 204 002e 08       		.byte	0x8
+ 205 002f 59010000 		.4byte	.LASF1
+ 206 0033 02       		.uleb128 0x2
+ 207 0034 02       		.byte	0x2
+ 208 0035 05       		.byte	0x5
+ 209 0036 BA010000 		.4byte	.LASF2
+ 210 003a 02       		.uleb128 0x2
+ 211 003b 02       		.byte	0x2
+ 212 003c 07       		.byte	0x7
+ 213 003d 0E000000 		.4byte	.LASF3
+ 214 0041 03       		.uleb128 0x3
+ 215 0042 AA010000 		.4byte	.LASF9
+ 216 0046 02       		.byte	0x2
+ 217 0047 3F       		.byte	0x3f
+ 218 0048 4C000000 		.4byte	0x4c
+ 219 004c 02       		.uleb128 0x2
+ 220 004d 04       		.byte	0x4
+ 221 004e 05       		.byte	0x5
+ 222 004f 6C010000 		.4byte	.LASF4
+ARM GAS  C:\Users\shynt\AppData\Local\Temp\ccTBjPE8.s 			page 6
+
+
+ 223 0053 02       		.uleb128 0x2
+ 224 0054 04       		.byte	0x4
+ 225 0055 07       		.byte	0x7
+ 226 0056 C8000000 		.4byte	.LASF5
+ 227 005a 02       		.uleb128 0x2
+ 228 005b 08       		.byte	0x8
+ 229 005c 05       		.byte	0x5
+ 230 005d 00000000 		.4byte	.LASF6
+ 231 0061 02       		.uleb128 0x2
+ 232 0062 08       		.byte	0x8
+ 233 0063 07       		.byte	0x7
+ 234 0064 DA000000 		.4byte	.LASF7
+ 235 0068 04       		.uleb128 0x4
+ 236 0069 04       		.byte	0x4
+ 237 006a 05       		.byte	0x5
+ 238 006b 696E7400 		.ascii	"int\000"
+ 239 006f 02       		.uleb128 0x2
+ 240 0070 04       		.byte	0x4
+ 241 0071 07       		.byte	0x7
+ 242 0072 21000000 		.4byte	.LASF8
+ 243 0076 03       		.uleb128 0x3
+ 244 0077 D2010000 		.4byte	.LASF10
+ 245 007b 03       		.byte	0x3
+ 246 007c 2C       		.byte	0x2c
+ 247 007d 41000000 		.4byte	0x41
+ 248 0081 02       		.uleb128 0x2
+ 249 0082 04       		.byte	0x4
+ 250 0083 04       		.byte	0x4
+ 251 0084 B4010000 		.4byte	.LASF11
+ 252 0088 02       		.uleb128 0x2
+ 253 0089 08       		.byte	0x8
+ 254 008a 04       		.byte	0x4
+ 255 008b 75010000 		.4byte	.LASF12
+ 256 008f 02       		.uleb128 0x2
+ 257 0090 01       		.byte	0x1
+ 258 0091 08       		.byte	0x8
+ 259 0092 67010000 		.4byte	.LASF13
+ 260 0096 02       		.uleb128 0x2
+ 261 0097 08       		.byte	0x8
+ 262 0098 04       		.byte	0x4
+ 263 0099 9E010000 		.4byte	.LASF14
+ 264 009d 02       		.uleb128 0x2
+ 265 009e 04       		.byte	0x4
+ 266 009f 07       		.byte	0x7
+ 267 00a0 DA010000 		.4byte	.LASF15
+ 268 00a4 05       		.uleb128 0x5
+ 269 00a5 35000000 		.4byte	.LASF24
+ 270 00a9 01       		.byte	0x1
+ 271 00aa 13       		.byte	0x13
+ 272 00ab 68000000 		.4byte	0x68
+ 273 00af 00000000 		.4byte	.LFB64
+ 274 00b3 AC000000 		.4byte	.LFE64-.LFB64
+ 275 00b7 01       		.uleb128 0x1
+ 276 00b8 9C       		.byte	0x9c
+ 277 00b9 43010000 		.4byte	0x143
+ 278 00bd 06       		.uleb128 0x6
+ 279 00be 16000000 		.4byte	.LBB2
+ARM GAS  C:\Users\shynt\AppData\Local\Temp\ccTBjPE8.s 			page 7
+
+
+ 280 00c2 72000000 		.4byte	.LBE2-.LBB2
+ 281 00c6 30010000 		.4byte	0x130
+ 282 00ca 07       		.uleb128 0x7
+ 283 00cb 74616C00 		.ascii	"tal\000"
+ 284 00cf 01       		.byte	0x1
+ 285 00d0 1B       		.byte	0x1b
+ 286 00d1 68000000 		.4byte	0x68
+ 287 00d5 00000000 		.4byte	.LLST0
+ 288 00d9 08       		.uleb128 0x8
+ 289 00da 1A000000 		.4byte	.LVL2
+ 290 00de 75010000 		.4byte	0x175
+ 291 00e2 09       		.uleb128 0x9
+ 292 00e3 2A000000 		.4byte	.LVL5
+ 293 00e7 80010000 		.4byte	0x180
+ 294 00eb 0B010000 		.4byte	0x10b
+ 295 00ef 0A       		.uleb128 0xa
+ 296 00f0 01       		.uleb128 0x1
+ 297 00f1 50       		.byte	0x50
+ 298 00f2 02       		.uleb128 0x2
+ 299 00f3 75       		.byte	0x75
+ 300 00f4 00       		.sleb128 0
+ 301 00f5 0A       		.uleb128 0xa
+ 302 00f6 01       		.uleb128 0x1
+ 303 00f7 51       		.byte	0x51
+ 304 00f8 02       		.uleb128 0x2
+ 305 00f9 08       		.byte	0x8
+ 306 00fa 80       		.byte	0x80
+ 307 00fb 0A       		.uleb128 0xa
+ 308 00fc 01       		.uleb128 0x1
+ 309 00fd 52       		.byte	0x52
+ 310 00fe 05       		.uleb128 0x5
+ 311 00ff 03       		.byte	0x3
+ 312 0100 08000000 		.4byte	.LC1
+ 313 0104 0A       		.uleb128 0xa
+ 314 0105 01       		.uleb128 0x1
+ 315 0106 53       		.byte	0x53
+ 316 0107 02       		.uleb128 0x2
+ 317 0108 74       		.byte	0x74
+ 318 0109 00       		.sleb128 0
+ 319 010a 00       		.byte	0
+ 320 010b 09       		.uleb128 0x9
+ 321 010c 30000000 		.4byte	.LVL6
+ 322 0110 8B010000 		.4byte	0x18b
+ 323 0114 1F010000 		.4byte	0x11f
+ 324 0118 0A       		.uleb128 0xa
+ 325 0119 01       		.uleb128 0x1
+ 326 011a 50       		.byte	0x50
+ 327 011b 02       		.uleb128 0x2
+ 328 011c 75       		.byte	0x75
+ 329 011d 00       		.sleb128 0
+ 330 011e 00       		.byte	0
+ 331 011f 0B       		.uleb128 0xb
+ 332 0120 88000000 		.4byte	.LVL8
+ 333 0124 8B010000 		.4byte	0x18b
+ 334 0128 0A       		.uleb128 0xa
+ 335 0129 01       		.uleb128 0x1
+ 336 012a 50       		.byte	0x50
+ARM GAS  C:\Users\shynt\AppData\Local\Temp\ccTBjPE8.s 			page 8
+
+
+ 337 012b 02       		.uleb128 0x2
+ 338 012c 75       		.byte	0x75
+ 339 012d 00       		.sleb128 0
+ 340 012e 00       		.byte	0
+ 341 012f 00       		.byte	0
+ 342 0130 08       		.uleb128 0x8
+ 343 0131 06000000 		.4byte	.LVL0
+ 344 0135 96010000 		.4byte	0x196
+ 345 0139 08       		.uleb128 0x8
+ 346 013a 0A000000 		.4byte	.LVL1
+ 347 013e A1010000 		.4byte	0x1a1
+ 348 0142 00       		.byte	0
+ 349 0143 0C       		.uleb128 0xc
+ 350 0144 8F000000 		.4byte	0x8f
+ 351 0148 53010000 		.4byte	0x153
+ 352 014c 0D       		.uleb128 0xd
+ 353 014d 9D000000 		.4byte	0x9d
+ 354 0151 7F       		.byte	0x7f
+ 355 0152 00       		.byte	0
+ 356 0153 0E       		.uleb128 0xe
+ 357 0154 73747200 		.ascii	"str\000"
+ 358 0158 01       		.byte	0x1
+ 359 0159 11       		.byte	0x11
+ 360 015a 43010000 		.4byte	0x143
+ 361 015e 05       		.uleb128 0x5
+ 362 015f 03       		.byte	0x3
+ 363 0160 00000000 		.4byte	str
+ 364 0164 0F       		.uleb128 0xf
+ 365 0165 85010000 		.4byte	.LASF25
+ 366 0169 07       		.byte	0x7
+ 367 016a 1207     		.2byte	0x712
+ 368 016c 70010000 		.4byte	0x170
+ 369 0170 10       		.uleb128 0x10
+ 370 0171 76000000 		.4byte	0x76
+ 371 0175 11       		.uleb128 0x11
+ 372 0176 7C010000 		.4byte	.LASF16
+ 373 017a 7C010000 		.4byte	.LASF16
+ 374 017e 04       		.byte	0x4
+ 375 017f 11       		.byte	0x11
+ 376 0180 11       		.uleb128 0x11
+ 377 0181 F1000000 		.4byte	.LASF17
+ 378 0185 F1000000 		.4byte	.LASF17
+ 379 0189 05       		.byte	0x5
+ 380 018a FD       		.byte	0xfd
+ 381 018b 11       		.uleb128 0x11
+ 382 018c FA000000 		.4byte	.LASF18
+ 383 0190 FA000000 		.4byte	.LASF18
+ 384 0194 06       		.byte	0x6
+ 385 0195 8B       		.byte	0x8b
+ 386 0196 11       		.uleb128 0x11
+ 387 0197 C4010000 		.4byte	.LASF19
+ 388 019b C4010000 		.4byte	.LASF19
+ 389 019f 04       		.byte	0x4
+ 390 01a0 10       		.byte	0x10
+ 391 01a1 11       		.uleb128 0x11
+ 392 01a2 0B010000 		.4byte	.LASF20
+ 393 01a6 0B010000 		.4byte	.LASF20
+ARM GAS  C:\Users\shynt\AppData\Local\Temp\ccTBjPE8.s 			page 9
+
+
+ 394 01aa 06       		.byte	0x6
+ 395 01ab 54       		.byte	0x54
+ 396 01ac 00       		.byte	0
+ 397              		.section	.debug_abbrev,"",%progbits
+ 398              	.Ldebug_abbrev0:
+ 399 0000 01       		.uleb128 0x1
+ 400 0001 11       		.uleb128 0x11
+ 401 0002 01       		.byte	0x1
+ 402 0003 25       		.uleb128 0x25
+ 403 0004 0E       		.uleb128 0xe
+ 404 0005 13       		.uleb128 0x13
+ 405 0006 0B       		.uleb128 0xb
+ 406 0007 03       		.uleb128 0x3
+ 407 0008 0E       		.uleb128 0xe
+ 408 0009 1B       		.uleb128 0x1b
+ 409 000a 0E       		.uleb128 0xe
+ 410 000b 55       		.uleb128 0x55
+ 411 000c 17       		.uleb128 0x17
+ 412 000d 11       		.uleb128 0x11
+ 413 000e 01       		.uleb128 0x1
+ 414 000f 10       		.uleb128 0x10
+ 415 0010 17       		.uleb128 0x17
+ 416 0011 00       		.byte	0
+ 417 0012 00       		.byte	0
+ 418 0013 02       		.uleb128 0x2
+ 419 0014 24       		.uleb128 0x24
+ 420 0015 00       		.byte	0
+ 421 0016 0B       		.uleb128 0xb
+ 422 0017 0B       		.uleb128 0xb
+ 423 0018 3E       		.uleb128 0x3e
+ 424 0019 0B       		.uleb128 0xb
+ 425 001a 03       		.uleb128 0x3
+ 426 001b 0E       		.uleb128 0xe
+ 427 001c 00       		.byte	0
+ 428 001d 00       		.byte	0
+ 429 001e 03       		.uleb128 0x3
+ 430 001f 16       		.uleb128 0x16
+ 431 0020 00       		.byte	0
+ 432 0021 03       		.uleb128 0x3
+ 433 0022 0E       		.uleb128 0xe
+ 434 0023 3A       		.uleb128 0x3a
+ 435 0024 0B       		.uleb128 0xb
+ 436 0025 3B       		.uleb128 0x3b
+ 437 0026 0B       		.uleb128 0xb
+ 438 0027 49       		.uleb128 0x49
+ 439 0028 13       		.uleb128 0x13
+ 440 0029 00       		.byte	0
+ 441 002a 00       		.byte	0
+ 442 002b 04       		.uleb128 0x4
+ 443 002c 24       		.uleb128 0x24
+ 444 002d 00       		.byte	0
+ 445 002e 0B       		.uleb128 0xb
+ 446 002f 0B       		.uleb128 0xb
+ 447 0030 3E       		.uleb128 0x3e
+ 448 0031 0B       		.uleb128 0xb
+ 449 0032 03       		.uleb128 0x3
+ 450 0033 08       		.uleb128 0x8
+ARM GAS  C:\Users\shynt\AppData\Local\Temp\ccTBjPE8.s 			page 10
+
+
+ 451 0034 00       		.byte	0
+ 452 0035 00       		.byte	0
+ 453 0036 05       		.uleb128 0x5
+ 454 0037 2E       		.uleb128 0x2e
+ 455 0038 01       		.byte	0x1
+ 456 0039 3F       		.uleb128 0x3f
+ 457 003a 19       		.uleb128 0x19
+ 458 003b 03       		.uleb128 0x3
+ 459 003c 0E       		.uleb128 0xe
+ 460 003d 3A       		.uleb128 0x3a
+ 461 003e 0B       		.uleb128 0xb
+ 462 003f 3B       		.uleb128 0x3b
+ 463 0040 0B       		.uleb128 0xb
+ 464 0041 27       		.uleb128 0x27
+ 465 0042 19       		.uleb128 0x19
+ 466 0043 49       		.uleb128 0x49
+ 467 0044 13       		.uleb128 0x13
+ 468 0045 8701     		.uleb128 0x87
+ 469 0047 19       		.uleb128 0x19
+ 470 0048 11       		.uleb128 0x11
+ 471 0049 01       		.uleb128 0x1
+ 472 004a 12       		.uleb128 0x12
+ 473 004b 06       		.uleb128 0x6
+ 474 004c 40       		.uleb128 0x40
+ 475 004d 18       		.uleb128 0x18
+ 476 004e 9742     		.uleb128 0x2117
+ 477 0050 19       		.uleb128 0x19
+ 478 0051 01       		.uleb128 0x1
+ 479 0052 13       		.uleb128 0x13
+ 480 0053 00       		.byte	0
+ 481 0054 00       		.byte	0
+ 482 0055 06       		.uleb128 0x6
+ 483 0056 0B       		.uleb128 0xb
+ 484 0057 01       		.byte	0x1
+ 485 0058 11       		.uleb128 0x11
+ 486 0059 01       		.uleb128 0x1
+ 487 005a 12       		.uleb128 0x12
+ 488 005b 06       		.uleb128 0x6
+ 489 005c 01       		.uleb128 0x1
+ 490 005d 13       		.uleb128 0x13
+ 491 005e 00       		.byte	0
+ 492 005f 00       		.byte	0
+ 493 0060 07       		.uleb128 0x7
+ 494 0061 34       		.uleb128 0x34
+ 495 0062 00       		.byte	0
+ 496 0063 03       		.uleb128 0x3
+ 497 0064 08       		.uleb128 0x8
+ 498 0065 3A       		.uleb128 0x3a
+ 499 0066 0B       		.uleb128 0xb
+ 500 0067 3B       		.uleb128 0x3b
+ 501 0068 0B       		.uleb128 0xb
+ 502 0069 49       		.uleb128 0x49
+ 503 006a 13       		.uleb128 0x13
+ 504 006b 02       		.uleb128 0x2
+ 505 006c 17       		.uleb128 0x17
+ 506 006d 00       		.byte	0
+ 507 006e 00       		.byte	0
+ARM GAS  C:\Users\shynt\AppData\Local\Temp\ccTBjPE8.s 			page 11
+
+
+ 508 006f 08       		.uleb128 0x8
+ 509 0070 898201   		.uleb128 0x4109
+ 510 0073 00       		.byte	0
+ 511 0074 11       		.uleb128 0x11
+ 512 0075 01       		.uleb128 0x1
+ 513 0076 31       		.uleb128 0x31
+ 514 0077 13       		.uleb128 0x13
+ 515 0078 00       		.byte	0
+ 516 0079 00       		.byte	0
+ 517 007a 09       		.uleb128 0x9
+ 518 007b 898201   		.uleb128 0x4109
+ 519 007e 01       		.byte	0x1
+ 520 007f 11       		.uleb128 0x11
+ 521 0080 01       		.uleb128 0x1
+ 522 0081 31       		.uleb128 0x31
+ 523 0082 13       		.uleb128 0x13
+ 524 0083 01       		.uleb128 0x1
+ 525 0084 13       		.uleb128 0x13
+ 526 0085 00       		.byte	0
+ 527 0086 00       		.byte	0
+ 528 0087 0A       		.uleb128 0xa
+ 529 0088 8A8201   		.uleb128 0x410a
+ 530 008b 00       		.byte	0
+ 531 008c 02       		.uleb128 0x2
+ 532 008d 18       		.uleb128 0x18
+ 533 008e 9142     		.uleb128 0x2111
+ 534 0090 18       		.uleb128 0x18
+ 535 0091 00       		.byte	0
+ 536 0092 00       		.byte	0
+ 537 0093 0B       		.uleb128 0xb
+ 538 0094 898201   		.uleb128 0x4109
+ 539 0097 01       		.byte	0x1
+ 540 0098 11       		.uleb128 0x11
+ 541 0099 01       		.uleb128 0x1
+ 542 009a 31       		.uleb128 0x31
+ 543 009b 13       		.uleb128 0x13
+ 544 009c 00       		.byte	0
+ 545 009d 00       		.byte	0
+ 546 009e 0C       		.uleb128 0xc
+ 547 009f 01       		.uleb128 0x1
+ 548 00a0 01       		.byte	0x1
+ 549 00a1 49       		.uleb128 0x49
+ 550 00a2 13       		.uleb128 0x13
+ 551 00a3 01       		.uleb128 0x1
+ 552 00a4 13       		.uleb128 0x13
+ 553 00a5 00       		.byte	0
+ 554 00a6 00       		.byte	0
+ 555 00a7 0D       		.uleb128 0xd
+ 556 00a8 21       		.uleb128 0x21
+ 557 00a9 00       		.byte	0
+ 558 00aa 49       		.uleb128 0x49
+ 559 00ab 13       		.uleb128 0x13
+ 560 00ac 2F       		.uleb128 0x2f
+ 561 00ad 0B       		.uleb128 0xb
+ 562 00ae 00       		.byte	0
+ 563 00af 00       		.byte	0
+ 564 00b0 0E       		.uleb128 0xe
+ARM GAS  C:\Users\shynt\AppData\Local\Temp\ccTBjPE8.s 			page 12
+
+
+ 565 00b1 34       		.uleb128 0x34
+ 566 00b2 00       		.byte	0
+ 567 00b3 03       		.uleb128 0x3
+ 568 00b4 08       		.uleb128 0x8
+ 569 00b5 3A       		.uleb128 0x3a
+ 570 00b6 0B       		.uleb128 0xb
+ 571 00b7 3B       		.uleb128 0x3b
+ 572 00b8 0B       		.uleb128 0xb
+ 573 00b9 49       		.uleb128 0x49
+ 574 00ba 13       		.uleb128 0x13
+ 575 00bb 02       		.uleb128 0x2
+ 576 00bc 18       		.uleb128 0x18
+ 577 00bd 00       		.byte	0
+ 578 00be 00       		.byte	0
+ 579 00bf 0F       		.uleb128 0xf
+ 580 00c0 34       		.uleb128 0x34
+ 581 00c1 00       		.byte	0
+ 582 00c2 03       		.uleb128 0x3
+ 583 00c3 0E       		.uleb128 0xe
+ 584 00c4 3A       		.uleb128 0x3a
+ 585 00c5 0B       		.uleb128 0xb
+ 586 00c6 3B       		.uleb128 0x3b
+ 587 00c7 05       		.uleb128 0x5
+ 588 00c8 49       		.uleb128 0x49
+ 589 00c9 13       		.uleb128 0x13
+ 590 00ca 3F       		.uleb128 0x3f
+ 591 00cb 19       		.uleb128 0x19
+ 592 00cc 3C       		.uleb128 0x3c
+ 593 00cd 19       		.uleb128 0x19
+ 594 00ce 00       		.byte	0
+ 595 00cf 00       		.byte	0
+ 596 00d0 10       		.uleb128 0x10
+ 597 00d1 35       		.uleb128 0x35
+ 598 00d2 00       		.byte	0
+ 599 00d3 49       		.uleb128 0x49
+ 600 00d4 13       		.uleb128 0x13
+ 601 00d5 00       		.byte	0
+ 602 00d6 00       		.byte	0
+ 603 00d7 11       		.uleb128 0x11
+ 604 00d8 2E       		.uleb128 0x2e
+ 605 00d9 00       		.byte	0
+ 606 00da 3F       		.uleb128 0x3f
+ 607 00db 19       		.uleb128 0x19
+ 608 00dc 3C       		.uleb128 0x3c
+ 609 00dd 19       		.uleb128 0x19
+ 610 00de 6E       		.uleb128 0x6e
+ 611 00df 0E       		.uleb128 0xe
+ 612 00e0 03       		.uleb128 0x3
+ 613 00e1 0E       		.uleb128 0xe
+ 614 00e2 3A       		.uleb128 0x3a
+ 615 00e3 0B       		.uleb128 0xb
+ 616 00e4 3B       		.uleb128 0x3b
+ 617 00e5 0B       		.uleb128 0xb
+ 618 00e6 00       		.byte	0
+ 619 00e7 00       		.byte	0
+ 620 00e8 00       		.byte	0
+ 621              		.section	.debug_loc,"",%progbits
+ARM GAS  C:\Users\shynt\AppData\Local\Temp\ccTBjPE8.s 			page 13
+
+
+ 622              	.Ldebug_loc0:
+ 623              	.LLST0:
+ 624 0000 1C000000 		.4byte	.LVL3
+ 625 0004 26000000 		.4byte	.LVL4
+ 626 0008 0100     		.2byte	0x1
+ 627 000a 50       		.byte	0x50
+ 628 000b 26000000 		.4byte	.LVL4
+ 629 000f 29000000 		.4byte	.LVL5-1
+ 630 0013 0100     		.2byte	0x1
+ 631 0015 53       		.byte	0x53
+ 632 0016 29000000 		.4byte	.LVL5-1
+ 633 001a 32000000 		.4byte	.LVL7
+ 634 001e 0100     		.2byte	0x1
+ 635 0020 54       		.byte	0x54
+ 636 0021 32000000 		.4byte	.LVL7
+ 637 0025 AC000000 		.4byte	.LFE64
+ 638 0029 0300     		.2byte	0x3
+ 639 002b 74       		.byte	0x74
+ 640 002c 01       		.sleb128 1
+ 641 002d 9F       		.byte	0x9f
+ 642 002e 00000000 		.4byte	0
+ 643 0032 00000000 		.4byte	0
+ 644              		.section	.debug_aranges,"",%progbits
+ 645 0000 1C000000 		.4byte	0x1c
+ 646 0004 0200     		.2byte	0x2
+ 647 0006 00000000 		.4byte	.Ldebug_info0
+ 648 000a 04       		.byte	0x4
+ 649 000b 00       		.byte	0
+ 650 000c 0000     		.2byte	0
+ 651 000e 0000     		.2byte	0
+ 652 0010 00000000 		.4byte	.LFB64
+ 653 0014 AC000000 		.4byte	.LFE64-.LFB64
+ 654 0018 00000000 		.4byte	0
+ 655 001c 00000000 		.4byte	0
+ 656              		.section	.debug_ranges,"",%progbits
+ 657              	.Ldebug_ranges0:
+ 658 0000 00000000 		.4byte	.LFB64
+ 659 0004 AC000000 		.4byte	.LFE64
+ 660 0008 00000000 		.4byte	0
+ 661 000c 00000000 		.4byte	0
+ 662              		.section	.debug_line,"",%progbits
+ 663              	.Ldebug_line0:
+ 664 0000 F6010000 		.section	.debug_str,"MS",%progbits,1
+ 664      0200CF01 
+ 664      00000201 
+ 664      FB0E0D00 
+ 664      01010101 
+ 665              	.LASF6:
+ 666 0000 6C6F6E67 		.ascii	"long long int\000"
+ 666      206C6F6E 
+ 666      6720696E 
+ 666      7400
+ 667              	.LASF3:
+ 668 000e 73686F72 		.ascii	"short unsigned int\000"
+ 668      7420756E 
+ 668      7369676E 
+ 668      65642069 
+ARM GAS  C:\Users\shynt\AppData\Local\Temp\ccTBjPE8.s 			page 14
+
+
+ 668      6E7400
+ 669              	.LASF8:
+ 670 0021 756E7369 		.ascii	"unsigned int\000"
+ 670      676E6564 
+ 670      20696E74 
+ 670      00
+ 671              	.LASF22:
+ 672 002e 6D61696E 		.ascii	"main.c\000"
+ 672      2E6300
+ 673              	.LASF24:
+ 674 0035 6D61696E 		.ascii	"main\000"
+ 674      00
+ 675              	.LASF21:
+ 676 003a 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 676      43313120 
+ 676      352E342E 
+ 676      31203230 
+ 676      31363036 
+ 677 006d 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 677      20726576 
+ 677      6973696F 
+ 677      6E203233 
+ 677      37373135 
+ 678 00a0 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 678      66756E63 
+ 678      74696F6E 
+ 678      2D736563 
+ 678      74696F6E 
+ 679              	.LASF5:
+ 680 00c8 6C6F6E67 		.ascii	"long unsigned int\000"
+ 680      20756E73 
+ 680      69676E65 
+ 680      6420696E 
+ 680      7400
+ 681              	.LASF7:
+ 682 00da 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 682      206C6F6E 
+ 682      6720756E 
+ 682      7369676E 
+ 682      65642069 
+ 683              	.LASF17:
+ 684 00f1 736E7072 		.ascii	"snprintf\000"
+ 684      696E7466 
+ 684      00
+ 685              	.LASF18:
+ 686 00fa 55415254 		.ascii	"UART_1_PutString\000"
+ 686      5F315F50 
+ 686      75745374 
+ 686      72696E67 
+ 686      00
+ 687              	.LASF20:
+ 688 010b 55415254 		.ascii	"UART_1_Start\000"
+ 688      5F315F53 
+ 688      74617274 
+ 688      00
+ 689              	.LASF23:
+ 690 0118 433A5C55 		.ascii	"C:\\Users\\shynt\\OneDrive\\Skrivebord\\ColorSensor"
+ARM GAS  C:\Users\shynt\AppData\Local\Temp\ccTBjPE8.s 			page 15
+
+
+ 690      73657273 
+ 690      5C736879 
+ 690      6E745C4F 
+ 690      6E654472 
+ 691 0146 5C636F6C 		.ascii	"\\colorSensor.cydsn\000"
+ 691      6F725365 
+ 691      6E736F72 
+ 691      2E637964 
+ 691      736E00
+ 692              	.LASF1:
+ 693 0159 756E7369 		.ascii	"unsigned char\000"
+ 693      676E6564 
+ 693      20636861 
+ 693      7200
+ 694              	.LASF13:
+ 695 0167 63686172 		.ascii	"char\000"
+ 695      00
+ 696              	.LASF4:
+ 697 016c 6C6F6E67 		.ascii	"long int\000"
+ 697      20696E74 
+ 697      00
+ 698              	.LASF12:
+ 699 0175 646F7562 		.ascii	"double\000"
+ 699      6C6500
+ 700              	.LASF16:
+ 701 017c 67657443 		.ascii	"getColor\000"
+ 701      6F6C6F72 
+ 701      00
+ 702              	.LASF25:
+ 703 0185 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 703      52784275 
+ 703      66666572 
+ 703      00
+ 704              	.LASF0:
+ 705 0192 7369676E 		.ascii	"signed char\000"
+ 705      65642063 
+ 705      68617200 
+ 706              	.LASF14:
+ 707 019e 6C6F6E67 		.ascii	"long double\000"
+ 707      20646F75 
+ 707      626C6500 
+ 708              	.LASF9:
+ 709 01aa 5F5F696E 		.ascii	"__int32_t\000"
+ 709      7433325F 
+ 709      7400
+ 710              	.LASF11:
+ 711 01b4 666C6F61 		.ascii	"float\000"
+ 711      7400
+ 712              	.LASF2:
+ 713 01ba 73686F72 		.ascii	"short int\000"
+ 713      7420696E 
+ 713      7400
+ 714              	.LASF19:
+ 715 01c4 7374616E 		.ascii	"standardColor\000"
+ 715      64617264 
+ 715      436F6C6F 
+ 715      7200
+ARM GAS  C:\Users\shynt\AppData\Local\Temp\ccTBjPE8.s 			page 16
+
+
+ 716              	.LASF10:
+ 717 01d2 696E7433 		.ascii	"int32_t\000"
+ 717      325F7400 
+ 718              	.LASF15:
+ 719 01da 73697A65 		.ascii	"sizetype\000"
+ 719      74797065 
+ 719      00
+ 720              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
