@@ -1,0 +1,6 @@
+C:\Users\shynt\OneDrive\Skrivebord\ColorSensor\colorSensor.cydsn\colorSensor.cyprj|84f083d4-9fdc-480b-b878-029f62ad3e18
+C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|fa4938a2-969f-4362-bf13-bdbd06c85b8c
+C:\Users\shynt\OneDrive\Dokumenter\PSoC Creator\4.3\Downloads ( 4.3).cylib\Downloads ( 4.3).cyprj|eb2451d1-a8d4-41b0-a835-3823e4af276d
+C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|0c8404cf-9a27-4577-8c58-c80329f35a06
+C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|76bb5c27-822c-46a9-8c5b-1610dd7a4b40
+C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|5c5e4866-e7b8-4765-8f74-4e58bb41ca75

@@ -1,0 +1,17 @@
+# colorSensor
+# 2020-12-04 11:58:37Z
+
+# IO_0@[IOP=(1)][IoId=(0)] is reserved: SWDDebugEnabled
+dont_use_io iocell 1 0
+# IO_1@[IOP=(1)][IoId=(1)] is reserved: SWDDebugEnabled
+dont_use_io iocell 1 1
+# IO_3@[IOP=(1)][IoId=(3)] is reserved: SWDDebugEnabled
+dont_use_io iocell 1 3
+set_io "Rx_1(0)" iocell 12 6
+set_io "Tx_1(0)" iocell 12 7
+set_io "S0(0)" iocell 0 0
+set_io "S1(0)" iocell 0 6
+set_io "S2(0)" iocell 0 3
+set_io "S3(0)" iocell 0 4
+set_io "SensorOut(0)" iocell 0 5
+set_io "OE(0)" iocell 0 7
