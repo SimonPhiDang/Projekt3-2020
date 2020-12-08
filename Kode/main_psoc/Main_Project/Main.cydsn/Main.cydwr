@@ -251,6 +251,7 @@
   <Data key="DataVersionKey" value="2" />
   <Group key="DWRInstGuidMapping">
     <Group key="Pin">
+      <Data key="1a501d7c-825d-4635-a469-bebe77b1aafe" value="LED" />
       <Data key="1bfe3e7c-e485-4f06-825b-88900d5bc0bd/7e0d1a6c-1235-4546-a71b-ea6e528924f8" value="ADC_SAR_1_ExtVref" />
       <Data key="1f8b6849-e4f0-49a7-972e-83cb6838dcaa" value="S3" />
       <Data key="02f2cf2c-2c7a-49df-9246-7a3435c21be3" value="SCL_1" />
@@ -3356,6 +3357,11 @@
     </Group>
   </Group>
   <Group key="Pin2">
+    <Group key="1a501d7c-825d-4635-a469-bebe77b1aafe">
+      <Group key="0">
+        <Data key="Port Format" value="2,1" />
+      </Group>
+    </Group>
     <Group key="1bfe3e7c-e485-4f06-825b-88900d5bc0bd/7e0d1a6c-1235-4546-a71b-ea6e528924f8">
       <Group key="0">
         <Data key="Port Format" value="0,2" />

@@ -74,6 +74,8 @@
 #include "Echo_aliases.h"
 #include "Echo.h"
 #include "Timer_int_1.h"
+#include "LED_aliases.h"
+#include "LED.h"
 #include "ADC_SAR_1_IRQ.h"
 #include "ADC_SAR_1_theACLK.h"
 #include "ADC_SAR_1_ExtVref_aliases.h"

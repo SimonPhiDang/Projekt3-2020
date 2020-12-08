@@ -228,7 +228,16 @@
 </userData>
 </CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
 <Unloaded />
-<OpenDocs />
+<OpenDocs>
+<name v=".\colorSensor.cydsn\colorSensor.c" />
+</OpenDocs>
+<OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
+
+  Actipro Docking/MDI for WinForms
+  Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
+  http://www.actiprosoftware.com
+
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1274, 495" SelectedTabbedMdiWindow="9976bfbf-9ccc-4092-8723-1362a6de5573"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="489cf4f1-83bc-4b7f-9821-7beedcc27fe8" /><DocumentWindow Key="C:\Users\Simon\Desktop\Projekt3-2020\Kode\ColorSensor\colorSensor\colorSensor.cydsn\colorSensor.c" Guid="9976bfbf-9ccc-4092-8723-1362a6de5573" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>

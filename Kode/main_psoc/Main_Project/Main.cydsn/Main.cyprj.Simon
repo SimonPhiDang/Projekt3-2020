@@ -36,6 +36,8 @@
 <dep name=".\Generated_Source\PSoC5\Echo_aliases.h" />
 <dep name=".\Generated_Source\PSoC5\I2C.h" />
 <dep name=".\Generated_Source\PSoC5\I2C_PVT.h" />
+<dep name=".\Generated_Source\PSoC5\LED.h" />
+<dep name=".\Generated_Source\PSoC5\LED_aliases.h" />
 <dep name=".\Generated_Source\PSoC5\OE.h" />
 <dep name=".\Generated_Source\PSoC5\OE_aliases.h" />
 <dep name=".\Generated_Source\PSoC5\PWM1.h" />
@@ -116,6 +118,8 @@
 <file name=".\Generated_Source\PSoC5\Echo_aliases.h" />
 <file name=".\Generated_Source\PSoC5\I2C.h" />
 <file name=".\Generated_Source\PSoC5\I2C_PVT.h" />
+<file name=".\Generated_Source\PSoC5\LED.h" />
+<file name=".\Generated_Source\PSoC5\LED_aliases.h" />
 <file name=".\Generated_Source\PSoC5\OE.h" />
 <file name=".\Generated_Source\PSoC5\OE_aliases.h" />
 <file name=".\Generated_Source\PSoC5\PWM1.h" />
@@ -196,6 +200,8 @@
 <dep name=".\Generated_Source\PSoC5\Echo_aliases.h" />
 <dep name=".\Generated_Source\PSoC5\I2C.h" />
 <dep name=".\Generated_Source\PSoC5\I2C_PVT.h" />
+<dep name=".\Generated_Source\PSoC5\LED.h" />
+<dep name=".\Generated_Source\PSoC5\LED_aliases.h" />
 <dep name=".\Generated_Source\PSoC5\OE.h" />
 <dep name=".\Generated_Source\PSoC5\OE_aliases.h" />
 <dep name=".\Generated_Source\PSoC5\PWM1.h" />
@@ -251,16 +257,10 @@
 <dep name=".\Generated_Source\PSoC5\in4_aliases.h" />
 <dep name=".\Generated_Source\PSoC5\project.h" />
 <dep name=".\Afstandssensor.h" />
-<dep name=".\Scale.h" />
-<dep name=".\colorSensor.h" />
-<dep name=".\i2cKommunikation.h" />
 <dep name=".\main.c" />
 <dep name=".\motorStyring.h" />
 </file>
 <file name=".\Afstandssensor.h" />
-<file name=".\Scale.h" />
-<file name=".\colorSensor.h" />
-<file name=".\i2cKommunikation.h" />
 <file name=".\main.c" />
 <file name=".\motorStyring.h" />
 <file name=".\CortexM3\ARM_GCC_541\Debug\ADC_SAR_1.o">
@@ -614,6 +614,17 @@
 <dep name=".\Generated_Source\PSoC5\I2C_SLAVE.c" />
 </file>
 <file name=".\Generated_Source\PSoC5\I2C_SLAVE.c" />
+<file name=".\CortexM3\ARM_GCC_541\Debug\LED.o">
+<dep name=".\Generated_Source\PSoC5\LED.h" />
+<dep name=".\Generated_Source\PSoC5\LED_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC5\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC5\cypins.h" />
+<dep name=".\Generated_Source\PSoC5\cytypes.h" />
+<dep name=".\Generated_Source\PSoC5\LED.c" />
+</file>
+<file name=".\Generated_Source\PSoC5\LED.c" />
 <file name=".\CortexM3\ARM_GCC_541\Debug\OE.o">
 <dep name=".\Generated_Source\PSoC5\OE.h" />
 <dep name=".\Generated_Source\PSoC5\OE_aliases.h" />
@@ -1025,6 +1036,8 @@
 <dep name=".\Generated_Source\PSoC5\Echo_aliases.h" />
 <dep name=".\Generated_Source\PSoC5\I2C.h" />
 <dep name=".\Generated_Source\PSoC5\I2C_PVT.h" />
+<dep name=".\Generated_Source\PSoC5\LED.h" />
+<dep name=".\Generated_Source\PSoC5\LED_aliases.h" />
 <dep name=".\Generated_Source\PSoC5\OE.h" />
 <dep name=".\Generated_Source\PSoC5\OE_aliases.h" />
 <dep name=".\Generated_Source\PSoC5\PWM1.h" />
@@ -1083,6 +1096,7 @@
 <dep name=".\Scale.h" />
 </file>
 <file name=".\Scale.c" />
+<file name=".\Scale.h" />
 <file name=".\CortexM3\ARM_GCC_541\Debug\colorSensor.o">
 <dep name=".\Generated_Source\PSoC5\ADC_SAR_1.h" />
 <dep name=".\Generated_Source\PSoC5\ADC_SAR_1_ExtVref.h" />
@@ -1108,6 +1122,8 @@
 <dep name=".\Generated_Source\PSoC5\Echo_aliases.h" />
 <dep name=".\Generated_Source\PSoC5\I2C.h" />
 <dep name=".\Generated_Source\PSoC5\I2C_PVT.h" />
+<dep name=".\Generated_Source\PSoC5\LED.h" />
+<dep name=".\Generated_Source\PSoC5\LED_aliases.h" />
 <dep name=".\Generated_Source\PSoC5\OE.h" />
 <dep name=".\Generated_Source\PSoC5\OE_aliases.h" />
 <dep name=".\Generated_Source\PSoC5\PWM1.h" />
@@ -1166,6 +1182,7 @@
 <dep name=".\colorSensor.h" />
 </file>
 <file name=".\colorSensor.c" />
+<file name=".\colorSensor.h" />
 <file name=".\CortexM3\ARM_GCC_541\Debug\i2cKommunikation.o">
 <dep name=".\Generated_Source\PSoC5\ADC_SAR_1.h" />
 <dep name=".\Generated_Source\PSoC5\ADC_SAR_1_ExtVref.h" />
@@ -1191,6 +1208,8 @@
 <dep name=".\Generated_Source\PSoC5\Echo_aliases.h" />
 <dep name=".\Generated_Source\PSoC5\I2C.h" />
 <dep name=".\Generated_Source\PSoC5\I2C_PVT.h" />
+<dep name=".\Generated_Source\PSoC5\LED.h" />
+<dep name=".\Generated_Source\PSoC5\LED_aliases.h" />
 <dep name=".\Generated_Source\PSoC5\OE.h" />
 <dep name=".\Generated_Source\PSoC5\OE_aliases.h" />
 <dep name=".\Generated_Source\PSoC5\PWM1.h" />
@@ -1249,6 +1268,7 @@
 <dep name=".\i2cKommunikation.h" />
 </file>
 <file name=".\i2cKommunikation.c" />
+<file name=".\i2cKommunikation.h" />
 <file name=".\CortexM3\ARM_GCC_541\Debug\motorStyring.o">
 <dep name=".\Generated_Source\PSoC5\ADC_SAR_1.h" />
 <dep name=".\Generated_Source\PSoC5\ADC_SAR_1_ExtVref.h" />
@@ -1274,6 +1294,8 @@
 <dep name=".\Generated_Source\PSoC5\Echo_aliases.h" />
 <dep name=".\Generated_Source\PSoC5\I2C.h" />
 <dep name=".\Generated_Source\PSoC5\I2C_PVT.h" />
+<dep name=".\Generated_Source\PSoC5\LED.h" />
+<dep name=".\Generated_Source\PSoC5\LED_aliases.h" />
 <dep name=".\Generated_Source\PSoC5\OE.h" />
 <dep name=".\Generated_Source\PSoC5\OE_aliases.h" />
 <dep name=".\Generated_Source\PSoC5\PWM1.h" />
@@ -1510,6 +1532,7 @@
 <dep name=".\CortexM3\ARM_GCC_541\Debug\Clock_1.o" />
 <dep name=".\CortexM3\ARM_GCC_541\Debug\Echo.o" />
 <dep name=".\CortexM3\ARM_GCC_541\Debug\Timer_int_1.o" />
+<dep name=".\CortexM3\ARM_GCC_541\Debug\LED.o" />
 <dep name=".\CortexM3\ARM_GCC_541\Debug\Main.a" />
 <dep name="${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CortexM3\ARM_GCC_541\Debug\CyComponentLibrary.a" />
 </file>
@@ -1602,6 +1625,7 @@
 <name_val_pair name="Generated_Source\PSoC5\Clock_1.c" v="-mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og" />
 <name_val_pair name="Generated_Source\PSoC5\Echo.c" v="-mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og" />
 <name_val_pair name="Generated_Source\PSoC5\Timer_int_1.c" v="-mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og" />
+<name_val_pair name="Generated_Source\PSoC5\LED.c" v="-mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og" />
 </name>
 </genericCmdLineData>
 <codeGenCmdLineTag v="-.appdatapath &quot;C:\Users\Simon\AppData\Local\Cypress Semiconductor\PSoC Creator\4.3&quot; -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -.fdsreffile=referenced_files.txt -p C:\Users\Simon\Desktop\Projekt3-2020\Kode\main_psoc\Main_Project\Main.cydsn\Main.cyprj -d CY8C5888LTI-LP097 -s C:\Users\Simon\Desktop\Projekt3-2020\Kode\main_psoc\Main_Project\Main.cydsn\Generated_Source\PSoC5 -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE" />
@@ -2062,6 +2086,9 @@
 <v>Generated_Source\PSoC5\Echo.h</v>
 <v>Generated_Source\PSoC5\Timer_int_1.c</v>
 <v>Generated_Source\PSoC5\Timer_int_1.h</v>
+<v>Generated_Source\PSoC5\LED_aliases.h</v>
+<v>Generated_Source\PSoC5\LED.c</v>
+<v>Generated_Source\PSoC5\LED.h</v>
 </gen_list>
 <warp_dep>
 <v>C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\warp\lib\ieee\work\stdlogic.vif</v>
@@ -2071,7 +2098,7 @@
 <v>C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\warp\lib\common\stdlogic\rtlpkg.vif</v>
 <v>C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\warp\lib\common\stdlogic\cy_psoc3.vif</v>
 </warp_dep>
-<deps_time v="132515549374748158" />
+<deps_time v="132515657749601345" />
 <top_block v="TopDesign" />
 <last_generation v="0" />
 <pdl_path v="" />
@@ -2081,7 +2108,7 @@
 <dataGuid v="769d31ea-68b1-4f0c-b90a-7c10a43ee563">
 <CyGuid_769d31ea-68b1-4f0c-b90a-7c10a43ee563 type_name="CyDesigner.Common.ProjMgmt.Model.CyLinkCustomData" version="1">
 <link_deps_times>
-<name_val_pair name="c9323d49-d323-40b8-9b59-cc008d68a989@Debug@CortexM3" v="132515551203797463" />
+<name_val_pair name="c9323d49-d323-40b8-9b59-cc008d68a989@Debug@CortexM3" v="132515664402711973" />
 </link_deps_times>
 </CyGuid_769d31ea-68b1-4f0c-b90a-7c10a43ee563>
 </dataGuid>

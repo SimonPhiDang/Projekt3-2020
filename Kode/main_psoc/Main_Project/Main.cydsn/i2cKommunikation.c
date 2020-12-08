@@ -54,6 +54,7 @@ int I2C_Kommunikation()
             }
             I2C_SlaveClearWriteBuf(); 
          }
+    return 0;
 }
 
 /* [] END OF FILE */

@@ -926,25 +926,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Jim\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\Simon\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Jim\\source\\repos\\PRJ3_E20_GUI\\Beertress_Kunde\\Beertress_Ansat.csproj",
+      "projectUniqueName": "C:\\Users\\Simon\\Desktop\\Projekt3-2020\\Beertress_Ansat\\Beertress_Ansat.csproj",
       "projectName": "Beertress_Ansat",
-      "projectPath": "C:\\Users\\Jim\\source\\repos\\PRJ3_E20_GUI\\Beertress_Kunde\\Beertress_Ansat.csproj",
-      "packagesPath": "C:\\Users\\Jim\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Jim\\source\\repos\\PRJ3_E20_GUI\\Beertress_Kunde\\obj\\",
+      "projectPath": "C:\\Users\\Simon\\Desktop\\Projekt3-2020\\Beertress_Ansat\\Beertress_Ansat.csproj",
+      "packagesPath": "C:\\Users\\Simon\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Simon\\Desktop\\Projekt3-2020\\Beertress_Ansat\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Jim\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\Simon\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -997,7 +992,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

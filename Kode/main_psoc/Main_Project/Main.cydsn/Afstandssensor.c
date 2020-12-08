@@ -12,28 +12,25 @@
 #include "project.h"
 #include <stdio.h>
 #include <stdlib.h>
-
 int distance;
 CY_ISR_PROTO(Timer_int_Handler);
 
 
 void initDistSens()
 {
+    
     PWM_Trigger_Start();
     Timer_1_Start();
     Timer_int_1_StartEx(Timer_int_Handler);
+    
 }
 
 int calcDist()
 {
-    distance = (65535 - Timer_ReadCapture()) * 0.017;
+    distance = (65535 - Timer_1_ReadCapture()) * 0.017;
     return distance;
 }
 
-int getDist()
-{
-    return distance;
-}
 
 CY_ISR(Timer_int_Handler)
 {

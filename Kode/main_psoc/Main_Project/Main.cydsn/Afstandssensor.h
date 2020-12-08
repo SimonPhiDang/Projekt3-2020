@@ -19,8 +19,7 @@ void initDistSens();
 // Starts timer and returns counter
 int calcDist();
 
-//get funktion til distance
-int getDist();
+
     
 #endif
 

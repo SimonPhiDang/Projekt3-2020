@@ -114,8 +114,7 @@ uint countR, countG, countB = 0;
     color_init_start();
     read_color();
     
-        for(;;)
-        {
+
             freqR = get_freq('r')-10;
             freqG = get_freq('g')+10;
             freqB = get_freq('b');
@@ -179,7 +178,7 @@ uint countR, countG, countB = 0;
                 }
                        
         
-        }   
+         
 
         return 0;
 }

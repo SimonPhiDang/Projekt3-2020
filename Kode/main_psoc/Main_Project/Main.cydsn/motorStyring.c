@@ -38,8 +38,8 @@ void driveBackward()
     // Sætter direction på DC motor ved hjælp af H-Bro
     in1_Write(0);
     in2_Write(1);
-    in3_Write(3);
-    in4_Write(4);
+    in3_Write(1);
+    in4_Write(0);
     // Starter PWM
     PWM1_Start();
     PWM2_Start();

@@ -220,7 +220,20 @@
 </userData>
 </CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
 <Unloaded />
-<OpenDocs />
+<OpenDocs>
+<name v=".\afstandssensor.cydsn\main.c" />
+<name v=".\afstandssensor.cydsn\hcsr04.c" />
+<name v=".\afstandssensor.cydsn\hcsr04.h" />
+<name v=".\afstandssensor.cydsn\afstandssensor.cydwr" />
+<name v=".\afstandssensor.cydsn\TopDesign\TopDesign.cysch" />
+</OpenDocs>
+<OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
+
+  Actipro Docking/MDI for WinForms
+  Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
+  http://www.actiprosoftware.com
+
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1274, 495" SelectedTabbedMdiWindow="ea14644a-2bac-4cc4-bd9b-d08e0e5a9c6c"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="489cf4f1-83bc-4b7f-9821-7beedcc27fe8" /><DocumentWindow Key="C:\Users\Simon\Desktop\Projekt3-2020\Kode\afstandssensor\afstandssensor.cydsn\main.c" Guid="5f7e8827-8c8c-462a-9436-4fa293be9149" /><DocumentWindow Key="C:\Users\Simon\Desktop\Projekt3-2020\Kode\afstandssensor\afstandssensor.cydsn\hcsr04.c" Guid="ea14644a-2bac-4cc4-bd9b-d08e0e5a9c6c" /><DocumentWindow Key="C:\Users\Simon\Desktop\Projekt3-2020\Kode\afstandssensor\afstandssensor.cydsn\hcsr04.h" Guid="5c302a42-8ad6-46e9-8eb1-ae494dbf2ab1" /><DocumentWindow Key="C:\Users\Simon\Desktop\Projekt3-2020\Kode\afstandssensor\afstandssensor.cydsn\afstandssensor.cydwr" Guid="d82a6368-aa25-4f2a-a232-06d2b64aaf13" /><DocumentWindow Key="C:\Users\Simon\Desktop\Projekt3-2020\Kode\afstandssensor\afstandssensor.cydsn\TopDesign\TopDesign.cysch" Guid="62d7e1e5-a70a-42fe-9dec-3e5de11a7933" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
