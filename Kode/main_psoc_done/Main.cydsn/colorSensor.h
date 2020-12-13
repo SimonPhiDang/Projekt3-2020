@@ -10,7 +10,7 @@
  * ========================================
 */
 
-void init_start(void);
+void init_Color(void);
 void read_color(void);
 int get_freq(char color);
 int standardColor();

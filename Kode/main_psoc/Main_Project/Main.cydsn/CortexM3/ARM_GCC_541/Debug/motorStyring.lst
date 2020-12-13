@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccynn07E.s 			page 1
+=======
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccdn9UDg.s 			page 1
+>>>>>>> Stashed changes
 
 
    1              		.syntax unified
@@ -58,7 +62,11 @@ ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccynn07E.s 			page 1
   37 0002 FFF7FEFF 		bl	PWM1_Start
   38              	.LVL0:
   19:motorStyring.c ****     PWM2_Start();
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccynn07E.s 			page 2
+=======
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccdn9UDg.s 			page 2
+>>>>>>> Stashed changes
 
 
   39              		.loc 1 19 0
@@ -118,7 +126,11 @@ ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccynn07E.s 			page 1
   82 001e FFF7FEFF 		bl	PWM2_Start
   83              	.LVL7:
   31:motorStyring.c ****     // Sætter PWM til 100%
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccynn07E.s 			page 3
+=======
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccdn9UDg.s 			page 3
+>>>>>>> Stashed changes
 
 
   32:motorStyring.c ****     PWM2_WriteCompare(100);
@@ -178,7 +190,11 @@ ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccynn07E.s 			page 1
  127              	.LVL13:
   43:motorStyring.c ****     // Starter PWM
   44:motorStyring.c ****     PWM1_Start();
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccynn07E.s 			page 4
+=======
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccdn9UDg.s 			page 4
+>>>>>>> Stashed changes
 
 
  128              		.loc 1 44 0
@@ -238,7 +254,11 @@ ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccynn07E.s 			page 1
  169 000a 6420     		movs	r0, #100
  170 000c FFF7FEFF 		bl	PWM1_WriteCompare
  171              	.LVL20:
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccynn07E.s 			page 5
+=======
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccdn9UDg.s 			page 5
+>>>>>>> Stashed changes
 
 
  172 0010 08BD     		pop	{r3, pc}
@@ -298,7 +318,11 @@ ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccynn07E.s 			page 1
   70:motorStyring.c **** void driveStop()
   71:motorStyring.c **** {
  214              		.loc 1 71 0
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccynn07E.s 			page 6
+=======
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccdn9UDg.s 			page 6
+>>>>>>> Stashed changes
 
 
  215              		.cfi_startproc
@@ -339,17 +363,28 @@ ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccynn07E.s 			page 1
  247 0006 00000000 		.4byte	.Ldebug_abbrev0
  248 000a 04       		.byte	0x4
  249 000b 01       		.uleb128 0x1
+<<<<<<< Updated upstream
  250 000c 6B000000 		.4byte	.LASF32
  251 0010 0C       		.byte	0xc
  252 0011 FD010000 		.4byte	.LASF33
  253 0015 C1010000 		.4byte	.LASF34
+=======
+ 250 000c 58010000 		.4byte	.LASF32
+ 251 0010 0C       		.byte	0xc
+ 252 0011 1C020000 		.4byte	.LASF33
+ 253 0015 6B000000 		.4byte	.LASF34
+>>>>>>> Stashed changes
  254 0019 00000000 		.4byte	.Ldebug_ranges0+0
  255 001d 00000000 		.4byte	0
  256 0021 00000000 		.4byte	.Ldebug_line0
  257 0025 02       		.uleb128 0x2
  258 0026 01       		.byte	0x1
  259 0027 06       		.byte	0x6
+<<<<<<< Updated upstream
  260 0028 32020000 		.4byte	.LASF0
+=======
+ 260 0028 4C020000 		.4byte	.LASF0
+>>>>>>> Stashed changes
  261 002c 02       		.uleb128 0x2
  262 002d 01       		.byte	0x1
  263 002e 08       		.byte	0x8
@@ -357,8 +392,13 @@ ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccynn07E.s 			page 1
  265 0033 02       		.uleb128 0x2
  266 0034 02       		.byte	0x2
  267 0035 05       		.byte	0x5
+<<<<<<< Updated upstream
  268 0036 0C020000 		.4byte	.LASF2
 ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccynn07E.s 			page 7
+=======
+ 268 0036 2B020000 		.4byte	.LASF2
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccdn9UDg.s 			page 7
+>>>>>>> Stashed changes
 
 
  269 003a 02       		.uleb128 0x2
@@ -373,6 +413,7 @@ ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccynn07E.s 			page 1
  278 004c 02       		.uleb128 0x2
  279 004d 04       		.byte	0x4
  280 004e 05       		.byte	0x5
+<<<<<<< Updated upstream
  281 004f 87010000 		.4byte	.LASF4
  282 0053 02       		.uleb128 0x2
  283 0054 04       		.byte	0x4
@@ -386,6 +427,21 @@ ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccynn07E.s 			page 1
  291 0062 08       		.byte	0x8
  292 0063 07       		.byte	0x7
  293 0064 66010000 		.4byte	.LASF7
+=======
+ 281 004f 4F010000 		.4byte	.LASF4
+ 282 0053 02       		.uleb128 0x2
+ 283 0054 04       		.byte	0x4
+ 284 0055 07       		.byte	0x7
+ 285 0056 C1000000 		.4byte	.LASF5
+ 286 005a 02       		.uleb128 0x2
+ 287 005b 08       		.byte	0x8
+ 288 005c 05       		.byte	0x5
+ 289 005d F7010000 		.4byte	.LASF6
+ 290 0061 02       		.uleb128 0x2
+ 291 0062 08       		.byte	0x8
+ 292 0063 07       		.byte	0x7
+ 293 0064 2E010000 		.4byte	.LASF7
+>>>>>>> Stashed changes
  294 0068 04       		.uleb128 0x4
  295 0069 04       		.byte	0x4
  296 006a 05       		.byte	0x5
@@ -393,9 +449,15 @@ ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccynn07E.s 			page 1
  298 006f 02       		.uleb128 0x2
  299 0070 04       		.byte	0x4
  300 0071 07       		.byte	0x7
+<<<<<<< Updated upstream
  301 0072 59010000 		.4byte	.LASF8
  302 0076 03       		.uleb128 0x3
  303 0077 90010000 		.4byte	.LASF10
+=======
+ 301 0072 21010000 		.4byte	.LASF8
+ 302 0076 03       		.uleb128 0x3
+ 303 0077 E6010000 		.4byte	.LASF10
+>>>>>>> Stashed changes
  304 007b 03       		.byte	0x3
  305 007c 2C       		.byte	0x2c
  306 007d 41000000 		.4byte	0x41
@@ -406,6 +468,7 @@ ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccynn07E.s 			page 1
  311 0088 02       		.uleb128 0x2
  312 0089 08       		.byte	0x8
  313 008a 04       		.byte	0x4
+<<<<<<< Updated upstream
  314 008b 2F010000 		.4byte	.LASF12
  315 008f 02       		.uleb128 0x2
  316 0090 01       		.byte	0x1
@@ -424,6 +487,26 @@ ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccynn07E.s 			page 1
  326 00a0 98010000 		.4byte	.LASF15
  327 00a4 05       		.uleb128 0x5
  328 00a5 7D010000 		.4byte	.LASF16
+=======
+ 314 008b F7000000 		.4byte	.LASF12
+ 315 008f 02       		.uleb128 0x2
+ 316 0090 01       		.byte	0x1
+ 317 0091 08       		.byte	0x8
+ 318 0092 17020000 		.4byte	.LASF13
+ 319 0096 02       		.uleb128 0x2
+ 320 0097 08       		.byte	0x8
+ 321 0098 04       		.byte	0x4
+ 322 0099 40020000 		.4byte	.LASF14
+ 323 009d 02       		.uleb128 0x2
+ 324 009e 04       		.byte	0x4
+ 325 009f 07       		.byte	0x7
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccdn9UDg.s 			page 8
+
+
+ 326 00a0 EE010000 		.4byte	.LASF15
+ 327 00a4 05       		.uleb128 0x5
+ 328 00a5 45010000 		.4byte	.LASF16
+>>>>>>> Stashed changes
  329 00a9 01       		.byte	0x1
  330 00aa 10       		.byte	0x10
  331 00ab 00000000 		.4byte	.LFB63
@@ -439,7 +522,11 @@ ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccynn07E.s 			page 1
  341 00c7 B0020000 		.4byte	0x2b0
  342 00cb 00       		.byte	0
  343 00cc 05       		.uleb128 0x5
+<<<<<<< Updated upstream
  344 00cd 15010000 		.4byte	.LASF17
+=======
+ 344 00cd DD000000 		.4byte	.LASF17
+>>>>>>> Stashed changes
  345 00d1 01       		.byte	0x1
  346 00d2 15       		.byte	0x15
  347 00d3 00000000 		.4byte	.LFB64
@@ -478,7 +565,11 @@ ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccynn07E.s 			page 1
  380 0118 30       		.byte	0x30
  381 0119 00       		.byte	0
  382 011a 07       		.uleb128 0x7
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccynn07E.s 			page 9
+=======
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccdn9UDg.s 			page 9
+>>>>>>> Stashed changes
 
 
  383 011b 1A000000 		.4byte	.LVL5
@@ -519,7 +610,11 @@ ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccynn07E.s 			page 1
  418 0162 00       		.byte	0
  419 0163 00       		.byte	0
  420 0164 05       		.uleb128 0x5
+<<<<<<< Updated upstream
  421 0165 36010000 		.4byte	.LASF18
+=======
+ 421 0165 FE000000 		.4byte	.LASF18
+>>>>>>> Stashed changes
  422 0169 01       		.byte	0x1
  423 016a 24       		.byte	0x24
  424 016b 00000000 		.4byte	.LFB65
@@ -538,7 +633,11 @@ ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccynn07E.s 			page 1
  437 018a 30       		.byte	0x30
  438 018b 00       		.byte	0
  439 018c 07       		.uleb128 0x7
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccynn07E.s 			page 10
+=======
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccdn9UDg.s 			page 10
+>>>>>>> Stashed changes
 
 
  440 018d 0E000000 		.4byte	.LVL11
@@ -598,11 +697,19 @@ ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccynn07E.s 			page 1
  494 01f9 64       		.byte	0x64
  495 01fa 00       		.byte	0
  496 01fb 00       		.byte	0
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccynn07E.s 			page 11
 
 
  497 01fc 05       		.uleb128 0x5
  498 01fd 52020000 		.4byte	.LASF19
+=======
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccdn9UDg.s 			page 11
+
+
+ 497 01fc 05       		.uleb128 0x5
+ 498 01fd 58020000 		.4byte	.LASF19
+>>>>>>> Stashed changes
  499 0201 01       		.byte	0x1
  500 0202 33       		.byte	0x33
  501 0203 00000000 		.4byte	.LFB66
@@ -628,7 +735,11 @@ ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccynn07E.s 			page 1
  521 0232 00       		.byte	0
  522 0233 00       		.byte	0
  523 0234 05       		.uleb128 0x5
+<<<<<<< Updated upstream
  524 0235 3E020000 		.4byte	.LASF20
+=======
+ 524 0235 6C020000 		.4byte	.LASF20
+>>>>>>> Stashed changes
  525 0239 01       		.byte	0x1
  526 023a 3D       		.byte	0x3d
  527 023b 00000000 		.4byte	.LFB67
@@ -654,11 +765,19 @@ ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccynn07E.s 			page 1
  547 026a 00       		.byte	0
  548 026b 00       		.byte	0
  549 026c 05       		.uleb128 0x5
+<<<<<<< Updated upstream
  550 026d 0B010000 		.4byte	.LASF21
  551 0271 01       		.byte	0x1
  552 0272 46       		.byte	0x46
  553 0273 00000000 		.4byte	.LFB68
 ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccynn07E.s 			page 12
+=======
+ 550 026d D3000000 		.4byte	.LASF21
+ 551 0271 01       		.byte	0x1
+ 552 0272 46       		.byte	0x46
+ 553 0273 00000000 		.4byte	.LFB68
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccdn9UDg.s 			page 12
+>>>>>>> Stashed changes
 
 
  554 0277 0C000000 		.4byte	.LFE68-.LFB68
@@ -673,13 +792,18 @@ ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccynn07E.s 			page 1
  563 028f FD020000 		.4byte	0x2fd
  564 0293 00       		.byte	0
  565 0294 0A       		.uleb128 0xa
+<<<<<<< Updated upstream
  566 0295 22010000 		.4byte	.LASF35
+=======
+ 566 0295 EA000000 		.4byte	.LASF35
+>>>>>>> Stashed changes
  567 0299 0A       		.byte	0xa
  568 029a 1207     		.2byte	0x712
  569 029c A0020000 		.4byte	0x2a0
  570 02a0 0B       		.uleb128 0xb
  571 02a1 76000000 		.4byte	0x76
  572 02a5 0C       		.uleb128 0xc
+<<<<<<< Updated upstream
  573 02a6 4E010000 		.4byte	.LASF22
  574 02aa 4E010000 		.4byte	.LASF22
  575 02ae 04       		.byte	0x4
@@ -692,6 +816,20 @@ ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccynn07E.s 			page 1
  582 02bb 0C       		.uleb128 0xc
  583 02bc 48020000 		.4byte	.LASF24
  584 02c0 48020000 		.4byte	.LASF24
+=======
+ 573 02a6 16010000 		.4byte	.LASF22
+ 574 02aa 16010000 		.4byte	.LASF22
+ 575 02ae 04       		.byte	0x4
+ 576 02af 92       		.byte	0x92
+ 577 02b0 0C       		.uleb128 0xc
+ 578 02b1 35020000 		.4byte	.LASF23
+ 579 02b5 35020000 		.4byte	.LASF23
+ 580 02b9 05       		.byte	0x5
+ 581 02ba 92       		.byte	0x92
+ 582 02bb 0C       		.uleb128 0xc
+ 583 02bc 62020000 		.4byte	.LASF24
+ 584 02c0 62020000 		.4byte	.LASF24
+>>>>>>> Stashed changes
  585 02c4 06       		.byte	0x6
  586 02c5 26       		.byte	0x26
  587 02c6 0C       		.uleb128 0xc
@@ -710,21 +848,35 @@ ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccynn07E.s 			page 1
  600 02e5 09       		.byte	0x9
  601 02e6 26       		.byte	0x26
  602 02e7 0C       		.uleb128 0xc
+<<<<<<< Updated upstream
  603 02e8 AF010000 		.4byte	.LASF28
  604 02ec AF010000 		.4byte	.LASF28
+=======
+ 603 02e8 05020000 		.4byte	.LASF28
+ 604 02ec 05020000 		.4byte	.LASF28
+>>>>>>> Stashed changes
  605 02f0 05       		.byte	0x5
  606 02f1 C3       		.byte	0xc3
  607 02f2 0C       		.uleb128 0xc
  608 02f3 45000000 		.4byte	.LASF29
  609 02f7 45000000 		.4byte	.LASF29
  610 02fb 04       		.byte	0x4
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccynn07E.s 			page 13
+=======
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccdn9UDg.s 			page 13
+>>>>>>> Stashed changes
 
 
  611 02fc C3       		.byte	0xc3
  612 02fd 0C       		.uleb128 0xc
+<<<<<<< Updated upstream
  613 02fe 44010000 		.4byte	.LASF30
  614 0302 44010000 		.4byte	.LASF30
+=======
+ 613 02fe 0C010000 		.4byte	.LASF30
+ 614 0302 0C010000 		.4byte	.LASF30
+>>>>>>> Stashed changes
  615 0306 05       		.byte	0x5
  616 0307 93       		.byte	0x93
  617 0308 0C       		.uleb128 0xc
@@ -778,7 +930,11 @@ ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccynn07E.s 			page 1
  665 0028 13       		.uleb128 0x13
  666 0029 00       		.byte	0
  667 002a 00       		.byte	0
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccynn07E.s 			page 14
+=======
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccdn9UDg.s 			page 14
+>>>>>>> Stashed changes
 
 
  668 002b 04       		.uleb128 0x4
@@ -838,7 +994,11 @@ ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccynn07E.s 			page 1
  722 0066 08       		.uleb128 0x8
  723 0067 8A8201   		.uleb128 0x410a
  724 006a 00       		.byte	0
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccynn07E.s 			page 15
+=======
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccdn9UDg.s 			page 15
+>>>>>>> Stashed changes
 
 
  725 006b 02       		.uleb128 0x2
@@ -898,7 +1058,11 @@ ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccynn07E.s 			page 1
  779 00a4 00       		.byte	0
  780 00a5 00       		.byte	0
  781 00a6 00       		.byte	0
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccynn07E.s 			page 16
+=======
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccdn9UDg.s 			page 16
+>>>>>>> Stashed changes
 
 
  782              		.section	.debug_aranges,"",%progbits
@@ -958,7 +1122,11 @@ ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccynn07E.s 			page 1
  828 0014 5F5F696E 		.ascii	"__int32_t\000"
  828      7433325F 
  828      7400
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccynn07E.s 			page 17
+=======
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccdn9UDg.s 			page 17
+>>>>>>> Stashed changes
 
 
  829              	.LASF27:
@@ -989,6 +1157,7 @@ ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccynn07E.s 			page 1
  840      676E6564 
  840      20636861 
  840      7200
+<<<<<<< Updated upstream
  841              	.LASF32:
  842 006b 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
  842      43313120 
@@ -1128,6 +1297,148 @@ ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccynn07E.s 			page 1
  895      6500
  896              	.LASF19:
  897 0252 64726976 		.ascii	"driveRight\000"
+=======
+ 841              	.LASF34:
+ 842 006b 433A5C55 		.ascii	"C:\\Users\\AugustHA\\Documents\\PRJ3\\Projekt3-2020"
+ 842      73657273 
+ 842      5C417567 
+ 842      75737448 
+ 842      415C446F 
+ 843 0099 5C4B6F64 		.ascii	"\\Kode\\main_psoc\\Main_Project\\Main.cydsn\000"
+ 843      655C6D61 
+ 843      696E5F70 
+ 843      736F635C 
+ 843      4D61696E 
+ 844              	.LASF5:
+ 845 00c1 6C6F6E67 		.ascii	"long unsigned int\000"
+ 845      20756E73 
+ 845      69676E65 
+ 845      6420696E 
+ 845      7400
+ 846              	.LASF21:
+ 847 00d3 64726976 		.ascii	"driveStop\000"
+ 847      6553746F 
+ 847      7000
+ 848              	.LASF17:
+ 849 00dd 64726976 		.ascii	"driveForward\000"
+ 849      65466F72 
+ 849      77617264 
+ 849      00
+ 850              	.LASF35:
+ 851 00ea 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 851      52784275 
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccdn9UDg.s 			page 18
+
+
+ 851      66666572 
+ 851      00
+ 852              	.LASF12:
+ 853 00f7 646F7562 		.ascii	"double\000"
+ 853      6C6500
+ 854              	.LASF18:
+ 855 00fe 64726976 		.ascii	"driveBackward\000"
+ 855      65426163 
+ 855      6B776172 
+ 855      6400
+ 856              	.LASF30:
+ 857 010c 50574D32 		.ascii	"PWM2_Stop\000"
+ 857      5F53746F 
+ 857      7000
+ 858              	.LASF22:
+ 859 0116 50574D31 		.ascii	"PWM1_Start\000"
+ 859      5F537461 
+ 859      727400
+ 860              	.LASF8:
+ 861 0121 756E7369 		.ascii	"unsigned int\000"
+ 861      676E6564 
+ 861      20696E74 
+ 861      00
+ 862              	.LASF7:
+ 863 012e 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 863      206C6F6E 
+ 863      6720756E 
+ 863      7369676E 
+ 863      65642069 
+ 864              	.LASF16:
+ 865 0145 696E6974 		.ascii	"initMotor\000"
+ 865      4D6F746F 
+ 865      7200
+ 866              	.LASF4:
+ 867 014f 6C6F6E67 		.ascii	"long int\000"
+ 867      20696E74 
+ 867      00
+ 868              	.LASF32:
+ 869 0158 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 869      43313120 
+ 869      352E342E 
+ 869      31203230 
+ 869      31363036 
+ 870 018b 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 870      20726576 
+ 870      6973696F 
+ 870      6E203233 
+ 870      37373135 
+ 871 01be 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 871      66756E63 
+ 871      74696F6E 
+ 871      2D736563 
+ 871      74696F6E 
+ 872              	.LASF10:
+ 873 01e6 696E7433 		.ascii	"int32_t\000"
+ 873      325F7400 
+ 874              	.LASF15:
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccdn9UDg.s 			page 19
+
+
+ 875 01ee 73697A65 		.ascii	"sizetype\000"
+ 875      74797065 
+ 875      00
+ 876              	.LASF6:
+ 877 01f7 6C6F6E67 		.ascii	"long long int\000"
+ 877      206C6F6E 
+ 877      6720696E 
+ 877      7400
+ 878              	.LASF28:
+ 879 0205 50574D32 		.ascii	"PWM2_WriteCompare\000"
+ 879      5F577269 
+ 879      7465436F 
+ 879      6D706172 
+ 879      6500
+ 880              	.LASF13:
+ 881 0217 63686172 		.ascii	"char\000"
+ 881      00
+ 882              	.LASF33:
+ 883 021c 6D6F746F 		.ascii	"motorStyring.c\000"
+ 883      72537479 
+ 883      72696E67 
+ 883      2E6300
+ 884              	.LASF2:
+ 885 022b 73686F72 		.ascii	"short int\000"
+ 885      7420696E 
+ 885      7400
+ 886              	.LASF23:
+ 887 0235 50574D32 		.ascii	"PWM2_Start\000"
+ 887      5F537461 
+ 887      727400
+ 888              	.LASF14:
+ 889 0240 6C6F6E67 		.ascii	"long double\000"
+ 889      20646F75 
+ 889      626C6500 
+ 890              	.LASF0:
+ 891 024c 7369676E 		.ascii	"signed char\000"
+ 891      65642063 
+ 891      68617200 
+ 892              	.LASF19:
+ 893 0258 64726976 		.ascii	"driveLeft\000"
+ 893      654C6566 
+ 893      7400
+ 894              	.LASF24:
+ 895 0262 696E315F 		.ascii	"in1_Write\000"
+ 895      57726974 
+ 895      6500
+ 896              	.LASF20:
+ 897 026c 64726976 		.ascii	"driveRight\000"
+>>>>>>> Stashed changes
  897      65526967 
  897      687400
  898              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

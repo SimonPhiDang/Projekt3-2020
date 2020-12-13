@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccO3PCre.s 			page 1
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccTZHPcg.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccO3PCre.s 			page 1
   28:Generated_Source\PSoC5/Counter_PM.c **** *     Save the current user configuration
   29:Generated_Source\PSoC5/Counter_PM.c **** *
   30:Generated_Source\PSoC5/Counter_PM.c **** * Parameters:  
-ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccO3PCre.s 			page 2
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccTZHPcg.s 			page 2
 
 
   31:Generated_Source\PSoC5/Counter_PM.c **** *  void
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccO3PCre.s 			page 1
   52:Generated_Source\PSoC5/Counter_PM.c ****     #endif /* (!Counter_UsingFixedFunction) */
   53:Generated_Source\PSoC5/Counter_PM.c **** }
   54:Generated_Source\PSoC5/Counter_PM.c **** 
-ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccO3PCre.s 			page 3
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccTZHPcg.s 			page 3
 
 
   55:Generated_Source\PSoC5/Counter_PM.c **** 
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccO3PCre.s 			page 1
   88              		.global	Counter_Sleep
   89              		.thumb
   90              		.thumb_func
-ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccO3PCre.s 			page 4
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccTZHPcg.s 			page 4
 
 
   91              		.type	Counter_Sleep, %function
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccO3PCre.s 			page 1
  114:Generated_Source\PSoC5/Counter_PM.c ****         else
  115:Generated_Source\PSoC5/Counter_PM.c ****         {
  116:Generated_Source\PSoC5/Counter_PM.c ****             /* Counter is disabled */
-ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccO3PCre.s 			page 5
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccTZHPcg.s 			page 5
 
 
  117:Generated_Source\PSoC5/Counter_PM.c ****             Counter_backup.CounterEnableState = 0u;
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccO3PCre.s 			page 1
  143:Generated_Source\PSoC5/Counter_PM.c **** *  void
  144:Generated_Source\PSoC5/Counter_PM.c **** *
  145:Generated_Source\PSoC5/Counter_PM.c **** * Global variables:
-ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccO3PCre.s 			page 6
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccTZHPcg.s 			page 6
 
 
  146:Generated_Source\PSoC5/Counter_PM.c **** *  Counter_backup.enableState:  Is used to restore the enable state of 
@@ -358,22 +358,22 @@ ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccO3PCre.s 			page 1
  182 0000 DF010000 		.4byte	0x1df
  183 0004 0400     		.2byte	0x4
  184 0006 00000000 		.4byte	.Ldebug_abbrev0
-ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccO3PCre.s 			page 7
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccTZHPcg.s 			page 7
 
 
  185 000a 04       		.byte	0x4
  186 000b 01       		.uleb128 0x1
  187 000c A6000000 		.4byte	.LASF31
  188 0010 0C       		.byte	0xc
- 189 0011 44020000 		.4byte	.LASF32
- 190 0015 72010000 		.4byte	.LASF33
+ 189 0011 73020000 		.4byte	.LASF32
+ 190 0015 25020000 		.4byte	.LASF33
  191 0019 00000000 		.4byte	.Ldebug_ranges0+0
  192 001d 00000000 		.4byte	0
  193 0021 00000000 		.4byte	.Ldebug_line0
  194 0025 02       		.uleb128 0x2
  195 0026 01       		.byte	0x1
  196 0027 06       		.byte	0x6
- 197 0028 9F020000 		.4byte	.LASF0
+ 197 0028 CE020000 		.4byte	.LASF0
  198 002c 02       		.uleb128 0x2
  199 002d 01       		.byte	0x1
  200 002e 08       		.byte	0x8
@@ -381,7 +381,7 @@ ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccO3PCre.s 			page 1
  202 0033 02       		.uleb128 0x2
  203 0034 02       		.byte	0x2
  204 0035 05       		.byte	0x5
- 205 0036 3A020000 		.4byte	.LASF2
+ 205 0036 1B020000 		.4byte	.LASF2
  206 003a 02       		.uleb128 0x2
  207 003b 02       		.byte	0x2
  208 003c 07       		.byte	0x7
@@ -389,7 +389,7 @@ ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccO3PCre.s 			page 1
  210 0041 02       		.uleb128 0x2
  211 0042 04       		.byte	0x4
  212 0043 05       		.byte	0x5
- 213 0044 7B020000 		.4byte	.LASF4
+ 213 0044 AA020000 		.4byte	.LASF4
  214 0048 02       		.uleb128 0x2
  215 0049 04       		.byte	0x4
  216 004a 07       		.byte	0x7
@@ -397,11 +397,11 @@ ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccO3PCre.s 			page 1
  218 004f 02       		.uleb128 0x2
  219 0050 08       		.byte	0x8
  220 0051 05       		.byte	0x5
- 221 0052 11020000 		.4byte	.LASF6
+ 221 0052 F2010000 		.4byte	.LASF6
  222 0056 02       		.uleb128 0x2
  223 0057 08       		.byte	0x8
  224 0058 07       		.byte	0x7
- 225 0059 DE010000 		.4byte	.LASF7
+ 225 0059 BF010000 		.4byte	.LASF7
  226 005d 03       		.uleb128 0x3
  227 005e 04       		.byte	0x4
  228 005f 05       		.byte	0x5
@@ -409,16 +409,16 @@ ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccO3PCre.s 			page 1
  230 0064 02       		.uleb128 0x2
  231 0065 04       		.byte	0x4
  232 0066 07       		.byte	0x7
- 233 0067 D1010000 		.4byte	.LASF8
+ 233 0067 B2010000 		.4byte	.LASF8
  234 006b 04       		.uleb128 0x4
  235 006c 4B010000 		.4byte	.LASF9
  236 0070 02       		.byte	0x2
  237 0071 E801     		.2byte	0x1e8
  238 0073 2C000000 		.4byte	0x2c
  239 0077 04       		.uleb128 0x4
- 240 0078 CA010000 		.4byte	.LASF10
+ 240 0078 AB010000 		.4byte	.LASF10
  241 007c 02       		.byte	0x2
-ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccO3PCre.s 			page 8
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccTZHPcg.s 			page 8
 
 
  242 007d E901     		.2byte	0x1e9
@@ -430,11 +430,11 @@ ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccO3PCre.s 			page 1
  248 008a 02       		.uleb128 0x2
  249 008b 08       		.byte	0x8
  250 008c 04       		.byte	0x4
- 251 008d 91010000 		.4byte	.LASF12
+ 251 008d 72010000 		.4byte	.LASF12
  252 0091 02       		.uleb128 0x2
  253 0092 01       		.byte	0x1
  254 0093 08       		.byte	0x8
- 255 0094 35020000 		.4byte	.LASF13
+ 255 0094 16020000 		.4byte	.LASF13
  256 0098 04       		.uleb128 0x4
  257 0099 34010000 		.4byte	.LASF14
  258 009d 02       		.byte	0x2
@@ -445,18 +445,18 @@ ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccO3PCre.s 			page 1
  263 00a9 02       		.uleb128 0x2
  264 00aa 08       		.byte	0x8
  265 00ab 04       		.byte	0x4
- 266 00ac 84020000 		.4byte	.LASF15
+ 266 00ac B3020000 		.4byte	.LASF15
  267 00b0 02       		.uleb128 0x2
  268 00b1 04       		.byte	0x4
  269 00b2 07       		.byte	0x7
- 270 00b3 F5010000 		.4byte	.LASF16
+ 270 00b3 D6010000 		.4byte	.LASF16
  271 00b7 06       		.uleb128 0x6
  272 00b8 06       		.byte	0x6
  273 00b9 03       		.byte	0x3
  274 00ba 40       		.byte	0x40
  275 00bb E4000000 		.4byte	0xe4
  276 00bf 07       		.uleb128 0x7
- 277 00c0 FE010000 		.4byte	.LASF17
+ 277 00c0 DF010000 		.4byte	.LASF17
  278 00c4 03       		.byte	0x3
  279 00c5 42       		.byte	0x42
  280 00c6 6B000000 		.4byte	0x6b
@@ -475,15 +475,15 @@ ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccO3PCre.s 			page 1
  293 00e2 04       		.byte	0x4
  294 00e3 00       		.byte	0
  295 00e4 08       		.uleb128 0x8
- 296 00e5 B5010000 		.4byte	.LASF20
+ 296 00e5 96010000 		.4byte	.LASF20
  297 00e9 03       		.byte	0x3
  298 00ea 49       		.byte	0x49
-ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccO3PCre.s 			page 9
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccTZHPcg.s 			page 9
 
 
  299 00eb B7000000 		.4byte	0xb7
  300 00ef 09       		.uleb128 0x9
- 301 00f0 68020000 		.4byte	.LASF21
+ 301 00f0 97020000 		.4byte	.LASF21
  302 00f4 01       		.byte	0x1
  303 00f5 2A       		.byte	0x2a
  304 00f6 00000000 		.4byte	.LFB0
@@ -499,7 +499,7 @@ ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccO3PCre.s 			page 1
  314 0112 AB010000 		.4byte	0x1ab
  315 0116 00       		.byte	0
  316 0117 09       		.uleb128 0x9
- 317 0118 1F020000 		.4byte	.LASF22
+ 317 0118 00020000 		.4byte	.LASF22
  318 011c 01       		.byte	0x1
  319 011d 4A       		.byte	0x4a
  320 011e 00000000 		.4byte	.LFB1
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccO3PCre.s 			page 1
  353 0172 18000000 		.4byte	.LFE3-.LFB3
  354 0176 01       		.uleb128 0x1
  355 0177 9C       		.byte	0x9c
-ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccO3PCre.s 			page 10
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccTZHPcg.s 			page 10
 
 
  356 0178 8F010000 		.4byte	0x18f
@@ -550,7 +550,7 @@ ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccO3PCre.s 			page 1
  362 018a D7010000 		.4byte	0x1d7
  363 018e 00       		.byte	0
  364 018f 0B       		.uleb128 0xb
- 365 0190 90020000 		.4byte	.LASF34
+ 365 0190 BF020000 		.4byte	.LASF34
  366 0194 01       		.byte	0x1
  367 0195 15       		.byte	0x15
  368 0196 E4000000 		.4byte	0xe4
@@ -573,8 +573,8 @@ ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccO3PCre.s 			page 1
  385 01bf 03       		.byte	0x3
  386 01c0 5A       		.byte	0x5a
  387 01c1 0C       		.uleb128 0xc
- 388 01c2 98010000 		.4byte	.LASF28
- 389 01c6 98010000 		.4byte	.LASF28
+ 388 01c2 79010000 		.4byte	.LASF28
+ 389 01c6 79010000 		.4byte	.LASF28
  390 01ca 03       		.byte	0x3
  391 01cb 56       		.byte	0x56
  392 01cc 0C       		.uleb128 0xc
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccO3PCre.s 			page 1
  410 0005 13       		.uleb128 0x13
  411 0006 0B       		.uleb128 0xb
  412 0007 03       		.uleb128 0x3
-ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccO3PCre.s 			page 11
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccTZHPcg.s 			page 11
 
 
  413 0008 0E       		.uleb128 0xe
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccO3PCre.s 			page 1
  467 003e 13       		.uleb128 0x13
  468 003f 01       		.byte	0x1
  469 0040 0B       		.uleb128 0xb
-ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccO3PCre.s 			page 12
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccTZHPcg.s 			page 12
 
 
  470 0041 0B       		.uleb128 0xb
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccO3PCre.s 			page 1
  524 0077 40       		.uleb128 0x40
  525 0078 18       		.uleb128 0x18
  526 0079 9742     		.uleb128 0x2117
-ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccO3PCre.s 			page 13
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccTZHPcg.s 			page 13
 
 
  527 007b 19       		.uleb128 0x19
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccO3PCre.s 			page 1
  581 000e 0000     		.2byte	0
  582 0010 00000000 		.4byte	.LFB0
  583 0014 18000000 		.4byte	.LFE0-.LFB0
-ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccO3PCre.s 			page 14
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccTZHPcg.s 			page 14
 
 
  584 0018 00000000 		.4byte	.LFB1
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccO3PCre.s 			page 1
  617              	.LASF18:
  618 005b 436F756E 		.ascii	"CounterUdb\000"
  618      74657255 
-ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccO3PCre.s 			page 15
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccTZHPcg.s 			page 15
 
 
  618      646200
@@ -898,105 +898,110 @@ ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccO3PCre.s 			page 1
  639              	.LASF25:
  640 015e 436F756E 		.ascii	"Counter_ReadCounter\000"
  640      7465725F 
-ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccO3PCre.s 			page 16
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccTZHPcg.s 			page 16
 
 
  640      52656164 
  640      436F756E 
  640      74657200 
- 641              	.LASF33:
- 642 0172 433A5C49 		.ascii	"C:\\IKT\\HAL\\psocmain\\Main.cydsn\000"
- 642      4B545C48 
- 642      414C5C70 
- 642      736F636D 
- 642      61696E5C 
- 643              	.LASF12:
- 644 0191 646F7562 		.ascii	"double\000"
- 644      6C6500
- 645              	.LASF28:
- 646 0198 436F756E 		.ascii	"Counter_WriteControlRegister\000"
+ 641              	.LASF12:
+ 642 0172 646F7562 		.ascii	"double\000"
+ 642      6C6500
+ 643              	.LASF28:
+ 644 0179 436F756E 		.ascii	"Counter_WriteControlRegister\000"
+ 644      7465725F 
+ 644      57726974 
+ 644      65436F6E 
+ 644      74726F6C 
+ 645              	.LASF20:
+ 646 0196 436F756E 		.ascii	"Counter_backupStruct\000"
  646      7465725F 
- 646      57726974 
- 646      65436F6E 
- 646      74726F6C 
- 647              	.LASF20:
- 648 01b5 436F756E 		.ascii	"Counter_backupStruct\000"
- 648      7465725F 
- 648      6261636B 
- 648      75705374 
- 648      72756374 
- 649              	.LASF10:
- 650 01ca 75696E74 		.ascii	"uint16\000"
- 650      313600
- 651              	.LASF8:
- 652 01d1 756E7369 		.ascii	"unsigned int\000"
- 652      676E6564 
- 652      20696E74 
- 652      00
- 653              	.LASF7:
- 654 01de 6C6F6E67 		.ascii	"long long unsigned int\000"
- 654      206C6F6E 
- 654      6720756E 
- 654      7369676E 
- 654      65642069 
- 655              	.LASF16:
- 656 01f5 73697A65 		.ascii	"sizetype\000"
- 656      74797065 
- 656      00
- 657              	.LASF17:
- 658 01fe 436F756E 		.ascii	"CounterEnableState\000"
- 658      74657245 
- 658      6E61626C 
- 658      65537461 
- 658      746500
- 659              	.LASF6:
- 660 0211 6C6F6E67 		.ascii	"long long int\000"
- 660      206C6F6E 
- 660      6720696E 
- 660      7400
- 661              	.LASF22:
- 662 021f 436F756E 		.ascii	"Counter_RestoreConfig\000"
- 662      7465725F 
- 662      52657374 
-ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccO3PCre.s 			page 17
+ 646      6261636B 
+ 646      75705374 
+ 646      72756374 
+ 647              	.LASF10:
+ 648 01ab 75696E74 		.ascii	"uint16\000"
+ 648      313600
+ 649              	.LASF8:
+ 650 01b2 756E7369 		.ascii	"unsigned int\000"
+ 650      676E6564 
+ 650      20696E74 
+ 650      00
+ 651              	.LASF7:
+ 652 01bf 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 652      206C6F6E 
+ 652      6720756E 
+ 652      7369676E 
+ 652      65642069 
+ 653              	.LASF16:
+ 654 01d6 73697A65 		.ascii	"sizetype\000"
+ 654      74797065 
+ 654      00
+ 655              	.LASF17:
+ 656 01df 436F756E 		.ascii	"CounterEnableState\000"
+ 656      74657245 
+ 656      6E61626C 
+ 656      65537461 
+ 656      746500
+ 657              	.LASF6:
+ 658 01f2 6C6F6E67 		.ascii	"long long int\000"
+ 658      206C6F6E 
+ 658      6720696E 
+ 658      7400
+ 659              	.LASF22:
+ 660 0200 436F756E 		.ascii	"Counter_RestoreConfig\000"
+ 660      7465725F 
+ 660      52657374 
+ 660      6F726543 
+ 660      6F6E6669 
+ 661              	.LASF13:
+ 662 0216 63686172 		.ascii	"char\000"
+ 662      00
+ 663              	.LASF2:
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccTZHPcg.s 			page 17
 
 
- 662      6F726543 
- 662      6F6E6669 
- 663              	.LASF13:
- 664 0235 63686172 		.ascii	"char\000"
- 664      00
- 665              	.LASF2:
- 666 023a 73686F72 		.ascii	"short int\000"
- 666      7420696E 
- 666      7400
- 667              	.LASF32:
- 668 0244 47656E65 		.ascii	"Generated_Source\\PSoC5\\Counter_PM.c\000"
- 668      72617465 
- 668      645F536F 
- 668      75726365 
- 668      5C50536F 
- 669              	.LASF21:
- 670 0268 436F756E 		.ascii	"Counter_SaveConfig\000"
- 670      7465725F 
- 670      53617665 
- 670      436F6E66 
- 670      696700
- 671              	.LASF4:
- 672 027b 6C6F6E67 		.ascii	"long int\000"
- 672      20696E74 
- 672      00
- 673              	.LASF15:
- 674 0284 6C6F6E67 		.ascii	"long double\000"
- 674      20646F75 
- 674      626C6500 
- 675              	.LASF34:
- 676 0290 436F756E 		.ascii	"Counter_backup\000"
- 676      7465725F 
- 676      6261636B 
- 676      757000
- 677              	.LASF0:
- 678 029f 7369676E 		.ascii	"signed char\000"
- 678      65642063 
- 678      68617200 
- 679              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ 664 021b 73686F72 		.ascii	"short int\000"
+ 664      7420696E 
+ 664      7400
+ 665              	.LASF33:
+ 666 0225 433A5C55 		.ascii	"C:\\Users\\AugustHA\\Documents\\PRJ3\\Projekt3-2020"
+ 666      73657273 
+ 666      5C417567 
+ 666      75737448 
+ 666      415C446F 
+ 667 0253 5C4B6F64 		.ascii	"\\Kode\\main_psoc_done\\Main.cydsn\000"
+ 667      655C6D61 
+ 667      696E5F70 
+ 667      736F635F 
+ 667      646F6E65 
+ 668              	.LASF32:
+ 669 0273 47656E65 		.ascii	"Generated_Source\\PSoC5\\Counter_PM.c\000"
+ 669      72617465 
+ 669      645F536F 
+ 669      75726365 
+ 669      5C50536F 
+ 670              	.LASF21:
+ 671 0297 436F756E 		.ascii	"Counter_SaveConfig\000"
+ 671      7465725F 
+ 671      53617665 
+ 671      436F6E66 
+ 671      696700
+ 672              	.LASF4:
+ 673 02aa 6C6F6E67 		.ascii	"long int\000"
+ 673      20696E74 
+ 673      00
+ 674              	.LASF15:
+ 675 02b3 6C6F6E67 		.ascii	"long double\000"
+ 675      20646F75 
+ 675      626C6500 
+ 676              	.LASF34:
+ 677 02bf 436F756E 		.ascii	"Counter_backup\000"
+ 677      7465725F 
+ 677      6261636B 
+ 677      757000
+ 678              	.LASF0:
+ 679 02ce 7369676E 		.ascii	"signed char\000"
+ 679      65642063 
+ 679      68617200 
+ 680              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\cccn6cKW.s 			page 1
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccUcQLvR.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\cccn6cKW.s 			page 1
   28:Generated_Source\PSoC5/PWM1_PM.c **** *  Saves the current user configuration of the component.
   29:Generated_Source\PSoC5/PWM1_PM.c **** *
   30:Generated_Source\PSoC5/PWM1_PM.c **** * Parameters:
-ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\cccn6cKW.s 			page 2
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccUcQLvR.s 			page 2
 
 
   31:Generated_Source\PSoC5/PWM1_PM.c **** *  None
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\cccn6cKW.s 			page 1
   64:Generated_Source\PSoC5/PWM1_PM.c ****             PWM1_backup.PWMControlRegister = PWM1_ReadControlRegister();
   49              		.loc 1 64 0
   50 0016 FFF7FEFF 		bl	PWM1_ReadControlRegister
-ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\cccn6cKW.s 			page 3
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccUcQLvR.s 			page 3
 
 
   51              	.LVL2:
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\cccn6cKW.s 			page 1
   92:Generated_Source\PSoC5/PWM1_PM.c ****                 PWM1_WritePeriod(PWM1_backup.PWMPeriod);
   78              		.loc 1 92 0
   79 0002 074C     		ldr	r4, .L7
-ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\cccn6cKW.s 			page 4
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccUcQLvR.s 			page 4
 
 
   80 0004 A078     		ldrb	r0, [r4, #2]	@ zero_extendqisi2
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\cccn6cKW.s 			page 1
  115:Generated_Source\PSoC5/PWM1_PM.c **** 
  116:Generated_Source\PSoC5/PWM1_PM.c **** 
  117:Generated_Source\PSoC5/PWM1_PM.c **** /*******************************************************************************
-ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\cccn6cKW.s 			page 5
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccUcQLvR.s 			page 5
 
 
  118:Generated_Source\PSoC5/PWM1_PM.c **** * Function Name: PWM1_Sleep
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\cccn6cKW.s 			page 1
  148:Generated_Source\PSoC5/PWM1_PM.c ****         }
  149:Generated_Source\PSoC5/PWM1_PM.c ****     #endif /* (PWM1_UseControl) */
  150:Generated_Source\PSoC5/PWM1_PM.c **** 
-ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\cccn6cKW.s 			page 6
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccUcQLvR.s 			page 6
 
 
  151:Generated_Source\PSoC5/PWM1_PM.c ****     /* Stop component */
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\cccn6cKW.s 			page 1
  161              		@ args = 0, pretend = 0, frame = 0
  162              		@ frame_needed = 0, uses_anonymous_args = 0
  163 0000 08B5     		push	{r3, lr}
-ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\cccn6cKW.s 			page 7
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccUcQLvR.s 			page 7
 
 
  164              		.cfi_def_cfa_offset 8
@@ -411,18 +411,18 @@ ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\cccn6cKW.s 			page 1
  203 000b 01       		.uleb128 0x1
  204 000c 64000000 		.4byte	.LASF34
  205 0010 0C       		.byte	0xc
- 206 0011 67010000 		.4byte	.LASF35
- 207 0015 35010000 		.4byte	.LASF36
+ 206 0011 48010000 		.4byte	.LASF35
+ 207 0015 40020000 		.4byte	.LASF36
  208 0019 00000000 		.4byte	.Ldebug_ranges0+0
  209 001d 00000000 		.4byte	0
  210 0021 00000000 		.4byte	.Ldebug_line0
  211 0025 02       		.uleb128 0x2
  212 0026 01       		.byte	0x1
-ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\cccn6cKW.s 			page 8
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccUcQLvR.s 			page 8
 
 
  213 0027 06       		.byte	0x6
- 214 0028 74020000 		.4byte	.LASF0
+ 214 0028 A3020000 		.4byte	.LASF0
  215 002c 02       		.uleb128 0x2
  216 002d 01       		.byte	0x1
  217 002e 08       		.byte	0x8
@@ -430,7 +430,7 @@ ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\cccn6cKW.s 			page 1
  219 0033 02       		.uleb128 0x2
  220 0034 02       		.byte	0x2
  221 0035 05       		.byte	0x5
- 222 0036 49020000 		.4byte	.LASF2
+ 222 0036 2A020000 		.4byte	.LASF2
  223 003a 02       		.uleb128 0x2
  224 003b 02       		.byte	0x2
  225 003c 07       		.byte	0x7
@@ -438,7 +438,7 @@ ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\cccn6cKW.s 			page 1
  227 0041 02       		.uleb128 0x2
  228 0042 04       		.byte	0x4
  229 0043 05       		.byte	0x5
- 230 0044 5F020000 		.4byte	.LASF4
+ 230 0044 8E020000 		.4byte	.LASF4
  231 0048 02       		.uleb128 0x2
  232 0049 04       		.byte	0x4
  233 004a 07       		.byte	0x7
@@ -446,11 +446,11 @@ ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\cccn6cKW.s 			page 1
  235 004f 02       		.uleb128 0x2
  236 0050 08       		.byte	0x8
  237 0051 05       		.byte	0x5
- 238 0052 0B020000 		.4byte	.LASF6
+ 238 0052 EC010000 		.4byte	.LASF6
  239 0056 02       		.uleb128 0x2
  240 0057 08       		.byte	0x8
  241 0058 07       		.byte	0x7
- 242 0059 CD010000 		.4byte	.LASF7
+ 242 0059 AE010000 		.4byte	.LASF7
  243 005d 03       		.uleb128 0x3
  244 005e 04       		.byte	0x4
  245 005f 05       		.byte	0x5
@@ -458,7 +458,7 @@ ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\cccn6cKW.s 			page 1
  247 0064 02       		.uleb128 0x2
  248 0065 04       		.byte	0x4
  249 0066 07       		.byte	0x7
- 250 0067 AE010000 		.4byte	.LASF8
+ 250 0067 8F010000 		.4byte	.LASF8
  251 006b 04       		.uleb128 0x4
  252 006c 1E010000 		.4byte	.LASF12
  253 0070 02       		.byte	0x2
@@ -471,14 +471,14 @@ ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\cccn6cKW.s 			page 1
  260 007e 02       		.uleb128 0x2
  261 007f 08       		.byte	0x8
  262 0080 04       		.byte	0x4
- 263 0081 88010000 		.4byte	.LASF10
+ 263 0081 69010000 		.4byte	.LASF10
  264 0085 02       		.uleb128 0x2
  265 0086 01       		.byte	0x1
  266 0087 08       		.byte	0x8
- 267 0088 19020000 		.4byte	.LASF11
+ 267 0088 FA010000 		.4byte	.LASF11
  268 008c 04       		.uleb128 0x4
- 269 008d FD010000 		.4byte	.LASF13
-ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\cccn6cKW.s 			page 9
+ 269 008d DE010000 		.4byte	.LASF13
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccUcQLvR.s 			page 9
 
 
  270 0091 02       		.byte	0x2
@@ -489,11 +489,11 @@ ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\cccn6cKW.s 			page 1
  275 009d 02       		.uleb128 0x2
  276 009e 08       		.byte	0x8
  277 009f 04       		.byte	0x4
- 278 00a0 68020000 		.4byte	.LASF14
+ 278 00a0 97020000 		.4byte	.LASF14
  279 00a4 02       		.uleb128 0x2
  280 00a5 04       		.byte	0x4
  281 00a6 07       		.byte	0x7
- 282 00a7 02020000 		.4byte	.LASF15
+ 282 00a7 E3010000 		.4byte	.LASF15
  283 00ab 06       		.uleb128 0x6
  284 00ac 05       		.byte	0x5
  285 00ad 03       		.byte	0x3
@@ -518,13 +518,13 @@ ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\cccn6cKW.s 			page 1
  304 00d2 6B000000 		.4byte	0x6b
  305 00d6 02       		.byte	0x2
  306 00d7 07       		.uleb128 0x7
- 307 00d8 9C020000 		.4byte	.LASF19
+ 307 00d8 CB020000 		.4byte	.LASF19
  308 00dc 03       		.byte	0x3
  309 00dd 76       		.byte	0x76
  310 00de 6B000000 		.4byte	0x6b
  311 00e2 03       		.byte	0x3
  312 00e3 07       		.uleb128 0x7
- 313 00e4 54010000 		.4byte	.LASF20
+ 313 00e4 35010000 		.4byte	.LASF20
  314 00e8 03       		.byte	0x3
  315 00e9 86       		.byte	0x86
  316 00ea 6B000000 		.4byte	0x6b
@@ -536,9 +536,9 @@ ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\cccn6cKW.s 			page 1
  322 00f6 8B       		.byte	0x8b
  323 00f7 AB000000 		.4byte	0xab
  324 00fb 09       		.uleb128 0x9
- 325 00fc 8C020000 		.4byte	.LASF22
+ 325 00fc BB020000 		.4byte	.LASF22
  326 0100 01       		.byte	0x1
-ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\cccn6cKW.s 			page 10
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccUcQLvR.s 			page 10
 
 
  327 0101 2A       		.byte	0x2a
@@ -558,7 +558,7 @@ ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\cccn6cKW.s 			page 1
  341 0127 D4010000 		.4byte	0x1d4
  342 012b 00       		.byte	0
  343 012c 09       		.uleb128 0x9
- 344 012d 9B010000 		.4byte	.LASF23
+ 344 012d 7C010000 		.4byte	.LASF23
  345 0131 01       		.byte	0x1
  346 0132 58       		.byte	0x58
  347 0133 00000000 		.4byte	.LFB1
@@ -593,12 +593,12 @@ ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\cccn6cKW.s 			page 1
  376 0180 FB000000 		.4byte	0xfb
  377 0184 00       		.byte	0
  378 0185 09       		.uleb128 0x9
- 379 0186 80020000 		.4byte	.LASF25
+ 379 0186 AF020000 		.4byte	.LASF25
  380 018a 01       		.byte	0x1
  381 018b B2       		.byte	0xb2
  382 018c 00000000 		.4byte	.LFB3
  383 0190 18000000 		.4byte	.LFE3-.LFB3
-ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\cccn6cKW.s 			page 11
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccUcQLvR.s 			page 11
 
 
  384 0194 01       		.uleb128 0x1
@@ -612,7 +612,7 @@ ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\cccn6cKW.s 			page 1
  392 01a8 0B020000 		.4byte	0x20b
  393 01ac 00       		.byte	0
  394 01ad 0B       		.uleb128 0xb
- 395 01ae 53020000 		.4byte	.LASF37
+ 395 01ae 34020000 		.4byte	.LASF37
  396 01b2 01       		.byte	0x1
  397 01b3 14       		.byte	0x14
  398 01b4 F0000000 		.4byte	0xf0
@@ -630,23 +630,23 @@ ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\cccn6cKW.s 			page 1
  410 01d2 03       		.byte	0x3
  411 01d3 B3       		.byte	0xb3
  412 01d4 0C       		.uleb128 0xc
- 413 01d5 E4010000 		.4byte	.LASF28
- 414 01d9 E4010000 		.4byte	.LASF28
+ 413 01d5 C5010000 		.4byte	.LASF28
+ 414 01d9 C5010000 		.4byte	.LASF28
  415 01dd 03       		.byte	0x3
  416 01de 9D       		.byte	0x9d
  417 01df 0C       		.uleb128 0xc
- 418 01e0 38020000 		.4byte	.LASF29
- 419 01e4 38020000 		.4byte	.LASF29
+ 418 01e0 19020000 		.4byte	.LASF29
+ 419 01e4 19020000 		.4byte	.LASF29
  420 01e8 03       		.byte	0x3
  421 01e9 BE       		.byte	0xbe
  422 01ea 0C       		.uleb128 0xc
- 423 01eb BB010000 		.4byte	.LASF30
- 424 01ef BB010000 		.4byte	.LASF30
+ 423 01eb 9C010000 		.4byte	.LASF30
+ 424 01ef 9C010000 		.4byte	.LASF30
  425 01f3 03       		.byte	0x3
  426 01f4 BA       		.byte	0xba
  427 01f5 0C       		.uleb128 0xc
- 428 01f6 1E020000 		.4byte	.LASF31
- 429 01fa 1E020000 		.4byte	.LASF31
+ 428 01f6 FF010000 		.4byte	.LASF31
+ 429 01fa FF010000 		.4byte	.LASF31
  430 01fe 03       		.byte	0x3
  431 01ff 9E       		.byte	0x9e
  432 0200 0C       		.uleb128 0xc
@@ -655,10 +655,10 @@ ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\cccn6cKW.s 			page 1
  435 0209 03       		.byte	0x3
  436 020a 93       		.byte	0x93
  437 020b 0C       		.uleb128 0xc
- 438 020c 8F010000 		.4byte	.LASF33
- 439 0210 8F010000 		.4byte	.LASF33
+ 438 020c 70010000 		.4byte	.LASF33
+ 439 0210 70010000 		.4byte	.LASF33
  440 0214 03       		.byte	0x3
-ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\cccn6cKW.s 			page 12
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccUcQLvR.s 			page 12
 
 
  441 0215 DB       		.byte	0xdb
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\cccn6cKW.s 			page 1
  495 0032 49       		.uleb128 0x49
  496 0033 13       		.uleb128 0x13
  497 0034 00       		.byte	0
-ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\cccn6cKW.s 			page 13
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccUcQLvR.s 			page 13
 
 
  498 0035 00       		.byte	0
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\cccn6cKW.s 			page 1
  552 006b 03       		.uleb128 0x3
  553 006c 0E       		.uleb128 0xe
  554 006d 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\cccn6cKW.s 			page 14
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccUcQLvR.s 			page 14
 
 
  555 006e 0B       		.uleb128 0xb
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\cccn6cKW.s 			page 1
  609 00a7 3B       		.uleb128 0x3b
  610 00a8 0B       		.uleb128 0xb
  611 00a9 00       		.byte	0
-ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\cccn6cKW.s 			page 15
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccUcQLvR.s 			page 15
 
 
  612 00aa 00       		.byte	0
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\cccn6cKW.s 			page 1
  654      7400
  655              	.LASF3:
  656 0029 73686F72 		.ascii	"short unsigned int\000"
-ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\cccn6cKW.s 			page 16
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccUcQLvR.s 			page 16
 
 
  656      7420756E 
@@ -958,130 +958,135 @@ ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\cccn6cKW.s 			page 1
  676      5F526561 
  676      64436F75 
  676      6E746572 
-ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\cccn6cKW.s 			page 17
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccUcQLvR.s 			page 17
 
 
  676      00
- 677              	.LASF36:
- 678 0135 433A5C49 		.ascii	"C:\\IKT\\HAL\\psocmain\\Main.cydsn\000"
- 678      4B545C48 
- 678      414C5C70 
- 678      736F636D 
- 678      61696E5C 
- 679              	.LASF20:
- 680 0154 50574D43 		.ascii	"PWMControlRegister\000"
- 680      6F6E7472 
- 680      6F6C5265 
- 680      67697374 
- 680      657200
- 681              	.LASF35:
- 682 0167 47656E65 		.ascii	"Generated_Source\\PSoC5\\PWM1_PM.c\000"
- 682      72617465 
- 682      645F536F 
- 682      75726365 
- 682      5C50536F 
- 683              	.LASF10:
- 684 0188 646F7562 		.ascii	"double\000"
- 684      6C6500
- 685              	.LASF33:
- 686 018f 50574D31 		.ascii	"PWM1_Enable\000"
- 686      5F456E61 
- 686      626C6500 
- 687              	.LASF23:
- 688 019b 50574D31 		.ascii	"PWM1_RestoreConfig\000"
- 688      5F526573 
- 688      746F7265 
- 688      436F6E66 
- 688      696700
- 689              	.LASF8:
- 690 01ae 756E7369 		.ascii	"unsigned int\000"
- 690      676E6564 
- 690      20696E74 
- 690      00
- 691              	.LASF30:
- 692 01bb 50574D31 		.ascii	"PWM1_WriteCounter\000"
- 692      5F577269 
- 692      7465436F 
- 692      756E7465 
- 692      7200
- 693              	.LASF7:
- 694 01cd 6C6F6E67 		.ascii	"long long unsigned int\000"
- 694      206C6F6E 
- 694      6720756E 
- 694      7369676E 
- 694      65642069 
- 695              	.LASF28:
- 696 01e4 50574D31 		.ascii	"PWM1_ReadControlRegister\000"
- 696      5F526561 
- 696      64436F6E 
- 696      74726F6C 
- 696      52656769 
- 697              	.LASF13:
- 698 01fd 72656738 		.ascii	"reg8\000"
-ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\cccn6cKW.s 			page 18
-
-
+ 677              	.LASF20:
+ 678 0135 50574D43 		.ascii	"PWMControlRegister\000"
+ 678      6F6E7472 
+ 678      6F6C5265 
+ 678      67697374 
+ 678      657200
+ 679              	.LASF35:
+ 680 0148 47656E65 		.ascii	"Generated_Source\\PSoC5\\PWM1_PM.c\000"
+ 680      72617465 
+ 680      645F536F 
+ 680      75726365 
+ 680      5C50536F 
+ 681              	.LASF10:
+ 682 0169 646F7562 		.ascii	"double\000"
+ 682      6C6500
+ 683              	.LASF33:
+ 684 0170 50574D31 		.ascii	"PWM1_Enable\000"
+ 684      5F456E61 
+ 684      626C6500 
+ 685              	.LASF23:
+ 686 017c 50574D31 		.ascii	"PWM1_RestoreConfig\000"
+ 686      5F526573 
+ 686      746F7265 
+ 686      436F6E66 
+ 686      696700
+ 687              	.LASF8:
+ 688 018f 756E7369 		.ascii	"unsigned int\000"
+ 688      676E6564 
+ 688      20696E74 
+ 688      00
+ 689              	.LASF30:
+ 690 019c 50574D31 		.ascii	"PWM1_WriteCounter\000"
+ 690      5F577269 
+ 690      7465436F 
+ 690      756E7465 
+ 690      7200
+ 691              	.LASF7:
+ 692 01ae 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 692      206C6F6E 
+ 692      6720756E 
+ 692      7369676E 
+ 692      65642069 
+ 693              	.LASF28:
+ 694 01c5 50574D31 		.ascii	"PWM1_ReadControlRegister\000"
+ 694      5F526561 
+ 694      64436F6E 
+ 694      74726F6C 
+ 694      52656769 
+ 695              	.LASF13:
+ 696 01de 72656738 		.ascii	"reg8\000"
+ 696      00
+ 697              	.LASF15:
+ 698 01e3 73697A65 		.ascii	"sizetype\000"
+ 698      74797065 
  698      00
- 699              	.LASF15:
- 700 0202 73697A65 		.ascii	"sizetype\000"
- 700      74797065 
- 700      00
- 701              	.LASF6:
- 702 020b 6C6F6E67 		.ascii	"long long int\000"
- 702      206C6F6E 
- 702      6720696E 
- 702      7400
- 703              	.LASF11:
- 704 0219 63686172 		.ascii	"char\000"
- 704      00
- 705              	.LASF31:
- 706 021e 50574D31 		.ascii	"PWM1_WriteControlRegister\000"
+ 699              	.LASF6:
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccUcQLvR.s 			page 18
+
+
+ 700 01ec 6C6F6E67 		.ascii	"long long int\000"
+ 700      206C6F6E 
+ 700      6720696E 
+ 700      7400
+ 701              	.LASF11:
+ 702 01fa 63686172 		.ascii	"char\000"
+ 702      00
+ 703              	.LASF31:
+ 704 01ff 50574D31 		.ascii	"PWM1_WriteControlRegister\000"
+ 704      5F577269 
+ 704      7465436F 
+ 704      6E74726F 
+ 704      6C526567 
+ 705              	.LASF29:
+ 706 0219 50574D31 		.ascii	"PWM1_WritePeriod\000"
  706      5F577269 
- 706      7465436F 
- 706      6E74726F 
- 706      6C526567 
- 707              	.LASF29:
- 708 0238 50574D31 		.ascii	"PWM1_WritePeriod\000"
- 708      5F577269 
- 708      74655065 
- 708      72696F64 
- 708      00
- 709              	.LASF2:
- 710 0249 73686F72 		.ascii	"short int\000"
- 710      7420696E 
- 710      7400
- 711              	.LASF37:
- 712 0253 50574D31 		.ascii	"PWM1_backup\000"
- 712      5F626163 
- 712      6B757000 
- 713              	.LASF4:
- 714 025f 6C6F6E67 		.ascii	"long int\000"
- 714      20696E74 
- 714      00
- 715              	.LASF14:
- 716 0268 6C6F6E67 		.ascii	"long double\000"
- 716      20646F75 
- 716      626C6500 
- 717              	.LASF0:
- 718 0274 7369676E 		.ascii	"signed char\000"
- 718      65642063 
- 718      68617200 
- 719              	.LASF25:
- 720 0280 50574D31 		.ascii	"PWM1_Wakeup\000"
- 720      5F57616B 
- 720      65757000 
- 721              	.LASF22:
- 722 028c 50574D31 		.ascii	"PWM1_SaveConfig\000"
- 722      5F536176 
- 722      65436F6E 
- 722      66696700 
- 723              	.LASF19:
- 724 029c 496E7465 		.ascii	"InterruptMaskValue\000"
- 724      72727570 
-ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\cccn6cKW.s 			page 19
+ 706      74655065 
+ 706      72696F64 
+ 706      00
+ 707              	.LASF2:
+ 708 022a 73686F72 		.ascii	"short int\000"
+ 708      7420696E 
+ 708      7400
+ 709              	.LASF37:
+ 710 0234 50574D31 		.ascii	"PWM1_backup\000"
+ 710      5F626163 
+ 710      6B757000 
+ 711              	.LASF36:
+ 712 0240 433A5C55 		.ascii	"C:\\Users\\AugustHA\\Documents\\PRJ3\\Projekt3-2020"
+ 712      73657273 
+ 712      5C417567 
+ 712      75737448 
+ 712      415C446F 
+ 713 026e 5C4B6F64 		.ascii	"\\Kode\\main_psoc_done\\Main.cydsn\000"
+ 713      655C6D61 
+ 713      696E5F70 
+ 713      736F635F 
+ 713      646F6E65 
+ 714              	.LASF4:
+ 715 028e 6C6F6E67 		.ascii	"long int\000"
+ 715      20696E74 
+ 715      00
+ 716              	.LASF14:
+ 717 0297 6C6F6E67 		.ascii	"long double\000"
+ 717      20646F75 
+ 717      626C6500 
+ 718              	.LASF0:
+ 719 02a3 7369676E 		.ascii	"signed char\000"
+ 719      65642063 
+ 719      68617200 
+ 720              	.LASF25:
+ 721 02af 50574D31 		.ascii	"PWM1_Wakeup\000"
+ 721      5F57616B 
+ 721      65757000 
+ 722              	.LASF22:
+ 723 02bb 50574D31 		.ascii	"PWM1_SaveConfig\000"
+ 723      5F536176 
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccUcQLvR.s 			page 19
 
 
- 724      744D6173 
- 724      6B56616C 
- 724      756500
- 725              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ 723      65436F6E 
+ 723      66696700 
+ 724              	.LASF19:
+ 725 02cb 496E7465 		.ascii	"InterruptMaskValue\000"
+ 725      72727570 
+ 725      744D6173 
+ 725      6B56616C 
+ 725      756500
+ 726              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

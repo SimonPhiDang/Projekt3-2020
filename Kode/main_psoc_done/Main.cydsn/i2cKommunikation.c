@@ -12,8 +12,6 @@
 
 uint8 byteCnt;   
 uint8 wrBuf[8];
-uint8 rdBuf[8];
-uint8 i;
 
 void initiere_I2Ckommunikation()
 {
@@ -21,7 +19,7 @@ void initiere_I2Ckommunikation()
     I2C_Start();
 }
 
-char I2C_Kommunikation()
+char newOrder()
 {
       if(0u != (I2C_SlaveStatus() & I2C_SSTAT_WR_CMPLT)) 
          {

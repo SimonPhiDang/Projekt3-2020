@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\cc0Xf7ab.s 			page 1
+=======
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\cc9y9sJ0.s 			page 1
+>>>>>>> Stashed changes
 
 
    1              		.syntax unified
@@ -41,6 +45,7 @@ ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\cc0Xf7ab.s 			page 1
    9:main.c        ****  *
   10:main.c        ****  * ========================================
   11:main.c        **** */
+<<<<<<< Updated upstream
   12:main.c        **** //#include "I2Ckommunikation.h"
   13:main.c        **** #include "project.h"
   14:main.c        **** 
@@ -1134,3 +1139,668 @@ ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\cc0Xf7ab.s 			page 1
  865 021a 43794465 		.ascii	"CyDelay\000"
  865      6C617900 
  866              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+=======
+  12:main.c        **** #include "project.h"
+  13:main.c        **** 
+  14:main.c        **** // Includes af bibloteker
+  15:main.c        **** #include "motorStyring.h"
+  16:main.c        **** //#include "Scale.h"
+  17:main.c        **** //#include "colorSensor.h"
+  18:main.c        **** //#include "i2cKommunikation.h"
+  19:main.c        **** #include "Afstandssensor.h"
+  20:main.c        **** 
+  21:main.c        **** int distance;
+  22:main.c        **** 
+  23:main.c        **** //float fustageKg;
+  24:main.c        **** //
+  25:main.c        **** //void handleOrderReceived(uint8_t orderReceived)
+  26:main.c        **** //{
+  27:main.c        **** //    switch(orderReceived)
+  28:main.c        **** //    {
+  29:main.c        **** //        case 1:
+  30:main.c        **** //        {
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\cc9y9sJ0.s 			page 2
+
+
+  31:main.c        **** //            driveForward();
+  32:main.c        **** //            CyDelay(5000);
+  33:main.c        **** //            Done_Write(1);
+  34:main.c        **** //            driveStop();
+  35:main.c        **** //            CyDelay(1000);
+  36:main.c        **** //            Done_Write(0);
+  37:main.c        **** //            break;
+  38:main.c        **** //        }
+  39:main.c        **** //        case 2:
+  40:main.c        **** //        {
+  41:main.c        **** //            driveBackward();
+  42:main.c        **** //            CyDelay(5000);
+  43:main.c        **** //            Done_Write(1);
+  44:main.c        **** //            driveStop();
+  45:main.c        **** //            CyDelay(1000);
+  46:main.c        **** //            Done_Write(0);
+  47:main.c        **** //            break;
+  48:main.c        **** //        }
+  49:main.c        **** //        default:
+  50:main.c        **** //        break;
+  51:main.c        **** //    }
+  52:main.c        **** //}
+  53:main.c        **** 
+  54:main.c        **** 
+  55:main.c        **** int main(void)
+  56:main.c        **** {
+  28              		.loc 1 56 0
+  29              		.cfi_startproc
+  30              		@ Volatile: function does not return.
+  31              		@ args = 0, pretend = 0, frame = 0
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33 0000 08B5     		push	{r3, lr}
+  34              		.cfi_def_cfa_offset 8
+  35              		.cfi_offset 3, -8
+  36              		.cfi_offset 14, -4
+  57:main.c        ****     CyGlobalIntEnable; /* Enable global interrupts. */
+  37              		.loc 1 57 0
+  38              		.syntax unified
+  39              	@ 57 "main.c" 1
+  40 0002 62B6     		CPSIE   i
+  41              	@ 0 "" 2
+  58:main.c        ****     
+  59:main.c        ****     //inits
+  60:main.c        ****     //init_i2c(); // I2C kommunikation
+  61:main.c        ****     initMotor(); //Motor
+  42              		.loc 1 61 0
+  43              		.thumb
+  44              		.syntax unified
+  45 0004 FFF7FEFF 		bl	initMotor
+  46              	.LVL0:
+  62:main.c        ****     //ADC_init();  //Vægtsensor
+  63:main.c        ****     //color_init_start(); //Colorsensor
+  64:main.c        ****     initDistSens(); // Afstandssensor
+  47              		.loc 1 64 0
+  48 0008 FFF7FEFF 		bl	initDistSens
+  49              	.LVL1:
+  50              	.L4:
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\cc9y9sJ0.s 			page 3
+
+
+  65:main.c        ****     
+  66:main.c        ****     //fustageKg = ADC_Measure(); // Måling af nuværende kg
+  67:main.c        ****     
+  68:main.c        ****     // Send vægt info til I2C så RPI kan sende til personale grænseflade
+  69:main.c        **** 
+  70:main.c        ****  
+  71:main.c        ****     
+  72:main.c        ****     for(;;)  //Ordre loop
+  73:main.c        ****     {
+  74:main.c        ****         driveForward();
+  51              		.loc 1 74 0
+  52 000c FFF7FEFF 		bl	driveForward
+  53              	.LVL2:
+  75:main.c        **** //        //int i = I2C_Kommunikation();  // Få besked fra I2C RPI
+  76:main.c        **** //        //handleOrderReceived(i);  // Handler
+  77:main.c        ****           while(distance < 30)  // Når afstand på noget mindre end 30 cm stop og vent
+  54              		.loc 1 77 0
+  55 0010 02E0     		b	.L2
+  56              	.L3:
+  78:main.c        ****          {
+  79:main.c        ****             LED_Write(1);
+  57              		.loc 1 79 0
+  58 0012 0120     		movs	r0, #1
+  59 0014 FFF7FEFF 		bl	LED_Write
+  60              	.LVL3:
+  61              	.L2:
+  77:main.c        ****          {
+  62              		.loc 1 77 0
+  63 0018 034B     		ldr	r3, .L6
+  64 001a 1B68     		ldr	r3, [r3]
+  65 001c 1D2B     		cmp	r3, #29
+  66 001e F8DD     		ble	.L3
+  80:main.c        ****          }
+  81:main.c        ****         
+  82:main.c        ****         LED_Write(0);
+  67              		.loc 1 82 0
+  68 0020 0020     		movs	r0, #0
+  69 0022 FFF7FEFF 		bl	LED_Write
+  70              	.LVL4:
+  83:main.c        ****     }
+  71              		.loc 1 83 0
+  72 0026 F1E7     		b	.L4
+  73              	.L7:
+  74              		.align	2
+  75              	.L6:
+  76 0028 00000000 		.word	distance
+  77              		.cfi_endproc
+  78              	.LFE63:
+  79              		.size	main, .-main
+  80              		.comm	distance,4,4
+  81              		.text
+  82              	.Letext0:
+  83              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.3\\psoc creator\\import\\gnu\\arm\\5.4.
+  84              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.3\\psoc creator\\import\\gnu\\arm\\5.4.
+  85              		.file 4 "Generated_Source\\PSoC5/core_cm3.h"
+  86              		.file 5 "motorStyring.h"
+  87              		.file 6 "Afstandssensor.h"
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\cc9y9sJ0.s 			page 4
+
+
+  88              		.file 7 "Generated_Source\\PSoC5/LED.h"
+  89              		.section	.debug_info,"",%progbits
+  90              	.Ldebug_info0:
+  91 0000 46010000 		.4byte	0x146
+  92 0004 0400     		.2byte	0x4
+  93 0006 00000000 		.4byte	.Ldebug_abbrev0
+  94 000a 04       		.byte	0x4
+  95 000b 01       		.uleb128 0x1
+  96 000c 48000000 		.4byte	.LASF22
+  97 0010 0C       		.byte	0xc
+  98 0011 3C000000 		.4byte	.LASF23
+  99 0015 92010000 		.4byte	.LASF24
+ 100 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 101 001d 00000000 		.4byte	0
+ 102 0021 00000000 		.4byte	.Ldebug_line0
+ 103 0025 02       		.uleb128 0x2
+ 104 0026 01       		.byte	0x1
+ 105 0027 06       		.byte	0x6
+ 106 0028 4B010000 		.4byte	.LASF0
+ 107 002c 02       		.uleb128 0x2
+ 108 002d 01       		.byte	0x1
+ 109 002e 08       		.byte	0x8
+ 110 002f 2E000000 		.4byte	.LASF1
+ 111 0033 02       		.uleb128 0x2
+ 112 0034 02       		.byte	0x2
+ 113 0035 05       		.byte	0x5
+ 114 0036 80010000 		.4byte	.LASF2
+ 115 003a 02       		.uleb128 0x2
+ 116 003b 02       		.byte	0x2
+ 117 003c 07       		.byte	0x7
+ 118 003d 0E000000 		.4byte	.LASF3
+ 119 0041 03       		.uleb128 0x3
+ 120 0042 63010000 		.4byte	.LASF9
+ 121 0046 02       		.byte	0x2
+ 122 0047 3F       		.byte	0x3f
+ 123 0048 4C000000 		.4byte	0x4c
+ 124 004c 02       		.uleb128 0x2
+ 125 004d 04       		.byte	0x4
+ 126 004e 05       		.byte	0x5
+ 127 004f 2E010000 		.4byte	.LASF4
+ 128 0053 02       		.uleb128 0x2
+ 129 0054 04       		.byte	0x4
+ 130 0055 07       		.byte	0x7
+ 131 0056 E0000000 		.4byte	.LASF5
+ 132 005a 02       		.uleb128 0x2
+ 133 005b 08       		.byte	0x8
+ 134 005c 05       		.byte	0x5
+ 135 005d 00000000 		.4byte	.LASF6
+ 136 0061 02       		.uleb128 0x2
+ 137 0062 08       		.byte	0x8
+ 138 0063 07       		.byte	0x7
+ 139 0064 F2000000 		.4byte	.LASF7
+ 140 0068 04       		.uleb128 0x4
+ 141 0069 04       		.byte	0x4
+ 142 006a 05       		.byte	0x5
+ 143 006b 696E7400 		.ascii	"int\000"
+ 144 006f 02       		.uleb128 0x2
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\cc9y9sJ0.s 			page 5
+
+
+ 145 0070 04       		.byte	0x4
+ 146 0071 07       		.byte	0x7
+ 147 0072 21000000 		.4byte	.LASF8
+ 148 0076 03       		.uleb128 0x3
+ 149 0077 8A010000 		.4byte	.LASF10
+ 150 007b 03       		.byte	0x3
+ 151 007c 2C       		.byte	0x2c
+ 152 007d 41000000 		.4byte	0x41
+ 153 0081 02       		.uleb128 0x2
+ 154 0082 04       		.byte	0x4
+ 155 0083 04       		.byte	0x4
+ 156 0084 7A010000 		.4byte	.LASF11
+ 157 0088 02       		.uleb128 0x2
+ 158 0089 08       		.byte	0x8
+ 159 008a 04       		.byte	0x4
+ 160 008b 37010000 		.4byte	.LASF12
+ 161 008f 02       		.uleb128 0x2
+ 162 0090 01       		.byte	0x1
+ 163 0091 08       		.byte	0x8
+ 164 0092 29010000 		.4byte	.LASF13
+ 165 0096 02       		.uleb128 0x2
+ 166 0097 08       		.byte	0x8
+ 167 0098 04       		.byte	0x4
+ 168 0099 57010000 		.4byte	.LASF14
+ 169 009d 02       		.uleb128 0x2
+ 170 009e 04       		.byte	0x4
+ 171 009f 07       		.byte	0x7
+ 172 00a0 E8010000 		.4byte	.LASF15
+ 173 00a4 05       		.uleb128 0x5
+ 174 00a5 43000000 		.4byte	.LASF25
+ 175 00a9 01       		.byte	0x1
+ 176 00aa 37       		.byte	0x37
+ 177 00ab 68000000 		.4byte	0x68
+ 178 00af 00000000 		.4byte	.LFB63
+ 179 00b3 2C000000 		.4byte	.LFE63-.LFB63
+ 180 00b7 01       		.uleb128 0x1
+ 181 00b8 9C       		.byte	0x9c
+ 182 00b9 FB000000 		.4byte	0xfb
+ 183 00bd 06       		.uleb128 0x6
+ 184 00be 08000000 		.4byte	.LVL0
+ 185 00c2 1D010000 		.4byte	0x11d
+ 186 00c6 06       		.uleb128 0x6
+ 187 00c7 0C000000 		.4byte	.LVL1
+ 188 00cb 28010000 		.4byte	0x128
+ 189 00cf 06       		.uleb128 0x6
+ 190 00d0 10000000 		.4byte	.LVL2
+ 191 00d4 33010000 		.4byte	0x133
+ 192 00d8 07       		.uleb128 0x7
+ 193 00d9 18000000 		.4byte	.LVL3
+ 194 00dd 3E010000 		.4byte	0x13e
+ 195 00e1 EB000000 		.4byte	0xeb
+ 196 00e5 08       		.uleb128 0x8
+ 197 00e6 01       		.uleb128 0x1
+ 198 00e7 50       		.byte	0x50
+ 199 00e8 01       		.uleb128 0x1
+ 200 00e9 31       		.byte	0x31
+ 201 00ea 00       		.byte	0
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\cc9y9sJ0.s 			page 6
+
+
+ 202 00eb 09       		.uleb128 0x9
+ 203 00ec 26000000 		.4byte	.LVL4
+ 204 00f0 3E010000 		.4byte	0x13e
+ 205 00f4 08       		.uleb128 0x8
+ 206 00f5 01       		.uleb128 0x1
+ 207 00f6 50       		.byte	0x50
+ 208 00f7 01       		.uleb128 0x1
+ 209 00f8 30       		.byte	0x30
+ 210 00f9 00       		.byte	0
+ 211 00fa 00       		.byte	0
+ 212 00fb 0A       		.uleb128 0xa
+ 213 00fc 3E010000 		.4byte	.LASF16
+ 214 0100 04       		.byte	0x4
+ 215 0101 1207     		.2byte	0x712
+ 216 0103 07010000 		.4byte	0x107
+ 217 0107 0B       		.uleb128 0xb
+ 218 0108 76000000 		.4byte	0x76
+ 219 010c 0C       		.uleb128 0xc
+ 220 010d 13010000 		.4byte	.LASF17
+ 221 0111 01       		.byte	0x1
+ 222 0112 15       		.byte	0x15
+ 223 0113 68000000 		.4byte	0x68
+ 224 0117 05       		.uleb128 0x5
+ 225 0118 03       		.byte	0x3
+ 226 0119 00000000 		.4byte	distance
+ 227 011d 0D       		.uleb128 0xd
+ 228 011e 09010000 		.4byte	.LASF18
+ 229 0122 09010000 		.4byte	.LASF18
+ 230 0126 05       		.byte	0x5
+ 231 0127 0F       		.byte	0xf
+ 232 0128 0D       		.uleb128 0xd
+ 233 0129 6D010000 		.4byte	.LASF19
+ 234 012d 6D010000 		.4byte	.LASF19
+ 235 0131 06       		.byte	0x6
+ 236 0132 11       		.byte	0x11
+ 237 0133 0D       		.uleb128 0xd
+ 238 0134 1C010000 		.4byte	.LASF20
+ 239 0138 1C010000 		.4byte	.LASF20
+ 240 013c 05       		.byte	0x5
+ 241 013d 10       		.byte	0x10
+ 242 013e 0D       		.uleb128 0xd
+ 243 013f D6000000 		.4byte	.LASF21
+ 244 0143 D6000000 		.4byte	.LASF21
+ 245 0147 07       		.byte	0x7
+ 246 0148 26       		.byte	0x26
+ 247 0149 00       		.byte	0
+ 248              		.section	.debug_abbrev,"",%progbits
+ 249              	.Ldebug_abbrev0:
+ 250 0000 01       		.uleb128 0x1
+ 251 0001 11       		.uleb128 0x11
+ 252 0002 01       		.byte	0x1
+ 253 0003 25       		.uleb128 0x25
+ 254 0004 0E       		.uleb128 0xe
+ 255 0005 13       		.uleb128 0x13
+ 256 0006 0B       		.uleb128 0xb
+ 257 0007 03       		.uleb128 0x3
+ 258 0008 0E       		.uleb128 0xe
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\cc9y9sJ0.s 			page 7
+
+
+ 259 0009 1B       		.uleb128 0x1b
+ 260 000a 0E       		.uleb128 0xe
+ 261 000b 55       		.uleb128 0x55
+ 262 000c 17       		.uleb128 0x17
+ 263 000d 11       		.uleb128 0x11
+ 264 000e 01       		.uleb128 0x1
+ 265 000f 10       		.uleb128 0x10
+ 266 0010 17       		.uleb128 0x17
+ 267 0011 00       		.byte	0
+ 268 0012 00       		.byte	0
+ 269 0013 02       		.uleb128 0x2
+ 270 0014 24       		.uleb128 0x24
+ 271 0015 00       		.byte	0
+ 272 0016 0B       		.uleb128 0xb
+ 273 0017 0B       		.uleb128 0xb
+ 274 0018 3E       		.uleb128 0x3e
+ 275 0019 0B       		.uleb128 0xb
+ 276 001a 03       		.uleb128 0x3
+ 277 001b 0E       		.uleb128 0xe
+ 278 001c 00       		.byte	0
+ 279 001d 00       		.byte	0
+ 280 001e 03       		.uleb128 0x3
+ 281 001f 16       		.uleb128 0x16
+ 282 0020 00       		.byte	0
+ 283 0021 03       		.uleb128 0x3
+ 284 0022 0E       		.uleb128 0xe
+ 285 0023 3A       		.uleb128 0x3a
+ 286 0024 0B       		.uleb128 0xb
+ 287 0025 3B       		.uleb128 0x3b
+ 288 0026 0B       		.uleb128 0xb
+ 289 0027 49       		.uleb128 0x49
+ 290 0028 13       		.uleb128 0x13
+ 291 0029 00       		.byte	0
+ 292 002a 00       		.byte	0
+ 293 002b 04       		.uleb128 0x4
+ 294 002c 24       		.uleb128 0x24
+ 295 002d 00       		.byte	0
+ 296 002e 0B       		.uleb128 0xb
+ 297 002f 0B       		.uleb128 0xb
+ 298 0030 3E       		.uleb128 0x3e
+ 299 0031 0B       		.uleb128 0xb
+ 300 0032 03       		.uleb128 0x3
+ 301 0033 08       		.uleb128 0x8
+ 302 0034 00       		.byte	0
+ 303 0035 00       		.byte	0
+ 304 0036 05       		.uleb128 0x5
+ 305 0037 2E       		.uleb128 0x2e
+ 306 0038 01       		.byte	0x1
+ 307 0039 3F       		.uleb128 0x3f
+ 308 003a 19       		.uleb128 0x19
+ 309 003b 03       		.uleb128 0x3
+ 310 003c 0E       		.uleb128 0xe
+ 311 003d 3A       		.uleb128 0x3a
+ 312 003e 0B       		.uleb128 0xb
+ 313 003f 3B       		.uleb128 0x3b
+ 314 0040 0B       		.uleb128 0xb
+ 315 0041 27       		.uleb128 0x27
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\cc9y9sJ0.s 			page 8
+
+
+ 316 0042 19       		.uleb128 0x19
+ 317 0043 49       		.uleb128 0x49
+ 318 0044 13       		.uleb128 0x13
+ 319 0045 8701     		.uleb128 0x87
+ 320 0047 19       		.uleb128 0x19
+ 321 0048 11       		.uleb128 0x11
+ 322 0049 01       		.uleb128 0x1
+ 323 004a 12       		.uleb128 0x12
+ 324 004b 06       		.uleb128 0x6
+ 325 004c 40       		.uleb128 0x40
+ 326 004d 18       		.uleb128 0x18
+ 327 004e 9742     		.uleb128 0x2117
+ 328 0050 19       		.uleb128 0x19
+ 329 0051 01       		.uleb128 0x1
+ 330 0052 13       		.uleb128 0x13
+ 331 0053 00       		.byte	0
+ 332 0054 00       		.byte	0
+ 333 0055 06       		.uleb128 0x6
+ 334 0056 898201   		.uleb128 0x4109
+ 335 0059 00       		.byte	0
+ 336 005a 11       		.uleb128 0x11
+ 337 005b 01       		.uleb128 0x1
+ 338 005c 31       		.uleb128 0x31
+ 339 005d 13       		.uleb128 0x13
+ 340 005e 00       		.byte	0
+ 341 005f 00       		.byte	0
+ 342 0060 07       		.uleb128 0x7
+ 343 0061 898201   		.uleb128 0x4109
+ 344 0064 01       		.byte	0x1
+ 345 0065 11       		.uleb128 0x11
+ 346 0066 01       		.uleb128 0x1
+ 347 0067 31       		.uleb128 0x31
+ 348 0068 13       		.uleb128 0x13
+ 349 0069 01       		.uleb128 0x1
+ 350 006a 13       		.uleb128 0x13
+ 351 006b 00       		.byte	0
+ 352 006c 00       		.byte	0
+ 353 006d 08       		.uleb128 0x8
+ 354 006e 8A8201   		.uleb128 0x410a
+ 355 0071 00       		.byte	0
+ 356 0072 02       		.uleb128 0x2
+ 357 0073 18       		.uleb128 0x18
+ 358 0074 9142     		.uleb128 0x2111
+ 359 0076 18       		.uleb128 0x18
+ 360 0077 00       		.byte	0
+ 361 0078 00       		.byte	0
+ 362 0079 09       		.uleb128 0x9
+ 363 007a 898201   		.uleb128 0x4109
+ 364 007d 01       		.byte	0x1
+ 365 007e 11       		.uleb128 0x11
+ 366 007f 01       		.uleb128 0x1
+ 367 0080 31       		.uleb128 0x31
+ 368 0081 13       		.uleb128 0x13
+ 369 0082 00       		.byte	0
+ 370 0083 00       		.byte	0
+ 371 0084 0A       		.uleb128 0xa
+ 372 0085 34       		.uleb128 0x34
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\cc9y9sJ0.s 			page 9
+
+
+ 373 0086 00       		.byte	0
+ 374 0087 03       		.uleb128 0x3
+ 375 0088 0E       		.uleb128 0xe
+ 376 0089 3A       		.uleb128 0x3a
+ 377 008a 0B       		.uleb128 0xb
+ 378 008b 3B       		.uleb128 0x3b
+ 379 008c 05       		.uleb128 0x5
+ 380 008d 49       		.uleb128 0x49
+ 381 008e 13       		.uleb128 0x13
+ 382 008f 3F       		.uleb128 0x3f
+ 383 0090 19       		.uleb128 0x19
+ 384 0091 3C       		.uleb128 0x3c
+ 385 0092 19       		.uleb128 0x19
+ 386 0093 00       		.byte	0
+ 387 0094 00       		.byte	0
+ 388 0095 0B       		.uleb128 0xb
+ 389 0096 35       		.uleb128 0x35
+ 390 0097 00       		.byte	0
+ 391 0098 49       		.uleb128 0x49
+ 392 0099 13       		.uleb128 0x13
+ 393 009a 00       		.byte	0
+ 394 009b 00       		.byte	0
+ 395 009c 0C       		.uleb128 0xc
+ 396 009d 34       		.uleb128 0x34
+ 397 009e 00       		.byte	0
+ 398 009f 03       		.uleb128 0x3
+ 399 00a0 0E       		.uleb128 0xe
+ 400 00a1 3A       		.uleb128 0x3a
+ 401 00a2 0B       		.uleb128 0xb
+ 402 00a3 3B       		.uleb128 0x3b
+ 403 00a4 0B       		.uleb128 0xb
+ 404 00a5 49       		.uleb128 0x49
+ 405 00a6 13       		.uleb128 0x13
+ 406 00a7 3F       		.uleb128 0x3f
+ 407 00a8 19       		.uleb128 0x19
+ 408 00a9 02       		.uleb128 0x2
+ 409 00aa 18       		.uleb128 0x18
+ 410 00ab 00       		.byte	0
+ 411 00ac 00       		.byte	0
+ 412 00ad 0D       		.uleb128 0xd
+ 413 00ae 2E       		.uleb128 0x2e
+ 414 00af 00       		.byte	0
+ 415 00b0 3F       		.uleb128 0x3f
+ 416 00b1 19       		.uleb128 0x19
+ 417 00b2 3C       		.uleb128 0x3c
+ 418 00b3 19       		.uleb128 0x19
+ 419 00b4 6E       		.uleb128 0x6e
+ 420 00b5 0E       		.uleb128 0xe
+ 421 00b6 03       		.uleb128 0x3
+ 422 00b7 0E       		.uleb128 0xe
+ 423 00b8 3A       		.uleb128 0x3a
+ 424 00b9 0B       		.uleb128 0xb
+ 425 00ba 3B       		.uleb128 0x3b
+ 426 00bb 0B       		.uleb128 0xb
+ 427 00bc 00       		.byte	0
+ 428 00bd 00       		.byte	0
+ 429 00be 00       		.byte	0
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\cc9y9sJ0.s 			page 10
+
+
+ 430              		.section	.debug_aranges,"",%progbits
+ 431 0000 1C000000 		.4byte	0x1c
+ 432 0004 0200     		.2byte	0x2
+ 433 0006 00000000 		.4byte	.Ldebug_info0
+ 434 000a 04       		.byte	0x4
+ 435 000b 00       		.byte	0
+ 436 000c 0000     		.2byte	0
+ 437 000e 0000     		.2byte	0
+ 438 0010 00000000 		.4byte	.LFB63
+ 439 0014 2C000000 		.4byte	.LFE63-.LFB63
+ 440 0018 00000000 		.4byte	0
+ 441 001c 00000000 		.4byte	0
+ 442              		.section	.debug_ranges,"",%progbits
+ 443              	.Ldebug_ranges0:
+ 444 0000 00000000 		.4byte	.LFB63
+ 445 0004 2C000000 		.4byte	.LFE63
+ 446 0008 00000000 		.4byte	0
+ 447 000c 00000000 		.4byte	0
+ 448              		.section	.debug_line,"",%progbits
+ 449              	.Ldebug_line0:
+ 450 0000 8E010000 		.section	.debug_str,"MS",%progbits,1
+ 450      02006E01 
+ 450      00000201 
+ 450      FB0E0D00 
+ 450      01010101 
+ 451              	.LASF6:
+ 452 0000 6C6F6E67 		.ascii	"long long int\000"
+ 452      206C6F6E 
+ 452      6720696E 
+ 452      7400
+ 453              	.LASF3:
+ 454 000e 73686F72 		.ascii	"short unsigned int\000"
+ 454      7420756E 
+ 454      7369676E 
+ 454      65642069 
+ 454      6E7400
+ 455              	.LASF8:
+ 456 0021 756E7369 		.ascii	"unsigned int\000"
+ 456      676E6564 
+ 456      20696E74 
+ 456      00
+ 457              	.LASF1:
+ 458 002e 756E7369 		.ascii	"unsigned char\000"
+ 458      676E6564 
+ 458      20636861 
+ 458      7200
+ 459              	.LASF23:
+ 460 003c 6D61696E 		.ascii	"main.c\000"
+ 460      2E6300
+ 461              	.LASF25:
+ 462 0043 6D61696E 		.ascii	"main\000"
+ 462      00
+ 463              	.LASF22:
+ 464 0048 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 464      43313120 
+ 464      352E342E 
+ 464      31203230 
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\cc9y9sJ0.s 			page 11
+
+
+ 464      31363036 
+ 465 007b 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 465      20726576 
+ 465      6973696F 
+ 465      6E203233 
+ 465      37373135 
+ 466 00ae 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 466      66756E63 
+ 466      74696F6E 
+ 466      2D736563 
+ 466      74696F6E 
+ 467              	.LASF21:
+ 468 00d6 4C45445F 		.ascii	"LED_Write\000"
+ 468      57726974 
+ 468      6500
+ 469              	.LASF5:
+ 470 00e0 6C6F6E67 		.ascii	"long unsigned int\000"
+ 470      20756E73 
+ 470      69676E65 
+ 470      6420696E 
+ 470      7400
+ 471              	.LASF7:
+ 472 00f2 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 472      206C6F6E 
+ 472      6720756E 
+ 472      7369676E 
+ 472      65642069 
+ 473              	.LASF18:
+ 474 0109 696E6974 		.ascii	"initMotor\000"
+ 474      4D6F746F 
+ 474      7200
+ 475              	.LASF17:
+ 476 0113 64697374 		.ascii	"distance\000"
+ 476      616E6365 
+ 476      00
+ 477              	.LASF20:
+ 478 011c 64726976 		.ascii	"driveForward\000"
+ 478      65466F72 
+ 478      77617264 
+ 478      00
+ 479              	.LASF13:
+ 480 0129 63686172 		.ascii	"char\000"
+ 480      00
+ 481              	.LASF4:
+ 482 012e 6C6F6E67 		.ascii	"long int\000"
+ 482      20696E74 
+ 482      00
+ 483              	.LASF12:
+ 484 0137 646F7562 		.ascii	"double\000"
+ 484      6C6500
+ 485              	.LASF16:
+ 486 013e 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 486      52784275 
+ 486      66666572 
+ 486      00
+ 487              	.LASF0:
+ 488 014b 7369676E 		.ascii	"signed char\000"
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\cc9y9sJ0.s 			page 12
+
+
+ 488      65642063 
+ 488      68617200 
+ 489              	.LASF14:
+ 490 0157 6C6F6E67 		.ascii	"long double\000"
+ 490      20646F75 
+ 490      626C6500 
+ 491              	.LASF9:
+ 492 0163 5F5F696E 		.ascii	"__int32_t\000"
+ 492      7433325F 
+ 492      7400
+ 493              	.LASF19:
+ 494 016d 696E6974 		.ascii	"initDistSens\000"
+ 494      44697374 
+ 494      53656E73 
+ 494      00
+ 495              	.LASF11:
+ 496 017a 666C6F61 		.ascii	"float\000"
+ 496      7400
+ 497              	.LASF2:
+ 498 0180 73686F72 		.ascii	"short int\000"
+ 498      7420696E 
+ 498      7400
+ 499              	.LASF10:
+ 500 018a 696E7433 		.ascii	"int32_t\000"
+ 500      325F7400 
+ 501              	.LASF24:
+ 502 0192 433A5C55 		.ascii	"C:\\Users\\AugustHA\\Documents\\PRJ3\\Projekt3-2020"
+ 502      73657273 
+ 502      5C417567 
+ 502      75737448 
+ 502      415C446F 
+ 503 01c0 5C4B6F64 		.ascii	"\\Kode\\main_psoc\\Main_Project\\Main.cydsn\000"
+ 503      655C6D61 
+ 503      696E5F70 
+ 503      736F635C 
+ 503      4D61696E 
+ 504              	.LASF15:
+ 505 01e8 73697A65 		.ascii	"sizetype\000"
+ 505      74797065 
+ 505      00
+ 506              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+>>>>>>> Stashed changes

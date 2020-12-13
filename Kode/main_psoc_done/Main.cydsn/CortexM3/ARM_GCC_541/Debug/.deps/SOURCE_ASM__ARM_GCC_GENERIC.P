@@ -1,10 +1,10 @@
-C:/IKT/HAL/psocmain/Main.cydsn/CortexM3/ARM_GCC_541/Debug/CyBootAsmGnu.o : C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/CyBootAsmGnu.s C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/cydevicegnu.inc C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/cydevicegnu_trm.inc C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/cyfittergnu.inc 
+C:/Users/AugustHA/Documents/PRJ3/Projekt3-2020/Kode/main_psoc_done/Main.cydsn/CortexM3/ARM_GCC_541/Debug/CyBootAsmGnu.o : C:/Users/AugustHA/Documents/PRJ3/Projekt3-2020/Kode/main_psoc_done/Main.cydsn/Generated_Source/PSoC5/CyBootAsmGnu.s C:/Users/AugustHA/Documents/PRJ3/Projekt3-2020/Kode/main_psoc_done/Main.cydsn/Generated_Source/PSoC5/cydevicegnu.inc C:/Users/AugustHA/Documents/PRJ3/Projekt3-2020/Kode/main_psoc_done/Main.cydsn/Generated_Source/PSoC5/cydevicegnu_trm.inc C:/Users/AugustHA/Documents/PRJ3/Projekt3-2020/Kode/main_psoc_done/Main.cydsn/Generated_Source/PSoC5/cyfittergnu.inc 
 
-C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/CyBootAsmGnu.s : 
+C:/Users/AugustHA/Documents/PRJ3/Projekt3-2020/Kode/main_psoc_done/Main.cydsn/Generated_Source/PSoC5/CyBootAsmGnu.s : 
 
-C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/cydevicegnu.inc : 
+C:/Users/AugustHA/Documents/PRJ3/Projekt3-2020/Kode/main_psoc_done/Main.cydsn/Generated_Source/PSoC5/cydevicegnu.inc : 
 
-C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/cydevicegnu_trm.inc : 
+C:/Users/AugustHA/Documents/PRJ3/Projekt3-2020/Kode/main_psoc_done/Main.cydsn/Generated_Source/PSoC5/cydevicegnu_trm.inc : 
 
-C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/cyfittergnu.inc : 
+C:/Users/AugustHA/Documents/PRJ3/Projekt3-2020/Kode/main_psoc_done/Main.cydsn/Generated_Source/PSoC5/cyfittergnu.inc : 
 

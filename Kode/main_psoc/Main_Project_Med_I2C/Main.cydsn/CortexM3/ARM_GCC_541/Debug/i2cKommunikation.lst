@@ -1,0 +1,1215 @@
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccocuyad.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"i2cKommunikation.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.init_i2c,"ax",%progbits
+  20              		.align	2
+  21              		.global	init_i2c
+  22              		.thumb
+  23              		.thumb_func
+  24              		.type	init_i2c, %function
+  25              	init_i2c:
+  26              	.LFB63:
+  27              		.file 1 "i2cKommunikation.c"
+   1:i2cKommunikation.c **** /* ========================================
+   2:i2cKommunikation.c ****  *
+   3:i2cKommunikation.c ****  * Copyright YOUR COMPANY, THE YEAR
+   4:i2cKommunikation.c ****  * All Rights Reserved
+   5:i2cKommunikation.c ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:i2cKommunikation.c ****  *
+   7:i2cKommunikation.c ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:i2cKommunikation.c ****  * WHICH IS THE PROPERTY OF your company.
+   9:i2cKommunikation.c ****  *
+  10:i2cKommunikation.c ****  * ========================================
+  11:i2cKommunikation.c **** */
+  12:i2cKommunikation.c **** /* ========================================
+  13:i2cKommunikation.c ****  *
+  14:i2cKommunikation.c ****  * Copyright YOUR COMPANY, THE YEAR
+  15:i2cKommunikation.c ****  * All Rights Reserved
+  16:i2cKommunikation.c ****  * UNPUBLISHED, LICENSED SOFTWARE.
+  17:i2cKommunikation.c ****  *
+  18:i2cKommunikation.c ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+  19:i2cKommunikation.c ****  * WHICH IS THE PROPERTY OF your company.
+  20:i2cKommunikation.c ****  *
+  21:i2cKommunikation.c ****  * ========================================
+  22:i2cKommunikation.c **** */
+  23:i2cKommunikation.c **** 
+  24:i2cKommunikation.c **** #include "i2cKommunikation.h"
+  25:i2cKommunikation.c **** #include "project.h"
+  26:i2cKommunikation.c **** 
+  27:i2cKommunikation.c **** uint8 byteCnt;   
+  28:i2cKommunikation.c **** uint8 wrBuf[8];
+  29:i2cKommunikation.c **** uint8 rdBuf[8];
+  30:i2cKommunikation.c **** uint8 i;
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccocuyad.s 			page 2
+
+
+  31:i2cKommunikation.c **** 
+  32:i2cKommunikation.c **** void init_i2c()
+  33:i2cKommunikation.c **** {
+  28              		.loc 1 33 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32 0000 10B5     		push	{r4, lr}
+  33              		.cfi_def_cfa_offset 8
+  34              		.cfi_offset 4, -8
+  35              		.cfi_offset 14, -4
+  34:i2cKommunikation.c ****     I2C_SlaveInitWriteBuf((uint8 *) wrBuf, 8);
+  36              		.loc 1 34 0
+  37 0002 064C     		ldr	r4, .L3
+  38 0004 0821     		movs	r1, #8
+  39 0006 2046     		mov	r0, r4
+  40 0008 FFF7FEFF 		bl	I2C_SlaveInitWriteBuf
+  41              	.LVL0:
+  35:i2cKommunikation.c ****     I2C_SlaveInitReadBuf((uint8 *) wrBuf, 8);
+  42              		.loc 1 35 0
+  43 000c 0821     		movs	r1, #8
+  44 000e 2046     		mov	r0, r4
+  45 0010 FFF7FEFF 		bl	I2C_SlaveInitReadBuf
+  46              	.LVL1:
+  36:i2cKommunikation.c ****     I2C_Start();
+  47              		.loc 1 36 0
+  48 0014 FFF7FEFF 		bl	I2C_Start
+  49              	.LVL2:
+  50 0018 10BD     		pop	{r4, pc}
+  51              	.L4:
+  52 001a 00BF     		.align	2
+  53              	.L3:
+  54 001c 00000000 		.word	wrBuf
+  55              		.cfi_endproc
+  56              	.LFE63:
+  57              		.size	init_i2c, .-init_i2c
+  58              		.section	.text.I2C_Kommunikation,"ax",%progbits
+  59              		.align	2
+  60              		.global	I2C_Kommunikation
+  61              		.thumb
+  62              		.thumb_func
+  63              		.type	I2C_Kommunikation, %function
+  64              	I2C_Kommunikation:
+  65              	.LFB64:
+  37:i2cKommunikation.c **** }
+  38:i2cKommunikation.c **** 
+  39:i2cKommunikation.c **** char I2C_Kommunikation()
+  40:i2cKommunikation.c **** {
+  66              		.loc 1 40 0
+  67              		.cfi_startproc
+  68              		@ args = 0, pretend = 0, frame = 0
+  69              		@ frame_needed = 0, uses_anonymous_args = 0
+  70 0000 10B5     		push	{r4, lr}
+  71              		.cfi_def_cfa_offset 8
+  72              		.cfi_offset 4, -8
+  73              		.cfi_offset 14, -4
+  41:i2cKommunikation.c ****       if(0u != (I2C_SlaveStatus() & I2C_SSTAT_WR_CMPLT)) 
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccocuyad.s 			page 3
+
+
+  74              		.loc 1 41 0
+  75 0002 FFF7FEFF 		bl	I2C_SlaveStatus
+  76              	.LVL3:
+  77 0006 10F0100F 		tst	r0, #16
+  78 000a 56D0     		beq	.L16
+  42:i2cKommunikation.c ****          {
+  43:i2cKommunikation.c ****             byteCnt = I2C_SlaveGetWriteBufSize(); 
+  79              		.loc 1 43 0
+  80 000c FFF7FEFF 		bl	I2C_SlaveGetWriteBufSize
+  81              	.LVL4:
+  82 0010 2E4B     		ldr	r3, .L24
+  83 0012 1870     		strb	r0, [r3]
+  44:i2cKommunikation.c ****             I2C_SlaveClearWriteStatus(); 
+  84              		.loc 1 44 0
+  85 0014 FFF7FEFF 		bl	I2C_SlaveClearWriteStatus
+  86              	.LVL5:
+  45:i2cKommunikation.c ****             
+  46:i2cKommunikation.c ****             switch(wrBuf[0])
+  87              		.loc 1 46 0
+  88 0018 2D4B     		ldr	r3, .L24+4
+  89 001a 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+  90 001c 012B     		cmp	r3, #1
+  91 001e 4ED1     		bne	.L20
+  47:i2cKommunikation.c ****             {
+  48:i2cKommunikation.c ****                 case 0b00000001:
+  49:i2cKommunikation.c ****                 {
+  50:i2cKommunikation.c ****                     switch(wrBuf[1])
+  92              		.loc 1 50 0
+  93 0020 2B4B     		ldr	r3, .L24+4
+  94 0022 5B78     		ldrb	r3, [r3, #1]	@ zero_extendqisi2
+  95 0024 012B     		cmp	r3, #1
+  96 0026 02D0     		beq	.L8
+  97 0028 022B     		cmp	r3, #2
+  98 002a 23D0     		beq	.L9
+  99 002c 49E0     		b	.L21
+ 100              	.L8:
+  51:i2cKommunikation.c ****                     {
+  52:i2cKommunikation.c ****                         case 0b00000001:
+  53:i2cKommunikation.c ****                         {
+  54:i2cKommunikation.c ****                             switch (wrBuf[2])
+ 101              		.loc 1 54 0
+ 102 002e 284B     		ldr	r3, .L24+4
+ 103 0030 9B78     		ldrb	r3, [r3, #2]	@ zero_extendqisi2
+ 104 0032 022B     		cmp	r3, #2
+ 105 0034 0CD0     		beq	.L10
+ 106 0036 032B     		cmp	r3, #3
+ 107 0038 13D0     		beq	.L11
+ 108 003a 012B     		cmp	r3, #1
+ 109 003c 1AD1     		bne	.L9
+  55:i2cKommunikation.c ****                             {
+  56:i2cKommunikation.c ****                                 case 0b00000001:
+  57:i2cKommunikation.c ****                                 {
+  58:i2cKommunikation.c ****                                     rdBuf[0] = 0b00000001;
+ 110              		.loc 1 58 0
+ 111 003e 0124     		movs	r4, #1
+ 112 0040 244B     		ldr	r3, .L24+8
+ 113 0042 1C70     		strb	r4, [r3]
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccocuyad.s 			page 4
+
+
+  59:i2cKommunikation.c ****                                     I2C_SlaveClearWriteBuf();
+ 114              		.loc 1 59 0
+ 115 0044 FFF7FEFF 		bl	I2C_SlaveClearWriteBuf
+ 116              	.LVL6:
+  60:i2cKommunikation.c ****                                     I2C_SlaveClearReadBuf();
+ 117              		.loc 1 60 0
+ 118 0048 FFF7FEFF 		bl	I2C_SlaveClearReadBuf
+ 119              	.LVL7:
+  61:i2cKommunikation.c ****                                     return 1;
+ 120              		.loc 1 61 0
+ 121 004c 2046     		mov	r0, r4
+ 122 004e 10BD     		pop	{r4, pc}
+ 123              	.L10:
+  62:i2cKommunikation.c ****                                     break;
+  63:i2cKommunikation.c ****                                 }
+  64:i2cKommunikation.c ****                                 case 0b00000010:
+  65:i2cKommunikation.c ****                                 {
+  66:i2cKommunikation.c ****                                     rdBuf[0] = 0b00000010;
+ 124              		.loc 1 66 0
+ 125 0050 0224     		movs	r4, #2
+ 126 0052 204B     		ldr	r3, .L24+8
+ 127 0054 1C70     		strb	r4, [r3]
+  67:i2cKommunikation.c ****                                     I2C_SlaveClearWriteBuf();
+ 128              		.loc 1 67 0
+ 129 0056 FFF7FEFF 		bl	I2C_SlaveClearWriteBuf
+ 130              	.LVL8:
+  68:i2cKommunikation.c ****                                     I2C_SlaveClearReadBuf();
+ 131              		.loc 1 68 0
+ 132 005a FFF7FEFF 		bl	I2C_SlaveClearReadBuf
+ 133              	.LVL9:
+  69:i2cKommunikation.c ****                                     return 2;
+ 134              		.loc 1 69 0
+ 135 005e 2046     		mov	r0, r4
+ 136 0060 10BD     		pop	{r4, pc}
+ 137              	.L11:
+  70:i2cKommunikation.c ****                                     break;
+  71:i2cKommunikation.c ****                                 }
+  72:i2cKommunikation.c ****                                 case 0b00000011:
+  73:i2cKommunikation.c ****                                 {
+  74:i2cKommunikation.c ****                                     rdBuf[0] = 0b00000011;
+ 138              		.loc 1 74 0
+ 139 0062 0324     		movs	r4, #3
+ 140 0064 1B4B     		ldr	r3, .L24+8
+ 141 0066 1C70     		strb	r4, [r3]
+  75:i2cKommunikation.c ****                                     I2C_SlaveClearWriteBuf();
+ 142              		.loc 1 75 0
+ 143 0068 FFF7FEFF 		bl	I2C_SlaveClearWriteBuf
+ 144              	.LVL10:
+  76:i2cKommunikation.c ****                                     I2C_SlaveClearReadBuf();
+ 145              		.loc 1 76 0
+ 146 006c FFF7FEFF 		bl	I2C_SlaveClearReadBuf
+ 147              	.LVL11:
+  77:i2cKommunikation.c ****                                     return 3;
+ 148              		.loc 1 77 0
+ 149 0070 2046     		mov	r0, r4
+ 150 0072 10BD     		pop	{r4, pc}
+ 151              	.L9:
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccocuyad.s 			page 5
+
+
+  78:i2cKommunikation.c ****                                     break;
+  79:i2cKommunikation.c ****                                    
+  80:i2cKommunikation.c ****                                 }
+  81:i2cKommunikation.c ****                                     default:
+  82:i2cKommunikation.c ****                                     break;
+  83:i2cKommunikation.c ****                             }
+  84:i2cKommunikation.c ****                         }
+  85:i2cKommunikation.c ****                         case 0b00000010:
+  86:i2cKommunikation.c ****                         {
+  87:i2cKommunikation.c ****                             switch(wrBuf[2])
+ 152              		.loc 1 87 0
+ 153 0074 164B     		ldr	r3, .L24+4
+ 154 0076 9B78     		ldrb	r3, [r3, #2]	@ zero_extendqisi2
+ 155 0078 022B     		cmp	r3, #2
+ 156 007a 0CD0     		beq	.L13
+ 157 007c 032B     		cmp	r3, #3
+ 158 007e 13D0     		beq	.L14
+ 159 0080 012B     		cmp	r3, #1
+ 160 0082 20D1     		bne	.L22
+  88:i2cKommunikation.c ****                             {
+  89:i2cKommunikation.c ****                                 case 0b00000001:
+  90:i2cKommunikation.c ****                                 {
+  91:i2cKommunikation.c ****                                     rdBuf[0] = 0b00000100;
+ 161              		.loc 1 91 0
+ 162 0084 0424     		movs	r4, #4
+ 163 0086 134B     		ldr	r3, .L24+8
+ 164 0088 1C70     		strb	r4, [r3]
+  92:i2cKommunikation.c ****                                     I2C_SlaveClearWriteBuf();
+ 165              		.loc 1 92 0
+ 166 008a FFF7FEFF 		bl	I2C_SlaveClearWriteBuf
+ 167              	.LVL12:
+  93:i2cKommunikation.c ****                                     I2C_SlaveClearReadBuf();
+ 168              		.loc 1 93 0
+ 169 008e FFF7FEFF 		bl	I2C_SlaveClearReadBuf
+ 170              	.LVL13:
+  94:i2cKommunikation.c ****                                     return 4;
+ 171              		.loc 1 94 0
+ 172 0092 2046     		mov	r0, r4
+ 173 0094 10BD     		pop	{r4, pc}
+ 174              	.L13:
+  95:i2cKommunikation.c ****                                     break;
+  96:i2cKommunikation.c ****                                 }
+  97:i2cKommunikation.c ****                                 case 0b00000010:
+  98:i2cKommunikation.c ****                                 {
+  99:i2cKommunikation.c ****                                     rdBuf[0] = 0b00000101;
+ 175              		.loc 1 99 0
+ 176 0096 0524     		movs	r4, #5
+ 177 0098 0E4B     		ldr	r3, .L24+8
+ 178 009a 1C70     		strb	r4, [r3]
+ 100:i2cKommunikation.c ****                                     I2C_SlaveClearWriteBuf();
+ 179              		.loc 1 100 0
+ 180 009c FFF7FEFF 		bl	I2C_SlaveClearWriteBuf
+ 181              	.LVL14:
+ 101:i2cKommunikation.c ****                                     I2C_SlaveClearReadBuf();
+ 182              		.loc 1 101 0
+ 183 00a0 FFF7FEFF 		bl	I2C_SlaveClearReadBuf
+ 184              	.LVL15:
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccocuyad.s 			page 6
+
+
+ 102:i2cKommunikation.c ****                                     return 5;
+ 185              		.loc 1 102 0
+ 186 00a4 2046     		mov	r0, r4
+ 187 00a6 10BD     		pop	{r4, pc}
+ 188              	.L14:
+ 103:i2cKommunikation.c ****                                     break;
+ 104:i2cKommunikation.c ****                                 }
+ 105:i2cKommunikation.c ****                                 case 0b00000011:
+ 106:i2cKommunikation.c ****                                 {
+ 107:i2cKommunikation.c ****                                     rdBuf[0] = 0b00000110;
+ 189              		.loc 1 107 0
+ 190 00a8 0624     		movs	r4, #6
+ 191 00aa 0A4B     		ldr	r3, .L24+8
+ 192 00ac 1C70     		strb	r4, [r3]
+ 108:i2cKommunikation.c ****                                     I2C_SlaveClearWriteBuf();
+ 193              		.loc 1 108 0
+ 194 00ae FFF7FEFF 		bl	I2C_SlaveClearWriteBuf
+ 195              	.LVL16:
+ 109:i2cKommunikation.c ****                                     I2C_SlaveClearReadBuf();
+ 196              		.loc 1 109 0
+ 197 00b2 FFF7FEFF 		bl	I2C_SlaveClearReadBuf
+ 198              	.LVL17:
+ 110:i2cKommunikation.c ****                                     return 6;
+ 199              		.loc 1 110 0
+ 200 00b6 2046     		mov	r0, r4
+ 201 00b8 10BD     		pop	{r4, pc}
+ 202              	.L16:
+ 111:i2cKommunikation.c ****                                     break;
+ 112:i2cKommunikation.c ****                                 }
+ 113:i2cKommunikation.c ****                                     default:
+ 114:i2cKommunikation.c ****                                     break;
+ 115:i2cKommunikation.c ****                             }
+ 116:i2cKommunikation.c ****                         }
+ 117:i2cKommunikation.c ****                         default:
+ 118:i2cKommunikation.c ****                         break;
+ 119:i2cKommunikation.c ****                     }
+ 120:i2cKommunikation.c ****                 }
+ 121:i2cKommunikation.c ****                 default:
+ 122:i2cKommunikation.c ****                 break;
+ 123:i2cKommunikation.c ****             }
+ 124:i2cKommunikation.c ****                     
+ 125:i2cKommunikation.c ****                     
+ 126:i2cKommunikation.c ****             
+ 127:i2cKommunikation.c **** //            if(wrBuf[0] == 0b00000001) // hvis der er valgt øl
+ 128:i2cKommunikation.c **** //                {
+ 129:i2cKommunikation.c **** //                    if(wrBuf[1] == 0b00000001) // hvis der er valgt bord 1
+ 130:i2cKommunikation.c **** //                        {  
+ 131:i2cKommunikation.c **** //                            if(wrBuf[2] == 0b00000001) // hvis der er valgt 1 øl
+ 132:i2cKommunikation.c **** //                                {
+ 133:i2cKommunikation.c **** //                                    rdBuf[0] = 0x1;
+ 134:i2cKommunikation.c **** //                                    I2C_SlaveClearWriteBuf();
+ 135:i2cKommunikation.c **** //                                    I2C_SlaveClearReadBuf();
+ 136:i2cKommunikation.c **** //                                    return 1;
+ 137:i2cKommunikation.c **** //                                }
+ 138:i2cKommunikation.c **** //                            else if(wrBuf[2] == 0b00000010) // hvis der er valgt 2 øl
+ 139:i2cKommunikation.c **** //                                {
+ 140:i2cKommunikation.c **** //                                    rdBuf[0] = 0x2;
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccocuyad.s 			page 7
+
+
+ 141:i2cKommunikation.c **** //                                    I2C_SlaveClearWriteBuf();
+ 142:i2cKommunikation.c **** //                                    I2C_SlaveClearReadBuf();
+ 143:i2cKommunikation.c **** //                                    return 2;
+ 144:i2cKommunikation.c **** //                                }
+ 145:i2cKommunikation.c **** //                           else if(wrBuf[2] == 0b00000011) // hvis der er valgt 3 øl
+ 146:i2cKommunikation.c **** //                            {
+ 147:i2cKommunikation.c **** //                                rdBuf[0] = 0x3;
+ 148:i2cKommunikation.c **** //                                I2C_SlaveClearWriteBuf();
+ 149:i2cKommunikation.c **** //                                I2C_SlaveClearReadBuf();
+ 150:i2cKommunikation.c **** //                                return 3;
+ 151:i2cKommunikation.c **** //                            }
+ 152:i2cKommunikation.c **** //                        }
+ 153:i2cKommunikation.c **** //                    else if(wrBuf[1] == 0b00000010) // hvis der er valgt bord 2
+ 154:i2cKommunikation.c **** //                        {
+ 155:i2cKommunikation.c **** //                            if(wrBuf[2] == 0b00000001) // hvis der er valgt 1 øl
+ 156:i2cKommunikation.c **** //                                {
+ 157:i2cKommunikation.c **** //                                    rdBuf[0] = 0x4;
+ 158:i2cKommunikation.c **** //                                    I2C_SlaveClearWriteBuf();
+ 159:i2cKommunikation.c **** //                                    I2C_SlaveClearReadBuf();
+ 160:i2cKommunikation.c **** //                                    return 4;
+ 161:i2cKommunikation.c **** //                                }
+ 162:i2cKommunikation.c **** //                            else if(wrBuf[2] == 0b00000010) // hvis der er valgt 2 øl
+ 163:i2cKommunikation.c **** //                                {
+ 164:i2cKommunikation.c **** //                                    rdBuf[0] = 0x5;
+ 165:i2cKommunikation.c **** //                                    I2C_SlaveClearWriteBuf();
+ 166:i2cKommunikation.c **** //                                    I2C_SlaveClearReadBuf();
+ 167:i2cKommunikation.c **** //                                    return 5;
+ 168:i2cKommunikation.c **** //                                }
+ 169:i2cKommunikation.c **** //                           else if(wrBuf[2] == 0b00000011) // hvis der er valgt 3 øl
+ 170:i2cKommunikation.c **** //                            {
+ 171:i2cKommunikation.c **** //                                rdBuf[0] = 0x6;
+ 172:i2cKommunikation.c **** //                                I2C_SlaveClearWriteBuf();
+ 173:i2cKommunikation.c **** //                                I2C_SlaveClearReadBuf();
+ 174:i2cKommunikation.c **** //                                return 6;
+ 175:i2cKommunikation.c **** //                            }
+ 176:i2cKommunikation.c **** //                            else
+ 177:i2cKommunikation.c **** //                            {
+ 178:i2cKommunikation.c **** //                                I2C_SlaveClearWriteBuf();
+ 179:i2cKommunikation.c **** //                                I2C_SlaveClearReadBuf();
+ 180:i2cKommunikation.c **** //                                return 0;
+ 181:i2cKommunikation.c **** //                            }
+ 182:i2cKommunikation.c **** //                        }
+ 183:i2cKommunikation.c **** //                    else
+ 184:i2cKommunikation.c **** //                        {
+ 185:i2cKommunikation.c **** //                            I2C_SlaveClearWriteBuf();
+ 186:i2cKommunikation.c **** //                            I2C_SlaveClearReadBuf();
+ 187:i2cKommunikation.c **** //                            return 0;
+ 188:i2cKommunikation.c **** //                        }
+ 189:i2cKommunikation.c **** //                }
+ 190:i2cKommunikation.c **** //            else
+ 191:i2cKommunikation.c **** //            {
+ 192:i2cKommunikation.c **** //                I2C_SlaveClearWriteBuf(); 
+ 193:i2cKommunikation.c **** //                I2C_SlaveClearReadBuf();
+ 194:i2cKommunikation.c **** //                return 0;
+ 195:i2cKommunikation.c **** //            }
+ 196:i2cKommunikation.c **** //            I2C_SlaveClearWriteBuf(); 
+ 197:i2cKommunikation.c ****          }
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccocuyad.s 			page 8
+
+
+ 198:i2cKommunikation.c ****     return 0;
+ 203              		.loc 1 198 0
+ 204 00ba 0020     		movs	r0, #0
+ 205 00bc 10BD     		pop	{r4, pc}
+ 206              	.L20:
+ 207 00be 0020     		movs	r0, #0
+ 208 00c0 10BD     		pop	{r4, pc}
+ 209              	.L21:
+ 210 00c2 0020     		movs	r0, #0
+ 211 00c4 10BD     		pop	{r4, pc}
+ 212              	.L22:
+ 213 00c6 0020     		movs	r0, #0
+ 199:i2cKommunikation.c **** }
+ 214              		.loc 1 199 0
+ 215 00c8 10BD     		pop	{r4, pc}
+ 216              	.L25:
+ 217 00ca 00BF     		.align	2
+ 218              	.L24:
+ 219 00cc 00000000 		.word	byteCnt
+ 220 00d0 00000000 		.word	wrBuf
+ 221 00d4 00000000 		.word	rdBuf
+ 222              		.cfi_endproc
+ 223              	.LFE64:
+ 224              		.size	I2C_Kommunikation, .-I2C_Kommunikation
+ 225              		.comm	i,1,1
+ 226              		.comm	rdBuf,8,4
+ 227              		.comm	wrBuf,8,4
+ 228              		.comm	byteCnt,1,1
+ 229              		.text
+ 230              	.Letext0:
+ 231              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.3\\psoc creator\\import\\gnu\\arm\\5.4.
+ 232              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.3\\psoc creator\\import\\gnu\\arm\\5.4.
+ 233              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
+ 234              		.file 5 "Generated_Source\\PSoC5/core_cm3.h"
+ 235              		.file 6 "Generated_Source\\PSoC5/I2C.h"
+ 236              		.section	.debug_info,"",%progbits
+ 237              	.Ldebug_info0:
+ 238 0000 5A020000 		.4byte	0x25a
+ 239 0004 0400     		.2byte	0x4
+ 240 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 241 000a 04       		.byte	0x4
+ 242 000b 01       		.uleb128 0x1
+ 243 000c 7C000000 		.4byte	.LASF29
+ 244 0010 0C       		.byte	0xc
+ 245 0011 2F010000 		.4byte	.LASF30
+ 246 0015 10000000 		.4byte	.LASF31
+ 247 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 248 001d 00000000 		.4byte	0
+ 249 0021 00000000 		.4byte	.Ldebug_line0
+ 250 0025 02       		.uleb128 0x2
+ 251 0026 01       		.byte	0x1
+ 252 0027 06       		.byte	0x6
+ 253 0028 3A020000 		.4byte	.LASF0
+ 254 002c 02       		.uleb128 0x2
+ 255 002d 01       		.byte	0x1
+ 256 002e 08       		.byte	0x8
+ 257 002f 6E000000 		.4byte	.LASF1
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccocuyad.s 			page 9
+
+
+ 258 0033 02       		.uleb128 0x2
+ 259 0034 02       		.byte	0x2
+ 260 0035 05       		.byte	0x5
+ 261 0036 FC010000 		.4byte	.LASF2
+ 262 003a 02       		.uleb128 0x2
+ 263 003b 02       		.byte	0x2
+ 264 003c 07       		.byte	0x7
+ 265 003d 1C010000 		.4byte	.LASF3
+ 266 0041 03       		.uleb128 0x3
+ 267 0042 06000000 		.4byte	.LASF9
+ 268 0046 02       		.byte	0x2
+ 269 0047 3F       		.byte	0x3f
+ 270 0048 4C000000 		.4byte	0x4c
+ 271 004c 02       		.uleb128 0x2
+ 272 004d 04       		.byte	0x4
+ 273 004e 05       		.byte	0x5
+ 274 004f 25020000 		.4byte	.LASF4
+ 275 0053 02       		.uleb128 0x2
+ 276 0054 04       		.byte	0x4
+ 277 0055 07       		.byte	0x7
+ 278 0056 0A010000 		.4byte	.LASF5
+ 279 005a 02       		.uleb128 0x2
+ 280 005b 08       		.byte	0x8
+ 281 005c 05       		.byte	0x5
+ 282 005d D3010000 		.4byte	.LASF6
+ 283 0061 02       		.uleb128 0x2
+ 284 0062 08       		.byte	0x8
+ 285 0063 07       		.byte	0x7
+ 286 0064 94010000 		.4byte	.LASF7
+ 287 0068 04       		.uleb128 0x4
+ 288 0069 04       		.byte	0x4
+ 289 006a 05       		.byte	0x5
+ 290 006b 696E7400 		.ascii	"int\000"
+ 291 006f 02       		.uleb128 0x2
+ 292 0070 04       		.byte	0x4
+ 293 0071 07       		.byte	0x7
+ 294 0072 87010000 		.4byte	.LASF8
+ 295 0076 03       		.uleb128 0x3
+ 296 0077 C2010000 		.4byte	.LASF10
+ 297 007b 03       		.byte	0x3
+ 298 007c 2C       		.byte	0x2c
+ 299 007d 41000000 		.4byte	0x41
+ 300 0081 05       		.uleb128 0x5
+ 301 0082 06020000 		.4byte	.LASF11
+ 302 0086 04       		.byte	0x4
+ 303 0087 E801     		.2byte	0x1e8
+ 304 0089 2C000000 		.4byte	0x2c
+ 305 008d 02       		.uleb128 0x2
+ 306 008e 04       		.byte	0x4
+ 307 008f 04       		.byte	0x4
+ 308 0090 68000000 		.4byte	.LASF12
+ 309 0094 02       		.uleb128 0x2
+ 310 0095 08       		.byte	0x8
+ 311 0096 04       		.byte	0x4
+ 312 0097 55010000 		.4byte	.LASF13
+ 313 009b 02       		.uleb128 0x2
+ 314 009c 01       		.byte	0x1
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccocuyad.s 			page 10
+
+
+ 315 009d 08       		.byte	0x8
+ 316 009e E1010000 		.4byte	.LASF14
+ 317 00a2 02       		.uleb128 0x2
+ 318 00a3 08       		.byte	0x8
+ 319 00a4 04       		.byte	0x4
+ 320 00a5 2E020000 		.4byte	.LASF15
+ 321 00a9 02       		.uleb128 0x2
+ 322 00aa 04       		.byte	0x4
+ 323 00ab 07       		.byte	0x7
+ 324 00ac CA010000 		.4byte	.LASF16
+ 325 00b0 06       		.uleb128 0x6
+ 326 00b1 7E010000 		.4byte	.LASF32
+ 327 00b5 01       		.byte	0x1
+ 328 00b6 20       		.byte	0x20
+ 329 00b7 00000000 		.4byte	.LFB63
+ 330 00bb 20000000 		.4byte	.LFE63-.LFB63
+ 331 00bf 01       		.uleb128 0x1
+ 332 00c0 9C       		.byte	0x9c
+ 333 00c1 01010000 		.4byte	0x101
+ 334 00c5 07       		.uleb128 0x7
+ 335 00c6 0C000000 		.4byte	.LVL0
+ 336 00ca 05020000 		.4byte	0x205
+ 337 00ce DE000000 		.4byte	0xde
+ 338 00d2 08       		.uleb128 0x8
+ 339 00d3 01       		.uleb128 0x1
+ 340 00d4 50       		.byte	0x50
+ 341 00d5 02       		.uleb128 0x2
+ 342 00d6 74       		.byte	0x74
+ 343 00d7 00       		.sleb128 0
+ 344 00d8 08       		.uleb128 0x8
+ 345 00d9 01       		.uleb128 0x1
+ 346 00da 51       		.byte	0x51
+ 347 00db 01       		.uleb128 0x1
+ 348 00dc 38       		.byte	0x38
+ 349 00dd 00       		.byte	0
+ 350 00de 07       		.uleb128 0x7
+ 351 00df 14000000 		.4byte	.LVL1
+ 352 00e3 10020000 		.4byte	0x210
+ 353 00e7 F7000000 		.4byte	0xf7
+ 354 00eb 08       		.uleb128 0x8
+ 355 00ec 01       		.uleb128 0x1
+ 356 00ed 50       		.byte	0x50
+ 357 00ee 02       		.uleb128 0x2
+ 358 00ef 74       		.byte	0x74
+ 359 00f0 00       		.sleb128 0
+ 360 00f1 08       		.uleb128 0x8
+ 361 00f2 01       		.uleb128 0x1
+ 362 00f3 51       		.byte	0x51
+ 363 00f4 01       		.uleb128 0x1
+ 364 00f5 38       		.byte	0x38
+ 365 00f6 00       		.byte	0
+ 366 00f7 09       		.uleb128 0x9
+ 367 00f8 18000000 		.4byte	.LVL2
+ 368 00fc 1B020000 		.4byte	0x21b
+ 369 0100 00       		.byte	0
+ 370 0101 0A       		.uleb128 0xa
+ 371 0102 5C010000 		.4byte	.LASF33
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccocuyad.s 			page 11
+
+
+ 372 0106 01       		.byte	0x1
+ 373 0107 27       		.byte	0x27
+ 374 0108 9B000000 		.4byte	0x9b
+ 375 010c 00000000 		.4byte	.LFB64
+ 376 0110 D8000000 		.4byte	.LFE64-.LFB64
+ 377 0114 01       		.uleb128 0x1
+ 378 0115 9C       		.byte	0x9c
+ 379 0116 A2010000 		.4byte	0x1a2
+ 380 011a 09       		.uleb128 0x9
+ 381 011b 06000000 		.4byte	.LVL3
+ 382 011f 26020000 		.4byte	0x226
+ 383 0123 09       		.uleb128 0x9
+ 384 0124 10000000 		.4byte	.LVL4
+ 385 0128 31020000 		.4byte	0x231
+ 386 012c 09       		.uleb128 0x9
+ 387 012d 18000000 		.4byte	.LVL5
+ 388 0131 3C020000 		.4byte	0x23c
+ 389 0135 09       		.uleb128 0x9
+ 390 0136 48000000 		.4byte	.LVL6
+ 391 013a 47020000 		.4byte	0x247
+ 392 013e 09       		.uleb128 0x9
+ 393 013f 4C000000 		.4byte	.LVL7
+ 394 0143 52020000 		.4byte	0x252
+ 395 0147 09       		.uleb128 0x9
+ 396 0148 5A000000 		.4byte	.LVL8
+ 397 014c 47020000 		.4byte	0x247
+ 398 0150 09       		.uleb128 0x9
+ 399 0151 5E000000 		.4byte	.LVL9
+ 400 0155 52020000 		.4byte	0x252
+ 401 0159 09       		.uleb128 0x9
+ 402 015a 6C000000 		.4byte	.LVL10
+ 403 015e 47020000 		.4byte	0x247
+ 404 0162 09       		.uleb128 0x9
+ 405 0163 70000000 		.4byte	.LVL11
+ 406 0167 52020000 		.4byte	0x252
+ 407 016b 09       		.uleb128 0x9
+ 408 016c 8E000000 		.4byte	.LVL12
+ 409 0170 47020000 		.4byte	0x247
+ 410 0174 09       		.uleb128 0x9
+ 411 0175 92000000 		.4byte	.LVL13
+ 412 0179 52020000 		.4byte	0x252
+ 413 017d 09       		.uleb128 0x9
+ 414 017e A0000000 		.4byte	.LVL14
+ 415 0182 47020000 		.4byte	0x247
+ 416 0186 09       		.uleb128 0x9
+ 417 0187 A4000000 		.4byte	.LVL15
+ 418 018b 52020000 		.4byte	0x252
+ 419 018f 09       		.uleb128 0x9
+ 420 0190 B2000000 		.4byte	.LVL16
+ 421 0194 47020000 		.4byte	0x247
+ 422 0198 09       		.uleb128 0x9
+ 423 0199 B6000000 		.4byte	.LVL17
+ 424 019d 52020000 		.4byte	0x252
+ 425 01a1 00       		.byte	0
+ 426 01a2 0B       		.uleb128 0xb
+ 427 01a3 42010000 		.4byte	.LASF17
+ 428 01a7 05       		.byte	0x5
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccocuyad.s 			page 12
+
+
+ 429 01a8 1207     		.2byte	0x712
+ 430 01aa AE010000 		.4byte	0x1ae
+ 431 01ae 0C       		.uleb128 0xc
+ 432 01af 76000000 		.4byte	0x76
+ 433 01b3 0D       		.uleb128 0xd
+ 434 01b4 5B020000 		.4byte	.LASF18
+ 435 01b8 01       		.byte	0x1
+ 436 01b9 1B       		.byte	0x1b
+ 437 01ba 81000000 		.4byte	0x81
+ 438 01be 05       		.uleb128 0x5
+ 439 01bf 03       		.byte	0x3
+ 440 01c0 00000000 		.4byte	byteCnt
+ 441 01c4 0E       		.uleb128 0xe
+ 442 01c5 81000000 		.4byte	0x81
+ 443 01c9 D4010000 		.4byte	0x1d4
+ 444 01cd 0F       		.uleb128 0xf
+ 445 01ce A9000000 		.4byte	0xa9
+ 446 01d2 07       		.byte	0x7
+ 447 01d3 00       		.byte	0
+ 448 01d4 0D       		.uleb128 0xd
+ 449 01d5 4F010000 		.4byte	.LASF19
+ 450 01d9 01       		.byte	0x1
+ 451 01da 1C       		.byte	0x1c
+ 452 01db C4010000 		.4byte	0x1c4
+ 453 01df 05       		.uleb128 0x5
+ 454 01e0 03       		.byte	0x3
+ 455 01e1 00000000 		.4byte	wrBuf
+ 456 01e5 0D       		.uleb128 0xd
+ 457 01e6 00000000 		.4byte	.LASF20
+ 458 01ea 01       		.byte	0x1
+ 459 01eb 1D       		.byte	0x1d
+ 460 01ec C4010000 		.4byte	0x1c4
+ 461 01f0 05       		.uleb128 0x5
+ 462 01f1 03       		.byte	0x3
+ 463 01f2 00000000 		.4byte	rdBuf
+ 464 01f6 10       		.uleb128 0x10
+ 465 01f7 6900     		.ascii	"i\000"
+ 466 01f9 01       		.byte	0x1
+ 467 01fa 1E       		.byte	0x1e
+ 468 01fb 81000000 		.4byte	0x81
+ 469 01ff 05       		.uleb128 0x5
+ 470 0200 03       		.byte	0x3
+ 471 0201 00000000 		.4byte	i
+ 472 0205 11       		.uleb128 0x11
+ 473 0206 E6010000 		.4byte	.LASF21
+ 474 020a E6010000 		.4byte	.LASF21
+ 475 020e 06       		.byte	0x6
+ 476 020f C7       		.byte	0xc7
+ 477 0210 11       		.uleb128 0x11
+ 478 0211 46020000 		.4byte	.LASF22
+ 479 0215 46020000 		.4byte	.LASF22
+ 480 0219 06       		.byte	0x6
+ 481 021a C5       		.byte	0xc5
+ 482 021b 11       		.uleb128 0x11
+ 483 021c 5E000000 		.4byte	.LASF23
+ 484 0220 5E000000 		.4byte	.LASF23
+ 485 0224 06       		.byte	0x6
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccocuyad.s 			page 13
+
+
+ 486 0225 93       		.byte	0x93
+ 487 0226 11       		.uleb128 0x11
+ 488 0227 6E010000 		.4byte	.LASF24
+ 489 022b 6E010000 		.4byte	.LASF24
+ 490 022f 06       		.byte	0x6
+ 491 0230 BE       		.byte	0xbe
+ 492 0231 11       		.uleb128 0x11
+ 493 0232 0C020000 		.4byte	.LASF25
+ 494 0236 0C020000 		.4byte	.LASF25
+ 495 023a 06       		.byte	0x6
+ 496 023b CA       		.byte	0xca
+ 497 023c 11       		.uleb128 0x11
+ 498 023d 44000000 		.4byte	.LASF26
+ 499 0241 44000000 		.4byte	.LASF26
+ 500 0245 06       		.byte	0x6
+ 501 0246 C0       		.byte	0xc0
+ 502 0247 11       		.uleb128 0x11
+ 503 0248 AB010000 		.4byte	.LASF27
+ 504 024c AB010000 		.4byte	.LASF27
+ 505 0250 06       		.byte	0x6
+ 506 0251 CC       		.byte	0xcc
+ 507 0252 11       		.uleb128 0x11
+ 508 0253 63020000 		.4byte	.LASF28
+ 509 0257 63020000 		.4byte	.LASF28
+ 510 025b 06       		.byte	0x6
+ 511 025c CB       		.byte	0xcb
+ 512 025d 00       		.byte	0
+ 513              		.section	.debug_abbrev,"",%progbits
+ 514              	.Ldebug_abbrev0:
+ 515 0000 01       		.uleb128 0x1
+ 516 0001 11       		.uleb128 0x11
+ 517 0002 01       		.byte	0x1
+ 518 0003 25       		.uleb128 0x25
+ 519 0004 0E       		.uleb128 0xe
+ 520 0005 13       		.uleb128 0x13
+ 521 0006 0B       		.uleb128 0xb
+ 522 0007 03       		.uleb128 0x3
+ 523 0008 0E       		.uleb128 0xe
+ 524 0009 1B       		.uleb128 0x1b
+ 525 000a 0E       		.uleb128 0xe
+ 526 000b 55       		.uleb128 0x55
+ 527 000c 17       		.uleb128 0x17
+ 528 000d 11       		.uleb128 0x11
+ 529 000e 01       		.uleb128 0x1
+ 530 000f 10       		.uleb128 0x10
+ 531 0010 17       		.uleb128 0x17
+ 532 0011 00       		.byte	0
+ 533 0012 00       		.byte	0
+ 534 0013 02       		.uleb128 0x2
+ 535 0014 24       		.uleb128 0x24
+ 536 0015 00       		.byte	0
+ 537 0016 0B       		.uleb128 0xb
+ 538 0017 0B       		.uleb128 0xb
+ 539 0018 3E       		.uleb128 0x3e
+ 540 0019 0B       		.uleb128 0xb
+ 541 001a 03       		.uleb128 0x3
+ 542 001b 0E       		.uleb128 0xe
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccocuyad.s 			page 14
+
+
+ 543 001c 00       		.byte	0
+ 544 001d 00       		.byte	0
+ 545 001e 03       		.uleb128 0x3
+ 546 001f 16       		.uleb128 0x16
+ 547 0020 00       		.byte	0
+ 548 0021 03       		.uleb128 0x3
+ 549 0022 0E       		.uleb128 0xe
+ 550 0023 3A       		.uleb128 0x3a
+ 551 0024 0B       		.uleb128 0xb
+ 552 0025 3B       		.uleb128 0x3b
+ 553 0026 0B       		.uleb128 0xb
+ 554 0027 49       		.uleb128 0x49
+ 555 0028 13       		.uleb128 0x13
+ 556 0029 00       		.byte	0
+ 557 002a 00       		.byte	0
+ 558 002b 04       		.uleb128 0x4
+ 559 002c 24       		.uleb128 0x24
+ 560 002d 00       		.byte	0
+ 561 002e 0B       		.uleb128 0xb
+ 562 002f 0B       		.uleb128 0xb
+ 563 0030 3E       		.uleb128 0x3e
+ 564 0031 0B       		.uleb128 0xb
+ 565 0032 03       		.uleb128 0x3
+ 566 0033 08       		.uleb128 0x8
+ 567 0034 00       		.byte	0
+ 568 0035 00       		.byte	0
+ 569 0036 05       		.uleb128 0x5
+ 570 0037 16       		.uleb128 0x16
+ 571 0038 00       		.byte	0
+ 572 0039 03       		.uleb128 0x3
+ 573 003a 0E       		.uleb128 0xe
+ 574 003b 3A       		.uleb128 0x3a
+ 575 003c 0B       		.uleb128 0xb
+ 576 003d 3B       		.uleb128 0x3b
+ 577 003e 05       		.uleb128 0x5
+ 578 003f 49       		.uleb128 0x49
+ 579 0040 13       		.uleb128 0x13
+ 580 0041 00       		.byte	0
+ 581 0042 00       		.byte	0
+ 582 0043 06       		.uleb128 0x6
+ 583 0044 2E       		.uleb128 0x2e
+ 584 0045 01       		.byte	0x1
+ 585 0046 3F       		.uleb128 0x3f
+ 586 0047 19       		.uleb128 0x19
+ 587 0048 03       		.uleb128 0x3
+ 588 0049 0E       		.uleb128 0xe
+ 589 004a 3A       		.uleb128 0x3a
+ 590 004b 0B       		.uleb128 0xb
+ 591 004c 3B       		.uleb128 0x3b
+ 592 004d 0B       		.uleb128 0xb
+ 593 004e 11       		.uleb128 0x11
+ 594 004f 01       		.uleb128 0x1
+ 595 0050 12       		.uleb128 0x12
+ 596 0051 06       		.uleb128 0x6
+ 597 0052 40       		.uleb128 0x40
+ 598 0053 18       		.uleb128 0x18
+ 599 0054 9742     		.uleb128 0x2117
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccocuyad.s 			page 15
+
+
+ 600 0056 19       		.uleb128 0x19
+ 601 0057 01       		.uleb128 0x1
+ 602 0058 13       		.uleb128 0x13
+ 603 0059 00       		.byte	0
+ 604 005a 00       		.byte	0
+ 605 005b 07       		.uleb128 0x7
+ 606 005c 898201   		.uleb128 0x4109
+ 607 005f 01       		.byte	0x1
+ 608 0060 11       		.uleb128 0x11
+ 609 0061 01       		.uleb128 0x1
+ 610 0062 31       		.uleb128 0x31
+ 611 0063 13       		.uleb128 0x13
+ 612 0064 01       		.uleb128 0x1
+ 613 0065 13       		.uleb128 0x13
+ 614 0066 00       		.byte	0
+ 615 0067 00       		.byte	0
+ 616 0068 08       		.uleb128 0x8
+ 617 0069 8A8201   		.uleb128 0x410a
+ 618 006c 00       		.byte	0
+ 619 006d 02       		.uleb128 0x2
+ 620 006e 18       		.uleb128 0x18
+ 621 006f 9142     		.uleb128 0x2111
+ 622 0071 18       		.uleb128 0x18
+ 623 0072 00       		.byte	0
+ 624 0073 00       		.byte	0
+ 625 0074 09       		.uleb128 0x9
+ 626 0075 898201   		.uleb128 0x4109
+ 627 0078 00       		.byte	0
+ 628 0079 11       		.uleb128 0x11
+ 629 007a 01       		.uleb128 0x1
+ 630 007b 31       		.uleb128 0x31
+ 631 007c 13       		.uleb128 0x13
+ 632 007d 00       		.byte	0
+ 633 007e 00       		.byte	0
+ 634 007f 0A       		.uleb128 0xa
+ 635 0080 2E       		.uleb128 0x2e
+ 636 0081 01       		.byte	0x1
+ 637 0082 3F       		.uleb128 0x3f
+ 638 0083 19       		.uleb128 0x19
+ 639 0084 03       		.uleb128 0x3
+ 640 0085 0E       		.uleb128 0xe
+ 641 0086 3A       		.uleb128 0x3a
+ 642 0087 0B       		.uleb128 0xb
+ 643 0088 3B       		.uleb128 0x3b
+ 644 0089 0B       		.uleb128 0xb
+ 645 008a 49       		.uleb128 0x49
+ 646 008b 13       		.uleb128 0x13
+ 647 008c 11       		.uleb128 0x11
+ 648 008d 01       		.uleb128 0x1
+ 649 008e 12       		.uleb128 0x12
+ 650 008f 06       		.uleb128 0x6
+ 651 0090 40       		.uleb128 0x40
+ 652 0091 18       		.uleb128 0x18
+ 653 0092 9742     		.uleb128 0x2117
+ 654 0094 19       		.uleb128 0x19
+ 655 0095 01       		.uleb128 0x1
+ 656 0096 13       		.uleb128 0x13
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccocuyad.s 			page 16
+
+
+ 657 0097 00       		.byte	0
+ 658 0098 00       		.byte	0
+ 659 0099 0B       		.uleb128 0xb
+ 660 009a 34       		.uleb128 0x34
+ 661 009b 00       		.byte	0
+ 662 009c 03       		.uleb128 0x3
+ 663 009d 0E       		.uleb128 0xe
+ 664 009e 3A       		.uleb128 0x3a
+ 665 009f 0B       		.uleb128 0xb
+ 666 00a0 3B       		.uleb128 0x3b
+ 667 00a1 05       		.uleb128 0x5
+ 668 00a2 49       		.uleb128 0x49
+ 669 00a3 13       		.uleb128 0x13
+ 670 00a4 3F       		.uleb128 0x3f
+ 671 00a5 19       		.uleb128 0x19
+ 672 00a6 3C       		.uleb128 0x3c
+ 673 00a7 19       		.uleb128 0x19
+ 674 00a8 00       		.byte	0
+ 675 00a9 00       		.byte	0
+ 676 00aa 0C       		.uleb128 0xc
+ 677 00ab 35       		.uleb128 0x35
+ 678 00ac 00       		.byte	0
+ 679 00ad 49       		.uleb128 0x49
+ 680 00ae 13       		.uleb128 0x13
+ 681 00af 00       		.byte	0
+ 682 00b0 00       		.byte	0
+ 683 00b1 0D       		.uleb128 0xd
+ 684 00b2 34       		.uleb128 0x34
+ 685 00b3 00       		.byte	0
+ 686 00b4 03       		.uleb128 0x3
+ 687 00b5 0E       		.uleb128 0xe
+ 688 00b6 3A       		.uleb128 0x3a
+ 689 00b7 0B       		.uleb128 0xb
+ 690 00b8 3B       		.uleb128 0x3b
+ 691 00b9 0B       		.uleb128 0xb
+ 692 00ba 49       		.uleb128 0x49
+ 693 00bb 13       		.uleb128 0x13
+ 694 00bc 3F       		.uleb128 0x3f
+ 695 00bd 19       		.uleb128 0x19
+ 696 00be 02       		.uleb128 0x2
+ 697 00bf 18       		.uleb128 0x18
+ 698 00c0 00       		.byte	0
+ 699 00c1 00       		.byte	0
+ 700 00c2 0E       		.uleb128 0xe
+ 701 00c3 01       		.uleb128 0x1
+ 702 00c4 01       		.byte	0x1
+ 703 00c5 49       		.uleb128 0x49
+ 704 00c6 13       		.uleb128 0x13
+ 705 00c7 01       		.uleb128 0x1
+ 706 00c8 13       		.uleb128 0x13
+ 707 00c9 00       		.byte	0
+ 708 00ca 00       		.byte	0
+ 709 00cb 0F       		.uleb128 0xf
+ 710 00cc 21       		.uleb128 0x21
+ 711 00cd 00       		.byte	0
+ 712 00ce 49       		.uleb128 0x49
+ 713 00cf 13       		.uleb128 0x13
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccocuyad.s 			page 17
+
+
+ 714 00d0 2F       		.uleb128 0x2f
+ 715 00d1 0B       		.uleb128 0xb
+ 716 00d2 00       		.byte	0
+ 717 00d3 00       		.byte	0
+ 718 00d4 10       		.uleb128 0x10
+ 719 00d5 34       		.uleb128 0x34
+ 720 00d6 00       		.byte	0
+ 721 00d7 03       		.uleb128 0x3
+ 722 00d8 08       		.uleb128 0x8
+ 723 00d9 3A       		.uleb128 0x3a
+ 724 00da 0B       		.uleb128 0xb
+ 725 00db 3B       		.uleb128 0x3b
+ 726 00dc 0B       		.uleb128 0xb
+ 727 00dd 49       		.uleb128 0x49
+ 728 00de 13       		.uleb128 0x13
+ 729 00df 3F       		.uleb128 0x3f
+ 730 00e0 19       		.uleb128 0x19
+ 731 00e1 02       		.uleb128 0x2
+ 732 00e2 18       		.uleb128 0x18
+ 733 00e3 00       		.byte	0
+ 734 00e4 00       		.byte	0
+ 735 00e5 11       		.uleb128 0x11
+ 736 00e6 2E       		.uleb128 0x2e
+ 737 00e7 00       		.byte	0
+ 738 00e8 3F       		.uleb128 0x3f
+ 739 00e9 19       		.uleb128 0x19
+ 740 00ea 3C       		.uleb128 0x3c
+ 741 00eb 19       		.uleb128 0x19
+ 742 00ec 6E       		.uleb128 0x6e
+ 743 00ed 0E       		.uleb128 0xe
+ 744 00ee 03       		.uleb128 0x3
+ 745 00ef 0E       		.uleb128 0xe
+ 746 00f0 3A       		.uleb128 0x3a
+ 747 00f1 0B       		.uleb128 0xb
+ 748 00f2 3B       		.uleb128 0x3b
+ 749 00f3 0B       		.uleb128 0xb
+ 750 00f4 00       		.byte	0
+ 751 00f5 00       		.byte	0
+ 752 00f6 00       		.byte	0
+ 753              		.section	.debug_aranges,"",%progbits
+ 754 0000 24000000 		.4byte	0x24
+ 755 0004 0200     		.2byte	0x2
+ 756 0006 00000000 		.4byte	.Ldebug_info0
+ 757 000a 04       		.byte	0x4
+ 758 000b 00       		.byte	0
+ 759 000c 0000     		.2byte	0
+ 760 000e 0000     		.2byte	0
+ 761 0010 00000000 		.4byte	.LFB63
+ 762 0014 20000000 		.4byte	.LFE63-.LFB63
+ 763 0018 00000000 		.4byte	.LFB64
+ 764 001c D8000000 		.4byte	.LFE64-.LFB64
+ 765 0020 00000000 		.4byte	0
+ 766 0024 00000000 		.4byte	0
+ 767              		.section	.debug_ranges,"",%progbits
+ 768              	.Ldebug_ranges0:
+ 769 0000 00000000 		.4byte	.LFB63
+ 770 0004 20000000 		.4byte	.LFE63
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccocuyad.s 			page 18
+
+
+ 771 0008 00000000 		.4byte	.LFB64
+ 772 000c D8000000 		.4byte	.LFE64
+ 773 0010 00000000 		.4byte	0
+ 774 0014 00000000 		.4byte	0
+ 775              		.section	.debug_line,"",%progbits
+ 776              	.Ldebug_line0:
+ 777 0000 AE010000 		.section	.debug_str,"MS",%progbits,1
+ 777      02006101 
+ 777      00000201 
+ 777      FB0E0D00 
+ 777      01010101 
+ 778              	.LASF20:
+ 779 0000 72644275 		.ascii	"rdBuf\000"
+ 779      6600
+ 780              	.LASF9:
+ 781 0006 5F5F696E 		.ascii	"__int32_t\000"
+ 781      7433325F 
+ 781      7400
+ 782              	.LASF31:
+ 783 0010 433A5C55 		.ascii	"C:\\Users\\AugustHA\\Documents\\Main_Project\\Main."
+ 783      73657273 
+ 783      5C417567 
+ 783      75737448 
+ 783      415C446F 
+ 784 003e 63796473 		.ascii	"cydsn\000"
+ 784      6E00
+ 785              	.LASF26:
+ 786 0044 4932435F 		.ascii	"I2C_SlaveClearWriteStatus\000"
+ 786      536C6176 
+ 786      65436C65 
+ 786      61725772 
+ 786      69746553 
+ 787              	.LASF23:
+ 788 005e 4932435F 		.ascii	"I2C_Start\000"
+ 788      53746172 
+ 788      7400
+ 789              	.LASF12:
+ 790 0068 666C6F61 		.ascii	"float\000"
+ 790      7400
+ 791              	.LASF1:
+ 792 006e 756E7369 		.ascii	"unsigned char\000"
+ 792      676E6564 
+ 792      20636861 
+ 792      7200
+ 793              	.LASF29:
+ 794 007c 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 794      43313120 
+ 794      352E342E 
+ 794      31203230 
+ 794      31363036 
+ 795 00af 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 795      20726576 
+ 795      6973696F 
+ 795      6E203233 
+ 795      37373135 
+ 796 00e2 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 796      66756E63 
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccocuyad.s 			page 19
+
+
+ 796      74696F6E 
+ 796      2D736563 
+ 796      74696F6E 
+ 797              	.LASF5:
+ 798 010a 6C6F6E67 		.ascii	"long unsigned int\000"
+ 798      20756E73 
+ 798      69676E65 
+ 798      6420696E 
+ 798      7400
+ 799              	.LASF3:
+ 800 011c 73686F72 		.ascii	"short unsigned int\000"
+ 800      7420756E 
+ 800      7369676E 
+ 800      65642069 
+ 800      6E7400
+ 801              	.LASF30:
+ 802 012f 6932634B 		.ascii	"i2cKommunikation.c\000"
+ 802      6F6D6D75 
+ 802      6E696B61 
+ 802      74696F6E 
+ 802      2E6300
+ 803              	.LASF17:
+ 804 0142 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 804      52784275 
+ 804      66666572 
+ 804      00
+ 805              	.LASF19:
+ 806 014f 77724275 		.ascii	"wrBuf\000"
+ 806      6600
+ 807              	.LASF13:
+ 808 0155 646F7562 		.ascii	"double\000"
+ 808      6C6500
+ 809              	.LASF33:
+ 810 015c 4932435F 		.ascii	"I2C_Kommunikation\000"
+ 810      4B6F6D6D 
+ 810      756E696B 
+ 810      6174696F 
+ 810      6E00
+ 811              	.LASF24:
+ 812 016e 4932435F 		.ascii	"I2C_SlaveStatus\000"
+ 812      536C6176 
+ 812      65537461 
+ 812      74757300 
+ 813              	.LASF32:
+ 814 017e 696E6974 		.ascii	"init_i2c\000"
+ 814      5F693263 
+ 814      00
+ 815              	.LASF8:
+ 816 0187 756E7369 		.ascii	"unsigned int\000"
+ 816      676E6564 
+ 816      20696E74 
+ 816      00
+ 817              	.LASF7:
+ 818 0194 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 818      206C6F6E 
+ 818      6720756E 
+ 818      7369676E 
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccocuyad.s 			page 20
+
+
+ 818      65642069 
+ 819              	.LASF27:
+ 820 01ab 4932435F 		.ascii	"I2C_SlaveClearWriteBuf\000"
+ 820      536C6176 
+ 820      65436C65 
+ 820      61725772 
+ 820      69746542 
+ 821              	.LASF10:
+ 822 01c2 696E7433 		.ascii	"int32_t\000"
+ 822      325F7400 
+ 823              	.LASF16:
+ 824 01ca 73697A65 		.ascii	"sizetype\000"
+ 824      74797065 
+ 824      00
+ 825              	.LASF6:
+ 826 01d3 6C6F6E67 		.ascii	"long long int\000"
+ 826      206C6F6E 
+ 826      6720696E 
+ 826      7400
+ 827              	.LASF14:
+ 828 01e1 63686172 		.ascii	"char\000"
+ 828      00
+ 829              	.LASF21:
+ 830 01e6 4932435F 		.ascii	"I2C_SlaveInitWriteBuf\000"
+ 830      536C6176 
+ 830      65496E69 
+ 830      74577269 
+ 830      74654275 
+ 831              	.LASF2:
+ 832 01fc 73686F72 		.ascii	"short int\000"
+ 832      7420696E 
+ 832      7400
+ 833              	.LASF11:
+ 834 0206 75696E74 		.ascii	"uint8\000"
+ 834      3800
+ 835              	.LASF25:
+ 836 020c 4932435F 		.ascii	"I2C_SlaveGetWriteBufSize\000"
+ 836      536C6176 
+ 836      65476574 
+ 836      57726974 
+ 836      65427566 
+ 837              	.LASF4:
+ 838 0225 6C6F6E67 		.ascii	"long int\000"
+ 838      20696E74 
+ 838      00
+ 839              	.LASF15:
+ 840 022e 6C6F6E67 		.ascii	"long double\000"
+ 840      20646F75 
+ 840      626C6500 
+ 841              	.LASF0:
+ 842 023a 7369676E 		.ascii	"signed char\000"
+ 842      65642063 
+ 842      68617200 
+ 843              	.LASF22:
+ 844 0246 4932435F 		.ascii	"I2C_SlaveInitReadBuf\000"
+ 844      536C6176 
+ 844      65496E69 
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccocuyad.s 			page 21
+
+
+ 844      74526561 
+ 844      64427566 
+ 845              	.LASF18:
+ 846 025b 62797465 		.ascii	"byteCnt\000"
+ 846      436E7400 
+ 847              	.LASF28:
+ 848 0263 4932435F 		.ascii	"I2C_SlaveClearReadBuf\000"
+ 848      536C6176 
+ 848      65436C65 
+ 848      61725265 
+ 848      61644275 
+ 849              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

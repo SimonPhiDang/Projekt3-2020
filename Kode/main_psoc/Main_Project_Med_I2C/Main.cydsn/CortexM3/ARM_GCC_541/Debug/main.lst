@@ -1,0 +1,1510 @@
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccgejQC3.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"main.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.handleOrderReceived,"ax",%progbits
+  20              		.align	2
+  21              		.global	handleOrderReceived
+  22              		.thumb
+  23              		.thumb_func
+  24              		.type	handleOrderReceived, %function
+  25              	handleOrderReceived:
+  26              	.LFB63:
+  27              		.file 1 "main.c"
+   1:main.c        **** /* ========================================
+   2:main.c        ****  *
+   3:main.c        ****  * Copyright YOUR COMPANY, THE YEAR
+   4:main.c        ****  * All Rights Reserved
+   5:main.c        ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:main.c        ****  *
+   7:main.c        ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:main.c        ****  * WHICH IS THE PROPERTY OF your company.
+   9:main.c        ****  *
+  10:main.c        ****  * ========================================
+  11:main.c        **** */
+  12:main.c        **** #include "project.h"
+  13:main.c        **** 
+  14:main.c        **** // Includes af bibloteker
+  15:main.c        **** #include "motorStyring.h"
+  16:main.c        **** //#include "Scale.h"
+  17:main.c        **** //#include "colorSensor.h"
+  18:main.c        **** #include "i2cKommunikation.h"
+  19:main.c        **** #include "Afstandssensor.h"
+  20:main.c        **** 
+  21:main.c        **** int distance;
+  22:main.c        **** 
+  23:main.c        **** //float fustageKg;
+  24:main.c        **** //
+  25:main.c        **** void handleOrderReceived(uint8_t orderReceived)
+  26:main.c        **** {
+  28              		.loc 1 26 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccgejQC3.s 			page 2
+
+
+  32              	.LVL0:
+  33 0000 08B5     		push	{r3, lr}
+  34              		.cfi_def_cfa_offset 8
+  35              		.cfi_offset 3, -8
+  36              		.cfi_offset 14, -4
+  27:main.c        ****     switch(orderReceived)
+  37              		.loc 1 27 0
+  38 0002 0138     		subs	r0, r0, #1
+  39              	.LVL1:
+  40 0004 0528     		cmp	r0, #5
+  41 0006 00F28880 		bhi	.L1
+  42 000a DFE800F0 		tbb	[pc, r0]
+  43              	.L4:
+  44 000e 03       		.byte	(.L3-.L4)/2
+  45 000f 19       		.byte	(.L5-.L4)/2
+  46 0010 2F       		.byte	(.L6-.L4)/2
+  47 0011 45       		.byte	(.L7-.L4)/2
+  48 0012 5B       		.byte	(.L8-.L4)/2
+  49 0013 71       		.byte	(.L9-.L4)/2
+  50              		.p2align 1
+  51              	.L3:
+  28:main.c        ****     {
+  29:main.c        ****         case 1:
+  30:main.c        ****         {
+  31:main.c        ****             Done_Write(0);
+  52              		.loc 1 31 0
+  53 0014 0020     		movs	r0, #0
+  54 0016 FFF7FEFF 		bl	Done_Write
+  55              	.LVL2:
+  32:main.c        ****             driveForward();
+  56              		.loc 1 32 0
+  57 001a FFF7FEFF 		bl	driveForward
+  58              	.LVL3:
+  33:main.c        ****             CyDelay(2000);
+  59              		.loc 1 33 0
+  60 001e 4FF4FA60 		mov	r0, #2000
+  61 0022 FFF7FEFF 		bl	CyDelay
+  62              	.LVL4:
+  34:main.c        ****             Done_Write(1);
+  63              		.loc 1 34 0
+  64 0026 0120     		movs	r0, #1
+  65 0028 FFF7FEFF 		bl	Done_Write
+  66              	.LVL5:
+  35:main.c        ****             driveStop();
+  67              		.loc 1 35 0
+  68 002c FFF7FEFF 		bl	driveStop
+  69              	.LVL6:
+  36:main.c        ****             CyDelay(500);
+  70              		.loc 1 36 0
+  71 0030 4FF4FA70 		mov	r0, #500
+  72 0034 FFF7FEFF 		bl	CyDelay
+  73              	.LVL7:
+  37:main.c        ****             Done_Write(0);
+  74              		.loc 1 37 0
+  75 0038 0020     		movs	r0, #0
+  76 003a FFF7FEFF 		bl	Done_Write
+  77              	.LVL8:
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccgejQC3.s 			page 3
+
+
+  38:main.c        ****             break;
+  78              		.loc 1 38 0
+  79 003e 08BD     		pop	{r3, pc}
+  80              	.L5:
+  39:main.c        ****         }
+  40:main.c        ****         case 2:
+  41:main.c        ****         {
+  42:main.c        ****             Done_Write(0);
+  81              		.loc 1 42 0
+  82 0040 0020     		movs	r0, #0
+  83 0042 FFF7FEFF 		bl	Done_Write
+  84              	.LVL9:
+  43:main.c        ****             driveForward();
+  85              		.loc 1 43 0
+  86 0046 FFF7FEFF 		bl	driveForward
+  87              	.LVL10:
+  44:main.c        ****             CyDelay(5000);
+  88              		.loc 1 44 0
+  89 004a 41F28830 		movw	r0, #5000
+  90 004e FFF7FEFF 		bl	CyDelay
+  91              	.LVL11:
+  45:main.c        ****             Done_Write(1);
+  92              		.loc 1 45 0
+  93 0052 0120     		movs	r0, #1
+  94 0054 FFF7FEFF 		bl	Done_Write
+  95              	.LVL12:
+  46:main.c        ****             driveStop();
+  96              		.loc 1 46 0
+  97 0058 FFF7FEFF 		bl	driveStop
+  98              	.LVL13:
+  47:main.c        ****             CyDelay(500);
+  99              		.loc 1 47 0
+ 100 005c 4FF4FA70 		mov	r0, #500
+ 101 0060 FFF7FEFF 		bl	CyDelay
+ 102              	.LVL14:
+  48:main.c        ****             Done_Write(0);
+ 103              		.loc 1 48 0
+ 104 0064 0020     		movs	r0, #0
+ 105 0066 FFF7FEFF 		bl	Done_Write
+ 106              	.LVL15:
+  49:main.c        ****             break;
+ 107              		.loc 1 49 0
+ 108 006a 08BD     		pop	{r3, pc}
+ 109              	.L6:
+  50:main.c        ****         }
+  51:main.c        ****         case 3:
+  52:main.c        ****         {
+  53:main.c        ****             Done_Write(0);
+ 110              		.loc 1 53 0
+ 111 006c 0020     		movs	r0, #0
+ 112 006e FFF7FEFF 		bl	Done_Write
+ 113              	.LVL16:
+  54:main.c        ****             driveForward();
+ 114              		.loc 1 54 0
+ 115 0072 FFF7FEFF 		bl	driveForward
+ 116              	.LVL17:
+  55:main.c        ****             CyDelay(10000);
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccgejQC3.s 			page 4
+
+
+ 117              		.loc 1 55 0
+ 118 0076 42F21070 		movw	r0, #10000
+ 119 007a FFF7FEFF 		bl	CyDelay
+ 120              	.LVL18:
+  56:main.c        ****             Done_Write(1);
+ 121              		.loc 1 56 0
+ 122 007e 0120     		movs	r0, #1
+ 123 0080 FFF7FEFF 		bl	Done_Write
+ 124              	.LVL19:
+  57:main.c        ****             driveStop();
+ 125              		.loc 1 57 0
+ 126 0084 FFF7FEFF 		bl	driveStop
+ 127              	.LVL20:
+  58:main.c        ****             CyDelay(500);
+ 128              		.loc 1 58 0
+ 129 0088 4FF4FA70 		mov	r0, #500
+ 130 008c FFF7FEFF 		bl	CyDelay
+ 131              	.LVL21:
+  59:main.c        ****             Done_Write(0);
+ 132              		.loc 1 59 0
+ 133 0090 0020     		movs	r0, #0
+ 134 0092 FFF7FEFF 		bl	Done_Write
+ 135              	.LVL22:
+  60:main.c        ****             break;
+ 136              		.loc 1 60 0
+ 137 0096 08BD     		pop	{r3, pc}
+ 138              	.L7:
+  61:main.c        ****         }
+  62:main.c        ****         case 4:
+  63:main.c        ****         {
+  64:main.c        ****             Done_Write(0);
+ 139              		.loc 1 64 0
+ 140 0098 0020     		movs	r0, #0
+ 141 009a FFF7FEFF 		bl	Done_Write
+ 142              	.LVL23:
+  65:main.c        ****             driveBackward();
+ 143              		.loc 1 65 0
+ 144 009e FFF7FEFF 		bl	driveBackward
+ 145              	.LVL24:
+  66:main.c        ****             CyDelay(2000);
+ 146              		.loc 1 66 0
+ 147 00a2 4FF4FA60 		mov	r0, #2000
+ 148 00a6 FFF7FEFF 		bl	CyDelay
+ 149              	.LVL25:
+  67:main.c        ****             Done_Write(1);
+ 150              		.loc 1 67 0
+ 151 00aa 0120     		movs	r0, #1
+ 152 00ac FFF7FEFF 		bl	Done_Write
+ 153              	.LVL26:
+  68:main.c        ****             driveStop();
+ 154              		.loc 1 68 0
+ 155 00b0 FFF7FEFF 		bl	driveStop
+ 156              	.LVL27:
+  69:main.c        ****             CyDelay(500);
+ 157              		.loc 1 69 0
+ 158 00b4 4FF4FA70 		mov	r0, #500
+ 159 00b8 FFF7FEFF 		bl	CyDelay
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccgejQC3.s 			page 5
+
+
+ 160              	.LVL28:
+  70:main.c        ****             Done_Write(0);
+ 161              		.loc 1 70 0
+ 162 00bc 0020     		movs	r0, #0
+ 163 00be FFF7FEFF 		bl	Done_Write
+ 164              	.LVL29:
+  71:main.c        ****             break;
+ 165              		.loc 1 71 0
+ 166 00c2 08BD     		pop	{r3, pc}
+ 167              	.L8:
+  72:main.c        ****         }
+  73:main.c        ****         case 5:
+  74:main.c        ****         {
+  75:main.c        ****             Done_Write(0);
+ 168              		.loc 1 75 0
+ 169 00c4 0020     		movs	r0, #0
+ 170 00c6 FFF7FEFF 		bl	Done_Write
+ 171              	.LVL30:
+  76:main.c        ****             driveBackward();
+ 172              		.loc 1 76 0
+ 173 00ca FFF7FEFF 		bl	driveBackward
+ 174              	.LVL31:
+  77:main.c        ****             CyDelay(5000);
+ 175              		.loc 1 77 0
+ 176 00ce 41F28830 		movw	r0, #5000
+ 177 00d2 FFF7FEFF 		bl	CyDelay
+ 178              	.LVL32:
+  78:main.c        ****             Done_Write(1);
+ 179              		.loc 1 78 0
+ 180 00d6 0120     		movs	r0, #1
+ 181 00d8 FFF7FEFF 		bl	Done_Write
+ 182              	.LVL33:
+  79:main.c        ****             driveStop();
+ 183              		.loc 1 79 0
+ 184 00dc FFF7FEFF 		bl	driveStop
+ 185              	.LVL34:
+  80:main.c        ****             CyDelay(500);
+ 186              		.loc 1 80 0
+ 187 00e0 4FF4FA70 		mov	r0, #500
+ 188 00e4 FFF7FEFF 		bl	CyDelay
+ 189              	.LVL35:
+  81:main.c        ****             Done_Write(0);
+ 190              		.loc 1 81 0
+ 191 00e8 0020     		movs	r0, #0
+ 192 00ea FFF7FEFF 		bl	Done_Write
+ 193              	.LVL36:
+  82:main.c        ****             break;
+ 194              		.loc 1 82 0
+ 195 00ee 08BD     		pop	{r3, pc}
+ 196              	.L9:
+  83:main.c        ****         }
+  84:main.c        ****         case 6:
+  85:main.c        ****         {
+  86:main.c        ****             Done_Write(0);
+ 197              		.loc 1 86 0
+ 198 00f0 0020     		movs	r0, #0
+ 199 00f2 FFF7FEFF 		bl	Done_Write
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccgejQC3.s 			page 6
+
+
+ 200              	.LVL37:
+  87:main.c        ****             driveBackward();
+ 201              		.loc 1 87 0
+ 202 00f6 FFF7FEFF 		bl	driveBackward
+ 203              	.LVL38:
+  88:main.c        ****             CyDelay(10000);
+ 204              		.loc 1 88 0
+ 205 00fa 42F21070 		movw	r0, #10000
+ 206 00fe FFF7FEFF 		bl	CyDelay
+ 207              	.LVL39:
+  89:main.c        ****             Done_Write(1);
+ 208              		.loc 1 89 0
+ 209 0102 0120     		movs	r0, #1
+ 210 0104 FFF7FEFF 		bl	Done_Write
+ 211              	.LVL40:
+  90:main.c        ****             driveStop();
+ 212              		.loc 1 90 0
+ 213 0108 FFF7FEFF 		bl	driveStop
+ 214              	.LVL41:
+  91:main.c        ****             CyDelay(500);
+ 215              		.loc 1 91 0
+ 216 010c 4FF4FA70 		mov	r0, #500
+ 217 0110 FFF7FEFF 		bl	CyDelay
+ 218              	.LVL42:
+  92:main.c        ****             Done_Write(0);
+ 219              		.loc 1 92 0
+ 220 0114 0020     		movs	r0, #0
+ 221 0116 FFF7FEFF 		bl	Done_Write
+ 222              	.LVL43:
+ 223              	.L1:
+ 224 011a 08BD     		pop	{r3, pc}
+ 225              		.cfi_endproc
+ 226              	.LFE63:
+ 227              		.size	handleOrderReceived, .-handleOrderReceived
+ 228              		.section	.text.main,"ax",%progbits
+ 229              		.align	2
+ 230              		.global	main
+ 231              		.thumb
+ 232              		.thumb_func
+ 233              		.type	main, %function
+ 234              	main:
+ 235              	.LFB64:
+  93:main.c        ****             break;
+  94:main.c        ****         }
+  95:main.c        ****         default:
+  96:main.c        ****         break;
+  97:main.c        ****     }
+  98:main.c        **** }
+  99:main.c        **** 
+ 100:main.c        **** 
+ 101:main.c        **** int main(void)
+ 102:main.c        **** {
+ 236              		.loc 1 102 0
+ 237              		.cfi_startproc
+ 238              		@ args = 0, pretend = 0, frame = 0
+ 239              		@ frame_needed = 0, uses_anonymous_args = 0
+ 240 0000 08B5     		push	{r3, lr}
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccgejQC3.s 			page 7
+
+
+ 241              		.cfi_def_cfa_offset 8
+ 242              		.cfi_offset 3, -8
+ 243              		.cfi_offset 14, -4
+ 103:main.c        ****     CyGlobalIntEnable; /* Enable global interrupts. */
+ 244              		.loc 1 103 0
+ 245              		.syntax unified
+ 246              	@ 103 "main.c" 1
+ 247 0002 62B6     		CPSIE   i
+ 248              	@ 0 "" 2
+ 104:main.c        ****     
+ 105:main.c        ****     //inits
+ 106:main.c        ****     init_i2c(); // I2C kommunikation
+ 249              		.loc 1 106 0
+ 250              		.thumb
+ 251              		.syntax unified
+ 252 0004 FFF7FEFF 		bl	init_i2c
+ 253              	.LVL44:
+ 107:main.c        ****     initMotor(); //Motor
+ 254              		.loc 1 107 0
+ 255 0008 FFF7FEFF 		bl	initMotor
+ 256              	.LVL45:
+ 257              	.L12:
+ 258              	.LBB2:
+ 108:main.c        ****     //ADC_init();  //Vægtsensor
+ 109:main.c        ****     //color_init_start(); //Colorsensor
+ 110:main.c        ****     //initDistSens(); // Afstandssensor
+ 111:main.c        ****     
+ 112:main.c        ****     //fustageKg = ADC_Measure(); // Måling af nuværende kg
+ 113:main.c        ****     
+ 114:main.c        ****     // Send vægt info til I2C så RPI kan sende til personale grænseflade
+ 115:main.c        **** 
+ 116:main.c        ****  
+ 117:main.c        ****     
+ 118:main.c        ****     for(;;)  //Ordre loop
+ 119:main.c        ****     {
+ 120:main.c        ****         //driveForward();
+ 121:main.c        ****         uint8 i = I2C_Kommunikation();  // Få besked fra I2C RPI
+ 259              		.loc 1 121 0 discriminator 1
+ 260 000c FFF7FEFF 		bl	I2C_Kommunikation
+ 261              	.LVL46:
+ 122:main.c        ****         handleOrderReceived(i);  // Handler
+ 262              		.loc 1 122 0 discriminator 1
+ 263 0010 FFF7FEFF 		bl	handleOrderReceived
+ 264              	.LVL47:
+ 265 0014 FAE7     		b	.L12
+ 266              	.LBE2:
+ 267              		.cfi_endproc
+ 268              	.LFE64:
+ 269              		.size	main, .-main
+ 270              		.comm	distance,4,4
+ 271 0016 00BF     		.text
+ 272              	.Letext0:
+ 273              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.3\\psoc creator\\import\\gnu\\arm\\5.4.
+ 274              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.3\\psoc creator\\import\\gnu\\arm\\5.4.
+ 275              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
+ 276              		.file 5 "Generated_Source\\PSoC5/core_cm3.h"
+ 277              		.file 6 "Generated_Source\\PSoC5/Done.h"
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccgejQC3.s 			page 8
+
+
+ 278              		.file 7 "motorStyring.h"
+ 279              		.file 8 "Generated_Source\\PSoC5/CyLib.h"
+ 280              		.file 9 "i2cKommunikation.h"
+ 281              		.section	.debug_info,"",%progbits
+ 282              	.Ldebug_info0:
+ 283 0000 75040000 		.4byte	0x475
+ 284 0004 0400     		.2byte	0x4
+ 285 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 286 000a 04       		.byte	0x4
+ 287 000b 01       		.uleb128 0x1
+ 288 000c 90000000 		.4byte	.LASF29
+ 289 0010 0C       		.byte	0xc
+ 290 0011 E0010000 		.4byte	.LASF30
+ 291 0015 31000000 		.4byte	.LASF31
+ 292 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 293 001d 00000000 		.4byte	0
+ 294 0021 00000000 		.4byte	.Ldebug_line0
+ 295 0025 02       		.uleb128 0x2
+ 296 0026 01       		.byte	0x1
+ 297 0027 06       		.byte	0x6
+ 298 0028 11020000 		.4byte	.LASF0
+ 299 002c 03       		.uleb128 0x3
+ 300 002d 00000000 		.4byte	.LASF4
+ 301 0031 02       		.byte	0x2
+ 302 0032 1D       		.byte	0x1d
+ 303 0033 37000000 		.4byte	0x37
+ 304 0037 02       		.uleb128 0x2
+ 305 0038 01       		.byte	0x1
+ 306 0039 08       		.byte	0x8
+ 307 003a 82000000 		.4byte	.LASF1
+ 308 003e 02       		.uleb128 0x2
+ 309 003f 02       		.byte	0x2
+ 310 0040 05       		.byte	0x5
+ 311 0041 EC010000 		.4byte	.LASF2
+ 312 0045 02       		.uleb128 0x2
+ 313 0046 02       		.byte	0x2
+ 314 0047 07       		.byte	0x7
+ 315 0048 1D020000 		.4byte	.LASF3
+ 316 004c 03       		.uleb128 0x3
+ 317 004d 15000000 		.4byte	.LASF5
+ 318 0051 02       		.byte	0x2
+ 319 0052 3F       		.byte	0x3f
+ 320 0053 57000000 		.4byte	0x57
+ 321 0057 02       		.uleb128 0x2
+ 322 0058 04       		.byte	0x4
+ 323 0059 05       		.byte	0x5
+ 324 005a FC010000 		.4byte	.LASF6
+ 325 005e 02       		.uleb128 0x2
+ 326 005f 04       		.byte	0x4
+ 327 0060 07       		.byte	0x7
+ 328 0061 1E010000 		.4byte	.LASF7
+ 329 0065 02       		.uleb128 0x2
+ 330 0066 08       		.byte	0x8
+ 331 0067 05       		.byte	0x5
+ 332 0068 D2010000 		.4byte	.LASF8
+ 333 006c 02       		.uleb128 0x2
+ 334 006d 08       		.byte	0x8
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccgejQC3.s 			page 9
+
+
+ 335 006e 07       		.byte	0x7
+ 336 006f 98010000 		.4byte	.LASF9
+ 337 0073 04       		.uleb128 0x4
+ 338 0074 04       		.byte	0x4
+ 339 0075 05       		.byte	0x5
+ 340 0076 696E7400 		.ascii	"int\000"
+ 341 007a 02       		.uleb128 0x2
+ 342 007b 04       		.byte	0x4
+ 343 007c 07       		.byte	0x7
+ 344 007d 8B010000 		.4byte	.LASF10
+ 345 0081 03       		.uleb128 0x3
+ 346 0082 AF010000 		.4byte	.LASF11
+ 347 0086 03       		.byte	0x3
+ 348 0087 18       		.byte	0x18
+ 349 0088 2C000000 		.4byte	0x2c
+ 350 008c 03       		.uleb128 0x3
+ 351 008d C1010000 		.4byte	.LASF12
+ 352 0091 03       		.byte	0x3
+ 353 0092 2C       		.byte	0x2c
+ 354 0093 4C000000 		.4byte	0x4c
+ 355 0097 05       		.uleb128 0x5
+ 356 0098 F6010000 		.4byte	.LASF13
+ 357 009c 04       		.byte	0x4
+ 358 009d E801     		.2byte	0x1e8
+ 359 009f 37000000 		.4byte	0x37
+ 360 00a3 02       		.uleb128 0x2
+ 361 00a4 04       		.byte	0x4
+ 362 00a5 04       		.byte	0x4
+ 363 00a6 7C000000 		.4byte	.LASF14
+ 364 00aa 02       		.uleb128 0x2
+ 365 00ab 08       		.byte	0x8
+ 366 00ac 04       		.byte	0x4
+ 367 00ad 54010000 		.4byte	.LASF15
+ 368 00b1 02       		.uleb128 0x2
+ 369 00b2 01       		.byte	0x1
+ 370 00b3 08       		.byte	0x8
+ 371 00b4 E7010000 		.4byte	.LASF16
+ 372 00b8 02       		.uleb128 0x2
+ 373 00b9 08       		.byte	0x8
+ 374 00ba 04       		.byte	0x4
+ 375 00bb 05020000 		.4byte	.LASF17
+ 376 00bf 02       		.uleb128 0x2
+ 377 00c0 04       		.byte	0x4
+ 378 00c1 07       		.byte	0x7
+ 379 00c2 C9010000 		.4byte	.LASF18
+ 380 00c6 06       		.uleb128 0x6
+ 381 00c7 60010000 		.4byte	.LASF32
+ 382 00cb 01       		.byte	0x1
+ 383 00cc 19       		.byte	0x19
+ 384 00cd 00000000 		.4byte	.LFB63
+ 385 00d1 1C010000 		.4byte	.LFE63-.LFB63
+ 386 00d5 01       		.uleb128 0x1
+ 387 00d6 9C       		.byte	0x9c
+ 388 00d7 A5030000 		.4byte	0x3a5
+ 389 00db 07       		.uleb128 0x7
+ 390 00dc 65000000 		.4byte	.LASF33
+ 391 00e0 01       		.byte	0x1
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccgejQC3.s 			page 10
+
+
+ 392 00e1 19       		.byte	0x19
+ 393 00e2 81000000 		.4byte	0x81
+ 394 00e6 00000000 		.4byte	.LLST0
+ 395 00ea 08       		.uleb128 0x8
+ 396 00eb 1A000000 		.4byte	.LVL2
+ 397 00ef 20040000 		.4byte	0x420
+ 398 00f3 FD000000 		.4byte	0xfd
+ 399 00f7 09       		.uleb128 0x9
+ 400 00f8 01       		.uleb128 0x1
+ 401 00f9 50       		.byte	0x50
+ 402 00fa 01       		.uleb128 0x1
+ 403 00fb 30       		.byte	0x30
+ 404 00fc 00       		.byte	0
+ 405 00fd 0A       		.uleb128 0xa
+ 406 00fe 1E000000 		.4byte	.LVL3
+ 407 0102 2B040000 		.4byte	0x42b
+ 408 0106 08       		.uleb128 0x8
+ 409 0107 26000000 		.4byte	.LVL4
+ 410 010b 36040000 		.4byte	0x436
+ 411 010f 1B010000 		.4byte	0x11b
+ 412 0113 09       		.uleb128 0x9
+ 413 0114 01       		.uleb128 0x1
+ 414 0115 50       		.byte	0x50
+ 415 0116 03       		.uleb128 0x3
+ 416 0117 0A       		.byte	0xa
+ 417 0118 D007     		.2byte	0x7d0
+ 418 011a 00       		.byte	0
+ 419 011b 08       		.uleb128 0x8
+ 420 011c 2C000000 		.4byte	.LVL5
+ 421 0120 20040000 		.4byte	0x420
+ 422 0124 2E010000 		.4byte	0x12e
+ 423 0128 09       		.uleb128 0x9
+ 424 0129 01       		.uleb128 0x1
+ 425 012a 50       		.byte	0x50
+ 426 012b 01       		.uleb128 0x1
+ 427 012c 31       		.byte	0x31
+ 428 012d 00       		.byte	0
+ 429 012e 0A       		.uleb128 0xa
+ 430 012f 30000000 		.4byte	.LVL6
+ 431 0133 41040000 		.4byte	0x441
+ 432 0137 08       		.uleb128 0x8
+ 433 0138 38000000 		.4byte	.LVL7
+ 434 013c 36040000 		.4byte	0x436
+ 435 0140 4C010000 		.4byte	0x14c
+ 436 0144 09       		.uleb128 0x9
+ 437 0145 01       		.uleb128 0x1
+ 438 0146 50       		.byte	0x50
+ 439 0147 03       		.uleb128 0x3
+ 440 0148 0A       		.byte	0xa
+ 441 0149 F401     		.2byte	0x1f4
+ 442 014b 00       		.byte	0
+ 443 014c 08       		.uleb128 0x8
+ 444 014d 3E000000 		.4byte	.LVL8
+ 445 0151 20040000 		.4byte	0x420
+ 446 0155 5F010000 		.4byte	0x15f
+ 447 0159 09       		.uleb128 0x9
+ 448 015a 01       		.uleb128 0x1
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccgejQC3.s 			page 11
+
+
+ 449 015b 50       		.byte	0x50
+ 450 015c 01       		.uleb128 0x1
+ 451 015d 30       		.byte	0x30
+ 452 015e 00       		.byte	0
+ 453 015f 08       		.uleb128 0x8
+ 454 0160 46000000 		.4byte	.LVL9
+ 455 0164 20040000 		.4byte	0x420
+ 456 0168 72010000 		.4byte	0x172
+ 457 016c 09       		.uleb128 0x9
+ 458 016d 01       		.uleb128 0x1
+ 459 016e 50       		.byte	0x50
+ 460 016f 01       		.uleb128 0x1
+ 461 0170 30       		.byte	0x30
+ 462 0171 00       		.byte	0
+ 463 0172 0A       		.uleb128 0xa
+ 464 0173 4A000000 		.4byte	.LVL10
+ 465 0177 2B040000 		.4byte	0x42b
+ 466 017b 08       		.uleb128 0x8
+ 467 017c 52000000 		.4byte	.LVL11
+ 468 0180 36040000 		.4byte	0x436
+ 469 0184 90010000 		.4byte	0x190
+ 470 0188 09       		.uleb128 0x9
+ 471 0189 01       		.uleb128 0x1
+ 472 018a 50       		.byte	0x50
+ 473 018b 03       		.uleb128 0x3
+ 474 018c 0A       		.byte	0xa
+ 475 018d 8813     		.2byte	0x1388
+ 476 018f 00       		.byte	0
+ 477 0190 08       		.uleb128 0x8
+ 478 0191 58000000 		.4byte	.LVL12
+ 479 0195 20040000 		.4byte	0x420
+ 480 0199 A3010000 		.4byte	0x1a3
+ 481 019d 09       		.uleb128 0x9
+ 482 019e 01       		.uleb128 0x1
+ 483 019f 50       		.byte	0x50
+ 484 01a0 01       		.uleb128 0x1
+ 485 01a1 31       		.byte	0x31
+ 486 01a2 00       		.byte	0
+ 487 01a3 0A       		.uleb128 0xa
+ 488 01a4 5C000000 		.4byte	.LVL13
+ 489 01a8 41040000 		.4byte	0x441
+ 490 01ac 08       		.uleb128 0x8
+ 491 01ad 64000000 		.4byte	.LVL14
+ 492 01b1 36040000 		.4byte	0x436
+ 493 01b5 C1010000 		.4byte	0x1c1
+ 494 01b9 09       		.uleb128 0x9
+ 495 01ba 01       		.uleb128 0x1
+ 496 01bb 50       		.byte	0x50
+ 497 01bc 03       		.uleb128 0x3
+ 498 01bd 0A       		.byte	0xa
+ 499 01be F401     		.2byte	0x1f4
+ 500 01c0 00       		.byte	0
+ 501 01c1 08       		.uleb128 0x8
+ 502 01c2 6A000000 		.4byte	.LVL15
+ 503 01c6 20040000 		.4byte	0x420
+ 504 01ca D4010000 		.4byte	0x1d4
+ 505 01ce 09       		.uleb128 0x9
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccgejQC3.s 			page 12
+
+
+ 506 01cf 01       		.uleb128 0x1
+ 507 01d0 50       		.byte	0x50
+ 508 01d1 01       		.uleb128 0x1
+ 509 01d2 30       		.byte	0x30
+ 510 01d3 00       		.byte	0
+ 511 01d4 08       		.uleb128 0x8
+ 512 01d5 72000000 		.4byte	.LVL16
+ 513 01d9 20040000 		.4byte	0x420
+ 514 01dd E7010000 		.4byte	0x1e7
+ 515 01e1 09       		.uleb128 0x9
+ 516 01e2 01       		.uleb128 0x1
+ 517 01e3 50       		.byte	0x50
+ 518 01e4 01       		.uleb128 0x1
+ 519 01e5 30       		.byte	0x30
+ 520 01e6 00       		.byte	0
+ 521 01e7 0A       		.uleb128 0xa
+ 522 01e8 76000000 		.4byte	.LVL17
+ 523 01ec 2B040000 		.4byte	0x42b
+ 524 01f0 08       		.uleb128 0x8
+ 525 01f1 7E000000 		.4byte	.LVL18
+ 526 01f5 36040000 		.4byte	0x436
+ 527 01f9 05020000 		.4byte	0x205
+ 528 01fd 09       		.uleb128 0x9
+ 529 01fe 01       		.uleb128 0x1
+ 530 01ff 50       		.byte	0x50
+ 531 0200 03       		.uleb128 0x3
+ 532 0201 0A       		.byte	0xa
+ 533 0202 1027     		.2byte	0x2710
+ 534 0204 00       		.byte	0
+ 535 0205 08       		.uleb128 0x8
+ 536 0206 84000000 		.4byte	.LVL19
+ 537 020a 20040000 		.4byte	0x420
+ 538 020e 18020000 		.4byte	0x218
+ 539 0212 09       		.uleb128 0x9
+ 540 0213 01       		.uleb128 0x1
+ 541 0214 50       		.byte	0x50
+ 542 0215 01       		.uleb128 0x1
+ 543 0216 31       		.byte	0x31
+ 544 0217 00       		.byte	0
+ 545 0218 0A       		.uleb128 0xa
+ 546 0219 88000000 		.4byte	.LVL20
+ 547 021d 41040000 		.4byte	0x441
+ 548 0221 08       		.uleb128 0x8
+ 549 0222 90000000 		.4byte	.LVL21
+ 550 0226 36040000 		.4byte	0x436
+ 551 022a 36020000 		.4byte	0x236
+ 552 022e 09       		.uleb128 0x9
+ 553 022f 01       		.uleb128 0x1
+ 554 0230 50       		.byte	0x50
+ 555 0231 03       		.uleb128 0x3
+ 556 0232 0A       		.byte	0xa
+ 557 0233 F401     		.2byte	0x1f4
+ 558 0235 00       		.byte	0
+ 559 0236 08       		.uleb128 0x8
+ 560 0237 96000000 		.4byte	.LVL22
+ 561 023b 20040000 		.4byte	0x420
+ 562 023f 49020000 		.4byte	0x249
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccgejQC3.s 			page 13
+
+
+ 563 0243 09       		.uleb128 0x9
+ 564 0244 01       		.uleb128 0x1
+ 565 0245 50       		.byte	0x50
+ 566 0246 01       		.uleb128 0x1
+ 567 0247 30       		.byte	0x30
+ 568 0248 00       		.byte	0
+ 569 0249 08       		.uleb128 0x8
+ 570 024a 9E000000 		.4byte	.LVL23
+ 571 024e 20040000 		.4byte	0x420
+ 572 0252 5C020000 		.4byte	0x25c
+ 573 0256 09       		.uleb128 0x9
+ 574 0257 01       		.uleb128 0x1
+ 575 0258 50       		.byte	0x50
+ 576 0259 01       		.uleb128 0x1
+ 577 025a 30       		.byte	0x30
+ 578 025b 00       		.byte	0
+ 579 025c 0A       		.uleb128 0xa
+ 580 025d A2000000 		.4byte	.LVL24
+ 581 0261 4C040000 		.4byte	0x44c
+ 582 0265 08       		.uleb128 0x8
+ 583 0266 AA000000 		.4byte	.LVL25
+ 584 026a 36040000 		.4byte	0x436
+ 585 026e 7A020000 		.4byte	0x27a
+ 586 0272 09       		.uleb128 0x9
+ 587 0273 01       		.uleb128 0x1
+ 588 0274 50       		.byte	0x50
+ 589 0275 03       		.uleb128 0x3
+ 590 0276 0A       		.byte	0xa
+ 591 0277 D007     		.2byte	0x7d0
+ 592 0279 00       		.byte	0
+ 593 027a 08       		.uleb128 0x8
+ 594 027b B0000000 		.4byte	.LVL26
+ 595 027f 20040000 		.4byte	0x420
+ 596 0283 8D020000 		.4byte	0x28d
+ 597 0287 09       		.uleb128 0x9
+ 598 0288 01       		.uleb128 0x1
+ 599 0289 50       		.byte	0x50
+ 600 028a 01       		.uleb128 0x1
+ 601 028b 31       		.byte	0x31
+ 602 028c 00       		.byte	0
+ 603 028d 0A       		.uleb128 0xa
+ 604 028e B4000000 		.4byte	.LVL27
+ 605 0292 41040000 		.4byte	0x441
+ 606 0296 08       		.uleb128 0x8
+ 607 0297 BC000000 		.4byte	.LVL28
+ 608 029b 36040000 		.4byte	0x436
+ 609 029f AB020000 		.4byte	0x2ab
+ 610 02a3 09       		.uleb128 0x9
+ 611 02a4 01       		.uleb128 0x1
+ 612 02a5 50       		.byte	0x50
+ 613 02a6 03       		.uleb128 0x3
+ 614 02a7 0A       		.byte	0xa
+ 615 02a8 F401     		.2byte	0x1f4
+ 616 02aa 00       		.byte	0
+ 617 02ab 08       		.uleb128 0x8
+ 618 02ac C2000000 		.4byte	.LVL29
+ 619 02b0 20040000 		.4byte	0x420
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccgejQC3.s 			page 14
+
+
+ 620 02b4 BE020000 		.4byte	0x2be
+ 621 02b8 09       		.uleb128 0x9
+ 622 02b9 01       		.uleb128 0x1
+ 623 02ba 50       		.byte	0x50
+ 624 02bb 01       		.uleb128 0x1
+ 625 02bc 30       		.byte	0x30
+ 626 02bd 00       		.byte	0
+ 627 02be 08       		.uleb128 0x8
+ 628 02bf CA000000 		.4byte	.LVL30
+ 629 02c3 20040000 		.4byte	0x420
+ 630 02c7 D1020000 		.4byte	0x2d1
+ 631 02cb 09       		.uleb128 0x9
+ 632 02cc 01       		.uleb128 0x1
+ 633 02cd 50       		.byte	0x50
+ 634 02ce 01       		.uleb128 0x1
+ 635 02cf 30       		.byte	0x30
+ 636 02d0 00       		.byte	0
+ 637 02d1 0A       		.uleb128 0xa
+ 638 02d2 CE000000 		.4byte	.LVL31
+ 639 02d6 4C040000 		.4byte	0x44c
+ 640 02da 08       		.uleb128 0x8
+ 641 02db D6000000 		.4byte	.LVL32
+ 642 02df 36040000 		.4byte	0x436
+ 643 02e3 EF020000 		.4byte	0x2ef
+ 644 02e7 09       		.uleb128 0x9
+ 645 02e8 01       		.uleb128 0x1
+ 646 02e9 50       		.byte	0x50
+ 647 02ea 03       		.uleb128 0x3
+ 648 02eb 0A       		.byte	0xa
+ 649 02ec 8813     		.2byte	0x1388
+ 650 02ee 00       		.byte	0
+ 651 02ef 08       		.uleb128 0x8
+ 652 02f0 DC000000 		.4byte	.LVL33
+ 653 02f4 20040000 		.4byte	0x420
+ 654 02f8 02030000 		.4byte	0x302
+ 655 02fc 09       		.uleb128 0x9
+ 656 02fd 01       		.uleb128 0x1
+ 657 02fe 50       		.byte	0x50
+ 658 02ff 01       		.uleb128 0x1
+ 659 0300 31       		.byte	0x31
+ 660 0301 00       		.byte	0
+ 661 0302 0A       		.uleb128 0xa
+ 662 0303 E0000000 		.4byte	.LVL34
+ 663 0307 41040000 		.4byte	0x441
+ 664 030b 08       		.uleb128 0x8
+ 665 030c E8000000 		.4byte	.LVL35
+ 666 0310 36040000 		.4byte	0x436
+ 667 0314 20030000 		.4byte	0x320
+ 668 0318 09       		.uleb128 0x9
+ 669 0319 01       		.uleb128 0x1
+ 670 031a 50       		.byte	0x50
+ 671 031b 03       		.uleb128 0x3
+ 672 031c 0A       		.byte	0xa
+ 673 031d F401     		.2byte	0x1f4
+ 674 031f 00       		.byte	0
+ 675 0320 08       		.uleb128 0x8
+ 676 0321 EE000000 		.4byte	.LVL36
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccgejQC3.s 			page 15
+
+
+ 677 0325 20040000 		.4byte	0x420
+ 678 0329 33030000 		.4byte	0x333
+ 679 032d 09       		.uleb128 0x9
+ 680 032e 01       		.uleb128 0x1
+ 681 032f 50       		.byte	0x50
+ 682 0330 01       		.uleb128 0x1
+ 683 0331 30       		.byte	0x30
+ 684 0332 00       		.byte	0
+ 685 0333 08       		.uleb128 0x8
+ 686 0334 F6000000 		.4byte	.LVL37
+ 687 0338 20040000 		.4byte	0x420
+ 688 033c 46030000 		.4byte	0x346
+ 689 0340 09       		.uleb128 0x9
+ 690 0341 01       		.uleb128 0x1
+ 691 0342 50       		.byte	0x50
+ 692 0343 01       		.uleb128 0x1
+ 693 0344 30       		.byte	0x30
+ 694 0345 00       		.byte	0
+ 695 0346 0A       		.uleb128 0xa
+ 696 0347 FA000000 		.4byte	.LVL38
+ 697 034b 4C040000 		.4byte	0x44c
+ 698 034f 08       		.uleb128 0x8
+ 699 0350 02010000 		.4byte	.LVL39
+ 700 0354 36040000 		.4byte	0x436
+ 701 0358 64030000 		.4byte	0x364
+ 702 035c 09       		.uleb128 0x9
+ 703 035d 01       		.uleb128 0x1
+ 704 035e 50       		.byte	0x50
+ 705 035f 03       		.uleb128 0x3
+ 706 0360 0A       		.byte	0xa
+ 707 0361 1027     		.2byte	0x2710
+ 708 0363 00       		.byte	0
+ 709 0364 08       		.uleb128 0x8
+ 710 0365 08010000 		.4byte	.LVL40
+ 711 0369 20040000 		.4byte	0x420
+ 712 036d 77030000 		.4byte	0x377
+ 713 0371 09       		.uleb128 0x9
+ 714 0372 01       		.uleb128 0x1
+ 715 0373 50       		.byte	0x50
+ 716 0374 01       		.uleb128 0x1
+ 717 0375 31       		.byte	0x31
+ 718 0376 00       		.byte	0
+ 719 0377 0A       		.uleb128 0xa
+ 720 0378 0C010000 		.4byte	.LVL41
+ 721 037c 41040000 		.4byte	0x441
+ 722 0380 08       		.uleb128 0x8
+ 723 0381 14010000 		.4byte	.LVL42
+ 724 0385 36040000 		.4byte	0x436
+ 725 0389 95030000 		.4byte	0x395
+ 726 038d 09       		.uleb128 0x9
+ 727 038e 01       		.uleb128 0x1
+ 728 038f 50       		.byte	0x50
+ 729 0390 03       		.uleb128 0x3
+ 730 0391 0A       		.byte	0xa
+ 731 0392 F401     		.2byte	0x1f4
+ 732 0394 00       		.byte	0
+ 733 0395 0B       		.uleb128 0xb
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccgejQC3.s 			page 16
+
+
+ 734 0396 1A010000 		.4byte	.LVL43
+ 735 039a 20040000 		.4byte	0x420
+ 736 039e 09       		.uleb128 0x9
+ 737 039f 01       		.uleb128 0x1
+ 738 03a0 50       		.byte	0x50
+ 739 03a1 01       		.uleb128 0x1
+ 740 03a2 30       		.byte	0x30
+ 741 03a3 00       		.byte	0
+ 742 03a4 00       		.byte	0
+ 743 03a5 0C       		.uleb128 0xc
+ 744 03a6 5B010000 		.4byte	.LASF34
+ 745 03aa 01       		.byte	0x1
+ 746 03ab 65       		.byte	0x65
+ 747 03ac 73000000 		.4byte	0x73
+ 748 03b0 00000000 		.4byte	.LFB64
+ 749 03b4 16000000 		.4byte	.LFE64-.LFB64
+ 750 03b8 01       		.uleb128 0x1
+ 751 03b9 9C       		.byte	0x9c
+ 752 03ba FE030000 		.4byte	0x3fe
+ 753 03be 0D       		.uleb128 0xd
+ 754 03bf 0C000000 		.4byte	.LBB2
+ 755 03c3 0A000000 		.4byte	.LBE2-.LBB2
+ 756 03c7 EB030000 		.4byte	0x3eb
+ 757 03cb 0E       		.uleb128 0xe
+ 758 03cc 6900     		.ascii	"i\000"
+ 759 03ce 01       		.byte	0x1
+ 760 03cf 79       		.byte	0x79
+ 761 03d0 97000000 		.4byte	0x97
+ 762 03d4 21000000 		.4byte	.LLST1
+ 763 03d8 0A       		.uleb128 0xa
+ 764 03d9 10000000 		.4byte	.LVL46
+ 765 03dd 57040000 		.4byte	0x457
+ 766 03e1 0A       		.uleb128 0xa
+ 767 03e2 14000000 		.4byte	.LVL47
+ 768 03e6 C6000000 		.4byte	0xc6
+ 769 03ea 00       		.byte	0
+ 770 03eb 0A       		.uleb128 0xa
+ 771 03ec 08000000 		.4byte	.LVL44
+ 772 03f0 62040000 		.4byte	0x462
+ 773 03f4 0A       		.uleb128 0xa
+ 774 03f5 0C000000 		.4byte	.LVL45
+ 775 03f9 6D040000 		.4byte	0x46d
+ 776 03fd 00       		.byte	0
+ 777 03fe 0F       		.uleb128 0xf
+ 778 03ff 47010000 		.4byte	.LASF19
+ 779 0403 05       		.byte	0x5
+ 780 0404 1207     		.2byte	0x712
+ 781 0406 0A040000 		.4byte	0x40a
+ 782 040a 10       		.uleb128 0x10
+ 783 040b 8C000000 		.4byte	0x8c
+ 784 040f 11       		.uleb128 0x11
+ 785 0410 73000000 		.4byte	.LASF20
+ 786 0414 01       		.byte	0x1
+ 787 0415 15       		.byte	0x15
+ 788 0416 73000000 		.4byte	0x73
+ 789 041a 05       		.uleb128 0x5
+ 790 041b 03       		.byte	0x3
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccgejQC3.s 			page 17
+
+
+ 791 041c 00000000 		.4byte	distance
+ 792 0420 12       		.uleb128 0x12
+ 793 0421 0A000000 		.4byte	.LASF21
+ 794 0425 0A000000 		.4byte	.LASF21
+ 795 0429 06       		.byte	0x6
+ 796 042a 26       		.byte	0x26
+ 797 042b 12       		.uleb128 0x12
+ 798 042c 3A010000 		.4byte	.LASF22
+ 799 0430 3A010000 		.4byte	.LASF22
+ 800 0434 07       		.byte	0x7
+ 801 0435 10       		.byte	0x10
+ 802 0436 12       		.uleb128 0x12
+ 803 0437 30020000 		.4byte	.LASF23
+ 804 043b 30020000 		.4byte	.LASF23
+ 805 043f 08       		.byte	0x8
+ 806 0440 76       		.byte	0x76
+ 807 0441 12       		.uleb128 0x12
+ 808 0442 30010000 		.4byte	.LASF24
+ 809 0446 30010000 		.4byte	.LASF24
+ 810 044a 07       		.byte	0x7
+ 811 044b 14       		.byte	0x14
+ 812 044c 12       		.uleb128 0x12
+ 813 044d 74010000 		.4byte	.LASF25
+ 814 0451 74010000 		.4byte	.LASF25
+ 815 0455 07       		.byte	0x7
+ 816 0456 11       		.byte	0x11
+ 817 0457 12       		.uleb128 0x12
+ 818 0458 1F000000 		.4byte	.LASF26
+ 819 045c 1F000000 		.4byte	.LASF26
+ 820 0460 09       		.byte	0x9
+ 821 0461 0D       		.byte	0xd
+ 822 0462 12       		.uleb128 0x12
+ 823 0463 82010000 		.4byte	.LASF27
+ 824 0467 82010000 		.4byte	.LASF27
+ 825 046b 09       		.byte	0x9
+ 826 046c 0C       		.byte	0xc
+ 827 046d 12       		.uleb128 0x12
+ 828 046e B7010000 		.4byte	.LASF28
+ 829 0472 B7010000 		.4byte	.LASF28
+ 830 0476 07       		.byte	0x7
+ 831 0477 0F       		.byte	0xf
+ 832 0478 00       		.byte	0
+ 833              		.section	.debug_abbrev,"",%progbits
+ 834              	.Ldebug_abbrev0:
+ 835 0000 01       		.uleb128 0x1
+ 836 0001 11       		.uleb128 0x11
+ 837 0002 01       		.byte	0x1
+ 838 0003 25       		.uleb128 0x25
+ 839 0004 0E       		.uleb128 0xe
+ 840 0005 13       		.uleb128 0x13
+ 841 0006 0B       		.uleb128 0xb
+ 842 0007 03       		.uleb128 0x3
+ 843 0008 0E       		.uleb128 0xe
+ 844 0009 1B       		.uleb128 0x1b
+ 845 000a 0E       		.uleb128 0xe
+ 846 000b 55       		.uleb128 0x55
+ 847 000c 17       		.uleb128 0x17
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccgejQC3.s 			page 18
+
+
+ 848 000d 11       		.uleb128 0x11
+ 849 000e 01       		.uleb128 0x1
+ 850 000f 10       		.uleb128 0x10
+ 851 0010 17       		.uleb128 0x17
+ 852 0011 00       		.byte	0
+ 853 0012 00       		.byte	0
+ 854 0013 02       		.uleb128 0x2
+ 855 0014 24       		.uleb128 0x24
+ 856 0015 00       		.byte	0
+ 857 0016 0B       		.uleb128 0xb
+ 858 0017 0B       		.uleb128 0xb
+ 859 0018 3E       		.uleb128 0x3e
+ 860 0019 0B       		.uleb128 0xb
+ 861 001a 03       		.uleb128 0x3
+ 862 001b 0E       		.uleb128 0xe
+ 863 001c 00       		.byte	0
+ 864 001d 00       		.byte	0
+ 865 001e 03       		.uleb128 0x3
+ 866 001f 16       		.uleb128 0x16
+ 867 0020 00       		.byte	0
+ 868 0021 03       		.uleb128 0x3
+ 869 0022 0E       		.uleb128 0xe
+ 870 0023 3A       		.uleb128 0x3a
+ 871 0024 0B       		.uleb128 0xb
+ 872 0025 3B       		.uleb128 0x3b
+ 873 0026 0B       		.uleb128 0xb
+ 874 0027 49       		.uleb128 0x49
+ 875 0028 13       		.uleb128 0x13
+ 876 0029 00       		.byte	0
+ 877 002a 00       		.byte	0
+ 878 002b 04       		.uleb128 0x4
+ 879 002c 24       		.uleb128 0x24
+ 880 002d 00       		.byte	0
+ 881 002e 0B       		.uleb128 0xb
+ 882 002f 0B       		.uleb128 0xb
+ 883 0030 3E       		.uleb128 0x3e
+ 884 0031 0B       		.uleb128 0xb
+ 885 0032 03       		.uleb128 0x3
+ 886 0033 08       		.uleb128 0x8
+ 887 0034 00       		.byte	0
+ 888 0035 00       		.byte	0
+ 889 0036 05       		.uleb128 0x5
+ 890 0037 16       		.uleb128 0x16
+ 891 0038 00       		.byte	0
+ 892 0039 03       		.uleb128 0x3
+ 893 003a 0E       		.uleb128 0xe
+ 894 003b 3A       		.uleb128 0x3a
+ 895 003c 0B       		.uleb128 0xb
+ 896 003d 3B       		.uleb128 0x3b
+ 897 003e 05       		.uleb128 0x5
+ 898 003f 49       		.uleb128 0x49
+ 899 0040 13       		.uleb128 0x13
+ 900 0041 00       		.byte	0
+ 901 0042 00       		.byte	0
+ 902 0043 06       		.uleb128 0x6
+ 903 0044 2E       		.uleb128 0x2e
+ 904 0045 01       		.byte	0x1
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccgejQC3.s 			page 19
+
+
+ 905 0046 3F       		.uleb128 0x3f
+ 906 0047 19       		.uleb128 0x19
+ 907 0048 03       		.uleb128 0x3
+ 908 0049 0E       		.uleb128 0xe
+ 909 004a 3A       		.uleb128 0x3a
+ 910 004b 0B       		.uleb128 0xb
+ 911 004c 3B       		.uleb128 0x3b
+ 912 004d 0B       		.uleb128 0xb
+ 913 004e 27       		.uleb128 0x27
+ 914 004f 19       		.uleb128 0x19
+ 915 0050 11       		.uleb128 0x11
+ 916 0051 01       		.uleb128 0x1
+ 917 0052 12       		.uleb128 0x12
+ 918 0053 06       		.uleb128 0x6
+ 919 0054 40       		.uleb128 0x40
+ 920 0055 18       		.uleb128 0x18
+ 921 0056 9742     		.uleb128 0x2117
+ 922 0058 19       		.uleb128 0x19
+ 923 0059 01       		.uleb128 0x1
+ 924 005a 13       		.uleb128 0x13
+ 925 005b 00       		.byte	0
+ 926 005c 00       		.byte	0
+ 927 005d 07       		.uleb128 0x7
+ 928 005e 05       		.uleb128 0x5
+ 929 005f 00       		.byte	0
+ 930 0060 03       		.uleb128 0x3
+ 931 0061 0E       		.uleb128 0xe
+ 932 0062 3A       		.uleb128 0x3a
+ 933 0063 0B       		.uleb128 0xb
+ 934 0064 3B       		.uleb128 0x3b
+ 935 0065 0B       		.uleb128 0xb
+ 936 0066 49       		.uleb128 0x49
+ 937 0067 13       		.uleb128 0x13
+ 938 0068 02       		.uleb128 0x2
+ 939 0069 17       		.uleb128 0x17
+ 940 006a 00       		.byte	0
+ 941 006b 00       		.byte	0
+ 942 006c 08       		.uleb128 0x8
+ 943 006d 898201   		.uleb128 0x4109
+ 944 0070 01       		.byte	0x1
+ 945 0071 11       		.uleb128 0x11
+ 946 0072 01       		.uleb128 0x1
+ 947 0073 31       		.uleb128 0x31
+ 948 0074 13       		.uleb128 0x13
+ 949 0075 01       		.uleb128 0x1
+ 950 0076 13       		.uleb128 0x13
+ 951 0077 00       		.byte	0
+ 952 0078 00       		.byte	0
+ 953 0079 09       		.uleb128 0x9
+ 954 007a 8A8201   		.uleb128 0x410a
+ 955 007d 00       		.byte	0
+ 956 007e 02       		.uleb128 0x2
+ 957 007f 18       		.uleb128 0x18
+ 958 0080 9142     		.uleb128 0x2111
+ 959 0082 18       		.uleb128 0x18
+ 960 0083 00       		.byte	0
+ 961 0084 00       		.byte	0
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccgejQC3.s 			page 20
+
+
+ 962 0085 0A       		.uleb128 0xa
+ 963 0086 898201   		.uleb128 0x4109
+ 964 0089 00       		.byte	0
+ 965 008a 11       		.uleb128 0x11
+ 966 008b 01       		.uleb128 0x1
+ 967 008c 31       		.uleb128 0x31
+ 968 008d 13       		.uleb128 0x13
+ 969 008e 00       		.byte	0
+ 970 008f 00       		.byte	0
+ 971 0090 0B       		.uleb128 0xb
+ 972 0091 898201   		.uleb128 0x4109
+ 973 0094 01       		.byte	0x1
+ 974 0095 11       		.uleb128 0x11
+ 975 0096 01       		.uleb128 0x1
+ 976 0097 31       		.uleb128 0x31
+ 977 0098 13       		.uleb128 0x13
+ 978 0099 00       		.byte	0
+ 979 009a 00       		.byte	0
+ 980 009b 0C       		.uleb128 0xc
+ 981 009c 2E       		.uleb128 0x2e
+ 982 009d 01       		.byte	0x1
+ 983 009e 3F       		.uleb128 0x3f
+ 984 009f 19       		.uleb128 0x19
+ 985 00a0 03       		.uleb128 0x3
+ 986 00a1 0E       		.uleb128 0xe
+ 987 00a2 3A       		.uleb128 0x3a
+ 988 00a3 0B       		.uleb128 0xb
+ 989 00a4 3B       		.uleb128 0x3b
+ 990 00a5 0B       		.uleb128 0xb
+ 991 00a6 27       		.uleb128 0x27
+ 992 00a7 19       		.uleb128 0x19
+ 993 00a8 49       		.uleb128 0x49
+ 994 00a9 13       		.uleb128 0x13
+ 995 00aa 8701     		.uleb128 0x87
+ 996 00ac 19       		.uleb128 0x19
+ 997 00ad 11       		.uleb128 0x11
+ 998 00ae 01       		.uleb128 0x1
+ 999 00af 12       		.uleb128 0x12
+ 1000 00b0 06       		.uleb128 0x6
+ 1001 00b1 40       		.uleb128 0x40
+ 1002 00b2 18       		.uleb128 0x18
+ 1003 00b3 9742     		.uleb128 0x2117
+ 1004 00b5 19       		.uleb128 0x19
+ 1005 00b6 01       		.uleb128 0x1
+ 1006 00b7 13       		.uleb128 0x13
+ 1007 00b8 00       		.byte	0
+ 1008 00b9 00       		.byte	0
+ 1009 00ba 0D       		.uleb128 0xd
+ 1010 00bb 0B       		.uleb128 0xb
+ 1011 00bc 01       		.byte	0x1
+ 1012 00bd 11       		.uleb128 0x11
+ 1013 00be 01       		.uleb128 0x1
+ 1014 00bf 12       		.uleb128 0x12
+ 1015 00c0 06       		.uleb128 0x6
+ 1016 00c1 01       		.uleb128 0x1
+ 1017 00c2 13       		.uleb128 0x13
+ 1018 00c3 00       		.byte	0
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccgejQC3.s 			page 21
+
+
+ 1019 00c4 00       		.byte	0
+ 1020 00c5 0E       		.uleb128 0xe
+ 1021 00c6 34       		.uleb128 0x34
+ 1022 00c7 00       		.byte	0
+ 1023 00c8 03       		.uleb128 0x3
+ 1024 00c9 08       		.uleb128 0x8
+ 1025 00ca 3A       		.uleb128 0x3a
+ 1026 00cb 0B       		.uleb128 0xb
+ 1027 00cc 3B       		.uleb128 0x3b
+ 1028 00cd 0B       		.uleb128 0xb
+ 1029 00ce 49       		.uleb128 0x49
+ 1030 00cf 13       		.uleb128 0x13
+ 1031 00d0 02       		.uleb128 0x2
+ 1032 00d1 17       		.uleb128 0x17
+ 1033 00d2 00       		.byte	0
+ 1034 00d3 00       		.byte	0
+ 1035 00d4 0F       		.uleb128 0xf
+ 1036 00d5 34       		.uleb128 0x34
+ 1037 00d6 00       		.byte	0
+ 1038 00d7 03       		.uleb128 0x3
+ 1039 00d8 0E       		.uleb128 0xe
+ 1040 00d9 3A       		.uleb128 0x3a
+ 1041 00da 0B       		.uleb128 0xb
+ 1042 00db 3B       		.uleb128 0x3b
+ 1043 00dc 05       		.uleb128 0x5
+ 1044 00dd 49       		.uleb128 0x49
+ 1045 00de 13       		.uleb128 0x13
+ 1046 00df 3F       		.uleb128 0x3f
+ 1047 00e0 19       		.uleb128 0x19
+ 1048 00e1 3C       		.uleb128 0x3c
+ 1049 00e2 19       		.uleb128 0x19
+ 1050 00e3 00       		.byte	0
+ 1051 00e4 00       		.byte	0
+ 1052 00e5 10       		.uleb128 0x10
+ 1053 00e6 35       		.uleb128 0x35
+ 1054 00e7 00       		.byte	0
+ 1055 00e8 49       		.uleb128 0x49
+ 1056 00e9 13       		.uleb128 0x13
+ 1057 00ea 00       		.byte	0
+ 1058 00eb 00       		.byte	0
+ 1059 00ec 11       		.uleb128 0x11
+ 1060 00ed 34       		.uleb128 0x34
+ 1061 00ee 00       		.byte	0
+ 1062 00ef 03       		.uleb128 0x3
+ 1063 00f0 0E       		.uleb128 0xe
+ 1064 00f1 3A       		.uleb128 0x3a
+ 1065 00f2 0B       		.uleb128 0xb
+ 1066 00f3 3B       		.uleb128 0x3b
+ 1067 00f4 0B       		.uleb128 0xb
+ 1068 00f5 49       		.uleb128 0x49
+ 1069 00f6 13       		.uleb128 0x13
+ 1070 00f7 3F       		.uleb128 0x3f
+ 1071 00f8 19       		.uleb128 0x19
+ 1072 00f9 02       		.uleb128 0x2
+ 1073 00fa 18       		.uleb128 0x18
+ 1074 00fb 00       		.byte	0
+ 1075 00fc 00       		.byte	0
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccgejQC3.s 			page 22
+
+
+ 1076 00fd 12       		.uleb128 0x12
+ 1077 00fe 2E       		.uleb128 0x2e
+ 1078 00ff 00       		.byte	0
+ 1079 0100 3F       		.uleb128 0x3f
+ 1080 0101 19       		.uleb128 0x19
+ 1081 0102 3C       		.uleb128 0x3c
+ 1082 0103 19       		.uleb128 0x19
+ 1083 0104 6E       		.uleb128 0x6e
+ 1084 0105 0E       		.uleb128 0xe
+ 1085 0106 03       		.uleb128 0x3
+ 1086 0107 0E       		.uleb128 0xe
+ 1087 0108 3A       		.uleb128 0x3a
+ 1088 0109 0B       		.uleb128 0xb
+ 1089 010a 3B       		.uleb128 0x3b
+ 1090 010b 0B       		.uleb128 0xb
+ 1091 010c 00       		.byte	0
+ 1092 010d 00       		.byte	0
+ 1093 010e 00       		.byte	0
+ 1094              		.section	.debug_loc,"",%progbits
+ 1095              	.Ldebug_loc0:
+ 1096              	.LLST0:
+ 1097 0000 00000000 		.4byte	.LVL0
+ 1098 0004 04000000 		.4byte	.LVL1
+ 1099 0008 0100     		.2byte	0x1
+ 1100 000a 50       		.byte	0x50
+ 1101 000b 04000000 		.4byte	.LVL1
+ 1102 000f 1C010000 		.4byte	.LFE63
+ 1103 0013 0400     		.2byte	0x4
+ 1104 0015 F3       		.byte	0xf3
+ 1105 0016 01       		.uleb128 0x1
+ 1106 0017 50       		.byte	0x50
+ 1107 0018 9F       		.byte	0x9f
+ 1108 0019 00000000 		.4byte	0
+ 1109 001d 00000000 		.4byte	0
+ 1110              	.LLST1:
+ 1111 0021 10000000 		.4byte	.LVL46
+ 1112 0025 13000000 		.4byte	.LVL47-1
+ 1113 0029 0100     		.2byte	0x1
+ 1114 002b 50       		.byte	0x50
+ 1115 002c 00000000 		.4byte	0
+ 1116 0030 00000000 		.4byte	0
+ 1117              		.section	.debug_aranges,"",%progbits
+ 1118 0000 24000000 		.4byte	0x24
+ 1119 0004 0200     		.2byte	0x2
+ 1120 0006 00000000 		.4byte	.Ldebug_info0
+ 1121 000a 04       		.byte	0x4
+ 1122 000b 00       		.byte	0
+ 1123 000c 0000     		.2byte	0
+ 1124 000e 0000     		.2byte	0
+ 1125 0010 00000000 		.4byte	.LFB63
+ 1126 0014 1C010000 		.4byte	.LFE63-.LFB63
+ 1127 0018 00000000 		.4byte	.LFB64
+ 1128 001c 16000000 		.4byte	.LFE64-.LFB64
+ 1129 0020 00000000 		.4byte	0
+ 1130 0024 00000000 		.4byte	0
+ 1131              		.section	.debug_ranges,"",%progbits
+ 1132              	.Ldebug_ranges0:
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccgejQC3.s 			page 23
+
+
+ 1133 0000 00000000 		.4byte	.LFB63
+ 1134 0004 1C010000 		.4byte	.LFE63
+ 1135 0008 00000000 		.4byte	.LFB64
+ 1136 000c 16000000 		.4byte	.LFE64
+ 1137 0010 00000000 		.4byte	0
+ 1138 0014 00000000 		.4byte	0
+ 1139              		.section	.debug_line,"",%progbits
+ 1140              	.Ldebug_line0:
+ 1141 0000 ED010000 		.section	.debug_str,"MS",%progbits,1
+ 1141      02008901 
+ 1141      00000201 
+ 1141      FB0E0D00 
+ 1141      01010101 
+ 1142              	.LASF4:
+ 1143 0000 5F5F7569 		.ascii	"__uint8_t\000"
+ 1143      6E74385F 
+ 1143      7400
+ 1144              	.LASF21:
+ 1145 000a 446F6E65 		.ascii	"Done_Write\000"
+ 1145      5F577269 
+ 1145      746500
+ 1146              	.LASF5:
+ 1147 0015 5F5F696E 		.ascii	"__int32_t\000"
+ 1147      7433325F 
+ 1147      7400
+ 1148              	.LASF26:
+ 1149 001f 4932435F 		.ascii	"I2C_Kommunikation\000"
+ 1149      4B6F6D6D 
+ 1149      756E696B 
+ 1149      6174696F 
+ 1149      6E00
+ 1150              	.LASF31:
+ 1151 0031 433A5C55 		.ascii	"C:\\Users\\AugustHA\\Documents\\Main_Project\\Main."
+ 1151      73657273 
+ 1151      5C417567 
+ 1151      75737448 
+ 1151      415C446F 
+ 1152 005f 63796473 		.ascii	"cydsn\000"
+ 1152      6E00
+ 1153              	.LASF33:
+ 1154 0065 6F726465 		.ascii	"orderReceived\000"
+ 1154      72526563 
+ 1154      65697665 
+ 1154      6400
+ 1155              	.LASF20:
+ 1156 0073 64697374 		.ascii	"distance\000"
+ 1156      616E6365 
+ 1156      00
+ 1157              	.LASF14:
+ 1158 007c 666C6F61 		.ascii	"float\000"
+ 1158      7400
+ 1159              	.LASF1:
+ 1160 0082 756E7369 		.ascii	"unsigned char\000"
+ 1160      676E6564 
+ 1160      20636861 
+ 1160      7200
+ 1161              	.LASF29:
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccgejQC3.s 			page 24
+
+
+ 1162 0090 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1162      43313120 
+ 1162      352E342E 
+ 1162      31203230 
+ 1162      31363036 
+ 1163 00c3 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 1163      20726576 
+ 1163      6973696F 
+ 1163      6E203233 
+ 1163      37373135 
+ 1164 00f6 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1164      66756E63 
+ 1164      74696F6E 
+ 1164      2D736563 
+ 1164      74696F6E 
+ 1165              	.LASF7:
+ 1166 011e 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1166      20756E73 
+ 1166      69676E65 
+ 1166      6420696E 
+ 1166      7400
+ 1167              	.LASF24:
+ 1168 0130 64726976 		.ascii	"driveStop\000"
+ 1168      6553746F 
+ 1168      7000
+ 1169              	.LASF22:
+ 1170 013a 64726976 		.ascii	"driveForward\000"
+ 1170      65466F72 
+ 1170      77617264 
+ 1170      00
+ 1171              	.LASF19:
+ 1172 0147 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 1172      52784275 
+ 1172      66666572 
+ 1172      00
+ 1173              	.LASF15:
+ 1174 0154 646F7562 		.ascii	"double\000"
+ 1174      6C6500
+ 1175              	.LASF34:
+ 1176 015b 6D61696E 		.ascii	"main\000"
+ 1176      00
+ 1177              	.LASF32:
+ 1178 0160 68616E64 		.ascii	"handleOrderReceived\000"
+ 1178      6C654F72 
+ 1178      64657252 
+ 1178      65636569 
+ 1178      76656400 
+ 1179              	.LASF25:
+ 1180 0174 64726976 		.ascii	"driveBackward\000"
+ 1180      65426163 
+ 1180      6B776172 
+ 1180      6400
+ 1181              	.LASF27:
+ 1182 0182 696E6974 		.ascii	"init_i2c\000"
+ 1182      5F693263 
+ 1182      00
+ 1183              	.LASF10:
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccgejQC3.s 			page 25
+
+
+ 1184 018b 756E7369 		.ascii	"unsigned int\000"
+ 1184      676E6564 
+ 1184      20696E74 
+ 1184      00
+ 1185              	.LASF9:
+ 1186 0198 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1186      206C6F6E 
+ 1186      6720756E 
+ 1186      7369676E 
+ 1186      65642069 
+ 1187              	.LASF11:
+ 1188 01af 75696E74 		.ascii	"uint8_t\000"
+ 1188      385F7400 
+ 1189              	.LASF28:
+ 1190 01b7 696E6974 		.ascii	"initMotor\000"
+ 1190      4D6F746F 
+ 1190      7200
+ 1191              	.LASF12:
+ 1192 01c1 696E7433 		.ascii	"int32_t\000"
+ 1192      325F7400 
+ 1193              	.LASF18:
+ 1194 01c9 73697A65 		.ascii	"sizetype\000"
+ 1194      74797065 
+ 1194      00
+ 1195              	.LASF8:
+ 1196 01d2 6C6F6E67 		.ascii	"long long int\000"
+ 1196      206C6F6E 
+ 1196      6720696E 
+ 1196      7400
+ 1197              	.LASF30:
+ 1198 01e0 6D61696E 		.ascii	"main.c\000"
+ 1198      2E6300
+ 1199              	.LASF16:
+ 1200 01e7 63686172 		.ascii	"char\000"
+ 1200      00
+ 1201              	.LASF2:
+ 1202 01ec 73686F72 		.ascii	"short int\000"
+ 1202      7420696E 
+ 1202      7400
+ 1203              	.LASF13:
+ 1204 01f6 75696E74 		.ascii	"uint8\000"
+ 1204      3800
+ 1205              	.LASF6:
+ 1206 01fc 6C6F6E67 		.ascii	"long int\000"
+ 1206      20696E74 
+ 1206      00
+ 1207              	.LASF17:
+ 1208 0205 6C6F6E67 		.ascii	"long double\000"
+ 1208      20646F75 
+ 1208      626C6500 
+ 1209              	.LASF0:
+ 1210 0211 7369676E 		.ascii	"signed char\000"
+ 1210      65642063 
+ 1210      68617200 
+ 1211              	.LASF3:
+ 1212 021d 73686F72 		.ascii	"short unsigned int\000"
+ 1212      7420756E 
+ARM GAS  C:\Users\AugustHA\AppData\Local\Temp\ccgejQC3.s 			page 26
+
+
+ 1212      7369676E 
+ 1212      65642069 
+ 1212      6E7400
+ 1213              	.LASF23:
+ 1214 0230 43794465 		.ascii	"CyDelay\000"
+ 1214      6C617900 
+ 1215              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

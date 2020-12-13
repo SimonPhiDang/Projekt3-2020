@@ -42,7 +42,7 @@ CY_ISR(counter_isr)//Counter i interrupt routine
     Counter_cycle++;
 }
 
-void init_start(void)//Starter de indbyggede funktioner fra topdesign: UART, Timer, Counter
+void init_Color(void)//Starter de indbyggede funktioner fra topdesign: UART, Timer, Counter
 {
     CyGlobalIntEnable;
     
@@ -117,7 +117,7 @@ int standardColor()
 {
 
     
-    init_start();
+    init_Color();
     read_color();
 
     freqR_0 = get_freq('r');
@@ -136,7 +136,7 @@ uint countB = 0;
 uint countU = 0;
 
     
-    init_start();
+    init_Color();
     read_color();
     
  //   freqR_0 = get_freq('r');

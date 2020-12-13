@@ -37,7 +37,7 @@ int main(void)
     //inits
     initMotor(); //Motor
     ADC_init();  //Vægtsensor
-    init_start(); //Colorsensor
+    init_Color(); //Colorsensor
     initDistSens(); //Afstandssensor
     initiere_I2Ckommunikation(); //I2C
     
@@ -46,7 +46,7 @@ int main(void)
 
         for(;;)
        {
-        int i = I2C_Kommunikation();
+        int i = newOrder();
         handleOrderReceived(i);   
        }
 }
@@ -71,7 +71,7 @@ void beertressWorkWork(int type, int table, int amount)
                     CyDelay(1000);
                     
                     int antal = amount*0.346;
-                    int vaegt = ADC_Measure();
+                    float vaegt = ADC_Measure();
                     while(vaegt >= 0.246)
                     {
                     }

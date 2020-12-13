@@ -10,5 +10,5 @@
  * ========================================
 */
 void initiere_I2Ckommunikation();
-char I2C_Kommunikation();
+char newOrder();
 /* [] END OF FILE */
