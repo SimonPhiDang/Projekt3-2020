@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccSV9mu9.s 			page 1
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccWlRjdp.s 			page 1
 
 
    1              		.syntax unified
@@ -19,14 +19,14 @@ ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccSV9mu9.s 			page 1
   16              		.text
   17              	.Ltext0:
   18              		.cfi_sections	.debug_frame
-  19              		.section	.text.Timer_int_Handler,"ax",%progbits
+  19              		.section	.text.initDistSens,"ax",%progbits
   20              		.align	2
-  21              		.global	Timer_int_Handler
+  21              		.global	initDistSens
   22              		.thumb
   23              		.thumb_func
-  24              		.type	Timer_int_Handler, %function
-  25              	Timer_int_Handler:
-  26              	.LFB66:
+  24              		.type	initDistSens, %function
+  25              	initDistSens:
+  26              	.LFB64:
   27              		.file 1 "Afstandssensor.c"
    1:Afstandssensor.c **** /* ========================================
    2:Afstandssensor.c ****  *
@@ -42,32 +42,14 @@ ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccSV9mu9.s 			page 1
   12:Afstandssensor.c **** #include "project.h"
   13:Afstandssensor.c **** #include <stdio.h>
   14:Afstandssensor.c **** #include <stdlib.h>
-  15:Afstandssensor.c **** int distance;
-  16:Afstandssensor.c **** CY_ISR_PROTO(Timer_int_Handler);
-  17:Afstandssensor.c **** 
+  15:Afstandssensor.c **** 
+  16:Afstandssensor.c **** int distance;
+  17:Afstandssensor.c **** CY_ISR_PROTO(Timer_int_1_Handler);
   18:Afstandssensor.c **** 
-  19:Afstandssensor.c **** void initDistSens()
-  20:Afstandssensor.c **** {
-  21:Afstandssensor.c ****     
-  22:Afstandssensor.c ****     PWM_Trigger_Start();
-  23:Afstandssensor.c ****     Timer_1_Start();
-  24:Afstandssensor.c ****     Timer_int_1_StartEx(Timer_int_Handler);
-  25:Afstandssensor.c ****     
-  26:Afstandssensor.c **** }
-  27:Afstandssensor.c **** 
-  28:Afstandssensor.c **** int calcDist()
-  29:Afstandssensor.c **** {
-  30:Afstandssensor.c ****     distance = (65535 - Timer_1_ReadCapture()) * 0.017;
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccSV9mu9.s 			page 2
-
-
-  31:Afstandssensor.c ****     return distance;
-  32:Afstandssensor.c **** }
-  33:Afstandssensor.c **** 
-  34:Afstandssensor.c **** 
-  35:Afstandssensor.c **** CY_ISR(Timer_int_Handler)
-  36:Afstandssensor.c **** {
-  28              		.loc 1 36 0
+  19:Afstandssensor.c **** 
+  20:Afstandssensor.c **** void initDistSens()
+  21:Afstandssensor.c **** {
+  28              		.loc 1 21 0
   29              		.cfi_startproc
   30              		@ args = 0, pretend = 0, frame = 0
   31              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -75,724 +57,911 @@ ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccSV9mu9.s 			page 1
   33              		.cfi_def_cfa_offset 8
   34              		.cfi_offset 3, -8
   35              		.cfi_offset 14, -4
-  37:Afstandssensor.c ****     Timer_1_ClearFIFO();
-  36              		.loc 1 37 0
-  37 0002 FFF7FEFF 		bl	Timer_1_ClearFIFO
+  22:Afstandssensor.c ****     PWM_Trigger_Start();
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccWlRjdp.s 			page 2
+
+
+  36              		.loc 1 22 0
+  37 0002 FFF7FEFF 		bl	PWM_Trigger_Start
   38              	.LVL0:
-  39 0006 08BD     		pop	{r3, pc}
-  40              		.cfi_endproc
-  41              	.LFE66:
-  42              		.size	Timer_int_Handler, .-Timer_int_Handler
-  43              		.section	.text.initDistSens,"ax",%progbits
-  44              		.align	2
-  45              		.global	initDistSens
-  46              		.thumb
-  47              		.thumb_func
-  48              		.type	initDistSens, %function
-  49              	initDistSens:
-  50              	.LFB64:
-  20:Afstandssensor.c ****     
-  51              		.loc 1 20 0
-  52              		.cfi_startproc
-  53              		@ args = 0, pretend = 0, frame = 0
-  54              		@ frame_needed = 0, uses_anonymous_args = 0
-  55 0000 08B5     		push	{r3, lr}
-  56              		.cfi_def_cfa_offset 8
-  57              		.cfi_offset 3, -8
-  58              		.cfi_offset 14, -4
-  22:Afstandssensor.c ****     Timer_1_Start();
-  59              		.loc 1 22 0
-  60 0002 FFF7FEFF 		bl	PWM_Trigger_Start
-  61              	.LVL1:
-  23:Afstandssensor.c ****     Timer_int_1_StartEx(Timer_int_Handler);
-  62              		.loc 1 23 0
-  63 0006 FFF7FEFF 		bl	Timer_1_Start
-  64              	.LVL2:
-  24:Afstandssensor.c ****     
-  65              		.loc 1 24 0
-  66 000a 0248     		ldr	r0, .L5
-  67 000c FFF7FEFF 		bl	Timer_int_1_StartEx
-  68              	.LVL3:
-  69 0010 08BD     		pop	{r3, pc}
-  70              	.L6:
-  71 0012 00BF     		.align	2
-  72              	.L5:
-  73 0014 00000000 		.word	Timer_int_Handler
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccSV9mu9.s 			page 3
+  23:Afstandssensor.c ****     Timer_1_Start();
+  39              		.loc 1 23 0
+  40 0006 FFF7FEFF 		bl	Timer_1_Start
+  41              	.LVL1:
+  24:Afstandssensor.c ****     Timer_int_1_StartEx(Timer_int_1_Handler);
+  42              		.loc 1 24 0
+  43 000a 0248     		ldr	r0, .L3
+  44 000c FFF7FEFF 		bl	Timer_int_1_StartEx
+  45              	.LVL2:
+  46 0010 08BD     		pop	{r3, pc}
+  47              	.L4:
+  48 0012 00BF     		.align	2
+  49              	.L3:
+  50 0014 00000000 		.word	Timer_int_1_Handler
+  51              		.cfi_endproc
+  52              	.LFE64:
+  53              		.size	initDistSens, .-initDistSens
+  54              		.global	__aeabi_i2d
+  55              		.global	__aeabi_dmul
+  56              		.global	__aeabi_d2iz
+  57              		.section	.text.calcDist,"ax",%progbits
+  58              		.align	2
+  59              		.global	calcDist
+  60              		.thumb
+  61              		.thumb_func
+  62              		.type	calcDist, %function
+  63              	calcDist:
+  64              	.LFB65:
+  25:Afstandssensor.c **** }
+  26:Afstandssensor.c **** 
+  27:Afstandssensor.c **** int calcDist()
+  28:Afstandssensor.c **** {
+  65              		.loc 1 28 0
+  66              		.cfi_startproc
+  67              		@ args = 0, pretend = 0, frame = 0
+  68              		@ frame_needed = 0, uses_anonymous_args = 0
+  69 0000 10B5     		push	{r4, lr}
+  70              		.cfi_def_cfa_offset 8
+  71              		.cfi_offset 4, -8
+  72              		.cfi_offset 14, -4
+  29:Afstandssensor.c ****     int capture = Timer_1_ReadCapture();
+  73              		.loc 1 29 0
+  74 0002 FFF7FEFF 		bl	Timer_1_ReadCapture
+  75              	.LVL3:
+  76 0006 0446     		mov	r4, r0
+  77              	.LVL4:
+  30:Afstandssensor.c ****     
+  31:Afstandssensor.c ****     distance = (65535 - capture) * 0.017;
+  78              		.loc 1 31 0
+  79 0008 C0F57F40 		rsb	r0, r0, #65280
+  80              	.LVL5:
+  81 000c FF30     		adds	r0, r0, #255
+  82 000e FFF7FEFF 		bl	__aeabi_i2d
+  83              	.LVL6:
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccWlRjdp.s 			page 3
 
 
-  74              		.cfi_endproc
-  75              	.LFE64:
-  76              		.size	initDistSens, .-initDistSens
-  77              		.global	__aeabi_i2d
-  78              		.global	__aeabi_dmul
-  79              		.global	__aeabi_d2iz
-  80              		.section	.text.calcDist,"ax",%progbits
-  81              		.align	2
-  82              		.global	calcDist
-  83              		.thumb
-  84              		.thumb_func
-  85              		.type	calcDist, %function
-  86              	calcDist:
-  87              	.LFB65:
-  29:Afstandssensor.c ****     distance = (65535 - Timer_1_ReadCapture()) * 0.017;
-  88              		.loc 1 29 0
-  89              		.cfi_startproc
-  90              		@ args = 0, pretend = 0, frame = 0
-  91              		@ frame_needed = 0, uses_anonymous_args = 0
-  92 0000 08B5     		push	{r3, lr}
-  93              		.cfi_def_cfa_offset 8
-  94              		.cfi_offset 3, -8
-  95              		.cfi_offset 14, -4
-  30:Afstandssensor.c ****     return distance;
-  96              		.loc 1 30 0
-  97 0002 FFF7FEFF 		bl	Timer_1_ReadCapture
-  98              	.LVL4:
-  99 0006 C0F57F40 		rsb	r0, r0, #65280
- 100 000a FF30     		adds	r0, r0, #255
- 101 000c FFF7FEFF 		bl	__aeabi_i2d
- 102              	.LVL5:
- 103 0010 05A3     		adr	r3, .L9
- 104 0012 D3E90023 		ldrd	r2, [r3]
- 105 0016 FFF7FEFF 		bl	__aeabi_dmul
- 106              	.LVL6:
- 107 001a FFF7FEFF 		bl	__aeabi_d2iz
- 108              	.LVL7:
- 109 001e 044B     		ldr	r3, .L9+8
- 110 0020 1860     		str	r0, [r3]
-  32:Afstandssensor.c **** 
- 111              		.loc 1 32 0
- 112 0022 08BD     		pop	{r3, pc}
- 113              	.L10:
- 114 0024 AFF30080 		.align	3
- 115              	.L9:
- 116 0028 9CC420B0 		.word	-1340029796
- 117 002c 7268913F 		.word	1066494066
- 118 0030 00000000 		.word	distance
- 119              		.cfi_endproc
- 120              	.LFE65:
- 121              		.size	calcDist, .-calcDist
- 122              		.comm	distance,4,4
- 123              		.text
- 124              	.Letext0:
- 125              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.3\\psoc creator\\import\\gnu\\arm\\5.4.
- 126              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.3\\psoc creator\\import\\gnu\\arm\\5.4.
- 127              		.file 4 "Generated_Source\\PSoC5/core_cm3.h"
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccSV9mu9.s 			page 4
+  84 0012 0BA3     		adr	r3, .L8
+  85 0014 D3E90023 		ldrd	r2, [r3]
+  86 0018 FFF7FEFF 		bl	__aeabi_dmul
+  87              	.LVL7:
+  88 001c FFF7FEFF 		bl	__aeabi_d2iz
+  89              	.LVL8:
+  90 0020 094B     		ldr	r3, .L8+8
+  91 0022 1860     		str	r0, [r3]
+  32:Afstandssensor.c ****     if(capture > 65250 && capture < 65340)
+  92              		.loc 1 32 0
+  93 0024 A4F57E40 		sub	r0, r4, #65024
+  94 0028 E338     		subs	r0, r0, #227
+  95 002a 5828     		cmp	r0, #88
+  96 002c 02D8     		bhi	.L6
+  33:Afstandssensor.c ****     {
+  34:Afstandssensor.c ****         distance = 500;
+  97              		.loc 1 34 0
+  98 002e 4FF4FA72 		mov	r2, #500
+  99 0032 1A60     		str	r2, [r3]
+ 100              	.L6:
+  35:Afstandssensor.c ****     }
+  36:Afstandssensor.c ****     return distance;
+  37:Afstandssensor.c **** }
+ 101              		.loc 1 37 0
+ 102 0034 044B     		ldr	r3, .L8+8
+ 103 0036 1868     		ldr	r0, [r3]
+ 104 0038 10BD     		pop	{r4, pc}
+ 105              	.LVL9:
+ 106              	.L9:
+ 107 003a 00BFAFF3 		.align	3
+ 107      0080
+ 108              	.L8:
+ 109 0040 9CC420B0 		.word	-1340029796
+ 110 0044 7268913F 		.word	1066494066
+ 111 0048 00000000 		.word	distance
+ 112              		.cfi_endproc
+ 113              	.LFE65:
+ 114              		.size	calcDist, .-calcDist
+ 115              		.section	.text.getDistance,"ax",%progbits
+ 116              		.align	2
+ 117              		.global	getDistance
+ 118              		.thumb
+ 119              		.thumb_func
+ 120              		.type	getDistance, %function
+ 121              	getDistance:
+ 122              	.LFB66:
+  38:Afstandssensor.c **** 
+  39:Afstandssensor.c **** int getDistance(distance)
+  40:Afstandssensor.c **** {
+ 123              		.loc 1 40 0
+ 124              		.cfi_startproc
+ 125              		@ args = 0, pretend = 0, frame = 0
+ 126              		@ frame_needed = 0, uses_anonymous_args = 0
+ 127              		@ link register save eliminated.
+ 128              	.LVL10:
+  41:Afstandssensor.c ****     return distance;
+  42:Afstandssensor.c **** }
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccWlRjdp.s 			page 4
 
 
- 128              		.file 5 "Generated_Source\\PSoC5/Timer_1.h"
- 129              		.file 6 "Generated_Source\\PSoC5/PWM_Trigger.h"
- 130              		.file 7 "Generated_Source\\PSoC5/Timer_int_1.h"
- 131              		.section	.debug_info,"",%progbits
- 132              	.Ldebug_info0:
- 133 0000 77010000 		.4byte	0x177
- 134 0004 0400     		.2byte	0x4
- 135 0006 00000000 		.4byte	.Ldebug_abbrev0
- 136 000a 04       		.byte	0x4
- 137 000b 01       		.uleb128 0x1
- 138 000c 37000000 		.4byte	.LASF25
- 139 0010 0C       		.byte	0xc
- 140 0011 27010000 		.4byte	.LASF26
- 141 0015 58010000 		.4byte	.LASF27
- 142 0019 00000000 		.4byte	.Ldebug_ranges0+0
- 143 001d 00000000 		.4byte	0
- 144 0021 00000000 		.4byte	.Ldebug_line0
- 145 0025 02       		.uleb128 0x2
- 146 0026 01       		.byte	0x1
- 147 0027 06       		.byte	0x6
- 148 0028 CC010000 		.4byte	.LASF0
- 149 002c 02       		.uleb128 0x2
- 150 002d 01       		.byte	0x1
- 151 002e 08       		.byte	0x8
- 152 002f 19010000 		.4byte	.LASF1
- 153 0033 02       		.uleb128 0x2
- 154 0034 02       		.byte	0x2
- 155 0035 05       		.byte	0x5
- 156 0036 13020000 		.4byte	.LASF2
- 157 003a 02       		.uleb128 0x2
- 158 003b 02       		.byte	0x2
- 159 003c 07       		.byte	0x7
- 160 003d 0E000000 		.4byte	.LASF3
- 161 0041 03       		.uleb128 0x3
- 162 0042 E4010000 		.4byte	.LASF9
- 163 0046 02       		.byte	0x2
- 164 0047 3F       		.byte	0x3f
- 165 0048 4C000000 		.4byte	0x4c
- 166 004c 02       		.uleb128 0x2
- 167 004d 04       		.byte	0x4
- 168 004e 05       		.byte	0x5
- 169 004f 4F010000 		.4byte	.LASF4
- 170 0053 02       		.uleb128 0x2
- 171 0054 04       		.byte	0x4
- 172 0055 07       		.byte	0x7
- 173 0056 C5000000 		.4byte	.LASF5
- 174 005a 02       		.uleb128 0x2
- 175 005b 08       		.byte	0x8
- 176 005c 05       		.byte	0x5
- 177 005d 00000000 		.4byte	.LASF6
- 178 0061 02       		.uleb128 0x2
- 179 0062 08       		.byte	0x8
- 180 0063 07       		.byte	0x7
- 181 0064 D7000000 		.4byte	.LASF7
- 182 0068 04       		.uleb128 0x4
- 183 0069 04       		.byte	0x4
- 184 006a 05       		.byte	0x5
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccSV9mu9.s 			page 5
+ 129              		.loc 1 42 0
+ 130 0000 7047     		bx	lr
+ 131              		.cfi_endproc
+ 132              	.LFE66:
+ 133              		.size	getDistance, .-getDistance
+ 134 0002 00BF     		.section	.text.Timer_int_1_Handler,"ax",%progbits
+ 135              		.align	2
+ 136              		.global	Timer_int_1_Handler
+ 137              		.thumb
+ 138              		.thumb_func
+ 139              		.type	Timer_int_1_Handler, %function
+ 140              	Timer_int_1_Handler:
+ 141              	.LFB67:
+  43:Afstandssensor.c **** 
+  44:Afstandssensor.c **** 
+  45:Afstandssensor.c **** 
+  46:Afstandssensor.c **** CY_ISR(Timer_int_1_Handler)
+  47:Afstandssensor.c **** {
+ 142              		.loc 1 47 0
+ 143              		.cfi_startproc
+ 144              		@ args = 0, pretend = 0, frame = 0
+ 145              		@ frame_needed = 0, uses_anonymous_args = 0
+ 146 0000 08B5     		push	{r3, lr}
+ 147              		.cfi_def_cfa_offset 8
+ 148              		.cfi_offset 3, -8
+ 149              		.cfi_offset 14, -4
+  48:Afstandssensor.c ****     distance = getDistance(calcDist());
+ 150              		.loc 1 48 0
+ 151 0002 FFF7FEFF 		bl	calcDist
+ 152              	.LVL11:
+ 153 0006 FFF7FEFF 		bl	getDistance
+ 154              	.LVL12:
+ 155 000a 024B     		ldr	r3, .L13
+ 156 000c 1860     		str	r0, [r3]
+  49:Afstandssensor.c ****     Timer_1_ClearFIFO();
+ 157              		.loc 1 49 0
+ 158 000e FFF7FEFF 		bl	Timer_1_ClearFIFO
+ 159              	.LVL13:
+ 160 0012 08BD     		pop	{r3, pc}
+ 161              	.L14:
+ 162              		.align	2
+ 163              	.L13:
+ 164 0014 00000000 		.word	distance
+ 165              		.cfi_endproc
+ 166              	.LFE67:
+ 167              		.size	Timer_int_1_Handler, .-Timer_int_1_Handler
+ 168              		.comm	distance,4,4
+ 169              		.text
+ 170              	.Letext0:
+ 171              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.3\\psoc creator\\import\\gnu\\arm\\5.4.
+ 172              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.3\\psoc creator\\import\\gnu\\arm\\5.4.
+ 173              		.file 4 "Generated_Source\\PSoC5/core_cm3.h"
+ 174              		.file 5 "Generated_Source\\PSoC5/PWM_Trigger.h"
+ 175              		.file 6 "Generated_Source\\PSoC5/Timer_1.h"
+ 176              		.file 7 "Generated_Source\\PSoC5/Timer_int_1.h"
+ 177              		.section	.debug_info,"",%progbits
+ 178              	.Ldebug_info0:
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccWlRjdp.s 			page 5
 
 
- 185 006b 696E7400 		.ascii	"int\000"
- 186 006f 02       		.uleb128 0x2
- 187 0070 04       		.byte	0x4
- 188 0071 07       		.byte	0x7
- 189 0072 21000000 		.4byte	.LASF8
- 190 0076 03       		.uleb128 0x3
- 191 0077 1D020000 		.4byte	.LASF10
- 192 007b 03       		.byte	0x3
- 193 007c 2C       		.byte	0x2c
- 194 007d 41000000 		.4byte	0x41
- 195 0081 02       		.uleb128 0x2
- 196 0082 04       		.byte	0x4
- 197 0083 04       		.byte	0x4
- 198 0084 0D020000 		.4byte	.LASF11
- 199 0088 02       		.uleb128 0x2
- 200 0089 08       		.byte	0x8
- 201 008a 04       		.byte	0x4
- 202 008b A4010000 		.4byte	.LASF12
- 203 008f 02       		.uleb128 0x2
- 204 0090 01       		.byte	0x1
- 205 0091 08       		.byte	0x8
- 206 0092 38010000 		.4byte	.LASF13
- 207 0096 02       		.uleb128 0x2
- 208 0097 08       		.byte	0x8
- 209 0098 04       		.byte	0x4
- 210 0099 D8010000 		.4byte	.LASF14
- 211 009d 02       		.uleb128 0x2
- 212 009e 04       		.byte	0x4
- 213 009f 07       		.byte	0x7
- 214 00a0 37020000 		.4byte	.LASF15
- 215 00a4 05       		.uleb128 0x5
- 216 00a5 3D010000 		.4byte	.LASF16
- 217 00a9 01       		.byte	0x1
- 218 00aa 23       		.byte	0x23
- 219 00ab 00000000 		.4byte	.LFB66
- 220 00af 08000000 		.4byte	.LFE66-.LFB66
- 221 00b3 01       		.uleb128 0x1
- 222 00b4 9C       		.byte	0x9c
- 223 00b5 C3000000 		.4byte	0xc3
- 224 00b9 06       		.uleb128 0x6
- 225 00ba 06000000 		.4byte	.LVL0
- 226 00be 43010000 		.4byte	0x143
- 227 00c2 00       		.byte	0
- 228 00c3 07       		.uleb128 0x7
- 229 00c4 EE010000 		.4byte	.LASF28
- 230 00c8 01       		.byte	0x1
- 231 00c9 13       		.byte	0x13
- 232 00ca 00000000 		.4byte	.LFB64
- 233 00ce 18000000 		.4byte	.LFE64-.LFB64
- 234 00d2 01       		.uleb128 0x1
- 235 00d3 9C       		.byte	0x9c
- 236 00d4 FE000000 		.4byte	0xfe
- 237 00d8 06       		.uleb128 0x6
- 238 00d9 06000000 		.4byte	.LVL1
- 239 00dd 4E010000 		.4byte	0x14e
- 240 00e1 06       		.uleb128 0x6
- 241 00e2 0A000000 		.4byte	.LVL2
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccSV9mu9.s 			page 6
+ 179 0000 BF010000 		.4byte	0x1bf
+ 180 0004 0400     		.2byte	0x4
+ 181 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 182 000a 04       		.byte	0x4
+ 183 000b 01       		.uleb128 0x1
+ 184 000c 61000000 		.4byte	.LASF26
+ 185 0010 0C       		.byte	0xc
+ 186 0011 01020000 		.4byte	.LASF27
+ 187 0015 A0010000 		.4byte	.LASF28
+ 188 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 189 001d 00000000 		.4byte	0
+ 190 0021 00000000 		.4byte	.Ldebug_line0
+ 191 0025 02       		.uleb128 0x2
+ 192 0026 01       		.byte	0x1
+ 193 0027 06       		.byte	0x6
+ 194 0028 32020000 		.4byte	.LASF0
+ 195 002c 02       		.uleb128 0x2
+ 196 002d 01       		.byte	0x1
+ 197 002e 08       		.byte	0x8
+ 198 002f 53000000 		.4byte	.LASF1
+ 199 0033 02       		.uleb128 0x2
+ 200 0034 02       		.byte	0x2
+ 201 0035 05       		.byte	0x5
+ 202 0036 EE010000 		.4byte	.LASF2
+ 203 003a 02       		.uleb128 0x2
+ 204 003b 02       		.byte	0x2
+ 205 003c 07       		.byte	0x7
+ 206 003d 01010000 		.4byte	.LASF3
+ 207 0041 03       		.uleb128 0x3
+ 208 0042 2E000000 		.4byte	.LASF9
+ 209 0046 02       		.byte	0x2
+ 210 0047 3F       		.byte	0x3f
+ 211 0048 4C000000 		.4byte	0x4c
+ 212 004c 02       		.uleb128 0x2
+ 213 004d 04       		.byte	0x4
+ 214 004e 05       		.byte	0x5
+ 215 004f F8010000 		.4byte	.LASF4
+ 216 0053 02       		.uleb128 0x2
+ 217 0054 04       		.byte	0x4
+ 218 0055 07       		.byte	0x7
+ 219 0056 EF000000 		.4byte	.LASF5
+ 220 005a 02       		.uleb128 0x2
+ 221 005b 08       		.byte	0x8
+ 222 005c 05       		.byte	0x5
+ 223 005d 92010000 		.4byte	.LASF6
+ 224 0061 02       		.uleb128 0x2
+ 225 0062 08       		.byte	0x8
+ 226 0063 07       		.byte	0x7
+ 227 0064 49010000 		.4byte	.LASF7
+ 228 0068 04       		.uleb128 0x4
+ 229 0069 04       		.byte	0x4
+ 230 006a 05       		.byte	0x5
+ 231 006b 696E7400 		.ascii	"int\000"
+ 232 006f 02       		.uleb128 0x2
+ 233 0070 04       		.byte	0x4
+ 234 0071 07       		.byte	0x7
+ 235 0072 3C010000 		.4byte	.LASF8
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccWlRjdp.s 			page 6
 
 
- 242 00e6 59010000 		.4byte	0x159
- 243 00ea 08       		.uleb128 0x8
- 244 00eb 10000000 		.4byte	.LVL3
- 245 00ef 64010000 		.4byte	0x164
- 246 00f3 09       		.uleb128 0x9
- 247 00f4 01       		.uleb128 0x1
- 248 00f5 50       		.byte	0x50
- 249 00f6 05       		.uleb128 0x5
- 250 00f7 03       		.byte	0x3
- 251 00f8 00000000 		.4byte	Timer_int_Handler
- 252 00fc 00       		.byte	0
- 253 00fd 00       		.byte	0
- 254 00fe 0A       		.uleb128 0xa
- 255 00ff 2E000000 		.4byte	.LASF17
- 256 0103 01       		.byte	0x1
- 257 0104 1C       		.byte	0x1c
- 258 0105 68000000 		.4byte	0x68
- 259 0109 00000000 		.4byte	.LFB65
- 260 010d 34000000 		.4byte	.LFE65-.LFB65
- 261 0111 01       		.uleb128 0x1
- 262 0112 9C       		.byte	0x9c
- 263 0113 21010000 		.4byte	0x121
- 264 0117 06       		.uleb128 0x6
- 265 0118 06000000 		.4byte	.LVL4
- 266 011c 6F010000 		.4byte	0x16f
- 267 0120 00       		.byte	0
- 268 0121 0B       		.uleb128 0xb
- 269 0122 BF010000 		.4byte	.LASF18
- 270 0126 04       		.byte	0x4
- 271 0127 1207     		.2byte	0x712
- 272 0129 2D010000 		.4byte	0x12d
- 273 012d 0C       		.uleb128 0xc
- 274 012e 76000000 		.4byte	0x76
- 275 0132 0D       		.uleb128 0xd
- 276 0133 10010000 		.4byte	.LASF19
- 277 0137 01       		.byte	0x1
- 278 0138 0F       		.byte	0xf
- 279 0139 68000000 		.4byte	0x68
- 280 013d 05       		.uleb128 0x5
- 281 013e 03       		.byte	0x3
- 282 013f 00000000 		.4byte	distance
- 283 0143 0E       		.uleb128 0xe
- 284 0144 25020000 		.4byte	.LASF20
- 285 0148 25020000 		.4byte	.LASF20
- 286 014c 05       		.byte	0x5
- 287 014d 86       		.byte	0x86
- 288 014e 0E       		.uleb128 0xe
- 289 014f FB010000 		.4byte	.LASF21
- 290 0153 FB010000 		.4byte	.LASF21
- 291 0157 06       		.byte	0x6
- 292 0158 92       		.byte	0x92
- 293 0159 0E       		.uleb128 0xe
- 294 015a 02010000 		.4byte	.LASF22
- 295 015e 02010000 		.4byte	.LASF22
- 296 0162 05       		.byte	0x5
- 297 0163 5A       		.byte	0x5a
- 298 0164 0E       		.uleb128 0xe
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccSV9mu9.s 			page 7
+ 236 0076 03       		.uleb128 0x3
+ 237 0077 74010000 		.4byte	.LASF10
+ 238 007b 03       		.byte	0x3
+ 239 007c 2C       		.byte	0x2c
+ 240 007d 41000000 		.4byte	0x41
+ 241 0081 02       		.uleb128 0x2
+ 242 0082 04       		.byte	0x4
+ 243 0083 04       		.byte	0x4
+ 244 0084 4D000000 		.4byte	.LASF11
+ 245 0088 02       		.uleb128 0x2
+ 246 0089 08       		.byte	0x8
+ 247 008a 04       		.byte	0x4
+ 248 008b 21010000 		.4byte	.LASF12
+ 249 008f 02       		.uleb128 0x2
+ 250 0090 01       		.byte	0x1
+ 251 0091 08       		.byte	0x8
+ 252 0092 00000000 		.4byte	.LASF13
+ 253 0096 02       		.uleb128 0x2
+ 254 0097 08       		.byte	0x8
+ 255 0098 04       		.byte	0x4
+ 256 0099 26020000 		.4byte	.LASF14
+ 257 009d 02       		.uleb128 0x2
+ 258 009e 04       		.byte	0x4
+ 259 009f 07       		.byte	0x7
+ 260 00a0 7C010000 		.4byte	.LASF15
+ 261 00a4 05       		.uleb128 0x5
+ 262 00a5 85010000 		.4byte	.LASF29
+ 263 00a9 01       		.byte	0x1
+ 264 00aa 14       		.byte	0x14
+ 265 00ab 00000000 		.4byte	.LFB64
+ 266 00af 18000000 		.4byte	.LFE64-.LFB64
+ 267 00b3 01       		.uleb128 0x1
+ 268 00b4 9C       		.byte	0x9c
+ 269 00b5 DF000000 		.4byte	0xdf
+ 270 00b9 06       		.uleb128 0x6
+ 271 00ba 06000000 		.4byte	.LVL0
+ 272 00be 8B010000 		.4byte	0x18b
+ 273 00c2 06       		.uleb128 0x6
+ 274 00c3 0A000000 		.4byte	.LVL1
+ 275 00c7 96010000 		.4byte	0x196
+ 276 00cb 07       		.uleb128 0x7
+ 277 00cc 10000000 		.4byte	.LVL2
+ 278 00d0 A1010000 		.4byte	0x1a1
+ 279 00d4 08       		.uleb128 0x8
+ 280 00d5 01       		.uleb128 0x1
+ 281 00d6 50       		.byte	0x50
+ 282 00d7 05       		.uleb128 0x5
+ 283 00d8 03       		.byte	0x3
+ 284 00d9 00000000 		.4byte	Timer_int_1_Handler
+ 285 00dd 00       		.byte	0
+ 286 00de 00       		.byte	0
+ 287 00df 09       		.uleb128 0x9
+ 288 00e0 25000000 		.4byte	.LASF16
+ 289 00e4 01       		.byte	0x1
+ 290 00e5 1B       		.byte	0x1b
+ 291 00e6 68000000 		.4byte	0x68
+ 292 00ea 00000000 		.4byte	.LFB65
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccWlRjdp.s 			page 7
 
 
- 299 0165 AB010000 		.4byte	.LASF23
- 300 0169 AB010000 		.4byte	.LASF23
- 301 016d 07       		.byte	0x7
- 302 016e 18       		.byte	0x18
- 303 016f 0E       		.uleb128 0xe
- 304 0170 EE000000 		.4byte	.LASF24
- 305 0174 EE000000 		.4byte	.LASF24
- 306 0178 05       		.byte	0x5
- 307 0179 6B       		.byte	0x6b
- 308 017a 00       		.byte	0
- 309              		.section	.debug_abbrev,"",%progbits
- 310              	.Ldebug_abbrev0:
- 311 0000 01       		.uleb128 0x1
- 312 0001 11       		.uleb128 0x11
- 313 0002 01       		.byte	0x1
- 314 0003 25       		.uleb128 0x25
- 315 0004 0E       		.uleb128 0xe
- 316 0005 13       		.uleb128 0x13
- 317 0006 0B       		.uleb128 0xb
- 318 0007 03       		.uleb128 0x3
- 319 0008 0E       		.uleb128 0xe
- 320 0009 1B       		.uleb128 0x1b
- 321 000a 0E       		.uleb128 0xe
- 322 000b 55       		.uleb128 0x55
- 323 000c 17       		.uleb128 0x17
- 324 000d 11       		.uleb128 0x11
- 325 000e 01       		.uleb128 0x1
- 326 000f 10       		.uleb128 0x10
- 327 0010 17       		.uleb128 0x17
- 328 0011 00       		.byte	0
- 329 0012 00       		.byte	0
- 330 0013 02       		.uleb128 0x2
- 331 0014 24       		.uleb128 0x24
- 332 0015 00       		.byte	0
- 333 0016 0B       		.uleb128 0xb
- 334 0017 0B       		.uleb128 0xb
- 335 0018 3E       		.uleb128 0x3e
- 336 0019 0B       		.uleb128 0xb
- 337 001a 03       		.uleb128 0x3
- 338 001b 0E       		.uleb128 0xe
- 339 001c 00       		.byte	0
- 340 001d 00       		.byte	0
- 341 001e 03       		.uleb128 0x3
- 342 001f 16       		.uleb128 0x16
- 343 0020 00       		.byte	0
- 344 0021 03       		.uleb128 0x3
- 345 0022 0E       		.uleb128 0xe
- 346 0023 3A       		.uleb128 0x3a
- 347 0024 0B       		.uleb128 0xb
- 348 0025 3B       		.uleb128 0x3b
- 349 0026 0B       		.uleb128 0xb
- 350 0027 49       		.uleb128 0x49
- 351 0028 13       		.uleb128 0x13
- 352 0029 00       		.byte	0
- 353 002a 00       		.byte	0
- 354 002b 04       		.uleb128 0x4
- 355 002c 24       		.uleb128 0x24
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccSV9mu9.s 			page 8
+ 293 00ee 4C000000 		.4byte	.LFE65-.LFB65
+ 294 00f2 01       		.uleb128 0x1
+ 295 00f3 9C       		.byte	0x9c
+ 296 00f4 11010000 		.4byte	0x111
+ 297 00f8 0A       		.uleb128 0xa
+ 298 00f9 3E020000 		.4byte	.LASF30
+ 299 00fd 01       		.byte	0x1
+ 300 00fe 1D       		.byte	0x1d
+ 301 00ff 68000000 		.4byte	0x68
+ 302 0103 00000000 		.4byte	.LLST0
+ 303 0107 06       		.uleb128 0x6
+ 304 0108 06000000 		.4byte	.LVL3
+ 305 010c AC010000 		.4byte	0x1ac
+ 306 0110 00       		.byte	0
+ 307 0111 0B       		.uleb128 0xb
+ 308 0112 38000000 		.4byte	.LASF17
+ 309 0116 01       		.byte	0x1
+ 310 0117 27       		.byte	0x27
+ 311 0118 68000000 		.4byte	0x68
+ 312 011c 00000000 		.4byte	.LFB66
+ 313 0120 02000000 		.4byte	.LFE66-.LFB66
+ 314 0124 01       		.uleb128 0x1
+ 315 0125 9C       		.byte	0x9c
+ 316 0126 38010000 		.4byte	0x138
+ 317 012a 0C       		.uleb128 0xc
+ 318 012b 44000000 		.4byte	.LASF20
+ 319 012f 01       		.byte	0x1
+ 320 0130 27       		.byte	0x27
+ 321 0131 68000000 		.4byte	0x68
+ 322 0135 01       		.uleb128 0x1
+ 323 0136 50       		.byte	0x50
+ 324 0137 00       		.byte	0
+ 325 0138 0D       		.uleb128 0xd
+ 326 0139 12020000 		.4byte	.LASF18
+ 327 013d 01       		.byte	0x1
+ 328 013e 2E       		.byte	0x2e
+ 329 013f 00000000 		.4byte	.LFB67
+ 330 0143 18000000 		.4byte	.LFE67-.LFB67
+ 331 0147 01       		.uleb128 0x1
+ 332 0148 9C       		.byte	0x9c
+ 333 0149 69010000 		.4byte	0x169
+ 334 014d 06       		.uleb128 0x6
+ 335 014e 06000000 		.4byte	.LVL11
+ 336 0152 DF000000 		.4byte	0xdf
+ 337 0156 06       		.uleb128 0x6
+ 338 0157 0A000000 		.4byte	.LVL12
+ 339 015b 11010000 		.4byte	0x111
+ 340 015f 06       		.uleb128 0x6
+ 341 0160 12000000 		.4byte	.LVL13
+ 342 0164 B7010000 		.4byte	0x1b7
+ 343 0168 00       		.byte	0
+ 344 0169 0E       		.uleb128 0xe
+ 345 016a 14010000 		.4byte	.LASF19
+ 346 016e 04       		.byte	0x4
+ 347 016f 1207     		.2byte	0x712
+ 348 0171 75010000 		.4byte	0x175
+ 349 0175 0F       		.uleb128 0xf
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccWlRjdp.s 			page 8
 
 
- 356 002d 00       		.byte	0
- 357 002e 0B       		.uleb128 0xb
- 358 002f 0B       		.uleb128 0xb
- 359 0030 3E       		.uleb128 0x3e
- 360 0031 0B       		.uleb128 0xb
- 361 0032 03       		.uleb128 0x3
- 362 0033 08       		.uleb128 0x8
- 363 0034 00       		.byte	0
- 364 0035 00       		.byte	0
- 365 0036 05       		.uleb128 0x5
- 366 0037 2E       		.uleb128 0x2e
- 367 0038 01       		.byte	0x1
- 368 0039 3F       		.uleb128 0x3f
- 369 003a 19       		.uleb128 0x19
- 370 003b 03       		.uleb128 0x3
- 371 003c 0E       		.uleb128 0xe
- 372 003d 3A       		.uleb128 0x3a
- 373 003e 0B       		.uleb128 0xb
- 374 003f 3B       		.uleb128 0x3b
- 375 0040 0B       		.uleb128 0xb
- 376 0041 27       		.uleb128 0x27
- 377 0042 19       		.uleb128 0x19
- 378 0043 11       		.uleb128 0x11
- 379 0044 01       		.uleb128 0x1
- 380 0045 12       		.uleb128 0x12
- 381 0046 06       		.uleb128 0x6
- 382 0047 40       		.uleb128 0x40
- 383 0048 18       		.uleb128 0x18
- 384 0049 9742     		.uleb128 0x2117
- 385 004b 19       		.uleb128 0x19
- 386 004c 01       		.uleb128 0x1
- 387 004d 13       		.uleb128 0x13
- 388 004e 00       		.byte	0
- 389 004f 00       		.byte	0
- 390 0050 06       		.uleb128 0x6
- 391 0051 898201   		.uleb128 0x4109
- 392 0054 00       		.byte	0
- 393 0055 11       		.uleb128 0x11
- 394 0056 01       		.uleb128 0x1
- 395 0057 31       		.uleb128 0x31
- 396 0058 13       		.uleb128 0x13
- 397 0059 00       		.byte	0
- 398 005a 00       		.byte	0
- 399 005b 07       		.uleb128 0x7
- 400 005c 2E       		.uleb128 0x2e
- 401 005d 01       		.byte	0x1
- 402 005e 3F       		.uleb128 0x3f
- 403 005f 19       		.uleb128 0x19
- 404 0060 03       		.uleb128 0x3
- 405 0061 0E       		.uleb128 0xe
- 406 0062 3A       		.uleb128 0x3a
- 407 0063 0B       		.uleb128 0xb
- 408 0064 3B       		.uleb128 0x3b
- 409 0065 0B       		.uleb128 0xb
- 410 0066 11       		.uleb128 0x11
- 411 0067 01       		.uleb128 0x1
- 412 0068 12       		.uleb128 0x12
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccSV9mu9.s 			page 9
+ 350 0176 76000000 		.4byte	0x76
+ 351 017a 10       		.uleb128 0x10
+ 352 017b 44000000 		.4byte	.LASF20
+ 353 017f 01       		.byte	0x1
+ 354 0180 10       		.byte	0x10
+ 355 0181 68000000 		.4byte	0x68
+ 356 0185 05       		.uleb128 0x5
+ 357 0186 03       		.byte	0x3
+ 358 0187 00000000 		.4byte	distance
+ 359 018b 11       		.uleb128 0x11
+ 360 018c 13000000 		.4byte	.LASF21
+ 361 0190 13000000 		.4byte	.LASF21
+ 362 0194 05       		.byte	0x5
+ 363 0195 92       		.byte	0x92
+ 364 0196 11       		.uleb128 0x11
+ 365 0197 05000000 		.4byte	.LASF22
+ 366 019b 05000000 		.4byte	.LASF22
+ 367 019f 06       		.byte	0x6
+ 368 01a0 5A       		.byte	0x5a
+ 369 01a1 11       		.uleb128 0x11
+ 370 01a2 28010000 		.4byte	.LASF23
+ 371 01a6 28010000 		.4byte	.LASF23
+ 372 01aa 07       		.byte	0x7
+ 373 01ab 18       		.byte	0x18
+ 374 01ac 11       		.uleb128 0x11
+ 375 01ad 60010000 		.4byte	.LASF24
+ 376 01b1 60010000 		.4byte	.LASF24
+ 377 01b5 06       		.byte	0x6
+ 378 01b6 6B       		.byte	0x6b
+ 379 01b7 11       		.uleb128 0x11
+ 380 01b8 DC010000 		.4byte	.LASF25
+ 381 01bc DC010000 		.4byte	.LASF25
+ 382 01c0 06       		.byte	0x6
+ 383 01c1 86       		.byte	0x86
+ 384 01c2 00       		.byte	0
+ 385              		.section	.debug_abbrev,"",%progbits
+ 386              	.Ldebug_abbrev0:
+ 387 0000 01       		.uleb128 0x1
+ 388 0001 11       		.uleb128 0x11
+ 389 0002 01       		.byte	0x1
+ 390 0003 25       		.uleb128 0x25
+ 391 0004 0E       		.uleb128 0xe
+ 392 0005 13       		.uleb128 0x13
+ 393 0006 0B       		.uleb128 0xb
+ 394 0007 03       		.uleb128 0x3
+ 395 0008 0E       		.uleb128 0xe
+ 396 0009 1B       		.uleb128 0x1b
+ 397 000a 0E       		.uleb128 0xe
+ 398 000b 55       		.uleb128 0x55
+ 399 000c 17       		.uleb128 0x17
+ 400 000d 11       		.uleb128 0x11
+ 401 000e 01       		.uleb128 0x1
+ 402 000f 10       		.uleb128 0x10
+ 403 0010 17       		.uleb128 0x17
+ 404 0011 00       		.byte	0
+ 405 0012 00       		.byte	0
+ 406 0013 02       		.uleb128 0x2
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccWlRjdp.s 			page 9
 
 
- 413 0069 06       		.uleb128 0x6
- 414 006a 40       		.uleb128 0x40
- 415 006b 18       		.uleb128 0x18
- 416 006c 9742     		.uleb128 0x2117
- 417 006e 19       		.uleb128 0x19
- 418 006f 01       		.uleb128 0x1
- 419 0070 13       		.uleb128 0x13
- 420 0071 00       		.byte	0
- 421 0072 00       		.byte	0
- 422 0073 08       		.uleb128 0x8
- 423 0074 898201   		.uleb128 0x4109
- 424 0077 01       		.byte	0x1
- 425 0078 11       		.uleb128 0x11
- 426 0079 01       		.uleb128 0x1
- 427 007a 31       		.uleb128 0x31
- 428 007b 13       		.uleb128 0x13
- 429 007c 00       		.byte	0
- 430 007d 00       		.byte	0
- 431 007e 09       		.uleb128 0x9
- 432 007f 8A8201   		.uleb128 0x410a
- 433 0082 00       		.byte	0
- 434 0083 02       		.uleb128 0x2
- 435 0084 18       		.uleb128 0x18
- 436 0085 9142     		.uleb128 0x2111
- 437 0087 18       		.uleb128 0x18
- 438 0088 00       		.byte	0
- 439 0089 00       		.byte	0
- 440 008a 0A       		.uleb128 0xa
- 441 008b 2E       		.uleb128 0x2e
- 442 008c 01       		.byte	0x1
- 443 008d 3F       		.uleb128 0x3f
- 444 008e 19       		.uleb128 0x19
- 445 008f 03       		.uleb128 0x3
- 446 0090 0E       		.uleb128 0xe
- 447 0091 3A       		.uleb128 0x3a
- 448 0092 0B       		.uleb128 0xb
- 449 0093 3B       		.uleb128 0x3b
- 450 0094 0B       		.uleb128 0xb
- 451 0095 49       		.uleb128 0x49
- 452 0096 13       		.uleb128 0x13
- 453 0097 11       		.uleb128 0x11
- 454 0098 01       		.uleb128 0x1
- 455 0099 12       		.uleb128 0x12
- 456 009a 06       		.uleb128 0x6
- 457 009b 40       		.uleb128 0x40
- 458 009c 18       		.uleb128 0x18
- 459 009d 9642     		.uleb128 0x2116
- 460 009f 19       		.uleb128 0x19
- 461 00a0 01       		.uleb128 0x1
- 462 00a1 13       		.uleb128 0x13
- 463 00a2 00       		.byte	0
- 464 00a3 00       		.byte	0
- 465 00a4 0B       		.uleb128 0xb
- 466 00a5 34       		.uleb128 0x34
- 467 00a6 00       		.byte	0
- 468 00a7 03       		.uleb128 0x3
- 469 00a8 0E       		.uleb128 0xe
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccSV9mu9.s 			page 10
+ 407 0014 24       		.uleb128 0x24
+ 408 0015 00       		.byte	0
+ 409 0016 0B       		.uleb128 0xb
+ 410 0017 0B       		.uleb128 0xb
+ 411 0018 3E       		.uleb128 0x3e
+ 412 0019 0B       		.uleb128 0xb
+ 413 001a 03       		.uleb128 0x3
+ 414 001b 0E       		.uleb128 0xe
+ 415 001c 00       		.byte	0
+ 416 001d 00       		.byte	0
+ 417 001e 03       		.uleb128 0x3
+ 418 001f 16       		.uleb128 0x16
+ 419 0020 00       		.byte	0
+ 420 0021 03       		.uleb128 0x3
+ 421 0022 0E       		.uleb128 0xe
+ 422 0023 3A       		.uleb128 0x3a
+ 423 0024 0B       		.uleb128 0xb
+ 424 0025 3B       		.uleb128 0x3b
+ 425 0026 0B       		.uleb128 0xb
+ 426 0027 49       		.uleb128 0x49
+ 427 0028 13       		.uleb128 0x13
+ 428 0029 00       		.byte	0
+ 429 002a 00       		.byte	0
+ 430 002b 04       		.uleb128 0x4
+ 431 002c 24       		.uleb128 0x24
+ 432 002d 00       		.byte	0
+ 433 002e 0B       		.uleb128 0xb
+ 434 002f 0B       		.uleb128 0xb
+ 435 0030 3E       		.uleb128 0x3e
+ 436 0031 0B       		.uleb128 0xb
+ 437 0032 03       		.uleb128 0x3
+ 438 0033 08       		.uleb128 0x8
+ 439 0034 00       		.byte	0
+ 440 0035 00       		.byte	0
+ 441 0036 05       		.uleb128 0x5
+ 442 0037 2E       		.uleb128 0x2e
+ 443 0038 01       		.byte	0x1
+ 444 0039 3F       		.uleb128 0x3f
+ 445 003a 19       		.uleb128 0x19
+ 446 003b 03       		.uleb128 0x3
+ 447 003c 0E       		.uleb128 0xe
+ 448 003d 3A       		.uleb128 0x3a
+ 449 003e 0B       		.uleb128 0xb
+ 450 003f 3B       		.uleb128 0x3b
+ 451 0040 0B       		.uleb128 0xb
+ 452 0041 11       		.uleb128 0x11
+ 453 0042 01       		.uleb128 0x1
+ 454 0043 12       		.uleb128 0x12
+ 455 0044 06       		.uleb128 0x6
+ 456 0045 40       		.uleb128 0x40
+ 457 0046 18       		.uleb128 0x18
+ 458 0047 9742     		.uleb128 0x2117
+ 459 0049 19       		.uleb128 0x19
+ 460 004a 01       		.uleb128 0x1
+ 461 004b 13       		.uleb128 0x13
+ 462 004c 00       		.byte	0
+ 463 004d 00       		.byte	0
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccWlRjdp.s 			page 10
 
 
- 470 00a9 3A       		.uleb128 0x3a
- 471 00aa 0B       		.uleb128 0xb
- 472 00ab 3B       		.uleb128 0x3b
- 473 00ac 05       		.uleb128 0x5
- 474 00ad 49       		.uleb128 0x49
- 475 00ae 13       		.uleb128 0x13
- 476 00af 3F       		.uleb128 0x3f
- 477 00b0 19       		.uleb128 0x19
- 478 00b1 3C       		.uleb128 0x3c
- 479 00b2 19       		.uleb128 0x19
- 480 00b3 00       		.byte	0
- 481 00b4 00       		.byte	0
- 482 00b5 0C       		.uleb128 0xc
- 483 00b6 35       		.uleb128 0x35
- 484 00b7 00       		.byte	0
- 485 00b8 49       		.uleb128 0x49
- 486 00b9 13       		.uleb128 0x13
- 487 00ba 00       		.byte	0
- 488 00bb 00       		.byte	0
- 489 00bc 0D       		.uleb128 0xd
- 490 00bd 34       		.uleb128 0x34
- 491 00be 00       		.byte	0
- 492 00bf 03       		.uleb128 0x3
- 493 00c0 0E       		.uleb128 0xe
- 494 00c1 3A       		.uleb128 0x3a
- 495 00c2 0B       		.uleb128 0xb
- 496 00c3 3B       		.uleb128 0x3b
- 497 00c4 0B       		.uleb128 0xb
- 498 00c5 49       		.uleb128 0x49
- 499 00c6 13       		.uleb128 0x13
- 500 00c7 3F       		.uleb128 0x3f
- 501 00c8 19       		.uleb128 0x19
- 502 00c9 02       		.uleb128 0x2
- 503 00ca 18       		.uleb128 0x18
- 504 00cb 00       		.byte	0
- 505 00cc 00       		.byte	0
- 506 00cd 0E       		.uleb128 0xe
- 507 00ce 2E       		.uleb128 0x2e
- 508 00cf 00       		.byte	0
- 509 00d0 3F       		.uleb128 0x3f
- 510 00d1 19       		.uleb128 0x19
- 511 00d2 3C       		.uleb128 0x3c
- 512 00d3 19       		.uleb128 0x19
- 513 00d4 6E       		.uleb128 0x6e
- 514 00d5 0E       		.uleb128 0xe
- 515 00d6 03       		.uleb128 0x3
- 516 00d7 0E       		.uleb128 0xe
- 517 00d8 3A       		.uleb128 0x3a
- 518 00d9 0B       		.uleb128 0xb
- 519 00da 3B       		.uleb128 0x3b
- 520 00db 0B       		.uleb128 0xb
- 521 00dc 00       		.byte	0
- 522 00dd 00       		.byte	0
- 523 00de 00       		.byte	0
- 524              		.section	.debug_aranges,"",%progbits
- 525 0000 2C000000 		.4byte	0x2c
- 526 0004 0200     		.2byte	0x2
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccSV9mu9.s 			page 11
+ 464 004e 06       		.uleb128 0x6
+ 465 004f 898201   		.uleb128 0x4109
+ 466 0052 00       		.byte	0
+ 467 0053 11       		.uleb128 0x11
+ 468 0054 01       		.uleb128 0x1
+ 469 0055 31       		.uleb128 0x31
+ 470 0056 13       		.uleb128 0x13
+ 471 0057 00       		.byte	0
+ 472 0058 00       		.byte	0
+ 473 0059 07       		.uleb128 0x7
+ 474 005a 898201   		.uleb128 0x4109
+ 475 005d 01       		.byte	0x1
+ 476 005e 11       		.uleb128 0x11
+ 477 005f 01       		.uleb128 0x1
+ 478 0060 31       		.uleb128 0x31
+ 479 0061 13       		.uleb128 0x13
+ 480 0062 00       		.byte	0
+ 481 0063 00       		.byte	0
+ 482 0064 08       		.uleb128 0x8
+ 483 0065 8A8201   		.uleb128 0x410a
+ 484 0068 00       		.byte	0
+ 485 0069 02       		.uleb128 0x2
+ 486 006a 18       		.uleb128 0x18
+ 487 006b 9142     		.uleb128 0x2111
+ 488 006d 18       		.uleb128 0x18
+ 489 006e 00       		.byte	0
+ 490 006f 00       		.byte	0
+ 491 0070 09       		.uleb128 0x9
+ 492 0071 2E       		.uleb128 0x2e
+ 493 0072 01       		.byte	0x1
+ 494 0073 3F       		.uleb128 0x3f
+ 495 0074 19       		.uleb128 0x19
+ 496 0075 03       		.uleb128 0x3
+ 497 0076 0E       		.uleb128 0xe
+ 498 0077 3A       		.uleb128 0x3a
+ 499 0078 0B       		.uleb128 0xb
+ 500 0079 3B       		.uleb128 0x3b
+ 501 007a 0B       		.uleb128 0xb
+ 502 007b 49       		.uleb128 0x49
+ 503 007c 13       		.uleb128 0x13
+ 504 007d 11       		.uleb128 0x11
+ 505 007e 01       		.uleb128 0x1
+ 506 007f 12       		.uleb128 0x12
+ 507 0080 06       		.uleb128 0x6
+ 508 0081 40       		.uleb128 0x40
+ 509 0082 18       		.uleb128 0x18
+ 510 0083 9642     		.uleb128 0x2116
+ 511 0085 19       		.uleb128 0x19
+ 512 0086 01       		.uleb128 0x1
+ 513 0087 13       		.uleb128 0x13
+ 514 0088 00       		.byte	0
+ 515 0089 00       		.byte	0
+ 516 008a 0A       		.uleb128 0xa
+ 517 008b 34       		.uleb128 0x34
+ 518 008c 00       		.byte	0
+ 519 008d 03       		.uleb128 0x3
+ 520 008e 0E       		.uleb128 0xe
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccWlRjdp.s 			page 11
 
 
- 527 0006 00000000 		.4byte	.Ldebug_info0
- 528 000a 04       		.byte	0x4
- 529 000b 00       		.byte	0
- 530 000c 0000     		.2byte	0
- 531 000e 0000     		.2byte	0
- 532 0010 00000000 		.4byte	.LFB66
- 533 0014 08000000 		.4byte	.LFE66-.LFB66
- 534 0018 00000000 		.4byte	.LFB64
- 535 001c 18000000 		.4byte	.LFE64-.LFB64
- 536 0020 00000000 		.4byte	.LFB65
- 537 0024 34000000 		.4byte	.LFE65-.LFB65
- 538 0028 00000000 		.4byte	0
- 539 002c 00000000 		.4byte	0
- 540              		.section	.debug_ranges,"",%progbits
- 541              	.Ldebug_ranges0:
- 542 0000 00000000 		.4byte	.LFB66
- 543 0004 08000000 		.4byte	.LFE66
- 544 0008 00000000 		.4byte	.LFB64
- 545 000c 18000000 		.4byte	.LFE64
- 546 0010 00000000 		.4byte	.LFB65
- 547 0014 34000000 		.4byte	.LFE65
- 548 0018 00000000 		.4byte	0
- 549 001c 00000000 		.4byte	0
- 550              		.section	.debug_line,"",%progbits
- 551              	.Ldebug_line0:
- 552 0000 B1010000 		.section	.debug_str,"MS",%progbits,1
- 552      02007801 
- 552      00000201 
- 552      FB0E0D00 
- 552      01010101 
- 553              	.LASF6:
- 554 0000 6C6F6E67 		.ascii	"long long int\000"
- 554      206C6F6E 
- 554      6720696E 
- 554      7400
- 555              	.LASF3:
- 556 000e 73686F72 		.ascii	"short unsigned int\000"
- 556      7420756E 
- 556      7369676E 
- 556      65642069 
- 556      6E7400
- 557              	.LASF8:
- 558 0021 756E7369 		.ascii	"unsigned int\000"
- 558      676E6564 
- 558      20696E74 
- 558      00
- 559              	.LASF17:
- 560 002e 63616C63 		.ascii	"calcDist\000"
- 560      44697374 
- 560      00
- 561              	.LASF25:
- 562 0037 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 562      43313120 
- 562      352E342E 
- 562      31203230 
- 562      31363036 
- 563 006a 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccSV9mu9.s 			page 12
+ 521 008f 3A       		.uleb128 0x3a
+ 522 0090 0B       		.uleb128 0xb
+ 523 0091 3B       		.uleb128 0x3b
+ 524 0092 0B       		.uleb128 0xb
+ 525 0093 49       		.uleb128 0x49
+ 526 0094 13       		.uleb128 0x13
+ 527 0095 02       		.uleb128 0x2
+ 528 0096 17       		.uleb128 0x17
+ 529 0097 00       		.byte	0
+ 530 0098 00       		.byte	0
+ 531 0099 0B       		.uleb128 0xb
+ 532 009a 2E       		.uleb128 0x2e
+ 533 009b 01       		.byte	0x1
+ 534 009c 3F       		.uleb128 0x3f
+ 535 009d 19       		.uleb128 0x19
+ 536 009e 03       		.uleb128 0x3
+ 537 009f 0E       		.uleb128 0xe
+ 538 00a0 3A       		.uleb128 0x3a
+ 539 00a1 0B       		.uleb128 0xb
+ 540 00a2 3B       		.uleb128 0x3b
+ 541 00a3 0B       		.uleb128 0xb
+ 542 00a4 49       		.uleb128 0x49
+ 543 00a5 13       		.uleb128 0x13
+ 544 00a6 11       		.uleb128 0x11
+ 545 00a7 01       		.uleb128 0x1
+ 546 00a8 12       		.uleb128 0x12
+ 547 00a9 06       		.uleb128 0x6
+ 548 00aa 40       		.uleb128 0x40
+ 549 00ab 18       		.uleb128 0x18
+ 550 00ac 9742     		.uleb128 0x2117
+ 551 00ae 19       		.uleb128 0x19
+ 552 00af 01       		.uleb128 0x1
+ 553 00b0 13       		.uleb128 0x13
+ 554 00b1 00       		.byte	0
+ 555 00b2 00       		.byte	0
+ 556 00b3 0C       		.uleb128 0xc
+ 557 00b4 05       		.uleb128 0x5
+ 558 00b5 00       		.byte	0
+ 559 00b6 03       		.uleb128 0x3
+ 560 00b7 0E       		.uleb128 0xe
+ 561 00b8 3A       		.uleb128 0x3a
+ 562 00b9 0B       		.uleb128 0xb
+ 563 00ba 3B       		.uleb128 0x3b
+ 564 00bb 0B       		.uleb128 0xb
+ 565 00bc 49       		.uleb128 0x49
+ 566 00bd 13       		.uleb128 0x13
+ 567 00be 02       		.uleb128 0x2
+ 568 00bf 18       		.uleb128 0x18
+ 569 00c0 00       		.byte	0
+ 570 00c1 00       		.byte	0
+ 571 00c2 0D       		.uleb128 0xd
+ 572 00c3 2E       		.uleb128 0x2e
+ 573 00c4 01       		.byte	0x1
+ 574 00c5 3F       		.uleb128 0x3f
+ 575 00c6 19       		.uleb128 0x19
+ 576 00c7 03       		.uleb128 0x3
+ 577 00c8 0E       		.uleb128 0xe
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccWlRjdp.s 			page 12
 
 
- 563      20726576 
- 563      6973696F 
- 563      6E203233 
- 563      37373135 
- 564 009d 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 564      66756E63 
- 564      74696F6E 
- 564      2D736563 
- 564      74696F6E 
- 565              	.LASF5:
- 566 00c5 6C6F6E67 		.ascii	"long unsigned int\000"
- 566      20756E73 
- 566      69676E65 
- 566      6420696E 
- 566      7400
- 567              	.LASF7:
- 568 00d7 6C6F6E67 		.ascii	"long long unsigned int\000"
- 568      206C6F6E 
- 568      6720756E 
- 568      7369676E 
- 568      65642069 
- 569              	.LASF24:
- 570 00ee 54696D65 		.ascii	"Timer_1_ReadCapture\000"
- 570      725F315F 
- 570      52656164 
- 570      43617074 
- 570      75726500 
- 571              	.LASF22:
- 572 0102 54696D65 		.ascii	"Timer_1_Start\000"
- 572      725F315F 
- 572      53746172 
- 572      7400
- 573              	.LASF19:
- 574 0110 64697374 		.ascii	"distance\000"
- 574      616E6365 
- 574      00
- 575              	.LASF1:
- 576 0119 756E7369 		.ascii	"unsigned char\000"
- 576      676E6564 
- 576      20636861 
- 576      7200
- 577              	.LASF26:
- 578 0127 41667374 		.ascii	"Afstandssensor.c\000"
- 578      616E6473 
- 578      73656E73 
- 578      6F722E63 
- 578      00
- 579              	.LASF13:
- 580 0138 63686172 		.ascii	"char\000"
- 580      00
- 581              	.LASF16:
- 582 013d 54696D65 		.ascii	"Timer_int_Handler\000"
- 582      725F696E 
- 582      745F4861 
- 582      6E646C65 
- 582      7200
- 583              	.LASF4:
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccSV9mu9.s 			page 13
+ 578 00c9 3A       		.uleb128 0x3a
+ 579 00ca 0B       		.uleb128 0xb
+ 580 00cb 3B       		.uleb128 0x3b
+ 581 00cc 0B       		.uleb128 0xb
+ 582 00cd 27       		.uleb128 0x27
+ 583 00ce 19       		.uleb128 0x19
+ 584 00cf 11       		.uleb128 0x11
+ 585 00d0 01       		.uleb128 0x1
+ 586 00d1 12       		.uleb128 0x12
+ 587 00d2 06       		.uleb128 0x6
+ 588 00d3 40       		.uleb128 0x40
+ 589 00d4 18       		.uleb128 0x18
+ 590 00d5 9742     		.uleb128 0x2117
+ 591 00d7 19       		.uleb128 0x19
+ 592 00d8 01       		.uleb128 0x1
+ 593 00d9 13       		.uleb128 0x13
+ 594 00da 00       		.byte	0
+ 595 00db 00       		.byte	0
+ 596 00dc 0E       		.uleb128 0xe
+ 597 00dd 34       		.uleb128 0x34
+ 598 00de 00       		.byte	0
+ 599 00df 03       		.uleb128 0x3
+ 600 00e0 0E       		.uleb128 0xe
+ 601 00e1 3A       		.uleb128 0x3a
+ 602 00e2 0B       		.uleb128 0xb
+ 603 00e3 3B       		.uleb128 0x3b
+ 604 00e4 05       		.uleb128 0x5
+ 605 00e5 49       		.uleb128 0x49
+ 606 00e6 13       		.uleb128 0x13
+ 607 00e7 3F       		.uleb128 0x3f
+ 608 00e8 19       		.uleb128 0x19
+ 609 00e9 3C       		.uleb128 0x3c
+ 610 00ea 19       		.uleb128 0x19
+ 611 00eb 00       		.byte	0
+ 612 00ec 00       		.byte	0
+ 613 00ed 0F       		.uleb128 0xf
+ 614 00ee 35       		.uleb128 0x35
+ 615 00ef 00       		.byte	0
+ 616 00f0 49       		.uleb128 0x49
+ 617 00f1 13       		.uleb128 0x13
+ 618 00f2 00       		.byte	0
+ 619 00f3 00       		.byte	0
+ 620 00f4 10       		.uleb128 0x10
+ 621 00f5 34       		.uleb128 0x34
+ 622 00f6 00       		.byte	0
+ 623 00f7 03       		.uleb128 0x3
+ 624 00f8 0E       		.uleb128 0xe
+ 625 00f9 3A       		.uleb128 0x3a
+ 626 00fa 0B       		.uleb128 0xb
+ 627 00fb 3B       		.uleb128 0x3b
+ 628 00fc 0B       		.uleb128 0xb
+ 629 00fd 49       		.uleb128 0x49
+ 630 00fe 13       		.uleb128 0x13
+ 631 00ff 3F       		.uleb128 0x3f
+ 632 0100 19       		.uleb128 0x19
+ 633 0101 02       		.uleb128 0x2
+ 634 0102 18       		.uleb128 0x18
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccWlRjdp.s 			page 13
 
 
- 584 014f 6C6F6E67 		.ascii	"long int\000"
- 584      20696E74 
- 584      00
- 585              	.LASF27:
- 586 0158 433A5C55 		.ascii	"C:\\Users\\Simon\\Desktop\\Projekt3-2020\\Kode\\mai"
- 586      73657273 
- 586      5C53696D 
- 586      6F6E5C44 
- 586      65736B74 
- 587 0185 6E5F7073 		.ascii	"n_psoc\\Main_Project\\Main.cydsn\000"
- 587      6F635C4D 
- 587      61696E5F 
- 587      50726F6A 
- 587      6563745C 
- 588              	.LASF12:
- 589 01a4 646F7562 		.ascii	"double\000"
- 589      6C6500
- 590              	.LASF23:
- 591 01ab 54696D65 		.ascii	"Timer_int_1_StartEx\000"
- 591      725F696E 
- 591      745F315F 
- 591      53746172 
- 591      74457800 
- 592              	.LASF18:
- 593 01bf 49544D5F 		.ascii	"ITM_RxBuffer\000"
- 593      52784275 
- 593      66666572 
- 593      00
- 594              	.LASF0:
- 595 01cc 7369676E 		.ascii	"signed char\000"
- 595      65642063 
- 595      68617200 
- 596              	.LASF14:
- 597 01d8 6C6F6E67 		.ascii	"long double\000"
- 597      20646F75 
- 597      626C6500 
- 598              	.LASF9:
- 599 01e4 5F5F696E 		.ascii	"__int32_t\000"
- 599      7433325F 
- 599      7400
- 600              	.LASF28:
- 601 01ee 696E6974 		.ascii	"initDistSens\000"
- 601      44697374 
- 601      53656E73 
- 601      00
- 602              	.LASF21:
- 603 01fb 50574D5F 		.ascii	"PWM_Trigger_Start\000"
- 603      54726967 
- 603      6765725F 
- 603      53746172 
- 603      7400
- 604              	.LASF11:
- 605 020d 666C6F61 		.ascii	"float\000"
- 605      7400
- 606              	.LASF2:
- 607 0213 73686F72 		.ascii	"short int\000"
- 607      7420696E 
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccSV9mu9.s 			page 14
+ 635 0103 00       		.byte	0
+ 636 0104 00       		.byte	0
+ 637 0105 11       		.uleb128 0x11
+ 638 0106 2E       		.uleb128 0x2e
+ 639 0107 00       		.byte	0
+ 640 0108 3F       		.uleb128 0x3f
+ 641 0109 19       		.uleb128 0x19
+ 642 010a 3C       		.uleb128 0x3c
+ 643 010b 19       		.uleb128 0x19
+ 644 010c 6E       		.uleb128 0x6e
+ 645 010d 0E       		.uleb128 0xe
+ 646 010e 03       		.uleb128 0x3
+ 647 010f 0E       		.uleb128 0xe
+ 648 0110 3A       		.uleb128 0x3a
+ 649 0111 0B       		.uleb128 0xb
+ 650 0112 3B       		.uleb128 0x3b
+ 651 0113 0B       		.uleb128 0xb
+ 652 0114 00       		.byte	0
+ 653 0115 00       		.byte	0
+ 654 0116 00       		.byte	0
+ 655              		.section	.debug_loc,"",%progbits
+ 656              	.Ldebug_loc0:
+ 657              	.LLST0:
+ 658 0000 08000000 		.4byte	.LVL4
+ 659 0004 0C000000 		.4byte	.LVL5
+ 660 0008 0100     		.2byte	0x1
+ 661 000a 50       		.byte	0x50
+ 662 000b 0C000000 		.4byte	.LVL5
+ 663 000f 3A000000 		.4byte	.LVL9
+ 664 0013 0100     		.2byte	0x1
+ 665 0015 54       		.byte	0x54
+ 666 0016 00000000 		.4byte	0
+ 667 001a 00000000 		.4byte	0
+ 668              		.section	.debug_aranges,"",%progbits
+ 669 0000 34000000 		.4byte	0x34
+ 670 0004 0200     		.2byte	0x2
+ 671 0006 00000000 		.4byte	.Ldebug_info0
+ 672 000a 04       		.byte	0x4
+ 673 000b 00       		.byte	0
+ 674 000c 0000     		.2byte	0
+ 675 000e 0000     		.2byte	0
+ 676 0010 00000000 		.4byte	.LFB64
+ 677 0014 18000000 		.4byte	.LFE64-.LFB64
+ 678 0018 00000000 		.4byte	.LFB65
+ 679 001c 4C000000 		.4byte	.LFE65-.LFB65
+ 680 0020 00000000 		.4byte	.LFB66
+ 681 0024 02000000 		.4byte	.LFE66-.LFB66
+ 682 0028 00000000 		.4byte	.LFB67
+ 683 002c 18000000 		.4byte	.LFE67-.LFB67
+ 684 0030 00000000 		.4byte	0
+ 685 0034 00000000 		.4byte	0
+ 686              		.section	.debug_ranges,"",%progbits
+ 687              	.Ldebug_ranges0:
+ 688 0000 00000000 		.4byte	.LFB64
+ 689 0004 18000000 		.4byte	.LFE64
+ 690 0008 00000000 		.4byte	.LFB65
+ 691 000c 4C000000 		.4byte	.LFE65
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccWlRjdp.s 			page 14
 
 
- 607      7400
- 608              	.LASF10:
- 609 021d 696E7433 		.ascii	"int32_t\000"
- 609      325F7400 
- 610              	.LASF20:
- 611 0225 54696D65 		.ascii	"Timer_1_ClearFIFO\000"
- 611      725F315F 
- 611      436C6561 
- 611      72464946 
- 611      4F00
- 612              	.LASF15:
- 613 0237 73697A65 		.ascii	"sizetype\000"
- 613      74797065 
- 613      00
- 614              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ 692 0010 00000000 		.4byte	.LFB66
+ 693 0014 02000000 		.4byte	.LFE66
+ 694 0018 00000000 		.4byte	.LFB67
+ 695 001c 18000000 		.4byte	.LFE67
+ 696 0020 00000000 		.4byte	0
+ 697 0024 00000000 		.4byte	0
+ 698              		.section	.debug_line,"",%progbits
+ 699              	.Ldebug_line0:
+ 700 0000 C5010000 		.section	.debug_str,"MS",%progbits,1
+ 700      02007801 
+ 700      00000201 
+ 700      FB0E0D00 
+ 700      01010101 
+ 701              	.LASF13:
+ 702 0000 63686172 		.ascii	"char\000"
+ 702      00
+ 703              	.LASF22:
+ 704 0005 54696D65 		.ascii	"Timer_1_Start\000"
+ 704      725F315F 
+ 704      53746172 
+ 704      7400
+ 705              	.LASF21:
+ 706 0013 50574D5F 		.ascii	"PWM_Trigger_Start\000"
+ 706      54726967 
+ 706      6765725F 
+ 706      53746172 
+ 706      7400
+ 707              	.LASF16:
+ 708 0025 63616C63 		.ascii	"calcDist\000"
+ 708      44697374 
+ 708      00
+ 709              	.LASF9:
+ 710 002e 5F5F696E 		.ascii	"__int32_t\000"
+ 710      7433325F 
+ 710      7400
+ 711              	.LASF17:
+ 712 0038 67657444 		.ascii	"getDistance\000"
+ 712      69737461 
+ 712      6E636500 
+ 713              	.LASF20:
+ 714 0044 64697374 		.ascii	"distance\000"
+ 714      616E6365 
+ 714      00
+ 715              	.LASF11:
+ 716 004d 666C6F61 		.ascii	"float\000"
+ 716      7400
+ 717              	.LASF1:
+ 718 0053 756E7369 		.ascii	"unsigned char\000"
+ 718      676E6564 
+ 718      20636861 
+ 718      7200
+ 719              	.LASF26:
+ 720 0061 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 720      43313120 
+ 720      352E342E 
+ 720      31203230 
+ 720      31363036 
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccWlRjdp.s 			page 15
+
+
+ 721 0094 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 721      20726576 
+ 721      6973696F 
+ 721      6E203233 
+ 721      37373135 
+ 722 00c7 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 722      66756E63 
+ 722      74696F6E 
+ 722      2D736563 
+ 722      74696F6E 
+ 723              	.LASF5:
+ 724 00ef 6C6F6E67 		.ascii	"long unsigned int\000"
+ 724      20756E73 
+ 724      69676E65 
+ 724      6420696E 
+ 724      7400
+ 725              	.LASF3:
+ 726 0101 73686F72 		.ascii	"short unsigned int\000"
+ 726      7420756E 
+ 726      7369676E 
+ 726      65642069 
+ 726      6E7400
+ 727              	.LASF19:
+ 728 0114 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 728      52784275 
+ 728      66666572 
+ 728      00
+ 729              	.LASF12:
+ 730 0121 646F7562 		.ascii	"double\000"
+ 730      6C6500
+ 731              	.LASF23:
+ 732 0128 54696D65 		.ascii	"Timer_int_1_StartEx\000"
+ 732      725F696E 
+ 732      745F315F 
+ 732      53746172 
+ 732      74457800 
+ 733              	.LASF8:
+ 734 013c 756E7369 		.ascii	"unsigned int\000"
+ 734      676E6564 
+ 734      20696E74 
+ 734      00
+ 735              	.LASF7:
+ 736 0149 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 736      206C6F6E 
+ 736      6720756E 
+ 736      7369676E 
+ 736      65642069 
+ 737              	.LASF24:
+ 738 0160 54696D65 		.ascii	"Timer_1_ReadCapture\000"
+ 738      725F315F 
+ 738      52656164 
+ 738      43617074 
+ 738      75726500 
+ 739              	.LASF10:
+ 740 0174 696E7433 		.ascii	"int32_t\000"
+ 740      325F7400 
+ 741              	.LASF15:
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccWlRjdp.s 			page 16
+
+
+ 742 017c 73697A65 		.ascii	"sizetype\000"
+ 742      74797065 
+ 742      00
+ 743              	.LASF29:
+ 744 0185 696E6974 		.ascii	"initDistSens\000"
+ 744      44697374 
+ 744      53656E73 
+ 744      00
+ 745              	.LASF6:
+ 746 0192 6C6F6E67 		.ascii	"long long int\000"
+ 746      206C6F6E 
+ 746      6720696E 
+ 746      7400
+ 747              	.LASF28:
+ 748 01a0 433A5C49 		.ascii	"C:\\IKT\\Projekt3-2020\\Kode\\main_psoc\\Main_Proje"
+ 748      4B545C50 
+ 748      726F6A65 
+ 748      6B74332D 
+ 748      32303230 
+ 749 01ce 63745C4D 		.ascii	"ct\\Main.cydsn\000"
+ 749      61696E2E 
+ 749      63796473 
+ 749      6E00
+ 750              	.LASF25:
+ 751 01dc 54696D65 		.ascii	"Timer_1_ClearFIFO\000"
+ 751      725F315F 
+ 751      436C6561 
+ 751      72464946 
+ 751      4F00
+ 752              	.LASF2:
+ 753 01ee 73686F72 		.ascii	"short int\000"
+ 753      7420696E 
+ 753      7400
+ 754              	.LASF4:
+ 755 01f8 6C6F6E67 		.ascii	"long int\000"
+ 755      20696E74 
+ 755      00
+ 756              	.LASF27:
+ 757 0201 41667374 		.ascii	"Afstandssensor.c\000"
+ 757      616E6473 
+ 757      73656E73 
+ 757      6F722E63 
+ 757      00
+ 758              	.LASF18:
+ 759 0212 54696D65 		.ascii	"Timer_int_1_Handler\000"
+ 759      725F696E 
+ 759      745F315F 
+ 759      48616E64 
+ 759      6C657200 
+ 760              	.LASF14:
+ 761 0226 6C6F6E67 		.ascii	"long double\000"
+ 761      20646F75 
+ 761      626C6500 
+ 762              	.LASF0:
+ 763 0232 7369676E 		.ascii	"signed char\000"
+ 763      65642063 
+ 763      68617200 
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccWlRjdp.s 			page 17
+
+
+ 764              	.LASF30:
+ 765 023e 63617074 		.ascii	"capture\000"
+ 765      75726500 
+ 766              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

@@ -1,5 +1,5 @@
 -- Project:   Main
--- Generated: 12/04/2020 15:29:27
+-- Generated: 12/08/2020 20:42:52
 -- PSoC Creator  4.3
 
 ENTITY Main IS
@@ -21,7 +21,7 @@ ENTITY Main IS
         Done(0)_PAD : OUT std_ulogic;
         Trigger(0)_PAD : OUT std_ulogic;
         Echo(0)_PAD : IN std_ulogic;
-        LED(0)_PAD : OUT std_ulogic);
+        led(0)_PAD : OUT std_ulogic);
     ATTRIBUTE voltage_VDDABUF OF __DEFAULT__ : ENTITY IS 5e0;
     ATTRIBUTE voltage_VDDA OF __DEFAULT__ : ENTITY IS 5e0;
     ATTRIBUTE voltage_VUSB OF __DEFAULT__ : ENTITY IS 5e0;
@@ -47,7 +47,6 @@ ARCHITECTURE __DEFAULT__ OF Main IS
     SIGNAL ClockBlock_XTAL_32KHZ : bit;
     SIGNAL Done(0)__PA : bit;
     SIGNAL Echo(0)__PA : bit;
-    SIGNAL LED(0)__PA : bit;
     SIGNAL Net_1174 : bit;
     ATTRIBUTE udbclken_assigned OF Net_1174 : SIGNAL IS "True";
     ATTRIBUTE global_signal OF Net_1174 : SIGNAL IS true;
@@ -273,6 +272,7 @@ ARCHITECTURE __DEFAULT__ OF Main IS
     SIGNAL in2(0)__PA : bit;
     SIGNAL in3(0)__PA : bit;
     SIGNAL in4(0)__PA : bit;
+    SIGNAL led(0)__PA : bit;
     SIGNAL tmpOE__SDA_1_net_0 : bit;
     ATTRIBUTE POWER OF tmpOE__SDA_1_net_0 : SIGNAL IS true;
     SIGNAL zero : bit;
@@ -367,8 +367,8 @@ ARCHITECTURE __DEFAULT__ OF Main IS
     ATTRIBUTE Location OF Trigger(0) : LABEL IS "P3[7]";
     ATTRIBUTE lib_model OF Echo(0) : LABEL IS "iocell19";
     ATTRIBUTE Location OF Echo(0) : LABEL IS "P3[6]";
-    ATTRIBUTE lib_model OF LED(0) : LABEL IS "iocell20";
-    ATTRIBUTE Location OF LED(0) : LABEL IS "P2[1]";
+    ATTRIBUTE lib_model OF led(0) : LABEL IS "iocell20";
+    ATTRIBUTE Location OF led(0) : LABEL IS "P2[1]";
     ATTRIBUTE lib_model OF \PWM1:PWMUDB:status_2\ : LABEL IS "macrocell1";
     ATTRIBUTE Location OF \PWM1:PWMUDB:status_2\ : LABEL IS "U(2,5)";
     ATTRIBUTE lib_model OF \Counter:CounterUDB:reload\ : LABEL IS "macrocell2";
@@ -2576,7 +2576,7 @@ BEGIN
             out_clock_en => '1',
             out_reset => '0');
 
-    LED:logicalport
+    led:logicalport
         GENERIC MAP(
             drive_mode => "110",
             ibuf_enabled => "1",
@@ -2647,18 +2647,18 @@ BEGIN
             out_clock_en => open,
             out_reset => open);
 
-    LED(0):iocell
+    led(0):iocell
         GENERIC MAP(
             in_sync_mode => 0,
             out_sync_mode => 0,
             oe_sync_mode => 0,
-            logicalport => "LED",
+            logicalport => "led",
             logicalport_pin_id => 0,
             io_capabilities => "0000000000000000000000000000000000000000000000000000000000000001")
         PORT MAP(
-            pa_out => LED(0)__PA,
+            pa_out => led(0)__PA,
             oe => open,
-            pad_in => LED(0)_PAD,
+            pad_in => led(0)_PAD,
             in_clock => open,
             in_clock_en => '1',
             in_reset => '0',

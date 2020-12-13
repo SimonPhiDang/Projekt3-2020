@@ -13,7 +13,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Main_Project\Main\Main.cydwr\Pins">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Main_Project\Main\Source Files\main.c">
 <ExpandedNodeIds>
 <v>Main_Project</v>
 <v>Main_Project\Main</v>
@@ -29,13 +29,16 @@
 <v>Main_Project\Main\Main.cydwr\Flash Security</v>
 <v>Main_Project\Main\Main.cydwr\EEPROM</v>
 <v>Main_Project\Main\Header Files</v>
+<v>Main_Project\Main\Header Files\Afstandssensor.h</v>
 <v>Main_Project\Main\Header Files\colorSensor.h</v>
-<v>Main_Project\Main\Header Files\I2Ckommunikation.h</v>
+<v>Main_Project\Main\Header Files\cyapicallbacks.h</v>
+<v>Main_Project\Main\Header Files\i2cKommunikation.h</v>
 <v>Main_Project\Main\Header Files\motorStyring.h</v>
 <v>Main_Project\Main\Header Files\Scale.h</v>
 <v>Main_Project\Main\Source Files</v>
+<v>Main_Project\Main\Source Files\Afstandssensor.c</v>
 <v>Main_Project\Main\Source Files\colorSensor.c</v>
-<v>Main_Project\Main\Source Files\I2CI2Ckommunikation.c</v>
+<v>Main_Project\Main\Source Files\i2cKommunikation.c</v>
 <v>Main_Project\Main\Source Files\main.c</v>
 <v>Main_Project\Main\Source Files\motorStyring.c</v>
 <v>Main_Project\Main\Source Files\Scale.c</v>
@@ -57,21 +60,21 @@
 <v>Main_Project\Main\Main.cydwr\Flash Security</v>
 <v>Main_Project\Main\Main.cydwr\EEPROM</v>
 <v>Main_Project\Main\Header Files</v>
+<v>Main_Project\Main\Header Files\Afstandssensor.h</v>
 <v>Main_Project\Main\Header Files\colorSensor.h</v>
-<v>Main_Project\Main\Header Files\I2Ckommunikation.h</v>
+<v>Main_Project\Main\Header Files\cyapicallbacks.h</v>
+<v>Main_Project\Main\Header Files\i2cKommunikation.h</v>
 <v>Main_Project\Main\Header Files\motorStyring.h</v>
 <v>Main_Project\Main\Header Files\Scale.h</v>
 <v>Main_Project\Main\Source Files</v>
+<v>Main_Project\Main\Source Files\Afstandssensor.c</v>
 <v>Main_Project\Main\Source Files\colorSensor.c</v>
-<v>Main_Project\Main\Source Files\I2CI2Ckommunikation.c</v>
+<v>Main_Project\Main\Source Files\i2cKommunikation.c</v>
 <v>Main_Project\Main\Source Files\main.c</v>
 <v>Main_Project\Main\Source Files\motorStyring.c</v>
 <v>Main_Project\Main\Source Files\Scale.c</v>
 <v>Main_Project\Main\Generated_Source</v>
 <v>Main_Project\Main\Generated_Source\PSoC5</v>
-<v>Main_Project\Main\Generated_Source\PSoC5\ADC_SAR_1</v>
-<v>Main_Project\Main\Generated_Source\PSoC5\ADC_SAR_1_ExtVref</v>
-<v>Main_Project\Main\Generated_Source\PSoC5\ADC_SAR_1_IRQ</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
@@ -104,8 +107,11 @@
 <v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SAR_1_IRQ.lst</v>
 <v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SAR_1_PM.lst</v>
 <v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SAR_1_theACLK.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\Afstandssensor.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\Clock_1.lst</v>
 <v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\Clock_100kHz.lst</v>
 <v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\Clock_10kHz.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\Clock_Trigger.lst</v>
 <v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\ClockPWM.lst</v>
 <v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\ClockPWM_1.lst</v>
 <v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\Cm3Start.lst</v>
@@ -126,13 +132,14 @@
 <v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\CySpc.lst</v>
 <v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
 <v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\Done.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\Echo.lst</v>
 <v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\I2C.lst</v>
 <v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\I2C_BOOT.lst</v>
 <v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\I2C_INT.lst</v>
 <v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\I2C_MASTER.lst</v>
 <v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\I2C_PM.lst</v>
 <v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\I2C_SLAVE.lst</v>
-<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\I2CI2Ckommunikation.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\i2cKommunikation.lst</v>
 <v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\in1.lst</v>
 <v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\in2.lst</v>
 <v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\in3.lst</v>
@@ -141,6 +148,8 @@
 <v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\motorStyring.lst</v>
 <v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\OE.lst</v>
 <v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\Pin_ADC_in.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\PWM_Trigger.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\PWM_Trigger_PM.lst</v>
 <v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\PWM1.lst</v>
 <v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\PWM1_PM.lst</v>
 <v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\PWM2.lst</v>
@@ -156,8 +165,12 @@
 <v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\SDA_1.lst</v>
 <v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\SensorOut.lst</v>
 <v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\Timer.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\Timer_1.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\Timer_1_PM.lst</v>
 <v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\Timer_INT.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\Timer_int_1.lst</v>
 <v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\Timer_PM.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\Trigger.lst</v>
 <v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Main.elf</v>
 <v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Main.hex</v>
 <v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Main.map</v>
@@ -178,8 +191,11 @@
 <v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SAR_1_IRQ.lst</v>
 <v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SAR_1_PM.lst</v>
 <v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SAR_1_theACLK.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\Afstandssensor.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\Clock_1.lst</v>
 <v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\Clock_100kHz.lst</v>
 <v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\Clock_10kHz.lst</v>
+<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\Clock_Trigger.lst</v>
 <v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\ClockPWM.lst</v>
 <v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\ClockPWM_1.lst</v>
 <v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\Cm3Start.lst</v>
@@ -192,9 +208,6 @@
 <v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
 <v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
 <v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\CyDmac.lst</v>
-<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
-<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
-<v>Main_Project\Main\CortexM3\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
@@ -222,7 +235,8 @@
 <v>Main_Project\Main\I2C_v3_50.pdf</v>
 <v>Main_Project\Main\PWM_v3_30</v>
 <v>Main_Project\Main\PWM_v3_30\PWM_v3_30.pdf</v>
-<v>Main_Project\Main\Timer_v2_80.pdf</v>
+<v>Main_Project\Main\Timer_v2_80</v>
+<v>Main_Project\Main\Timer_v2_80\Timer_v2_80.pdf</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
 <v>Main_Project</v>
@@ -243,7 +257,8 @@
 <v>Main_Project\Main\I2C_v3_50.pdf</v>
 <v>Main_Project\Main\PWM_v3_30</v>
 <v>Main_Project\Main\PWM_v3_30\PWM_v3_30.pdf</v>
-<v>Main_Project\Main\Timer_v2_80.pdf</v>
+<v>Main_Project\Main\Timer_v2_80</v>
+<v>Main_Project\Main\Timer_v2_80\Timer_v2_80.pdf</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStatesV2>
@@ -253,16 +268,18 @@
 </CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
 <Unloaded />
 <OpenDocs>
-<name v=".\Main.cydsn\Main.cydwr" />
-<name v=".\Main.cydsn\main.c" />
-<name v=".\Main.cydsn\I2CI2Ckommunikation.c" />
-<name v=".\Main.cydsn\I2Ckommunikation.h" />
-<name v=".\Main.cydsn\motorStyring.c" />
-<name v=".\Main.cydsn\TopDesign\TopDesign.cysch" />
-<name v=".\Main.cydsn\colorSensor.h" />
-<name v=".\Main.cydsn\Scale.c" />
-<name v=".\Main.cydsn\colorSensor.c" />
-<name v=".\Main.cydsn\motorStyring.h" />
+<name v="..\..\..\..\3semesterprojekt\psocmain\Main.cydsn\main.c" />
+<name v="..\..\..\..\3semesterprojekt\psocmain\Main.cydsn\motorStyring.c" />
+<name v="..\..\..\..\3semesterprojekt\psocmain\Main.cydsn\Scale.c" />
+<name v="..\..\..\..\3semesterprojekt\psocmain\Main.cydsn\colorSensor.c" />
+<name v="..\..\..\..\3semesterprojekt\psocmain\Main.cydsn\i2cKommunikation.c" />
+<name v="..\..\..\..\3semesterprojekt\psocmain\Main.cydsn\Afstandssensor.c" />
+<name v="..\..\..\..\3semesterprojekt\psocmain\Main.cydsn\motorStyring.h" />
+<name v="..\..\..\..\3semesterprojekt\psocmain\Main.cydsn\Scale.h" />
+<name v="..\..\..\..\3semesterprojekt\psocmain\Main.cydsn\colorSensor.h" />
+<name v="..\..\..\..\3semesterprojekt\psocmain\Main.cydsn\Afstandssensor.h" />
+<name v="..\..\..\..\3semesterprojekt\psocmain\Main.cydsn\TopDesign\TopDesign.cysch" />
+<name v="..\..\..\..\3semesterprojekt\psocmain\Main.cydsn\Main.cydwr" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
@@ -270,7 +287,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="930, 371" SelectedTabbedMdiWindow="f60b755d-fc1d-4412-b374-7dbbcf9b0e4e"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="c42d311e-f3b1-4b6e-941b-99861485755c" /><DocumentWindow Key="C:\IKT\Projekt3-2020\Kode\main_psoc\Main_Project\Main.cydsn\Main.cydwr" Guid="f60b755d-fc1d-4412-b374-7dbbcf9b0e4e" /><DocumentWindow Key="C:\IKT\Projekt3-2020\Kode\main_psoc\Main_Project\Main.cydsn\main.c" Guid="005afd51-b84d-42d2-bb04-bcafb4e920dc" /><DocumentWindow Key="C:\IKT\Projekt3-2020\Kode\main_psoc\Main_Project\Main.cydsn\I2CI2Ckommunikation.c" Guid="7f7807b0-dca1-4f64-8b6b-9dc65c2e9644" /><DocumentWindow Key="C:\IKT\Projekt3-2020\Kode\main_psoc\Main_Project\Main.cydsn\I2Ckommunikation.h" Guid="aad46342-2718-4a5e-aa7f-fbb2c87b74fe" /><DocumentWindow Key="C:\IKT\Projekt3-2020\Kode\main_psoc\Main_Project\Main.cydsn\motorStyring.c" Guid="2e8adca3-28a9-4f2c-a7be-f86db7a4a15d" /><DocumentWindow Key="C:\IKT\Projekt3-2020\Kode\main_psoc\Main_Project\Main.cydsn\TopDesign\TopDesign.cysch" Guid="d4013a4f-11f5-4228-8e5b-11e2037c2b33" /><DocumentWindow Key="C:\IKT\Projekt3-2020\Kode\main_psoc\Main_Project\Main.cydsn\colorSensor.h" Guid="1e24807a-501f-4f43-a3e4-020badc107c5" /><DocumentWindow Key="C:\IKT\Projekt3-2020\Kode\main_psoc\Main_Project\Main.cydsn\Scale.c" Guid="719318e0-724c-4a01-9f9a-e2ec76f64502" /><DocumentWindow Key="C:\IKT\Projekt3-2020\Kode\main_psoc\Main_Project\Main.cydsn\colorSensor.c" Guid="851dece2-eeb7-42a3-95ae-08edb1bced95" /><DocumentWindow Key="C:\IKT\Projekt3-2020\Kode\main_psoc\Main_Project\Main.cydsn\motorStyring.h" Guid="a8db5394-4522-487b-9d6c-34a466d3246f" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="890, 371" SelectedTabbedMdiWindow="2a722bf6-02de-4ee3-8c4c-7e6407c21cb9"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="c42d311e-f3b1-4b6e-941b-99861485755c" /><DocumentWindow Key="C:\IKT\3semesterprojekt\psocmain\Main.cydsn\main.c" Guid="2a722bf6-02de-4ee3-8c4c-7e6407c21cb9" /><DocumentWindow Key="C:\IKT\3semesterprojekt\psocmain\Main.cydsn\motorStyring.c" Guid="720cd1c5-23dd-4754-ba48-662395e459b8" /><DocumentWindow Key="C:\IKT\3semesterprojekt\psocmain\Main.cydsn\Scale.c" Guid="cd384037-7ef2-4bbf-a8c1-bb9262585fed" /><DocumentWindow Key="C:\IKT\3semesterprojekt\psocmain\Main.cydsn\colorSensor.c" Guid="2d76ef0a-318d-479c-b7f5-ea40e32ae365" /><DocumentWindow Key="C:\IKT\3semesterprojekt\psocmain\Main.cydsn\i2cKommunikation.c" Guid="1685bc8f-e9c7-41eb-9647-6dd4807bba0d" /><DocumentWindow Key="C:\IKT\3semesterprojekt\psocmain\Main.cydsn\Afstandssensor.c" Guid="95f844b4-9463-4cad-bdec-c3aa34562565" /><DocumentWindow Key="C:\IKT\3semesterprojekt\psocmain\Main.cydsn\motorStyring.h" Guid="f38c93a9-7f3f-4e22-8fca-9fa5cf928e04" /><DocumentWindow Key="C:\IKT\3semesterprojekt\psocmain\Main.cydsn\Scale.h" Guid="d36a64bc-2244-4bd4-a98d-b3c97beb0f85" /><DocumentWindow Key="C:\IKT\3semesterprojekt\psocmain\Main.cydsn\colorSensor.h" Guid="4dda97dd-17e8-499f-9ddd-3fdda03d6927" /><DocumentWindow Key="C:\IKT\3semesterprojekt\psocmain\Main.cydsn\Afstandssensor.h" Guid="34357089-1e11-427b-9aaa-c90620ab52b8" /><DocumentWindow Key="C:\IKT\3semesterprojekt\psocmain\Main.cydsn\TopDesign\TopDesign.cysch" Guid="5dbbc4ea-9f33-47b5-a3f9-05ed25719bd2" /><DocumentWindow Key="C:\IKT\3semesterprojekt\psocmain\Main.cydsn\Main.cydwr" Guid="e7ca34c6-7253-49ab-abba-8aaa712aa3d7" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>

@@ -1,5 +1,5 @@
-C:\Users\Simon\Desktop\Projekt3-2020\Kode\main_psoc\Main_Project\Main.cydsn\TopDesign\TopDesign.cysch
-C:\Users\Simon\Desktop\Projekt3-2020\Kode\main_psoc\Main_Project\Main.cydsn\TopDesign\TopDesign.cysym
+C:\IKT\Projekt3-2020\Kode\main_psoc\Main_Project\Main.cydsn\TopDesign\TopDesign.cysch
+C:\IKT\Projekt3-2020\Kode\main_psoc\Main_Project\Main.cydsn\TopDesign\TopDesign.cysym
 C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\cy_pins_v2_20\cy_pins_v2_20.cysym
 C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\cy_pins_v2_20\cy_pins_v2_20.pdf
 C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\cy_pins_v2_20\cy_pins_v2_20.cystate
@@ -237,33 +237,33 @@ C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\psoc\content\CyComp
 C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\Timer_v2_80
 C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\B_Timer_v2_80\B_Timer_v2_80.cysym
 C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\B_Timer_v2_80\B_Timer_v2_80.v
-C:\Users\Simon\Desktop\Projekt3-2020\Kode\main_psoc\Main_Project\Main.cydsn\Main.cydwr
-C:\Users\Simon\Documents\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_0\PSoC5\API\cm3gcc.ld
-C:\Users\Simon\Documents\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_0\PSoC5\API\Cm3RealView.scat
-C:\Users\Simon\Documents\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_0\PSoC5\API\Cm3Start.c
-C:\Users\Simon\Documents\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_0\PSoC5\API\core_cm3.h
-C:\Users\Simon\Documents\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_0\PSoC5\API\core_cm3_psoc5.h
-C:\Users\Simon\Documents\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_0\PSoC5\API\CyBootAsmGnu.s
-C:\Users\Simon\Documents\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_0\PSoC5\API\CyBootAsmRv.s
-C:\Users\Simon\Documents\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_0\PSoC5\API\CyDmac.c
-C:\Users\Simon\Documents\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_0\PSoC5\API\CyDmac.h
-C:\Users\Simon\Documents\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_0\PSoC5\API\CyFlash.c
-C:\Users\Simon\Documents\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_0\PSoC5\API\CyFlash.h
-C:\Users\Simon\Documents\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_0\PSoC5\API\CyLib.c
-C:\Users\Simon\Documents\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_0\PSoC5\API\CyLib.h
-C:\Users\Simon\Documents\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_0\PSoC5\API\cypins.h
-C:\Users\Simon\Documents\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_0\PSoC5\API\cyPm.c
-C:\Users\Simon\Documents\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_0\PSoC5\API\cyPm.h
-C:\Users\Simon\Documents\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_0\PSoC5\API\CySpc.c
-C:\Users\Simon\Documents\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_0\PSoC5\API\CySpc.h
-C:\Users\Simon\Documents\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_0\PSoC5\API\cytypes.h
-C:\Users\Simon\Documents\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_0\PSoC5\API\cyutils.c
-C:\Users\Simon\Documents\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_0\PSoC5\API\core_cmFunc.h
-C:\Users\Simon\Documents\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_0\PSoC5\API\core_cmInstr.h
-C:\Users\Simon\Documents\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_0\PSoC5\API\Cm3Iar.icf
-C:\Users\Simon\Documents\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_0\PSoC5\API\CyBootAsmIar.s
-C:\Users\Simon\Documents\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_0\PSoC5\API\cmsis_armcc.h
-C:\Users\Simon\Documents\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_0\PSoC5\API\cmsis_gcc.h
-C:\Users\Simon\Documents\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_0\PSoC5\API\cmsis_compiler.h
+C:\IKT\Projekt3-2020\Kode\main_psoc\Main_Project\Main.cydsn\Main.cydwr
+C:\Users\PeterWann\Documents\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_0\PSoC5\API\cm3gcc.ld
+C:\Users\PeterWann\Documents\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_0\PSoC5\API\Cm3RealView.scat
+C:\Users\PeterWann\Documents\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_0\PSoC5\API\Cm3Start.c
+C:\Users\PeterWann\Documents\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_0\PSoC5\API\core_cm3.h
+C:\Users\PeterWann\Documents\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_0\PSoC5\API\core_cm3_psoc5.h
+C:\Users\PeterWann\Documents\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_0\PSoC5\API\CyBootAsmGnu.s
+C:\Users\PeterWann\Documents\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_0\PSoC5\API\CyBootAsmRv.s
+C:\Users\PeterWann\Documents\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_0\PSoC5\API\CyDmac.c
+C:\Users\PeterWann\Documents\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_0\PSoC5\API\CyDmac.h
+C:\Users\PeterWann\Documents\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_0\PSoC5\API\CyFlash.c
+C:\Users\PeterWann\Documents\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_0\PSoC5\API\CyFlash.h
+C:\Users\PeterWann\Documents\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_0\PSoC5\API\CyLib.c
+C:\Users\PeterWann\Documents\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_0\PSoC5\API\CyLib.h
+C:\Users\PeterWann\Documents\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_0\PSoC5\API\cypins.h
+C:\Users\PeterWann\Documents\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_0\PSoC5\API\cyPm.c
+C:\Users\PeterWann\Documents\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_0\PSoC5\API\cyPm.h
+C:\Users\PeterWann\Documents\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_0\PSoC5\API\CySpc.c
+C:\Users\PeterWann\Documents\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_0\PSoC5\API\CySpc.h
+C:\Users\PeterWann\Documents\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_0\PSoC5\API\cytypes.h
+C:\Users\PeterWann\Documents\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_0\PSoC5\API\cyutils.c
+C:\Users\PeterWann\Documents\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_0\PSoC5\API\core_cmFunc.h
+C:\Users\PeterWann\Documents\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_0\PSoC5\API\core_cmInstr.h
+C:\Users\PeterWann\Documents\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_0\PSoC5\API\Cm3Iar.icf
+C:\Users\PeterWann\Documents\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_0\PSoC5\API\CyBootAsmIar.s
+C:\Users\PeterWann\Documents\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_0\PSoC5\API\cmsis_armcc.h
+C:\Users\PeterWann\Documents\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_0\PSoC5\API\cmsis_gcc.h
+C:\Users\PeterWann\Documents\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_0\PSoC5\API\cmsis_compiler.h
 C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\Em_EEPROM_Dynamic_v2_20\API\cy_em_eeprom.c
 C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\Em_EEPROM_Dynamic_v2_20\API\cy_em_eeprom.h

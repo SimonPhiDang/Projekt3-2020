@@ -920,7 +920,7 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x4073
+.debug_info     0x00000000     0x4063
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x161 .\CortexM3\ARM_GCC_541\Debug\main.o
  .debug_info    0x00000161      0x18c .\CortexM3\ARM_GCC_541\Debug\ADC2.o
@@ -933,9 +933,9 @@ END GROUP
  .debug_info    0x0000157d     0x1374 .\CortexM3\ARM_GCC_541\Debug\PRJ3Scale.a(CyLib.o)
  .debug_info    0x000028f1      0xa2a .\CortexM3\ARM_GCC_541\Debug\PRJ3Scale.a(cyPm.o)
  .debug_info    0x0000331b      0x11f .\CortexM3\ARM_GCC_541\Debug\PRJ3Scale.a(LED.o)
- .debug_info    0x0000343a       0x9c .\CortexM3\ARM_GCC_541\Debug\PRJ3Scale.a(CyBootAsmGnu.o)
- .debug_info    0x000034d6      0x64d .\CortexM3\ARM_GCC_541\Debug\PRJ3Scale.a(CyFlash.o)
- .debug_info    0x00003b23      0x550 .\CortexM3\ARM_GCC_541\Debug\PRJ3Scale.a(CySpc.o)
+ .debug_info    0x0000343a       0x8c .\CortexM3\ARM_GCC_541\Debug\PRJ3Scale.a(CyBootAsmGnu.o)
+ .debug_info    0x000034c6      0x64d .\CortexM3\ARM_GCC_541\Debug\PRJ3Scale.a(CyFlash.o)
+ .debug_info    0x00003b13      0x550 .\CortexM3\ARM_GCC_541\Debug\PRJ3Scale.a(CySpc.o)
 
 .debug_abbrev   0x00000000     0x10ed
  *(.debug_abbrev)
@@ -993,34 +993,34 @@ END GROUP
  .debug_frame   0x00001244       0x28 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy-stub.o)
  .debug_frame   0x0000126c       0x20 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
 
-.debug_str      0x00000000     0x17c1
+.debug_str      0x00000000     0x17b1
  *(.debug_str)
- .debug_str     0x00000000      0x191 .\CortexM3\ARM_GCC_541\Debug\main.o
-                                0x1d9 (size before relaxing)
- .debug_str     0x00000191       0x70 .\CortexM3\ARM_GCC_541\Debug\ADC2.o
-                                0x23b (size before relaxing)
- .debug_str     0x00000201      0x180 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
-                                0x31b (size before relaxing)
- .debug_str     0x00000381       0x7f .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
-                                0x1f0 (size before relaxing)
- .debug_str     0x00000400      0x13f .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
-                                0x316 (size before relaxing)
- .debug_str     0x0000053f      0x282 .\CortexM3\ARM_GCC_541\Debug\PRJ3Scale.a(ADC_SAR_1.o)
-                                0x4c9 (size before relaxing)
- .debug_str     0x000007c1       0x35 .\CortexM3\ARM_GCC_541\Debug\PRJ3Scale.a(ADC_SAR_1_INT.o)
-                                0x1a7 (size before relaxing)
- .debug_str     0x000007f6      0x1be .\CortexM3\ARM_GCC_541\Debug\PRJ3Scale.a(ADC_SAR_1_theACLK.o)
-                                0x372 (size before relaxing)
- .debug_str     0x000009b4      0x7ef .\CortexM3\ARM_GCC_541\Debug\PRJ3Scale.a(CyLib.o)
-                                0xa53 (size before relaxing)
- .debug_str     0x000011a3      0x365 .\CortexM3\ARM_GCC_541\Debug\PRJ3Scale.a(cyPm.o)
-                                0x73f (size before relaxing)
- .debug_str     0x00001508       0x52 .\CortexM3\ARM_GCC_541\Debug\PRJ3Scale.a(LED.o)
-                                0x1e4 (size before relaxing)
- .debug_str     0x0000155a      0x1bb .\CortexM3\ARM_GCC_541\Debug\PRJ3Scale.a(CyFlash.o)
-                                0x3cc (size before relaxing)
- .debug_str     0x00001715       0xac .\CortexM3\ARM_GCC_541\Debug\PRJ3Scale.a(CySpc.o)
-                                0x344 (size before relaxing)
+ .debug_str     0x00000000      0x181 .\CortexM3\ARM_GCC_541\Debug\main.o
+                                0x1c9 (size before relaxing)
+ .debug_str     0x00000181       0x70 .\CortexM3\ARM_GCC_541\Debug\ADC2.o
+                                0x22b (size before relaxing)
+ .debug_str     0x000001f1      0x180 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+                                0x30b (size before relaxing)
+ .debug_str     0x00000371       0x7f .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
+                                0x1e0 (size before relaxing)
+ .debug_str     0x000003f0      0x13f .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+                                0x306 (size before relaxing)
+ .debug_str     0x0000052f      0x282 .\CortexM3\ARM_GCC_541\Debug\PRJ3Scale.a(ADC_SAR_1.o)
+                                0x4b9 (size before relaxing)
+ .debug_str     0x000007b1       0x35 .\CortexM3\ARM_GCC_541\Debug\PRJ3Scale.a(ADC_SAR_1_INT.o)
+                                0x197 (size before relaxing)
+ .debug_str     0x000007e6      0x1be .\CortexM3\ARM_GCC_541\Debug\PRJ3Scale.a(ADC_SAR_1_theACLK.o)
+                                0x362 (size before relaxing)
+ .debug_str     0x000009a4      0x7ef .\CortexM3\ARM_GCC_541\Debug\PRJ3Scale.a(CyLib.o)
+                                0xa43 (size before relaxing)
+ .debug_str     0x00001193      0x365 .\CortexM3\ARM_GCC_541\Debug\PRJ3Scale.a(cyPm.o)
+                                0x72f (size before relaxing)
+ .debug_str     0x000014f8       0x52 .\CortexM3\ARM_GCC_541\Debug\PRJ3Scale.a(LED.o)
+                                0x1d4 (size before relaxing)
+ .debug_str     0x0000154a      0x1bb .\CortexM3\ARM_GCC_541\Debug\PRJ3Scale.a(CyFlash.o)
+                                0x3bc (size before relaxing)
+ .debug_str     0x00001705       0xac .\CortexM3\ARM_GCC_541\Debug\PRJ3Scale.a(CySpc.o)
+                                0x334 (size before relaxing)
 
 .debug_loc      0x00000000     0x1e19
  *(.debug_loc)
@@ -1159,4 +1159,4 @@ END GROUP
 
 /DISCARD/
  *(.note.GNU-stack)
-OUTPUT(C:\Users\Simon\Desktop\Projekt3-2020\Kode\Scale\Projekt3Scale\PRJ3Scale.cydsn\CortexM3\ARM_GCC_541\Debug\PRJ3Scale.elf elf32-littlearm)
+OUTPUT(C:\IKT\Projekt3-2020\Kode\Scale\Projekt3Scale\PRJ3Scale.cydsn\CortexM3\ARM_GCC_541\Debug\PRJ3Scale.elf elf32-littlearm)

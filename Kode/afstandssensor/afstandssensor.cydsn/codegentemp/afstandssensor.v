@@ -1,6 +1,6 @@
 // ======================================================================
 // afstandssensor.v generated from TopDesign.cysch
-// 12/08/2020 at 18:43
+// 12/08/2020 at 19:47
 // This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 // ======================================================================
 

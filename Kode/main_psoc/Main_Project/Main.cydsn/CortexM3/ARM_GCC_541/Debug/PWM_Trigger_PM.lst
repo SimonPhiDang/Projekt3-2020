@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccQQx1Tx.s 			page 1
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccuE0JY1.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccQQx1Tx.s 			page 1
   28:Generated_Source\PSoC5/PWM_Trigger_PM.c **** *  Saves the current user configuration of the component.
   29:Generated_Source\PSoC5/PWM_Trigger_PM.c **** *
   30:Generated_Source\PSoC5/PWM_Trigger_PM.c **** * Parameters:
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccQQx1Tx.s 			page 2
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccuE0JY1.s 			page 2
 
 
   31:Generated_Source\PSoC5/PWM_Trigger_PM.c **** *  None
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccQQx1Tx.s 			page 1
   64:Generated_Source\PSoC5/PWM_Trigger_PM.c ****             PWM_Trigger_backup.PWMControlRegister = PWM_Trigger_ReadControlRegister();
   49              		.loc 1 64 0
   50 0016 FFF7FEFF 		bl	PWM_Trigger_ReadControlRegister
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccQQx1Tx.s 			page 3
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccuE0JY1.s 			page 3
 
 
   51              	.LVL2:
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccQQx1Tx.s 			page 1
   92:Generated_Source\PSoC5/PWM_Trigger_PM.c ****                 PWM_Trigger_WritePeriod(PWM_Trigger_backup.PWMPeriod);
   78              		.loc 1 92 0
   79 0002 074C     		ldr	r4, .L7
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccQQx1Tx.s 			page 4
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccuE0JY1.s 			page 4
 
 
   80 0004 A088     		ldrh	r0, [r4, #4]
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccQQx1Tx.s 			page 1
  115:Generated_Source\PSoC5/PWM_Trigger_PM.c **** 
  116:Generated_Source\PSoC5/PWM_Trigger_PM.c **** 
  117:Generated_Source\PSoC5/PWM_Trigger_PM.c **** /*******************************************************************************
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccQQx1Tx.s 			page 5
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccuE0JY1.s 			page 5
 
 
  118:Generated_Source\PSoC5/PWM_Trigger_PM.c **** * Function Name: PWM_Trigger_Sleep
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccQQx1Tx.s 			page 1
  148:Generated_Source\PSoC5/PWM_Trigger_PM.c ****         }
  149:Generated_Source\PSoC5/PWM_Trigger_PM.c ****     #endif /* (PWM_Trigger_UseControl) */
  150:Generated_Source\PSoC5/PWM_Trigger_PM.c **** 
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccQQx1Tx.s 			page 6
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccuE0JY1.s 			page 6
 
 
  151:Generated_Source\PSoC5/PWM_Trigger_PM.c ****     /* Stop component */
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccQQx1Tx.s 			page 1
  161              		@ args = 0, pretend = 0, frame = 0
  162              		@ frame_needed = 0, uses_anonymous_args = 0
  163 0000 08B5     		push	{r3, lr}
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccQQx1Tx.s 			page 7
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccuE0JY1.s 			page 7
 
 
  164              		.cfi_def_cfa_offset 8
@@ -412,17 +412,17 @@ ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccQQx1Tx.s 			page 1
  204 000c B3000000 		.4byte	.LASF35
  205 0010 0C       		.byte	0xc
  206 0011 77000000 		.4byte	.LASF36
- 207 0015 84020000 		.4byte	.LASF37
+ 207 0015 0F020000 		.4byte	.LASF37
  208 0019 00000000 		.4byte	.Ldebug_ranges0+0
  209 001d 00000000 		.4byte	0
  210 0021 00000000 		.4byte	.Ldebug_line0
  211 0025 02       		.uleb128 0x2
  212 0026 01       		.byte	0x1
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccQQx1Tx.s 			page 8
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccuE0JY1.s 			page 8
 
 
  213 0027 06       		.byte	0x6
- 214 0028 E5020000 		.4byte	.LASF0
+ 214 0028 D5020000 		.4byte	.LASF0
  215 002c 02       		.uleb128 0x2
  216 002d 01       		.byte	0x1
  217 002e 08       		.byte	0x8
@@ -430,7 +430,7 @@ ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccQQx1Tx.s 			page 1
  219 0033 02       		.uleb128 0x2
  220 0034 02       		.byte	0x2
  221 0035 05       		.byte	0x5
- 222 0036 47020000 		.4byte	.LASF2
+ 222 0036 7E020000 		.4byte	.LASF2
  223 003a 02       		.uleb128 0x2
  224 003b 02       		.byte	0x2
  225 003c 07       		.byte	0x7
@@ -438,7 +438,7 @@ ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccQQx1Tx.s 			page 1
  227 0041 02       		.uleb128 0x2
  228 0042 04       		.byte	0x4
  229 0043 05       		.byte	0x5
- 230 0044 D0020000 		.4byte	.LASF4
+ 230 0044 BB020000 		.4byte	.LASF4
  231 0048 02       		.uleb128 0x2
  232 0049 04       		.byte	0x4
  233 004a 07       		.byte	0x7
@@ -478,12 +478,12 @@ ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccQQx1Tx.s 			page 1
  267 008c 04       		.byte	0x4
  268 008d 9B010000 		.4byte	.LASF12
  269 0091 02       		.uleb128 0x2
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccQQx1Tx.s 			page 9
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccuE0JY1.s 			page 9
 
 
  270 0092 01       		.byte	0x1
  271 0093 08       		.byte	0x8
- 272 0094 0F020000 		.4byte	.LASF13
+ 272 0094 C4020000 		.4byte	.LASF13
  273 0098 04       		.uleb128 0x4
  274 0099 E0010000 		.4byte	.LASF14
  275 009d 02       		.byte	0x2
@@ -494,7 +494,7 @@ ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccQQx1Tx.s 			page 1
  280 00a9 02       		.uleb128 0x2
  281 00aa 08       		.byte	0x8
  282 00ab 04       		.byte	0x4
- 283 00ac D9020000 		.4byte	.LASF15
+ 283 00ac C9020000 		.4byte	.LASF15
  284 00b0 02       		.uleb128 0x2
  285 00b1 04       		.byte	0x4
  286 00b2 07       		.byte	0x7
@@ -523,7 +523,7 @@ ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccQQx1Tx.s 			page 1
  309 00de 77000000 		.4byte	0x77
  310 00e2 04       		.byte	0x4
  311 00e3 07       		.uleb128 0x7
- 312 00e4 22030000 		.4byte	.LASF20
+ 312 00e4 12030000 		.4byte	.LASF20
  313 00e8 03       		.byte	0x3
  314 00e9 76       		.byte	0x76
  315 00ea 6B000000 		.4byte	0x6b
@@ -536,15 +536,15 @@ ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccQQx1Tx.s 			page 1
  322 00fa 07       		.byte	0x7
  323 00fb 00       		.byte	0
  324 00fc 08       		.uleb128 0x8
- 325 00fd 14020000 		.4byte	.LASF22
+ 325 00fd 4B020000 		.4byte	.LASF22
  326 0101 03       		.byte	0x3
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccQQx1Tx.s 			page 10
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccuE0JY1.s 			page 10
 
 
  327 0102 8B       		.byte	0x8b
  328 0103 B7000000 		.4byte	0xb7
  329 0107 09       		.uleb128 0x9
- 330 0108 35030000 		.4byte	.LASF23
+ 330 0108 25030000 		.4byte	.LASF23
  331 010c 01       		.byte	0x1
  332 010d 2A       		.byte	0x2a
  333 010e 00000000 		.4byte	.LFB0
@@ -563,7 +563,7 @@ ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccQQx1Tx.s 			page 1
  346 0133 E0010000 		.4byte	0x1e0
  347 0137 00       		.byte	0
  348 0138 09       		.uleb128 0x9
- 349 0139 2D020000 		.4byte	.LASF24
+ 349 0139 64020000 		.4byte	.LASF24
  350 013d 01       		.byte	0x1
  351 013e 58       		.byte	0x58
  352 013f 00000000 		.4byte	.LFB1
@@ -582,7 +582,7 @@ ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccQQx1Tx.s 			page 1
  365 0164 01020000 		.4byte	0x201
  366 0168 00       		.byte	0
  367 0169 09       		.uleb128 0x9
- 368 016a 72020000 		.4byte	.LASF25
+ 368 016a A9020000 		.4byte	.LASF25
  369 016e 01       		.byte	0x1
  370 016f 88       		.byte	0x88
  371 0170 00000000 		.4byte	.LFB2
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccQQx1Tx.s 			page 1
  381 018c 07010000 		.4byte	0x107
  382 0190 00       		.byte	0
  383 0191 09       		.uleb128 0x9
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccQQx1Tx.s 			page 11
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccuE0JY1.s 			page 11
 
 
  384 0192 E5010000 		.4byte	.LASF26
@@ -630,8 +630,8 @@ ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccQQx1Tx.s 			page 1
  410 01d3 03       		.byte	0x3
  411 01d4 C0       		.byte	0xc0
  412 01d5 0C       		.uleb128 0xc
- 413 01d6 F1020000 		.4byte	.LASF28
- 414 01da F1020000 		.4byte	.LASF28
+ 413 01d6 E1020000 		.4byte	.LASF28
+ 414 01da E1020000 		.4byte	.LASF28
  415 01de 03       		.byte	0x3
  416 01df B3       		.byte	0xb3
  417 01e0 0C       		.uleb128 0xc
@@ -645,20 +645,20 @@ ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccQQx1Tx.s 			page 1
  425 01f4 03       		.byte	0x3
  426 01f5 BE       		.byte	0xbe
  427 01f6 0C       		.uleb128 0xc
- 428 01f7 09030000 		.4byte	.LASF31
- 429 01fb 09030000 		.4byte	.LASF31
+ 428 01f7 F9020000 		.4byte	.LASF31
+ 429 01fb F9020000 		.4byte	.LASF31
  430 01ff 03       		.byte	0x3
  431 0200 BA       		.byte	0xba
  432 0201 0C       		.uleb128 0xc
- 433 0202 51020000 		.4byte	.LASF32
- 434 0206 51020000 		.4byte	.LASF32
+ 433 0202 88020000 		.4byte	.LASF32
+ 434 0206 88020000 		.4byte	.LASF32
  435 020a 03       		.byte	0x3
  436 020b 9E       		.byte	0x9e
  437 020c 0C       		.uleb128 0xc
  438 020d 29000000 		.4byte	.LASF33
  439 0211 29000000 		.4byte	.LASF33
  440 0215 03       		.byte	0x3
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccQQx1Tx.s 			page 12
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccuE0JY1.s 			page 12
 
 
  441 0216 93       		.byte	0x93
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccQQx1Tx.s 			page 1
  495 002d 0E       		.uleb128 0xe
  496 002e 3A       		.uleb128 0x3a
  497 002f 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccQQx1Tx.s 			page 13
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccuE0JY1.s 			page 13
 
 
  498 0030 3B       		.uleb128 0x3b
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccQQx1Tx.s 			page 1
  552 0066 09       		.uleb128 0x9
  553 0067 2E       		.uleb128 0x2e
  554 0068 01       		.byte	0x1
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccQQx1Tx.s 			page 14
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccuE0JY1.s 			page 14
 
 
  555 0069 3F       		.uleb128 0x3f
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccQQx1Tx.s 			page 1
  609 00a2 0E       		.uleb128 0xe
  610 00a3 03       		.uleb128 0x3
  611 00a4 0E       		.uleb128 0xe
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccQQx1Tx.s 			page 15
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccuE0JY1.s 			page 15
 
 
  612 00a5 3A       		.uleb128 0x3a
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccQQx1Tx.s 			page 1
  657      6765725F 
  657      57726974 
  657      65506572 
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccQQx1Tx.s 			page 16
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccuE0JY1.s 			page 16
 
 
  658              	.LASF33:
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccQQx1Tx.s 			page 1
  676              	.LASF17:
  677 0141 50574D45 		.ascii	"PWMEnableState\000"
  677      6E61626C 
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccQQx1Tx.s 			page 17
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccuE0JY1.s 			page 17
 
 
  677      65537461 
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccQQx1Tx.s 			page 1
  699      757000
  700              	.LASF16:
  701 01f8 73697A65 		.ascii	"sizetype\000"
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccQQx1Tx.s 			page 18
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccuE0JY1.s 			page 18
 
 
  701      74797065 
@@ -1028,83 +1028,82 @@ ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccQQx1Tx.s 			page 1
  703      206C6F6E 
  703      6720696E 
  703      7400
- 704              	.LASF13:
- 705 020f 63686172 		.ascii	"char\000"
- 705      00
- 706              	.LASF22:
- 707 0214 50574D5F 		.ascii	"PWM_Trigger_backupStruct\000"
- 707      54726967 
- 707      6765725F 
- 707      6261636B 
- 707      75705374 
- 708              	.LASF24:
- 709 022d 50574D5F 		.ascii	"PWM_Trigger_RestoreConfig\000"
- 709      54726967 
- 709      6765725F 
- 709      52657374 
- 709      6F726543 
- 710              	.LASF2:
- 711 0247 73686F72 		.ascii	"short int\000"
- 711      7420696E 
- 711      7400
- 712              	.LASF32:
- 713 0251 50574D5F 		.ascii	"PWM_Trigger_WriteControlRegister\000"
- 713      54726967 
- 713      6765725F 
- 713      57726974 
- 713      65436F6E 
- 714              	.LASF25:
- 715 0272 50574D5F 		.ascii	"PWM_Trigger_Sleep\000"
- 715      54726967 
- 715      6765725F 
- 715      536C6565 
- 715      7000
- 716              	.LASF37:
- 717 0284 433A5C55 		.ascii	"C:\\Users\\Simon\\Desktop\\Projekt3-2020\\Kode\\mai"
- 717      73657273 
- 717      5C53696D 
- 717      6F6E5C44 
- 717      65736B74 
- 718 02b1 6E5F7073 		.ascii	"n_psoc\\Main_Project\\Main.cydsn\000"
- 718      6F635C4D 
- 718      61696E5F 
- 718      50726F6A 
- 718      6563745C 
- 719              	.LASF4:
- 720 02d0 6C6F6E67 		.ascii	"long int\000"
- 720      20696E74 
+ 704              	.LASF37:
+ 705 020f 433A5C49 		.ascii	"C:\\IKT\\Projekt3-2020\\Kode\\main_psoc\\Main_Proje"
+ 705      4B545C50 
+ 705      726F6A65 
+ 705      6B74332D 
+ 705      32303230 
+ 706 023d 63745C4D 		.ascii	"ct\\Main.cydsn\000"
+ 706      61696E2E 
+ 706      63796473 
+ 706      6E00
+ 707              	.LASF22:
+ 708 024b 50574D5F 		.ascii	"PWM_Trigger_backupStruct\000"
+ 708      54726967 
+ 708      6765725F 
+ 708      6261636B 
+ 708      75705374 
+ 709              	.LASF24:
+ 710 0264 50574D5F 		.ascii	"PWM_Trigger_RestoreConfig\000"
+ 710      54726967 
+ 710      6765725F 
+ 710      52657374 
+ 710      6F726543 
+ 711              	.LASF2:
+ 712 027e 73686F72 		.ascii	"short int\000"
+ 712      7420696E 
+ 712      7400
+ 713              	.LASF32:
+ 714 0288 50574D5F 		.ascii	"PWM_Trigger_WriteControlRegister\000"
+ 714      54726967 
+ 714      6765725F 
+ 714      57726974 
+ 714      65436F6E 
+ 715              	.LASF25:
+ 716 02a9 50574D5F 		.ascii	"PWM_Trigger_Sleep\000"
+ 716      54726967 
+ 716      6765725F 
+ 716      536C6565 
+ 716      7000
+ 717              	.LASF4:
+ 718 02bb 6C6F6E67 		.ascii	"long int\000"
+ 718      20696E74 
+ 718      00
+ 719              	.LASF13:
+ 720 02c4 63686172 		.ascii	"char\000"
  720      00
  721              	.LASF15:
- 722 02d9 6C6F6E67 		.ascii	"long double\000"
+ 722 02c9 6C6F6E67 		.ascii	"long double\000"
  722      20646F75 
  722      626C6500 
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccQQx1Tx.s 			page 19
-
-
  723              	.LASF0:
- 724 02e5 7369676E 		.ascii	"signed char\000"
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccuE0JY1.s 			page 19
+
+
+ 724 02d5 7369676E 		.ascii	"signed char\000"
  724      65642063 
  724      68617200 
  725              	.LASF28:
- 726 02f1 50574D5F 		.ascii	"PWM_Trigger_ReadCounter\000"
+ 726 02e1 50574D5F 		.ascii	"PWM_Trigger_ReadCounter\000"
  726      54726967 
  726      6765725F 
  726      52656164 
  726      436F756E 
  727              	.LASF31:
- 728 0309 50574D5F 		.ascii	"PWM_Trigger_WriteCounter\000"
+ 728 02f9 50574D5F 		.ascii	"PWM_Trigger_WriteCounter\000"
  728      54726967 
  728      6765725F 
  728      57726974 
  728      65436F75 
  729              	.LASF20:
- 730 0322 496E7465 		.ascii	"InterruptMaskValue\000"
+ 730 0312 496E7465 		.ascii	"InterruptMaskValue\000"
  730      72727570 
  730      744D6173 
  730      6B56616C 
  730      756500
  731              	.LASF23:
- 732 0335 50574D5F 		.ascii	"PWM_Trigger_SaveConfig\000"
+ 732 0325 50574D5F 		.ascii	"PWM_Trigger_SaveConfig\000"
  732      54726967 
  732      6765725F 
  732      53617665 

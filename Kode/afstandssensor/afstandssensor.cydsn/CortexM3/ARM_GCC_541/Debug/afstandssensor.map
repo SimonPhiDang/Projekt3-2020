@@ -1140,7 +1140,7 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x4bc9
+.debug_info     0x00000000     0x4ba4
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x122 .\CortexM3\ARM_GCC_541\Debug\main.o
  .debug_info    0x00000122      0x2d6 .\CortexM3\ARM_GCC_541\Debug\hcsr04.o
@@ -1155,9 +1155,9 @@ END GROUP
  .debug_info    0x000020be     0x1374 .\CortexM3\ARM_GCC_541\Debug\afstandssensor.a(CyLib.o)
  .debug_info    0x00003432      0xa2a .\CortexM3\ARM_GCC_541\Debug\afstandssensor.a(cyPm.o)
  .debug_info    0x00003e5c      0x11f .\CortexM3\ARM_GCC_541\Debug\afstandssensor.a(LED.o)
- .debug_info    0x00003f7b       0xb1 .\CortexM3\ARM_GCC_541\Debug\afstandssensor.a(CyBootAsmGnu.o)
- .debug_info    0x0000402c      0x64d .\CortexM3\ARM_GCC_541\Debug\afstandssensor.a(CyFlash.o)
- .debug_info    0x00004679      0x550 .\CortexM3\ARM_GCC_541\Debug\afstandssensor.a(CySpc.o)
+ .debug_info    0x00003f7b       0x8c .\CortexM3\ARM_GCC_541\Debug\afstandssensor.a(CyBootAsmGnu.o)
+ .debug_info    0x00004007      0x64d .\CortexM3\ARM_GCC_541\Debug\afstandssensor.a(CyFlash.o)
+ .debug_info    0x00004654      0x550 .\CortexM3\ARM_GCC_541\Debug\afstandssensor.a(CySpc.o)
 
 .debug_abbrev   0x00000000     0x14de
  *(.debug_abbrev)
@@ -1231,38 +1231,38 @@ END GROUP
  .debug_frame   0x00001928       0x20 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-msizer.o)
  .debug_frame   0x00001948       0x5c c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-reent.o)
 
-.debug_str      0x00000000     0x1d32
+.debug_str      0x00000000     0x1d0d
  *(.debug_str)
- .debug_str     0x00000000      0x19f .\CortexM3\ARM_GCC_541\Debug\main.o
-                                0x1e7 (size before relaxing)
- .debug_str     0x0000019f       0xd9 .\CortexM3\ARM_GCC_541\Debug\hcsr04.o
-                                0x2b4 (size before relaxing)
- .debug_str     0x00000278      0x1c2 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
-                                0x36b (size before relaxing)
- .debug_str     0x0000043a       0x7f .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
-                                0x205 (size before relaxing)
- .debug_str     0x000004b9      0x13e .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
-                                0x32b (size before relaxing)
- .debug_str     0x000005f7      0x2f4 .\CortexM3\ARM_GCC_541\Debug\afstandssensor.a(UART_1.o)
-                                0x4d4 (size before relaxing)
- .debug_str     0x000008eb      0x1f6 .\CortexM3\ARM_GCC_541\Debug\afstandssensor.a(PWM_Trigger.o)
-                                0x3f1 (size before relaxing)
- .debug_str     0x00000ae1      0x124 .\CortexM3\ARM_GCC_541\Debug\afstandssensor.a(Timer_int.o)
-                                0x2ff (size before relaxing)
- .debug_str     0x00000c05      0x178 .\CortexM3\ARM_GCC_541\Debug\afstandssensor.a(Timer.o)
-                                0x3ac (size before relaxing)
- .debug_str     0x00000d7d      0x19d .\CortexM3\ARM_GCC_541\Debug\afstandssensor.a(UART_1_IntClock.o)
-                                0x36f (size before relaxing)
- .debug_str     0x00000f1a      0x7fa .\CortexM3\ARM_GCC_541\Debug\afstandssensor.a(CyLib.o)
-                                0xa68 (size before relaxing)
- .debug_str     0x00001714      0x365 .\CortexM3\ARM_GCC_541\Debug\afstandssensor.a(cyPm.o)
-                                0x754 (size before relaxing)
- .debug_str     0x00001a79       0x52 .\CortexM3\ARM_GCC_541\Debug\afstandssensor.a(LED.o)
-                                0x1f9 (size before relaxing)
- .debug_str     0x00001acb      0x1bb .\CortexM3\ARM_GCC_541\Debug\afstandssensor.a(CyFlash.o)
-                                0x3e1 (size before relaxing)
- .debug_str     0x00001c86       0xac .\CortexM3\ARM_GCC_541\Debug\afstandssensor.a(CySpc.o)
-                                0x359 (size before relaxing)
+ .debug_str     0x00000000      0x17a .\CortexM3\ARM_GCC_541\Debug\main.o
+                                0x1c2 (size before relaxing)
+ .debug_str     0x0000017a       0xd9 .\CortexM3\ARM_GCC_541\Debug\hcsr04.o
+                                0x28f (size before relaxing)
+ .debug_str     0x00000253      0x1c2 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+                                0x346 (size before relaxing)
+ .debug_str     0x00000415       0x7f .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
+                                0x1e0 (size before relaxing)
+ .debug_str     0x00000494      0x13e .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+                                0x306 (size before relaxing)
+ .debug_str     0x000005d2      0x2f4 .\CortexM3\ARM_GCC_541\Debug\afstandssensor.a(UART_1.o)
+                                0x4af (size before relaxing)
+ .debug_str     0x000008c6      0x1f6 .\CortexM3\ARM_GCC_541\Debug\afstandssensor.a(PWM_Trigger.o)
+                                0x3cc (size before relaxing)
+ .debug_str     0x00000abc      0x124 .\CortexM3\ARM_GCC_541\Debug\afstandssensor.a(Timer_int.o)
+                                0x2da (size before relaxing)
+ .debug_str     0x00000be0      0x178 .\CortexM3\ARM_GCC_541\Debug\afstandssensor.a(Timer.o)
+                                0x387 (size before relaxing)
+ .debug_str     0x00000d58      0x19d .\CortexM3\ARM_GCC_541\Debug\afstandssensor.a(UART_1_IntClock.o)
+                                0x34a (size before relaxing)
+ .debug_str     0x00000ef5      0x7fa .\CortexM3\ARM_GCC_541\Debug\afstandssensor.a(CyLib.o)
+                                0xa43 (size before relaxing)
+ .debug_str     0x000016ef      0x365 .\CortexM3\ARM_GCC_541\Debug\afstandssensor.a(cyPm.o)
+                                0x72f (size before relaxing)
+ .debug_str     0x00001a54       0x52 .\CortexM3\ARM_GCC_541\Debug\afstandssensor.a(LED.o)
+                                0x1d4 (size before relaxing)
+ .debug_str     0x00001aa6      0x1bb .\CortexM3\ARM_GCC_541\Debug\afstandssensor.a(CyFlash.o)
+                                0x3bc (size before relaxing)
+ .debug_str     0x00001c61       0xac .\CortexM3\ARM_GCC_541\Debug\afstandssensor.a(CySpc.o)
+                                0x334 (size before relaxing)
 
 .debug_loc      0x00000000     0x1f6d
  *(.debug_loc)
@@ -1423,4 +1423,4 @@ END GROUP
 
 /DISCARD/
  *(.note.GNU-stack)
-OUTPUT(C:\Users\Henry\Documents\IKT\3. semester\Semesterprojekt 3\god\afstandssensor\afstandssensor.cydsn\CortexM3\ARM_GCC_541\Debug\afstandssensor.elf elf32-littlearm)
+OUTPUT(C:\IKT\Projekt3-2020\Kode\afstandssensor\afstandssensor.cydsn\CortexM3\ARM_GCC_541\Debug\afstandssensor.elf elf32-littlearm)

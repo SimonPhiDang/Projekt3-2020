@@ -1,6 +1,6 @@
 // ======================================================================
 // Main.v generated from TopDesign.cysch
-// 12/04/2020 at 15:29
+// 12/08/2020 at 20:42
 // This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 // ======================================================================
 
@@ -2864,11 +2864,11 @@ module top ;
 		 (.int_signal(Net_1398));
 
 
-	wire [0:0] tmpOE__LED_net;
-	wire [0:0] tmpFB_0__LED_net;
-	wire [0:0] tmpIO_0__LED_net;
-	wire [0:0] tmpINTERRUPT_0__LED_net;
-	electrical [0:0] tmpSIOVREF__LED_net;
+	wire [0:0] tmpOE__led_net;
+	wire [0:0] tmpFB_0__led_net;
+	wire [0:0] tmpIO_0__led_net;
+	wire [0:0] tmpINTERRUPT_0__led_net;
+	electrical [0:0] tmpSIOVREF__led_net;
 
 	cy_psoc3_pins_v1_10
 		#(.id("1a501d7c-825d-4635-a469-bebe77b1aafe"),
@@ -2923,13 +2923,13 @@ module top ;
 		  .ovt_needed(1'b0),
 		  .ovt_slew_control(2'b00),
 		  .input_buffer_sel(2'b00))
-		LED
-		 (.oe(tmpOE__LED_net),
+		led
+		 (.oe(tmpOE__led_net),
 		  .y({1'b0}),
-		  .fb({tmpFB_0__LED_net[0:0]}),
-		  .io({tmpIO_0__LED_net[0:0]}),
-		  .siovref(tmpSIOVREF__LED_net),
-		  .interrupt({tmpINTERRUPT_0__LED_net[0:0]}),
+		  .fb({tmpFB_0__led_net[0:0]}),
+		  .io({tmpIO_0__led_net[0:0]}),
+		  .siovref(tmpSIOVREF__led_net),
+		  .interrupt({tmpINTERRUPT_0__led_net[0:0]}),
 		  .in_clock({1'b0}),
 		  .in_clock_en({1'b1}),
 		  .in_reset({1'b0}),
@@ -2937,7 +2937,7 @@ module top ;
 		  .out_clock_en({1'b1}),
 		  .out_reset({1'b0}));
 
-	assign tmpOE__LED_net = (`CYDEV_CHIP_MEMBER_USED == `CYDEV_CHIP_MEMBER_3A && `CYDEV_CHIP_REVISION_USED < `CYDEV_CHIP_REVISION_3A_ES3) ? ~{1'b1} : {1'b1};
+	assign tmpOE__led_net = (`CYDEV_CHIP_MEMBER_USED == `CYDEV_CHIP_MEMBER_3A && `CYDEV_CHIP_REVISION_USED < `CYDEV_CHIP_REVISION_3A_ES3) ? ~{1'b1} : {1'b1};
 
 
 

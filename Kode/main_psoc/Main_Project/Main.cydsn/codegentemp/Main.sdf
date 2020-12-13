@@ -1,6 +1,6 @@
 (DELAYFILE
  (SDFVERSION "IEEE 1497 4.0")
- (DATE "2020-12-04T14:29:30Z")
+ (DATE "2020-12-08T19:42:56Z")
  (DESIGN "Main")
  (VENDOR "Cypress Semiconductor")
  (PROGRAM "PSoC Creator")
@@ -321,7 +321,7 @@
     (INTERCONNECT Trigger\(0\).pad_out Trigger\(0\)_PAD (0.000:0.000:0.000))
     (INTERCONNECT Trigger\(0\)_PAD Trigger\(0\).pad_in (0.000:0.000:0.000))
     (INTERCONNECT Echo\(0\)_PAD Echo\(0\).pad_in (0.000:0.000:0.000))
-    (INTERCONNECT LED\(0\)_PAD LED\(0\).pad_in (0.000:0.000:0.000))
+    (INTERCONNECT led\(0\)_PAD led\(0\).pad_in (0.000:0.000:0.000))
    )
   )
  )

@@ -9,78 +9,124 @@
  *
  * ========================================
 */
+//#include "I2Ckommunikation.h"
 #include "project.h"
+
 
 // Includes af bibloteker
 #include "motorStyring.h"
-//#include "Scale.h"
-//#include "colorSensor.h"
-//#include "i2cKommunikation.h"
+#include "Scale.h"
+#include "colorSensor.h"
 #include "Afstandssensor.h"
 
+int orderReceived;
 int distance;
 
-//float fustageKg;
-//
-//void handleOrderReceived(uint8_t orderReceived)
-//{
-//    switch(orderReceived)
-//    {
-//        case 1:
-//        {
-//            driveForward();
-//            CyDelay(5000);
-//            Done_Write(1);
-//            driveStop();
-//            CyDelay(1000);
-//            Done_Write(0);
-//            break;
-//        }
-//        case 2:
-//        {
-//            driveBackward();
-//            CyDelay(5000);
-//            Done_Write(1);
-//            driveStop();
-//            CyDelay(1000);
-//            Done_Write(0);
-//            break;
-//        }
-//        default:
-//        break;
-//    }
-//}
-
+void handleOrderReceived(int orderReceived);
 
 int main(void)
 {
     CyGlobalIntEnable; /* Enable global interrupts. */
+   
+    
     
     //inits
-    //init_i2c(); // I2C kommunikation
-    initMotor(); //Motor
-    //ADC_init();  //Vægtsensor
-    //color_init_start(); //Colorsensor
-    initDistSens(); // Afstandssensor
-    
-    //fustageKg = ADC_Measure(); // Måling af nuværende kg
-    
-    // Send vægt info til I2C så RPI kan sende til personale grænseflade
-
- 
-    
-    for(;;)  //Ordre loop
+ //   initMotor(); //Motor
+    ADC_init();  //Vægtsensor
+ //   init_start(); //Colorsensor
+ //   initDistSens();
+//    initiere_I2Ckommunikation();
+    for(;;)
     {
-        driveForward();
-//        //int i = I2C_Kommunikation();  // Få besked fra I2C RPI
-//        //handleOrderReceived(i);  // Handler
-          while(distance < 30)  // Når afstand på noget mindre end 30 cm stop og vent
-         {
-            LED_Write(1);
-         }
+        float kg = ADC_Measure();
+        if(kg > 0.3)
+        {
+            led_Write(1);
+        }
+        else
+        {
+            led_Write(0);
+        }
         
-        LED_Write(0);
+        CyDelay(500);
+    }
+//    CyDelay(3000);
+//    standardColor();
+//    driveForward();
+//    CyDelay(1000);
+//    for(;;)
+//    {
+//        
+//        int color = getColor();
+//        while(color == 1)
+//        {
+//            while(distance < 30)
+//            {
+//                driveStop();
+//            }
+//            driveForward();
+//            break;
+//        }
+//        while(color == 2)
+//        {
+//            driveStop();
+//            break;
+//        }
+//        while(color == 3)
+//        {
+//            while(distance < 30)
+//            {
+//                driveStop();
+//            }
+//            driveLeft();
+//            break;
+//        }
+//        while(color == 4)
+//        {
+//            while(distance < 30)
+//            {
+//                driveStop();
+//            }
+//            driveRight();
+//            break;
+//        }
+//        
+       // int i = I2C_Kommunikation();
+       //  handleOrderReceived(i);
+            
+    //}
+}
+
+void handleOrderReceived(int orderReceived)
+{
+    switch(orderReceived)
+    {
+        
+        case 1 :
+        {
+            driveForward();
+            CyDelay(5000);
+            Done_Write(1);
+            driveStop();
+            CyDelay(1000);
+            Done_Write(0);
+            break;
+        }
+        case 2 :
+        {
+            driveBackward();
+            CyDelay(5000);
+            Done_Write(1);
+            driveStop();
+            CyDelay(1000);
+            Done_Write(0);
+            break;
+        }
+        default :
+        break;
     }
 }
+
+
 
 /* [] END OF FILE */

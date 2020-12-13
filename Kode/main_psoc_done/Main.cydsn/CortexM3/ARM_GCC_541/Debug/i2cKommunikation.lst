@@ -1,0 +1,998 @@
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccaT6L7K.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"i2cKommunikation.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.initiere_I2Ckommunikation,"ax",%progbits
+  20              		.align	2
+  21              		.global	initiere_I2Ckommunikation
+  22              		.thumb
+  23              		.thumb_func
+  24              		.type	initiere_I2Ckommunikation, %function
+  25              	initiere_I2Ckommunikation:
+  26              	.LFB63:
+  27              		.file 1 "i2cKommunikation.c"
+   1:i2cKommunikation.c ****  /* All Rights Reserved
+   2:i2cKommunikation.c ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   3:i2cKommunikation.c ****  *
+   4:i2cKommunikation.c ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   5:i2cKommunikation.c ****  * WHICH IS THE PROPERTY OF your company.
+   6:i2cKommunikation.c ****  *
+   7:i2cKommunikation.c ****  * ========================================
+   8:i2cKommunikation.c **** */
+   9:i2cKommunikation.c **** 
+  10:i2cKommunikation.c **** #include "i2cKommunikation.h"
+  11:i2cKommunikation.c **** #include "project.h"
+  12:i2cKommunikation.c **** 
+  13:i2cKommunikation.c **** uint8 byteCnt;   
+  14:i2cKommunikation.c **** uint8 wrBuf[8];
+  15:i2cKommunikation.c **** uint8 rdBuf[8];
+  16:i2cKommunikation.c **** uint8 i;
+  17:i2cKommunikation.c **** 
+  18:i2cKommunikation.c **** void initiere_I2Ckommunikation()
+  19:i2cKommunikation.c **** {
+  28              		.loc 1 19 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32 0000 08B5     		push	{r3, lr}
+  33              		.cfi_def_cfa_offset 8
+  34              		.cfi_offset 3, -8
+  35              		.cfi_offset 14, -4
+  20:i2cKommunikation.c ****     I2C_SlaveInitWriteBuf((uint8 *) wrBuf, 8);
+  36              		.loc 1 20 0
+  37 0002 0821     		movs	r1, #8
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccaT6L7K.s 			page 2
+
+
+  38 0004 0248     		ldr	r0, .L3
+  39 0006 FFF7FEFF 		bl	I2C_SlaveInitWriteBuf
+  40              	.LVL0:
+  21:i2cKommunikation.c ****     I2C_Start();
+  41              		.loc 1 21 0
+  42 000a FFF7FEFF 		bl	I2C_Start
+  43              	.LVL1:
+  44 000e 08BD     		pop	{r3, pc}
+  45              	.L4:
+  46              		.align	2
+  47              	.L3:
+  48 0010 00000000 		.word	wrBuf
+  49              		.cfi_endproc
+  50              	.LFE63:
+  51              		.size	initiere_I2Ckommunikation, .-initiere_I2Ckommunikation
+  52              		.section	.text.I2C_Kommunikation,"ax",%progbits
+  53              		.align	2
+  54              		.global	I2C_Kommunikation
+  55              		.thumb
+  56              		.thumb_func
+  57              		.type	I2C_Kommunikation, %function
+  58              	I2C_Kommunikation:
+  59              	.LFB64:
+  22:i2cKommunikation.c **** }
+  23:i2cKommunikation.c **** 
+  24:i2cKommunikation.c **** char I2C_Kommunikation()
+  25:i2cKommunikation.c **** {
+  60              		.loc 1 25 0
+  61              		.cfi_startproc
+  62              		@ args = 0, pretend = 0, frame = 0
+  63              		@ frame_needed = 0, uses_anonymous_args = 0
+  64 0000 08B5     		push	{r3, lr}
+  65              		.cfi_def_cfa_offset 8
+  66              		.cfi_offset 3, -8
+  67              		.cfi_offset 14, -4
+  26:i2cKommunikation.c ****       if(0u != (I2C_SlaveStatus() & I2C_SSTAT_WR_CMPLT)) 
+  68              		.loc 1 26 0
+  69 0002 FFF7FEFF 		bl	I2C_SlaveStatus
+  70              	.LVL2:
+  71 0006 10F0100F 		tst	r0, #16
+  72 000a 38D0     		beq	.L16
+  27:i2cKommunikation.c ****          {
+  28:i2cKommunikation.c ****             byteCnt = I2C_SlaveGetWriteBufSize(); 
+  73              		.loc 1 28 0
+  74 000c FFF7FEFF 		bl	I2C_SlaveGetWriteBufSize
+  75              	.LVL3:
+  76 0010 1F4B     		ldr	r3, .L24
+  77 0012 1870     		strb	r0, [r3]
+  29:i2cKommunikation.c ****             I2C_SlaveClearWriteStatus(); 
+  78              		.loc 1 29 0
+  79 0014 FFF7FEFF 		bl	I2C_SlaveClearWriteStatus
+  80              	.LVL4:
+  30:i2cKommunikation.c ****             
+  31:i2cKommunikation.c ****             switch(wrBuf[0])
+  81              		.loc 1 31 0
+  82 0018 1E4B     		ldr	r3, .L24+4
+  83 001a 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccaT6L7K.s 			page 3
+
+
+  84 001c 012B     		cmp	r3, #1
+  85 001e 30D1     		bne	.L20
+  32:i2cKommunikation.c ****             {
+  33:i2cKommunikation.c ****                 case 0b00000001:
+  34:i2cKommunikation.c ****                 {
+  35:i2cKommunikation.c ****                     switch(wrBuf[1])
+  86              		.loc 1 35 0
+  87 0020 1C4B     		ldr	r3, .L24+4
+  88 0022 5B78     		ldrb	r3, [r3, #1]	@ zero_extendqisi2
+  89 0024 012B     		cmp	r3, #1
+  90 0026 02D0     		beq	.L8
+  91 0028 022B     		cmp	r3, #2
+  92 002a 14D0     		beq	.L9
+  93 002c 2BE0     		b	.L21
+  94              	.L8:
+  36:i2cKommunikation.c ****                     {
+  37:i2cKommunikation.c ****                         case 0b00000001:
+  38:i2cKommunikation.c ****                         {
+  39:i2cKommunikation.c ****                             switch (wrBuf[2])
+  95              		.loc 1 39 0
+  96 002e 194B     		ldr	r3, .L24+4
+  97 0030 9B78     		ldrb	r3, [r3, #2]	@ zero_extendqisi2
+  98 0032 022B     		cmp	r3, #2
+  99 0034 07D0     		beq	.L10
+ 100 0036 032B     		cmp	r3, #3
+ 101 0038 09D0     		beq	.L11
+ 102 003a 012B     		cmp	r3, #1
+ 103 003c 0BD1     		bne	.L9
+  40:i2cKommunikation.c ****                             {
+  41:i2cKommunikation.c ****                                 case 0b00000001:
+  42:i2cKommunikation.c ****                                 {
+  43:i2cKommunikation.c ****                                     I2C_SlaveClearWriteBuf();
+ 104              		.loc 1 43 0
+ 105 003e FFF7FEFF 		bl	I2C_SlaveClearWriteBuf
+ 106              	.LVL5:
+  44:i2cKommunikation.c ****                                     return 1;
+ 107              		.loc 1 44 0
+ 108 0042 0120     		movs	r0, #1
+ 109 0044 08BD     		pop	{r3, pc}
+ 110              	.L10:
+  45:i2cKommunikation.c ****                                     break;
+  46:i2cKommunikation.c ****                                 }
+  47:i2cKommunikation.c ****                                 case 0b00000010:
+  48:i2cKommunikation.c ****                                 {
+  49:i2cKommunikation.c ****                                     I2C_SlaveClearWriteBuf();
+ 111              		.loc 1 49 0
+ 112 0046 FFF7FEFF 		bl	I2C_SlaveClearWriteBuf
+ 113              	.LVL6:
+  50:i2cKommunikation.c ****                                     return 2;
+ 114              		.loc 1 50 0
+ 115 004a 0220     		movs	r0, #2
+ 116 004c 08BD     		pop	{r3, pc}
+ 117              	.L11:
+  51:i2cKommunikation.c ****                                     break;
+  52:i2cKommunikation.c ****                                 }
+  53:i2cKommunikation.c ****                                 case 0b00000011:
+  54:i2cKommunikation.c ****                                 {
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccaT6L7K.s 			page 4
+
+
+  55:i2cKommunikation.c ****                                     I2C_SlaveClearWriteBuf();
+ 118              		.loc 1 55 0
+ 119 004e FFF7FEFF 		bl	I2C_SlaveClearWriteBuf
+ 120              	.LVL7:
+  56:i2cKommunikation.c ****                                     return 3;
+ 121              		.loc 1 56 0
+ 122 0052 0320     		movs	r0, #3
+ 123 0054 08BD     		pop	{r3, pc}
+ 124              	.L9:
+  57:i2cKommunikation.c ****                                     break;
+  58:i2cKommunikation.c ****                                    
+  59:i2cKommunikation.c ****                                 }
+  60:i2cKommunikation.c ****                                     default:
+  61:i2cKommunikation.c ****                                     break;
+  62:i2cKommunikation.c ****                             }
+  63:i2cKommunikation.c ****                         }
+  64:i2cKommunikation.c ****                         case 0b00000010:
+  65:i2cKommunikation.c ****                         {
+  66:i2cKommunikation.c ****                             switch(wrBuf[2])
+ 125              		.loc 1 66 0
+ 126 0056 0F4B     		ldr	r3, .L24+4
+ 127 0058 9B78     		ldrb	r3, [r3, #2]	@ zero_extendqisi2
+ 128 005a 022B     		cmp	r3, #2
+ 129 005c 07D0     		beq	.L13
+ 130 005e 032B     		cmp	r3, #3
+ 131 0060 09D0     		beq	.L14
+ 132 0062 012B     		cmp	r3, #1
+ 133 0064 11D1     		bne	.L22
+  67:i2cKommunikation.c ****                             {
+  68:i2cKommunikation.c ****                                 case 0b00000001:
+  69:i2cKommunikation.c ****                                 {
+  70:i2cKommunikation.c ****                                     I2C_SlaveClearWriteBuf();
+ 134              		.loc 1 70 0
+ 135 0066 FFF7FEFF 		bl	I2C_SlaveClearWriteBuf
+ 136              	.LVL8:
+  71:i2cKommunikation.c ****                                     return 4;
+ 137              		.loc 1 71 0
+ 138 006a 0420     		movs	r0, #4
+ 139 006c 08BD     		pop	{r3, pc}
+ 140              	.L13:
+  72:i2cKommunikation.c ****                                     break;
+  73:i2cKommunikation.c ****                                 }
+  74:i2cKommunikation.c ****                                 case 0b00000010:
+  75:i2cKommunikation.c ****                                 {
+  76:i2cKommunikation.c ****                                     I2C_SlaveClearWriteBuf();
+ 141              		.loc 1 76 0
+ 142 006e FFF7FEFF 		bl	I2C_SlaveClearWriteBuf
+ 143              	.LVL9:
+  77:i2cKommunikation.c ****                                     return 5;
+ 144              		.loc 1 77 0
+ 145 0072 0520     		movs	r0, #5
+ 146 0074 08BD     		pop	{r3, pc}
+ 147              	.L14:
+  78:i2cKommunikation.c ****                                     break;
+  79:i2cKommunikation.c ****                                 }
+  80:i2cKommunikation.c ****                                 case 0b00000011:
+  81:i2cKommunikation.c ****                                 {
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccaT6L7K.s 			page 5
+
+
+  82:i2cKommunikation.c ****                                     I2C_SlaveClearWriteBuf();
+ 148              		.loc 1 82 0
+ 149 0076 FFF7FEFF 		bl	I2C_SlaveClearWriteBuf
+ 150              	.LVL10:
+  83:i2cKommunikation.c ****                                     return 6;
+ 151              		.loc 1 83 0
+ 152 007a 0620     		movs	r0, #6
+ 153 007c 08BD     		pop	{r3, pc}
+ 154              	.L16:
+  84:i2cKommunikation.c ****                                     break;
+  85:i2cKommunikation.c ****                                 }
+  86:i2cKommunikation.c ****                                     default:
+  87:i2cKommunikation.c ****                                     break;
+  88:i2cKommunikation.c ****                             }
+  89:i2cKommunikation.c ****                         }
+  90:i2cKommunikation.c ****                         default:
+  91:i2cKommunikation.c ****                         break;
+  92:i2cKommunikation.c ****                     }
+  93:i2cKommunikation.c ****                 }
+  94:i2cKommunikation.c ****                 default:
+  95:i2cKommunikation.c ****                 break;
+  96:i2cKommunikation.c ****              }
+  97:i2cKommunikation.c ****          }
+  98:i2cKommunikation.c ****     return 0;
+ 155              		.loc 1 98 0
+ 156 007e 0020     		movs	r0, #0
+ 157 0080 08BD     		pop	{r3, pc}
+ 158              	.L20:
+ 159 0082 0020     		movs	r0, #0
+ 160 0084 08BD     		pop	{r3, pc}
+ 161              	.L21:
+ 162 0086 0020     		movs	r0, #0
+ 163 0088 08BD     		pop	{r3, pc}
+ 164              	.L22:
+ 165 008a 0020     		movs	r0, #0
+  99:i2cKommunikation.c **** }
+ 166              		.loc 1 99 0
+ 167 008c 08BD     		pop	{r3, pc}
+ 168              	.L25:
+ 169 008e 00BF     		.align	2
+ 170              	.L24:
+ 171 0090 00000000 		.word	byteCnt
+ 172 0094 00000000 		.word	wrBuf
+ 173              		.cfi_endproc
+ 174              	.LFE64:
+ 175              		.size	I2C_Kommunikation, .-I2C_Kommunikation
+ 176              		.comm	i,1,1
+ 177              		.comm	rdBuf,8,4
+ 178              		.comm	wrBuf,8,4
+ 179              		.comm	byteCnt,1,1
+ 180              		.text
+ 181              	.Letext0:
+ 182              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.3\\psoc creator\\import\\gnu\\arm\\5.4.
+ 183              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.3\\psoc creator\\import\\gnu\\arm\\5.4.
+ 184              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
+ 185              		.file 5 "Generated_Source\\PSoC5/core_cm3.h"
+ 186              		.file 6 "Generated_Source\\PSoC5/I2C.h"
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccaT6L7K.s 			page 6
+
+
+ 187              		.section	.debug_info,"",%progbits
+ 188              	.Ldebug_info0:
+ 189 0000 F8010000 		.4byte	0x1f8
+ 190 0004 0400     		.2byte	0x4
+ 191 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 192 000a 04       		.byte	0x4
+ 193 000b 01       		.uleb128 0x1
+ 194 000c 62000000 		.4byte	.LASF27
+ 195 0010 0C       		.byte	0xc
+ 196 0011 15010000 		.4byte	.LASF28
+ 197 0015 88010000 		.4byte	.LASF29
+ 198 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 199 001d 00000000 		.4byte	0
+ 200 0021 00000000 		.4byte	.Ldebug_line0
+ 201 0025 02       		.uleb128 0x2
+ 202 0026 01       		.byte	0x1
+ 203 0027 06       		.byte	0x6
+ 204 0028 36020000 		.4byte	.LASF0
+ 205 002c 02       		.uleb128 0x2
+ 206 002d 01       		.byte	0x1
+ 207 002e 08       		.byte	0x8
+ 208 002f 54000000 		.4byte	.LASF1
+ 209 0033 02       		.uleb128 0x2
+ 210 0034 02       		.byte	0x2
+ 211 0035 05       		.byte	0x5
+ 212 0036 F8010000 		.4byte	.LASF2
+ 213 003a 02       		.uleb128 0x2
+ 214 003b 02       		.byte	0x2
+ 215 003c 07       		.byte	0x7
+ 216 003d 02010000 		.4byte	.LASF3
+ 217 0041 03       		.uleb128 0x3
+ 218 0042 06000000 		.4byte	.LASF9
+ 219 0046 02       		.byte	0x2
+ 220 0047 3F       		.byte	0x3f
+ 221 0048 4C000000 		.4byte	0x4c
+ 222 004c 02       		.uleb128 0x2
+ 223 004d 04       		.byte	0x4
+ 224 004e 05       		.byte	0x5
+ 225 004f 21020000 		.4byte	.LASF4
+ 226 0053 02       		.uleb128 0x2
+ 227 0054 04       		.byte	0x4
+ 228 0055 07       		.byte	0x7
+ 229 0056 F0000000 		.4byte	.LASF5
+ 230 005a 02       		.uleb128 0x2
+ 231 005b 08       		.byte	0x8
+ 232 005c 05       		.byte	0x5
+ 233 005d CF010000 		.4byte	.LASF6
+ 234 0061 02       		.uleb128 0x2
+ 235 0062 08       		.byte	0x8
+ 236 0063 07       		.byte	0x7
+ 237 0064 71010000 		.4byte	.LASF7
+ 238 0068 04       		.uleb128 0x4
+ 239 0069 04       		.byte	0x4
+ 240 006a 05       		.byte	0x5
+ 241 006b 696E7400 		.ascii	"int\000"
+ 242 006f 02       		.uleb128 0x2
+ 243 0070 04       		.byte	0x4
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccaT6L7K.s 			page 7
+
+
+ 244 0071 07       		.byte	0x7
+ 245 0072 64010000 		.4byte	.LASF8
+ 246 0076 03       		.uleb128 0x3
+ 247 0077 BE010000 		.4byte	.LASF10
+ 248 007b 03       		.byte	0x3
+ 249 007c 2C       		.byte	0x2c
+ 250 007d 41000000 		.4byte	0x41
+ 251 0081 05       		.uleb128 0x5
+ 252 0082 02020000 		.4byte	.LASF11
+ 253 0086 04       		.byte	0x4
+ 254 0087 E801     		.2byte	0x1e8
+ 255 0089 2C000000 		.4byte	0x2c
+ 256 008d 02       		.uleb128 0x2
+ 257 008e 04       		.byte	0x4
+ 258 008f 04       		.byte	0x4
+ 259 0090 4E000000 		.4byte	.LASF12
+ 260 0094 02       		.uleb128 0x2
+ 261 0095 08       		.byte	0x8
+ 262 0096 04       		.byte	0x4
+ 263 0097 3B010000 		.4byte	.LASF13
+ 264 009b 02       		.uleb128 0x2
+ 265 009c 01       		.byte	0x1
+ 266 009d 08       		.byte	0x8
+ 267 009e DD010000 		.4byte	.LASF14
+ 268 00a2 02       		.uleb128 0x2
+ 269 00a3 08       		.byte	0x8
+ 270 00a4 04       		.byte	0x4
+ 271 00a5 2A020000 		.4byte	.LASF15
+ 272 00a9 02       		.uleb128 0x2
+ 273 00aa 04       		.byte	0x4
+ 274 00ab 07       		.byte	0x7
+ 275 00ac C6010000 		.4byte	.LASF16
+ 276 00b0 06       		.uleb128 0x6
+ 277 00b1 10000000 		.4byte	.LASF30
+ 278 00b5 01       		.byte	0x1
+ 279 00b6 12       		.byte	0x12
+ 280 00b7 00000000 		.4byte	.LFB63
+ 281 00bb 14000000 		.4byte	.LFE63-.LFB63
+ 282 00bf 01       		.uleb128 0x1
+ 283 00c0 9C       		.byte	0x9c
+ 284 00c1 EB000000 		.4byte	0xeb
+ 285 00c5 07       		.uleb128 0x7
+ 286 00c6 0A000000 		.4byte	.LVL0
+ 287 00ca B9010000 		.4byte	0x1b9
+ 288 00ce E1000000 		.4byte	0xe1
+ 289 00d2 08       		.uleb128 0x8
+ 290 00d3 01       		.uleb128 0x1
+ 291 00d4 50       		.byte	0x50
+ 292 00d5 05       		.uleb128 0x5
+ 293 00d6 03       		.byte	0x3
+ 294 00d7 00000000 		.4byte	wrBuf
+ 295 00db 08       		.uleb128 0x8
+ 296 00dc 01       		.uleb128 0x1
+ 297 00dd 51       		.byte	0x51
+ 298 00de 01       		.uleb128 0x1
+ 299 00df 38       		.byte	0x38
+ 300 00e0 00       		.byte	0
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccaT6L7K.s 			page 8
+
+
+ 301 00e1 09       		.uleb128 0x9
+ 302 00e2 0E000000 		.4byte	.LVL1
+ 303 00e6 C4010000 		.4byte	0x1c4
+ 304 00ea 00       		.byte	0
+ 305 00eb 0A       		.uleb128 0xa
+ 306 00ec 42010000 		.4byte	.LASF31
+ 307 00f0 01       		.byte	0x1
+ 308 00f1 18       		.byte	0x18
+ 309 00f2 9B000000 		.4byte	0x9b
+ 310 00f6 00000000 		.4byte	.LFB64
+ 311 00fa 98000000 		.4byte	.LFE64-.LFB64
+ 312 00fe 01       		.uleb128 0x1
+ 313 00ff 9C       		.byte	0x9c
+ 314 0100 56010000 		.4byte	0x156
+ 315 0104 09       		.uleb128 0x9
+ 316 0105 06000000 		.4byte	.LVL2
+ 317 0109 CF010000 		.4byte	0x1cf
+ 318 010d 09       		.uleb128 0x9
+ 319 010e 10000000 		.4byte	.LVL3
+ 320 0112 DA010000 		.4byte	0x1da
+ 321 0116 09       		.uleb128 0x9
+ 322 0117 18000000 		.4byte	.LVL4
+ 323 011b E5010000 		.4byte	0x1e5
+ 324 011f 09       		.uleb128 0x9
+ 325 0120 42000000 		.4byte	.LVL5
+ 326 0124 F0010000 		.4byte	0x1f0
+ 327 0128 09       		.uleb128 0x9
+ 328 0129 4A000000 		.4byte	.LVL6
+ 329 012d F0010000 		.4byte	0x1f0
+ 330 0131 09       		.uleb128 0x9
+ 331 0132 52000000 		.4byte	.LVL7
+ 332 0136 F0010000 		.4byte	0x1f0
+ 333 013a 09       		.uleb128 0x9
+ 334 013b 6A000000 		.4byte	.LVL8
+ 335 013f F0010000 		.4byte	0x1f0
+ 336 0143 09       		.uleb128 0x9
+ 337 0144 72000000 		.4byte	.LVL9
+ 338 0148 F0010000 		.4byte	0x1f0
+ 339 014c 09       		.uleb128 0x9
+ 340 014d 7A000000 		.4byte	.LVL10
+ 341 0151 F0010000 		.4byte	0x1f0
+ 342 0155 00       		.byte	0
+ 343 0156 0B       		.uleb128 0xb
+ 344 0157 28010000 		.4byte	.LASF17
+ 345 015b 05       		.byte	0x5
+ 346 015c 1207     		.2byte	0x712
+ 347 015e 62010000 		.4byte	0x162
+ 348 0162 0C       		.uleb128 0xc
+ 349 0163 76000000 		.4byte	0x76
+ 350 0167 0D       		.uleb128 0xd
+ 351 0168 42020000 		.4byte	.LASF18
+ 352 016c 01       		.byte	0x1
+ 353 016d 0D       		.byte	0xd
+ 354 016e 81000000 		.4byte	0x81
+ 355 0172 05       		.uleb128 0x5
+ 356 0173 03       		.byte	0x3
+ 357 0174 00000000 		.4byte	byteCnt
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccaT6L7K.s 			page 9
+
+
+ 358 0178 0E       		.uleb128 0xe
+ 359 0179 81000000 		.4byte	0x81
+ 360 017d 88010000 		.4byte	0x188
+ 361 0181 0F       		.uleb128 0xf
+ 362 0182 A9000000 		.4byte	0xa9
+ 363 0186 07       		.byte	0x7
+ 364 0187 00       		.byte	0
+ 365 0188 0D       		.uleb128 0xd
+ 366 0189 35010000 		.4byte	.LASF19
+ 367 018d 01       		.byte	0x1
+ 368 018e 0E       		.byte	0xe
+ 369 018f 78010000 		.4byte	0x178
+ 370 0193 05       		.uleb128 0x5
+ 371 0194 03       		.byte	0x3
+ 372 0195 00000000 		.4byte	wrBuf
+ 373 0199 0D       		.uleb128 0xd
+ 374 019a 00000000 		.4byte	.LASF20
+ 375 019e 01       		.byte	0x1
+ 376 019f 0F       		.byte	0xf
+ 377 01a0 78010000 		.4byte	0x178
+ 378 01a4 05       		.uleb128 0x5
+ 379 01a5 03       		.byte	0x3
+ 380 01a6 00000000 		.4byte	rdBuf
+ 381 01aa 10       		.uleb128 0x10
+ 382 01ab 6900     		.ascii	"i\000"
+ 383 01ad 01       		.byte	0x1
+ 384 01ae 10       		.byte	0x10
+ 385 01af 81000000 		.4byte	0x81
+ 386 01b3 05       		.uleb128 0x5
+ 387 01b4 03       		.byte	0x3
+ 388 01b5 00000000 		.4byte	i
+ 389 01b9 11       		.uleb128 0x11
+ 390 01ba E2010000 		.4byte	.LASF21
+ 391 01be E2010000 		.4byte	.LASF21
+ 392 01c2 06       		.byte	0x6
+ 393 01c3 C7       		.byte	0xc7
+ 394 01c4 11       		.uleb128 0x11
+ 395 01c5 44000000 		.4byte	.LASF22
+ 396 01c9 44000000 		.4byte	.LASF22
+ 397 01cd 06       		.byte	0x6
+ 398 01ce 93       		.byte	0x93
+ 399 01cf 11       		.uleb128 0x11
+ 400 01d0 54010000 		.4byte	.LASF23
+ 401 01d4 54010000 		.4byte	.LASF23
+ 402 01d8 06       		.byte	0x6
+ 403 01d9 BE       		.byte	0xbe
+ 404 01da 11       		.uleb128 0x11
+ 405 01db 08020000 		.4byte	.LASF24
+ 406 01df 08020000 		.4byte	.LASF24
+ 407 01e3 06       		.byte	0x6
+ 408 01e4 CA       		.byte	0xca
+ 409 01e5 11       		.uleb128 0x11
+ 410 01e6 2A000000 		.4byte	.LASF25
+ 411 01ea 2A000000 		.4byte	.LASF25
+ 412 01ee 06       		.byte	0x6
+ 413 01ef C0       		.byte	0xc0
+ 414 01f0 11       		.uleb128 0x11
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccaT6L7K.s 			page 10
+
+
+ 415 01f1 A7010000 		.4byte	.LASF26
+ 416 01f5 A7010000 		.4byte	.LASF26
+ 417 01f9 06       		.byte	0x6
+ 418 01fa CC       		.byte	0xcc
+ 419 01fb 00       		.byte	0
+ 420              		.section	.debug_abbrev,"",%progbits
+ 421              	.Ldebug_abbrev0:
+ 422 0000 01       		.uleb128 0x1
+ 423 0001 11       		.uleb128 0x11
+ 424 0002 01       		.byte	0x1
+ 425 0003 25       		.uleb128 0x25
+ 426 0004 0E       		.uleb128 0xe
+ 427 0005 13       		.uleb128 0x13
+ 428 0006 0B       		.uleb128 0xb
+ 429 0007 03       		.uleb128 0x3
+ 430 0008 0E       		.uleb128 0xe
+ 431 0009 1B       		.uleb128 0x1b
+ 432 000a 0E       		.uleb128 0xe
+ 433 000b 55       		.uleb128 0x55
+ 434 000c 17       		.uleb128 0x17
+ 435 000d 11       		.uleb128 0x11
+ 436 000e 01       		.uleb128 0x1
+ 437 000f 10       		.uleb128 0x10
+ 438 0010 17       		.uleb128 0x17
+ 439 0011 00       		.byte	0
+ 440 0012 00       		.byte	0
+ 441 0013 02       		.uleb128 0x2
+ 442 0014 24       		.uleb128 0x24
+ 443 0015 00       		.byte	0
+ 444 0016 0B       		.uleb128 0xb
+ 445 0017 0B       		.uleb128 0xb
+ 446 0018 3E       		.uleb128 0x3e
+ 447 0019 0B       		.uleb128 0xb
+ 448 001a 03       		.uleb128 0x3
+ 449 001b 0E       		.uleb128 0xe
+ 450 001c 00       		.byte	0
+ 451 001d 00       		.byte	0
+ 452 001e 03       		.uleb128 0x3
+ 453 001f 16       		.uleb128 0x16
+ 454 0020 00       		.byte	0
+ 455 0021 03       		.uleb128 0x3
+ 456 0022 0E       		.uleb128 0xe
+ 457 0023 3A       		.uleb128 0x3a
+ 458 0024 0B       		.uleb128 0xb
+ 459 0025 3B       		.uleb128 0x3b
+ 460 0026 0B       		.uleb128 0xb
+ 461 0027 49       		.uleb128 0x49
+ 462 0028 13       		.uleb128 0x13
+ 463 0029 00       		.byte	0
+ 464 002a 00       		.byte	0
+ 465 002b 04       		.uleb128 0x4
+ 466 002c 24       		.uleb128 0x24
+ 467 002d 00       		.byte	0
+ 468 002e 0B       		.uleb128 0xb
+ 469 002f 0B       		.uleb128 0xb
+ 470 0030 3E       		.uleb128 0x3e
+ 471 0031 0B       		.uleb128 0xb
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccaT6L7K.s 			page 11
+
+
+ 472 0032 03       		.uleb128 0x3
+ 473 0033 08       		.uleb128 0x8
+ 474 0034 00       		.byte	0
+ 475 0035 00       		.byte	0
+ 476 0036 05       		.uleb128 0x5
+ 477 0037 16       		.uleb128 0x16
+ 478 0038 00       		.byte	0
+ 479 0039 03       		.uleb128 0x3
+ 480 003a 0E       		.uleb128 0xe
+ 481 003b 3A       		.uleb128 0x3a
+ 482 003c 0B       		.uleb128 0xb
+ 483 003d 3B       		.uleb128 0x3b
+ 484 003e 05       		.uleb128 0x5
+ 485 003f 49       		.uleb128 0x49
+ 486 0040 13       		.uleb128 0x13
+ 487 0041 00       		.byte	0
+ 488 0042 00       		.byte	0
+ 489 0043 06       		.uleb128 0x6
+ 490 0044 2E       		.uleb128 0x2e
+ 491 0045 01       		.byte	0x1
+ 492 0046 3F       		.uleb128 0x3f
+ 493 0047 19       		.uleb128 0x19
+ 494 0048 03       		.uleb128 0x3
+ 495 0049 0E       		.uleb128 0xe
+ 496 004a 3A       		.uleb128 0x3a
+ 497 004b 0B       		.uleb128 0xb
+ 498 004c 3B       		.uleb128 0x3b
+ 499 004d 0B       		.uleb128 0xb
+ 500 004e 11       		.uleb128 0x11
+ 501 004f 01       		.uleb128 0x1
+ 502 0050 12       		.uleb128 0x12
+ 503 0051 06       		.uleb128 0x6
+ 504 0052 40       		.uleb128 0x40
+ 505 0053 18       		.uleb128 0x18
+ 506 0054 9742     		.uleb128 0x2117
+ 507 0056 19       		.uleb128 0x19
+ 508 0057 01       		.uleb128 0x1
+ 509 0058 13       		.uleb128 0x13
+ 510 0059 00       		.byte	0
+ 511 005a 00       		.byte	0
+ 512 005b 07       		.uleb128 0x7
+ 513 005c 898201   		.uleb128 0x4109
+ 514 005f 01       		.byte	0x1
+ 515 0060 11       		.uleb128 0x11
+ 516 0061 01       		.uleb128 0x1
+ 517 0062 31       		.uleb128 0x31
+ 518 0063 13       		.uleb128 0x13
+ 519 0064 01       		.uleb128 0x1
+ 520 0065 13       		.uleb128 0x13
+ 521 0066 00       		.byte	0
+ 522 0067 00       		.byte	0
+ 523 0068 08       		.uleb128 0x8
+ 524 0069 8A8201   		.uleb128 0x410a
+ 525 006c 00       		.byte	0
+ 526 006d 02       		.uleb128 0x2
+ 527 006e 18       		.uleb128 0x18
+ 528 006f 9142     		.uleb128 0x2111
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccaT6L7K.s 			page 12
+
+
+ 529 0071 18       		.uleb128 0x18
+ 530 0072 00       		.byte	0
+ 531 0073 00       		.byte	0
+ 532 0074 09       		.uleb128 0x9
+ 533 0075 898201   		.uleb128 0x4109
+ 534 0078 00       		.byte	0
+ 535 0079 11       		.uleb128 0x11
+ 536 007a 01       		.uleb128 0x1
+ 537 007b 31       		.uleb128 0x31
+ 538 007c 13       		.uleb128 0x13
+ 539 007d 00       		.byte	0
+ 540 007e 00       		.byte	0
+ 541 007f 0A       		.uleb128 0xa
+ 542 0080 2E       		.uleb128 0x2e
+ 543 0081 01       		.byte	0x1
+ 544 0082 3F       		.uleb128 0x3f
+ 545 0083 19       		.uleb128 0x19
+ 546 0084 03       		.uleb128 0x3
+ 547 0085 0E       		.uleb128 0xe
+ 548 0086 3A       		.uleb128 0x3a
+ 549 0087 0B       		.uleb128 0xb
+ 550 0088 3B       		.uleb128 0x3b
+ 551 0089 0B       		.uleb128 0xb
+ 552 008a 49       		.uleb128 0x49
+ 553 008b 13       		.uleb128 0x13
+ 554 008c 11       		.uleb128 0x11
+ 555 008d 01       		.uleb128 0x1
+ 556 008e 12       		.uleb128 0x12
+ 557 008f 06       		.uleb128 0x6
+ 558 0090 40       		.uleb128 0x40
+ 559 0091 18       		.uleb128 0x18
+ 560 0092 9742     		.uleb128 0x2117
+ 561 0094 19       		.uleb128 0x19
+ 562 0095 01       		.uleb128 0x1
+ 563 0096 13       		.uleb128 0x13
+ 564 0097 00       		.byte	0
+ 565 0098 00       		.byte	0
+ 566 0099 0B       		.uleb128 0xb
+ 567 009a 34       		.uleb128 0x34
+ 568 009b 00       		.byte	0
+ 569 009c 03       		.uleb128 0x3
+ 570 009d 0E       		.uleb128 0xe
+ 571 009e 3A       		.uleb128 0x3a
+ 572 009f 0B       		.uleb128 0xb
+ 573 00a0 3B       		.uleb128 0x3b
+ 574 00a1 05       		.uleb128 0x5
+ 575 00a2 49       		.uleb128 0x49
+ 576 00a3 13       		.uleb128 0x13
+ 577 00a4 3F       		.uleb128 0x3f
+ 578 00a5 19       		.uleb128 0x19
+ 579 00a6 3C       		.uleb128 0x3c
+ 580 00a7 19       		.uleb128 0x19
+ 581 00a8 00       		.byte	0
+ 582 00a9 00       		.byte	0
+ 583 00aa 0C       		.uleb128 0xc
+ 584 00ab 35       		.uleb128 0x35
+ 585 00ac 00       		.byte	0
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccaT6L7K.s 			page 13
+
+
+ 586 00ad 49       		.uleb128 0x49
+ 587 00ae 13       		.uleb128 0x13
+ 588 00af 00       		.byte	0
+ 589 00b0 00       		.byte	0
+ 590 00b1 0D       		.uleb128 0xd
+ 591 00b2 34       		.uleb128 0x34
+ 592 00b3 00       		.byte	0
+ 593 00b4 03       		.uleb128 0x3
+ 594 00b5 0E       		.uleb128 0xe
+ 595 00b6 3A       		.uleb128 0x3a
+ 596 00b7 0B       		.uleb128 0xb
+ 597 00b8 3B       		.uleb128 0x3b
+ 598 00b9 0B       		.uleb128 0xb
+ 599 00ba 49       		.uleb128 0x49
+ 600 00bb 13       		.uleb128 0x13
+ 601 00bc 3F       		.uleb128 0x3f
+ 602 00bd 19       		.uleb128 0x19
+ 603 00be 02       		.uleb128 0x2
+ 604 00bf 18       		.uleb128 0x18
+ 605 00c0 00       		.byte	0
+ 606 00c1 00       		.byte	0
+ 607 00c2 0E       		.uleb128 0xe
+ 608 00c3 01       		.uleb128 0x1
+ 609 00c4 01       		.byte	0x1
+ 610 00c5 49       		.uleb128 0x49
+ 611 00c6 13       		.uleb128 0x13
+ 612 00c7 01       		.uleb128 0x1
+ 613 00c8 13       		.uleb128 0x13
+ 614 00c9 00       		.byte	0
+ 615 00ca 00       		.byte	0
+ 616 00cb 0F       		.uleb128 0xf
+ 617 00cc 21       		.uleb128 0x21
+ 618 00cd 00       		.byte	0
+ 619 00ce 49       		.uleb128 0x49
+ 620 00cf 13       		.uleb128 0x13
+ 621 00d0 2F       		.uleb128 0x2f
+ 622 00d1 0B       		.uleb128 0xb
+ 623 00d2 00       		.byte	0
+ 624 00d3 00       		.byte	0
+ 625 00d4 10       		.uleb128 0x10
+ 626 00d5 34       		.uleb128 0x34
+ 627 00d6 00       		.byte	0
+ 628 00d7 03       		.uleb128 0x3
+ 629 00d8 08       		.uleb128 0x8
+ 630 00d9 3A       		.uleb128 0x3a
+ 631 00da 0B       		.uleb128 0xb
+ 632 00db 3B       		.uleb128 0x3b
+ 633 00dc 0B       		.uleb128 0xb
+ 634 00dd 49       		.uleb128 0x49
+ 635 00de 13       		.uleb128 0x13
+ 636 00df 3F       		.uleb128 0x3f
+ 637 00e0 19       		.uleb128 0x19
+ 638 00e1 02       		.uleb128 0x2
+ 639 00e2 18       		.uleb128 0x18
+ 640 00e3 00       		.byte	0
+ 641 00e4 00       		.byte	0
+ 642 00e5 11       		.uleb128 0x11
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccaT6L7K.s 			page 14
+
+
+ 643 00e6 2E       		.uleb128 0x2e
+ 644 00e7 00       		.byte	0
+ 645 00e8 3F       		.uleb128 0x3f
+ 646 00e9 19       		.uleb128 0x19
+ 647 00ea 3C       		.uleb128 0x3c
+ 648 00eb 19       		.uleb128 0x19
+ 649 00ec 6E       		.uleb128 0x6e
+ 650 00ed 0E       		.uleb128 0xe
+ 651 00ee 03       		.uleb128 0x3
+ 652 00ef 0E       		.uleb128 0xe
+ 653 00f0 3A       		.uleb128 0x3a
+ 654 00f1 0B       		.uleb128 0xb
+ 655 00f2 3B       		.uleb128 0x3b
+ 656 00f3 0B       		.uleb128 0xb
+ 657 00f4 00       		.byte	0
+ 658 00f5 00       		.byte	0
+ 659 00f6 00       		.byte	0
+ 660              		.section	.debug_aranges,"",%progbits
+ 661 0000 24000000 		.4byte	0x24
+ 662 0004 0200     		.2byte	0x2
+ 663 0006 00000000 		.4byte	.Ldebug_info0
+ 664 000a 04       		.byte	0x4
+ 665 000b 00       		.byte	0
+ 666 000c 0000     		.2byte	0
+ 667 000e 0000     		.2byte	0
+ 668 0010 00000000 		.4byte	.LFB63
+ 669 0014 14000000 		.4byte	.LFE63-.LFB63
+ 670 0018 00000000 		.4byte	.LFB64
+ 671 001c 98000000 		.4byte	.LFE64-.LFB64
+ 672 0020 00000000 		.4byte	0
+ 673 0024 00000000 		.4byte	0
+ 674              		.section	.debug_ranges,"",%progbits
+ 675              	.Ldebug_ranges0:
+ 676 0000 00000000 		.4byte	.LFB63
+ 677 0004 14000000 		.4byte	.LFE63
+ 678 0008 00000000 		.4byte	.LFB64
+ 679 000c 98000000 		.4byte	.LFE64
+ 680 0010 00000000 		.4byte	0
+ 681 0014 00000000 		.4byte	0
+ 682              		.section	.debug_line,"",%progbits
+ 683              	.Ldebug_line0:
+ 684 0000 A0010000 		.section	.debug_str,"MS",%progbits,1
+ 684      02006101 
+ 684      00000201 
+ 684      FB0E0D00 
+ 684      01010101 
+ 685              	.LASF20:
+ 686 0000 72644275 		.ascii	"rdBuf\000"
+ 686      6600
+ 687              	.LASF9:
+ 688 0006 5F5F696E 		.ascii	"__int32_t\000"
+ 688      7433325F 
+ 688      7400
+ 689              	.LASF30:
+ 690 0010 696E6974 		.ascii	"initiere_I2Ckommunikation\000"
+ 690      69657265 
+ 690      5F493243 
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccaT6L7K.s 			page 15
+
+
+ 690      6B6F6D6D 
+ 690      756E696B 
+ 691              	.LASF25:
+ 692 002a 4932435F 		.ascii	"I2C_SlaveClearWriteStatus\000"
+ 692      536C6176 
+ 692      65436C65 
+ 692      61725772 
+ 692      69746553 
+ 693              	.LASF22:
+ 694 0044 4932435F 		.ascii	"I2C_Start\000"
+ 694      53746172 
+ 694      7400
+ 695              	.LASF12:
+ 696 004e 666C6F61 		.ascii	"float\000"
+ 696      7400
+ 697              	.LASF1:
+ 698 0054 756E7369 		.ascii	"unsigned char\000"
+ 698      676E6564 
+ 698      20636861 
+ 698      7200
+ 699              	.LASF27:
+ 700 0062 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 700      43313120 
+ 700      352E342E 
+ 700      31203230 
+ 700      31363036 
+ 701 0095 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 701      20726576 
+ 701      6973696F 
+ 701      6E203233 
+ 701      37373135 
+ 702 00c8 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 702      66756E63 
+ 702      74696F6E 
+ 702      2D736563 
+ 702      74696F6E 
+ 703              	.LASF5:
+ 704 00f0 6C6F6E67 		.ascii	"long unsigned int\000"
+ 704      20756E73 
+ 704      69676E65 
+ 704      6420696E 
+ 704      7400
+ 705              	.LASF3:
+ 706 0102 73686F72 		.ascii	"short unsigned int\000"
+ 706      7420756E 
+ 706      7369676E 
+ 706      65642069 
+ 706      6E7400
+ 707              	.LASF28:
+ 708 0115 6932634B 		.ascii	"i2cKommunikation.c\000"
+ 708      6F6D6D75 
+ 708      6E696B61 
+ 708      74696F6E 
+ 708      2E6300
+ 709              	.LASF17:
+ 710 0128 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 710      52784275 
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccaT6L7K.s 			page 16
+
+
+ 710      66666572 
+ 710      00
+ 711              	.LASF19:
+ 712 0135 77724275 		.ascii	"wrBuf\000"
+ 712      6600
+ 713              	.LASF13:
+ 714 013b 646F7562 		.ascii	"double\000"
+ 714      6C6500
+ 715              	.LASF31:
+ 716 0142 4932435F 		.ascii	"I2C_Kommunikation\000"
+ 716      4B6F6D6D 
+ 716      756E696B 
+ 716      6174696F 
+ 716      6E00
+ 717              	.LASF23:
+ 718 0154 4932435F 		.ascii	"I2C_SlaveStatus\000"
+ 718      536C6176 
+ 718      65537461 
+ 718      74757300 
+ 719              	.LASF8:
+ 720 0164 756E7369 		.ascii	"unsigned int\000"
+ 720      676E6564 
+ 720      20696E74 
+ 720      00
+ 721              	.LASF7:
+ 722 0171 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 722      206C6F6E 
+ 722      6720756E 
+ 722      7369676E 
+ 722      65642069 
+ 723              	.LASF29:
+ 724 0188 433A5C49 		.ascii	"C:\\IKT\\HAL\\psocmain\\Main.cydsn\000"
+ 724      4B545C48 
+ 724      414C5C70 
+ 724      736F636D 
+ 724      61696E5C 
+ 725              	.LASF26:
+ 726 01a7 4932435F 		.ascii	"I2C_SlaveClearWriteBuf\000"
+ 726      536C6176 
+ 726      65436C65 
+ 726      61725772 
+ 726      69746542 
+ 727              	.LASF10:
+ 728 01be 696E7433 		.ascii	"int32_t\000"
+ 728      325F7400 
+ 729              	.LASF16:
+ 730 01c6 73697A65 		.ascii	"sizetype\000"
+ 730      74797065 
+ 730      00
+ 731              	.LASF6:
+ 732 01cf 6C6F6E67 		.ascii	"long long int\000"
+ 732      206C6F6E 
+ 732      6720696E 
+ 732      7400
+ 733              	.LASF14:
+ 734 01dd 63686172 		.ascii	"char\000"
+ 734      00
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccaT6L7K.s 			page 17
+
+
+ 735              	.LASF21:
+ 736 01e2 4932435F 		.ascii	"I2C_SlaveInitWriteBuf\000"
+ 736      536C6176 
+ 736      65496E69 
+ 736      74577269 
+ 736      74654275 
+ 737              	.LASF2:
+ 738 01f8 73686F72 		.ascii	"short int\000"
+ 738      7420696E 
+ 738      7400
+ 739              	.LASF11:
+ 740 0202 75696E74 		.ascii	"uint8\000"
+ 740      3800
+ 741              	.LASF24:
+ 742 0208 4932435F 		.ascii	"I2C_SlaveGetWriteBufSize\000"
+ 742      536C6176 
+ 742      65476574 
+ 742      57726974 
+ 742      65427566 
+ 743              	.LASF4:
+ 744 0221 6C6F6E67 		.ascii	"long int\000"
+ 744      20696E74 
+ 744      00
+ 745              	.LASF15:
+ 746 022a 6C6F6E67 		.ascii	"long double\000"
+ 746      20646F75 
+ 746      626C6500 
+ 747              	.LASF0:
+ 748 0236 7369676E 		.ascii	"signed char\000"
+ 748      65642063 
+ 748      68617200 
+ 749              	.LASF18:
+ 750 0242 62797465 		.ascii	"byteCnt\000"
+ 750      436E7400 
+ 751              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

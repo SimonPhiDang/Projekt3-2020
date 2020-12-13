@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccICUf03.s 			page 1
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\cc59YUvl.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccICUf03.s 			page 1
   33              		.cfi_def_cfa_offset 8
   34              		.cfi_offset 3, -8
   35              		.cfi_offset 14, -4
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccICUf03.s 			page 2
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\cc59YUvl.s 			page 2
 
 
   23:hcsr04.c      ****     PWM_Trigger_Start();
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccICUf03.s 			page 1
   81 0006 0446     		mov	r4, r0
   82              	.LVL5:
   32:hcsr04.c      ****     snprintf(outputBuffer, sizeof(outputBuffer), "Counter: %d \r\n", capture);
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccICUf03.s 			page 3
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\cc59YUvl.s 			page 3
 
 
   83              		.loc 1 32 0
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccICUf03.s 			page 1
  128 0050 9CC420B0 		.word	-1340029796
  129 0054 7268913F 		.word	1066494066
  130 0058 00000000 		.word	.LANCHOR0
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccICUf03.s 			page 4
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\cc59YUvl.s 			page 4
 
 
  131 005c 00000000 		.word	.LC0
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccICUf03.s 			page 1
  178              		.cfi_endproc
  179              	.LFE66:
  180              		.size	outputDistanceToUART, .-outputDistanceToUART
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccICUf03.s 			page 5
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\cc59YUvl.s 			page 5
 
 
  181              		.section	.text.Timer_int_Handler,"ax",%progbits
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccICUf03.s 			page 1
  218              		.thumb
  219              		.thumb_func
  220              		.type	distanceToggleLED, %function
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccICUf03.s 			page 6
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\cc59YUvl.s 			page 6
 
 
  221              	distanceToggleLED:
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccICUf03.s 			page 1
  263      0D0A00
  264              		.bss
  265              		.align	2
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccICUf03.s 			page 7
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\cc59YUvl.s 			page 7
 
 
  266              		.set	.LANCHOR0,. + 0
@@ -388,53 +388,53 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccICUf03.s 			page 1
  286 0006 00000000 		.4byte	.Ldebug_abbrev0
  287 000a 04       		.byte	0x4
  288 000b 01       		.uleb128 0x1
- 289 000c 05010000 		.4byte	.LASF32
+ 289 000c E0000000 		.4byte	.LASF32
  290 0010 0C       		.byte	0xc
  291 0011 0D000000 		.4byte	.LASF33
- 292 0015 85000000 		.4byte	.LASF34
+ 292 0015 28000000 		.4byte	.LASF34
  293 0019 00000000 		.4byte	.Ldebug_ranges0+0
  294 001d 00000000 		.4byte	0
  295 0021 00000000 		.4byte	.Ldebug_line0
  296 0025 02       		.uleb128 0x2
  297 0026 01       		.byte	0x1
  298 0027 06       		.byte	0x6
- 299 0028 7D020000 		.4byte	.LASF0
+ 299 0028 58020000 		.4byte	.LASF0
  300 002c 02       		.uleb128 0x2
  301 002d 01       		.byte	0x1
  302 002e 08       		.byte	0x8
- 303 002f F7000000 		.4byte	.LASF1
+ 303 002f D2000000 		.4byte	.LASF1
  304 0033 02       		.uleb128 0x2
  305 0034 02       		.byte	0x2
  306 0035 05       		.byte	0x5
- 307 0036 4C020000 		.4byte	.LASF2
+ 307 0036 27020000 		.4byte	.LASF2
  308 003a 02       		.uleb128 0x2
  309 003b 02       		.byte	0x2
  310 003c 07       		.byte	0x7
- 311 003d B2010000 		.4byte	.LASF3
+ 311 003d 8D010000 		.4byte	.LASF3
  312 0041 03       		.uleb128 0x3
- 313 0042 3B000000 		.4byte	.LASF9
+ 313 0042 79000000 		.4byte	.LASF9
  314 0046 02       		.byte	0x2
  315 0047 3F       		.byte	0x3f
  316 0048 4C000000 		.4byte	0x4c
  317 004c 02       		.uleb128 0x2
  318 004d 04       		.byte	0x4
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccICUf03.s 			page 8
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\cc59YUvl.s 			page 8
 
 
  319 004e 05       		.byte	0x5
- 320 004f 68020000 		.4byte	.LASF4
+ 320 004f 43020000 		.4byte	.LASF4
  321 0053 02       		.uleb128 0x2
  322 0054 04       		.byte	0x4
  323 0055 07       		.byte	0x7
- 324 0056 A0010000 		.4byte	.LASF5
+ 324 0056 7B010000 		.4byte	.LASF5
  325 005a 02       		.uleb128 0x2
  326 005b 08       		.byte	0x8
  327 005c 05       		.byte	0x5
- 328 005d 39020000 		.4byte	.LASF6
+ 328 005d 14020000 		.4byte	.LASF6
  329 0061 02       		.uleb128 0x2
  330 0062 08       		.byte	0x8
  331 0063 07       		.byte	0x7
- 332 0064 04020000 		.4byte	.LASF7
+ 332 0064 DF010000 		.4byte	.LASF7
  333 0068 04       		.uleb128 0x4
  334 0069 04       		.byte	0x4
  335 006a 05       		.byte	0x5
@@ -442,34 +442,34 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccICUf03.s 			page 1
  337 006f 02       		.uleb128 0x2
  338 0070 04       		.byte	0x4
  339 0071 07       		.byte	0x7
- 340 0072 F7010000 		.4byte	.LASF8
+ 340 0072 D2010000 		.4byte	.LASF8
  341 0076 03       		.uleb128 0x3
- 342 0077 1B020000 		.4byte	.LASF10
+ 342 0077 F6010000 		.4byte	.LASF10
  343 007b 03       		.byte	0x3
  344 007c 2C       		.byte	0x2c
  345 007d 41000000 		.4byte	0x41
  346 0081 02       		.uleb128 0x2
  347 0082 04       		.byte	0x4
  348 0083 04       		.byte	0x4
- 349 0084 F1000000 		.4byte	.LASF11
+ 349 0084 CC000000 		.4byte	.LASF11
  350 0088 02       		.uleb128 0x2
  351 0089 08       		.byte	0x8
  352 008a 04       		.byte	0x4
- 353 008b D2010000 		.4byte	.LASF12
+ 353 008b AD010000 		.4byte	.LASF12
  354 008f 02       		.uleb128 0x2
  355 0090 01       		.byte	0x1
  356 0091 08       		.byte	0x8
- 357 0092 47020000 		.4byte	.LASF13
+ 357 0092 22020000 		.4byte	.LASF13
  358 0096 02       		.uleb128 0x2
  359 0097 08       		.byte	0x8
  360 0098 04       		.byte	0x4
- 361 0099 71020000 		.4byte	.LASF14
+ 361 0099 4C020000 		.4byte	.LASF14
  362 009d 02       		.uleb128 0x2
  363 009e 04       		.byte	0x4
  364 009f 07       		.byte	0x7
- 365 00a0 23020000 		.4byte	.LASF15
+ 365 00a0 FE010000 		.4byte	.LASF15
  366 00a4 05       		.uleb128 0x5
- 367 00a5 2C020000 		.4byte	.LASF35
+ 367 00a5 07020000 		.4byte	.LASF35
  368 00a9 01       		.byte	0x1
  369 00aa 15       		.byte	0x15
  370 00ab 00000000 		.4byte	.LFB64
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccICUf03.s 			page 1
  373 00b4 9C       		.byte	0x9c
  374 00b5 E8000000 		.4byte	0xe8
  375 00b9 06       		.uleb128 0x6
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccICUf03.s 			page 9
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\cc59YUvl.s 			page 9
 
 
  376 00ba 06000000 		.4byte	.LVL0
@@ -501,7 +501,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccICUf03.s 			page 1
  393 00e6 00       		.byte	0
  394 00e7 00       		.byte	0
  395 00e8 09       		.uleb128 0x9
- 396 00e9 32000000 		.4byte	.LASF16
+ 396 00e9 70000000 		.4byte	.LASF16
  397 00ed 01       		.byte	0x1
  398 00ee 1D       		.byte	0x1d
  399 00ef 68000000 		.4byte	0x68
@@ -511,7 +511,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccICUf03.s 			page 1
  403 00fc 9C       		.byte	0x9c
  404 00fd 54010000 		.4byte	0x154
  405 0101 0A       		.uleb128 0xa
- 406 0102 AC020000 		.4byte	.LASF20
+ 406 0102 87020000 		.4byte	.LASF20
  407 0106 01       		.byte	0x1
  408 0107 1F       		.byte	0x1f
  409 0108 68000000 		.4byte	0x68
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccICUf03.s 			page 1
  430 0133 08       		.uleb128 0x8
  431 0134 01       		.uleb128 0x1
  432 0135 52       		.byte	0x52
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccICUf03.s 			page 10
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\cc59YUvl.s 			page 10
 
 
  433 0136 05       		.uleb128 0x5
@@ -563,7 +563,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccICUf03.s 			page 1
  452 0152 00       		.byte	0
  453 0153 00       		.byte	0
  454 0154 0C       		.uleb128 0xc
- 455 0155 4E000000 		.4byte	.LASF36
+ 455 0155 8C000000 		.4byte	.LASF36
  456 0159 01       		.byte	0x1
  457 015a 2B       		.byte	0x2b
  458 015b 68000000 		.4byte	0x68
@@ -573,7 +573,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccICUf03.s 			page 1
  462 0168 9C       		.byte	0x9c
  463 0169 B7010000 		.4byte	0x1b7
  464 016d 0D       		.uleb128 0xd
- 465 016e E8000000 		.4byte	.LASF19
+ 465 016e C3000000 		.4byte	.LASF19
  466 0172 01       		.byte	0x1
  467 0173 2B       		.byte	0x2b
  468 0174 68000000 		.4byte	0x68
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccICUf03.s 			page 1
  487 0197 01       		.uleb128 0x1
  488 0198 52       		.byte	0x52
  489 0199 05       		.uleb128 0x5
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccICUf03.s 			page 11
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\cc59YUvl.s 			page 11
 
 
  490 019a 03       		.byte	0x3
@@ -622,7 +622,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccICUf03.s 			page 1
  508 01b5 00       		.byte	0
  509 01b6 00       		.byte	0
  510 01b7 0E       		.uleb128 0xe
- 511 01b8 D9010000 		.4byte	.LASF17
+ 511 01b8 B4010000 		.4byte	.LASF17
  512 01bc 01       		.byte	0x1
  513 01bd 3E       		.byte	0x3e
  514 01be 00000000 		.4byte	.LFB68
@@ -641,7 +641,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccICUf03.s 			page 1
  527 01e3 BF020000 		.4byte	0x2bf
  528 01e7 00       		.byte	0
  529 01e8 0E       		.uleb128 0xe
- 530 01e9 89020000 		.4byte	.LASF18
+ 530 01e9 64020000 		.4byte	.LASF18
  531 01ed 01       		.byte	0x1
  532 01ee 32       		.byte	0x32
  533 01ef 00000000 		.4byte	.LFB67
@@ -650,7 +650,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccICUf03.s 			page 1
  536 01f8 9C       		.byte	0x9c
  537 01f9 2F020000 		.4byte	0x22f
  538 01fd 0D       		.uleb128 0xd
- 539 01fe E8000000 		.4byte	.LASF19
+ 539 01fe C3000000 		.4byte	.LASF19
  540 0202 01       		.byte	0x1
  541 0203 32       		.byte	0x32
  542 0204 68000000 		.4byte	0x68
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccICUf03.s 			page 1
  544 020c 0B       		.uleb128 0xb
  545 020d 0C000000 		.4byte	.LVL25
  546 0211 CA020000 		.4byte	0x2ca
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccICUf03.s 			page 12
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\cc59YUvl.s 			page 12
 
 
  547 0215 1F020000 		.4byte	0x21f
@@ -686,7 +686,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccICUf03.s 			page 1
  569 023d FF       		.byte	0xff
  570 023e 00       		.byte	0
  571 023f 11       		.uleb128 0x11
- 572 0240 93010000 		.4byte	.LASF21
+ 572 0240 6E010000 		.4byte	.LASF21
  573 0244 01       		.byte	0x1
  574 0245 11       		.byte	0x11
  575 0246 2F020000 		.4byte	0x22f
@@ -694,14 +694,14 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccICUf03.s 			page 1
  577 024b 03       		.byte	0x3
  578 024c 00000000 		.4byte	outputBuffer
  579 0250 12       		.uleb128 0x12
- 580 0251 C5010000 		.4byte	.LASF22
+ 580 0251 A0010000 		.4byte	.LASF22
  581 0255 04       		.byte	0x4
  582 0256 1207     		.2byte	0x712
  583 0258 5C020000 		.4byte	0x25c
  584 025c 13       		.uleb128 0x13
  585 025d 76000000 		.4byte	0x76
  586 0261 14       		.uleb128 0x14
- 587 0262 E8000000 		.4byte	.LASF19
+ 587 0262 C3000000 		.4byte	.LASF19
  588 0266 01       		.byte	0x1
  589 0267 10       		.byte	0x10
  590 0268 68000000 		.4byte	0x68
@@ -718,42 +718,42 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccICUf03.s 			page 1
  601 0282 00000000 		.4byte	.LASF24
  602 0286 06       		.byte	0x6
  603 0287 54       		.byte	0x54
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccICUf03.s 			page 13
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\cc59YUvl.s 			page 13
 
 
  604 0288 15       		.uleb128 0x15
- 605 0289 EB010000 		.4byte	.LASF25
- 606 028d EB010000 		.4byte	.LASF25
+ 605 0289 C6010000 		.4byte	.LASF25
+ 606 028d C6010000 		.4byte	.LASF25
  607 0291 07       		.byte	0x7
  608 0292 5A       		.byte	0x5a
  609 0293 15       		.uleb128 0x15
- 610 0294 73000000 		.4byte	.LASF26
- 611 0298 73000000 		.4byte	.LASF26
+ 610 0294 B1000000 		.4byte	.LASF26
+ 611 0298 B1000000 		.4byte	.LASF26
  612 029c 08       		.byte	0x8
  613 029d 18       		.byte	0x18
  614 029e 15       		.uleb128 0x15
- 615 029f 56020000 		.4byte	.LASF27
- 616 02a3 56020000 		.4byte	.LASF27
+ 615 029f 31020000 		.4byte	.LASF27
+ 616 02a3 31020000 		.4byte	.LASF27
  617 02a7 07       		.byte	0x7
  618 02a8 6B       		.byte	0x6b
  619 02a9 15       		.uleb128 0x15
- 620 02aa 45000000 		.4byte	.LASF28
- 621 02ae 45000000 		.4byte	.LASF28
+ 620 02aa 83000000 		.4byte	.LASF28
+ 621 02ae 83000000 		.4byte	.LASF28
  622 02b2 09       		.byte	0x9
  623 02b3 FD       		.byte	0xfd
  624 02b4 15       		.uleb128 0x15
- 625 02b5 9B020000 		.4byte	.LASF29
- 626 02b9 9B020000 		.4byte	.LASF29
+ 625 02b5 76020000 		.4byte	.LASF29
+ 626 02b9 76020000 		.4byte	.LASF29
  627 02bd 06       		.byte	0x6
  628 02be 8B       		.byte	0x8b
  629 02bf 15       		.uleb128 0x15
- 630 02c0 63000000 		.4byte	.LASF30
- 631 02c4 63000000 		.4byte	.LASF30
+ 630 02c0 A1000000 		.4byte	.LASF30
+ 631 02c4 A1000000 		.4byte	.LASF30
  632 02c8 07       		.byte	0x7
  633 02c9 86       		.byte	0x86
  634 02ca 15       		.uleb128 0x15
- 635 02cb 28000000 		.4byte	.LASF31
- 636 02cf 28000000 		.4byte	.LASF31
+ 635 02cb 66000000 		.4byte	.LASF31
+ 636 02cf 66000000 		.4byte	.LASF31
  637 02d3 0A       		.byte	0xa
  638 02d4 26       		.byte	0x26
  639 02d5 00       		.byte	0
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccICUf03.s 			page 1
  658 0010 17       		.uleb128 0x17
  659 0011 00       		.byte	0
  660 0012 00       		.byte	0
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccICUf03.s 			page 14
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\cc59YUvl.s 			page 14
 
 
  661 0013 02       		.uleb128 0x2
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccICUf03.s 			page 1
  715 004a 01       		.uleb128 0x1
  716 004b 13       		.uleb128 0x13
  717 004c 00       		.byte	0
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccICUf03.s 			page 15
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\cc59YUvl.s 			page 15
 
 
  718 004d 00       		.byte	0
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccICUf03.s 			page 1
  772 008b 34       		.uleb128 0x34
  773 008c 00       		.byte	0
  774 008d 03       		.uleb128 0x3
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccICUf03.s 			page 16
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\cc59YUvl.s 			page 16
 
 
  775 008e 0E       		.uleb128 0xe
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccICUf03.s 			page 1
  829 00c7 3A       		.uleb128 0x3a
  830 00c8 0B       		.uleb128 0xb
  831 00c9 3B       		.uleb128 0x3b
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccICUf03.s 			page 17
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\cc59YUvl.s 			page 17
 
 
  832 00ca 0B       		.uleb128 0xb
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccICUf03.s 			page 1
  886 0101 0E       		.uleb128 0xe
  887 0102 3A       		.uleb128 0x3a
  888 0103 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccICUf03.s 			page 18
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\cc59YUvl.s 			page 18
 
 
  889 0104 3B       		.uleb128 0x3b
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccICUf03.s 			page 1
  943 013a 3C       		.uleb128 0x3c
  944 013b 19       		.uleb128 0x19
  945 013c 6E       		.uleb128 0x6e
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccICUf03.s 			page 19
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\cc59YUvl.s 			page 19
 
 
  946 013d 0E       		.uleb128 0xe
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccICUf03.s 			page 1
  1000 0070 0100     		.2byte	0x1
  1001 0072 50       		.byte	0x50
  1002 0073 00000000 		.4byte	0
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccICUf03.s 			page 20
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\cc59YUvl.s 			page 20
 
 
  1003 0077 00000000 		.4byte	0
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccICUf03.s 			page 1
  1057 0018 00000000 		.4byte	.LFB68
  1058 001c 18000000 		.4byte	.LFE68
  1059 0020 00000000 		.4byte	.LFB67
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccICUf03.s 			page 21
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\cc59YUvl.s 			page 21
 
 
  1060 0024 1A000000 		.4byte	.LFE67
@@ -1226,190 +1226,187 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccICUf03.s 			page 1
  1071      6765725F 
  1071      53746172 
  1071      7400
- 1072              	.LASF31:
- 1073 0028 4C45445F 		.ascii	"LED_Write\000"
- 1073      57726974 
- 1073      6500
- 1074              	.LASF16:
- 1075 0032 63616C63 		.ascii	"calcDist\000"
- 1075      44697374 
- 1075      00
- 1076              	.LASF9:
- 1077 003b 5F5F696E 		.ascii	"__int32_t\000"
- 1077      7433325F 
- 1077      7400
- 1078              	.LASF28:
- 1079 0045 736E7072 		.ascii	"snprintf\000"
- 1079      696E7466 
- 1079      00
- 1080              	.LASF36:
- 1081 004e 6F757470 		.ascii	"outputDistanceToUART\000"
- 1081      75744469 
- 1081      7374616E 
- 1081      6365546F 
- 1081      55415254 
- 1082              	.LASF30:
- 1083 0063 54696D65 		.ascii	"Timer_ClearFIFO\000"
- 1083      725F436C 
- 1083      65617246 
- 1083      49464F00 
- 1084              	.LASF26:
- 1085 0073 54696D65 		.ascii	"Timer_int_StartEx\000"
- 1085      725F696E 
- 1085      745F5374 
- 1085      61727445 
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccICUf03.s 			page 22
+ 1072              	.LASF34:
+ 1073 0028 433A5C49 		.ascii	"C:\\IKT\\Projekt3-2020\\Kode\\afstandssensor\\afsta"
+ 1073      4B545C50 
+ 1073      726F6A65 
+ 1073      6B74332D 
+ 1073      32303230 
+ 1074 0056 6E647373 		.ascii	"ndssensor.cydsn\000"
+ 1074      656E736F 
+ 1074      722E6379 
+ 1074      64736E00 
+ 1075              	.LASF31:
+ 1076 0066 4C45445F 		.ascii	"LED_Write\000"
+ 1076      57726974 
+ 1076      6500
+ 1077              	.LASF16:
+ 1078 0070 63616C63 		.ascii	"calcDist\000"
+ 1078      44697374 
+ 1078      00
+ 1079              	.LASF9:
+ 1080 0079 5F5F696E 		.ascii	"__int32_t\000"
+ 1080      7433325F 
+ 1080      7400
+ 1081              	.LASF28:
+ 1082 0083 736E7072 		.ascii	"snprintf\000"
+ 1082      696E7466 
+ 1082      00
+ 1083              	.LASF36:
+ 1084 008c 6F757470 		.ascii	"outputDistanceToUART\000"
+ 1084      75744469 
+ 1084      7374616E 
+ 1084      6365546F 
+ 1084      55415254 
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\cc59YUvl.s 			page 22
 
 
- 1085      7800
- 1086              	.LASF34:
- 1087 0085 433A5C55 		.ascii	"C:\\Users\\Henry\\Documents\\IKT\\3. semester\\Seme"
- 1087      73657273 
- 1087      5C48656E 
- 1087      72795C44 
- 1087      6F63756D 
- 1088 00b2 73746572 		.ascii	"sterprojekt 3\\god\\afstandssensor\\afstandssensor."
- 1088      70726F6A 
- 1088      656B7420 
- 1088      335C676F 
- 1088      645C6166 
- 1089 00e2 63796473 		.ascii	"cydsn\000"
- 1089      6E00
- 1090              	.LASF19:
- 1091 00e8 64697374 		.ascii	"distance\000"
- 1091      616E6365 
- 1091      00
- 1092              	.LASF11:
- 1093 00f1 666C6F61 		.ascii	"float\000"
- 1093      7400
- 1094              	.LASF1:
- 1095 00f7 756E7369 		.ascii	"unsigned char\000"
- 1095      676E6564 
- 1095      20636861 
- 1095      7200
- 1096              	.LASF32:
- 1097 0105 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 1097      43313120 
- 1097      352E342E 
- 1097      31203230 
- 1097      31363036 
- 1098 0138 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
- 1098      20726576 
- 1098      6973696F 
- 1098      6E203233 
- 1098      37373135 
- 1099 016b 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 1099      66756E63 
- 1099      74696F6E 
- 1099      2D736563 
- 1099      74696F6E 
- 1100              	.LASF21:
- 1101 0193 6F757470 		.ascii	"outputBuffer\000"
- 1101      75744275 
- 1101      66666572 
- 1101      00
- 1102              	.LASF5:
- 1103 01a0 6C6F6E67 		.ascii	"long unsigned int\000"
- 1103      20756E73 
- 1103      69676E65 
- 1103      6420696E 
- 1103      7400
- 1104              	.LASF3:
- 1105 01b2 73686F72 		.ascii	"short unsigned int\000"
- 1105      7420756E 
- 1105      7369676E 
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccICUf03.s 			page 23
+ 1085              	.LASF30:
+ 1086 00a1 54696D65 		.ascii	"Timer_ClearFIFO\000"
+ 1086      725F436C 
+ 1086      65617246 
+ 1086      49464F00 
+ 1087              	.LASF26:
+ 1088 00b1 54696D65 		.ascii	"Timer_int_StartEx\000"
+ 1088      725F696E 
+ 1088      745F5374 
+ 1088      61727445 
+ 1088      7800
+ 1089              	.LASF19:
+ 1090 00c3 64697374 		.ascii	"distance\000"
+ 1090      616E6365 
+ 1090      00
+ 1091              	.LASF11:
+ 1092 00cc 666C6F61 		.ascii	"float\000"
+ 1092      7400
+ 1093              	.LASF1:
+ 1094 00d2 756E7369 		.ascii	"unsigned char\000"
+ 1094      676E6564 
+ 1094      20636861 
+ 1094      7200
+ 1095              	.LASF32:
+ 1096 00e0 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1096      43313120 
+ 1096      352E342E 
+ 1096      31203230 
+ 1096      31363036 
+ 1097 0113 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 1097      20726576 
+ 1097      6973696F 
+ 1097      6E203233 
+ 1097      37373135 
+ 1098 0146 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1098      66756E63 
+ 1098      74696F6E 
+ 1098      2D736563 
+ 1098      74696F6E 
+ 1099              	.LASF21:
+ 1100 016e 6F757470 		.ascii	"outputBuffer\000"
+ 1100      75744275 
+ 1100      66666572 
+ 1100      00
+ 1101              	.LASF5:
+ 1102 017b 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1102      20756E73 
+ 1102      69676E65 
+ 1102      6420696E 
+ 1102      7400
+ 1103              	.LASF3:
+ 1104 018d 73686F72 		.ascii	"short unsigned int\000"
+ 1104      7420756E 
+ 1104      7369676E 
+ 1104      65642069 
+ 1104      6E7400
+ 1105              	.LASF22:
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\cc59YUvl.s 			page 23
 
 
- 1105      65642069 
- 1105      6E7400
- 1106              	.LASF22:
- 1107 01c5 49544D5F 		.ascii	"ITM_RxBuffer\000"
- 1107      52784275 
- 1107      66666572 
- 1107      00
- 1108              	.LASF12:
- 1109 01d2 646F7562 		.ascii	"double\000"
- 1109      6C6500
- 1110              	.LASF17:
- 1111 01d9 54696D65 		.ascii	"Timer_int_Handler\000"
- 1111      725F696E 
- 1111      745F4861 
- 1111      6E646C65 
- 1111      7200
- 1112              	.LASF25:
- 1113 01eb 54696D65 		.ascii	"Timer_Start\000"
- 1113      725F5374 
- 1113      61727400 
- 1114              	.LASF8:
- 1115 01f7 756E7369 		.ascii	"unsigned int\000"
- 1115      676E6564 
- 1115      20696E74 
- 1115      00
- 1116              	.LASF7:
- 1117 0204 6C6F6E67 		.ascii	"long long unsigned int\000"
- 1117      206C6F6E 
- 1117      6720756E 
- 1117      7369676E 
- 1117      65642069 
- 1118              	.LASF10:
- 1119 021b 696E7433 		.ascii	"int32_t\000"
- 1119      325F7400 
- 1120              	.LASF15:
- 1121 0223 73697A65 		.ascii	"sizetype\000"
- 1121      74797065 
- 1121      00
- 1122              	.LASF35:
- 1123 022c 696E6974 		.ascii	"initDistSens\000"
- 1123      44697374 
- 1123      53656E73 
- 1123      00
- 1124              	.LASF6:
- 1125 0239 6C6F6E67 		.ascii	"long long int\000"
- 1125      206C6F6E 
- 1125      6720696E 
- 1125      7400
- 1126              	.LASF13:
- 1127 0247 63686172 		.ascii	"char\000"
- 1127      00
- 1128              	.LASF2:
- 1129 024c 73686F72 		.ascii	"short int\000"
- 1129      7420696E 
- 1129      7400
- 1130              	.LASF27:
- 1131 0256 54696D65 		.ascii	"Timer_ReadCapture\000"
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccICUf03.s 			page 24
+ 1106 01a0 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 1106      52784275 
+ 1106      66666572 
+ 1106      00
+ 1107              	.LASF12:
+ 1108 01ad 646F7562 		.ascii	"double\000"
+ 1108      6C6500
+ 1109              	.LASF17:
+ 1110 01b4 54696D65 		.ascii	"Timer_int_Handler\000"
+ 1110      725F696E 
+ 1110      745F4861 
+ 1110      6E646C65 
+ 1110      7200
+ 1111              	.LASF25:
+ 1112 01c6 54696D65 		.ascii	"Timer_Start\000"
+ 1112      725F5374 
+ 1112      61727400 
+ 1113              	.LASF8:
+ 1114 01d2 756E7369 		.ascii	"unsigned int\000"
+ 1114      676E6564 
+ 1114      20696E74 
+ 1114      00
+ 1115              	.LASF7:
+ 1116 01df 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1116      206C6F6E 
+ 1116      6720756E 
+ 1116      7369676E 
+ 1116      65642069 
+ 1117              	.LASF10:
+ 1118 01f6 696E7433 		.ascii	"int32_t\000"
+ 1118      325F7400 
+ 1119              	.LASF15:
+ 1120 01fe 73697A65 		.ascii	"sizetype\000"
+ 1120      74797065 
+ 1120      00
+ 1121              	.LASF35:
+ 1122 0207 696E6974 		.ascii	"initDistSens\000"
+ 1122      44697374 
+ 1122      53656E73 
+ 1122      00
+ 1123              	.LASF6:
+ 1124 0214 6C6F6E67 		.ascii	"long long int\000"
+ 1124      206C6F6E 
+ 1124      6720696E 
+ 1124      7400
+ 1125              	.LASF13:
+ 1126 0222 63686172 		.ascii	"char\000"
+ 1126      00
+ 1127              	.LASF2:
+ 1128 0227 73686F72 		.ascii	"short int\000"
+ 1128      7420696E 
+ 1128      7400
+ 1129              	.LASF27:
+ 1130 0231 54696D65 		.ascii	"Timer_ReadCapture\000"
+ 1130      725F5265 
+ 1130      61644361 
+ 1130      70747572 
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\cc59YUvl.s 			page 24
 
 
- 1131      725F5265 
- 1131      61644361 
- 1131      70747572 
- 1131      6500
- 1132              	.LASF4:
- 1133 0268 6C6F6E67 		.ascii	"long int\000"
- 1133      20696E74 
- 1133      00
- 1134              	.LASF14:
- 1135 0271 6C6F6E67 		.ascii	"long double\000"
- 1135      20646F75 
- 1135      626C6500 
- 1136              	.LASF0:
- 1137 027d 7369676E 		.ascii	"signed char\000"
- 1137      65642063 
- 1137      68617200 
- 1138              	.LASF18:
- 1139 0289 64697374 		.ascii	"distanceToggleLED\000"
- 1139      616E6365 
- 1139      546F6767 
- 1139      6C654C45 
- 1139      4400
- 1140              	.LASF29:
- 1141 029b 55415254 		.ascii	"UART_1_PutString\000"
- 1141      5F315F50 
- 1141      75745374 
- 1141      72696E67 
- 1141      00
- 1142              	.LASF20:
- 1143 02ac 63617074 		.ascii	"capture\000"
- 1143      75726500 
- 1144              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ 1130      6500
+ 1131              	.LASF4:
+ 1132 0243 6C6F6E67 		.ascii	"long int\000"
+ 1132      20696E74 
+ 1132      00
+ 1133              	.LASF14:
+ 1134 024c 6C6F6E67 		.ascii	"long double\000"
+ 1134      20646F75 
+ 1134      626C6500 
+ 1135              	.LASF0:
+ 1136 0258 7369676E 		.ascii	"signed char\000"
+ 1136      65642063 
+ 1136      68617200 
+ 1137              	.LASF18:
+ 1138 0264 64697374 		.ascii	"distanceToggleLED\000"
+ 1138      616E6365 
+ 1138      546F6767 
+ 1138      6C654C45 
+ 1138      4400
+ 1139              	.LASF29:
+ 1140 0276 55415254 		.ascii	"UART_1_PutString\000"
+ 1140      5F315F50 
+ 1140      75745374 
+ 1140      72696E67 
+ 1140      00
+ 1141              	.LASF20:
+ 1142 0287 63617074 		.ascii	"capture\000"
+ 1142      75726500 
+ 1143              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

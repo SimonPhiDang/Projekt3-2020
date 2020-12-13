@@ -1,5 +1,5 @@
 -- Project:   afstandssensor
--- Generated: 12/08/2020 18:43:24
+-- Generated: 12/08/2020 19:47:07
 -- PSoC Creator  4.3
 
 ENTITY afstandssensor IS

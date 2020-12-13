@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccYRMvys.s 			page 1
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccuSgv1p.s 			page 1
 
 
    1              		.syntax unified
@@ -46,10 +46,10 @@ ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccYRMvys.s 			page 1
   16:colorSensor.c **** #include "colorSensor.h"
   17:colorSensor.c **** 
   18:colorSensor.c **** #define COUNTER_SIZE 10000
-  19:colorSensor.c **** uint32_t freq = 0;
-  20:colorSensor.c **** int dataReady = 0;
-  21:colorSensor.c **** int Counter_cycle = 0;
-  22:colorSensor.c **** 
+  19:colorSensor.c **** uint32_t freq  = 0;
+  20:colorSensor.c **** uint freqR_0, freqG_0, freqB_0 = 0;
+  21:colorSensor.c **** int dataReady = 0;
+  22:colorSensor.c **** int Counter_cycle = 0;
   23:colorSensor.c **** #define STRING_LENGTH 128  
   24:colorSensor.c **** extern char str[] ;
   25:colorSensor.c **** void print(char *str) ;
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccYRMvys.s 			page 1
   28:colorSensor.c **** {
   28              		.loc 1 28 0
   29              		.cfi_startproc
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccYRMvys.s 			page 2
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccuSgv1p.s 			page 2
 
 
   30              		@ args = 0, pretend = 0, frame = 0
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccYRMvys.s 			page 1
   36:colorSensor.c **** }
   37:colorSensor.c **** 
   38:colorSensor.c **** 
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccYRMvys.s 			page 3
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccuSgv1p.s 			page 3
 
 
   39:colorSensor.c **** CY_ISR(counter_isr)//Counter i interrupt routine
@@ -149,17 +149,17 @@ ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccYRMvys.s 			page 1
   98              		.cfi_endproc
   99              	.LFE65:
  100              		.size	counter_isr, .-counter_isr
- 101              		.section	.text.color_init_start,"ax",%progbits
+ 101              		.section	.text.init_start,"ax",%progbits
  102              		.align	2
- 103              		.global	color_init_start
+ 103              		.global	init_start
  104              		.thumb
  105              		.thumb_func
- 106              		.type	color_init_start, %function
- 107              	color_init_start:
+ 106              		.type	init_start, %function
+ 107              	init_start:
  108              	.LFB66:
   43:colorSensor.c **** }
   44:colorSensor.c **** 
-  45:colorSensor.c **** void color_init_start(void)//Starter de indbyggede funktioner fra topdesign: UART, Timer, Counter
+  45:colorSensor.c **** void init_start(void)//Starter de indbyggede funktioner fra topdesign: UART, Timer, Counter
   46:colorSensor.c **** {
  109              		.loc 1 46 0
  110              		.cfi_startproc
@@ -169,1885 +169,2098 @@ ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccYRMvys.s 			page 1
  114              		.cfi_def_cfa_offset 8
  115              		.cfi_offset 3, -8
  116              		.cfi_offset 14, -4
-  47:colorSensor.c ****     Timer_INT_StartEx(timer_isr);
+  47:colorSensor.c ****     CyGlobalIntEnable;
  117              		.loc 1 47 0
- 118 0002 0348     		ldr	r0, .L11
- 119 0004 FFF7FEFF 		bl	Timer_INT_StartEx
- 120              	.LVL6:
-  48:colorSensor.c ****     Counter_INT_StartEx(counter_isr);
- 121              		.loc 1 48 0
- 122 0008 0248     		ldr	r0, .L11+4
- 123 000a FFF7FEFF 		bl	Counter_INT_StartEx
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccYRMvys.s 			page 4
+ 118              		.syntax unified
+ 119              	@ 47 "colorSensor.c" 1
+ 120 0002 62B6     		CPSIE   i
+ 121              	@ 0 "" 2
+  48:colorSensor.c ****     
+  49:colorSensor.c ****     Timer_INT_StartEx(timer_isr);
+ 122              		.loc 1 49 0
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccuSgv1p.s 			page 4
 
 
- 124              	.LVL7:
- 125 000e 08BD     		pop	{r3, pc}
- 126              	.L12:
- 127              		.align	2
- 128              	.L11:
- 129 0010 00000000 		.word	timer_isr
- 130 0014 00000000 		.word	counter_isr
- 131              		.cfi_endproc
- 132              	.LFE66:
- 133              		.size	color_init_start, .-color_init_start
- 134              		.section	.text.read_color,"ax",%progbits
- 135              		.align	2
- 136              		.global	read_color
- 137              		.thumb
- 138              		.thumb_func
- 139              		.type	read_color, %function
- 140              	read_color:
- 141              	.LFB67:
-  49:colorSensor.c **** }
-  50:colorSensor.c **** 
-  51:colorSensor.c **** void read_color(void)//Omdanner inputs til frekvens vha. counter og timeren
-  52:colorSensor.c **** {
- 142              		.loc 1 52 0
- 143              		.cfi_startproc
- 144              		@ args = 0, pretend = 0, frame = 0
- 145              		@ frame_needed = 0, uses_anonymous_args = 0
- 146 0000 08B5     		push	{r3, lr}
- 147              		.cfi_def_cfa_offset 8
- 148              		.cfi_offset 3, -8
- 149              		.cfi_offset 14, -4
-  53:colorSensor.c ****     OE_Write(0);
- 150              		.loc 1 53 0
- 151 0002 0020     		movs	r0, #0
- 152 0004 FFF7FEFF 		bl	OE_Write
- 153              	.LVL8:
-  54:colorSensor.c ****     Control_Reg_Write(1);
- 154              		.loc 1 54 0
- 155 0008 0120     		movs	r0, #1
- 156 000a FFF7FEFF 		bl	Control_Reg_Write
- 157              	.LVL9:
-  55:colorSensor.c ****     CyDelay(1);
- 158              		.loc 1 55 0
- 159 000e 0120     		movs	r0, #1
- 160 0010 FFF7FEFF 		bl	CyDelay
- 161              	.LVL10:
-  56:colorSensor.c ****     Control_Reg_Write(0);
- 162              		.loc 1 56 0
- 163 0014 0020     		movs	r0, #0
- 164 0016 FFF7FEFF 		bl	Control_Reg_Write
- 165              	.LVL11:
-  57:colorSensor.c ****     dataReady = 0;
- 166              		.loc 1 57 0
- 167 001a 074B     		ldr	r3, .L15
- 168 001c 0022     		movs	r2, #0
- 169 001e 9A60     		str	r2, [r3, #8]
-  58:colorSensor.c ****     Counter_cycle = 0;
- 170              		.loc 1 58 0
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccYRMvys.s 			page 5
+ 123              		.thumb
+ 124              		.syntax unified
+ 125 0004 0348     		ldr	r0, .L11
+ 126 0006 FFF7FEFF 		bl	Timer_INT_StartEx
+ 127              	.LVL6:
+  50:colorSensor.c ****     Counter_INT_StartEx(counter_isr);
+ 128              		.loc 1 50 0
+ 129 000a 0348     		ldr	r0, .L11+4
+ 130 000c FFF7FEFF 		bl	Counter_INT_StartEx
+ 131              	.LVL7:
+ 132 0010 08BD     		pop	{r3, pc}
+ 133              	.L12:
+ 134 0012 00BF     		.align	2
+ 135              	.L11:
+ 136 0014 00000000 		.word	timer_isr
+ 137 0018 00000000 		.word	counter_isr
+ 138              		.cfi_endproc
+ 139              	.LFE66:
+ 140              		.size	init_start, .-init_start
+ 141              		.section	.text.read_color,"ax",%progbits
+ 142              		.align	2
+ 143              		.global	read_color
+ 144              		.thumb
+ 145              		.thumb_func
+ 146              		.type	read_color, %function
+ 147              	read_color:
+ 148              	.LFB67:
+  51:colorSensor.c **** }
+  52:colorSensor.c **** 
+  53:colorSensor.c **** void read_color(void)//Omdanner inputs til frekvens vha. counter og timeren
+  54:colorSensor.c **** {
+ 149              		.loc 1 54 0
+ 150              		.cfi_startproc
+ 151              		@ args = 0, pretend = 0, frame = 0
+ 152              		@ frame_needed = 0, uses_anonymous_args = 0
+ 153 0000 08B5     		push	{r3, lr}
+ 154              		.cfi_def_cfa_offset 8
+ 155              		.cfi_offset 3, -8
+ 156              		.cfi_offset 14, -4
+  55:colorSensor.c ****     OE_Write(0);
+ 157              		.loc 1 55 0
+ 158 0002 0020     		movs	r0, #0
+ 159 0004 FFF7FEFF 		bl	OE_Write
+ 160              	.LVL8:
+  56:colorSensor.c ****     Control_Reg_Write(1);
+ 161              		.loc 1 56 0
+ 162 0008 0120     		movs	r0, #1
+ 163 000a FFF7FEFF 		bl	Control_Reg_Write
+ 164              	.LVL9:
+  57:colorSensor.c ****     CyDelay(1);
+ 165              		.loc 1 57 0
+ 166 000e 0120     		movs	r0, #1
+ 167 0010 FFF7FEFF 		bl	CyDelay
+ 168              	.LVL10:
+  58:colorSensor.c ****     Control_Reg_Write(0);
+ 169              		.loc 1 58 0
+ 170 0014 0020     		movs	r0, #0
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccuSgv1p.s 			page 5
 
 
- 171 0020 5A60     		str	r2, [r3, #4]
-  59:colorSensor.c ****     Counter_Start();
- 172              		.loc 1 59 0
- 173 0022 FFF7FEFF 		bl	Counter_Start
- 174              	.LVL12:
-  60:colorSensor.c ****     Timer_INT_StartEx(timer_isr);
- 175              		.loc 1 60 0
- 176 0026 0548     		ldr	r0, .L15+4
- 177 0028 FFF7FEFF 		bl	Timer_INT_StartEx
- 178              	.LVL13:
-  61:colorSensor.c ****     Counter_INT_StartEx(counter_isr);
+ 171 0016 FFF7FEFF 		bl	Control_Reg_Write
+ 172              	.LVL11:
+  59:colorSensor.c ****     dataReady = 0;
+ 173              		.loc 1 59 0
+ 174 001a 074B     		ldr	r3, .L15
+ 175 001c 0022     		movs	r2, #0
+ 176 001e 9A60     		str	r2, [r3, #8]
+  60:colorSensor.c ****     Counter_cycle = 0;
+ 177              		.loc 1 60 0
+ 178 0020 5A60     		str	r2, [r3, #4]
+  61:colorSensor.c ****     Counter_Start();
  179              		.loc 1 61 0
- 180 002c 0448     		ldr	r0, .L15+8
- 181 002e FFF7FEFF 		bl	Counter_INT_StartEx
- 182              	.LVL14:
-  62:colorSensor.c ****     
-  63:colorSensor.c ****     Timer_Start();
- 183              		.loc 1 63 0
- 184 0032 FFF7FEFF 		bl	Timer_Start
- 185              	.LVL15:
- 186 0036 08BD     		pop	{r3, pc}
- 187              	.L16:
- 188              		.align	2
- 189              	.L15:
- 190 0038 00000000 		.word	.LANCHOR0
- 191 003c 00000000 		.word	timer_isr
- 192 0040 00000000 		.word	counter_isr
- 193              		.cfi_endproc
- 194              	.LFE67:
- 195              		.size	read_color, .-read_color
- 196              		.section	.text.get_freq,"ax",%progbits
- 197              		.align	2
- 198              		.global	get_freq
- 199              		.thumb
- 200              		.thumb_func
- 201              		.type	get_freq, %function
- 202              	get_freq:
- 203              	.LFB68:
-  64:colorSensor.c **** }
-  65:colorSensor.c **** 
-  66:colorSensor.c **** int get_freq(char color)//Modtager input på baggrund af indstillinger for farvefilter samt scaling
-  67:colorSensor.c **** {
- 204              		.loc 1 67 0
- 205              		.cfi_startproc
- 206              		@ args = 0, pretend = 0, frame = 0
- 207              		@ frame_needed = 0, uses_anonymous_args = 0
- 208              	.LVL16:
- 209 0000 10B5     		push	{r4, lr}
- 210              		.cfi_def_cfa_offset 8
- 211              		.cfi_offset 4, -8
- 212              		.cfi_offset 14, -4
- 213 0002 0446     		mov	r4, r0
-  68:colorSensor.c ****     //scaling 2%
-  69:colorSensor.c ****     S0_Write(0);
- 214              		.loc 1 69 0
- 215 0004 0020     		movs	r0, #0
- 216              	.LVL17:
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccYRMvys.s 			page 6
+ 180 0022 FFF7FEFF 		bl	Counter_Start
+ 181              	.LVL12:
+  62:colorSensor.c ****     Timer_INT_StartEx(timer_isr);
+ 182              		.loc 1 62 0
+ 183 0026 0548     		ldr	r0, .L15+4
+ 184 0028 FFF7FEFF 		bl	Timer_INT_StartEx
+ 185              	.LVL13:
+  63:colorSensor.c ****     Counter_INT_StartEx(counter_isr);
+ 186              		.loc 1 63 0
+ 187 002c 0448     		ldr	r0, .L15+8
+ 188 002e FFF7FEFF 		bl	Counter_INT_StartEx
+ 189              	.LVL14:
+  64:colorSensor.c ****     
+  65:colorSensor.c ****     Timer_Start();
+ 190              		.loc 1 65 0
+ 191 0032 FFF7FEFF 		bl	Timer_Start
+ 192              	.LVL15:
+ 193 0036 08BD     		pop	{r3, pc}
+ 194              	.L16:
+ 195              		.align	2
+ 196              	.L15:
+ 197 0038 00000000 		.word	.LANCHOR0
+ 198 003c 00000000 		.word	timer_isr
+ 199 0040 00000000 		.word	counter_isr
+ 200              		.cfi_endproc
+ 201              	.LFE67:
+ 202              		.size	read_color, .-read_color
+ 203              		.section	.text.get_freq,"ax",%progbits
+ 204              		.align	2
+ 205              		.global	get_freq
+ 206              		.thumb
+ 207              		.thumb_func
+ 208              		.type	get_freq, %function
+ 209              	get_freq:
+ 210              	.LFB68:
+  66:colorSensor.c **** }
+  67:colorSensor.c **** 
+  68:colorSensor.c **** int get_freq(char color)//Modtager input på baggrund af indstillinger for farvefilter samt scaling
+  69:colorSensor.c **** {
+ 211              		.loc 1 69 0
+ 212              		.cfi_startproc
+ 213              		@ args = 0, pretend = 0, frame = 0
+ 214              		@ frame_needed = 0, uses_anonymous_args = 0
+ 215              	.LVL16:
+ 216 0000 10B5     		push	{r4, lr}
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccuSgv1p.s 			page 6
 
 
- 217 0006 FFF7FEFF 		bl	S0_Write
- 218              	.LVL18:
-  70:colorSensor.c ****     S1_Write(1);
- 219              		.loc 1 70 0
- 220 000a 0120     		movs	r0, #1
- 221 000c FFF7FEFF 		bl	S1_Write
- 222              	.LVL19:
-  71:colorSensor.c ****     
-  72:colorSensor.c ****    if(color=='r')//Rød farve-filter tilføjes og frekvensen registeres
- 223              		.loc 1 72 0
- 224 0010 722C     		cmp	r4, #114
- 225 0012 08D1     		bne	.L18
-  73:colorSensor.c ****     {   
-  74:colorSensor.c ****         S2_Write(0);
- 226              		.loc 1 74 0
- 227 0014 0020     		movs	r0, #0
- 228 0016 FFF7FEFF 		bl	S2_Write
- 229              	.LVL20:
-  75:colorSensor.c ****         S3_Write(0);
- 230              		.loc 1 75 0
- 231 001a 0020     		movs	r0, #0
- 232 001c FFF7FEFF 		bl	S3_Write
- 233              	.LVL21:
-  76:colorSensor.c ****         read_color();
- 234              		.loc 1 76 0
- 235 0020 FFF7FEFF 		bl	read_color
- 236              	.LVL22:
- 237 0024 1FE0     		b	.L22
- 238              	.L18:
-  77:colorSensor.c ****     }
-  78:colorSensor.c ****     
-  79:colorSensor.c ****     else if(color=='g')//Grøn farve-filter tilføjes og frekvensen registeres
- 239              		.loc 1 79 0
- 240 0026 672C     		cmp	r4, #103
- 241 0028 08D1     		bne	.L20
-  80:colorSensor.c ****     { 
-  81:colorSensor.c ****         S2_Write(1);
- 242              		.loc 1 81 0
- 243 002a 0120     		movs	r0, #1
- 244 002c FFF7FEFF 		bl	S2_Write
- 245              	.LVL23:
-  82:colorSensor.c ****         S3_Write(1);
- 246              		.loc 1 82 0
- 247 0030 0120     		movs	r0, #1
- 248 0032 FFF7FEFF 		bl	S3_Write
- 249              	.LVL24:
-  83:colorSensor.c ****         read_color();
- 250              		.loc 1 83 0
- 251 0036 FFF7FEFF 		bl	read_color
- 252              	.LVL25:
- 253 003a 14E0     		b	.L22
- 254              	.L20:
-  84:colorSensor.c ****     }
-  85:colorSensor.c ****     
-  86:colorSensor.c ****     else if(color=='b')//Blå farve-filter tilføjes og frekvensen registeres
- 255              		.loc 1 86 0
- 256 003c 622C     		cmp	r4, #98
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccYRMvys.s 			page 7
+ 217              		.cfi_def_cfa_offset 8
+ 218              		.cfi_offset 4, -8
+ 219              		.cfi_offset 14, -4
+ 220 0002 0446     		mov	r4, r0
+  70:colorSensor.c ****     //scaling 2%
+  71:colorSensor.c ****     S0_Write(0);
+ 221              		.loc 1 71 0
+ 222 0004 0020     		movs	r0, #0
+ 223              	.LVL17:
+ 224 0006 FFF7FEFF 		bl	S0_Write
+ 225              	.LVL18:
+  72:colorSensor.c ****     S1_Write(1);
+ 226              		.loc 1 72 0
+ 227 000a 0120     		movs	r0, #1
+ 228 000c FFF7FEFF 		bl	S1_Write
+ 229              	.LVL19:
+  73:colorSensor.c ****     
+  74:colorSensor.c ****    if(color=='r')//Rød farve-filter tilføjes og frekvensen registeres
+ 230              		.loc 1 74 0
+ 231 0010 722C     		cmp	r4, #114
+ 232 0012 08D1     		bne	.L18
+  75:colorSensor.c ****     {   
+  76:colorSensor.c ****         S2_Write(0);
+ 233              		.loc 1 76 0
+ 234 0014 0020     		movs	r0, #0
+ 235 0016 FFF7FEFF 		bl	S2_Write
+ 236              	.LVL20:
+  77:colorSensor.c ****         S3_Write(0);
+ 237              		.loc 1 77 0
+ 238 001a 0020     		movs	r0, #0
+ 239 001c FFF7FEFF 		bl	S3_Write
+ 240              	.LVL21:
+  78:colorSensor.c ****         read_color();
+ 241              		.loc 1 78 0
+ 242 0020 FFF7FEFF 		bl	read_color
+ 243              	.LVL22:
+ 244 0024 1FE0     		b	.L22
+ 245              	.L18:
+  79:colorSensor.c ****     }
+  80:colorSensor.c ****     
+  81:colorSensor.c ****     else if(color=='g')//Grøn farve-filter tilføjes og frekvensen registeres
+ 246              		.loc 1 81 0
+ 247 0026 672C     		cmp	r4, #103
+ 248 0028 08D1     		bne	.L20
+  82:colorSensor.c ****     { 
+  83:colorSensor.c ****         S2_Write(1);
+ 249              		.loc 1 83 0
+ 250 002a 0120     		movs	r0, #1
+ 251 002c FFF7FEFF 		bl	S2_Write
+ 252              	.LVL23:
+  84:colorSensor.c ****         S3_Write(1);
+ 253              		.loc 1 84 0
+ 254 0030 0120     		movs	r0, #1
+ 255 0032 FFF7FEFF 		bl	S3_Write
+ 256              	.LVL24:
+  85:colorSensor.c ****         read_color();
+ 257              		.loc 1 85 0
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccuSgv1p.s 			page 7
 
 
- 257 003e 08D1     		bne	.L21
-  87:colorSensor.c ****     {
-  88:colorSensor.c ****         S2_Write(0);
- 258              		.loc 1 88 0
- 259 0040 0020     		movs	r0, #0
- 260 0042 FFF7FEFF 		bl	S2_Write
- 261              	.LVL26:
-  89:colorSensor.c ****         S3_Write(1);
- 262              		.loc 1 89 0
- 263 0046 0120     		movs	r0, #1
- 264 0048 FFF7FEFF 		bl	S3_Write
- 265              	.LVL27:
-  90:colorSensor.c ****         read_color();
- 266              		.loc 1 90 0
- 267 004c FFF7FEFF 		bl	read_color
- 268              	.LVL28:
- 269 0050 09E0     		b	.L22
- 270              	.L21:
-  91:colorSensor.c ****     }
-  92:colorSensor.c ****     else if(color=='c')//'Clear' farve-filter tilføjes og frekvensen registeres
- 271              		.loc 1 92 0
- 272 0052 632C     		cmp	r4, #99
- 273 0054 07D1     		bne	.L22
-  93:colorSensor.c ****     {
-  94:colorSensor.c ****         S2_Write(1);
- 274              		.loc 1 94 0
- 275 0056 0120     		movs	r0, #1
- 276 0058 FFF7FEFF 		bl	S2_Write
- 277              	.LVL29:
-  95:colorSensor.c ****         S3_Write(0);
- 278              		.loc 1 95 0
- 279 005c 0020     		movs	r0, #0
- 280 005e FFF7FEFF 		bl	S3_Write
- 281              	.LVL30:
-  96:colorSensor.c ****         read_color();
- 282              		.loc 1 96 0
- 283 0062 FFF7FEFF 		bl	read_color
- 284              	.LVL31:
- 285              	.L22:
-  97:colorSensor.c ****     }
-  98:colorSensor.c ****     
-  99:colorSensor.c ****     while(!dataReady)
- 286              		.loc 1 99 0 discriminator 1
- 287 0066 034B     		ldr	r3, .L24
- 288 0068 9B68     		ldr	r3, [r3, #8]
- 289 006a 002B     		cmp	r3, #0
- 290 006c FBD0     		beq	.L22
- 100:colorSensor.c ****     {
- 101:colorSensor.c ****     ;
- 102:colorSensor.c ****     }
- 103:colorSensor.c ****     return freq;
- 104:colorSensor.c **** }
- 291              		.loc 1 104 0
- 292 006e 014B     		ldr	r3, .L24
- 293 0070 1868     		ldr	r0, [r3]
- 294 0072 10BD     		pop	{r4, pc}
- 295              	.L25:
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccYRMvys.s 			page 8
+ 258 0036 FFF7FEFF 		bl	read_color
+ 259              	.LVL25:
+ 260 003a 14E0     		b	.L22
+ 261              	.L20:
+  86:colorSensor.c ****     }
+  87:colorSensor.c ****     
+  88:colorSensor.c ****     else if(color=='b')//Blå farve-filter tilføjes og frekvensen registeres
+ 262              		.loc 1 88 0
+ 263 003c 622C     		cmp	r4, #98
+ 264 003e 08D1     		bne	.L21
+  89:colorSensor.c ****     {
+  90:colorSensor.c ****         S2_Write(0);
+ 265              		.loc 1 90 0
+ 266 0040 0020     		movs	r0, #0
+ 267 0042 FFF7FEFF 		bl	S2_Write
+ 268              	.LVL26:
+  91:colorSensor.c ****         S3_Write(1);
+ 269              		.loc 1 91 0
+ 270 0046 0120     		movs	r0, #1
+ 271 0048 FFF7FEFF 		bl	S3_Write
+ 272              	.LVL27:
+  92:colorSensor.c ****         read_color();
+ 273              		.loc 1 92 0
+ 274 004c FFF7FEFF 		bl	read_color
+ 275              	.LVL28:
+ 276 0050 09E0     		b	.L22
+ 277              	.L21:
+  93:colorSensor.c ****     }
+  94:colorSensor.c ****     else if(color=='c')//'Clear' farve-filter tilføjes og frekvensen registeres
+ 278              		.loc 1 94 0
+ 279 0052 632C     		cmp	r4, #99
+ 280 0054 07D1     		bne	.L22
+  95:colorSensor.c ****     {
+  96:colorSensor.c ****         S2_Write(1);
+ 281              		.loc 1 96 0
+ 282 0056 0120     		movs	r0, #1
+ 283 0058 FFF7FEFF 		bl	S2_Write
+ 284              	.LVL29:
+  97:colorSensor.c ****         S3_Write(0);
+ 285              		.loc 1 97 0
+ 286 005c 0020     		movs	r0, #0
+ 287 005e FFF7FEFF 		bl	S3_Write
+ 288              	.LVL30:
+  98:colorSensor.c ****         read_color();
+ 289              		.loc 1 98 0
+ 290 0062 FFF7FEFF 		bl	read_color
+ 291              	.LVL31:
+ 292              	.L22:
+  99:colorSensor.c ****     }
+ 100:colorSensor.c ****     
+ 101:colorSensor.c ****    
+ 102:colorSensor.c ****     
+ 103:colorSensor.c ****     while(!dataReady)
+ 293              		.loc 1 103 0 discriminator 1
+ 294 0066 034B     		ldr	r3, .L24
+ 295 0068 9B68     		ldr	r3, [r3, #8]
+ 296 006a 002B     		cmp	r3, #0
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccuSgv1p.s 			page 8
 
 
- 296              		.align	2
- 297              	.L24:
- 298 0074 00000000 		.word	.LANCHOR0
- 299              		.cfi_endproc
- 300              	.LFE68:
- 301              		.size	get_freq, .-get_freq
- 302              		.section	.text.getColor,"ax",%progbits
+ 297 006c FBD0     		beq	.L22
+ 104:colorSensor.c ****     {
+ 105:colorSensor.c ****     ;
+ 106:colorSensor.c ****     }
+ 107:colorSensor.c ****     return freq;
+ 108:colorSensor.c ****     
+ 109:colorSensor.c ****  
+ 110:colorSensor.c **** 
+ 111:colorSensor.c **** }
+ 298              		.loc 1 111 0
+ 299 006e 014B     		ldr	r3, .L24
+ 300 0070 1868     		ldr	r0, [r3]
+ 301 0072 10BD     		pop	{r4, pc}
+ 302              	.L25:
  303              		.align	2
- 304              		.global	getColor
- 305              		.thumb
- 306              		.thumb_func
- 307              		.type	getColor, %function
- 308              	getColor:
- 309              	.LFB69:
- 105:colorSensor.c **** 
- 106:colorSensor.c **** char str[STRING_LENGTH+1] ; /* print buff */
- 107:colorSensor.c **** 
- 108:colorSensor.c **** 
- 109:colorSensor.c **** int getColor()
- 110:colorSensor.c **** {
- 310              		.loc 1 110 0
- 311              		.cfi_startproc
- 312              		@ args = 0, pretend = 0, frame = 0
- 313              		@ frame_needed = 0, uses_anonymous_args = 0
- 314 0000 38B5     		push	{r3, r4, r5, lr}
- 315              		.cfi_def_cfa_offset 16
- 316              		.cfi_offset 3, -16
- 317              		.cfi_offset 4, -12
- 318              		.cfi_offset 5, -8
- 319              		.cfi_offset 14, -4
- 320              	.LVL32:
- 111:colorSensor.c **** uint freqR, freqG, freqB = 0;
- 112:colorSensor.c **** uint countR, countG, countB = 0;
- 113:colorSensor.c ****     
- 114:colorSensor.c ****     color_init_start();
- 321              		.loc 1 114 0
- 322 0002 FFF7FEFF 		bl	color_init_start
- 323              	.LVL33:
- 115:colorSensor.c ****     read_color();
- 324              		.loc 1 115 0
- 325 0006 FFF7FEFF 		bl	read_color
- 326              	.LVL34:
- 116:colorSensor.c ****     
- 117:colorSensor.c **** 
- 118:colorSensor.c ****             freqR = get_freq('r')-10;
- 327              		.loc 1 118 0
- 328 000a 7220     		movs	r0, #114
- 329 000c FFF7FEFF 		bl	get_freq
- 330              	.LVL35:
- 331 0010 A0F10A04 		sub	r4, r0, #10
- 332              	.LVL36:
- 119:colorSensor.c ****             freqG = get_freq('g')+10;
- 333              		.loc 1 119 0
- 334 0014 6720     		movs	r0, #103
- 335 0016 FFF7FEFF 		bl	get_freq
- 336              	.LVL37:
- 337 001a 00F10A05 		add	r5, r0, #10
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccYRMvys.s 			page 9
+ 304              	.L24:
+ 305 0074 00000000 		.word	.LANCHOR0
+ 306              		.cfi_endproc
+ 307              	.LFE68:
+ 308              		.size	get_freq, .-get_freq
+ 309              		.section	.text.standardColor,"ax",%progbits
+ 310              		.align	2
+ 311              		.global	standardColor
+ 312              		.thumb
+ 313              		.thumb_func
+ 314              		.type	standardColor, %function
+ 315              	standardColor:
+ 316              	.LFB69:
+ 112:colorSensor.c **** 
+ 113:colorSensor.c **** 
+ 114:colorSensor.c **** 
+ 115:colorSensor.c **** 
+ 116:colorSensor.c **** int standardColor()
+ 117:colorSensor.c **** {
+ 317              		.loc 1 117 0
+ 318              		.cfi_startproc
+ 319              		@ args = 0, pretend = 0, frame = 0
+ 320              		@ frame_needed = 0, uses_anonymous_args = 0
+ 321 0000 08B5     		push	{r3, lr}
+ 322              		.cfi_def_cfa_offset 8
+ 323              		.cfi_offset 3, -8
+ 324              		.cfi_offset 14, -4
+ 118:colorSensor.c **** 
+ 119:colorSensor.c ****     
+ 120:colorSensor.c ****     init_start();
+ 325              		.loc 1 120 0
+ 326 0002 FFF7FEFF 		bl	init_start
+ 327              	.LVL32:
+ 121:colorSensor.c ****     read_color();
+ 328              		.loc 1 121 0
+ 329 0006 FFF7FEFF 		bl	read_color
+ 330              	.LVL33:
+ 122:colorSensor.c **** 
+ 123:colorSensor.c ****     freqR_0 = get_freq('r');
+ 331              		.loc 1 123 0
+ 332 000a 7220     		movs	r0, #114
+ 333 000c FFF7FEFF 		bl	get_freq
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccuSgv1p.s 			page 9
 
 
- 338              	.LVL38:
- 120:colorSensor.c ****             freqB = get_freq('b');
- 339              		.loc 1 120 0
- 340 001e 6220     		movs	r0, #98
- 341 0020 FFF7FEFF 		bl	get_freq
- 342              	.LVL39:
- 121:colorSensor.c ****             
- 122:colorSensor.c ****             //Nedenstående to sætninger bruges til at se frekvensen på farverne
- 123:colorSensor.c ****             //sprintf(str,"Red freq: %u Hz, Green freq: %u, Blue freq: %u\n\n\r",freqR,freqG,freqB)
- 124:colorSensor.c ****             //print(str);
- 125:colorSensor.c ****             
- 126:colorSensor.c ****             //Nedenstående er koden der skal bruges
- 127:colorSensor.c ****             
- 128:colorSensor.c ****              if(freqR>freqG&&freqR>freqB)
- 343              		.loc 1 128 0
- 344 0024 AC42     		cmp	r4, r5
- 345 0026 0ED9     		bls	.L27
- 346              		.loc 1 128 0 is_stmt 0 discriminator 1
- 347 0028 8442     		cmp	r4, r0
- 348 002a 0CD9     		bls	.L27
- 129:colorSensor.c ****                 {
- 130:colorSensor.c ****                     if(freqR>=100)
- 349              		.loc 1 130 0 is_stmt 1
- 350 002c 632C     		cmp	r4, #99
- 351 002e 1CD8     		bhi	.L29
- 131:colorSensor.c ****                     {
- 132:colorSensor.c ****                         countR ++;
- 133:colorSensor.c ****                         if(countR==5)
- 134:colorSensor.c ****                         {
- 135:colorSensor.c ****                             //Indsæt 'driveForward funktion'
- 136:colorSensor.c ****                         sprintf(str,"Red color detected\n\r");
- 137:colorSensor.c ****                         print(str);
- 138:colorSensor.c ****                         countR = 0;
- 139:colorSensor.c ****                         }
- 140:colorSensor.c ****                         
- 141:colorSensor.c ****                     }
- 142:colorSensor.c ****                     else
- 143:colorSensor.c ****                     {
- 144:colorSensor.c ****                         //Indsæt 'driveLeft funktion'
- 145:colorSensor.c ****                         sprintf(str,"Unknown color\n\r");
- 352              		.loc 1 145 0
- 353 0030 0F4D     		ldr	r5, .L33
- 354              	.LVL40:
- 355 0032 104C     		ldr	r4, .L33+4
- 356              	.LVL41:
- 357 0034 0FCC     		ldmia	r4!, {r0, r1, r2, r3}
- 358              	.LVL42:
- 359 0036 2860     		str	r0, [r5]	@ unaligned
- 360 0038 6960     		str	r1, [r5, #4]	@ unaligned
- 361 003a AA60     		str	r2, [r5, #8]	@ unaligned
- 362 003c EB60     		str	r3, [r5, #12]	@ unaligned
- 146:colorSensor.c ****                         print(str);
- 363              		.loc 1 146 0
- 364 003e 2846     		mov	r0, r5
- 365 0040 FFF7FEFF 		bl	print
- 366              	.LVL43:
- 367 0044 11E0     		b	.L29
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccYRMvys.s 			page 10
+ 334              	.LVL34:
+ 335 0010 064B     		ldr	r3, .L28
+ 336 0012 1860     		str	r0, [r3]
+ 124:colorSensor.c ****     freqG_0 = get_freq('g');
+ 337              		.loc 1 124 0
+ 338 0014 6720     		movs	r0, #103
+ 339 0016 FFF7FEFF 		bl	get_freq
+ 340              	.LVL35:
+ 341 001a 054B     		ldr	r3, .L28+4
+ 342 001c 1860     		str	r0, [r3]
+ 125:colorSensor.c ****     freqB_0 = get_freq('b');
+ 343              		.loc 1 125 0
+ 344 001e 6220     		movs	r0, #98
+ 345 0020 FFF7FEFF 		bl	get_freq
+ 346              	.LVL36:
+ 347 0024 034B     		ldr	r3, .L28+8
+ 348 0026 D860     		str	r0, [r3, #12]
+ 126:colorSensor.c ****     
+ 127:colorSensor.c ****   return 0;  
+ 128:colorSensor.c **** }
+ 349              		.loc 1 128 0
+ 350 0028 0020     		movs	r0, #0
+ 351 002a 08BD     		pop	{r3, pc}
+ 352              	.L29:
+ 353              		.align	2
+ 354              	.L28:
+ 355 002c 00000000 		.word	freqR_0
+ 356 0030 00000000 		.word	freqG_0
+ 357 0034 00000000 		.word	.LANCHOR0
+ 358              		.cfi_endproc
+ 359              	.LFE69:
+ 360              		.size	standardColor, .-standardColor
+ 361              		.global	__aeabi_ui2d
+ 362              		.global	__aeabi_dmul
+ 363              		.global	__aeabi_dcmpgt
+ 364              		.global	__aeabi_dadd
+ 365              		.section	.text.getColor,"ax",%progbits
+ 366              		.align	2
+ 367              		.global	getColor
+ 368              		.thumb
+ 369              		.thumb_func
+ 370              		.type	getColor, %function
+ 371              	getColor:
+ 372              	.LFB70:
+ 129:colorSensor.c **** 
+ 130:colorSensor.c **** int getColor()
+ 131:colorSensor.c **** {
+ 373              		.loc 1 131 0
+ 374              		.cfi_startproc
+ 375              		@ args = 0, pretend = 0, frame = 0
+ 376              		@ frame_needed = 0, uses_anonymous_args = 0
+ 377 0000 2DE9F047 		push	{r4, r5, r6, r7, r8, r9, r10, lr}
+ 378              		.cfi_def_cfa_offset 32
+ 379              		.cfi_offset 4, -32
+ 380              		.cfi_offset 5, -28
+ 381              		.cfi_offset 6, -24
+ 382              		.cfi_offset 7, -20
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccuSgv1p.s 			page 10
 
 
- 368              	.LVL44:
- 369              	.L27:
- 147:colorSensor.c ****                     }      
- 148:colorSensor.c ****                 }
- 149:colorSensor.c **** 
- 150:colorSensor.c ****             else if (freqG>freqR&&freqG>freqB)
- 370              		.loc 1 150 0
- 371 0046 AC42     		cmp	r4, r5
- 372 0048 01D2     		bcs	.L30
- 373              		.loc 1 150 0 is_stmt 0 discriminator 1
- 374 004a 8542     		cmp	r5, r0
- 375 004c 0DD8     		bhi	.L29
- 376              	.L30:
- 151:colorSensor.c ****                 {
- 152:colorSensor.c ****                         countG ++;
- 153:colorSensor.c ****                         if(countG==5)
- 154:colorSensor.c ****                         {
- 155:colorSensor.c ****                             //Indsæt
- 156:colorSensor.c ****                         sprintf(str,"Green color detected\n\r");
- 157:colorSensor.c ****                         print(str);
- 158:colorSensor.c ****                         countG = 0;
- 159:colorSensor.c ****                         }
- 160:colorSensor.c ****                 }
- 161:colorSensor.c ****                 
- 162:colorSensor.c ****             else if(freqB>freqG&&freqB>freqR)
- 377              		.loc 1 162 0 is_stmt 1
- 378 004e 8542     		cmp	r5, r0
- 379 0050 01D2     		bcs	.L31
- 380              		.loc 1 162 0 is_stmt 0 discriminator 1
- 381 0052 8442     		cmp	r4, r0
- 382 0054 09D3     		bcc	.L29
- 383              	.L31:
- 163:colorSensor.c ****                 {
- 164:colorSensor.c ****                         countB ++;
- 165:colorSensor.c ****                         if(countB==5)
- 166:colorSensor.c ****                         {
- 167:colorSensor.c ****                         sprintf(str,"Blue color detected\n\r");
- 168:colorSensor.c ****                         print(str);
- 169:colorSensor.c ****                         countB = 0;
- 170:colorSensor.c ****                         }
- 171:colorSensor.c ****                 }
- 172:colorSensor.c ****                 
- 173:colorSensor.c ****                 else
- 174:colorSensor.c ****                 {
- 175:colorSensor.c ****                         //Indsæt 'driveLeft funktion'
- 176:colorSensor.c ****                     sprintf(str,"Unknown color\n\r");
- 384              		.loc 1 176 0 is_stmt 1
- 385 0056 064D     		ldr	r5, .L33
- 386              	.LVL45:
- 387 0058 064C     		ldr	r4, .L33+4
- 388              	.LVL46:
- 389 005a 0FCC     		ldmia	r4!, {r0, r1, r2, r3}
- 390              	.LVL47:
- 391 005c 2860     		str	r0, [r5]	@ unaligned
- 392 005e 6960     		str	r1, [r5, #4]	@ unaligned
- 393 0060 AA60     		str	r2, [r5, #8]	@ unaligned
- 394 0062 EB60     		str	r3, [r5, #12]	@ unaligned
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccYRMvys.s 			page 11
+ 383              		.cfi_offset 8, -16
+ 384              		.cfi_offset 9, -12
+ 385              		.cfi_offset 10, -8
+ 386              		.cfi_offset 14, -4
+ 387              	.LVL37:
+ 132:colorSensor.c **** uint freqR, freqG, freqB = 0;
+ 133:colorSensor.c **** uint countR = 0;
+ 134:colorSensor.c **** uint countG = 0;
+ 135:colorSensor.c **** uint countB = 0;
+ 136:colorSensor.c **** uint countU = 0;
+ 137:colorSensor.c **** 
+ 138:colorSensor.c ****     
+ 139:colorSensor.c ****     init_start();
+ 388              		.loc 1 139 0
+ 389 0004 FFF7FEFF 		bl	init_start
+ 390              	.LVL38:
+ 140:colorSensor.c ****     read_color();
+ 391              		.loc 1 140 0
+ 392 0008 FFF7FEFF 		bl	read_color
+ 393              	.LVL39:
+ 394              	.L33:
+ 141:colorSensor.c ****     
+ 142:colorSensor.c ****  //   freqR_0 = get_freq('r');
+ 143:colorSensor.c ****  //   freqG_0 = get_freq('g');
+ 144:colorSensor.c ****  //   freqB_0 = get_freq('b');  
+ 145:colorSensor.c ****         for(;;)
+ 146:colorSensor.c ****         {
+ 147:colorSensor.c ****             
+ 148:colorSensor.c ****             freqR = get_freq('r');
+ 395              		.loc 1 148 0
+ 396 000c 7220     		movs	r0, #114
+ 397 000e FFF7FEFF 		bl	get_freq
+ 398              	.LVL40:
+ 399 0012 0446     		mov	r4, r0
+ 400              	.LVL41:
+ 149:colorSensor.c ****             freqG = get_freq('g');
+ 401              		.loc 1 149 0
+ 402 0014 6720     		movs	r0, #103
+ 403              	.LVL42:
+ 404 0016 FFF7FEFF 		bl	get_freq
+ 405              	.LVL43:
+ 406 001a 0546     		mov	r5, r0
+ 407              	.LVL44:
+ 150:colorSensor.c ****             freqB = get_freq('b');
+ 408              		.loc 1 150 0
+ 409 001c 6220     		movs	r0, #98
+ 410              	.LVL45:
+ 411 001e FFF7FEFF 		bl	get_freq
+ 412              	.LVL46:
+ 413 0022 8246     		mov	r10, r0
+ 414              	.LVL47:
+ 151:colorSensor.c ****            
+ 152:colorSensor.c ****           
+ 153:colorSensor.c ****             //Nedenstående to sætninger bruges til at se frekvensen på farverne
+ 154:colorSensor.c ****           // sprintf(str,"Red freq: %u Hz, Green freq: %u, Blue freq: %u, R0: %u, G0: %u, B0: %u \n
+ 155:colorSensor.c ****            //print(str);
+ 156:colorSensor.c ****         
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccuSgv1p.s 			page 11
 
 
- 177:colorSensor.c ****                     print(str);
- 395              		.loc 1 177 0
- 396 0064 2846     		mov	r0, r5
- 397 0066 FFF7FEFF 		bl	print
- 398              	.LVL48:
- 399              	.L29:
- 178:colorSensor.c ****                 }
- 179:colorSensor.c ****                        
- 180:colorSensor.c ****         
- 181:colorSensor.c ****          
- 182:colorSensor.c **** 
- 183:colorSensor.c ****         return 0;
- 184:colorSensor.c **** }
- 400              		.loc 1 184 0
- 401 006a 0020     		movs	r0, #0
- 402 006c 38BD     		pop	{r3, r4, r5, pc}
- 403              	.L34:
- 404 006e 00BF     		.align	2
- 405              	.L33:
- 406 0070 00000000 		.word	str
- 407 0074 18000000 		.word	.LC1
- 408              		.cfi_endproc
- 409              	.LFE69:
- 410              		.size	getColor, .-getColor
- 411              		.comm	str,129,4
- 412              		.global	Counter_cycle
- 413              		.global	dataReady
- 414              		.global	freq
- 415              		.section	.rodata.str1.4,"aMS",%progbits,1
- 416              		.align	2
- 417              	.LC0:
- 418 0000 52656420 		.ascii	"Red color detected\012\015\000"
- 418      636F6C6F 
- 418      72206465 
- 418      74656374 
- 418      65640A0D 
- 419 0015 000000   		.space	3
- 420              	.LC1:
- 421 0018 556E6B6E 		.ascii	"Unknown color\012\015\000"
- 421      6F776E20 
- 421      636F6C6F 
- 421      720A0D00 
- 422              	.LC2:
- 423 0028 47726565 		.ascii	"Green color detected\012\015\000"
- 423      6E20636F 
- 423      6C6F7220 
- 423      64657465 
- 423      63746564 
- 424              		.bss
- 425              		.align	2
- 426              		.set	.LANCHOR0,. + 0
- 427              		.type	freq, %object
- 428              		.size	freq, 4
- 429              	freq:
- 430 0000 00000000 		.space	4
- 431              		.type	Counter_cycle, %object
- 432              		.size	Counter_cycle, 4
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccYRMvys.s 			page 12
+ 157:colorSensor.c ****         
+ 158:colorSensor.c ****     
+ 159:colorSensor.c ****             //Nedenstående er koden der skal bruges
+ 160:colorSensor.c ****             
+ 161:colorSensor.c ****         
+ 162:colorSensor.c ****             
+ 163:colorSensor.c ****              if(freqR>freqR_0*1.1)
+ 415              		.loc 1 163 0
+ 416 0024 2046     		mov	r0, r4
+ 417              	.LVL48:
+ 418 0026 FFF7FEFF 		bl	__aeabi_ui2d
+ 419              	.LVL49:
+ 420 002a 0646     		mov	r6, r0
+ 421 002c 0F46     		mov	r7, r1
+ 422 002e 324B     		ldr	r3, .L46+16
+ 423 0030 1868     		ldr	r0, [r3]
+ 424 0032 FFF7FEFF 		bl	__aeabi_ui2d
+ 425              	.LVL50:
+ 426 0036 2CA3     		adr	r3, .L46
+ 427 0038 D3E90023 		ldrd	r2, [r3]
+ 428 003c FFF7FEFF 		bl	__aeabi_dmul
+ 429              	.LVL51:
+ 430 0040 0246     		mov	r2, r0
+ 431 0042 0B46     		mov	r3, r1
+ 432 0044 3046     		mov	r0, r6
+ 433 0046 3946     		mov	r1, r7
+ 434 0048 FFF7FEFF 		bl	__aeabi_dcmpgt
+ 435              	.LVL52:
+ 436 004c 20B1     		cbz	r0, .L43
+ 164:colorSensor.c ****                 {
+ 165:colorSensor.c ****                     if(freqR>freqG&&freqR>freqB)
+ 437              		.loc 1 165 0
+ 438 004e AC42     		cmp	r4, r5
+ 439 0050 DCD9     		bls	.L33
+ 440              		.loc 1 165 0 is_stmt 0 discriminator 1
+ 441 0052 5445     		cmp	r4, r10
+ 442 0054 DAD9     		bls	.L33
+ 443 0056 3BE0     		b	.L37
+ 444              	.L43:
+ 166:colorSensor.c ****                     {
+ 167:colorSensor.c ****                         countR ++;
+ 168:colorSensor.c **** 
+ 169:colorSensor.c ****                         if(countR==1)
+ 170:colorSensor.c ****                         {
+ 171:colorSensor.c ****                             //Indsæt 'driveForward funktion'
+ 172:colorSensor.c ****                         //sprintf(str,"Red color detected\n\r");
+ 173:colorSensor.c ****                         //print(str);
+ 174:colorSensor.c ****                         countR = 0;    
+ 175:colorSensor.c ****                         return 1;
+ 176:colorSensor.c ****                         }
+ 177:colorSensor.c ****                         
+ 178:colorSensor.c ****                     }
+ 179:colorSensor.c ****                    
+ 180:colorSensor.c ****                     else
+ 181:colorSensor.c ****                     {
+ 182:colorSensor.c ****                         //Indsæt 'driveLeft funktion'
+ 183:colorSensor.c ****                         //sprintf(str,"Unknown color in red\n\r");
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccuSgv1p.s 			page 12
 
 
- 433              	Counter_cycle:
- 434 0004 00000000 		.space	4
- 435              		.type	dataReady, %object
- 436              		.size	dataReady, 4
- 437              	dataReady:
- 438 0008 00000000 		.space	4
- 439              		.text
- 440              	.Letext0:
- 441              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.3\\psoc creator\\import\\gnu\\arm\\5.4.
- 442              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.3\\psoc creator\\import\\gnu\\arm\\5.4.
- 443              		.file 4 "c:\\program files (x86)\\cypress\\psoc creator\\4.3\\psoc creator\\import\\gnu\\arm\\5.4.
- 444              		.file 5 "Generated_Source\\PSoC5/core_cm3.h"
- 445              		.file 6 "Generated_Source\\PSoC5/Counter.h"
- 446              		.file 7 "Generated_Source\\PSoC5/Timer.h"
- 447              		.file 8 "Generated_Source\\PSoC5/OE.h"
- 448              		.file 9 "Generated_Source\\PSoC5/Timer_INT.h"
- 449              		.file 10 "Generated_Source\\PSoC5/Counter_INT.h"
- 450              		.file 11 "Generated_Source\\PSoC5/Control_Reg.h"
- 451              		.file 12 "Generated_Source\\PSoC5/CyLib.h"
- 452              		.file 13 "Generated_Source\\PSoC5/S0.h"
- 453              		.file 14 "Generated_Source\\PSoC5/S1.h"
- 454              		.file 15 "Generated_Source\\PSoC5/S2.h"
- 455              		.file 16 "Generated_Source\\PSoC5/S3.h"
- 456              		.section	.debug_info,"",%progbits
- 457              	.Ldebug_info0:
- 458 0000 16050000 		.4byte	0x516
- 459 0004 0400     		.2byte	0x4
- 460 0006 00000000 		.4byte	.Ldebug_abbrev0
- 461 000a 04       		.byte	0x4
- 462 000b 01       		.uleb128 0x1
- 463 000c A3000000 		.4byte	.LASF51
- 464 0010 0C       		.byte	0xc
- 465 0011 24020000 		.4byte	.LASF52
- 466 0015 38010000 		.4byte	.LASF53
- 467 0019 00000000 		.4byte	.Ldebug_ranges0+0
- 468 001d 00000000 		.4byte	0
- 469 0021 00000000 		.4byte	.Ldebug_line0
- 470 0025 02       		.uleb128 0x2
- 471 0026 01       		.byte	0x1
- 472 0027 06       		.byte	0x6
- 473 0028 09030000 		.4byte	.LASF0
- 474 002c 02       		.uleb128 0x2
- 475 002d 01       		.byte	0x1
- 476 002e 08       		.byte	0x8
- 477 002f CC010000 		.4byte	.LASF1
- 478 0033 02       		.uleb128 0x2
- 479 0034 02       		.byte	0x2
- 480 0035 05       		.byte	0x5
- 481 0036 D6020000 		.4byte	.LASF2
- 482 003a 02       		.uleb128 0x2
- 483 003b 02       		.byte	0x2
- 484 003c 07       		.byte	0x7
- 485 003d 84010000 		.4byte	.LASF3
- 486 0041 03       		.uleb128 0x3
- 487 0042 2D000000 		.4byte	.LASF5
- 488 0046 02       		.byte	0x2
- 489 0047 3F       		.byte	0x3f
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccYRMvys.s 			page 13
+ 184:colorSensor.c ****                         //print(str);
+ 185:colorSensor.c ****                         //return 0;
+ 186:colorSensor.c ****                     }    
+ 187:colorSensor.c ****                 }
+ 188:colorSensor.c **** 
+ 189:colorSensor.c ****             else if (freqG>freqG_0+1.1)
+ 445              		.loc 1 189 0 is_stmt 1
+ 446 0058 2846     		mov	r0, r5
+ 447 005a FFF7FEFF 		bl	__aeabi_ui2d
+ 448              	.LVL53:
+ 449 005e 0646     		mov	r6, r0
+ 450 0060 0F46     		mov	r7, r1
+ 451 0062 264B     		ldr	r3, .L46+20
+ 452 0064 1868     		ldr	r0, [r3]
+ 453 0066 FFF7FEFF 		bl	__aeabi_ui2d
+ 454              	.LVL54:
+ 455 006a 1FA3     		adr	r3, .L46
+ 456 006c D3E90023 		ldrd	r2, [r3]
+ 457 0070 FFF7FEFF 		bl	__aeabi_dadd
+ 458              	.LVL55:
+ 459 0074 0246     		mov	r2, r0
+ 460 0076 0B46     		mov	r3, r1
+ 461 0078 3046     		mov	r0, r6
+ 462 007a 3946     		mov	r1, r7
+ 463 007c FFF7FEFF 		bl	__aeabi_dcmpgt
+ 464              	.LVL56:
+ 465 0080 48B3     		cbz	r0, .L44
+ 190:colorSensor.c ****             {    
+ 191:colorSensor.c ****                 if (freqG>freqB*0.9)
+ 466              		.loc 1 191 0
+ 467 0082 5046     		mov	r0, r10
+ 468 0084 FFF7FEFF 		bl	__aeabi_ui2d
+ 469              	.LVL57:
+ 470 0088 8046     		mov	r8, r0
+ 471 008a 8946     		mov	r9, r1
+ 472 008c 18A3     		adr	r3, .L46+8
+ 473 008e D3E90023 		ldrd	r2, [r3]
+ 474 0092 FFF7FEFF 		bl	__aeabi_dmul
+ 475              	.LVL58:
+ 476 0096 0246     		mov	r2, r0
+ 477 0098 0B46     		mov	r3, r1
+ 478 009a 3046     		mov	r0, r6
+ 479 009c 3946     		mov	r1, r7
+ 480 009e FFF7FEFF 		bl	__aeabi_dcmpgt
+ 481              	.LVL59:
+ 482 00a2 D8B9     		cbnz	r0, .L39
+ 192:colorSensor.c ****                 {
+ 193:colorSensor.c ****                         countG ++;
+ 194:colorSensor.c ****                         if(countG==1)
+ 195:colorSensor.c ****                         {
+ 196:colorSensor.c ****                             //Indsæt
+ 197:colorSensor.c ****                         //sprintf(str,"Green color detected\n\r");
+ 198:colorSensor.c ****                         //print(str);
+ 199:colorSensor.c ****                         countG = 0;
+ 200:colorSensor.c ****                         return 2;
+ 201:colorSensor.c ****                         }
+ 202:colorSensor.c ****                 }
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccuSgv1p.s 			page 13
 
 
- 490 0048 4C000000 		.4byte	0x4c
- 491 004c 02       		.uleb128 0x2
- 492 004d 04       		.byte	0x4
- 493 004e 05       		.byte	0x5
- 494 004f E9020000 		.4byte	.LASF4
- 495 0053 03       		.uleb128 0x3
- 496 0054 22000000 		.4byte	.LASF6
- 497 0058 02       		.byte	0x2
- 498 0059 41       		.byte	0x41
- 499 005a 5E000000 		.4byte	0x5e
- 500 005e 02       		.uleb128 0x2
- 501 005f 04       		.byte	0x4
- 502 0060 07       		.byte	0x7
- 503 0061 E8010000 		.4byte	.LASF7
- 504 0065 02       		.uleb128 0x2
- 505 0066 08       		.byte	0x8
- 506 0067 05       		.byte	0x5
- 507 0068 AE020000 		.4byte	.LASF8
- 508 006c 02       		.uleb128 0x2
- 509 006d 08       		.byte	0x8
- 510 006e 07       		.byte	0x7
- 511 006f 74020000 		.4byte	.LASF9
- 512 0073 04       		.uleb128 0x4
- 513 0074 04       		.byte	0x4
- 514 0075 05       		.byte	0x5
- 515 0076 696E7400 		.ascii	"int\000"
- 516 007a 02       		.uleb128 0x2
- 517 007b 04       		.byte	0x4
- 518 007c 07       		.byte	0x7
- 519 007d 43020000 		.4byte	.LASF10
- 520 0081 03       		.uleb128 0x3
- 521 0082 77000000 		.4byte	.LASF11
- 522 0086 03       		.byte	0x3
- 523 0087 2C       		.byte	0x2c
- 524 0088 41000000 		.4byte	0x41
- 525 008c 03       		.uleb128 0x3
- 526 008d E0020000 		.4byte	.LASF12
- 527 0091 03       		.byte	0x3
- 528 0092 30       		.byte	0x30
- 529 0093 53000000 		.4byte	0x53
- 530 0097 02       		.uleb128 0x2
- 531 0098 04       		.byte	0x4
- 532 0099 04       		.byte	0x4
- 533 009a 94000000 		.4byte	.LASF13
- 534 009e 02       		.uleb128 0x2
- 535 009f 08       		.byte	0x8
- 536 00a0 04       		.byte	0x4
- 537 00a1 57000000 		.4byte	.LASF14
- 538 00a5 02       		.uleb128 0x2
- 539 00a6 01       		.byte	0x1
- 540 00a7 08       		.byte	0x8
- 541 00a8 BC020000 		.4byte	.LASF15
- 542 00ac 02       		.uleb128 0x2
- 543 00ad 08       		.byte	0x8
- 544 00ae 04       		.byte	0x4
- 545 00af 99020000 		.4byte	.LASF16
- 546 00b3 02       		.uleb128 0x2
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccYRMvys.s 			page 14
+ 203:colorSensor.c ****                /* else
+ 204:colorSensor.c ****                 {
+ 205:colorSensor.c ****                       //sprintf(str,"Blue color detected\n\r");
+ 206:colorSensor.c ****                       //print(str);
+ 207:colorSensor.c ****                         //return 0;
+ 208:colorSensor.c ****                     return 5;
+ 209:colorSensor.c ****                 }*/
+ 210:colorSensor.c ****                 
+ 211:colorSensor.c ****             else if (freqB>freqB_0*1.1)
+ 483              		.loc 1 211 0
+ 484 00a4 164B     		ldr	r3, .L46+24
+ 485 00a6 D868     		ldr	r0, [r3, #12]
+ 486 00a8 FFF7FEFF 		bl	__aeabi_ui2d
+ 487              	.LVL60:
+ 488 00ac 0EA3     		adr	r3, .L46
+ 489 00ae D3E90023 		ldrd	r2, [r3]
+ 490 00b2 FFF7FEFF 		bl	__aeabi_dmul
+ 491              	.LVL61:
+ 492 00b6 0246     		mov	r2, r0
+ 493 00b8 0B46     		mov	r3, r1
+ 494 00ba 4046     		mov	r0, r8
+ 495 00bc 4946     		mov	r1, r9
+ 496 00be FFF7FEFF 		bl	__aeabi_dcmpgt
+ 497              	.LVL62:
+ 498 00c2 0028     		cmp	r0, #0
+ 499 00c4 A2D0     		beq	.L33
+ 212:colorSensor.c ****             {
+ 213:colorSensor.c ****             
+ 214:colorSensor.c ****             
+ 215:colorSensor.c ****                 if (freqB>freqG)
+ 500              		.loc 1 215 0
+ 501 00c6 5545     		cmp	r5, r10
+ 502 00c8 A0D2     		bcs	.L33
+ 216:colorSensor.c ****                 {
+ 217:colorSensor.c ****                         countB ++;
+ 218:colorSensor.c ****                         if(countB==1)
+ 219:colorSensor.c ****                         {
+ 220:colorSensor.c ****                         //sprintf(str,"Blue color detected\n\r");
+ 221:colorSensor.c ****                         //print(str);
+ 222:colorSensor.c ****                         countB = 0;
+ 223:colorSensor.c ****                         return 3;
+ 503              		.loc 1 223 0
+ 504 00ca 0320     		movs	r0, #3
+ 505 00cc BDE8F087 		pop	{r4, r5, r6, r7, r8, r9, r10, pc}
+ 506              	.LVL63:
+ 507              	.L37:
+ 175:colorSensor.c ****                         }
+ 508              		.loc 1 175 0
+ 509 00d0 0120     		movs	r0, #1
+ 510 00d2 BDE8F087 		pop	{r4, r5, r6, r7, r8, r9, r10, pc}
+ 511              	.LVL64:
+ 512              	.L44:
+ 224:colorSensor.c ****                         }
+ 225:colorSensor.c ****                 }
+ 226:colorSensor.c ****              }
+ 227:colorSensor.c ****             }
+ 228:colorSensor.c ****             else
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccuSgv1p.s 			page 14
 
 
- 547 00b4 04       		.byte	0x4
- 548 00b5 07       		.byte	0x7
- 549 00b6 A5020000 		.4byte	.LASF17
- 550 00ba 03       		.uleb128 0x3
- 551 00bb 32020000 		.4byte	.LASF18
- 552 00bf 04       		.byte	0x4
- 553 00c0 6C       		.byte	0x6c
- 554 00c1 7A000000 		.4byte	0x7a
- 555 00c5 05       		.uleb128 0x5
- 556 00c6 8A000000 		.4byte	.LASF19
- 557 00ca 01       		.byte	0x1
- 558 00cb 1B       		.byte	0x1b
- 559 00cc 00000000 		.4byte	.LFB64
- 560 00d0 30000000 		.4byte	.LFE64-.LFB64
- 561 00d4 01       		.uleb128 0x1
- 562 00d5 9C       		.byte	0x9c
- 563 00d6 12010000 		.4byte	0x112
- 564 00da 06       		.uleb128 0x6
- 565 00db 06000000 		.4byte	.LVL0
- 566 00df 5E040000 		.4byte	0x45e
- 567 00e3 06       		.uleb128 0x6
- 568 00e4 0A000000 		.4byte	.LVL1
- 569 00e8 69040000 		.4byte	0x469
- 570 00ec 06       		.uleb128 0x6
- 571 00ed 0E000000 		.4byte	.LVL2
- 572 00f1 74040000 		.4byte	0x474
- 573 00f5 07       		.uleb128 0x7
- 574 00f6 22000000 		.4byte	.LVL3
- 575 00fa 7F040000 		.4byte	0x47f
- 576 00fe 08010000 		.4byte	0x108
- 577 0102 08       		.uleb128 0x8
- 578 0103 01       		.uleb128 0x1
- 579 0104 50       		.byte	0x50
- 580 0105 01       		.uleb128 0x1
- 581 0106 31       		.byte	0x31
- 582 0107 00       		.byte	0
- 583 0108 06       		.uleb128 0x6
- 584 0109 26000000 		.4byte	.LVL4
- 585 010d 8A040000 		.4byte	0x48a
- 586 0111 00       		.byte	0
- 587 0112 05       		.uleb128 0x5
- 588 0113 36030000 		.4byte	.LASF20
- 589 0117 01       		.byte	0x1
- 590 0118 27       		.byte	0x27
- 591 0119 00000000 		.4byte	.LFB65
- 592 011d 14000000 		.4byte	.LFE65-.LFB65
- 593 0121 01       		.uleb128 0x1
- 594 0122 9C       		.byte	0x9c
- 595 0123 31010000 		.4byte	0x131
- 596 0127 06       		.uleb128 0x6
- 597 0128 06000000 		.4byte	.LVL5
- 598 012c 95040000 		.4byte	0x495
- 599 0130 00       		.byte	0
- 600 0131 05       		.uleb128 0x5
- 601 0132 F8020000 		.4byte	.LASF21
- 602 0136 01       		.byte	0x1
- 603 0137 2D       		.byte	0x2d
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccYRMvys.s 			page 15
+ 229:colorSensor.c ****                 {
+ 230:colorSensor.c ****                     countU ++;
+ 231:colorSensor.c ****                     if(countU==1)
+ 232:colorSensor.c ****                      {   //Indsæt 'driveLeft funktion'
+ 233:colorSensor.c ****                     //sprintf(str,"Unknown color\n\r");
+ 234:colorSensor.c ****                     //print(str);
+ 235:colorSensor.c ****                     countU = 0;}
+ 236:colorSensor.c ****                     return 4;
+ 513              		.loc 1 236 0
+ 514 00d6 0420     		movs	r0, #4
+ 515 00d8 BDE8F087 		pop	{r4, r5, r6, r7, r8, r9, r10, pc}
+ 516              	.LVL65:
+ 517              	.L39:
+ 200:colorSensor.c ****                         }
+ 518              		.loc 1 200 0
+ 519 00dc 0220     		movs	r0, #2
+ 237:colorSensor.c ****                 }
+ 238:colorSensor.c ****         }  
+ 239:colorSensor.c ****         
+ 240:colorSensor.c ****         
+ 241:colorSensor.c **** 
+ 242:colorSensor.c ****         return 0;
+ 243:colorSensor.c **** }
+ 520              		.loc 1 243 0
+ 521 00de BDE8F087 		pop	{r4, r5, r6, r7, r8, r9, r10, pc}
+ 522              	.LVL66:
+ 523              	.L47:
+ 524 00e2 00BFAFF3 		.align	3
+ 524      0080
+ 525              	.L46:
+ 526 00e8 9A999999 		.word	-1717986918
+ 527 00ec 9999F13F 		.word	1072798105
+ 528 00f0 CDCCCCCC 		.word	-858993459
+ 529 00f4 CCCCEC3F 		.word	1072483532
+ 530 00f8 00000000 		.word	freqR_0
+ 531 00fc 00000000 		.word	freqG_0
+ 532 0100 00000000 		.word	.LANCHOR0
+ 533              		.cfi_endproc
+ 534              	.LFE70:
+ 535              		.size	getColor, .-getColor
+ 536              		.global	Counter_cycle
+ 537              		.global	dataReady
+ 538              		.global	freqB_0
+ 539              		.comm	freqG_0,4,4
+ 540              		.comm	freqR_0,4,4
+ 541              		.global	freq
+ 542              		.bss
+ 543              		.align	2
+ 544              		.set	.LANCHOR0,. + 0
+ 545              		.type	freq, %object
+ 546              		.size	freq, 4
+ 547              	freq:
+ 548 0000 00000000 		.space	4
+ 549              		.type	Counter_cycle, %object
+ 550              		.size	Counter_cycle, 4
+ 551              	Counter_cycle:
+ 552 0004 00000000 		.space	4
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccuSgv1p.s 			page 15
 
 
- 604 0138 00000000 		.4byte	.LFB66
- 605 013c 18000000 		.4byte	.LFE66-.LFB66
- 606 0140 01       		.uleb128 0x1
- 607 0141 9C       		.byte	0x9c
- 608 0142 71010000 		.4byte	0x171
- 609 0146 07       		.uleb128 0x7
- 610 0147 08000000 		.4byte	.LVL6
- 611 014b A0040000 		.4byte	0x4a0
- 612 014f 5D010000 		.4byte	0x15d
- 613 0153 08       		.uleb128 0x8
- 614 0154 01       		.uleb128 0x1
- 615 0155 50       		.byte	0x50
- 616 0156 05       		.uleb128 0x5
- 617 0157 03       		.byte	0x3
- 618 0158 00000000 		.4byte	timer_isr
- 619 015c 00       		.byte	0
- 620 015d 09       		.uleb128 0x9
- 621 015e 0E000000 		.4byte	.LVL7
- 622 0162 AB040000 		.4byte	0x4ab
- 623 0166 08       		.uleb128 0x8
- 624 0167 01       		.uleb128 0x1
- 625 0168 50       		.byte	0x50
- 626 0169 05       		.uleb128 0x5
- 627 016a 03       		.byte	0x3
- 628 016b 00000000 		.4byte	counter_isr
- 629 016f 00       		.byte	0
- 630 0170 00       		.byte	0
- 631 0171 05       		.uleb128 0x5
- 632 0172 4C000000 		.4byte	.LASF22
- 633 0176 01       		.byte	0x1
- 634 0177 33       		.byte	0x33
- 635 0178 00000000 		.4byte	.LFB67
- 636 017c 44000000 		.4byte	.LFE67-.LFB67
- 637 0180 01       		.uleb128 0x1
- 638 0181 9C       		.byte	0x9c
- 639 0182 13020000 		.4byte	0x213
- 640 0186 07       		.uleb128 0x7
- 641 0187 08000000 		.4byte	.LVL8
- 642 018b 7F040000 		.4byte	0x47f
- 643 018f 99010000 		.4byte	0x199
- 644 0193 08       		.uleb128 0x8
- 645 0194 01       		.uleb128 0x1
- 646 0195 50       		.byte	0x50
- 647 0196 01       		.uleb128 0x1
- 648 0197 30       		.byte	0x30
- 649 0198 00       		.byte	0
- 650 0199 07       		.uleb128 0x7
- 651 019a 0E000000 		.4byte	.LVL9
- 652 019e B6040000 		.4byte	0x4b6
- 653 01a2 AC010000 		.4byte	0x1ac
- 654 01a6 08       		.uleb128 0x8
- 655 01a7 01       		.uleb128 0x1
- 656 01a8 50       		.byte	0x50
- 657 01a9 01       		.uleb128 0x1
- 658 01aa 31       		.byte	0x31
- 659 01ab 00       		.byte	0
- 660 01ac 07       		.uleb128 0x7
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccYRMvys.s 			page 16
+ 553              		.type	dataReady, %object
+ 554              		.size	dataReady, 4
+ 555              	dataReady:
+ 556 0008 00000000 		.space	4
+ 557              		.type	freqB_0, %object
+ 558              		.size	freqB_0, 4
+ 559              	freqB_0:
+ 560 000c 00000000 		.space	4
+ 561              		.text
+ 562              	.Letext0:
+ 563              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.3\\psoc creator\\import\\gnu\\arm\\5.4.
+ 564              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.3\\psoc creator\\import\\gnu\\arm\\5.4.
+ 565              		.file 4 "c:\\program files (x86)\\cypress\\psoc creator\\4.3\\psoc creator\\import\\gnu\\arm\\5.4.
+ 566              		.file 5 "Generated_Source\\PSoC5/core_cm3.h"
+ 567              		.file 6 "Generated_Source\\PSoC5/Counter.h"
+ 568              		.file 7 "Generated_Source\\PSoC5/Timer.h"
+ 569              		.file 8 "Generated_Source\\PSoC5/OE.h"
+ 570              		.file 9 "Generated_Source\\PSoC5/Timer_INT.h"
+ 571              		.file 10 "Generated_Source\\PSoC5/Counter_INT.h"
+ 572              		.file 11 "Generated_Source\\PSoC5/Control_Reg.h"
+ 573              		.file 12 "Generated_Source\\PSoC5/CyLib.h"
+ 574              		.file 13 "Generated_Source\\PSoC5/S0.h"
+ 575              		.file 14 "Generated_Source\\PSoC5/S1.h"
+ 576              		.file 15 "Generated_Source\\PSoC5/S2.h"
+ 577              		.file 16 "Generated_Source\\PSoC5/S3.h"
+ 578              		.section	.debug_info,"",%progbits
+ 579              	.Ldebug_info0:
+ 580 0000 67050000 		.4byte	0x567
+ 581 0004 0400     		.2byte	0x4
+ 582 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 583 000a 04       		.byte	0x4
+ 584 000b 01       		.uleb128 0x1
+ 585 000c BD000000 		.4byte	.LASF55
+ 586 0010 0C       		.byte	0xc
+ 587 0011 6C010000 		.4byte	.LASF56
+ 588 0015 93020000 		.4byte	.LASF57
+ 589 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 590 001d 00000000 		.4byte	0
+ 591 0021 00000000 		.4byte	.Ldebug_line0
+ 592 0025 02       		.uleb128 0x2
+ 593 0026 01       		.byte	0x1
+ 594 0027 06       		.byte	0x6
+ 595 0028 1A030000 		.4byte	.LASF0
+ 596 002c 02       		.uleb128 0x2
+ 597 002d 01       		.byte	0x1
+ 598 002e 08       		.byte	0x8
+ 599 002f AF010000 		.4byte	.LASF1
+ 600 0033 02       		.uleb128 0x2
+ 601 0034 02       		.byte	0x2
+ 602 0035 05       		.byte	0x5
+ 603 0036 4C000000 		.4byte	.LASF2
+ 604 003a 02       		.uleb128 0x2
+ 605 003b 02       		.byte	0x2
+ 606 003c 07       		.byte	0x7
+ 607 003d 59010000 		.4byte	.LASF3
+ 608 0041 03       		.uleb128 0x3
+ 609 0042 2D000000 		.4byte	.LASF5
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccuSgv1p.s 			page 16
 
 
- 661 01ad 14000000 		.4byte	.LVL10
- 662 01b1 C1040000 		.4byte	0x4c1
- 663 01b5 BF010000 		.4byte	0x1bf
- 664 01b9 08       		.uleb128 0x8
- 665 01ba 01       		.uleb128 0x1
- 666 01bb 50       		.byte	0x50
- 667 01bc 01       		.uleb128 0x1
- 668 01bd 31       		.byte	0x31
- 669 01be 00       		.byte	0
- 670 01bf 07       		.uleb128 0x7
- 671 01c0 1A000000 		.4byte	.LVL11
- 672 01c4 B6040000 		.4byte	0x4b6
- 673 01c8 D2010000 		.4byte	0x1d2
- 674 01cc 08       		.uleb128 0x8
- 675 01cd 01       		.uleb128 0x1
- 676 01ce 50       		.byte	0x50
- 677 01cf 01       		.uleb128 0x1
- 678 01d0 30       		.byte	0x30
- 679 01d1 00       		.byte	0
- 680 01d2 06       		.uleb128 0x6
- 681 01d3 26000000 		.4byte	.LVL12
- 682 01d7 CC040000 		.4byte	0x4cc
- 683 01db 07       		.uleb128 0x7
- 684 01dc 2C000000 		.4byte	.LVL13
- 685 01e0 A0040000 		.4byte	0x4a0
- 686 01e4 F2010000 		.4byte	0x1f2
- 687 01e8 08       		.uleb128 0x8
- 688 01e9 01       		.uleb128 0x1
- 689 01ea 50       		.byte	0x50
- 690 01eb 05       		.uleb128 0x5
- 691 01ec 03       		.byte	0x3
- 692 01ed 00000000 		.4byte	timer_isr
- 693 01f1 00       		.byte	0
- 694 01f2 07       		.uleb128 0x7
- 695 01f3 32000000 		.4byte	.LVL14
- 696 01f7 AB040000 		.4byte	0x4ab
- 697 01fb 09020000 		.4byte	0x209
- 698 01ff 08       		.uleb128 0x8
- 699 0200 01       		.uleb128 0x1
- 700 0201 50       		.byte	0x50
- 701 0202 05       		.uleb128 0x5
- 702 0203 03       		.byte	0x3
- 703 0204 00000000 		.4byte	counter_isr
- 704 0208 00       		.byte	0
- 705 0209 06       		.uleb128 0x6
- 706 020a 36000000 		.4byte	.LVL15
- 707 020e D7040000 		.4byte	0x4d7
- 708 0212 00       		.byte	0
- 709 0213 0A       		.uleb128 0xa
- 710 0214 5E000000 		.4byte	.LASF54
- 711 0218 01       		.byte	0x1
- 712 0219 42       		.byte	0x42
- 713 021a 73000000 		.4byte	0x73
- 714 021e 00000000 		.4byte	.LFB68
- 715 0222 78000000 		.4byte	.LFE68-.LFB68
- 716 0226 01       		.uleb128 0x1
- 717 0227 9C       		.byte	0x9c
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccYRMvys.s 			page 17
+ 610 0046 02       		.byte	0x2
+ 611 0047 3F       		.byte	0x3f
+ 612 0048 4C000000 		.4byte	0x4c
+ 613 004c 02       		.uleb128 0x2
+ 614 004d 04       		.byte	0x4
+ 615 004e 05       		.byte	0x5
+ 616 004f 01030000 		.4byte	.LASF4
+ 617 0053 03       		.uleb128 0x3
+ 618 0054 22000000 		.4byte	.LASF6
+ 619 0058 02       		.byte	0x2
+ 620 0059 41       		.byte	0x41
+ 621 005a 5E000000 		.4byte	0x5e
+ 622 005e 02       		.uleb128 0x2
+ 623 005f 04       		.byte	0x4
+ 624 0060 07       		.byte	0x7
+ 625 0061 CB010000 		.4byte	.LASF7
+ 626 0065 02       		.uleb128 0x2
+ 627 0066 08       		.byte	0x8
+ 628 0067 05       		.byte	0x5
+ 629 0068 85020000 		.4byte	.LASF8
+ 630 006c 02       		.uleb128 0x2
+ 631 006d 08       		.byte	0x8
+ 632 006e 07       		.byte	0x7
+ 633 006f 3D020000 		.4byte	.LASF9
+ 634 0073 04       		.uleb128 0x4
+ 635 0074 04       		.byte	0x4
+ 636 0075 05       		.byte	0x5
+ 637 0076 696E7400 		.ascii	"int\000"
+ 638 007a 02       		.uleb128 0x2
+ 639 007b 04       		.byte	0x4
+ 640 007c 07       		.byte	0x7
+ 641 007d 1E020000 		.4byte	.LASF10
+ 642 0081 03       		.uleb128 0x3
+ 643 0082 86000000 		.4byte	.LASF11
+ 644 0086 03       		.byte	0x3
+ 645 0087 2C       		.byte	0x2c
+ 646 0088 41000000 		.4byte	0x41
+ 647 008c 03       		.uleb128 0x3
+ 648 008d F8020000 		.4byte	.LASF12
+ 649 0091 03       		.byte	0x3
+ 650 0092 30       		.byte	0x30
+ 651 0093 53000000 		.4byte	0x53
+ 652 0097 02       		.uleb128 0x2
+ 653 0098 04       		.byte	0x4
+ 654 0099 04       		.byte	0x4
+ 655 009a A3000000 		.4byte	.LASF13
+ 656 009e 02       		.uleb128 0x2
+ 657 009f 08       		.byte	0x8
+ 658 00a0 04       		.byte	0x4
+ 659 00a1 56000000 		.4byte	.LASF14
+ 660 00a5 02       		.uleb128 0x2
+ 661 00a6 01       		.byte	0x1
+ 662 00a7 08       		.byte	0x8
+ 663 00a8 0A030000 		.4byte	.LASF15
+ 664 00ac 02       		.uleb128 0x2
+ 665 00ad 08       		.byte	0x8
+ 666 00ae 04       		.byte	0x4
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccuSgv1p.s 			page 17
 
 
- 718 0228 1E030000 		.4byte	0x31e
- 719 022c 0B       		.uleb128 0xb
- 720 022d 1E020000 		.4byte	.LASF55
- 721 0231 01       		.byte	0x1
- 722 0232 42       		.byte	0x42
- 723 0233 A5000000 		.4byte	0xa5
- 724 0237 00000000 		.4byte	.LLST0
- 725 023b 07       		.uleb128 0x7
- 726 023c 0A000000 		.4byte	.LVL18
- 727 0240 E2040000 		.4byte	0x4e2
- 728 0244 4E020000 		.4byte	0x24e
- 729 0248 08       		.uleb128 0x8
- 730 0249 01       		.uleb128 0x1
- 731 024a 50       		.byte	0x50
- 732 024b 01       		.uleb128 0x1
- 733 024c 30       		.byte	0x30
- 734 024d 00       		.byte	0
- 735 024e 07       		.uleb128 0x7
- 736 024f 10000000 		.4byte	.LVL19
- 737 0253 ED040000 		.4byte	0x4ed
- 738 0257 61020000 		.4byte	0x261
- 739 025b 08       		.uleb128 0x8
- 740 025c 01       		.uleb128 0x1
- 741 025d 50       		.byte	0x50
- 742 025e 01       		.uleb128 0x1
- 743 025f 31       		.byte	0x31
- 744 0260 00       		.byte	0
- 745 0261 07       		.uleb128 0x7
- 746 0262 1A000000 		.4byte	.LVL20
- 747 0266 F8040000 		.4byte	0x4f8
- 748 026a 74020000 		.4byte	0x274
- 749 026e 08       		.uleb128 0x8
- 750 026f 01       		.uleb128 0x1
- 751 0270 50       		.byte	0x50
- 752 0271 01       		.uleb128 0x1
- 753 0272 30       		.byte	0x30
- 754 0273 00       		.byte	0
- 755 0274 07       		.uleb128 0x7
- 756 0275 20000000 		.4byte	.LVL21
- 757 0279 03050000 		.4byte	0x503
- 758 027d 87020000 		.4byte	0x287
- 759 0281 08       		.uleb128 0x8
- 760 0282 01       		.uleb128 0x1
- 761 0283 50       		.byte	0x50
- 762 0284 01       		.uleb128 0x1
- 763 0285 30       		.byte	0x30
- 764 0286 00       		.byte	0
- 765 0287 06       		.uleb128 0x6
- 766 0288 24000000 		.4byte	.LVL22
- 767 028c 71010000 		.4byte	0x171
- 768 0290 07       		.uleb128 0x7
- 769 0291 30000000 		.4byte	.LVL23
- 770 0295 F8040000 		.4byte	0x4f8
- 771 0299 A3020000 		.4byte	0x2a3
- 772 029d 08       		.uleb128 0x8
- 773 029e 01       		.uleb128 0x1
- 774 029f 50       		.byte	0x50
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccYRMvys.s 			page 18
+ 667 00af 70020000 		.4byte	.LASF16
+ 668 00b3 02       		.uleb128 0x2
+ 669 00b4 04       		.byte	0x4
+ 670 00b5 07       		.byte	0x7
+ 671 00b6 7C020000 		.4byte	.LASF17
+ 672 00ba 03       		.uleb128 0x3
+ 673 00bb 0D020000 		.4byte	.LASF18
+ 674 00bf 04       		.byte	0x4
+ 675 00c0 6C       		.byte	0x6c
+ 676 00c1 7A000000 		.4byte	0x7a
+ 677 00c5 05       		.uleb128 0x5
+ 678 00c6 99000000 		.4byte	.LASF19
+ 679 00ca 01       		.byte	0x1
+ 680 00cb 1B       		.byte	0x1b
+ 681 00cc 00000000 		.4byte	.LFB64
+ 682 00d0 30000000 		.4byte	.LFE64-.LFB64
+ 683 00d4 01       		.uleb128 0x1
+ 684 00d5 9C       		.byte	0x9c
+ 685 00d6 12010000 		.4byte	0x112
+ 686 00da 06       		.uleb128 0x6
+ 687 00db 06000000 		.4byte	.LVL0
+ 688 00df BA040000 		.4byte	0x4ba
+ 689 00e3 06       		.uleb128 0x6
+ 690 00e4 0A000000 		.4byte	.LVL1
+ 691 00e8 C5040000 		.4byte	0x4c5
+ 692 00ec 06       		.uleb128 0x6
+ 693 00ed 0E000000 		.4byte	.LVL2
+ 694 00f1 D0040000 		.4byte	0x4d0
+ 695 00f5 07       		.uleb128 0x7
+ 696 00f6 22000000 		.4byte	.LVL3
+ 697 00fa DB040000 		.4byte	0x4db
+ 698 00fe 08010000 		.4byte	0x108
+ 699 0102 08       		.uleb128 0x8
+ 700 0103 01       		.uleb128 0x1
+ 701 0104 50       		.byte	0x50
+ 702 0105 01       		.uleb128 0x1
+ 703 0106 31       		.byte	0x31
+ 704 0107 00       		.byte	0
+ 705 0108 06       		.uleb128 0x6
+ 706 0109 26000000 		.4byte	.LVL4
+ 707 010d E6040000 		.4byte	0x4e6
+ 708 0111 00       		.byte	0
+ 709 0112 05       		.uleb128 0x5
+ 710 0113 47030000 		.4byte	.LASF20
+ 711 0117 01       		.byte	0x1
+ 712 0118 27       		.byte	0x27
+ 713 0119 00000000 		.4byte	.LFB65
+ 714 011d 14000000 		.4byte	.LFE65-.LFB65
+ 715 0121 01       		.uleb128 0x1
+ 716 0122 9C       		.byte	0x9c
+ 717 0123 31010000 		.4byte	0x131
+ 718 0127 06       		.uleb128 0x6
+ 719 0128 06000000 		.4byte	.LVL5
+ 720 012c F1040000 		.4byte	0x4f1
+ 721 0130 00       		.byte	0
+ 722 0131 05       		.uleb128 0x5
+ 723 0132 A9000000 		.4byte	.LASF21
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccuSgv1p.s 			page 18
 
 
- 775 02a0 01       		.uleb128 0x1
- 776 02a1 31       		.byte	0x31
- 777 02a2 00       		.byte	0
- 778 02a3 07       		.uleb128 0x7
- 779 02a4 36000000 		.4byte	.LVL24
- 780 02a8 03050000 		.4byte	0x503
- 781 02ac B6020000 		.4byte	0x2b6
- 782 02b0 08       		.uleb128 0x8
- 783 02b1 01       		.uleb128 0x1
- 784 02b2 50       		.byte	0x50
- 785 02b3 01       		.uleb128 0x1
- 786 02b4 31       		.byte	0x31
- 787 02b5 00       		.byte	0
- 788 02b6 06       		.uleb128 0x6
- 789 02b7 3A000000 		.4byte	.LVL25
- 790 02bb 71010000 		.4byte	0x171
- 791 02bf 07       		.uleb128 0x7
- 792 02c0 46000000 		.4byte	.LVL26
- 793 02c4 F8040000 		.4byte	0x4f8
- 794 02c8 D2020000 		.4byte	0x2d2
- 795 02cc 08       		.uleb128 0x8
- 796 02cd 01       		.uleb128 0x1
- 797 02ce 50       		.byte	0x50
- 798 02cf 01       		.uleb128 0x1
- 799 02d0 30       		.byte	0x30
- 800 02d1 00       		.byte	0
- 801 02d2 07       		.uleb128 0x7
- 802 02d3 4C000000 		.4byte	.LVL27
- 803 02d7 03050000 		.4byte	0x503
- 804 02db E5020000 		.4byte	0x2e5
- 805 02df 08       		.uleb128 0x8
- 806 02e0 01       		.uleb128 0x1
- 807 02e1 50       		.byte	0x50
- 808 02e2 01       		.uleb128 0x1
- 809 02e3 31       		.byte	0x31
- 810 02e4 00       		.byte	0
- 811 02e5 06       		.uleb128 0x6
- 812 02e6 50000000 		.4byte	.LVL28
- 813 02ea 71010000 		.4byte	0x171
- 814 02ee 07       		.uleb128 0x7
- 815 02ef 5C000000 		.4byte	.LVL29
- 816 02f3 F8040000 		.4byte	0x4f8
- 817 02f7 01030000 		.4byte	0x301
- 818 02fb 08       		.uleb128 0x8
- 819 02fc 01       		.uleb128 0x1
- 820 02fd 50       		.byte	0x50
- 821 02fe 01       		.uleb128 0x1
- 822 02ff 31       		.byte	0x31
- 823 0300 00       		.byte	0
- 824 0301 07       		.uleb128 0x7
- 825 0302 62000000 		.4byte	.LVL30
- 826 0306 03050000 		.4byte	0x503
- 827 030a 14030000 		.4byte	0x314
- 828 030e 08       		.uleb128 0x8
- 829 030f 01       		.uleb128 0x1
- 830 0310 50       		.byte	0x50
- 831 0311 01       		.uleb128 0x1
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccYRMvys.s 			page 19
+ 724 0136 01       		.byte	0x1
+ 725 0137 2D       		.byte	0x2d
+ 726 0138 00000000 		.4byte	.LFB66
+ 727 013c 1C000000 		.4byte	.LFE66-.LFB66
+ 728 0140 01       		.uleb128 0x1
+ 729 0141 9C       		.byte	0x9c
+ 730 0142 71010000 		.4byte	0x171
+ 731 0146 07       		.uleb128 0x7
+ 732 0147 0A000000 		.4byte	.LVL6
+ 733 014b FC040000 		.4byte	0x4fc
+ 734 014f 5D010000 		.4byte	0x15d
+ 735 0153 08       		.uleb128 0x8
+ 736 0154 01       		.uleb128 0x1
+ 737 0155 50       		.byte	0x50
+ 738 0156 05       		.uleb128 0x5
+ 739 0157 03       		.byte	0x3
+ 740 0158 00000000 		.4byte	timer_isr
+ 741 015c 00       		.byte	0
+ 742 015d 09       		.uleb128 0x9
+ 743 015e 10000000 		.4byte	.LVL7
+ 744 0162 07050000 		.4byte	0x507
+ 745 0166 08       		.uleb128 0x8
+ 746 0167 01       		.uleb128 0x1
+ 747 0168 50       		.byte	0x50
+ 748 0169 05       		.uleb128 0x5
+ 749 016a 03       		.byte	0x3
+ 750 016b 00000000 		.4byte	counter_isr
+ 751 016f 00       		.byte	0
+ 752 0170 00       		.byte	0
+ 753 0171 05       		.uleb128 0x5
+ 754 0172 0F030000 		.4byte	.LASF22
+ 755 0176 01       		.byte	0x1
+ 756 0177 35       		.byte	0x35
+ 757 0178 00000000 		.4byte	.LFB67
+ 758 017c 44000000 		.4byte	.LFE67-.LFB67
+ 759 0180 01       		.uleb128 0x1
+ 760 0181 9C       		.byte	0x9c
+ 761 0182 13020000 		.4byte	0x213
+ 762 0186 07       		.uleb128 0x7
+ 763 0187 08000000 		.4byte	.LVL8
+ 764 018b DB040000 		.4byte	0x4db
+ 765 018f 99010000 		.4byte	0x199
+ 766 0193 08       		.uleb128 0x8
+ 767 0194 01       		.uleb128 0x1
+ 768 0195 50       		.byte	0x50
+ 769 0196 01       		.uleb128 0x1
+ 770 0197 30       		.byte	0x30
+ 771 0198 00       		.byte	0
+ 772 0199 07       		.uleb128 0x7
+ 773 019a 0E000000 		.4byte	.LVL9
+ 774 019e 12050000 		.4byte	0x512
+ 775 01a2 AC010000 		.4byte	0x1ac
+ 776 01a6 08       		.uleb128 0x8
+ 777 01a7 01       		.uleb128 0x1
+ 778 01a8 50       		.byte	0x50
+ 779 01a9 01       		.uleb128 0x1
+ 780 01aa 31       		.byte	0x31
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccuSgv1p.s 			page 19
 
 
- 832 0312 30       		.byte	0x30
- 833 0313 00       		.byte	0
- 834 0314 06       		.uleb128 0x6
- 835 0315 66000000 		.4byte	.LVL31
- 836 0319 71010000 		.4byte	0x171
- 837 031d 00       		.byte	0
- 838 031e 0C       		.uleb128 0xc
- 839 031f 59020000 		.4byte	.LASF23
- 840 0323 01       		.byte	0x1
- 841 0324 6D       		.byte	0x6d
- 842 0325 73000000 		.4byte	0x73
- 843 0329 00000000 		.4byte	.LFB69
- 844 032d 78000000 		.4byte	.LFE69-.LFB69
- 845 0331 01       		.uleb128 0x1
- 846 0332 9C       		.byte	0x9c
- 847 0333 F9030000 		.4byte	0x3f9
- 848 0337 0D       		.uleb128 0xd
- 849 0338 F2020000 		.4byte	.LASF24
- 850 033c 01       		.byte	0x1
- 851 033d 6F       		.byte	0x6f
- 852 033e BA000000 		.4byte	0xba
- 853 0342 21000000 		.4byte	.LLST1
- 854 0346 0D       		.uleb128 0xd
- 855 0347 46000000 		.4byte	.LASF25
- 856 034b 01       		.byte	0x1
- 857 034c 6F       		.byte	0x6f
- 858 034d BA000000 		.4byte	0xba
- 859 0351 3F000000 		.4byte	.LLST2
- 860 0355 0D       		.uleb128 0xd
- 861 0356 40000000 		.4byte	.LASF26
- 862 035a 01       		.byte	0x1
- 863 035b 6F       		.byte	0x6f
- 864 035c BA000000 		.4byte	0xba
- 865 0360 5D000000 		.4byte	.LLST3
- 866 0364 0E       		.uleb128 0xe
- 867 0365 31010000 		.4byte	.LASF27
- 868 0369 01       		.byte	0x1
- 869 036a 70       		.byte	0x70
- 870 036b BA000000 		.4byte	0xba
- 871 036f 0E       		.uleb128 0xe
- 872 0370 2F030000 		.4byte	.LASF28
- 873 0374 01       		.byte	0x1
- 874 0375 70       		.byte	0x70
- 875 0376 BA000000 		.4byte	0xba
- 876 037a 0F       		.uleb128 0xf
- 877 037b 67000000 		.4byte	.LASF29
- 878 037f 01       		.byte	0x1
- 879 0380 70       		.byte	0x70
- 880 0381 BA000000 		.4byte	0xba
- 881 0385 00       		.byte	0
- 882 0386 06       		.uleb128 0x6
- 883 0387 06000000 		.4byte	.LVL33
- 884 038b 31010000 		.4byte	0x131
- 885 038f 06       		.uleb128 0x6
- 886 0390 0A000000 		.4byte	.LVL34
- 887 0394 71010000 		.4byte	0x171
- 888 0398 07       		.uleb128 0x7
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccYRMvys.s 			page 20
+ 781 01ab 00       		.byte	0
+ 782 01ac 07       		.uleb128 0x7
+ 783 01ad 14000000 		.4byte	.LVL10
+ 784 01b1 1D050000 		.4byte	0x51d
+ 785 01b5 BF010000 		.4byte	0x1bf
+ 786 01b9 08       		.uleb128 0x8
+ 787 01ba 01       		.uleb128 0x1
+ 788 01bb 50       		.byte	0x50
+ 789 01bc 01       		.uleb128 0x1
+ 790 01bd 31       		.byte	0x31
+ 791 01be 00       		.byte	0
+ 792 01bf 07       		.uleb128 0x7
+ 793 01c0 1A000000 		.4byte	.LVL11
+ 794 01c4 12050000 		.4byte	0x512
+ 795 01c8 D2010000 		.4byte	0x1d2
+ 796 01cc 08       		.uleb128 0x8
+ 797 01cd 01       		.uleb128 0x1
+ 798 01ce 50       		.byte	0x50
+ 799 01cf 01       		.uleb128 0x1
+ 800 01d0 30       		.byte	0x30
+ 801 01d1 00       		.byte	0
+ 802 01d2 06       		.uleb128 0x6
+ 803 01d3 26000000 		.4byte	.LVL12
+ 804 01d7 28050000 		.4byte	0x528
+ 805 01db 07       		.uleb128 0x7
+ 806 01dc 2C000000 		.4byte	.LVL13
+ 807 01e0 FC040000 		.4byte	0x4fc
+ 808 01e4 F2010000 		.4byte	0x1f2
+ 809 01e8 08       		.uleb128 0x8
+ 810 01e9 01       		.uleb128 0x1
+ 811 01ea 50       		.byte	0x50
+ 812 01eb 05       		.uleb128 0x5
+ 813 01ec 03       		.byte	0x3
+ 814 01ed 00000000 		.4byte	timer_isr
+ 815 01f1 00       		.byte	0
+ 816 01f2 07       		.uleb128 0x7
+ 817 01f3 32000000 		.4byte	.LVL14
+ 818 01f7 07050000 		.4byte	0x507
+ 819 01fb 09020000 		.4byte	0x209
+ 820 01ff 08       		.uleb128 0x8
+ 821 0200 01       		.uleb128 0x1
+ 822 0201 50       		.byte	0x50
+ 823 0202 05       		.uleb128 0x5
+ 824 0203 03       		.byte	0x3
+ 825 0204 00000000 		.4byte	counter_isr
+ 826 0208 00       		.byte	0
+ 827 0209 06       		.uleb128 0x6
+ 828 020a 36000000 		.4byte	.LVL15
+ 829 020e 33050000 		.4byte	0x533
+ 830 0212 00       		.byte	0
+ 831 0213 0A       		.uleb128 0xa
+ 832 0214 5D000000 		.4byte	.LASF58
+ 833 0218 01       		.byte	0x1
+ 834 0219 44       		.byte	0x44
+ 835 021a 73000000 		.4byte	0x73
+ 836 021e 00000000 		.4byte	.LFB68
+ 837 0222 78000000 		.4byte	.LFE68-.LFB68
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccuSgv1p.s 			page 20
 
 
- 889 0399 10000000 		.4byte	.LVL35
- 890 039d 13020000 		.4byte	0x213
- 891 03a1 AC030000 		.4byte	0x3ac
- 892 03a5 08       		.uleb128 0x8
- 893 03a6 01       		.uleb128 0x1
- 894 03a7 50       		.byte	0x50
- 895 03a8 02       		.uleb128 0x2
- 896 03a9 08       		.byte	0x8
- 897 03aa 72       		.byte	0x72
- 898 03ab 00       		.byte	0
- 899 03ac 07       		.uleb128 0x7
- 900 03ad 1A000000 		.4byte	.LVL37
- 901 03b1 13020000 		.4byte	0x213
- 902 03b5 C0030000 		.4byte	0x3c0
- 903 03b9 08       		.uleb128 0x8
- 904 03ba 01       		.uleb128 0x1
- 905 03bb 50       		.byte	0x50
- 906 03bc 02       		.uleb128 0x2
- 907 03bd 08       		.byte	0x8
- 908 03be 67       		.byte	0x67
- 909 03bf 00       		.byte	0
- 910 03c0 07       		.uleb128 0x7
- 911 03c1 24000000 		.4byte	.LVL39
- 912 03c5 13020000 		.4byte	0x213
- 913 03c9 D4030000 		.4byte	0x3d4
- 914 03cd 08       		.uleb128 0x8
- 915 03ce 01       		.uleb128 0x1
- 916 03cf 50       		.byte	0x50
- 917 03d0 02       		.uleb128 0x2
- 918 03d1 08       		.byte	0x8
- 919 03d2 62       		.byte	0x62
- 920 03d3 00       		.byte	0
- 921 03d4 07       		.uleb128 0x7
- 922 03d5 44000000 		.4byte	.LVL43
- 923 03d9 0E050000 		.4byte	0x50e
- 924 03dd E8030000 		.4byte	0x3e8
- 925 03e1 08       		.uleb128 0x8
- 926 03e2 01       		.uleb128 0x1
- 927 03e3 50       		.byte	0x50
- 928 03e4 02       		.uleb128 0x2
- 929 03e5 75       		.byte	0x75
- 930 03e6 00       		.sleb128 0
- 931 03e7 00       		.byte	0
- 932 03e8 09       		.uleb128 0x9
- 933 03e9 6A000000 		.4byte	.LVL48
- 934 03ed 0E050000 		.4byte	0x50e
- 935 03f1 08       		.uleb128 0x8
- 936 03f2 01       		.uleb128 0x1
- 937 03f3 50       		.byte	0x50
- 938 03f4 02       		.uleb128 0x2
- 939 03f5 75       		.byte	0x75
- 940 03f6 00       		.sleb128 0
- 941 03f7 00       		.byte	0
- 942 03f8 00       		.byte	0
- 943 03f9 10       		.uleb128 0x10
- 944 03fa BF010000 		.4byte	.LASF30
- 945 03fe 05       		.byte	0x5
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccYRMvys.s 			page 21
+ 838 0226 01       		.uleb128 0x1
+ 839 0227 9C       		.byte	0x9c
+ 840 0228 1E030000 		.4byte	0x31e
+ 841 022c 0B       		.uleb128 0xb
+ 842 022d 01020000 		.4byte	.LASF59
+ 843 0231 01       		.byte	0x1
+ 844 0232 44       		.byte	0x44
+ 845 0233 A5000000 		.4byte	0xa5
+ 846 0237 00000000 		.4byte	.LLST0
+ 847 023b 07       		.uleb128 0x7
+ 848 023c 0A000000 		.4byte	.LVL18
+ 849 0240 3E050000 		.4byte	0x53e
+ 850 0244 4E020000 		.4byte	0x24e
+ 851 0248 08       		.uleb128 0x8
+ 852 0249 01       		.uleb128 0x1
+ 853 024a 50       		.byte	0x50
+ 854 024b 01       		.uleb128 0x1
+ 855 024c 30       		.byte	0x30
+ 856 024d 00       		.byte	0
+ 857 024e 07       		.uleb128 0x7
+ 858 024f 10000000 		.4byte	.LVL19
+ 859 0253 49050000 		.4byte	0x549
+ 860 0257 61020000 		.4byte	0x261
+ 861 025b 08       		.uleb128 0x8
+ 862 025c 01       		.uleb128 0x1
+ 863 025d 50       		.byte	0x50
+ 864 025e 01       		.uleb128 0x1
+ 865 025f 31       		.byte	0x31
+ 866 0260 00       		.byte	0
+ 867 0261 07       		.uleb128 0x7
+ 868 0262 1A000000 		.4byte	.LVL20
+ 869 0266 54050000 		.4byte	0x554
+ 870 026a 74020000 		.4byte	0x274
+ 871 026e 08       		.uleb128 0x8
+ 872 026f 01       		.uleb128 0x1
+ 873 0270 50       		.byte	0x50
+ 874 0271 01       		.uleb128 0x1
+ 875 0272 30       		.byte	0x30
+ 876 0273 00       		.byte	0
+ 877 0274 07       		.uleb128 0x7
+ 878 0275 20000000 		.4byte	.LVL21
+ 879 0279 5F050000 		.4byte	0x55f
+ 880 027d 87020000 		.4byte	0x287
+ 881 0281 08       		.uleb128 0x8
+ 882 0282 01       		.uleb128 0x1
+ 883 0283 50       		.byte	0x50
+ 884 0284 01       		.uleb128 0x1
+ 885 0285 30       		.byte	0x30
+ 886 0286 00       		.byte	0
+ 887 0287 06       		.uleb128 0x6
+ 888 0288 24000000 		.4byte	.LVL22
+ 889 028c 71010000 		.4byte	0x171
+ 890 0290 07       		.uleb128 0x7
+ 891 0291 30000000 		.4byte	.LVL23
+ 892 0295 54050000 		.4byte	0x554
+ 893 0299 A3020000 		.4byte	0x2a3
+ 894 029d 08       		.uleb128 0x8
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccuSgv1p.s 			page 21
 
 
- 946 03ff 1207     		.2byte	0x712
- 947 0401 05040000 		.4byte	0x405
- 948 0405 11       		.uleb128 0x11
- 949 0406 81000000 		.4byte	0x81
- 950 040a 12       		.uleb128 0x12
- 951 040b D1020000 		.4byte	.LASF31
- 952 040f 01       		.byte	0x1
- 953 0410 13       		.byte	0x13
- 954 0411 8C000000 		.4byte	0x8c
- 955 0415 05       		.uleb128 0x5
- 956 0416 03       		.byte	0x3
- 957 0417 00000000 		.4byte	freq
- 958 041b 12       		.uleb128 0x12
- 959 041c C7020000 		.4byte	.LASF32
- 960 0420 01       		.byte	0x1
- 961 0421 14       		.byte	0x14
- 962 0422 73000000 		.4byte	0x73
- 963 0426 05       		.uleb128 0x5
- 964 0427 03       		.byte	0x3
- 965 0428 00000000 		.4byte	dataReady
- 966 042c 12       		.uleb128 0x12
- 967 042d 8B020000 		.4byte	.LASF33
- 968 0431 01       		.byte	0x1
- 969 0432 15       		.byte	0x15
- 970 0433 73000000 		.4byte	0x73
- 971 0437 05       		.uleb128 0x5
- 972 0438 03       		.byte	0x3
- 973 0439 00000000 		.4byte	Counter_cycle
- 974 043d 13       		.uleb128 0x13
- 975 043e A5000000 		.4byte	0xa5
- 976 0442 4D040000 		.4byte	0x44d
- 977 0446 14       		.uleb128 0x14
- 978 0447 B3000000 		.4byte	0xb3
- 979 044b 80       		.byte	0x80
- 980 044c 00       		.byte	0
- 981 044d 15       		.uleb128 0x15
- 982 044e 73747200 		.ascii	"str\000"
- 983 0452 01       		.byte	0x1
- 984 0453 6A       		.byte	0x6a
- 985 0454 3D040000 		.4byte	0x43d
- 986 0458 05       		.uleb128 0x5
- 987 0459 03       		.byte	0x3
- 988 045a 00000000 		.4byte	str
- 989 045e 16       		.uleb128 0x16
- 990 045f FA010000 		.4byte	.LASF34
- 991 0463 FA010000 		.4byte	.LASF34
- 992 0467 06       		.byte	0x6
- 993 0468 50       		.byte	0x50
- 994 0469 16       		.uleb128 0x16
- 995 046a 7F000000 		.4byte	.LASF35
- 996 046e 7F000000 		.4byte	.LASF35
- 997 0472 07       		.byte	0x7
- 998 0473 5B       		.byte	0x5b
- 999 0474 16       		.uleb128 0x16
- 1000 0475 AB010000 		.4byte	.LASF36
- 1001 0479 AB010000 		.4byte	.LASF36
- 1002 047d 06       		.byte	0x6
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccYRMvys.s 			page 22
+ 895 029e 01       		.uleb128 0x1
+ 896 029f 50       		.byte	0x50
+ 897 02a0 01       		.uleb128 0x1
+ 898 02a1 31       		.byte	0x31
+ 899 02a2 00       		.byte	0
+ 900 02a3 07       		.uleb128 0x7
+ 901 02a4 36000000 		.4byte	.LVL24
+ 902 02a8 5F050000 		.4byte	0x55f
+ 903 02ac B6020000 		.4byte	0x2b6
+ 904 02b0 08       		.uleb128 0x8
+ 905 02b1 01       		.uleb128 0x1
+ 906 02b2 50       		.byte	0x50
+ 907 02b3 01       		.uleb128 0x1
+ 908 02b4 31       		.byte	0x31
+ 909 02b5 00       		.byte	0
+ 910 02b6 06       		.uleb128 0x6
+ 911 02b7 3A000000 		.4byte	.LVL25
+ 912 02bb 71010000 		.4byte	0x171
+ 913 02bf 07       		.uleb128 0x7
+ 914 02c0 46000000 		.4byte	.LVL26
+ 915 02c4 54050000 		.4byte	0x554
+ 916 02c8 D2020000 		.4byte	0x2d2
+ 917 02cc 08       		.uleb128 0x8
+ 918 02cd 01       		.uleb128 0x1
+ 919 02ce 50       		.byte	0x50
+ 920 02cf 01       		.uleb128 0x1
+ 921 02d0 30       		.byte	0x30
+ 922 02d1 00       		.byte	0
+ 923 02d2 07       		.uleb128 0x7
+ 924 02d3 4C000000 		.4byte	.LVL27
+ 925 02d7 5F050000 		.4byte	0x55f
+ 926 02db E5020000 		.4byte	0x2e5
+ 927 02df 08       		.uleb128 0x8
+ 928 02e0 01       		.uleb128 0x1
+ 929 02e1 50       		.byte	0x50
+ 930 02e2 01       		.uleb128 0x1
+ 931 02e3 31       		.byte	0x31
+ 932 02e4 00       		.byte	0
+ 933 02e5 06       		.uleb128 0x6
+ 934 02e6 50000000 		.4byte	.LVL28
+ 935 02ea 71010000 		.4byte	0x171
+ 936 02ee 07       		.uleb128 0x7
+ 937 02ef 5C000000 		.4byte	.LVL29
+ 938 02f3 54050000 		.4byte	0x554
+ 939 02f7 01030000 		.4byte	0x301
+ 940 02fb 08       		.uleb128 0x8
+ 941 02fc 01       		.uleb128 0x1
+ 942 02fd 50       		.byte	0x50
+ 943 02fe 01       		.uleb128 0x1
+ 944 02ff 31       		.byte	0x31
+ 945 0300 00       		.byte	0
+ 946 0301 07       		.uleb128 0x7
+ 947 0302 62000000 		.4byte	.LVL30
+ 948 0306 5F050000 		.4byte	0x55f
+ 949 030a 14030000 		.4byte	0x314
+ 950 030e 08       		.uleb128 0x8
+ 951 030f 01       		.uleb128 0x1
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccuSgv1p.s 			page 22
 
 
- 1003 047e 5D       		.byte	0x5d
- 1004 047f 16       		.uleb128 0x16
- 1005 0480 50020000 		.4byte	.LASF37
- 1006 0484 50020000 		.4byte	.LASF37
- 1007 0488 08       		.byte	0x8
- 1008 0489 26       		.byte	0x26
- 1009 048a 16       		.uleb128 0x16
- 1010 048b 07020000 		.4byte	.LASF38
- 1011 048f 07020000 		.4byte	.LASF38
- 1012 0493 09       		.byte	0x9
- 1013 0494 28       		.byte	0x28
- 1014 0495 16       		.uleb128 0x16
- 1015 0496 09000000 		.4byte	.LASF39
- 1016 049a 09000000 		.4byte	.LASF39
- 1017 049e 0A       		.byte	0xa
- 1018 049f 28       		.byte	0x28
- 1019 04a0 16       		.uleb128 0x16
- 1020 04a1 62020000 		.4byte	.LASF40
- 1021 04a5 62020000 		.4byte	.LASF40
- 1022 04a9 09       		.byte	0x9
- 1023 04aa 18       		.byte	0x18
- 1024 04ab 16       		.uleb128 0x16
- 1025 04ac 97010000 		.4byte	.LASF41
- 1026 04b0 97010000 		.4byte	.LASF41
- 1027 04b4 0A       		.byte	0xa
- 1028 04b5 18       		.byte	0x18
- 1029 04b6 16       		.uleb128 0x16
- 1030 04b7 15030000 		.4byte	.LASF42
- 1031 04bb 15030000 		.4byte	.LASF42
- 1032 04bf 0B       		.byte	0xb
- 1033 04c0 2F       		.byte	0x2f
- 1034 04c1 16       		.uleb128 0x16
- 1035 04c2 27030000 		.4byte	.LASF43
- 1036 04c6 27030000 		.4byte	.LASF43
- 1037 04ca 0C       		.byte	0xc
- 1038 04cb 76       		.byte	0x76
- 1039 04cc 16       		.uleb128 0x16
- 1040 04cd DA010000 		.4byte	.LASF44
- 1041 04d1 DA010000 		.4byte	.LASF44
- 1042 04d5 06       		.byte	0x6
- 1043 04d6 4F       		.byte	0x4f
- 1044 04d7 16       		.uleb128 0x16
- 1045 04d8 37020000 		.4byte	.LASF45
- 1046 04dc 37020000 		.4byte	.LASF45
- 1047 04e0 07       		.byte	0x7
- 1048 04e1 5A       		.byte	0x5a
- 1049 04e2 16       		.uleb128 0x16
- 1050 04e3 00000000 		.4byte	.LASF46
- 1051 04e7 00000000 		.4byte	.LASF46
- 1052 04eb 0D       		.byte	0xd
- 1053 04ec 26       		.byte	0x26
- 1054 04ed 16       		.uleb128 0x16
- 1055 04ee 37000000 		.4byte	.LASF47
- 1056 04f2 37000000 		.4byte	.LASF47
- 1057 04f6 0E       		.byte	0xe
- 1058 04f7 26       		.byte	0x26
- 1059 04f8 16       		.uleb128 0x16
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccYRMvys.s 			page 23
+ 952 0310 50       		.byte	0x50
+ 953 0311 01       		.uleb128 0x1
+ 954 0312 30       		.byte	0x30
+ 955 0313 00       		.byte	0
+ 956 0314 06       		.uleb128 0x6
+ 957 0315 66000000 		.4byte	.LVL31
+ 958 0319 71010000 		.4byte	0x171
+ 959 031d 00       		.byte	0
+ 960 031e 0C       		.uleb128 0xc
+ 961 031f 54020000 		.4byte	.LASF23
+ 962 0323 01       		.byte	0x1
+ 963 0324 74       		.byte	0x74
+ 964 0325 73000000 		.4byte	0x73
+ 965 0329 00000000 		.4byte	.LFB69
+ 966 032d 38000000 		.4byte	.LFE69-.LFB69
+ 967 0331 01       		.uleb128 0x1
+ 968 0332 9C       		.byte	0x9c
+ 969 0333 82030000 		.4byte	0x382
+ 970 0337 06       		.uleb128 0x6
+ 971 0338 06000000 		.4byte	.LVL32
+ 972 033c 31010000 		.4byte	0x131
+ 973 0340 06       		.uleb128 0x6
+ 974 0341 0A000000 		.4byte	.LVL33
+ 975 0345 71010000 		.4byte	0x171
+ 976 0349 07       		.uleb128 0x7
+ 977 034a 10000000 		.4byte	.LVL34
+ 978 034e 13020000 		.4byte	0x213
+ 979 0352 5D030000 		.4byte	0x35d
+ 980 0356 08       		.uleb128 0x8
+ 981 0357 01       		.uleb128 0x1
+ 982 0358 50       		.byte	0x50
+ 983 0359 02       		.uleb128 0x2
+ 984 035a 08       		.byte	0x8
+ 985 035b 72       		.byte	0x72
+ 986 035c 00       		.byte	0
+ 987 035d 07       		.uleb128 0x7
+ 988 035e 1A000000 		.4byte	.LVL35
+ 989 0362 13020000 		.4byte	0x213
+ 990 0366 71030000 		.4byte	0x371
+ 991 036a 08       		.uleb128 0x8
+ 992 036b 01       		.uleb128 0x1
+ 993 036c 50       		.byte	0x50
+ 994 036d 02       		.uleb128 0x2
+ 995 036e 08       		.byte	0x8
+ 996 036f 67       		.byte	0x67
+ 997 0370 00       		.byte	0
+ 998 0371 09       		.uleb128 0x9
+ 999 0372 24000000 		.4byte	.LVL36
+ 1000 0376 13020000 		.4byte	0x213
+ 1001 037a 08       		.uleb128 0x8
+ 1002 037b 01       		.uleb128 0x1
+ 1003 037c 50       		.byte	0x50
+ 1004 037d 02       		.uleb128 0x2
+ 1005 037e 08       		.byte	0x8
+ 1006 037f 62       		.byte	0x62
+ 1007 0380 00       		.byte	0
+ 1008 0381 00       		.byte	0
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccuSgv1p.s 			page 23
 
 
- 1060 04f9 6E000000 		.4byte	.LASF48
- 1061 04fd 6E000000 		.4byte	.LASF48
- 1062 0501 0F       		.byte	0xf
- 1063 0502 26       		.byte	0x26
- 1064 0503 16       		.uleb128 0x16
- 1065 0504 9A000000 		.4byte	.LASF49
- 1066 0508 9A000000 		.4byte	.LASF49
- 1067 050c 10       		.byte	0x10
- 1068 050d 26       		.byte	0x26
- 1069 050e 16       		.uleb128 0x16
- 1070 050f C1020000 		.4byte	.LASF50
- 1071 0513 C1020000 		.4byte	.LASF50
- 1072 0517 01       		.byte	0x1
- 1073 0518 19       		.byte	0x19
- 1074 0519 00       		.byte	0
- 1075              		.section	.debug_abbrev,"",%progbits
- 1076              	.Ldebug_abbrev0:
- 1077 0000 01       		.uleb128 0x1
- 1078 0001 11       		.uleb128 0x11
- 1079 0002 01       		.byte	0x1
- 1080 0003 25       		.uleb128 0x25
- 1081 0004 0E       		.uleb128 0xe
- 1082 0005 13       		.uleb128 0x13
- 1083 0006 0B       		.uleb128 0xb
- 1084 0007 03       		.uleb128 0x3
- 1085 0008 0E       		.uleb128 0xe
- 1086 0009 1B       		.uleb128 0x1b
- 1087 000a 0E       		.uleb128 0xe
- 1088 000b 55       		.uleb128 0x55
- 1089 000c 17       		.uleb128 0x17
- 1090 000d 11       		.uleb128 0x11
- 1091 000e 01       		.uleb128 0x1
- 1092 000f 10       		.uleb128 0x10
- 1093 0010 17       		.uleb128 0x17
- 1094 0011 00       		.byte	0
- 1095 0012 00       		.byte	0
- 1096 0013 02       		.uleb128 0x2
- 1097 0014 24       		.uleb128 0x24
- 1098 0015 00       		.byte	0
- 1099 0016 0B       		.uleb128 0xb
- 1100 0017 0B       		.uleb128 0xb
- 1101 0018 3E       		.uleb128 0x3e
- 1102 0019 0B       		.uleb128 0xb
- 1103 001a 03       		.uleb128 0x3
- 1104 001b 0E       		.uleb128 0xe
- 1105 001c 00       		.byte	0
- 1106 001d 00       		.byte	0
- 1107 001e 03       		.uleb128 0x3
- 1108 001f 16       		.uleb128 0x16
- 1109 0020 00       		.byte	0
- 1110 0021 03       		.uleb128 0x3
- 1111 0022 0E       		.uleb128 0xe
- 1112 0023 3A       		.uleb128 0x3a
- 1113 0024 0B       		.uleb128 0xb
- 1114 0025 3B       		.uleb128 0x3b
- 1115 0026 0B       		.uleb128 0xb
- 1116 0027 49       		.uleb128 0x49
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccYRMvys.s 			page 24
+ 1009 0382 0D       		.uleb128 0xd
+ 1010 0383 34020000 		.4byte	.LASF24
+ 1011 0387 01       		.byte	0x1
+ 1012 0388 82       		.byte	0x82
+ 1013 0389 73000000 		.4byte	0x73
+ 1014 038d 00000000 		.4byte	.LFB70
+ 1015 0391 04010000 		.4byte	.LFE70-.LFB70
+ 1016 0395 01       		.uleb128 0x1
+ 1017 0396 9C       		.byte	0x9c
+ 1018 0397 43040000 		.4byte	0x443
+ 1019 039b 0E       		.uleb128 0xe
+ 1020 039c 07020000 		.4byte	.LASF25
+ 1021 03a0 01       		.byte	0x1
+ 1022 03a1 84       		.byte	0x84
+ 1023 03a2 BA000000 		.4byte	0xba
+ 1024 03a6 21000000 		.4byte	.LLST1
+ 1025 03aa 0E       		.uleb128 0xe
+ 1026 03ab 46000000 		.4byte	.LASF26
+ 1027 03af 01       		.byte	0x1
+ 1028 03b0 84       		.byte	0x84
+ 1029 03b1 BA000000 		.4byte	0xba
+ 1030 03b5 3F000000 		.4byte	.LLST2
+ 1031 03b9 0E       		.uleb128 0xe
+ 1032 03ba 40000000 		.4byte	.LASF27
+ 1033 03be 01       		.byte	0x1
+ 1034 03bf 84       		.byte	0x84
+ 1035 03c0 BA000000 		.4byte	0xba
+ 1036 03c4 5D000000 		.4byte	.LLST3
+ 1037 03c8 0F       		.uleb128 0xf
+ 1038 03c9 4B010000 		.4byte	.LASF28
+ 1039 03cd 01       		.byte	0x1
+ 1040 03ce 85       		.byte	0x85
+ 1041 03cf BA000000 		.4byte	0xba
+ 1042 03d3 00       		.byte	0
+ 1043 03d4 0F       		.uleb128 0xf
+ 1044 03d5 40030000 		.4byte	.LASF29
+ 1045 03d9 01       		.byte	0x1
+ 1046 03da 86       		.byte	0x86
+ 1047 03db BA000000 		.4byte	0xba
+ 1048 03df 00       		.byte	0
+ 1049 03e0 0F       		.uleb128 0xf
+ 1050 03e1 66000000 		.4byte	.LASF30
+ 1051 03e5 01       		.byte	0x1
+ 1052 03e6 87       		.byte	0x87
+ 1053 03e7 BA000000 		.4byte	0xba
+ 1054 03eb 00       		.byte	0
+ 1055 03ec 0F       		.uleb128 0xf
+ 1056 03ed 52010000 		.4byte	.LASF31
+ 1057 03f1 01       		.byte	0x1
+ 1058 03f2 88       		.byte	0x88
+ 1059 03f3 BA000000 		.4byte	0xba
+ 1060 03f7 00       		.byte	0
+ 1061 03f8 06       		.uleb128 0x6
+ 1062 03f9 08000000 		.4byte	.LVL38
+ 1063 03fd 31010000 		.4byte	0x131
+ 1064 0401 06       		.uleb128 0x6
+ 1065 0402 0C000000 		.4byte	.LVL39
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccuSgv1p.s 			page 24
 
 
- 1117 0028 13       		.uleb128 0x13
- 1118 0029 00       		.byte	0
- 1119 002a 00       		.byte	0
- 1120 002b 04       		.uleb128 0x4
- 1121 002c 24       		.uleb128 0x24
- 1122 002d 00       		.byte	0
- 1123 002e 0B       		.uleb128 0xb
- 1124 002f 0B       		.uleb128 0xb
- 1125 0030 3E       		.uleb128 0x3e
- 1126 0031 0B       		.uleb128 0xb
- 1127 0032 03       		.uleb128 0x3
- 1128 0033 08       		.uleb128 0x8
- 1129 0034 00       		.byte	0
- 1130 0035 00       		.byte	0
- 1131 0036 05       		.uleb128 0x5
- 1132 0037 2E       		.uleb128 0x2e
- 1133 0038 01       		.byte	0x1
- 1134 0039 3F       		.uleb128 0x3f
- 1135 003a 19       		.uleb128 0x19
- 1136 003b 03       		.uleb128 0x3
- 1137 003c 0E       		.uleb128 0xe
- 1138 003d 3A       		.uleb128 0x3a
- 1139 003e 0B       		.uleb128 0xb
- 1140 003f 3B       		.uleb128 0x3b
- 1141 0040 0B       		.uleb128 0xb
- 1142 0041 27       		.uleb128 0x27
- 1143 0042 19       		.uleb128 0x19
- 1144 0043 11       		.uleb128 0x11
- 1145 0044 01       		.uleb128 0x1
- 1146 0045 12       		.uleb128 0x12
- 1147 0046 06       		.uleb128 0x6
- 1148 0047 40       		.uleb128 0x40
- 1149 0048 18       		.uleb128 0x18
- 1150 0049 9742     		.uleb128 0x2117
- 1151 004b 19       		.uleb128 0x19
- 1152 004c 01       		.uleb128 0x1
- 1153 004d 13       		.uleb128 0x13
- 1154 004e 00       		.byte	0
- 1155 004f 00       		.byte	0
- 1156 0050 06       		.uleb128 0x6
- 1157 0051 898201   		.uleb128 0x4109
- 1158 0054 00       		.byte	0
- 1159 0055 11       		.uleb128 0x11
- 1160 0056 01       		.uleb128 0x1
- 1161 0057 31       		.uleb128 0x31
- 1162 0058 13       		.uleb128 0x13
- 1163 0059 00       		.byte	0
- 1164 005a 00       		.byte	0
- 1165 005b 07       		.uleb128 0x7
- 1166 005c 898201   		.uleb128 0x4109
- 1167 005f 01       		.byte	0x1
- 1168 0060 11       		.uleb128 0x11
- 1169 0061 01       		.uleb128 0x1
- 1170 0062 31       		.uleb128 0x31
- 1171 0063 13       		.uleb128 0x13
- 1172 0064 01       		.uleb128 0x1
- 1173 0065 13       		.uleb128 0x13
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccYRMvys.s 			page 25
+ 1066 0406 71010000 		.4byte	0x171
+ 1067 040a 07       		.uleb128 0x7
+ 1068 040b 12000000 		.4byte	.LVL40
+ 1069 040f 13020000 		.4byte	0x213
+ 1070 0413 1E040000 		.4byte	0x41e
+ 1071 0417 08       		.uleb128 0x8
+ 1072 0418 01       		.uleb128 0x1
+ 1073 0419 50       		.byte	0x50
+ 1074 041a 02       		.uleb128 0x2
+ 1075 041b 08       		.byte	0x8
+ 1076 041c 72       		.byte	0x72
+ 1077 041d 00       		.byte	0
+ 1078 041e 07       		.uleb128 0x7
+ 1079 041f 1A000000 		.4byte	.LVL43
+ 1080 0423 13020000 		.4byte	0x213
+ 1081 0427 32040000 		.4byte	0x432
+ 1082 042b 08       		.uleb128 0x8
+ 1083 042c 01       		.uleb128 0x1
+ 1084 042d 50       		.byte	0x50
+ 1085 042e 02       		.uleb128 0x2
+ 1086 042f 08       		.byte	0x8
+ 1087 0430 67       		.byte	0x67
+ 1088 0431 00       		.byte	0
+ 1089 0432 09       		.uleb128 0x9
+ 1090 0433 22000000 		.4byte	.LVL46
+ 1091 0437 13020000 		.4byte	0x213
+ 1092 043b 08       		.uleb128 0x8
+ 1093 043c 01       		.uleb128 0x1
+ 1094 043d 50       		.byte	0x50
+ 1095 043e 02       		.uleb128 0x2
+ 1096 043f 08       		.byte	0x8
+ 1097 0440 62       		.byte	0x62
+ 1098 0441 00       		.byte	0
+ 1099 0442 00       		.byte	0
+ 1100 0443 10       		.uleb128 0x10
+ 1101 0444 A2010000 		.4byte	.LASF32
+ 1102 0448 05       		.byte	0x5
+ 1103 0449 1207     		.2byte	0x712
+ 1104 044b 4F040000 		.4byte	0x44f
+ 1105 044f 11       		.uleb128 0x11
+ 1106 0450 81000000 		.4byte	0x81
+ 1107 0454 12       		.uleb128 0x12
+ 1108 0455 E1020000 		.4byte	.LASF33
+ 1109 0459 01       		.byte	0x1
+ 1110 045a 13       		.byte	0x13
+ 1111 045b 8C000000 		.4byte	0x8c
+ 1112 045f 05       		.uleb128 0x5
+ 1113 0460 03       		.byte	0x3
+ 1114 0461 00000000 		.4byte	freq
+ 1115 0465 12       		.uleb128 0x12
+ 1116 0466 CF020000 		.4byte	.LASF34
+ 1117 046a 01       		.byte	0x1
+ 1118 046b 14       		.byte	0x14
+ 1119 046c BA000000 		.4byte	0xba
+ 1120 0470 05       		.uleb128 0x5
+ 1121 0471 03       		.byte	0x3
+ 1122 0472 00000000 		.4byte	freqR_0
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccuSgv1p.s 			page 25
 
 
- 1174 0066 00       		.byte	0
- 1175 0067 00       		.byte	0
- 1176 0068 08       		.uleb128 0x8
- 1177 0069 8A8201   		.uleb128 0x410a
- 1178 006c 00       		.byte	0
- 1179 006d 02       		.uleb128 0x2
- 1180 006e 18       		.uleb128 0x18
- 1181 006f 9142     		.uleb128 0x2111
- 1182 0071 18       		.uleb128 0x18
- 1183 0072 00       		.byte	0
- 1184 0073 00       		.byte	0
- 1185 0074 09       		.uleb128 0x9
- 1186 0075 898201   		.uleb128 0x4109
- 1187 0078 01       		.byte	0x1
- 1188 0079 11       		.uleb128 0x11
- 1189 007a 01       		.uleb128 0x1
- 1190 007b 31       		.uleb128 0x31
- 1191 007c 13       		.uleb128 0x13
- 1192 007d 00       		.byte	0
- 1193 007e 00       		.byte	0
- 1194 007f 0A       		.uleb128 0xa
- 1195 0080 2E       		.uleb128 0x2e
- 1196 0081 01       		.byte	0x1
- 1197 0082 3F       		.uleb128 0x3f
- 1198 0083 19       		.uleb128 0x19
- 1199 0084 03       		.uleb128 0x3
- 1200 0085 0E       		.uleb128 0xe
- 1201 0086 3A       		.uleb128 0x3a
- 1202 0087 0B       		.uleb128 0xb
- 1203 0088 3B       		.uleb128 0x3b
- 1204 0089 0B       		.uleb128 0xb
- 1205 008a 27       		.uleb128 0x27
- 1206 008b 19       		.uleb128 0x19
- 1207 008c 49       		.uleb128 0x49
- 1208 008d 13       		.uleb128 0x13
- 1209 008e 11       		.uleb128 0x11
- 1210 008f 01       		.uleb128 0x1
- 1211 0090 12       		.uleb128 0x12
- 1212 0091 06       		.uleb128 0x6
- 1213 0092 40       		.uleb128 0x40
- 1214 0093 18       		.uleb128 0x18
- 1215 0094 9742     		.uleb128 0x2117
- 1216 0096 19       		.uleb128 0x19
- 1217 0097 01       		.uleb128 0x1
- 1218 0098 13       		.uleb128 0x13
- 1219 0099 00       		.byte	0
- 1220 009a 00       		.byte	0
- 1221 009b 0B       		.uleb128 0xb
- 1222 009c 05       		.uleb128 0x5
- 1223 009d 00       		.byte	0
- 1224 009e 03       		.uleb128 0x3
- 1225 009f 0E       		.uleb128 0xe
- 1226 00a0 3A       		.uleb128 0x3a
- 1227 00a1 0B       		.uleb128 0xb
- 1228 00a2 3B       		.uleb128 0x3b
- 1229 00a3 0B       		.uleb128 0xb
- 1230 00a4 49       		.uleb128 0x49
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccYRMvys.s 			page 26
+ 1123 0476 12       		.uleb128 0x12
+ 1124 0477 7E000000 		.4byte	.LASF35
+ 1125 047b 01       		.byte	0x1
+ 1126 047c 14       		.byte	0x14
+ 1127 047d BA000000 		.4byte	0xba
+ 1128 0481 05       		.uleb128 0x5
+ 1129 0482 03       		.byte	0x3
+ 1130 0483 00000000 		.4byte	freqG_0
+ 1131 0487 12       		.uleb128 0x12
+ 1132 0488 76000000 		.4byte	.LASF36
+ 1133 048c 01       		.byte	0x1
+ 1134 048d 14       		.byte	0x14
+ 1135 048e BA000000 		.4byte	0xba
+ 1136 0492 05       		.uleb128 0x5
+ 1137 0493 03       		.byte	0x3
+ 1138 0494 00000000 		.4byte	freqB_0
+ 1139 0498 12       		.uleb128 0x12
+ 1140 0499 D7020000 		.4byte	.LASF37
+ 1141 049d 01       		.byte	0x1
+ 1142 049e 15       		.byte	0x15
+ 1143 049f 73000000 		.4byte	0x73
+ 1144 04a3 05       		.uleb128 0x5
+ 1145 04a4 03       		.byte	0x3
+ 1146 04a5 00000000 		.4byte	dataReady
+ 1147 04a9 12       		.uleb128 0x12
+ 1148 04aa 62020000 		.4byte	.LASF38
+ 1149 04ae 01       		.byte	0x1
+ 1150 04af 16       		.byte	0x16
+ 1151 04b0 73000000 		.4byte	0x73
+ 1152 04b4 05       		.uleb128 0x5
+ 1153 04b5 03       		.byte	0x3
+ 1154 04b6 00000000 		.4byte	Counter_cycle
+ 1155 04ba 13       		.uleb128 0x13
+ 1156 04bb DD010000 		.4byte	.LASF39
+ 1157 04bf DD010000 		.4byte	.LASF39
+ 1158 04c3 06       		.byte	0x6
+ 1159 04c4 50       		.byte	0x50
+ 1160 04c5 13       		.uleb128 0x13
+ 1161 04c6 8E000000 		.4byte	.LASF40
+ 1162 04ca 8E000000 		.4byte	.LASF40
+ 1163 04ce 07       		.byte	0x7
+ 1164 04cf 5B       		.byte	0x5b
+ 1165 04d0 13       		.uleb128 0x13
+ 1166 04d1 8E010000 		.4byte	.LASF41
+ 1167 04d5 8E010000 		.4byte	.LASF41
+ 1168 04d9 06       		.byte	0x6
+ 1169 04da 5D       		.byte	0x5d
+ 1170 04db 13       		.uleb128 0x13
+ 1171 04dc 2B020000 		.4byte	.LASF42
+ 1172 04e0 2B020000 		.4byte	.LASF42
+ 1173 04e4 08       		.byte	0x8
+ 1174 04e5 26       		.byte	0x26
+ 1175 04e6 13       		.uleb128 0x13
+ 1176 04e7 EA010000 		.4byte	.LASF43
+ 1177 04eb EA010000 		.4byte	.LASF43
+ 1178 04ef 09       		.byte	0x9
+ 1179 04f0 28       		.byte	0x28
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccuSgv1p.s 			page 26
 
 
- 1231 00a5 13       		.uleb128 0x13
- 1232 00a6 02       		.uleb128 0x2
- 1233 00a7 17       		.uleb128 0x17
- 1234 00a8 00       		.byte	0
- 1235 00a9 00       		.byte	0
- 1236 00aa 0C       		.uleb128 0xc
- 1237 00ab 2E       		.uleb128 0x2e
- 1238 00ac 01       		.byte	0x1
- 1239 00ad 3F       		.uleb128 0x3f
- 1240 00ae 19       		.uleb128 0x19
- 1241 00af 03       		.uleb128 0x3
- 1242 00b0 0E       		.uleb128 0xe
- 1243 00b1 3A       		.uleb128 0x3a
- 1244 00b2 0B       		.uleb128 0xb
- 1245 00b3 3B       		.uleb128 0x3b
- 1246 00b4 0B       		.uleb128 0xb
- 1247 00b5 49       		.uleb128 0x49
- 1248 00b6 13       		.uleb128 0x13
- 1249 00b7 11       		.uleb128 0x11
- 1250 00b8 01       		.uleb128 0x1
- 1251 00b9 12       		.uleb128 0x12
- 1252 00ba 06       		.uleb128 0x6
- 1253 00bb 40       		.uleb128 0x40
- 1254 00bc 18       		.uleb128 0x18
- 1255 00bd 9742     		.uleb128 0x2117
- 1256 00bf 19       		.uleb128 0x19
- 1257 00c0 01       		.uleb128 0x1
- 1258 00c1 13       		.uleb128 0x13
- 1259 00c2 00       		.byte	0
- 1260 00c3 00       		.byte	0
- 1261 00c4 0D       		.uleb128 0xd
- 1262 00c5 34       		.uleb128 0x34
- 1263 00c6 00       		.byte	0
- 1264 00c7 03       		.uleb128 0x3
- 1265 00c8 0E       		.uleb128 0xe
- 1266 00c9 3A       		.uleb128 0x3a
- 1267 00ca 0B       		.uleb128 0xb
- 1268 00cb 3B       		.uleb128 0x3b
- 1269 00cc 0B       		.uleb128 0xb
- 1270 00cd 49       		.uleb128 0x49
- 1271 00ce 13       		.uleb128 0x13
- 1272 00cf 02       		.uleb128 0x2
- 1273 00d0 17       		.uleb128 0x17
- 1274 00d1 00       		.byte	0
- 1275 00d2 00       		.byte	0
- 1276 00d3 0E       		.uleb128 0xe
- 1277 00d4 34       		.uleb128 0x34
- 1278 00d5 00       		.byte	0
- 1279 00d6 03       		.uleb128 0x3
- 1280 00d7 0E       		.uleb128 0xe
- 1281 00d8 3A       		.uleb128 0x3a
- 1282 00d9 0B       		.uleb128 0xb
- 1283 00da 3B       		.uleb128 0x3b
- 1284 00db 0B       		.uleb128 0xb
- 1285 00dc 49       		.uleb128 0x49
- 1286 00dd 13       		.uleb128 0x13
- 1287 00de 00       		.byte	0
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccYRMvys.s 			page 27
+ 1180 04f1 13       		.uleb128 0x13
+ 1181 04f2 09000000 		.4byte	.LASF44
+ 1182 04f6 09000000 		.4byte	.LASF44
+ 1183 04fa 0A       		.byte	0xa
+ 1184 04fb 28       		.byte	0x28
+ 1185 04fc 13       		.uleb128 0x13
+ 1186 04fd E6020000 		.4byte	.LASF45
+ 1187 0501 E6020000 		.4byte	.LASF45
+ 1188 0505 09       		.byte	0x9
+ 1189 0506 18       		.byte	0x18
+ 1190 0507 13       		.uleb128 0x13
+ 1191 0508 7A010000 		.4byte	.LASF46
+ 1192 050c 7A010000 		.4byte	.LASF46
+ 1193 0510 0A       		.byte	0xa
+ 1194 0511 18       		.byte	0x18
+ 1195 0512 13       		.uleb128 0x13
+ 1196 0513 26030000 		.4byte	.LASF47
+ 1197 0517 26030000 		.4byte	.LASF47
+ 1198 051b 0B       		.byte	0xb
+ 1199 051c 2F       		.byte	0x2f
+ 1200 051d 13       		.uleb128 0x13
+ 1201 051e 38030000 		.4byte	.LASF48
+ 1202 0522 38030000 		.4byte	.LASF48
+ 1203 0526 0C       		.byte	0xc
+ 1204 0527 76       		.byte	0x76
+ 1205 0528 13       		.uleb128 0x13
+ 1206 0529 BD010000 		.4byte	.LASF49
+ 1207 052d BD010000 		.4byte	.LASF49
+ 1208 0531 06       		.byte	0x6
+ 1209 0532 4F       		.byte	0x4f
+ 1210 0533 13       		.uleb128 0x13
+ 1211 0534 12020000 		.4byte	.LASF50
+ 1212 0538 12020000 		.4byte	.LASF50
+ 1213 053c 07       		.byte	0x7
+ 1214 053d 5A       		.byte	0x5a
+ 1215 053e 13       		.uleb128 0x13
+ 1216 053f 00000000 		.4byte	.LASF51
+ 1217 0543 00000000 		.4byte	.LASF51
+ 1218 0547 0D       		.byte	0xd
+ 1219 0548 26       		.byte	0x26
+ 1220 0549 13       		.uleb128 0x13
+ 1221 054a 37000000 		.4byte	.LASF52
+ 1222 054e 37000000 		.4byte	.LASF52
+ 1223 0552 0E       		.byte	0xe
+ 1224 0553 26       		.byte	0x26
+ 1225 0554 13       		.uleb128 0x13
+ 1226 0555 6D000000 		.4byte	.LASF53
+ 1227 0559 6D000000 		.4byte	.LASF53
+ 1228 055d 0F       		.byte	0xf
+ 1229 055e 26       		.byte	0x26
+ 1230 055f 13       		.uleb128 0x13
+ 1231 0560 B4000000 		.4byte	.LASF54
+ 1232 0564 B4000000 		.4byte	.LASF54
+ 1233 0568 10       		.byte	0x10
+ 1234 0569 26       		.byte	0x26
+ 1235 056a 00       		.byte	0
+ 1236              		.section	.debug_abbrev,"",%progbits
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccuSgv1p.s 			page 27
 
 
- 1288 00df 00       		.byte	0
- 1289 00e0 0F       		.uleb128 0xf
- 1290 00e1 34       		.uleb128 0x34
- 1291 00e2 00       		.byte	0
- 1292 00e3 03       		.uleb128 0x3
- 1293 00e4 0E       		.uleb128 0xe
- 1294 00e5 3A       		.uleb128 0x3a
- 1295 00e6 0B       		.uleb128 0xb
- 1296 00e7 3B       		.uleb128 0x3b
- 1297 00e8 0B       		.uleb128 0xb
- 1298 00e9 49       		.uleb128 0x49
- 1299 00ea 13       		.uleb128 0x13
- 1300 00eb 1C       		.uleb128 0x1c
- 1301 00ec 0B       		.uleb128 0xb
- 1302 00ed 00       		.byte	0
- 1303 00ee 00       		.byte	0
- 1304 00ef 10       		.uleb128 0x10
- 1305 00f0 34       		.uleb128 0x34
- 1306 00f1 00       		.byte	0
- 1307 00f2 03       		.uleb128 0x3
- 1308 00f3 0E       		.uleb128 0xe
- 1309 00f4 3A       		.uleb128 0x3a
- 1310 00f5 0B       		.uleb128 0xb
- 1311 00f6 3B       		.uleb128 0x3b
- 1312 00f7 05       		.uleb128 0x5
- 1313 00f8 49       		.uleb128 0x49
- 1314 00f9 13       		.uleb128 0x13
- 1315 00fa 3F       		.uleb128 0x3f
- 1316 00fb 19       		.uleb128 0x19
- 1317 00fc 3C       		.uleb128 0x3c
- 1318 00fd 19       		.uleb128 0x19
- 1319 00fe 00       		.byte	0
- 1320 00ff 00       		.byte	0
- 1321 0100 11       		.uleb128 0x11
- 1322 0101 35       		.uleb128 0x35
- 1323 0102 00       		.byte	0
- 1324 0103 49       		.uleb128 0x49
- 1325 0104 13       		.uleb128 0x13
- 1326 0105 00       		.byte	0
- 1327 0106 00       		.byte	0
- 1328 0107 12       		.uleb128 0x12
- 1329 0108 34       		.uleb128 0x34
- 1330 0109 00       		.byte	0
- 1331 010a 03       		.uleb128 0x3
- 1332 010b 0E       		.uleb128 0xe
- 1333 010c 3A       		.uleb128 0x3a
- 1334 010d 0B       		.uleb128 0xb
- 1335 010e 3B       		.uleb128 0x3b
- 1336 010f 0B       		.uleb128 0xb
- 1337 0110 49       		.uleb128 0x49
- 1338 0111 13       		.uleb128 0x13
- 1339 0112 3F       		.uleb128 0x3f
- 1340 0113 19       		.uleb128 0x19
- 1341 0114 02       		.uleb128 0x2
- 1342 0115 18       		.uleb128 0x18
- 1343 0116 00       		.byte	0
- 1344 0117 00       		.byte	0
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccYRMvys.s 			page 28
+ 1237              	.Ldebug_abbrev0:
+ 1238 0000 01       		.uleb128 0x1
+ 1239 0001 11       		.uleb128 0x11
+ 1240 0002 01       		.byte	0x1
+ 1241 0003 25       		.uleb128 0x25
+ 1242 0004 0E       		.uleb128 0xe
+ 1243 0005 13       		.uleb128 0x13
+ 1244 0006 0B       		.uleb128 0xb
+ 1245 0007 03       		.uleb128 0x3
+ 1246 0008 0E       		.uleb128 0xe
+ 1247 0009 1B       		.uleb128 0x1b
+ 1248 000a 0E       		.uleb128 0xe
+ 1249 000b 55       		.uleb128 0x55
+ 1250 000c 17       		.uleb128 0x17
+ 1251 000d 11       		.uleb128 0x11
+ 1252 000e 01       		.uleb128 0x1
+ 1253 000f 10       		.uleb128 0x10
+ 1254 0010 17       		.uleb128 0x17
+ 1255 0011 00       		.byte	0
+ 1256 0012 00       		.byte	0
+ 1257 0013 02       		.uleb128 0x2
+ 1258 0014 24       		.uleb128 0x24
+ 1259 0015 00       		.byte	0
+ 1260 0016 0B       		.uleb128 0xb
+ 1261 0017 0B       		.uleb128 0xb
+ 1262 0018 3E       		.uleb128 0x3e
+ 1263 0019 0B       		.uleb128 0xb
+ 1264 001a 03       		.uleb128 0x3
+ 1265 001b 0E       		.uleb128 0xe
+ 1266 001c 00       		.byte	0
+ 1267 001d 00       		.byte	0
+ 1268 001e 03       		.uleb128 0x3
+ 1269 001f 16       		.uleb128 0x16
+ 1270 0020 00       		.byte	0
+ 1271 0021 03       		.uleb128 0x3
+ 1272 0022 0E       		.uleb128 0xe
+ 1273 0023 3A       		.uleb128 0x3a
+ 1274 0024 0B       		.uleb128 0xb
+ 1275 0025 3B       		.uleb128 0x3b
+ 1276 0026 0B       		.uleb128 0xb
+ 1277 0027 49       		.uleb128 0x49
+ 1278 0028 13       		.uleb128 0x13
+ 1279 0029 00       		.byte	0
+ 1280 002a 00       		.byte	0
+ 1281 002b 04       		.uleb128 0x4
+ 1282 002c 24       		.uleb128 0x24
+ 1283 002d 00       		.byte	0
+ 1284 002e 0B       		.uleb128 0xb
+ 1285 002f 0B       		.uleb128 0xb
+ 1286 0030 3E       		.uleb128 0x3e
+ 1287 0031 0B       		.uleb128 0xb
+ 1288 0032 03       		.uleb128 0x3
+ 1289 0033 08       		.uleb128 0x8
+ 1290 0034 00       		.byte	0
+ 1291 0035 00       		.byte	0
+ 1292 0036 05       		.uleb128 0x5
+ 1293 0037 2E       		.uleb128 0x2e
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccuSgv1p.s 			page 28
 
 
- 1345 0118 13       		.uleb128 0x13
- 1346 0119 01       		.uleb128 0x1
- 1347 011a 01       		.byte	0x1
- 1348 011b 49       		.uleb128 0x49
- 1349 011c 13       		.uleb128 0x13
- 1350 011d 01       		.uleb128 0x1
- 1351 011e 13       		.uleb128 0x13
- 1352 011f 00       		.byte	0
- 1353 0120 00       		.byte	0
- 1354 0121 14       		.uleb128 0x14
- 1355 0122 21       		.uleb128 0x21
- 1356 0123 00       		.byte	0
- 1357 0124 49       		.uleb128 0x49
- 1358 0125 13       		.uleb128 0x13
- 1359 0126 2F       		.uleb128 0x2f
- 1360 0127 0B       		.uleb128 0xb
- 1361 0128 00       		.byte	0
- 1362 0129 00       		.byte	0
- 1363 012a 15       		.uleb128 0x15
- 1364 012b 34       		.uleb128 0x34
- 1365 012c 00       		.byte	0
- 1366 012d 03       		.uleb128 0x3
- 1367 012e 08       		.uleb128 0x8
- 1368 012f 3A       		.uleb128 0x3a
- 1369 0130 0B       		.uleb128 0xb
- 1370 0131 3B       		.uleb128 0x3b
- 1371 0132 0B       		.uleb128 0xb
- 1372 0133 49       		.uleb128 0x49
- 1373 0134 13       		.uleb128 0x13
- 1374 0135 3F       		.uleb128 0x3f
- 1375 0136 19       		.uleb128 0x19
- 1376 0137 02       		.uleb128 0x2
- 1377 0138 18       		.uleb128 0x18
- 1378 0139 00       		.byte	0
- 1379 013a 00       		.byte	0
- 1380 013b 16       		.uleb128 0x16
- 1381 013c 2E       		.uleb128 0x2e
- 1382 013d 00       		.byte	0
- 1383 013e 3F       		.uleb128 0x3f
- 1384 013f 19       		.uleb128 0x19
- 1385 0140 3C       		.uleb128 0x3c
- 1386 0141 19       		.uleb128 0x19
- 1387 0142 6E       		.uleb128 0x6e
- 1388 0143 0E       		.uleb128 0xe
- 1389 0144 03       		.uleb128 0x3
- 1390 0145 0E       		.uleb128 0xe
- 1391 0146 3A       		.uleb128 0x3a
- 1392 0147 0B       		.uleb128 0xb
- 1393 0148 3B       		.uleb128 0x3b
- 1394 0149 0B       		.uleb128 0xb
- 1395 014a 00       		.byte	0
- 1396 014b 00       		.byte	0
- 1397 014c 00       		.byte	0
- 1398              		.section	.debug_loc,"",%progbits
- 1399              	.Ldebug_loc0:
- 1400              	.LLST0:
- 1401 0000 00000000 		.4byte	.LVL16
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccYRMvys.s 			page 29
+ 1294 0038 01       		.byte	0x1
+ 1295 0039 3F       		.uleb128 0x3f
+ 1296 003a 19       		.uleb128 0x19
+ 1297 003b 03       		.uleb128 0x3
+ 1298 003c 0E       		.uleb128 0xe
+ 1299 003d 3A       		.uleb128 0x3a
+ 1300 003e 0B       		.uleb128 0xb
+ 1301 003f 3B       		.uleb128 0x3b
+ 1302 0040 0B       		.uleb128 0xb
+ 1303 0041 27       		.uleb128 0x27
+ 1304 0042 19       		.uleb128 0x19
+ 1305 0043 11       		.uleb128 0x11
+ 1306 0044 01       		.uleb128 0x1
+ 1307 0045 12       		.uleb128 0x12
+ 1308 0046 06       		.uleb128 0x6
+ 1309 0047 40       		.uleb128 0x40
+ 1310 0048 18       		.uleb128 0x18
+ 1311 0049 9742     		.uleb128 0x2117
+ 1312 004b 19       		.uleb128 0x19
+ 1313 004c 01       		.uleb128 0x1
+ 1314 004d 13       		.uleb128 0x13
+ 1315 004e 00       		.byte	0
+ 1316 004f 00       		.byte	0
+ 1317 0050 06       		.uleb128 0x6
+ 1318 0051 898201   		.uleb128 0x4109
+ 1319 0054 00       		.byte	0
+ 1320 0055 11       		.uleb128 0x11
+ 1321 0056 01       		.uleb128 0x1
+ 1322 0057 31       		.uleb128 0x31
+ 1323 0058 13       		.uleb128 0x13
+ 1324 0059 00       		.byte	0
+ 1325 005a 00       		.byte	0
+ 1326 005b 07       		.uleb128 0x7
+ 1327 005c 898201   		.uleb128 0x4109
+ 1328 005f 01       		.byte	0x1
+ 1329 0060 11       		.uleb128 0x11
+ 1330 0061 01       		.uleb128 0x1
+ 1331 0062 31       		.uleb128 0x31
+ 1332 0063 13       		.uleb128 0x13
+ 1333 0064 01       		.uleb128 0x1
+ 1334 0065 13       		.uleb128 0x13
+ 1335 0066 00       		.byte	0
+ 1336 0067 00       		.byte	0
+ 1337 0068 08       		.uleb128 0x8
+ 1338 0069 8A8201   		.uleb128 0x410a
+ 1339 006c 00       		.byte	0
+ 1340 006d 02       		.uleb128 0x2
+ 1341 006e 18       		.uleb128 0x18
+ 1342 006f 9142     		.uleb128 0x2111
+ 1343 0071 18       		.uleb128 0x18
+ 1344 0072 00       		.byte	0
+ 1345 0073 00       		.byte	0
+ 1346 0074 09       		.uleb128 0x9
+ 1347 0075 898201   		.uleb128 0x4109
+ 1348 0078 01       		.byte	0x1
+ 1349 0079 11       		.uleb128 0x11
+ 1350 007a 01       		.uleb128 0x1
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccuSgv1p.s 			page 29
 
 
- 1402 0004 06000000 		.4byte	.LVL17
- 1403 0008 0100     		.2byte	0x1
- 1404 000a 50       		.byte	0x50
- 1405 000b 06000000 		.4byte	.LVL17
- 1406 000f 78000000 		.4byte	.LFE68
- 1407 0013 0400     		.2byte	0x4
- 1408 0015 F3       		.byte	0xf3
- 1409 0016 01       		.uleb128 0x1
- 1410 0017 50       		.byte	0x50
- 1411 0018 9F       		.byte	0x9f
- 1412 0019 00000000 		.4byte	0
- 1413 001d 00000000 		.4byte	0
- 1414              	.LLST1:
- 1415 0021 14000000 		.4byte	.LVL36
- 1416 0025 34000000 		.4byte	.LVL41
- 1417 0029 0100     		.2byte	0x1
- 1418 002b 54       		.byte	0x54
- 1419 002c 46000000 		.4byte	.LVL44
- 1420 0030 5A000000 		.4byte	.LVL46
- 1421 0034 0100     		.2byte	0x1
- 1422 0036 54       		.byte	0x54
- 1423 0037 00000000 		.4byte	0
- 1424 003b 00000000 		.4byte	0
- 1425              	.LLST2:
- 1426 003f 1E000000 		.4byte	.LVL38
- 1427 0043 32000000 		.4byte	.LVL40
- 1428 0047 0100     		.2byte	0x1
- 1429 0049 55       		.byte	0x55
- 1430 004a 46000000 		.4byte	.LVL44
- 1431 004e 58000000 		.4byte	.LVL45
- 1432 0052 0100     		.2byte	0x1
- 1433 0054 55       		.byte	0x55
- 1434 0055 00000000 		.4byte	0
- 1435 0059 00000000 		.4byte	0
- 1436              	.LLST3:
- 1437 005d 02000000 		.4byte	.LVL32
- 1438 0061 24000000 		.4byte	.LVL39
- 1439 0065 0200     		.2byte	0x2
- 1440 0067 30       		.byte	0x30
- 1441 0068 9F       		.byte	0x9f
- 1442 0069 24000000 		.4byte	.LVL39
- 1443 006d 36000000 		.4byte	.LVL42
- 1444 0071 0100     		.2byte	0x1
- 1445 0073 50       		.byte	0x50
- 1446 0074 46000000 		.4byte	.LVL44
- 1447 0078 5C000000 		.4byte	.LVL47
- 1448 007c 0100     		.2byte	0x1
- 1449 007e 50       		.byte	0x50
- 1450 007f 00000000 		.4byte	0
- 1451 0083 00000000 		.4byte	0
- 1452              		.section	.debug_aranges,"",%progbits
- 1453 0000 44000000 		.4byte	0x44
- 1454 0004 0200     		.2byte	0x2
- 1455 0006 00000000 		.4byte	.Ldebug_info0
- 1456 000a 04       		.byte	0x4
- 1457 000b 00       		.byte	0
- 1458 000c 0000     		.2byte	0
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccYRMvys.s 			page 30
+ 1351 007b 31       		.uleb128 0x31
+ 1352 007c 13       		.uleb128 0x13
+ 1353 007d 00       		.byte	0
+ 1354 007e 00       		.byte	0
+ 1355 007f 0A       		.uleb128 0xa
+ 1356 0080 2E       		.uleb128 0x2e
+ 1357 0081 01       		.byte	0x1
+ 1358 0082 3F       		.uleb128 0x3f
+ 1359 0083 19       		.uleb128 0x19
+ 1360 0084 03       		.uleb128 0x3
+ 1361 0085 0E       		.uleb128 0xe
+ 1362 0086 3A       		.uleb128 0x3a
+ 1363 0087 0B       		.uleb128 0xb
+ 1364 0088 3B       		.uleb128 0x3b
+ 1365 0089 0B       		.uleb128 0xb
+ 1366 008a 27       		.uleb128 0x27
+ 1367 008b 19       		.uleb128 0x19
+ 1368 008c 49       		.uleb128 0x49
+ 1369 008d 13       		.uleb128 0x13
+ 1370 008e 11       		.uleb128 0x11
+ 1371 008f 01       		.uleb128 0x1
+ 1372 0090 12       		.uleb128 0x12
+ 1373 0091 06       		.uleb128 0x6
+ 1374 0092 40       		.uleb128 0x40
+ 1375 0093 18       		.uleb128 0x18
+ 1376 0094 9742     		.uleb128 0x2117
+ 1377 0096 19       		.uleb128 0x19
+ 1378 0097 01       		.uleb128 0x1
+ 1379 0098 13       		.uleb128 0x13
+ 1380 0099 00       		.byte	0
+ 1381 009a 00       		.byte	0
+ 1382 009b 0B       		.uleb128 0xb
+ 1383 009c 05       		.uleb128 0x5
+ 1384 009d 00       		.byte	0
+ 1385 009e 03       		.uleb128 0x3
+ 1386 009f 0E       		.uleb128 0xe
+ 1387 00a0 3A       		.uleb128 0x3a
+ 1388 00a1 0B       		.uleb128 0xb
+ 1389 00a2 3B       		.uleb128 0x3b
+ 1390 00a3 0B       		.uleb128 0xb
+ 1391 00a4 49       		.uleb128 0x49
+ 1392 00a5 13       		.uleb128 0x13
+ 1393 00a6 02       		.uleb128 0x2
+ 1394 00a7 17       		.uleb128 0x17
+ 1395 00a8 00       		.byte	0
+ 1396 00a9 00       		.byte	0
+ 1397 00aa 0C       		.uleb128 0xc
+ 1398 00ab 2E       		.uleb128 0x2e
+ 1399 00ac 01       		.byte	0x1
+ 1400 00ad 3F       		.uleb128 0x3f
+ 1401 00ae 19       		.uleb128 0x19
+ 1402 00af 03       		.uleb128 0x3
+ 1403 00b0 0E       		.uleb128 0xe
+ 1404 00b1 3A       		.uleb128 0x3a
+ 1405 00b2 0B       		.uleb128 0xb
+ 1406 00b3 3B       		.uleb128 0x3b
+ 1407 00b4 0B       		.uleb128 0xb
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccuSgv1p.s 			page 30
 
 
- 1459 000e 0000     		.2byte	0
- 1460 0010 00000000 		.4byte	.LFB64
- 1461 0014 30000000 		.4byte	.LFE64-.LFB64
- 1462 0018 00000000 		.4byte	.LFB65
- 1463 001c 14000000 		.4byte	.LFE65-.LFB65
- 1464 0020 00000000 		.4byte	.LFB66
- 1465 0024 18000000 		.4byte	.LFE66-.LFB66
- 1466 0028 00000000 		.4byte	.LFB67
- 1467 002c 44000000 		.4byte	.LFE67-.LFB67
- 1468 0030 00000000 		.4byte	.LFB68
- 1469 0034 78000000 		.4byte	.LFE68-.LFB68
- 1470 0038 00000000 		.4byte	.LFB69
- 1471 003c 78000000 		.4byte	.LFE69-.LFB69
- 1472 0040 00000000 		.4byte	0
- 1473 0044 00000000 		.4byte	0
- 1474              		.section	.debug_ranges,"",%progbits
- 1475              	.Ldebug_ranges0:
- 1476 0000 00000000 		.4byte	.LFB64
- 1477 0004 30000000 		.4byte	.LFE64
- 1478 0008 00000000 		.4byte	.LFB65
- 1479 000c 14000000 		.4byte	.LFE65
- 1480 0010 00000000 		.4byte	.LFB66
- 1481 0014 18000000 		.4byte	.LFE66
- 1482 0018 00000000 		.4byte	.LFB67
- 1483 001c 44000000 		.4byte	.LFE67
- 1484 0020 00000000 		.4byte	.LFB68
- 1485 0024 78000000 		.4byte	.LFE68
- 1486 0028 00000000 		.4byte	.LFB69
- 1487 002c 78000000 		.4byte	.LFE69
- 1488 0030 00000000 		.4byte	0
- 1489 0034 00000000 		.4byte	0
- 1490              		.section	.debug_line,"",%progbits
- 1491              	.Ldebug_line0:
- 1492 0000 85020000 		.section	.debug_str,"MS",%progbits,1
- 1492      0200CD01 
- 1492      00000201 
- 1492      FB0E0D00 
- 1492      01010101 
- 1493              	.LASF46:
- 1494 0000 53305F57 		.ascii	"S0_Write\000"
- 1494      72697465 
- 1494      00
- 1495              	.LASF39:
- 1496 0009 436F756E 		.ascii	"Counter_INT_ClearPending\000"
- 1496      7465725F 
- 1496      494E545F 
- 1496      436C6561 
- 1496      7250656E 
- 1497              	.LASF6:
- 1498 0022 5F5F7569 		.ascii	"__uint32_t\000"
- 1498      6E743332 
- 1498      5F7400
- 1499              	.LASF5:
- 1500 002d 5F5F696E 		.ascii	"__int32_t\000"
- 1500      7433325F 
- 1500      7400
- 1501              	.LASF47:
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccYRMvys.s 			page 31
+ 1408 00b5 49       		.uleb128 0x49
+ 1409 00b6 13       		.uleb128 0x13
+ 1410 00b7 11       		.uleb128 0x11
+ 1411 00b8 01       		.uleb128 0x1
+ 1412 00b9 12       		.uleb128 0x12
+ 1413 00ba 06       		.uleb128 0x6
+ 1414 00bb 40       		.uleb128 0x40
+ 1415 00bc 18       		.uleb128 0x18
+ 1416 00bd 9742     		.uleb128 0x2117
+ 1417 00bf 19       		.uleb128 0x19
+ 1418 00c0 01       		.uleb128 0x1
+ 1419 00c1 13       		.uleb128 0x13
+ 1420 00c2 00       		.byte	0
+ 1421 00c3 00       		.byte	0
+ 1422 00c4 0D       		.uleb128 0xd
+ 1423 00c5 2E       		.uleb128 0x2e
+ 1424 00c6 01       		.byte	0x1
+ 1425 00c7 3F       		.uleb128 0x3f
+ 1426 00c8 19       		.uleb128 0x19
+ 1427 00c9 03       		.uleb128 0x3
+ 1428 00ca 0E       		.uleb128 0xe
+ 1429 00cb 3A       		.uleb128 0x3a
+ 1430 00cc 0B       		.uleb128 0xb
+ 1431 00cd 3B       		.uleb128 0x3b
+ 1432 00ce 0B       		.uleb128 0xb
+ 1433 00cf 49       		.uleb128 0x49
+ 1434 00d0 13       		.uleb128 0x13
+ 1435 00d1 11       		.uleb128 0x11
+ 1436 00d2 01       		.uleb128 0x1
+ 1437 00d3 12       		.uleb128 0x12
+ 1438 00d4 06       		.uleb128 0x6
+ 1439 00d5 40       		.uleb128 0x40
+ 1440 00d6 18       		.uleb128 0x18
+ 1441 00d7 9642     		.uleb128 0x2116
+ 1442 00d9 19       		.uleb128 0x19
+ 1443 00da 01       		.uleb128 0x1
+ 1444 00db 13       		.uleb128 0x13
+ 1445 00dc 00       		.byte	0
+ 1446 00dd 00       		.byte	0
+ 1447 00de 0E       		.uleb128 0xe
+ 1448 00df 34       		.uleb128 0x34
+ 1449 00e0 00       		.byte	0
+ 1450 00e1 03       		.uleb128 0x3
+ 1451 00e2 0E       		.uleb128 0xe
+ 1452 00e3 3A       		.uleb128 0x3a
+ 1453 00e4 0B       		.uleb128 0xb
+ 1454 00e5 3B       		.uleb128 0x3b
+ 1455 00e6 0B       		.uleb128 0xb
+ 1456 00e7 49       		.uleb128 0x49
+ 1457 00e8 13       		.uleb128 0x13
+ 1458 00e9 02       		.uleb128 0x2
+ 1459 00ea 17       		.uleb128 0x17
+ 1460 00eb 00       		.byte	0
+ 1461 00ec 00       		.byte	0
+ 1462 00ed 0F       		.uleb128 0xf
+ 1463 00ee 34       		.uleb128 0x34
+ 1464 00ef 00       		.byte	0
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccuSgv1p.s 			page 31
 
 
- 1502 0037 53315F57 		.ascii	"S1_Write\000"
- 1502      72697465 
- 1502      00
- 1503              	.LASF26:
- 1504 0040 66726571 		.ascii	"freqB\000"
- 1504      4200
- 1505              	.LASF25:
- 1506 0046 66726571 		.ascii	"freqG\000"
- 1506      4700
- 1507              	.LASF22:
- 1508 004c 72656164 		.ascii	"read_color\000"
- 1508      5F636F6C 
- 1508      6F7200
- 1509              	.LASF14:
- 1510 0057 646F7562 		.ascii	"double\000"
- 1510      6C6500
- 1511              	.LASF54:
- 1512 005e 6765745F 		.ascii	"get_freq\000"
- 1512      66726571 
- 1512      00
- 1513              	.LASF29:
- 1514 0067 636F756E 		.ascii	"countB\000"
- 1514      744200
- 1515              	.LASF48:
- 1516 006e 53325F57 		.ascii	"S2_Write\000"
- 1516      72697465 
- 1516      00
- 1517              	.LASF11:
- 1518 0077 696E7433 		.ascii	"int32_t\000"
- 1518      325F7400 
- 1519              	.LASF35:
- 1520 007f 54696D65 		.ascii	"Timer_Stop\000"
- 1520      725F5374 
- 1520      6F7000
- 1521              	.LASF19:
- 1522 008a 74696D65 		.ascii	"timer_isr\000"
- 1522      725F6973 
- 1522      7200
- 1523              	.LASF13:
- 1524 0094 666C6F61 		.ascii	"float\000"
- 1524      7400
- 1525              	.LASF49:
- 1526 009a 53335F57 		.ascii	"S3_Write\000"
- 1526      72697465 
- 1526      00
- 1527              	.LASF51:
- 1528 00a3 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 1528      43313120 
- 1528      352E342E 
- 1528      31203230 
- 1528      31363036 
- 1529 00d6 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
- 1529      20726576 
- 1529      6973696F 
- 1529      6E203233 
- 1529      37373135 
- 1530 0109 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccYRMvys.s 			page 32
+ 1465 00f0 03       		.uleb128 0x3
+ 1466 00f1 0E       		.uleb128 0xe
+ 1467 00f2 3A       		.uleb128 0x3a
+ 1468 00f3 0B       		.uleb128 0xb
+ 1469 00f4 3B       		.uleb128 0x3b
+ 1470 00f5 0B       		.uleb128 0xb
+ 1471 00f6 49       		.uleb128 0x49
+ 1472 00f7 13       		.uleb128 0x13
+ 1473 00f8 1C       		.uleb128 0x1c
+ 1474 00f9 0B       		.uleb128 0xb
+ 1475 00fa 00       		.byte	0
+ 1476 00fb 00       		.byte	0
+ 1477 00fc 10       		.uleb128 0x10
+ 1478 00fd 34       		.uleb128 0x34
+ 1479 00fe 00       		.byte	0
+ 1480 00ff 03       		.uleb128 0x3
+ 1481 0100 0E       		.uleb128 0xe
+ 1482 0101 3A       		.uleb128 0x3a
+ 1483 0102 0B       		.uleb128 0xb
+ 1484 0103 3B       		.uleb128 0x3b
+ 1485 0104 05       		.uleb128 0x5
+ 1486 0105 49       		.uleb128 0x49
+ 1487 0106 13       		.uleb128 0x13
+ 1488 0107 3F       		.uleb128 0x3f
+ 1489 0108 19       		.uleb128 0x19
+ 1490 0109 3C       		.uleb128 0x3c
+ 1491 010a 19       		.uleb128 0x19
+ 1492 010b 00       		.byte	0
+ 1493 010c 00       		.byte	0
+ 1494 010d 11       		.uleb128 0x11
+ 1495 010e 35       		.uleb128 0x35
+ 1496 010f 00       		.byte	0
+ 1497 0110 49       		.uleb128 0x49
+ 1498 0111 13       		.uleb128 0x13
+ 1499 0112 00       		.byte	0
+ 1500 0113 00       		.byte	0
+ 1501 0114 12       		.uleb128 0x12
+ 1502 0115 34       		.uleb128 0x34
+ 1503 0116 00       		.byte	0
+ 1504 0117 03       		.uleb128 0x3
+ 1505 0118 0E       		.uleb128 0xe
+ 1506 0119 3A       		.uleb128 0x3a
+ 1507 011a 0B       		.uleb128 0xb
+ 1508 011b 3B       		.uleb128 0x3b
+ 1509 011c 0B       		.uleb128 0xb
+ 1510 011d 49       		.uleb128 0x49
+ 1511 011e 13       		.uleb128 0x13
+ 1512 011f 3F       		.uleb128 0x3f
+ 1513 0120 19       		.uleb128 0x19
+ 1514 0121 02       		.uleb128 0x2
+ 1515 0122 18       		.uleb128 0x18
+ 1516 0123 00       		.byte	0
+ 1517 0124 00       		.byte	0
+ 1518 0125 13       		.uleb128 0x13
+ 1519 0126 2E       		.uleb128 0x2e
+ 1520 0127 00       		.byte	0
+ 1521 0128 3F       		.uleb128 0x3f
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccuSgv1p.s 			page 32
 
 
- 1530      66756E63 
- 1530      74696F6E 
- 1530      2D736563 
- 1530      74696F6E 
- 1531              	.LASF27:
- 1532 0131 636F756E 		.ascii	"countR\000"
- 1532      745200
- 1533              	.LASF53:
- 1534 0138 433A5C55 		.ascii	"C:\\Users\\Simon\\Desktop\\Projekt3-2020\\Kode\\mai"
- 1534      73657273 
- 1534      5C53696D 
- 1534      6F6E5C44 
- 1534      65736B74 
- 1535 0165 6E5F7073 		.ascii	"n_psoc\\Main_Project\\Main.cydsn\000"
- 1535      6F635C4D 
- 1535      61696E5F 
- 1535      50726F6A 
- 1535      6563745C 
- 1536              	.LASF3:
- 1537 0184 73686F72 		.ascii	"short unsigned int\000"
- 1537      7420756E 
- 1537      7369676E 
- 1537      65642069 
- 1537      6E7400
- 1538              	.LASF41:
- 1539 0197 436F756E 		.ascii	"Counter_INT_StartEx\000"
- 1539      7465725F 
- 1539      494E545F 
- 1539      53746172 
- 1539      74457800 
- 1540              	.LASF36:
- 1541 01ab 436F756E 		.ascii	"Counter_ReadCounter\000"
- 1541      7465725F 
- 1541      52656164 
- 1541      436F756E 
- 1541      74657200 
- 1542              	.LASF30:
- 1543 01bf 49544D5F 		.ascii	"ITM_RxBuffer\000"
- 1543      52784275 
- 1543      66666572 
- 1543      00
- 1544              	.LASF1:
- 1545 01cc 756E7369 		.ascii	"unsigned char\000"
- 1545      676E6564 
- 1545      20636861 
- 1545      7200
- 1546              	.LASF44:
- 1547 01da 436F756E 		.ascii	"Counter_Start\000"
- 1547      7465725F 
- 1547      53746172 
- 1547      7400
- 1548              	.LASF7:
- 1549 01e8 6C6F6E67 		.ascii	"long unsigned int\000"
- 1549      20756E73 
- 1549      69676E65 
- 1549      6420696E 
- 1549      7400
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccYRMvys.s 			page 33
+ 1522 0129 19       		.uleb128 0x19
+ 1523 012a 3C       		.uleb128 0x3c
+ 1524 012b 19       		.uleb128 0x19
+ 1525 012c 6E       		.uleb128 0x6e
+ 1526 012d 0E       		.uleb128 0xe
+ 1527 012e 03       		.uleb128 0x3
+ 1528 012f 0E       		.uleb128 0xe
+ 1529 0130 3A       		.uleb128 0x3a
+ 1530 0131 0B       		.uleb128 0xb
+ 1531 0132 3B       		.uleb128 0x3b
+ 1532 0133 0B       		.uleb128 0xb
+ 1533 0134 00       		.byte	0
+ 1534 0135 00       		.byte	0
+ 1535 0136 00       		.byte	0
+ 1536              		.section	.debug_loc,"",%progbits
+ 1537              	.Ldebug_loc0:
+ 1538              	.LLST0:
+ 1539 0000 00000000 		.4byte	.LVL16
+ 1540 0004 06000000 		.4byte	.LVL17
+ 1541 0008 0100     		.2byte	0x1
+ 1542 000a 50       		.byte	0x50
+ 1543 000b 06000000 		.4byte	.LVL17
+ 1544 000f 78000000 		.4byte	.LFE68
+ 1545 0013 0400     		.2byte	0x4
+ 1546 0015 F3       		.byte	0xf3
+ 1547 0016 01       		.uleb128 0x1
+ 1548 0017 50       		.byte	0x50
+ 1549 0018 9F       		.byte	0x9f
+ 1550 0019 00000000 		.4byte	0
+ 1551 001d 00000000 		.4byte	0
+ 1552              	.LLST1:
+ 1553 0021 14000000 		.4byte	.LVL41
+ 1554 0025 16000000 		.4byte	.LVL42
+ 1555 0029 0100     		.2byte	0x1
+ 1556 002b 50       		.byte	0x50
+ 1557 002c 16000000 		.4byte	.LVL42
+ 1558 0030 E2000000 		.4byte	.LVL66
+ 1559 0034 0100     		.2byte	0x1
+ 1560 0036 54       		.byte	0x54
+ 1561 0037 00000000 		.4byte	0
+ 1562 003b 00000000 		.4byte	0
+ 1563              	.LLST2:
+ 1564 003f 1C000000 		.4byte	.LVL44
+ 1565 0043 1E000000 		.4byte	.LVL45
+ 1566 0047 0100     		.2byte	0x1
+ 1567 0049 50       		.byte	0x50
+ 1568 004a 1E000000 		.4byte	.LVL45
+ 1569 004e E2000000 		.4byte	.LVL66
+ 1570 0052 0100     		.2byte	0x1
+ 1571 0054 55       		.byte	0x55
+ 1572 0055 00000000 		.4byte	0
+ 1573 0059 00000000 		.4byte	0
+ 1574              	.LLST3:
+ 1575 005d 04000000 		.4byte	.LVL37
+ 1576 0061 0C000000 		.4byte	.LVL39
+ 1577 0065 0200     		.2byte	0x2
+ 1578 0067 30       		.byte	0x30
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccuSgv1p.s 			page 33
 
 
- 1550              	.LASF34:
- 1551 01fa 436F756E 		.ascii	"Counter_Stop\000"
- 1551      7465725F 
- 1551      53746F70 
- 1551      00
- 1552              	.LASF38:
- 1553 0207 54696D65 		.ascii	"Timer_INT_ClearPending\000"
- 1553      725F494E 
- 1553      545F436C 
- 1553      65617250 
- 1553      656E6469 
- 1554              	.LASF55:
- 1555 021e 636F6C6F 		.ascii	"color\000"
- 1555      7200
- 1556              	.LASF52:
- 1557 0224 636F6C6F 		.ascii	"colorSensor.c\000"
- 1557      7253656E 
- 1557      736F722E 
- 1557      6300
- 1558              	.LASF18:
- 1559 0232 75696E74 		.ascii	"uint\000"
- 1559      00
- 1560              	.LASF45:
- 1561 0237 54696D65 		.ascii	"Timer_Start\000"
- 1561      725F5374 
- 1561      61727400 
- 1562              	.LASF10:
- 1563 0243 756E7369 		.ascii	"unsigned int\000"
- 1563      676E6564 
- 1563      20696E74 
- 1563      00
- 1564              	.LASF37:
- 1565 0250 4F455F57 		.ascii	"OE_Write\000"
- 1565      72697465 
- 1565      00
- 1566              	.LASF23:
- 1567 0259 67657443 		.ascii	"getColor\000"
- 1567      6F6C6F72 
- 1567      00
- 1568              	.LASF40:
- 1569 0262 54696D65 		.ascii	"Timer_INT_StartEx\000"
- 1569      725F494E 
- 1569      545F5374 
- 1569      61727445 
- 1569      7800
- 1570              	.LASF9:
- 1571 0274 6C6F6E67 		.ascii	"long long unsigned int\000"
- 1571      206C6F6E 
- 1571      6720756E 
- 1571      7369676E 
- 1571      65642069 
- 1572              	.LASF33:
- 1573 028b 436F756E 		.ascii	"Counter_cycle\000"
- 1573      7465725F 
- 1573      6379636C 
- 1573      6500
- 1574              	.LASF16:
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccYRMvys.s 			page 34
+ 1579 0068 9F       		.byte	0x9f
+ 1580 0069 24000000 		.4byte	.LVL47
+ 1581 006d 26000000 		.4byte	.LVL48
+ 1582 0071 0100     		.2byte	0x1
+ 1583 0073 50       		.byte	0x50
+ 1584 0074 26000000 		.4byte	.LVL48
+ 1585 0078 E2000000 		.4byte	.LVL66
+ 1586 007c 0100     		.2byte	0x1
+ 1587 007e 5A       		.byte	0x5a
+ 1588 007f 00000000 		.4byte	0
+ 1589 0083 00000000 		.4byte	0
+ 1590              		.section	.debug_aranges,"",%progbits
+ 1591 0000 4C000000 		.4byte	0x4c
+ 1592 0004 0200     		.2byte	0x2
+ 1593 0006 00000000 		.4byte	.Ldebug_info0
+ 1594 000a 04       		.byte	0x4
+ 1595 000b 00       		.byte	0
+ 1596 000c 0000     		.2byte	0
+ 1597 000e 0000     		.2byte	0
+ 1598 0010 00000000 		.4byte	.LFB64
+ 1599 0014 30000000 		.4byte	.LFE64-.LFB64
+ 1600 0018 00000000 		.4byte	.LFB65
+ 1601 001c 14000000 		.4byte	.LFE65-.LFB65
+ 1602 0020 00000000 		.4byte	.LFB66
+ 1603 0024 1C000000 		.4byte	.LFE66-.LFB66
+ 1604 0028 00000000 		.4byte	.LFB67
+ 1605 002c 44000000 		.4byte	.LFE67-.LFB67
+ 1606 0030 00000000 		.4byte	.LFB68
+ 1607 0034 78000000 		.4byte	.LFE68-.LFB68
+ 1608 0038 00000000 		.4byte	.LFB69
+ 1609 003c 38000000 		.4byte	.LFE69-.LFB69
+ 1610 0040 00000000 		.4byte	.LFB70
+ 1611 0044 04010000 		.4byte	.LFE70-.LFB70
+ 1612 0048 00000000 		.4byte	0
+ 1613 004c 00000000 		.4byte	0
+ 1614              		.section	.debug_ranges,"",%progbits
+ 1615              	.Ldebug_ranges0:
+ 1616 0000 00000000 		.4byte	.LFB64
+ 1617 0004 30000000 		.4byte	.LFE64
+ 1618 0008 00000000 		.4byte	.LFB65
+ 1619 000c 14000000 		.4byte	.LFE65
+ 1620 0010 00000000 		.4byte	.LFB66
+ 1621 0014 1C000000 		.4byte	.LFE66
+ 1622 0018 00000000 		.4byte	.LFB67
+ 1623 001c 44000000 		.4byte	.LFE67
+ 1624 0020 00000000 		.4byte	.LFB68
+ 1625 0024 78000000 		.4byte	.LFE68
+ 1626 0028 00000000 		.4byte	.LFB69
+ 1627 002c 38000000 		.4byte	.LFE69
+ 1628 0030 00000000 		.4byte	.LFB70
+ 1629 0034 04010000 		.4byte	.LFE70
+ 1630 0038 00000000 		.4byte	0
+ 1631 003c 00000000 		.4byte	0
+ 1632              		.section	.debug_line,"",%progbits
+ 1633              	.Ldebug_line0:
+ 1634 0000 9C020000 		.section	.debug_str,"MS",%progbits,1
+ 1634      0200CD01 
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccuSgv1p.s 			page 34
 
 
- 1575 0299 6C6F6E67 		.ascii	"long double\000"
- 1575      20646F75 
- 1575      626C6500 
- 1576              	.LASF17:
- 1577 02a5 73697A65 		.ascii	"sizetype\000"
- 1577      74797065 
- 1577      00
- 1578              	.LASF8:
- 1579 02ae 6C6F6E67 		.ascii	"long long int\000"
- 1579      206C6F6E 
- 1579      6720696E 
- 1579      7400
- 1580              	.LASF15:
- 1581 02bc 63686172 		.ascii	"char\000"
- 1581      00
- 1582              	.LASF50:
- 1583 02c1 7072696E 		.ascii	"print\000"
- 1583      7400
- 1584              	.LASF32:
- 1585 02c7 64617461 		.ascii	"dataReady\000"
- 1585      52656164 
- 1585      7900
- 1586              	.LASF31:
- 1587 02d1 66726571 		.ascii	"freq\000"
- 1587      00
- 1588              	.LASF2:
- 1589 02d6 73686F72 		.ascii	"short int\000"
- 1589      7420696E 
- 1589      7400
- 1590              	.LASF12:
- 1591 02e0 75696E74 		.ascii	"uint32_t\000"
- 1591      33325F74 
- 1591      00
- 1592              	.LASF4:
- 1593 02e9 6C6F6E67 		.ascii	"long int\000"
- 1593      20696E74 
- 1593      00
- 1594              	.LASF24:
- 1595 02f2 66726571 		.ascii	"freqR\000"
- 1595      5200
- 1596              	.LASF21:
- 1597 02f8 636F6C6F 		.ascii	"color_init_start\000"
- 1597      725F696E 
- 1597      69745F73 
- 1597      74617274 
- 1597      00
- 1598              	.LASF0:
- 1599 0309 7369676E 		.ascii	"signed char\000"
- 1599      65642063 
- 1599      68617200 
- 1600              	.LASF42:
- 1601 0315 436F6E74 		.ascii	"Control_Reg_Write\000"
- 1601      726F6C5F 
- 1601      5265675F 
- 1601      57726974 
- 1601      6500
- 1602              	.LASF43:
-ARM GAS  C:\Users\Simon\AppData\Local\Temp\ccYRMvys.s 			page 35
+ 1634      00000201 
+ 1634      FB0E0D00 
+ 1634      01010101 
+ 1635              	.LASF51:
+ 1636 0000 53305F57 		.ascii	"S0_Write\000"
+ 1636      72697465 
+ 1636      00
+ 1637              	.LASF44:
+ 1638 0009 436F756E 		.ascii	"Counter_INT_ClearPending\000"
+ 1638      7465725F 
+ 1638      494E545F 
+ 1638      436C6561 
+ 1638      7250656E 
+ 1639              	.LASF6:
+ 1640 0022 5F5F7569 		.ascii	"__uint32_t\000"
+ 1640      6E743332 
+ 1640      5F7400
+ 1641              	.LASF5:
+ 1642 002d 5F5F696E 		.ascii	"__int32_t\000"
+ 1642      7433325F 
+ 1642      7400
+ 1643              	.LASF52:
+ 1644 0037 53315F57 		.ascii	"S1_Write\000"
+ 1644      72697465 
+ 1644      00
+ 1645              	.LASF27:
+ 1646 0040 66726571 		.ascii	"freqB\000"
+ 1646      4200
+ 1647              	.LASF26:
+ 1648 0046 66726571 		.ascii	"freqG\000"
+ 1648      4700
+ 1649              	.LASF2:
+ 1650 004c 73686F72 		.ascii	"short int\000"
+ 1650      7420696E 
+ 1650      7400
+ 1651              	.LASF14:
+ 1652 0056 646F7562 		.ascii	"double\000"
+ 1652      6C6500
+ 1653              	.LASF58:
+ 1654 005d 6765745F 		.ascii	"get_freq\000"
+ 1654      66726571 
+ 1654      00
+ 1655              	.LASF30:
+ 1656 0066 636F756E 		.ascii	"countB\000"
+ 1656      744200
+ 1657              	.LASF53:
+ 1658 006d 53325F57 		.ascii	"S2_Write\000"
+ 1658      72697465 
+ 1658      00
+ 1659              	.LASF36:
+ 1660 0076 66726571 		.ascii	"freqB_0\000"
+ 1660      425F3000 
+ 1661              	.LASF35:
+ 1662 007e 66726571 		.ascii	"freqG_0\000"
+ 1662      475F3000 
+ 1663              	.LASF11:
+ 1664 0086 696E7433 		.ascii	"int32_t\000"
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccuSgv1p.s 			page 35
 
 
- 1603 0327 43794465 		.ascii	"CyDelay\000"
- 1603      6C617900 
- 1604              	.LASF28:
- 1605 032f 636F756E 		.ascii	"countG\000"
- 1605      744700
- 1606              	.LASF20:
- 1607 0336 636F756E 		.ascii	"counter_isr\000"
- 1607      7465725F 
- 1607      69737200 
- 1608              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ 1664      325F7400 
+ 1665              	.LASF40:
+ 1666 008e 54696D65 		.ascii	"Timer_Stop\000"
+ 1666      725F5374 
+ 1666      6F7000
+ 1667              	.LASF19:
+ 1668 0099 74696D65 		.ascii	"timer_isr\000"
+ 1668      725F6973 
+ 1668      7200
+ 1669              	.LASF13:
+ 1670 00a3 666C6F61 		.ascii	"float\000"
+ 1670      7400
+ 1671              	.LASF21:
+ 1672 00a9 696E6974 		.ascii	"init_start\000"
+ 1672      5F737461 
+ 1672      727400
+ 1673              	.LASF54:
+ 1674 00b4 53335F57 		.ascii	"S3_Write\000"
+ 1674      72697465 
+ 1674      00
+ 1675              	.LASF55:
+ 1676 00bd 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1676      43313120 
+ 1676      352E342E 
+ 1676      31203230 
+ 1676      31363036 
+ 1677 00f0 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 1677      20726576 
+ 1677      6973696F 
+ 1677      6E203233 
+ 1677      37373135 
+ 1678 0123 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1678      66756E63 
+ 1678      74696F6E 
+ 1678      2D736563 
+ 1678      74696F6E 
+ 1679              	.LASF28:
+ 1680 014b 636F756E 		.ascii	"countR\000"
+ 1680      745200
+ 1681              	.LASF31:
+ 1682 0152 636F756E 		.ascii	"countU\000"
+ 1682      745500
+ 1683              	.LASF3:
+ 1684 0159 73686F72 		.ascii	"short unsigned int\000"
+ 1684      7420756E 
+ 1684      7369676E 
+ 1684      65642069 
+ 1684      6E7400
+ 1685              	.LASF56:
+ 1686 016c 636F6C6F 		.ascii	"colorSensor.c\000"
+ 1686      7253656E 
+ 1686      736F722E 
+ 1686      6300
+ 1687              	.LASF46:
+ 1688 017a 436F756E 		.ascii	"Counter_INT_StartEx\000"
+ 1688      7465725F 
+ 1688      494E545F 
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccuSgv1p.s 			page 36
+
+
+ 1688      53746172 
+ 1688      74457800 
+ 1689              	.LASF41:
+ 1690 018e 436F756E 		.ascii	"Counter_ReadCounter\000"
+ 1690      7465725F 
+ 1690      52656164 
+ 1690      436F756E 
+ 1690      74657200 
+ 1691              	.LASF32:
+ 1692 01a2 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 1692      52784275 
+ 1692      66666572 
+ 1692      00
+ 1693              	.LASF1:
+ 1694 01af 756E7369 		.ascii	"unsigned char\000"
+ 1694      676E6564 
+ 1694      20636861 
+ 1694      7200
+ 1695              	.LASF49:
+ 1696 01bd 436F756E 		.ascii	"Counter_Start\000"
+ 1696      7465725F 
+ 1696      53746172 
+ 1696      7400
+ 1697              	.LASF7:
+ 1698 01cb 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1698      20756E73 
+ 1698      69676E65 
+ 1698      6420696E 
+ 1698      7400
+ 1699              	.LASF39:
+ 1700 01dd 436F756E 		.ascii	"Counter_Stop\000"
+ 1700      7465725F 
+ 1700      53746F70 
+ 1700      00
+ 1701              	.LASF43:
+ 1702 01ea 54696D65 		.ascii	"Timer_INT_ClearPending\000"
+ 1702      725F494E 
+ 1702      545F436C 
+ 1702      65617250 
+ 1702      656E6469 
+ 1703              	.LASF59:
+ 1704 0201 636F6C6F 		.ascii	"color\000"
+ 1704      7200
+ 1705              	.LASF25:
+ 1706 0207 66726571 		.ascii	"freqR\000"
+ 1706      5200
+ 1707              	.LASF18:
+ 1708 020d 75696E74 		.ascii	"uint\000"
+ 1708      00
+ 1709              	.LASF50:
+ 1710 0212 54696D65 		.ascii	"Timer_Start\000"
+ 1710      725F5374 
+ 1710      61727400 
+ 1711              	.LASF10:
+ 1712 021e 756E7369 		.ascii	"unsigned int\000"
+ 1712      676E6564 
+ 1712      20696E74 
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccuSgv1p.s 			page 37
+
+
+ 1712      00
+ 1713              	.LASF42:
+ 1714 022b 4F455F57 		.ascii	"OE_Write\000"
+ 1714      72697465 
+ 1714      00
+ 1715              	.LASF24:
+ 1716 0234 67657443 		.ascii	"getColor\000"
+ 1716      6F6C6F72 
+ 1716      00
+ 1717              	.LASF9:
+ 1718 023d 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1718      206C6F6E 
+ 1718      6720756E 
+ 1718      7369676E 
+ 1718      65642069 
+ 1719              	.LASF23:
+ 1720 0254 7374616E 		.ascii	"standardColor\000"
+ 1720      64617264 
+ 1720      436F6C6F 
+ 1720      7200
+ 1721              	.LASF38:
+ 1722 0262 436F756E 		.ascii	"Counter_cycle\000"
+ 1722      7465725F 
+ 1722      6379636C 
+ 1722      6500
+ 1723              	.LASF16:
+ 1724 0270 6C6F6E67 		.ascii	"long double\000"
+ 1724      20646F75 
+ 1724      626C6500 
+ 1725              	.LASF17:
+ 1726 027c 73697A65 		.ascii	"sizetype\000"
+ 1726      74797065 
+ 1726      00
+ 1727              	.LASF8:
+ 1728 0285 6C6F6E67 		.ascii	"long long int\000"
+ 1728      206C6F6E 
+ 1728      6720696E 
+ 1728      7400
+ 1729              	.LASF57:
+ 1730 0293 433A5C49 		.ascii	"C:\\IKT\\Projekt3-2020\\Kode\\main_psoc\\Main_Proje"
+ 1730      4B545C50 
+ 1730      726F6A65 
+ 1730      6B74332D 
+ 1730      32303230 
+ 1731 02c1 63745C4D 		.ascii	"ct\\Main.cydsn\000"
+ 1731      61696E2E 
+ 1731      63796473 
+ 1731      6E00
+ 1732              	.LASF34:
+ 1733 02cf 66726571 		.ascii	"freqR_0\000"
+ 1733      525F3000 
+ 1734              	.LASF37:
+ 1735 02d7 64617461 		.ascii	"dataReady\000"
+ 1735      52656164 
+ 1735      7900
+ 1736              	.LASF33:
+ 1737 02e1 66726571 		.ascii	"freq\000"
+ARM GAS  C:\Users\PETERW~1\AppData\Local\Temp\ccuSgv1p.s 			page 38
+
+
+ 1737      00
+ 1738              	.LASF45:
+ 1739 02e6 54696D65 		.ascii	"Timer_INT_StartEx\000"
+ 1739      725F494E 
+ 1739      545F5374 
+ 1739      61727445 
+ 1739      7800
+ 1740              	.LASF12:
+ 1741 02f8 75696E74 		.ascii	"uint32_t\000"
+ 1741      33325F74 
+ 1741      00
+ 1742              	.LASF4:
+ 1743 0301 6C6F6E67 		.ascii	"long int\000"
+ 1743      20696E74 
+ 1743      00
+ 1744              	.LASF15:
+ 1745 030a 63686172 		.ascii	"char\000"
+ 1745      00
+ 1746              	.LASF22:
+ 1747 030f 72656164 		.ascii	"read_color\000"
+ 1747      5F636F6C 
+ 1747      6F7200
+ 1748              	.LASF0:
+ 1749 031a 7369676E 		.ascii	"signed char\000"
+ 1749      65642063 
+ 1749      68617200 
+ 1750              	.LASF47:
+ 1751 0326 436F6E74 		.ascii	"Control_Reg_Write\000"
+ 1751      726F6C5F 
+ 1751      5265675F 
+ 1751      57726974 
+ 1751      6500
+ 1752              	.LASF48:
+ 1753 0338 43794465 		.ascii	"CyDelay\000"
+ 1753      6C617900 
+ 1754              	.LASF29:
+ 1755 0340 636F756E 		.ascii	"countG\000"
+ 1755      744700
+ 1756              	.LASF20:
+ 1757 0347 636F756E 		.ascii	"counter_isr\000"
+ 1757      7465725F 
+ 1757      69737200 
+ 1758              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

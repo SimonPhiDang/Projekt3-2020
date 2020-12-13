@@ -1,5 +1,5 @@
--- Project:   C:\Users\Henry\Documents\IKT\3. semester\Semesterprojekt 3\god\afstandssensor\afstandssensor.cydsn\afstandssensor.cyprj
--- Generated: 12/08/2020 18:43:28
+-- Project:   C:\IKT\Projekt3-2020\Kode\afstandssensor\afstandssensor.cydsn\afstandssensor.cyprj
+-- Generated: 12/08/2020 19:47:14
 -- PSoC Creator  4.3
 
 ENTITY afstandssensor IS

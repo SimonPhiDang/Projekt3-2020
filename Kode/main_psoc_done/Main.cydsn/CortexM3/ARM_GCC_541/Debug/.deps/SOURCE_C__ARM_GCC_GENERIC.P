@@ -1,0 +1,174 @@
+C:/IKT/HAL/psocmain/Main.cydsn/CortexM3/ARM_GCC_541/Debug/main.o : C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/ADC_SAR_1.h C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/ADC_SAR_1_ExtVref.h C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/ADC_SAR_1_ExtVref_aliases.h C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/ADC_SAR_1_IRQ.h C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/ADC_SAR_1_theACLK.h C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/ClockPWM.h C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/ClockPWM_1.h C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/Clock_1.h C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/Clock_100kHz.h C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/Clock_10kHz.h C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/Clock_Trigger.h C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/Control_Reg.h C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/Counter.h C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/Counter_INT.h C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/CyDmac.h C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/CyFlash.h C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/CyLib.h C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/CySpc.h C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/Done.h C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/Done_aliases.h C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/Echo.h C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/Echo_aliases.h C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/I2C.h C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/I2C_PVT.h C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/OE.h C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/OE_aliases.h C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/PWM1.h C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/PWM2.h C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/PWM_Trigger.h C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/Pin_ADC_in.h C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/Pin_ADC_in_aliases.h C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/PwmPIN1.h C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/PwmPIN1_aliases.h C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/PwmPIN2.h C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/PwmPIN2_aliases.h C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/S0.h C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/S0_aliases.h C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/S1.h C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/S1_aliases.h C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/S2.h C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/S2_aliases.h C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/S3.h C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/S3_aliases.h C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/SCL_1.h C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/SCL_1_aliases.h C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/SDA_1.h C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/SDA_1_aliases.h C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/SensorOut.h C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/SensorOut_aliases.h C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/Timer.h C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/Timer_1.h C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/Timer_INT.h C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/Timer_int_1.h C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/Trigger.h C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/Trigger_aliases.h C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/cmsis_armcc.h C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/cmsis_compiler.h C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/cmsis_gcc.h C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/core_cm3.h C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/core_cm3_psoc5.h C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/cyPm.h C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/cy_em_eeprom.h C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/cydevice.h C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/cydevice_trm.h C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/cydisabledsheets.h C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/cyfitter.h C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/cyfitter_cfg.h C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/cypins.h C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/cytypes.h C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/in1.h C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/in1_aliases.h C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/in2.h C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/in2_aliases.h C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/in3.h C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/in3_aliases.h C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/in4.h C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/in4_aliases.h C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/led.h C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/led_aliases.h C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/project.h C:/IKT/HAL/psocmain/Main.cydsn/Afstandssensor.h C:/IKT/HAL/psocmain/Main.cydsn/Scale.h C:/IKT/HAL/psocmain/Main.cydsn/colorSensor.h C:/IKT/HAL/psocmain/Main.cydsn/i2cKommunikation.h C:/IKT/HAL/psocmain/Main.cydsn/main.c C:/IKT/HAL/psocmain/Main.cydsn/motorStyring.h 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/ADC_SAR_1.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/ADC_SAR_1_ExtVref.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/ADC_SAR_1_ExtVref_aliases.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/ADC_SAR_1_IRQ.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/ADC_SAR_1_theACLK.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/ClockPWM.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/ClockPWM_1.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/Clock_1.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/Clock_100kHz.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/Clock_10kHz.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/Clock_Trigger.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/Control_Reg.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/Counter.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/Counter_INT.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/CyDmac.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/CyFlash.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/CyLib.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/CySpc.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/Done.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/Done_aliases.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/Echo.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/Echo_aliases.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/I2C.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/I2C_PVT.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/OE.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/OE_aliases.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/PWM1.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/PWM2.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/PWM_Trigger.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/Pin_ADC_in.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/Pin_ADC_in_aliases.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/PwmPIN1.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/PwmPIN1_aliases.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/PwmPIN2.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/PwmPIN2_aliases.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/S0.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/S0_aliases.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/S1.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/S1_aliases.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/S2.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/S2_aliases.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/S3.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/S3_aliases.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/SCL_1.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/SCL_1_aliases.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/SDA_1.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/SDA_1_aliases.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/SensorOut.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/SensorOut_aliases.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/Timer.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/Timer_1.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/Timer_INT.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/Timer_int_1.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/Trigger.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/Trigger_aliases.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/cmsis_armcc.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/cmsis_compiler.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/cmsis_gcc.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/core_cm3.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/core_cm3_psoc5.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/cyPm.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/cy_em_eeprom.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/cydevice.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/cydevice_trm.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/cydisabledsheets.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/cyfitter.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/cyfitter_cfg.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/cypins.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/cytypes.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/in1.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/in1_aliases.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/in2.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/in2_aliases.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/in3.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/in3_aliases.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/in4.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/in4_aliases.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/led.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/led_aliases.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Generated_Source/PSoC5/project.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Afstandssensor.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/Scale.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/colorSensor.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/i2cKommunikation.h : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/main.c : 
+
+C:/IKT/HAL/psocmain/Main.cydsn/motorStyring.h : 
+
