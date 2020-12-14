@@ -191,17 +191,6 @@
 <v>colorSensor\colorSensor\PSoC 5LP Architecture TRM</v>
 <v>colorSensor\colorSensor\CY8C58LP Family Datasheet</v>
 <v>colorSensor\colorSensor\System Reference Guides</v>
-<v>colorSensor\colorSensor\System Reference Guides\cy_boot_v5_90</v>
-<v>colorSensor\colorSensor\Counter_v3_0.pdf</v>
-<v>colorSensor\colorSensor\cy_clock_v2_20</v>
-<v>colorSensor\colorSensor\cy_clock_v2_20\cy_clock_v2_20.pdf</v>
-<v>colorSensor\colorSensor\cy_isr_v1_70</v>
-<v>colorSensor\colorSensor\cy_isr_v1_70\cy_isr_v1_70.pdf</v>
-<v>colorSensor\colorSensor\cy_pins_v2_20</v>
-<v>colorSensor\colorSensor\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
-<v>colorSensor\colorSensor\CyControlReg_v1_80.pdf</v>
-<v>colorSensor\colorSensor\Timer_v2_80.pdf</v>
-<v>colorSensor\colorSensor\UART_v2_50.pdf</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
 <v>colorSensor</v>
@@ -209,17 +198,6 @@
 <v>colorSensor\colorSensor\PSoC 5LP Architecture TRM</v>
 <v>colorSensor\colorSensor\CY8C58LP Family Datasheet</v>
 <v>colorSensor\colorSensor\System Reference Guides</v>
-<v>colorSensor\colorSensor\System Reference Guides\cy_boot_v5_90</v>
-<v>colorSensor\colorSensor\Counter_v3_0.pdf</v>
-<v>colorSensor\colorSensor\cy_clock_v2_20</v>
-<v>colorSensor\colorSensor\cy_clock_v2_20\cy_clock_v2_20.pdf</v>
-<v>colorSensor\colorSensor\cy_isr_v1_70</v>
-<v>colorSensor\colorSensor\cy_isr_v1_70\cy_isr_v1_70.pdf</v>
-<v>colorSensor\colorSensor\cy_pins_v2_20</v>
-<v>colorSensor\colorSensor\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
-<v>colorSensor\colorSensor\CyControlReg_v1_80.pdf</v>
-<v>colorSensor\colorSensor\Timer_v2_80.pdf</v>
-<v>colorSensor\colorSensor\UART_v2_50.pdf</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStatesV2>
@@ -229,11 +207,7 @@
 </CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
 <Unloaded />
 <OpenDocs>
-<name v=".\colorSensor.cydsn\TopDesign\TopDesign.cysch" />
-<name v=".\colorSensor.cydsn\colorSensor.cydwr" />
-<name v=".\colorSensor.cydsn\main.c" />
 <name v=".\colorSensor.cydsn\colorSensor.c" />
-<name v=".\colorSensor.cydsn\colorSensor.h" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
@@ -241,7 +215,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1323, 523" SelectedTabbedMdiWindow="295f001d-3d42-4ad3-8fed-6ad7c21f3c12"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="2fad8462-a513-4692-ad26-9fa21f3f06e0" /><DocumentWindow Key="C:\Users\Lucas\Documents\PSoC Creator\colorSensor\colorSensor.cydsn\TopDesign\TopDesign.cysch" Guid="3dcac435-b26a-4a4f-ad74-912a8ca0a1d7" /><DocumentWindow Key="C:\Users\Lucas\Documents\PSoC Creator\colorSensor\colorSensor.cydsn\colorSensor.cydwr" Guid="295f001d-3d42-4ad3-8fed-6ad7c21f3c12" /><DocumentWindow Key="C:\Users\Lucas\Documents\PSoC Creator\colorSensor\colorSensor.cydsn\main.c" Guid="097d8cee-3f36-4790-ab3e-1299c6011b36" /><DocumentWindow Key="C:\Users\Lucas\Documents\PSoC Creator\colorSensor\colorSensor.cydsn\colorSensor.c" Guid="71559dc3-2eda-4cfd-a602-94bbfd92bf07" /><DocumentWindow Key="C:\Users\Lucas\Documents\PSoC Creator\colorSensor\colorSensor.cydsn\colorSensor.h" Guid="a24394fd-80f9-427d-bd9a-bcff01b92cab" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1112, 523" SelectedTabbedMdiWindow="10f3a834-98c7-4a82-9abc-9dddf3b2ac2b"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="2fad8462-a513-4692-ad26-9fa21f3f06e0" /><DocumentWindow Key="C:\Users\Lucas\Documents\GitHub\Projekt3-2020\Kode\ColorSensor\colorSensor\colorSensor.cydsn\colorSensor.c" Guid="10f3a834-98c7-4a82-9abc-9dddf3b2ac2b" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>

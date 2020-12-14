@@ -229,11 +229,7 @@
 </CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
 <Unloaded />
 <OpenDocs>
-<name v=".\colorSensor.cydsn\TopDesign\TopDesign.cysch" />
-<name v=".\colorSensor.cydsn\colorSensor.cydwr" />
-<name v=".\colorSensor.cydsn\main.c" />
 <name v=".\colorSensor.cydsn\colorSensor.c" />
-<name v=".\colorSensor.cydsn\colorSensor.h" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
@@ -241,7 +237,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1323, 523" SelectedTabbedMdiWindow="295f001d-3d42-4ad3-8fed-6ad7c21f3c12"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="2fad8462-a513-4692-ad26-9fa21f3f06e0" /><DocumentWindow Key="C:\Users\Lucas\Documents\PSoC Creator\colorSensor\colorSensor.cydsn\TopDesign\TopDesign.cysch" Guid="3dcac435-b26a-4a4f-ad74-912a8ca0a1d7" /><DocumentWindow Key="C:\Users\Lucas\Documents\PSoC Creator\colorSensor\colorSensor.cydsn\colorSensor.cydwr" Guid="295f001d-3d42-4ad3-8fed-6ad7c21f3c12" /><DocumentWindow Key="C:\Users\Lucas\Documents\PSoC Creator\colorSensor\colorSensor.cydsn\main.c" Guid="097d8cee-3f36-4790-ab3e-1299c6011b36" /><DocumentWindow Key="C:\Users\Lucas\Documents\PSoC Creator\colorSensor\colorSensor.cydsn\colorSensor.c" Guid="71559dc3-2eda-4cfd-a602-94bbfd92bf07" /><DocumentWindow Key="C:\Users\Lucas\Documents\PSoC Creator\colorSensor\colorSensor.cydsn\colorSensor.h" Guid="a24394fd-80f9-427d-bd9a-bcff01b92cab" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1112, 523" SelectedTabbedMdiWindow="f8b4f2dd-87e9-48ed-83fe-dc2cc5594044"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="2fad8462-a513-4692-ad26-9fa21f3f06e0" /><DocumentWindow Key="C:\Users\Lucas\Documents\GitHub\Projekt3-2020\Kode\ColorSensor\colorSensorv2\colorSensor.cydsn\colorSensor.c" Guid="f8b4f2dd-87e9-48ed-83fe-dc2cc5594044" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
