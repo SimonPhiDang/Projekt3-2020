@@ -84,12 +84,12 @@ void beertressWorkWork(int type, int table, int amount)
                     CyDelay(3000);
                     Done_Write(1); // Order done
                     CyDelay(500);
-                    Done_Write(0);
                     while(ADC_Measure() < 0.346) // Empty
                     {
                         rdBuf[0] = 0b00000001;
                     }
                     rdBuf[0] = 0b00000000;
+                    Done_Write(0);
                     // I2C_SlaveClearReadBuf();
                     return;
                 }

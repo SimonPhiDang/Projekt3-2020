@@ -19,7 +19,7 @@ void initiere_I2Ckommunikation()
     I2C_Start();
 }
 
-char newOrder()
+int newOrder()
 {
       if(0u != (I2C_SlaveStatus() & I2C_SSTAT_WR_CMPLT)) 
          {
