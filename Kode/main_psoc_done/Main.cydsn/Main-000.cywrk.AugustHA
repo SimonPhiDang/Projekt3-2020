@@ -13,7 +13,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Main-000\Main\TopDesign">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Main-000\Main\Source Files\MotorController_SW.c">
 <ExpandedNodeIds>
 <v>Main-000</v>
 <v>Main-000\Main</v>
@@ -39,7 +39,7 @@
 <v>Main-000\Main\Source Files\Afstandssensor.c</v>
 <v>Main-000\Main\Source Files\colorSensor.c</v>
 <v>Main-000\Main\Source Files\i2cKommunikation.c</v>
-<v>Main-000\Main\Source Files\MotorController_SW</v>
+<v>Main-000\Main\Source Files\MotorController_SW.c</v>
 <v>Main-000\Main\Source Files\motorStyring.c</v>
 <v>Main-000\Main\Source Files\Scale.c</v>
 <v>Main-000\Main\Generated_Source</v>
@@ -70,7 +70,7 @@
 <v>Main-000\Main\Source Files\Afstandssensor.c</v>
 <v>Main-000\Main\Source Files\colorSensor.c</v>
 <v>Main-000\Main\Source Files\i2cKommunikation.c</v>
-<v>Main-000\Main\Source Files\MotorController_SW</v>
+<v>Main-000\Main\Source Files\MotorController_SW.c</v>
 <v>Main-000\Main\Source Files\motorStyring.c</v>
 <v>Main-000\Main\Source Files\Scale.c</v>
 <v>Main-000\Main\Generated_Source</v>
