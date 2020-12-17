@@ -23,7 +23,7 @@ int main(void)
     for(;;)
     {
         //distanceToggleLED(distance);
-        while(distance < 30)
+        while(getDistance() < 30)
         {
             LED_Write(1);
         }

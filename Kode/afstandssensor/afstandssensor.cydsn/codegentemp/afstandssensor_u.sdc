@@ -1,3 +1,3 @@
-# Component constraints for C:\IKT\Projekt3-2020\Kode\afstandssensor\afstandssensor.cydsn\TopDesign\TopDesign.cysch
-# Project: C:\IKT\Projekt3-2020\Kode\afstandssensor\afstandssensor.cydsn\afstandssensor.cyprj
-# Date: Tue, 08 Dec 2020 18:47:02 GMT
+# Component constraints for C:\Users\Henry\Documents\IKT\3. semester\Semesterprojekt 3\god\afstandssensor\afstandssensor.cydsn\TopDesign\TopDesign.cysch
+# Project: C:\Users\Henry\Documents\IKT\3. semester\Semesterprojekt 3\god\afstandssensor\afstandssensor.cydsn\afstandssensor.cyprj
+# Date: Thu, 17 Dec 2020 14:05:18 GMT

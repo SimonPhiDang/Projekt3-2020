@@ -1,10 +1,10 @@
-C:/IKT/Projekt3-2020/Kode/afstandssensor/afstandssensor.cydsn/CortexM3/ARM_GCC_541/Debug/CyBootAsmGnu.o : C:/IKT/Projekt3-2020/Kode/afstandssensor/afstandssensor.cydsn/Generated_Source/PSoC5/CyBootAsmGnu.s C:/IKT/Projekt3-2020/Kode/afstandssensor/afstandssensor.cydsn/Generated_Source/PSoC5/cydevicegnu.inc C:/IKT/Projekt3-2020/Kode/afstandssensor/afstandssensor.cydsn/Generated_Source/PSoC5/cydevicegnu_trm.inc C:/IKT/Projekt3-2020/Kode/afstandssensor/afstandssensor.cydsn/Generated_Source/PSoC5/cyfittergnu.inc 
+C:/Users/Henry/Documents/IKT/3.\ semester/Semesterprojekt\ 3/god/afstandssensor/afstandssensor.cydsn/CortexM3/ARM_GCC_541/Debug/CyBootAsmGnu.o : C:/Users/Henry/Documents/IKT/3.\ semester/Semesterprojekt\ 3/god/afstandssensor/afstandssensor.cydsn/Generated_Source/PSoC5/CyBootAsmGnu.s C:/Users/Henry/Documents/IKT/3.\ semester/Semesterprojekt\ 3/god/afstandssensor/afstandssensor.cydsn/Generated_Source/PSoC5/cydevicegnu.inc C:/Users/Henry/Documents/IKT/3.\ semester/Semesterprojekt\ 3/god/afstandssensor/afstandssensor.cydsn/Generated_Source/PSoC5/cydevicegnu_trm.inc C:/Users/Henry/Documents/IKT/3.\ semester/Semesterprojekt\ 3/god/afstandssensor/afstandssensor.cydsn/Generated_Source/PSoC5/cyfittergnu.inc 
 
-C:/IKT/Projekt3-2020/Kode/afstandssensor/afstandssensor.cydsn/Generated_Source/PSoC5/CyBootAsmGnu.s : 
+C:/Users/Henry/Documents/IKT/3.\ semester/Semesterprojekt\ 3/god/afstandssensor/afstandssensor.cydsn/Generated_Source/PSoC5/CyBootAsmGnu.s : 
 
-C:/IKT/Projekt3-2020/Kode/afstandssensor/afstandssensor.cydsn/Generated_Source/PSoC5/cydevicegnu.inc : 
+C:/Users/Henry/Documents/IKT/3.\ semester/Semesterprojekt\ 3/god/afstandssensor/afstandssensor.cydsn/Generated_Source/PSoC5/cydevicegnu.inc : 
 
-C:/IKT/Projekt3-2020/Kode/afstandssensor/afstandssensor.cydsn/Generated_Source/PSoC5/cydevicegnu_trm.inc : 
+C:/Users/Henry/Documents/IKT/3.\ semester/Semesterprojekt\ 3/god/afstandssensor/afstandssensor.cydsn/Generated_Source/PSoC5/cydevicegnu_trm.inc : 
 
-C:/IKT/Projekt3-2020/Kode/afstandssensor/afstandssensor.cydsn/Generated_Source/PSoC5/cyfittergnu.inc : 
+C:/Users/Henry/Documents/IKT/3.\ semester/Semesterprojekt\ 3/god/afstandssensor/afstandssensor.cydsn/Generated_Source/PSoC5/cyfittergnu.inc : 
 
