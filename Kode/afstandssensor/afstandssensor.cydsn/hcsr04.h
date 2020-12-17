@@ -19,11 +19,12 @@ void initDistSens();
 // Starts timer and returns counter
 int calcDist();
 
+// Returns distance
+int getDistance();
+
 // Outputs distance to UART
 int outputDistanceToUART(int count);
 
-// Toggles LED based on distance
-void distanceToggleLED(int distance);
 
     
 #endif

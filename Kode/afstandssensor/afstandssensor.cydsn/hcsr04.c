@@ -28,15 +28,26 @@ void initDistSens()
 
 int calcDist()
 {
+    //Capturing timer count
     int capture = Timer_ReadCapture();
-    snprintf(outputBuffer, sizeof(outputBuffer), "Counter: %d \r\n", capture);
-    UART_1_PutString(outputBuffer);
     
+    //Used for testing
+    /*snprintf(outputBuffer, sizeof(outputBuffer), "Counter: %d \r\n", capture);
+    UART_1_PutString(outputBuffer);*/
+    
+    //Calculating distance in cm
     distance = (65535 - capture) * 0.017;
+    
+    //Used to quickly fix problem, when the sensor doesnt register an object
     if(capture > 65250 && capture < 65340)
     {
         distance = 500;
     }
+    return distance;
+}
+
+int getDistance()
+{
     return distance;
 }
 
@@ -47,17 +58,6 @@ int outputDistanceToUART(int distance)
     return distance;
 }
 
-void distanceToggleLED(int distance)
-{
-    if(distance < 30)
-    {
-        LED_Write(1);
-    }
-    else if(distance > 35)
-    {
-        LED_Write(0);
-    }
-}
 
 CY_ISR(Timer_int_Handler)
 {

@@ -1,6 +1,6 @@
-C:\IKT\Projekt3-2020\Kode\afstandssensor\afstandssensor.cydsn\afstandssensor.cyprj|0d2a5635-f808-484a-b6dd-653b5121534b
-C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|8c835e0d-f660-4be5-85bb-f11cc11e77a2
-C:\Users\PeterWann\Documents\PSoC Creator\4.3\Downloads ( 4.3).cylib\Downloads ( 4.3).cyprj|b65fba18-a3c1-45a7-b293-355ab8801a0e
-C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|9dda5713-5a72-4d6a-9a18-6eee3345f193
-C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|23933619-9a27-453d-a063-91ab17f80c08
-C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|8c6aea1b-7cca-4fbb-979e-61dba09efbcb
+C:\Users\Henry\Documents\IKT\3. semester\Semesterprojekt 3\god\afstandssensor\afstandssensor.cydsn\afstandssensor.cyprj|f61f74dc-ddfd-44b5-af52-1e1c51c55d66
+C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|932d344c-de39-40bc-80ea-1cbd7b53aff8
+C:\Users\Henry\Documents\PSoC Creator\4.3\Downloads ( 4.3).cylib\Downloads ( 4.3).cyprj|9a143c95-2ea8-4473-b03e-157c6492ed91
+C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|248c3182-ab0b-4129-88d5-61216cc23f67
+C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|84378cc8-a1e6-4287-b36e-b813dd601c3e
+C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|6f13e51f-e18b-43ba-96f2-19fa9020f731
